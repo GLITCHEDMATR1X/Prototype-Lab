@@ -1,0 +1,175 @@
+{
+  "version": "pass103",
+  "description": "Enceladus runtime scenario contracts with level exit, result packet, and Prototype Lab point transfer checks.",
+  "scenarios": [
+    {
+      "name": "slide_loop",
+      "goal": "Verify ice-slide control evidence and terrain-safe slide-lane sampling.",
+      "variants": {
+        "default": {
+          "checks": [
+            "asset_preflight",
+            "terrain_authority"
+          ],
+          "shot_mode": "slide",
+          "expected": [
+            "slide evidence screenshot",
+            "terrain samples finite"
+          ]
+        },
+        "dark_ridge": {
+          "checks": [
+            "terrain_authority"
+          ],
+          "probe": [
+            "dark_ridge"
+          ],
+          "expected": [
+            "dark ridge height finite"
+          ]
+        }
+      }
+    },
+    {
+      "name": "terrain_grounding",
+      "goal": "Verify Enceladus surface height/slope authority across gameplay zones.",
+      "variants": {
+        "default": {
+          "checks": [
+            "terrain_authority"
+          ],
+          "expected": [
+            "all standard terrain points finite"
+          ]
+        },
+        "wide_samples": {
+          "checks": [
+            "terrain_authority",
+            "placement_authority"
+          ],
+          "expected": [
+            "placement samples remain above terrain"
+          ]
+        }
+      }
+    },
+    {
+      "name": "options_fit",
+      "goal": "Verify options/help proof screen can be generated and scored by Visual QA.",
+      "variants": {
+        "default": {
+          "checks": [
+            "asset_preflight"
+          ],
+          "shot_mode": "options",
+          "expected": [
+            "options screenshot path valid"
+          ]
+        }
+      }
+    },
+    {
+      "name": "robot_loop",
+      "goal": "Verify drill robot evidence path and generated assets needed by the loop.",
+      "variants": {
+        "default": {
+          "checks": [
+            "asset_preflight",
+            "placement_authority"
+          ],
+          "shot_mode": "robot",
+          "expected": [
+            "robot can be placed above sampled terrain"
+          ]
+        },
+        "resource_ready": {
+          "checks": [
+            "asset_preflight",
+            "placement_authority"
+          ],
+          "expected": [
+            "resource/drone placements above ground"
+          ]
+        }
+      }
+    },
+    {
+      "name": "base_placement",
+      "goal": "Verify base module placement is terrain-authority driven.",
+      "variants": {
+        "default": {
+          "checks": [
+            "placement_authority"
+          ],
+          "shot_mode": "base",
+          "expected": [
+            "base pad and rover above terrain"
+          ]
+        },
+        "relay": {
+          "checks": [
+            "placement_authority",
+            "asset_preflight"
+          ],
+          "shot_mode": "relay",
+          "expected": [
+            "relay proof screenshot path valid"
+          ]
+        }
+      }
+    },
+    {
+      "name": "magnetic_collection",
+      "goal": "Verify magnetic/resource collection contract still has assets, terrain placement, and scenario report coverage.",
+      "variants": {
+        "default": {
+          "checks": [
+            "asset_preflight",
+            "placement_authority"
+          ],
+          "expected": [
+            "resource pickup placement above terrain"
+          ]
+        }
+      }
+    },
+    {
+      "name": "level_exit",
+      "goal": "Verify Enceladus can act as a standalone Prototype Lab level with score, lab points, result packet, and return-to-lab status.",
+      "variants": {
+        "default": {
+          "checks": [
+            "level_contract",
+            "level_result"
+          ],
+          "shot_mode": "level",
+          "expected": [
+            "level result packet valid",
+            "level screenshot shows return-to-lab cashout"
+          ]
+        },
+        "profile_transfer": {
+          "checks": [
+            "level_contract",
+            "lab_profile",
+            "complete_level"
+          ],
+          "expected": [
+            "Lab profile preview receives points and best score"
+          ]
+        },
+        "full_quota": {
+          "checks": [
+            "asset_preflight",
+            "placement_authority",
+            "level_result",
+            "complete_level"
+          ],
+          "expected": [
+            "completion result coexists with Enceladus placement/runtime prerequisites"
+          ]
+        }
+      }
+    }
+  ]
+}

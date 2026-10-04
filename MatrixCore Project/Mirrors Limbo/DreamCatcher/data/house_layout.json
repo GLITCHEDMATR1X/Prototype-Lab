@@ -1,0 +1,881 @@
+{
+  "project": "DreamCatcher Alternate",
+  "schema_version": 1,
+  "units": "meters",
+  "coordinate_system": "x=east, y=north, z=up",
+  "footprint": {
+    "width": 12.0,
+    "depth": 10.0
+  },
+  "floor_to_floor_height": 2.8,
+  "levels": {
+    "basement": {
+      "z": -2.8,
+      "ceiling_height": 2.45
+    },
+    "floor1": {
+      "z": 0.0,
+      "ceiling_height": 2.55
+    },
+    "floor2": {
+      "z": 2.8,
+      "ceiling_height": 2.55
+    },
+    "attic": {
+      "z": 5.6,
+      "ceiling_height": 2.35
+    }
+  },
+  "rooms": [
+    {
+      "id": "b_main",
+      "level": "basement",
+      "name": "Main Basement",
+      "rect": [
+        0.5,
+        0.5,
+        8.4,
+        5.0
+      ],
+      "purpose": "open utility/storage circulation; aligned to basement stair wall band"
+    },
+    {
+      "id": "b_storage",
+      "level": "basement",
+      "name": "Storage",
+      "rect": [
+        0.5,
+        5.3,
+        4.8,
+        9.5
+      ],
+      "purpose": "storage and later voice/event space"
+    },
+    {
+      "id": "b_utility",
+      "level": "basement",
+      "name": "Utility / Furnace",
+      "rect": [
+        5.1,
+        5.3,
+        8.4,
+        9.5
+      ],
+      "purpose": "furnace, breaker, electrical systems"
+    },
+    {
+      "id": "b_stair",
+      "level": "basement",
+      "name": "Basement Stair Landing",
+      "rect": [
+        8.7,
+        0.5,
+        11.5,
+        5.0
+      ],
+      "purpose": "vertical circulation"
+    },
+    {
+      "id": "b_service",
+      "level": "basement",
+      "name": "Service Recess",
+      "rect": [
+        8.7,
+        5.3,
+        11.5,
+        9.5
+      ],
+      "purpose": "communications and later clue space"
+    },
+    {
+      "id": "f1_living",
+      "level": "floor1",
+      "name": "Living Room",
+      "rect": [
+        0.5,
+        0.5,
+        6.2,
+        4.7
+      ],
+      "purpose": "main communal room"
+    },
+    {
+      "id": "f1_entry",
+      "level": "floor1",
+      "name": "Entry Hall",
+      "rect": [
+        6.5,
+        0.5,
+        8.4,
+        2.8
+      ],
+      "purpose": "sealed front entry and circulation"
+    },
+    {
+      "id": "f1_stair",
+      "level": "floor1",
+      "name": "Stair Hall",
+      "rect": [
+        8.7,
+        0.5,
+        11.5,
+        5.0
+      ],
+      "purpose": "stairs to floor2 and basement access"
+    },
+    {
+      "id": "f1_kitchen",
+      "level": "floor1",
+      "name": "Kitchen",
+      "rect": [
+        0.5,
+        5.0,
+        5.7,
+        9.5
+      ],
+      "purpose": "kitchen"
+    },
+    {
+      "id": "f1_dining",
+      "level": "floor1",
+      "name": "Dining / Passage",
+      "rect": [
+        6.0,
+        5.3,
+        8.4,
+        9.5
+      ],
+      "purpose": "dining and rear circulation"
+    },
+    {
+      "id": "f1_rearhall",
+      "level": "floor1",
+      "name": "Rear Hall",
+      "rect": [
+        8.7,
+        5.3,
+        11.5,
+        9.5
+      ],
+      "purpose": "connect kitchen/dining/stair and sealed rear wall"
+    },
+    {
+      "id": "f2_master",
+      "level": "floor2",
+      "name": "Master Bedroom",
+      "rect": [
+        0.5,
+        0.5,
+        5.8,
+        4.6
+      ],
+      "purpose": "player start; chair and analog TV later"
+    },
+    {
+      "id": "f2_hall",
+      "level": "floor2",
+      "name": "Upper Hall",
+      "rect": [
+        6.1,
+        0.5,
+        8.4,
+        9.5
+      ],
+      "purpose": "primary floor2 circulation"
+    },
+    {
+      "id": "f2_stair",
+      "level": "floor2",
+      "name": "Stair Landing",
+      "rect": [
+        8.7,
+        3.2,
+        11.5,
+        5.2
+      ],
+      "purpose": "vertical circulation"
+    },
+    {
+      "id": "f2_bath",
+      "level": "floor2",
+      "name": "Bathroom",
+      "rect": [
+        8.7,
+        0.5,
+        11.5,
+        2.9
+      ],
+      "purpose": "only bathroom"
+    },
+    {
+      "id": "f2_bed2",
+      "level": "floor2",
+      "name": "Bedroom 2",
+      "rect": [
+        0.5,
+        4.9,
+        5.8,
+        7.0
+      ],
+      "purpose": "secondary bedroom; west-middle room off upper hall"
+    },
+    {
+      "id": "f2_bed3",
+      "level": "floor2",
+      "name": "Bedroom 3",
+      "rect": [
+        0.5,
+        7.3,
+        5.8,
+        9.5
+      ],
+      "purpose": "secondary bedroom; west-rear room off upper hall"
+    },
+    {
+      "id": "f2_bed4",
+      "level": "floor2",
+      "name": "Bedroom 4",
+      "rect": [
+        8.7,
+        5.5,
+        11.5,
+        9.5
+      ],
+      "purpose": "secondary bedroom"
+    },
+    {
+      "id": "a_main",
+      "level": "attic",
+      "name": "Main Attic",
+      "rect": [
+        0.5,
+        0.5,
+        8.4,
+        9.5
+      ],
+      "purpose": "open attic storage and later horror space"
+    },
+    {
+      "id": "a_stair",
+      "level": "attic",
+      "name": "Attic Landing",
+      "rect": [
+        8.7,
+        3.2,
+        11.5,
+        5.2
+      ],
+      "purpose": "vertical circulation"
+    },
+    {
+      "id": "a_recess_front",
+      "level": "attic",
+      "name": "Front Eave Recess",
+      "rect": [
+        8.7,
+        0.5,
+        11.5,
+        2.9
+      ],
+      "purpose": "low storage/eave"
+    },
+    {
+      "id": "a_recess_rear",
+      "level": "attic",
+      "name": "Rear Eave Recess",
+      "rect": [
+        8.7,
+        5.5,
+        11.5,
+        9.5
+      ],
+      "purpose": "low storage/eave"
+    }
+  ],
+  "connections": [
+    [
+      "b_main",
+      "b_storage"
+    ],
+    [
+      "b_main",
+      "b_stair"
+    ],
+    [
+      "b_storage",
+      "b_utility"
+    ],
+    [
+      "b_utility",
+      "b_service"
+    ],
+    [
+      "b_stair",
+      "b_service"
+    ],
+    [
+      "f1_living",
+      "f1_entry"
+    ],
+    [
+      "f1_entry",
+      "f1_stair"
+    ],
+    [
+      "f1_living",
+      "f1_kitchen"
+    ],
+    [
+      "f1_kitchen",
+      "f1_dining"
+    ],
+    [
+      "f1_dining",
+      "f1_rearhall"
+    ],
+    [
+      "f1_rearhall",
+      "f1_stair"
+    ],
+    [
+      "f2_master",
+      "f2_hall"
+    ],
+    [
+      "f2_hall",
+      "f2_bath"
+    ],
+    [
+      "f2_hall",
+      "f2_stair"
+    ],
+    [
+      "f2_hall",
+      "f2_bed2"
+    ],
+    [
+      "f2_hall",
+      "f2_bed3"
+    ],
+    [
+      "f2_hall",
+      "f2_bed4"
+    ],
+    [
+      "a_main",
+      "a_stair"
+    ],
+    [
+      "a_stair",
+      "a_recess_front"
+    ],
+    [
+      "a_stair",
+      "a_recess_rear"
+    ],
+    [
+      "b_stair",
+      "f1_stair"
+    ],
+    [
+      "f1_stair",
+      "f2_stair"
+    ],
+    [
+      "f2_stair",
+      "a_stair"
+    ]
+  ],
+  "vertical_shafts": [
+    {
+      "id": "main_stair_stack",
+      "xy_rect": [
+        8.7,
+        3.2,
+        11.5,
+        5.0
+      ],
+      "levels": [
+        "basement",
+        "floor1",
+        "floor2",
+        "attic"
+      ],
+      "rule": "must remain vertically aligned"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "player_start",
+      "level": "floor2",
+      "room": "f2_master",
+      "pos": [
+        1.8,
+        1.9,
+        2.8
+      ],
+      "heading_deg": 80.0
+    },
+    {
+      "id": "master_tv",
+      "level": "floor2",
+      "room": "f2_master",
+      "pos": [
+        5.32,
+        1.35,
+        2.8
+      ],
+      "support": "floor",
+      "future_role": "analog_tv"
+    },
+    {
+      "id": "master_chair",
+      "level": "floor2",
+      "room": "f2_master",
+      "pos": [
+        3.45,
+        1.35,
+        2.8
+      ],
+      "support": "floor",
+      "future_role": "sit_point"
+    },
+    {
+      "id": "basement_breaker",
+      "level": "basement",
+      "room": "b_utility",
+      "pos": [
+        7.9,
+        8.8,
+        -2.8
+      ],
+      "support": "wall",
+      "future_role": "breaker"
+    },
+    {
+      "id": "attic_signal",
+      "level": "attic",
+      "room": "a_main",
+      "pos": [
+        2.0,
+        8.5,
+        5.6
+      ],
+      "support": "floor",
+      "future_role": "antenna_signal"
+    }
+  ],
+  "sealed_exterior": true,
+  "windows_are_non_traversable": true,
+  "rendering_rule": "all world objects use world coordinates and floor/support anchors; screen coordinates are UI only",
+  "portals": [
+    {
+      "id": "p_master_hall",
+      "level": "floor2",
+      "rooms": [
+        "f2_master",
+        "f2_hall"
+      ],
+      "center": [
+        5.95,
+        2.55,
+        2.8
+      ],
+      "width": 0.9,
+      "height": 2.05,
+      "axis": "x",
+      "kind": "doorway"
+    },
+    {
+      "id": "p_bath_hall",
+      "level": "floor2",
+      "rooms": [
+        "f2_bath",
+        "f2_hall"
+      ],
+      "center": [
+        8.55,
+        1.7,
+        2.8
+      ],
+      "width": 0.8,
+      "height": 2.05,
+      "axis": "x",
+      "kind": "doorway"
+    },
+    {
+      "id": "p_stair_hall",
+      "level": "floor2",
+      "rooms": [
+        "f2_stair",
+        "f2_hall"
+      ],
+      "center": [
+        8.55,
+        4.2,
+        2.8
+      ],
+      "width": 1.0,
+      "height": 2.15,
+      "axis": "x",
+      "kind": "open_passage"
+    },
+    {
+      "id": "p_bed2_hall",
+      "level": "floor2",
+      "rooms": [
+        "f2_bed2",
+        "f2_hall"
+      ],
+      "center": [
+        5.95,
+        5.95,
+        2.8
+      ],
+      "width": 0.85,
+      "height": 2.05,
+      "axis": "x",
+      "kind": "doorway"
+    },
+    {
+      "id": "p_bed3_hall",
+      "level": "floor2",
+      "rooms": [
+        "f2_bed3",
+        "f2_hall"
+      ],
+      "center": [
+        5.95,
+        8.4,
+        2.8
+      ],
+      "width": 0.85,
+      "height": 2.05,
+      "axis": "x",
+      "kind": "doorway"
+    },
+    {
+      "id": "p_bed4_hall",
+      "level": "floor2",
+      "rooms": [
+        "f2_bed4",
+        "f2_hall"
+      ],
+      "center": [
+        8.55,
+        7.5,
+        2.8
+      ],
+      "width": 0.85,
+      "height": 2.05,
+      "axis": "x",
+      "kind": "doorway"
+    },
+    {
+      "id": "p_f1_living_entry",
+      "level": "floor1",
+      "rooms": [
+        "f1_living",
+        "f1_entry"
+      ],
+      "center": [
+        6.35,
+        1.65,
+        1.05
+      ],
+      "width": 0.92,
+      "height": 2.1,
+      "axis": "x",
+      "type": "doorway"
+    },
+    {
+      "id": "p_f1_entry_stair",
+      "level": "floor1",
+      "rooms": [
+        "f1_entry",
+        "f1_stair"
+      ],
+      "center": [
+        8.55,
+        1.65,
+        1.05
+      ],
+      "width": 0.92,
+      "height": 2.1,
+      "axis": "x",
+      "type": "doorway"
+    },
+    {
+      "id": "p_f1_living_kitchen",
+      "level": "floor1",
+      "rooms": [
+        "f1_living",
+        "f1_kitchen"
+      ],
+      "center": [
+        3.1,
+        4.85,
+        1.05
+      ],
+      "width": 1.0,
+      "height": 2.1,
+      "axis": "y",
+      "type": "opening"
+    },
+    {
+      "id": "p_f1_kitchen_dining",
+      "level": "floor1",
+      "rooms": [
+        "f1_kitchen",
+        "f1_dining"
+      ],
+      "center": [
+        5.85,
+        7.4,
+        1.05
+      ],
+      "width": 1.0,
+      "height": 2.1,
+      "axis": "x",
+      "type": "opening"
+    },
+    {
+      "id": "p_f1_dining_rearhall",
+      "level": "floor1",
+      "rooms": [
+        "f1_dining",
+        "f1_rearhall"
+      ],
+      "center": [
+        8.55,
+        7.4,
+        1.05
+      ],
+      "width": 0.92,
+      "height": 2.1,
+      "axis": "x",
+      "type": "doorway"
+    },
+    {
+      "id": "p_f1_rearhall_stair",
+      "level": "floor1",
+      "rooms": [
+        "f1_rearhall",
+        "f1_stair"
+      ],
+      "center": [
+        10.1,
+        5.15,
+        1.05
+      ],
+      "width": 1.0,
+      "height": 2.1,
+      "axis": "y",
+      "type": "opening"
+    },
+    {
+      "id": "p_b_main_storage",
+      "level": "basement",
+      "rooms": [
+        "b_main",
+        "b_storage"
+      ],
+      "center": [
+        2.65,
+        5.15,
+        -1.775
+      ],
+      "width": 1.0,
+      "height": 2.05,
+      "axis": "y",
+      "type": "opening"
+    },
+    {
+      "id": "p_b_main_stair",
+      "level": "basement",
+      "rooms": [
+        "b_main",
+        "b_stair"
+      ],
+      "center": [
+        8.55,
+        2.75,
+        -1.775
+      ],
+      "width": 1.0,
+      "height": 2.05,
+      "axis": "x",
+      "type": "opening"
+    },
+    {
+      "id": "p_b_storage_utility",
+      "level": "basement",
+      "rooms": [
+        "b_storage",
+        "b_utility"
+      ],
+      "center": [
+        4.95,
+        7.4,
+        -1.775
+      ],
+      "width": 0.9,
+      "height": 2.05,
+      "axis": "x",
+      "type": "doorway"
+    },
+    {
+      "id": "p_b_utility_service",
+      "level": "basement",
+      "rooms": [
+        "b_utility",
+        "b_service"
+      ],
+      "center": [
+        8.55,
+        7.4,
+        -1.775
+      ],
+      "width": 0.9,
+      "height": 2.05,
+      "axis": "x",
+      "type": "doorway"
+    },
+    {
+      "id": "p_b_stair_service",
+      "level": "basement",
+      "rooms": [
+        "b_stair",
+        "b_service"
+      ],
+      "center": [
+        10.1,
+        5.15,
+        -1.775
+      ],
+      "width": 1.0,
+      "height": 2.05,
+      "axis": "y",
+      "type": "opening"
+    },
+    {
+      "id": "p_a_main_stair",
+      "level": "attic",
+      "rooms": [
+        "a_main",
+        "a_stair"
+      ],
+      "center": [
+        8.55,
+        4.2,
+        6.625
+      ],
+      "width": 1.0,
+      "height": 2.0,
+      "axis": "x",
+      "type": "opening"
+    },
+    {
+      "id": "p_a_stair_front",
+      "level": "attic",
+      "rooms": [
+        "a_stair",
+        "a_recess_front"
+      ],
+      "center": [
+        10.1,
+        3.05,
+        6.625
+      ],
+      "width": 0.9,
+      "height": 1.9,
+      "axis": "y",
+      "type": "low_opening"
+    },
+    {
+      "id": "p_a_stair_rear",
+      "level": "attic",
+      "rooms": [
+        "a_stair",
+        "a_recess_rear"
+      ],
+      "center": [
+        10.1,
+        5.35,
+        6.625
+      ],
+      "width": 0.9,
+      "height": 1.9,
+      "axis": "y",
+      "type": "low_opening"
+    }
+  ],
+  "vertical_transitions": [
+    {
+      "id": "stair_basement_floor1",
+      "kind": "straight_stair",
+      "lower_room": "b_stair",
+      "upper_room": "f1_stair",
+      "lower_level": "basement",
+      "upper_level": "floor1",
+      "lower_z": -2.8,
+      "upper_z": 0.0,
+      "center_x": 10.1,
+      "start_y": 0.7,
+      "end_y": 4.51,
+      "width": 0.92,
+      "riser_count": 16,
+      "riser_height": 0.175,
+      "tread_depth": 0.254,
+      "headroom": 2.1,
+      "direction": "north_up",
+      "standard": "residential"
+    },
+    {
+      "id": "stair_floor1_floor2",
+      "kind": "straight_stair",
+      "lower_room": "f1_stair",
+      "upper_room": "f2_stair",
+      "lower_level": "floor1",
+      "upper_level": "floor2",
+      "lower_z": 0.0,
+      "upper_z": 2.8,
+      "center_x": 10.1,
+      "start_y": 0.7,
+      "end_y": 4.51,
+      "width": 0.92,
+      "riser_count": 16,
+      "riser_height": 0.175,
+      "tread_depth": 0.254,
+      "headroom": 2.1,
+      "direction": "north_up",
+      "standard": "residential"
+    },
+    {
+      "id": "stair_floor2_attic",
+      "kind": "steep_attic_stair",
+      "lower_room": "f2_stair",
+      "upper_room": "a_stair",
+      "lower_level": "floor2",
+      "upper_level": "attic",
+      "lower_z": 2.8,
+      "upper_z": 5.6,
+      "center_x": 10.1,
+      "start_y": 3.35,
+      "end_y": 4.97,
+      "width": 0.75,
+      "riser_count": 12,
+      "riser_height": 0.2333333333333333,
+      "tread_depth": 0.14727272727272728,
+      "headroom": 2.03,
+      "direction": "north_up",
+      "standard": "nonhabitable_attic_exception",
+      "note": "Steeper fixed attic access; attic remains storage/nonhabitable space."
+    }
+  ],
+  "whole_house_navigation": {
+    "spawn_room": "f2_master",
+    "vertical_stack_id": "main_stair_stack",
+    "acceptance": "every room reachable from spawn through a physical portal or explicit vertical transition"
+  }
+}

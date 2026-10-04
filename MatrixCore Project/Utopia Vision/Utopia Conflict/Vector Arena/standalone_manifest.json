@@ -1,0 +1,201 @@
+{
+  "schema": "glitched_matrix_standalone_game_manifest_v1",
+  "id": "vector_arena",
+  "title": "Vector Arena",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "default_resolution": [
+    1920,
+    1080
+  ],
+  "preferred_window": "borderless",
+  "game_status": "active_standalone_and_native_dimension",
+  "independence_status": "standalone_preserved_holoverse_native_link_optional",
+  "depends_on_holoverse": false,
+  "primary_verb": "shoot",
+  "core_loop": "survive tactical wave sets -> defeat Guardian checkpoint -> choose mutation -> arena changes family/color and expands -> continue",
+  "controls": {
+    "move": "WASD",
+    "run": "Shift",
+    "fire": "Left Mouse",
+    "repulsor": "Right Mouse",
+    "vent_heat": "R",
+    "help": "H",
+    "standalone_exit": "ESC",
+    "holoverse_return": "TAB",
+    "holoverse_pause": "ESC",
+    "objective": "Destroy breach cores with LMB/RMB",
+    "between_set_mutation": "1 / 2 / 3 after Guardian checkpoints"
+  },
+  "score_rules": {
+    "score_source": "score_delta from kills, wave progress, and breach cores",
+    "complete_when": "wave >= 4 or kills >= 25",
+    "profile_points": "session_score // 10 + completion/objective/combat bonuses",
+    "save_scope": "local mission/game result packet; Prototype Lab validates and saves shared points when launched from the Lab",
+    "prototype_lab_points": "alias of profile_points_awarded for Lab-validated quest rewards"
+  },
+  "game_contract": {
+    "schema": "glitched_matrix_standalone_game_result_v1",
+    "module": "standalone_game_contract.py",
+    "commands": [
+      "python -B main.py --game-contract-test",
+      "python -B main.py --game-result-test",
+      "python -B main.py --complete-game-test",
+      "python -B main.py --profile-test"
+    ],
+    "result_files": [
+      "verification/reports/game_result.json",
+      "verification/reports/game_result.md",
+      "verification/reports/profile_preview.json"
+    ],
+    "sample_result": {
+      "score_delta": 4200,
+      "completed": true,
+      "kills": 25,
+      "wave": 4,
+      "breaches_sealed": 3,
+      "signal": "VECTOR_ARENA_PHASED_WAVE_COMBAT_TRACE"
+    },
+    "save_ownership_rule": "Standalone game owns its own session/profile output; no HoloVerse or Prototype Lab dependency."
+  },
+  "origin_note": "Originally prototyped as a HoloVerse dimension, then split into a standalone game. This pass preserves standalone use while restoring optional same-window native HoloVerse integration.",
+  "build": "2026-09-06-strategic-arena-architecture-pass07.1-holoverse-link-contract",
+  "notes": "Pass07.1 preserves all Pass07 gameplay and hardens the optional HoloVerse responder identity/host contract plus native pause/help ownership for same-window linking.",
+  "audio": {
+    "type": "local_music_ambience_sfx_and_spatial",
+    "config": "vector_arena_config.json",
+    "profile": "audio_profile.json",
+    "assets": "assets/audio",
+    "wav_count": 46,
+    "sfx_event_files": 39,
+    "music_tracks": 3,
+    "ambience_loops": 2,
+    "transition_cues": 2,
+    "replaceable": true,
+    "optional_for_smoke_tests": true,
+    "new_pass03_cues": [
+      "gate_charge.wav",
+      "flank_alarm.wav",
+      "guardian_charge.wav",
+      "guardian_slam.wav",
+      "hazard_warning.wav",
+      "hazard_discharge.wav"
+    ],
+    "new_pass04_cues": [
+      "upgrade_offer.wav",
+      "upgrade_select.wav",
+      "mutation_shift.wav"
+    ],
+    "new_pass05_cues": [
+      "enemy_evolution.wav",
+      "guardian_phase2.wav",
+      "guardian_phase3.wav",
+      "doctrine_shift.wav"
+    ]
+  },
+  "source_build": "2026-06-26-standalone-game-independence-pass02",
+  "prototype_lab_launchable": true,
+  "runtime_wrapper_required": false,
+  "launch_mode": "prototype_lab_jump_in_or_direct",
+  "return_to_lab": true,
+  "points_export": true,
+  "folder_local_index": "mission_index.json",
+  "holoverse_native": {
+    "responder": "holoverse/responder.py",
+    "manifest": "holoverse/holoverse_dimension.json",
+    "native_adapter": "standalone_native_adapter.py",
+    "same_window": true,
+    "creates_showbase": false,
+    "return_action": "TAB",
+    "pause_action": "ESC",
+    "result_method": "get_result",
+    "id": "vector_arena",
+    "host_contract": "holoverse_dimension_v1",
+    "return_target": "gleebs_dimension_archive",
+    "requires_mouse_capture": true,
+    "help_action": "H"
+  },
+  "wave_director": {
+    "set_size": 5,
+    "enemy_pool": 32,
+    "max_concurrent": 22,
+    "wave_types": [
+      "ASSAULT",
+      "HORDE",
+      "BREACH",
+      "ELITE",
+      "OVERLOAD",
+      "BLACKOUT",
+      "GUARDIAN"
+    ],
+    "guardian_checkpoint": "every 5th wave",
+    "arena_reconstruction": "between five-wave sets",
+    "spawn_rule": "pooled and paced with per-enemy gate directives and visible gate charge telegraphs; total threats may exceed concurrent active cap",
+    "tactical_roles": [
+      "pressure",
+      "flank_left",
+      "flank_right",
+      "anchor",
+      "rear_left",
+      "rear_right",
+      "boss_support"
+    ],
+    "rear_spawn_rule": "not used in opening five-wave set; later rear pressure is explicitly telegraphed",
+    "guardian_specials": [
+      "telegraphed radial pulse",
+      "telegraphed rush"
+    ],
+    "wave_hazards": {
+      "OVERLOAD": "ARC_SURGE",
+      "BLACKOUT": "SCAN_PULSE",
+      "GUARDIAN": "REDLINE_FIELD"
+    },
+    "between_set_progression": "after each Guardian checkpoint choose one of three equal-weight mutation paths with keys 1/2/3; combat pauses with no timer",
+    "arena_mutations": [
+      "GATE_OVERCLOCK",
+      "PHASE_FRACTURE",
+      "REDLINE_GRID",
+      "BREACH_RESONANCE"
+    ],
+    "long_run_rule": "population growth caps while durability/timing/mutations continue scaling; hazards cap at 38 raw damage",
+    "enemy_evolution": "staged by set and class, capped at level 4 with bounded health/speed/damage/cadence multipliers",
+    "encounter_doctrines": [
+      "PINCER_NET",
+      "SWARM_ACCELERATION",
+      "CORE_GUARD",
+      "HEAVY_SYNC",
+      "THERMAL_PURSUIT",
+      "PHASE_HUNT",
+      "ASCENDANT_PROTOCOL"
+    ],
+    "guardian_phases": [
+      "SENTINEL",
+      "OVERDRIVE",
+      "REDLINE"
+    ],
+    "guardian_damage_caps": {
+      "pulse": 36,
+      "rush": 40
+    },
+    "guardian_telegraph_floor_seconds": 0.78,
+    "arena_families": [
+      "PRISM_FOUNDRY",
+      "NEON_CANYON",
+      "FROST_CIRCUIT",
+      "DATA_STORM",
+      "REDLINE_COLOSSUS"
+    ],
+    "arena_radius_progression": "118 -> 140 -> 162 -> 184 -> 206 -> 228 units, then bounded at 228",
+    "arena_area_growth": "largest arena is about 3.73x the floor area of set 1",
+    "large_arena_rule": "spawn gates, family architecture, hazards, breach objectives, player/enemy bounds, and hitscan range follow the current arena profile",
+    "arena_architectures": {
+      "PRISM_FOUNDRY": "FOUNDRY_PILLARS",
+      "NEON_CANYON": "CANYON_WALLS",
+      "FROST_CIRCUIT": "CRYSTAL_BARRIERS",
+      "DATA_STORM": "BROKEN_DATA_WALLS",
+      "REDLINE_COLOSSUS": "COLOSSUS_MONOLITHS"
+    },
+    "blocker_authority": "each visible opaque arena architecture piece and its gameplay blocker are created from the same architecture record; no independent hidden blocker layout",
+    "navigation_validation": "all gates, breach objectives and hazard points must remain reachable from center with player clearance; all visible architecture gaps remain physically open"
+  }
+}

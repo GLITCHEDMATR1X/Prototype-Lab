@@ -1,0 +1,11 @@
+{
+  "version": "pass100",
+  "scenarios": [
+    {"name": "slide_loop", "goal": "verify slide-control screenshot path and player-facing help state"},
+    {"name": "terrain_grounding", "goal": "sample Enceladus surface height and slope at core gameplay zones"},
+    {"name": "options_fit", "goal": "verify options/help screenshot path and UI fit evidence"},
+    {"name": "robot_loop", "goal": "verify generated assets and robot/base screenshot evidence path"},
+    {"name": "base_placement", "goal": "verify modules and props use terrain placement authority"},
+    {"name": "magnetic_collection", "goal": "reserve contract for magnetic resource collection TestRun"}
+  ]
+}

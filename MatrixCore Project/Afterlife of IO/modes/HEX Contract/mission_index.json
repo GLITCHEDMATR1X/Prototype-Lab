@@ -1,0 +1,54 @@
+{
+  "project_id": "hex_contract",
+  "name": "HEX CONTRACT",
+  "release": "Pass 22 Banked Sidekick Squads",
+  "engine": "pygame-ce",
+  "entry_point": "main.py",
+  "source_only": true,
+  "runtime_wrapper_required": false,
+  "virtual_resolution": [
+    1920,
+    1080
+  ],
+  "verified_resolution": [
+    1280,
+    720
+  ],
+  "result_filename": "hex_contract_game_result.json",
+  "profile_version": 8,
+  "controls": {
+    "select": "Left Mouse",
+    "back": "Right Mouse / Escape",
+    "confirm": "Enter",
+    "order": "O",
+    "equipment": "E",
+    "medbay": "R",
+    "analysis": "Tab",
+    "dossier": "I",
+    "pause": "Space",
+    "settings": "S",
+    "guide": "H",
+    "fullscreen": "F11",
+    "sidekick_team": "B"
+  },
+  "world_contract": {
+    "playfield": [
+      28,
+      184,
+      1864,
+      806
+    ],
+    "minimum_obstacle_gap": 120,
+    "max_actor_radius": 36,
+    "destructible_cover": true,
+    "prefab_spawners": true
+  },
+  "party_contract": {
+    "max_team_size": 3,
+    "sidekick_perk_cost": 1,
+    "sidekick_requires_no_fallen_heroes": true,
+    "initial_extra_enemies_per_sidekick": 2,
+    "complication_extra_enemies_per_sidekick": 1,
+    "spawn_overlap": false
+  }
+}

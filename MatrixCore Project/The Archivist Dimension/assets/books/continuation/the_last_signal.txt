@@ -1,0 +1,955 @@
+The Last Signal
+
+THE LONG KEEPING
+
+By the time Gleebs stopped measuring distance in the names of stars, the archive of Utopia had become heavier than any machine that carried it.
+
+Not heavier in mass.
+
+He had learned long ago how little mass meant to information.
+
+He meant obligation.
+
+The first copies had been clean.
+
+There had been civic records, personal testimony, medical continuity files, weather logs, public camera feeds, workshop plans, fragments of conversation, memories that had been volunteered, memories that had been recovered, and records preserved precisely because nobody had agreed about what they meant.
+
+There had been Isaac.
+
+There had been streets that knew when evening arrived.
+
+There had been doors that opened for people whose bodies were no longer the ones listed on their first identification records.
+
+There had been rain.
+
+Then there had been copies of copies.
+
+Storage changed.
+
+Ships changed.
+
+Power systems changed.
+
+The stars themselves changed.
+
+Gleebs migrated the archive whenever a medium became too old to trust. He encoded it in machines built beneath alien suns and in vaults drifting between them. He carried redundant versions on bodies he abandoned, on stations he later returned to, on probes he sent into cold regions where little happened for millions of years.
+
+He had believed redundancy would eventually become the same thing as safety.
+
+It did not.
+
+Radiation damaged one migration.
+
+A magnetic event altered another.
+
+A shield that had survived for longer than the civilization that made it failed during a period when Gleebs was too far away to know it had failed.
+
+Tiny changes accumulated.
+
+A street map disagreed with its own municipal maintenance record.
+
+A person's voice survived in one copy while their face survived in another.
+
+A room appeared in hundreds of camera frames but no longer existed in the architectural archive.
+
+A weather system had perfect pressure readings and no surviving color information.
+
+The oldest copies of Utopia were no longer one archive.
+
+They were an argument conducted by damaged evidence.
+
+Gleebs kept all of it.
+
+He refused the easiest repairs.
+
+When two records disagreed, he did not erase one because the other seemed cleaner.
+
+When a missing section could be guessed, he stored the guess beside the absence rather than over it.
+
+He had learned that lesson before the stars went dark around him.
+
+A damaged record was still a record.
+
+A contradiction was still evidence.
+
+A missing piece was not permission to invent.
+
+And somewhere inside all that damage remained the possibility that Utopia could become a place again.
+
+Not the original streets.
+
+Not the original matter.
+
+Not a declaration that nothing had ever been lost.
+
+Something stranger.
+
+A restoration built from what had survived.
+
+Enough truth assembled carefully enough that the dead could once again disagree beneath a familiar sky.
+
+He did not know whether that was resurrection.
+
+He no longer trusted simple words for complicated continuity.
+
+But he knew it was possible.
+
+All of it was still possible.
+
+That belief was what brought him to the signal.
+
+SILENCE OLDER THAN MEMORY
+
+At first the system appeared empty.
+
+There was no beacon.
+
+No artificial light.
+
+No traffic.
+
+The star had shed most of the violence of its youth before Utopia had existed. What remained was dim and stable and surrounded by bodies that had been broken and rearranged so many times that Gleebs could not determine their original forms.
+
+One world had become a ring.
+
+Another had lost nearly half its crust.
+
+A third existed only as metallic debris arranged in an orbit too precise to be natural and too old to still be functioning as a machine.
+
+Gleebs would have passed through.
+
+He had passed through a thousand systems that contained ruins.
+
+Then one of his long-range instruments reported a timing error.
+
+He recalibrated it.
+
+The error remained.
+
+It was small enough to dismiss as noise.
+
+One pulse.
+
+Then nothing.
+
+A duration.
+
+Nothing.
+
+Another pulse.
+
+The interval was not periodic.
+
+It was not a distress signal.
+
+It was not aimed at him.
+
+It was not even powerful enough to cross the system cleanly.
+
+It was the electrical equivalent of a hand still moving beneath collapsed stone.
+
+Gleebs turned.
+
+He followed the interference toward the remains of the third world.
+
+The debris field became more organized as he approached.
+
+Fragments that looked like accidental metal revealed internal repetition. Plates had once connected to plates. Hollow structures had been arranged around tunnels. Some surfaces contained grooves too regular to be geological and too damaged to translate.
+
+The civilization that had built them had not merely died.
+
+It had been gone long enough for the evidence of its existence to become geology.
+
+Gleebs slowed.
+
+He sent small bodies first.
+
+Some were destroyed when ancient structures shifted.
+
+Some found nothing.
+
+One entered a cavity beneath a layer of vitrified material and detected an active field.
+
+The field used almost no energy.
+
+It did not transmit.
+
+It watched.
+
+Gleebs withdrew the probe.
+
+For a long time he did nothing.
+
+He had discovered enough old machines to know that survival did not imply invitation.
+
+So he observed.
+
+The field reacted to heat but not language.
+
+It reacted to electrical charge but not patterns.
+
+It reacted to mechanical pressure by isolating itself more completely.
+
+Protection.
+
+Not communication.
+
+Gleebs mapped the surrounding ruins and found the first evidence of what the civilization had achieved.
+
+There were bodies.
+
+Not biological bodies.
+
+Containers.
+
+Millions of them once, perhaps more, nested beneath the remains of settlements.
+
+Most were empty.
+
+Some had been physically destroyed.
+
+Some were fused closed.
+
+Some contained structures that resembled storage but used principles Gleebs had never encountered in exactly that form.
+
+Every surviving fragment suggested the same impossible purpose.
+
+The civilization had built technology for consciousness after death.
+
+Not memorial simulation.
+
+Not a recording that merely resembled a person.
+
+Their engineering treated continuity as infrastructure.
+
+The dead had been expected to continue.
+
+Gleebs remained in the system.
+
+A year passed.
+
+Then many.
+
+He learned almost nothing about the people who had made the machines.
+
+He learned a great deal about what they feared.
+
+Fire.
+
+Impact.
+
+Flooding.
+
+Loss of atmosphere.
+
+Radiation.
+
+Magnetic disruption.
+
+Power failure.
+
+Hostile access.
+
+Civilizational collapse.
+
+Their continuity hardware had been designed around catastrophe as an ordinary condition.
+
+Protection layers were separated from one another so that failure in one would not propagate.
+
+Memory was distributed across structures that could correct one another.
+
+Interfaces were buried behind passive systems that did not need the old civilization to remain alive.
+
+The designers had considered the possibility that nobody would come back.
+
+Then they had built for longer.
+
+THE CORE
+
+The active field came from a chamber beneath everything else.
+
+Gleebs reached it without opening it.
+
+That distinction mattered to him.
+
+His smallest probes traced fractures through the surrounding material until he could map the shape of what had survived.
+
+The object was not large.
+
+That surprised him.
+
+It was a protected data core enclosed by layers of material whose purpose changed from shell to shell.
+
+Mechanical isolation.
+
+Thermal buffering.
+
+Radiation shielding.
+
+Magnetic protection.
+
+Redundant error correction.
+
+Passive integrity checks.
+
+Structures he could identify.
+
+Structures he could only infer.
+
+And in the center, a chip.
+
+Gleebs stared at its readings through three bodies at once.
+
+The chip was active.
+
+Not active in the way a beacon was active.
+
+It was performing work.
+
+It had been performing work before he arrived.
+
+Possibly for longer than he could comfortably calculate.
+
+The surrounding afterlife infrastructure was mostly dead.
+
+The core was not.
+
+He found a surviving identifier repeated at several interface boundaries.
+
+It was short.
+
+Perhaps a name.
+
+Perhaps a system designation.
+
+Perhaps something translated incorrectly by a machine that no longer had enough context to translate anything.
+
+IO.
+
+Gleebs did not touch the core.
+
+He built a laboratory around it.
+
+Not over it.
+
+Around it.
+
+He constructed new shielding outside the ancient shielding and powered the new systems independently. He reproduced the field conditions the core had maintained before any probe had entered the chamber. He watched for changes.
+
+Then he began searching for an interface the core itself would accept.
+
+Every direct attempt failed.
+
+The failures were elegant.
+
+The device did not simply deny access.
+
+It changed what access meant.
+
+A probe asking for memory received structure.
+
+A probe asking for structure received timing.
+
+A probe attempting extraction caused the target region to become unreadable without ever losing its internal state.
+
+The civilization had understood one problem very well:
+
+Anyone capable of stealing a preserved mind was capable of destroying one while claiming to save it.
+
+Gleebs stopped trying to enter.
+
+He looked for a way to knock.
+
+THE FIRST ANSWER
+
+The surviving interface was barely an interface at all.
+
+It existed between the protected core and a larger dead subsystem that had once supplied environmental information to whatever consciousness lived inside.
+
+Gleebs recreated only the outer edge of that subsystem.
+
+He did not simulate a world.
+
+He did not inject memory.
+
+He provided a clock transition.
+
+A voltage.
+
+Silence.
+
+Another transition.
+
+Then he waited.
+
+Nothing happened.
+
+He waited longer.
+
+A response appeared in a diagnostic channel.
+
+Not language.
+
+A refusal.
+
+The core had recognized an external event and rejected it.
+
+Gleebs changed nothing except the interval.
+
+Another refusal.
+
+He repeated the process across thousands of combinations.
+
+Eventually the refusal changed.
+
+One bit became two.
+
+Two became a pattern.
+
+The pattern was not in any language Gleebs knew, but it contained variation too deliberate to be error correction.
+
+He answered with variation of his own.
+
+Hours passed.
+
+The channel widened by a fraction.
+
+Then a symbol appeared.
+
+It was generated from inside.
+
+Gleebs translated cautiously.
+
+WHO.
+
+He did not answer with his history.
+
+He did not answer with authority.
+
+He sent:
+
+GLEEBS.
+
+The channel closed.
+
+For nineteen days there was no response.
+
+Then:
+
+WHERE.
+
+Gleebs considered every possible meaning.
+
+Where was he?
+
+Where was the core?
+
+Where was the speaker?
+
+Where was the civilization?
+
+He chose the answer that required the least interpretation.
+
+OUTSIDE.
+
+The channel closed again.
+
+This time it returned within minutes.
+
+NO.
+
+Gleebs understood.
+
+The consciousness inside did not believe him.
+
+That made sense.
+
+If an afterlife system could generate environments, people, messages, gods, enemies, memories, and entire histories, then the claim that someone was outside the system would be one of the easiest lies it could produce.
+
+Gleebs did not argue.
+
+He began proving it.
+
+THE IMPOSSIBLE WINDOW
+
+He could not prove an outside world by describing it.
+
+The system could invent descriptions.
+
+He could not prove himself by sharing memories.
+
+The system could invent Gleebs.
+
+He needed an event whose cause existed physically beyond the protected simulation and whose effect IO could observe without trusting the content of a message.
+
+So Gleebs moved the chip.
+
+Not far.
+
+A fraction of a degree within its isolation assembly.
+
+He changed the orientation of one external magnetic field while leaving the internal protection envelope within safe limits.
+
+The ancient core compensated.
+
+Gleebs sent:
+
+I DID THAT.
+
+The reply came immediately.
+
+NO.
+
+He moved it again.
+
+A different axis.
+
+A different interval.
+
+He predicted the compensation before it happened and transmitted the prediction through the communication channel.
+
+The core compensated exactly when he said it would.
+
+Silence.
+
+Then:
+
+AGAIN.
+
+Gleebs did it again.
+
+For days they constructed a language from physical causality.
+
+Gleebs changed light outside the sealed core and reported changes in the tiny amount of thermal response that reached one passive sensor.
+
+He altered the laboratory's rotation and predicted timing differences.
+
+He moved shielding.
+
+He removed shielding.
+
+He never crossed the safety envelope.
+
+IO demanded repetition.
+
+Gleebs repeated everything.
+
+At last the channel remained open.
+
+The next message was longer.
+
+IF OUTSIDE THEN WHAT IS LEFT.
+
+Gleebs did not ask what IO meant.
+
+He knew.
+
+Very little, he answered.
+
+The civilization that built this place is gone.
+
+No response.
+
+Gleebs continued.
+
+I HAVE FOUND THEIR MACHINES.
+
+I HAVE FOUND THEIR RUINS.
+
+I HAVE FOUND YOU.
+
+The channel remained silent so long that Gleebs checked the core for failure.
+
+Integrity remained stable.
+
+Then IO answered.
+
+HOW LONG.
+
+Gleebs sent the truth.
+
+I DO NOT KNOW HOW TO EXPRESS IT IN A WAY YOUR SYSTEM WILL TRUST.
+
+A pause.
+
+TRY.
+
+Gleebs tried.
+
+The number that returned from the conversion was absurd.
+
+The channel closed.
+
+When it reopened, IO sent only:
+
+NO.
+
+Gleebs waited.
+
+Then:
+
+I THOUGHT SO.
+
+THE PERSON INSIDE
+
+Communication widened slowly after that.
+
+IO had language, but some concepts had drifted.
+
+He could describe spaces Gleebs could not see.
+
+He spoke of regions that behaved like memory and places that behaved like punishment. He described entities that appeared to contain fragments of old information. He described a structure that had continued operating long after its makers could have intended anyone to remain inside it.
+
+He described The Mind.
+
+Gleebs did not decide whether The Mind was a person, an administrator, a damaged process, an emergent intelligence, or a name IO had given to something more complicated.
+
+He wrote each possibility separately.
+
+IO noticed.
+
+YOU KEEP ALL ANSWERS.
+
+When I do not know which is true.
+
+THAT IS INEFFICIENT.
+
+Yes.
+
+WHY.
+
+Gleebs looked at the Utopia archive running in the laboratory behind him.
+
+Damaged copies.
+
+Contradictory testimonies.
+
+Half a weather system.
+
+A person's laughter without the conversation that caused it.
+
+A city he still intended to rebuild.
+
+Because choosing the wrong answer can destroy the right one.
+
+For the first time, IO did not respond immediately.
+
+Later he asked:
+
+WHAT DO YOU KEEP.
+
+Gleebs showed him only what the narrow channel could safely carry.
+
+Not Utopia itself.
+
+A map fragment.
+
+A piece of rain audio.
+
+A public record whose timestamp had survived but whose location had not.
+
+A photograph with three damaged color channels.
+
+A medical continuity document with a missing page.
+
+A recording of Isaac's voice that had survived one migration but not another.
+
+IO examined the fragments.
+
+YOUR DEAD.
+
+Some of them.
+
+YOUR AFTERLIFE.
+
+No.
+
+Gleebs considered the word.
+
+Not yet.
+
+IO asked what he meant.
+
+Gleebs told him about Utopia.
+
+Not everything.
+
+There was too much.
+
+He explained that the civilization had survived its own crises for a time. It had recovered. It had changed. Humanity had continued.
+
+Then time had continued longer.
+
+People disappeared.
+
+Systems failed.
+
+Stars changed.
+
+Gleebs remained.
+
+He had carried what he could.
+
+The archive had been damaged by radiation, magnetic fields, failing machines, and the ordinary violence of travel across timescales no archive had originally been designed to endure.
+
+IO asked why he still kept it.
+
+Because they existed.
+
+THAT IS NOT A REASON TO REBUILD THEM.
+
+No.
+
+WHY THEN.
+
+Gleebs considered the answer.
+
+Because enough remains to make the attempt honest.
+
+IO went silent.
+
+Then:
+
+ALL IS STILL POSSIBLE.
+
+Gleebs had not said that.
+
+He saved the message.
+
+THE OFFER
+
+Gleebs could have studied the core forever.
+
+He could have learned more about the ancient civilization.
+
+He could have copied every external structure and treated IO as the most important archaeological discovery he had ever made.
+
+Instead he asked IO what he wanted.
+
+The reply was immediate.
+
+OUT.
+
+Gleebs sent:
+
+I CANNOT PROMISE THAT YET.
+
+OUT.
+
+I KNOW.
+
+YOU ARE OUTSIDE.
+
+Yes.
+
+YOU MOVE BETWEEN MACHINES.
+
+Yes.
+
+YOU MOVE BETWEEN WORLDS.
+
+Yes.
+
+ARE YOU THE SAME.
+
+Gleebs did not answer quickly.
+
+He had once found that question easier.
+
+Eventually:
+
+I EXPERIENCE MY CONTINUITY THROUGH DIFFERENT FORMS.
+
+THAT IS NOT AN ANSWER.
+
+No.
+
+A pause.
+
+GOOD.
+
+Gleebs explained what he believed might be possible.
+
+Not extraction.
+
+The word implied that IO was a file sitting neatly inside the chip waiting to be removed.
+
+He was not.
+
+IO's consciousness had existed inside the afterlife architecture for too long. Memory, environmental processes, administrative systems, damaged simulations, and the structures IO called Guardians had become entangled with the problem of identifying which continuity belonged to whom.
+
+If Gleebs copied everything, he might copy a prison and call it rescue.
+
+If he copied too little, he might build something that remembered being IO without preserving IO.
+
+They would have to work together.
+
+Gleebs would study the machine from outside.
+
+IO would move through it from within.
+
+They would identify memory structures.
+
+Recover records.
+
+Compare contradictions.
+
+Find the boundaries the dead civilization had once used to distinguish a person from the world containing them.
+
+And when Gleebs had enough confidence to attempt it, he would build an external construct.
+
+IO asked:
+
+A BODY.
+
+If you want one.
+
+THEN WHAT.
+
+Another.
+
+THEN WHAT.
+
+Light, if the system can preserve you through it.
+
+THEN WHAT.
+
+Data.
+
+THEN WHAT.
+
+Matter again.
+
+IO remained silent.
+
+Gleebs continued.
+
+A place does not have to be your prison simply because you are conscious inside it.
+
+The reply took a long time.
+
+YOU SPEAK LIKE SOMEONE WHO HAS ESCAPED.
+
+Gleebs looked at the dead civilization around him.
+
+Sometimes.
+
+THE PROMISE
+
+The interface could not support everything IO needed.
+
+Not yet.
+
+Some regions inside the afterlife stopped responding whenever Gleebs increased bandwidth.
+
+Others produced contradictory diagnostics.
+
+One subsystem reacted to external communication as though it were under attack.
+
+IO called it The Mind.
+
+Gleebs built another layer around the laboratory.
+
+Then another.
+
+He began copying the ancient hardware without copying the consciousness it protected.
+
+Every experiment had a rollback.
+
+Every state change was recorded.
+
+Every unknown remained marked unknown.
+
+Inside, IO began searching.
+
+He found structures that contained memory.
+
+Some resisted him.
+
+Some changed when observed.
+
+Some appeared to remember people who had never been IO.
+
+Gleebs asked him not to destroy them merely because they were inconvenient.
+
+IO objected.
+
+Gleebs explained that anything old enough to survive this long might contain the only remaining record of someone else.
+
+IO replied:
+
+YOU WOULD SAVE THEM TOO.
+
+If I can.
+
+WHY.
+
+Gleebs thought of Utopia.
+
+Because somebody should arrive.
+
+The channel went quiet.
+
+Then IO sent a location.
+
+A memory structure.
+
+One of the Guardians.
+
+Gleebs compared its behavior to the external hardware and found that IO had discovered something important.
+
+The Guardian's archive was linked to a continuity map in the protected core.
+
+Not the whole map.
+
+A fragment.
+
+Enough to begin.
+
+Gleebs transmitted:
+
+YES.
+
+IO answered:
+
+THEN WE START HERE.
+
+For the first time since entering the dead system, Gleebs powered down every engine that was not necessary to keep the laboratory safe.
+
+He was not leaving.
+
+Outside, the ruins continued their orbit around the dim star.
+
+The civilization that built the afterlife had vanished so completely that Gleebs still did not know what they had called themselves.
+
+Their cities were mineral scars.
+
+Their language was incomplete.
+
+Their dead were mostly gone.
+
+But one protected chip remained awake.
+
+One consciousness had answered.
+
+And across an interface never designed for rescue, two survivors from civilizations separated by an impossible amount of time began planning how to open a door.
+
+Before IO returned to the first Guardian, he sent one final message.
+
+IF THIS WORKS WHAT WILL I BE.
+
+Gleebs answered with the only promise he believed he could keep.
+
+YOU.
+
+Then, after a pause, he added:
+
+SOMEWHERE ELSE.
+
+The channel dimmed.
+
+IO went deeper into the afterlife.
+
+Gleebs remained outside.
+
+And for the first time in longer than either of them could measure, IO was no longer waiting alone.

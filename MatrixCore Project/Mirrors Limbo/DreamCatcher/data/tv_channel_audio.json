@@ -1,0 +1,283 @@
+{
+  "schema_version": 2,
+  "scope": "TV channel audio identity authority (procedural placeholders until original recordings are recovered)",
+  "default_volume": 0.1,
+  "replacement_rule": "Each channel has a distinct seamless WAV identity loop. These are original procedural placeholders, not recovered historic music; replace one-for-one by channel id when original recordings are recovered.",
+  "channels": [
+    {
+      "index": 1,
+      "id": "security",
+      "label": "SECURITY",
+      "asset": "assets/audio/tv_channels/security.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 2,
+      "id": "news",
+      "label": "NEWS",
+      "asset": "assets/audio/tv_channels/news.wav",
+      "placeholder": true,
+      "volume": 0.11,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 3,
+      "id": "cartoon",
+      "label": "CARTOON",
+      "asset": "assets/audio/tv_channels/cartoon.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 4,
+      "id": "archive",
+      "label": "ARCHIVE",
+      "asset": "assets/audio/tv_channels/archive.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 5,
+      "id": "combat",
+      "label": "COMBAT",
+      "asset": "assets/audio/tv_channels/combat.wav",
+      "placeholder": true,
+      "volume": 0.11,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 6,
+      "id": "dance",
+      "label": "DANCE",
+      "asset": "assets/audio/tv_channels/dance.wav",
+      "placeholder": true,
+      "volume": 0.11,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 7,
+      "id": "dream",
+      "label": "DREAM",
+      "asset": "assets/audio/tv_channels/dream.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 8,
+      "id": "emergency",
+      "label": "EMERGENCY",
+      "asset": "assets/audio/tv_channels/emergency.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 9,
+      "id": "kaiju",
+      "label": "KAIJU",
+      "asset": "assets/audio/tv_channels/kaiju.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 10,
+      "id": "league",
+      "label": "LEAGUE",
+      "asset": "assets/audio/tv_channels/league.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 11,
+      "id": "mix",
+      "label": "MIX",
+      "asset": "assets/audio/tv_channels/mix.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 12,
+      "id": "noisefight",
+      "label": "NOISEFIGHT",
+      "asset": "assets/audio/tv_channels/noisefight.wav",
+      "placeholder": true,
+      "volume": 0.08,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 13,
+      "id": "pirate",
+      "label": "PIRATE",
+      "asset": "assets/audio/tv_channels/pirate.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 14,
+      "id": "racing",
+      "label": "RACING",
+      "asset": "assets/audio/tv_channels/racing.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 15,
+      "id": "ritual",
+      "label": "RITUAL",
+      "asset": "assets/audio/tv_channels/ritual.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 16,
+      "id": "shop",
+      "label": "SHOP",
+      "asset": "assets/audio/tv_channels/shop.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 17,
+      "id": "sportcast",
+      "label": "SPORTCAST",
+      "asset": "assets/audio/tv_channels/sportcast.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 18,
+      "id": "sports",
+      "label": "SPORTS",
+      "asset": "assets/audio/tv_channels/sports.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 19,
+      "id": "static",
+      "label": "STATIC",
+      "asset": "assets/audio/tv_channels/static.wav",
+      "placeholder": true,
+      "volume": 0.07,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 20,
+      "id": "surveil",
+      "label": "SURVEIL",
+      "asset": "assets/audio/tv_channels/surveil.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 21,
+      "id": "teletext",
+      "label": "TELETEXT",
+      "asset": "assets/audio/tv_channels/teletext.wav",
+      "placeholder": true,
+      "volume": 0.07,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 22,
+      "id": "tunnel",
+      "label": "TUNNEL",
+      "asset": "assets/audio/tv_channels/tunnel.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 23,
+      "id": "weather",
+      "label": "WEATHER",
+      "asset": "assets/audio/tv_channels/weather.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 24,
+      "id": "wilderness",
+      "label": "WILDERNESS",
+      "asset": "assets/audio/tv_channels/wilderness.wav",
+      "placeholder": true,
+      "volume": 0.09,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    },
+    {
+      "index": 25,
+      "id": "wrestling",
+      "label": "WRESTLING",
+      "asset": "assets/audio/tv_channels/wrestling.wav",
+      "placeholder": true,
+      "volume": 0.1,
+      "placeholder_kind": "procedural_channel_identity",
+      "duration_seconds": 8.0,
+      "sample_rate": 22050
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "_readme": "Volumes 0..1 (master multiplies the others). M in game mutes the music.",
+  "master": 1.0,
+  "music": 0.7,
+  "sfx": 1.0,
+  "ambience": 0.8
+}

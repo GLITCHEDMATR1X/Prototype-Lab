@@ -1,0 +1,8 @@
+{
+  "arena_weapon_slots": {
+    "1": "Pulse Rifle",
+    "5": "Repulsor Burst",
+    "6": "Breach Cutter"
+  },
+  "note": "Arena aliases use Utopia Conflict weapon slots while allowing arena-only naming and future per-mode tuning."
+}

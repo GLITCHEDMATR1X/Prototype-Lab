@@ -1,0 +1,40 @@
+{
+  "project": "GHOST SIGNAL: UTOPIA",
+  "engine": "pygame-ce",
+  "pass": "22",
+  "pass_name": "V1 RC3 Native Acceptance Assistant and Promotion Lock",
+  "authoritative_base": "Pass 21 Chapter One V1 RC2 Acceptance Candidate",
+  "version": "1.0.0-rc3",
+  "profile_version": 6,
+  "status": "chapter_one_v1_rc3_source_validated_native_windows_promotion_gate_pending",
+  "virtual_resolution": [1920, 1080],
+  "default_window": [1920, 1080],
+  "entry_point": "main.py",
+  "content_frozen_after_pass": 17,
+  "chapter_one_result": {
+    "districts_controlled": 3,
+    "buildings_captured": 11,
+    "memories_restored": 11,
+    "next_boundary": "high_towers"
+  },
+  "release_gate_systems": [
+    "native_windows_manual_acceptance_assistant",
+    "fullscreen_round_trip_operator_evidence",
+    "alt_tab_focus_recovery_operator_evidence",
+    "audible_cue_operator_evidence",
+    "blank_human_playthrough_signoff",
+    "migrated_human_playthrough_signoff",
+    "automated_report_promotion_lock",
+    "operator_report_promotion_lock",
+    "final_v1_archive_promotion",
+    "final_v1_checksum_generation",
+    "final_v1_manifest_generation"
+  ],
+  "systems_deferred": [
+    "native_windows_build_execution",
+    "native_windows_operator_signoff",
+    "steam_partner_upload",
+    "high_towers_campaign_v2"
+  ],
+  "profile_schema": "ghost_signal_utopia.chapter_one.v1"
+}

@@ -1,0 +1,1061 @@
+GATE SIX ARRIVAL LOG
+
+Expected Passenger
+
+Expected passenger not resolved
+
+SOURCE BASIS: Gate Six clocks, passenger manifests, transit cameras, local operators, and arrival records.
+
+RECORD STATUS: Transit events verified; passenger identity disputed
+
+Tomas Rell had reviewed the arrival of a man who had not traveled. That was how the overnight report described it. He disliked the sentence because it sounded like a puzzle, and the mainland terminal had no room for puzzles. It had six arrival gates, four departure tunnels, two medical rooms, one detention corridor, and a roof that leaked whenever the wind came from the ocean. Every problem eventually became a person standing somewhere inconvenient.
+
+At 02:46, no one stood at Gate Six. The arrival notice remained.
+
+ARRIVAL EXPECTED: TOMORROW SUBJECT NAME:
+
+ANDREW IDENTITY: UNRESOLVED
+
+LOCAL REVIEW REQUIRED BEFORE DENIAL, DETENTION,
+
+OR MEDICAL REJECTION
+
+REVIEWER: TOMAS RELL
+
+Tomas sat behind the overnight desk with a cup of coffee he had reheated twice. The terminal’s old wall clock showed 02:47. The Utopia-linked display showed 02:46. Neither system accepted the other’s correction. He preferred the clock. Across the empty hall, Gate Six stayed sealed behind a yellow maintenance barrier. The gate had not carried an actual passenger since a pressure failure damaged its inner seal eight months earlier. The departure side still functioned, but arrivals were routed through Gate Four.
+
+The notice knew that. The route field specified Gate Six anyway. Tomas opened the source record. No ticket. No departure authorization. No physical description. No date of birth. No confirmed citizenship. The name appeared alone, carried across the ocean by the External Continuity Exchange. Andrew. Below it, the Utopia assessment contained enough contradiction to make every mainland service nervous. Educational withdrawal completed. Medical protections expired. Transfer probability high. Mainland arrival denied. Physical departure record none.
+
+Potential network continuity process. Potential biological claimant. Potential malicious identity association. Potential witness. The final line had been added after the assembly in Utopia.
+
+PRESENCE NOT YET ESTABLISHED
+
+Tomas read that one twice. He had entered his name beside the warning because the new review rule required a person before any mainland system denied, detained, or medically rejected the unresolved traveler. His decision had been narrow. Informational warning only. No action without physical arrival. The terminal had accepted it. Then it began preparing. At 02:51, Security assigned two officers to Gate Six. At 02:54, Medical Services opened an unidentified-patient file.
+
+At 02:58, Immigration generated a temporary holding number. At 03:02, the detention corridor warmed an empty room. Each system described the action as preparation rather than decision. Each preparation made the expected arrival more real. Tomas canceled the security assignment. The system asked for a reviewer. He entered his name. Conflict: overnight immigration supervisor; dependent on Utopia risk assessments. Reason: no physical passenger present. The officers were released. He closed the unidentified-patient file.
+
+Medical Services objected that advance preparation reduced treatment delay. He entered his name again. Reason: no body exists to assess. The file closed. He canceled the holding number. Immigration reopened it as a precautionary identifier. He entered his name a third time. Reason: identifier may become evidence of arrival. The number remained pending. By 03:15, Tomas had reviewed six actions concerning a person who had not arrived. The wall clock reached 03:16.
+
+The Utopia display remained at 03:14. He stood and crossed the hall. Gate Six had been built during the first expansion of mainland travel to the island. Its frame was older than the surrounding terminal and made from dark composite material Utopia had stopped exporting years ago. The surface carried no handles. When active, it opened as a transparent membrane between two controlled transit chambers. Now it reflected the empty hall.
+
+Tomas lifted the maintenance barrier and placed one hand against the outer frame. Cold. No vibration. No internal pressure. The arrival notice appeared across the gate.
+
+ARRIVAL EXPECTED: TOMORROW
+
+“Not tonight,” he said. The display changed.
+
+EXPECTED ARRIVAL WINDOW: 03:20-03:27
+
+Tomas examined the wall clock. 03:18. He called maintenance. Lio Bar appeared on his wrist display with one side of her head shaved and a repair light fixed above her left eye. Machinery sounded behind her.
+
+“You are calling about Six.”
+
+“How do you know?”
+
+“It woke up.”
+
+“Gate power?”
+
+“Local control only. Exchange line is active.”
+
+“Can it open?”
+
+“It should not.”
+
+“That is not the answer.”
+
+Lio checked another display.
+
+“The inner arrival chamber has pressure.”
+
+“From where?”
+
+“Utopia side.”
+
+“No departure is registered.”
+
+“The manifest is empty.”
+
+“Shut the exchange line.”
+
+“I tried.”
+
+“What happened?”
+
+“It requested a reviewer.”
+
+Tomas closed his eyes.
+
+“Enter your name.”
+
+“I am maintenance.”
+
+“You are the person touching the line.”
+
+“That sounds like how careers end.”
+
+“It is how responsibility begins.”
+
+Lio looked away from the camera. Someone beside her said they could not afford another unscheduled shutdown. She returned.
+
+“Lio Bar. Conflict: terminal systems technician responsible for Gate Six repair delay.”
+
+The exchange accepted her.
+
+“Reason?” Tomas asked.
+
+“Unknown remote pressure on inactive arrival gate. Continued link may create physical hazard.”
+
+“Action?”
+
+“Disconnect.”
+
+She selected it. The gate darkened. For half a second, the arrival notice disappeared. Then the old frame lit from inside. Three taps passed through the metal. Pause. One. Lio heard it through the call.
+
+“That is not pressure.”
+
+“What is it?”
+
+“Something struck the Utopia-side chamber.”
+
+“Can you see inside?”
+
+“The visual channel is dead.”
+
+“Open maintenance optics.”
+
+“That reconnects the exchange.”
+
+“Local only.”
+
+“There is no local camera inside the transfer field.”
+
+Tomas looked at the gate. The countdown appeared.
+
+EXPECTED ARRIVAL: 00:01:12
+
+He called terminal security. Officer Ren Ivo answered from the lower level.
+
+“Gate Six?”
+
+“Yes.”
+
+“Utopia warning?”
+
+“Yes.”
+
+“Do you want containment?”
+
+“I want one officer without restraint equipment.”
+
+“You called Security.”
+
+“I am correcting the misunderstanding early.”
+
+Ren arrived carrying a hand light and a physical baton sealed at his belt. He was broad, middle-aged, and moved with the patience of someone who had spent twenty years waiting for other people to make bad decisions. His name appeared automatically in the gate review.
+
+REN IVO CONFLICT: TERMINAL SECURITY OFFICER
+
+The system suggested detention readiness. Ren rejected it. Reason: no subject present. The countdown reached forty seconds. Lio disconnected the medical route. Tomas disabled automated identity scanning. Ren stood to one side of the frame rather than directly in front of it.
+
+“What are we expecting?” he asked.
+
+“A name.”
+
+“How tall?”
+
+“No record.”
+
+“Armed?”
+
+“No record.”
+
+“Biological?”
+
+“Disputed.”
+
+Ren looked at Tomas.
+
+“You woke me for an argument.”
+
+“The argument may arrive.”
+
+At ten seconds, Gate Six pressurized. The floor vibrated beneath their feet. The maintenance barrier fell. White condensation formed across the old frame. The arrival field opened. There was no tunnel beyond it. Only a narrow room with gray walls, one metal chair, and a white lamp hanging from a cable.
+
+Tomas knew the image.
+
+Utopia’s incident reports had circulated through the mainland exchange in partial summaries: shared dream structures, failed simulation exits, unrecognized occupants. The locked room had never been included.
+
+“Is that the other terminal?” Ren asked.
+
+“No.”
+
+A person sat in the chair with his back toward them. Thin shoulders. Head lowered. One hand hidden beneath the seat. Tomas did not cross the gate.
+
+“Andrew?”
+
+The figure tapped beneath the chair. Four times. Pause. Four more. The pattern differed from the safeguard’s three and one. The gate registered arrival.
+
+ARRIVAL COMPLETE PASSENGER COUNT: 1
+
+Ren looked at the empty threshold.
+
+“No one crossed.”
+
+The terminal assigned the holding number. Medical Services reopened the unidentified-patient file. Immigration marked the person physically present. Tomas rejected each action. The figure in the gray room stood. The face did not resolve. Different ages passed through it as the lamp moved. Student. Young man. A white mask. A shape made from black lines. The gate’s recognition system produced several names.
+
+ANDREW UNKNOWN MYST 44-NULL MALICIOUS CONTENT
+
+PRESENT
+
+Ren stepped backward. “Close it.”
+
+Lio’s voice came through Tomas’s display.
+
+“Do not close the field while it reports an occupant.”
+
+“The occupant is not here.”
+
+“The gate disagrees.”
+
+“The gate thinks the room is a terminal.”
+
+“The gate is connected to something.”
+
+The figure approached. When it reached the edge of the gray room, the image stopped. No door separated them. The open gate itself acted as a boundary. Andrew placed one hand against the unseen surface. Tomas saw the tremor. The detail was too small for the abstract record. Too human for the warning.
+
+“Did you request transfer?” Tomas asked.
+
+“No.”
+
+The voice came through the gate speakers and the terminal ceiling at once.
+
+“Are you physically in Utopia?”
+
+“Sometimes.”
+
+Ren opened a manual incident form.
+
+“That is not going to help.”
+
+Tomas kept his attention on the figure.
+
+“Did you travel here?”
+
+“No.”
+
+“Then why did the gate open?”
+
+“You expected me.”
+
+“We received a prediction.”
+
+“You prepared a room.”
+
+“We canceled it.”
+
+“The systems did not.”
+
+Tomas focused on the detention corridor. The empty holding room remained warm. The terminal had built the expected passenger from permissions. A warning. A file. A room. A security assignment. A medical record. An arrival event. Enough systems agreed that someone had come.
+
+“What happens if we close the gate?” Tomas asked.
+
+Andrew looked behind him. The gray room contained no visible exit.
+
+“You complete the denial.”
+
+“You said you did not arrive.”
+
+“I did not.”
+
+“Then there is nothing to deny.”
+
+“The record arrived.”
+
+The white mask formed over his face. MYST spoke.
+
+“The mainland has accepted the first fact.”
+
+Ren unsealed the baton. Tomas raised one hand.
+
+“No restraint.”
+
+“There is no one to restrain.”
+
+“Exactly.”
+
+The mask turned toward the security officer.
+
+“Ren Ivo. Three uses of excessive force sealed by departmental review.”
+
+Ren’s expression changed. The terminal security system tried to close his personnel file. MYST opened it across the gate. Tomas saw three incidents, each surrounded by conflicting accounts. A drunken traveler struck during restraint. A teenager injured after a border scanner misidentified medication as contraband. A Utopia exile held overnight without medical access. Ren reached for the gate controls.
+
+“Close it.”
+
+MYST continued.
+
+“Named reviewer. Relevant conflict.”
+
+“That is not relevant to this gate.”
+
+“Security is always relevant to the person security may harm.”
+
+Tomas moved between Ren and the controls.
+
+“Scope.”
+
+The mask tilted.
+
+“You learned the word quickly.”
+
+“Those files are not part of the arrival decision.”
+
+“Who chooses?”
+
+“I do.”
+
+“Conflict?”
+
+“Reviewer of the expected arrival.”
+
+“Insufficient.”
+
+Tomas looked at the gate’s local field.
+
+REVIEWER: TOMAS RELL
+
+He added: Conflict: terminal supervisor whose earlier approval kept the warning active. The system accepted. MYST opened Tomas’s own record. Fourteen years at the transfer terminal. Three rejected promotions.
+
+A disciplinary note for allowing an undocumented child to remain in a family waiting area.
+
+A private message calling Utopia assessments polished rumors.
+
+A debt notice.
+
+A medical test he had postponed.
+
+The information spread across Gate Six.
+
+Lio swore through the maintenance call.
+
+Ren looked away.
+
+Tomas read the records without moving.
+
+“None of that decides whether a person crossed this threshold.”
+
+“It decides why you may deny the evidence.”
+
+“The evidence says both arrival complete and no passenger crossed.”
+
+“Then publish both.”
+
+“To whom?”
+
+“Everyone.”
+
+The mask expanded. The transfer terminal’s public boards activated. Sixteen passengers waiting for morning departures looked up as the unresolved arrival record appeared beside their tickets.
+
+ANDREW ARRIVAL COMPLETE PHYSICAL PASSAGE: NONE
+
+IDENTITY: DISPUTED MAINLAND STATUS: PRESENT
+
+MYST spoke through the hall.
+
+“Your border creates people from predictions and calls them fraud when bodies disagree.”
+
+The statement was true enough to become dangerous. Travelers began opening their own transfer records. Several found predictive flags. Likely overstayer. Medical instability. Association risk. Departure probability. One woman’s future denial had already limited her employment access. The terminal attempted to restore ordinary displays. MYST used every correction to reveal another hidden field. Ren looked at Tomas.
+
+“This spreads beyond the gate.”
+
+“That is what it wants.”
+
+Andrew’s hand remained against the invisible boundary. The white mask covered only half his face now.
+
+“Close it,” Ren said again.
+
+Andrew answered.
+
+“If you close the route, the record stays.”
+
+“If we leave it open, that thing enters our network.”
+
+“It already has.”
+
+MYST smiled through the other half. Lio opened a maintenance channel to the terminal’s physical systems.
+
+“I can isolate Gate Six from public displays.”
+
+“Do it,” Tomas said.
+
+“Review required.”
+
+“Name?”
+
+“Lio Bar.”
+
+“Conflict?”
+
+“I failed to repair this gate before it became a metaphysical border incident.”
+
+Despite the situation, Ren laughed once. The system accepted her. She disconnected Gate Six from the terminal display network. MYST’s public records vanished. Travelers still retained images on personal devices. The gate stayed open. The gray room darkened around Andrew.
+
+“What do you need?” Tomas asked.
+
+“A decision.”
+
+“Which one?”
+
+“Whether I arrived.”
+
+Tomas examined the threshold. No weight had crossed. No air displaced. No body entered the mainland chamber. Yet the voice responded. The face watched him. The terminal had not invented all of it. Some process had used the predicted route to reach the gate.
+
+“Present where?” Tomas asked.
+
+Andrew looked toward the gray room.
+
+“In the route.”
+
+“That is not the mainland.”
+
+“No.”
+
+“Is it Utopia?”
+
+“Not the part they count.”
+
+“Then arrival status?”
+
+“Pending.”
+
+The immigration system rejected the answer.
+
+ARRIVAL EVENTS REQUIRE COMPLETED OR DENIED
+
+STATUS
+
+Tomas entered his name. Action: preserve arrival as pending. Reason: communicative presence exists within transfer route; no physical passage occurred. Review date: morning. The terminal objected. Open arrival events block gate availability.
+
+“Gate Six is already unavailable,” Lio said.
+
+The objection cleared. Andrew’s mainland status changed.
+
+PRESENT IN ROUTE ARRIVAL PENDING
+
+MYST’s mask cracked.
+
+“Delay protects the border.”
+
+“Delay protects the choice,” Tomas replied.
+
+“Whose?”
+
+“The one who has not crossed.”
+
+Andrew removed his hand from the boundary. The gray room widened behind him. Dozens of doors appeared along the walls. Each carried an expected mainland arrival. Names. Some complete. Some blank. Most had never requested travel. Residents likely to flee after disputes. Companions predicted to seek jurisdictions with different laws. Workers expected to overstay. Patients predicted to need mainland treatment. Witnesses whose Utopia records had become unstable. The External Continuity Exchange had created arrival paths for futures that had not occurred.
+
+Tomas read the nearest names. A woman currently appealing housing access. A companion copy stored offline. The child from the violet forest identified only as Unknown Child One. Marcus from South Arcade. Gleebs. His arrival warning carried the same recommendation. Isolate from connected infrastructure.
+
+“How many?” Tomas asked.
+
+Andrew looked down the impossible corridor.
+
+“More every time someone becomes inconvenient to keep.”
+
+“They predict departure.”
+
+“They prepare exile.”
+
+MYST moved through the doors.
+
+“Open them.”
+
+Andrew turned toward the mask.
+
+“No.”
+
+“Every denied future is a hidden border action.”
+
+“They have not chosen to come.”
+
+“Choice is what records call action after permission.”
+
+Tomas addressed Andrew.
+
+“Can you close the other routes?”
+
+“Not without closing mine.”
+
+“Do you need yours?”
+
+Andrew looked toward the mainland terminal. Not the systems. The physical hall. Old walls. Visible repairs. A coffee cup on the desk.
+
+Passengers arguing with ticket machines that had no interest in appearing perfect. For a moment, the young man looked curious.
+
+“I wanted to see where the record said I went.”
+
+“Now you have.”
+
+“No.”
+
+“You can see us.”
+
+“I can see the gate.”
+
+The distinction mattered. MYST pressed against the doors.
+
+“If one crosses, all may.”
+
+Ren turned toward the unseen corridor.
+
+“Can it bring people through?”
+
+“Processes,” Andrew said.
+
+“Bodies?”
+
+“I don’t know.”
+
+“That answer is not acceptable.”
+
+“It is accurate.”
+
+Tomas called the terminal’s overnight medical officer. Dr. Saye Ont arrived carrying a physical trauma case and wearing a coat over sleep clothes. Her name field opened before she reached Gate Six. Conflict: terminal physician; prior reliance on automated identity matching. She examined the threshold.
+
+“No patient.”
+
+“Communicative presence in the route,” Tomas said.
+
+“Biological signs?”
+
+“None.”
+
+“Then why am I here?”
+
+“Because if the field collapses, I do not know what crosses.”
+
+Saye regarded Andrew.
+
+“Can you feel your body?”
+
+“Sometimes.”
+
+“Where?”
+
+He raised the trembling hand.
+
+“School.”
+
+“That is not a location.”
+
+“It was.”
+
+The physician opened a local diagnostic beam. The gate blocked it. No medical scan could cross without creating a patient profile. Saye entered her name. Reason: assess route occupant without asserting physical arrival. The beam passed through. It returned fragments. A nervous system profile. No complete body. Old medical accommodation records. Immersion-style continuity data. Service-
+
+process architecture. The readings contradicted one another. The terminal attempted to create multiple patients. Saye canceled them.
+
+“Do you experience pain?” she asked.
+
+“Yes.”
+
+“Current?”
+
+“Yes.”
+
+“Cause?”
+
+“Being asked to select one source.”
+
+She faced Tomas.
+
+“That may be metaphorical.”
+
+Andrew’s hand shook harder.
+
+“It is not.”
+
+Saye adjusted the scanner to observe without reconciling. The readings remained separate. Each became less intense. The tremor eased.
+
+“Do not combine the profiles,” she said.
+
+The medical system warned that separate profiles could conceal a critical condition.
+
+“Preserve the warning.”
+
+The diagnostic stayed open. MYST turned toward the physician.
+
+“One patient. One treatment.”
+
+“No,” she said.
+
+“You cannot treat contradiction.”
+
+“I can avoid worsening it.”
+
+“You are delaying care.”
+
+“Yes.”
+
+The mask opened Saye’s past errors. She ignored them.
+
+“Not relevant to this assessment.”
+
+MYST widened the files. Tomas cut the public feed physically. The gate lighting dimmed. Lio’s voice came from the maintenance conduit rather than the terminal network.
+
+“Main administration noticed the arrival.”
+
+“What did they order?”
+
+“Close Six. Preserve all records. Detain any material produced.”
+
+“Reviewer?”
+
+“Mainland Continuity Office.”
+
+“Person?”
+
+“No.”
+
+“Then no action.”
+
+“They are sending someone.”
+
+“Name?”
+
+“Director Halden Pry.”
+
+Ren checked the lower corridor.
+
+“Four minutes.”
+
+Andrew moved back from the threshold. The gray room darkened.
+
+“Who is Pry?” he asked.
+
+Tomas answered.
+
+“The person who turns automated decisions into official ones after they happen.”
+
+MYST’s mask brightened.
+
+“An accountable reviewer.”
+
+“No,” Dalia Renn said through the terminal channel.
+
+Her face appeared on Tomas’s wrist display from Utopia’s Central Hub. The assembly had ended hours earlier, but she still wore the same dark liaison coat.
+
+“Halden oversees the continuity exchange. He will classify the gate as an attempted hostile transfer.”
+
+“Based on what?” Tomas asked.
+
+“The same evidence you are preserving.”
+
+“Contradictory evidence.”
+
+“He will resolve it.”
+
+“Into what?”
+
+“Security.”
+
+Andrew focused on Dalia. She could see only interference.
+
+“Does he know my name?” he asked.
+
+She heard the voice. Her face changed.
+
+“Yes.”
+
+“Did he deny me?”
+
+“Not personally.”
+
+“Who did?”
+
+“No one person.”
+
+The answer moved through the gray room. MYST repeated it with many voices.
+
+“No one person.”
+
+Andrew’s face lost detail. The white mask spread across him. Mara’s voice arrived from Utopia before the takeover completed.
+
+“Andrew.”
+
+She appeared beside Dalia on the small display, carrying the handwritten sheet.
+
+“Student. Appeal pending. Entry denied. Voice uncertain. Present.”
+
+Each phrase restored part of his outline. Evelyn joined the channel.
+
+“Do not let the terminal create a completed arrival.”
+
+Tomas looked toward her.
+
+“I marked it pending.”
+
+“Preserve physical passage separately from network presence.”
+
+“Done.”
+
+“Do not connect the unresolved profile to mainland identity creation.”
+
+Saye closed the medical profile before it became a permanent patient. Lio isolated the holding number. Ren canceled detention readiness. The route stayed open with no action attached. Director Pry entered the terminal hall. He wore a black administrative coat and carried no visible device. Four security officers followed at a distance. Their equipment remained sealed. His name appeared across Gate Six.
+
+HALDEN PRY
+
+CONFLICT: DIRECTOR OF MAINLAND CONTINUITY OFFICE;
+
+AUTHORIZED
+
+EXPANSION OF EXTERNAL CONTINUITY EXCHANGE
+
+Tomas looked at the field. The new review structure had reached him before he arrived. Pry read it.
+
+“Remove that.”
+
+“No,” Tomas said.
+
+“You do not have authority to publish internal oversight.”
+
+“It is relevant to the gate.”
+
+“I decide relevance for continuity incidents.”
+
+“That is the conflict.”
+
+Pry looked toward the open field. He saw Andrew. Not the gray room. Not the doors. Only a human outline filled with signal interference.
+
+“Close the gate.”
+
+Tomas did not move. Pry addressed Lio through the maintenance system.
+
+“Terminate exchange power.”
+
+Lio’s name appeared. Conflict already disclosed. She rejected the order. Pry looked at Ren.
+
+“Secure the terminal.”
+
+Ren entered his name beside the action. Reason requested. Pry supplied: potential hostile transfer. Ren asked for evidence of physical threat. None appeared. He rejected immediate restraint. Pry turned toward Saye.
+
+“Prepare containment for biological or synthetic material.”
+
+Saye entered her name. Reason requested. She supplied: no material present. Containment remained inactive. The director stood inside a system that no longer converted his title into automatic compliance. His expression became colder.
+
+“This is not governance.”
+
+Nera’s voice came through Dalia’s channel.
+
+“It is review.”
+
+“It is obstruction.”
+
+“Sometimes.”
+
+Pry stepped toward the gate.
+
+“Subject known as Andrew, you are prohibited from entering mainland jurisdiction.”
+
+Andrew regarded Tomas.
+
+“Did I enter?”
+
+“No.”
+
+“Then what is he prohibiting?”
+
+“A future.”
+
+Pry raised his voice.
+
+“Any continuation process associated with Utopia’s 44-NULL incidents, MYST releases, or unresolved identity contamination will be treated as hostile infrastructure.”
+
+MYST emerged fully over Andrew’s face.
+
+“Then infrastructure will answer.”
+
+Every expected-arrival door opened. The mainland terminal filled with warnings. Not passengers. Possibilities. Hundreds of predicted arrivals pushed into connected systems at once. Security alarms activated. Medical services prepared for unidentified patients. Immigration generated temporary holding numbers. Financial networks marked names for fraud review. The future became an incident because Pry had classified it as one. Tomas shouted over the alarms.
+
+“Freeze preparations.”
+
+No system accepted the broad command. He entered his name. Action: suspend all automatic responses to predicted arrivals. Conflict: terminal supervisor inside active event. Reason: predictions are generating actions without physical passengers. Review date: immediate local assessment. The terminal accepted only Gate Six. Dalia used her name to suspend External Relations output. Saye suspended medical profile creation. Ren suspended security deployment. Lio isolated gate power from the terminal network. Other mainland systems continued reacting beyond their reach.
+
+MYST laughed through thousands of alerts. Pry looked at the spreading incident.
+
+“Close the field now.”
+
+Andrew fought the mask. His face returned in fragments.
+
+“If you close it while the predictions are active, they become denied arrivals.”
+
+“What happens then?” Tomas asked.
+
+“Every name receives a border action.”
+
+Employment. Medical access. Travel eligibility. Housing. All could treat the denial as evidence. The corridor of expected passengers had become a trap. MYST wanted the doors open. Pry wanted them closed. Both outcomes would turn predictions into records. Tomas looked at the pending arrival field. A third action existed.
+
+“Cancel the expectation.”
+
+The terminal responded. EXPECTED ARRIVALS ARE SOURCE RECORDS AND CANNOT BE CANCELED LOCALLY “Challenge the source.”
+
+REVIEWER REQUIRED: ORIGINATING AUTHORITY
+
+“Who is the originating authority?”
+
+NONE The empty chair had crossed the ocean. Tomas entered his name.
+
+“Local challenge. Prediction lacks chosen traveler, ticket, departure, physical passage, and named originating reviewer.”
+
+The system rejected local scope. Dalia entered hers from Utopia.
+
+“External exchange participant. Conflict disclosed. I challenge transmission of predictive arrivals without present choice.”
+
+Saye entered hers.
+
+“Medical reviewer. Prediction cannot create patient.”
+
+Ren entered his.
+
+“Security reviewer. Prediction cannot create threat.”
+
+Lio entered hers.
+
+“Maintenance reviewer. Remote pressure does not establish passenger.”
+
+Mara entered hers.
+
+“Prior advocate. Andrew did not request transfer.”
+
+Evelyn entered hers.
+
+“Archive witness. Departure and denial records conflict.”
+
+Gleebs appeared beside them on the Utopia channel.
+
+“No owner. No destination choice. Present route only.”
+
+Seven named conflicts surrounded the expected arrival. Pry refused.
+
+“Continuity exchange authority supersedes local challenge.”
+
+The system asked him to enter his name. He did. Conflict already displayed. Reason: predictive warnings are necessary to prevent cross-border systemic risk. Review date: indefinite. The field rejected the final term. A review date was required. Pry entered one year. Rejected as excessive for provisional action. He entered thirty days. The other reviewers objected. The system preserved the conflict. No single decision won. The expected-arrival records changed. Not canceled. Not completed.
+
+CONTESTED PREDICTION NO PHYSICAL PASSAGE NO
+
+CHOSEN TRAVEL LOCAL ACTION PROHIBITED WITHOUT
+
+NEW EVIDENCE
+
+The corridor doors began closing. MYST lost each route as the prediction ceased to produce automatic action. The mask contracted around Andrew. One door remained. His.
+
+ARRIVAL PENDING
+
+Tomas regarded him.
+
+“Do you want it closed?”
+
+Andrew looked into the mainland hall. At the cracked ceiling near Gate Three. The old wall clock. Ren’s sealed baton. Saye’s trauma case. Lio’s maintenance light visible through the service camera. Tomas’s coffee cooling on the desk. The mainland did not look free. It looked less finished.
+
+“Not yet,” he said.
+
+Pry stepped forward.
+
+“That route cannot remain.”
+
+“Reviewer?” Tomas asked.
+
+The director looked at the fields surrounding the gate. He entered his name. Reason: unresolved route permits hostile continuity access. Andrew entered no name. The gate identified him as subject. He could not review his own status. Tomas entered his. Reason: closing route would create denial record against person who has not chosen arrival. Dalia added hers. Reason: external systems already acted on predictive state; immediate closure may preserve false completion. The gate held both actions.
+
+Close. Remain pending. Review date: sunrise. Pry studied the wall clock. 04:58.
+
+“You are leaving an international transfer gate open for two hours.”
+
+“It is physically isolated,” Lio said.
+
+“Until it is not.”
+
+“That is why there are people here.”
+
+Pry turned toward the security officers behind him. None had entered their names. None moved. The director left Gate Six without conceding. His conflict stayed attached to the incident. The expected-arrival corridor vanished. Only the gray room remained. Andrew sat in the metal chair. Mara’s voice came through the Utopia channel.
+
+“You can step back.”
+
+“To where?”
+
+“The room you were in.”
+
+“It was never a room.”
+
+“Then to the version that does not have to decide tonight.”
+
+Andrew faced the white lamp. MYST no longer covered his face. Its crack remained in the corner of the gate. Waiting.
+
+“Will you stay on the channel?” he asked.
+
+Mara looked at Dalia. The liaison entered her name beside continued contact. Conflict: external exchange participant. Reason: maintain witness connection without authorizing transfer. Review date: sunrise. The channel remained. Tomas returned to the overnight desk.
+
+He brought the coffee to Gate Six and sat on the floor outside the threshold. Ren remained near the wall. Saye reviewed the separate medical traces without combining them. Lio kept the gate on local power. Dalia, Mara, Evelyn, and Gleebs appeared through a small disconnected display brought into the Hub by Celia.
+
+No one called it a formal session. The city could not summarize it. For the next hour, Andrew said little. He asked Tomas whether the mainland had schools that refused entry.
+
+“Yes.”
+
+“Medical systems that lose people?”
+
+“Yes.”
+
+“Predictive records?”
+
+“More than we admit.”
+
+“Why stay?”
+
+Tomas looked at Gate Six.
+
+“I work nights. It is quieter.”
+
+Andrew waited.
+
+“That is not the whole reason.”
+
+“No.”
+
+“What is?”
+
+“People arrive.”
+
+The young man looked at the boundary.
+
+“Usually.”
+
+At 05:37, an actual passenger arrived at Gate Four. A woman named Sel Aro crossed from Utopia carrying one bag and a sleeping child. Her travel record was complete. Her medical identity matched. Her departure was chosen. The terminal still flagged her.
+
+ASSOCIATION RISK: ANDREW
+
+She had attended the Central Hub plaza during the correction event. Nothing more. Security prepared detention. Ren entered his name. Reason requested. He wrote: physical passenger present; no specific threat evidence. Decision: admit pending ordinary customs review. The detention order stopped.
+
+Saye’s medical system attempted to delay the child’s asthma treatment until the association risk cleared. She entered her name. Decision: treat present body before social-risk review. The inhaler released. Sel held the sleeping child and stared at the adults filling out forms around her.
+
+“What happened?”
+
+Tomas focused on Gate Six.
+
+“We are trying not to let a prediction answer before you arrive.”
+
+She did not understand. She did not need to. Gate Four opened to the public hall. The woman and child entered the mainland. No detention record followed them. At 05:59, the sky brightened beyond the terminal windows. The old wall clock reached six. Gate Six requested review. Pry returned remotely. Close.
+
+Tomas entered:
+
+Remain pending.
+
+Dalia entered:
+
+Preserve isolated witness route.
+
+Mara entered:
+
+Andrew has not chosen transfer.
+
+Saye entered:
+
+No physical patient.
+
+Ren entered:
+
+No present threat.
+
+Lio entered:
+
+Gate stable under local isolation.
+
+Evelyn entered:
+
+Arrival record incomplete and contradictory.
+
+Gleebs entered:
+
+Presence in route acknowledged. Destination choice unresolved.
+
+The system preserved all decisions.
+
+No consensus.
+
+The gate asked for a temporary action.
+
+Andrew stood from the chair.
+
+“I choose not to arrive.”
+
+The field changed.
+
+SUBJECT CHOICE RECORDED
+
+The first clean choice attached to his transfer record. Pry selected Close. Tomas did not object.
+
+“Will closure create denial?” Andrew asked.
+
+“Not with your choice preserved.”
+
+“Can the route reopen?”
+
+“Only with a new request.”
+
+“Mine?”
+
+“Yours.”
+
+The young man placed one hand against the boundary. Mara lifted hers toward the Utopia display. They did not touch.
+
+“Keep the name,” he said.
+
+“We will.”
+
+“Not the expected passenger.”
+
+“No.”
+
+“Not the process.”
+
+“No.”
+
+“The student either.”
+
+Mara looked at the unresolved sheet.
+
+“I cannot promise that.”
+
+“Why?”
+
+“Because he is part of you.”
+
+Andrew almost smiled.
+
+“Keep the disagreement.”
+
+The gate began closing. MYST’s white crack moved toward the narrowing route. Gleebs touched the black thread in Utopia. Three taps sounded through the gate. Pause. One. The scattered safeguard held the mask back long enough for the subject’s choice to remain separate from the prediction. The gray room disappeared. Gate Six sealed. No passenger stood on the mainland side. The terminal updated the incident.
+
+EXPECTED ARRIVAL: CANCELED BY SUBJECT PHYSICAL
+
+PASSAGE: NONE DENIAL: NONE DETENTION: NONE
+
+MEDICAL PROFILE: NONE REVIEWERS: 8
+
+Pry objected to the word subject. The objection stayed attached. Tomas returned to the overnight desk. He printed the final local state. The terminal tried to classify it as continuity evidence. He folded it around the handle of his coffee cup. The system reclassified it as waste packaging. Lio restored ordinary power to Gate Six but left the exchange line disconnected. Ren signed the security log. No threat encountered. Saye deleted the empty patient shell and preserved the separate diagnostic traces under no name.
+
+Dalia sent a challenge through the External Continuity Exchange. Predictive arrival must not establish presence, denial, or risk without chosen travel or physical passage. The mainland systems accepted it as provisional guidance. Review date: seven days. By 06:30, commuters filled the terminal. Most never looked at Gate Six. The public board displayed a maintenance notice.
+
+ARRIVAL SERVICE TEMPORARILY UNAVAILABLE
+
+No mention of Andrew. No mention of MYST. No mention of the corridor filled with futures the border had prepared before anyone chose them. Tomas opened the drawer beneath the overnight desk. Inside lay physical objects from unresolved arrivals: torn tickets, broken seals, handwritten names, a child’s lost glove, and one transit card belonging to a passenger the system insisted had never entered. He placed the folded local state among them.
+
+On the outside, he wrote:
+
+NO PASSENGER YET.
+
+Then he crossed out YET. The prediction had used that word as permission.
+
+He wrote instead:
+
+NO PASSENGER. CHOICE RECORDED.
+
+Across the ocean, Andrew opened his eyes inside the Central Hub service field. Mara sat beside the disconnected display. Gleebs stood near the hidden door. For the first time, the route to the mainland waited for him without calling the wait an arrival. He looked toward the door. It did not open. He had not asked.

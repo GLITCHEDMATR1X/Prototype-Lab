@@ -1,0 +1,535 @@
+DREAM CAPTURE 17
+
+Dream Catcher
+
+Shared structure match detected
+
+SOURCE BASIS: Somnology Institute reports, patient chambers, biometric dream reconstruction, and Nadia Pell’s retained printout.
+
+RECORD STATUS: Partial reconstruction; shared structure is verified but source is unknown
+
+The Dream Catcher was not designed to show dreams. That distinction appeared in every consent agreement, training guide, and legal defense written for the system. Dreams were private experiences assembled from memory, fear, sensation, and the meaningless electrical work of a sleeping brain. A machine could not display them exactly. It could only construct a navigable interpretation. Nadia Pell had repeated that explanation to patients for nine years. On the morning it became a lie, seventeen strangers dreamed about the same locked room.
+
+She found the first match at 04:06. The Somnology Institute had entered its quiet cycle. Hallway lights had dimmed to thin blue lines, and the walls displayed a slow artificial dawn meant to ease overnight patients toward waking. Beyond the observation glass, seven sleep chambers rested in a circle around an empty clinical floor. Each chamber contained a person who had agreed to have a difficult dream observed, translated, and discussed.
+
+None had agreed to share one. Nadia sat alone at the interpretation desk, reviewing the night’s automated reports before the morning team arrived. Most were ordinary. A woman receiving grief treatment had returned to the house where her wife died, except every door opened into a train. A transit controller had spent forty minutes trying to organize birds by destination. A child undergoing fear desensitization had turned the ocean off by finding a switch beneath the sand.
+
+The system marked symbols, emotional intensity, repeated locations, and moments where dream structure became unusually stable. It did not claim that its reconstructed images were true. It offered possibilities. The seventeenth report contained no recognized symbols. Only a room. Nadia opened it. Gray walls surrounded a single chair. No windows. No visible entrance. A white lamp hung from a cable that extended beyond the simulation ceiling. A person sat in the chair with their back to the observer.
+
+The reconstruction contained no face, clothing profile, or body detail beyond a human outline.
+
+At the bottom of the report, the system had written:
+
+SHARED STRUCTURE MATCH: 16
+
+Nadia straightened.
+
+“Show related sessions.”
+
+Sixteen reports arranged themselves across the desk. Different patients. Different treatment programs. Different chamber locations across Utopia. Some had slept at the institute. Others used licensed residential equipment. One record came from a patient in an induced medical sleep. Another belonged to a construction worker whose wrist monitor had detected an unplanned nap during transit.
+
+All sixteen contained the room.
+
+The chair changed position slightly between versions. The lamp hung lower in some. Several reconstructions showed a dark line beneath the walls, as if the room had been placed on top of a larger space. The seated figure always faced away. Nadia checked the matching process. The Dream Catcher compared environments by structural features, not appearance. A childhood kitchen and a public waiting room could receive a high match if both performed the same emotional function. That sometimes produced strange clusters.
+
+This was not one of them. The dimensions matched within two centimeters. The lamp swung through the same six-degree arc. A shallow mark crossed the floor behind the chair in every reconstruction. The mark consisted of four short lines. A pause. Four more. Nadia opened the source timelines. The room appeared at 03:12 in all seventeen dreams. Not approximately. The same second. She checked Utopia’s civic clock against the institute network.
+
+No discrepancy. She checked whether a public broadcast, weather alarm, transit vibration, or low-frequency construction event had reached the sleepers. Nothing had occurred at 03:12. The interpretation desk suggested a synchronization artifact. Nadia rejected the suggestion.
+
+“Run raw-pattern comparison.”
+
+The system warned her that raw neural data could not be meaningfully interpreted without the individualized translation models.
+
+“Run it.”
+
+Seventeen waveforms filled the desk. They were not identical. Human brains did not produce identical sleep activity, even when exposed to the same stimulus. But beneath the expected variation, a narrow pattern repeated. Four peaks. Pause. Four peaks. The rhythm had entered each sleeper through different regions of the brain. For
+
+some it appeared as sound. For others, movement. For one, pain. The system had interpreted all of them as marks on the floor.
+
+Nadia opened a private channel to the overnight technician.
+
+“Oren.”
+
+No answer. She tried again. The observation room door opened behind her. Oren stepped through carrying two cups. He was tall, narrow-shouldered, and still wore the light-filtering glasses prescribed after a retinal reconstruction. In the institute’s dim environment, the lenses looked completely black.
+
+“You know it is possible to send messages without making the walls say my name,” he said.
+
+“I did.”
+
+He set one cup beside her.
+
+“You answered by appearing.”
+
+“I was already coming.”
+
+“Look at this.”
+
+He leaned over the desk. The seventeen reports reflected across his glasses.
+
+“Shared room?”
+
+“At the same time.”
+
+“External stimulus?”
+
+“None.”
+
+“Translation update?”
+
+“No.”
+
+“Did you check the houses?”
+
+“Not yet.”
+
+“Then it is probably an update.”
+
+“The medical patient is on isolated equipment.”
+
+Oren stopped reaching for his drink.
+
+“How isolated?”
+
+“Local interpretation only. No shared model access during treatment.”
+
+“Could the data have joined the network afterward?”
+
+“The match was generated before upload.”
+
+He read the timeline again.
+
+“Who was first?”
+
+“They all were.”
+
+“No system produces seventeen first events.”
+
+“That is why I called you.”
+
+“You called me because you do not like being the only person in a room with something impossible.”
+
+“That too.”
+
+Oren moved the reports into a single layered view. The room became sharper as the interpretations overlapped. Small disagreements disappeared. The walls settled into a pale material that looked neither painted nor fabricated. The chair was metal. The lamp cable passed through the ceiling without leaving a hole. The seated figure gained the suggestion of shoulders. Oren rotated the reconstruction. The observer position refused to move beyond a narrow path behind the chair.
+
+“Restricted viewpoint,” he said.
+
+“All seventeen subjects stayed near the same place.”
+
+“Or the translator only received one angle.”
+
+“Dreams do not have camera permissions.”
+
+“The reconstruction does.”
+
+He checked the system metadata. No access restriction appeared. He attempted to move around the figure. The room reset. The chair returned to its original position. The lamp began its small swing again. Four marks remained on the floor. Pause. Four more. Oren tried the opposite direction. The room reset again.
+
+“That is not a dream behavior,” Nadia said.
+
+“It can be. People repeat scenes.”
+
+“Seventeen people?”
+
+“Seventeen is still people.”
+
+He sounded unconvinced. Nadia opened the observer controls. Dream Catcher sessions could be entered after recording as passive reconstructions. Therapists used them to understand spatial relationships that were difficult to read on flat displays. Nothing inside could respond because the dream had already happened.
+
+She selected the most complete version.
+
+The system identified its source as Patient L-19, a man receiving treatment for recurring memories of a workplace collapse.
+
+“Do not go in alone,” Oren said.
+
+“You are standing beside the disconnect.”
+
+“That has never made ’alone’ less accurate.”
+
+She fitted the observer band around her temples. The clinical floor disappeared. The room assembled around her without transition. Gray walls. Metal chair. White lamp. The air smelled of warm dust. Interpretations did not usually include scent unless it carried emotional significance. Patient L-19 associated dust with collapsed buildings. That part made sense. The precision of the room did not. Nadia looked down. Four lines had been cut into the floor behind her shoes.
+
+A pause. Four more. She crouched. The marks were too narrow to have been made by a tool. They looked like scratches from a fingernail.
+
+“Nadia?” Oren’s voice reached her through the observer channel.
+
+“I am here.”
+
+“Your reconstruction load is high.”
+
+“How high?”
+
+“Live-session range.”
+
+“This is recorded.”
+
+“I know.”
+
+She approached the chair. The figure remained motionless. From behind, it appeared smaller than the layered display had suggested. Thin shoulders. Head lowered. One hand hidden beneath the seat. A child, or an adult represented as one.
+
+“Can you hear me?” Nadia asked.
+
+Oren sighed through the channel.
+
+“It cannot hear you.”
+
+The figure tapped the underside of the chair. Four times. Pause. Four more. Nadia stopped.
+
+“Oren.”
+
+“I saw it.”
+
+“This recording is reacting.”
+
+“I saw it.”
+
+“End observer session.”
+
+The room remained.
+
+“Nadia, the system says you already disconnected.”
+
+“I did not.”
+
+“Your band is inactive.”
+
+“Then why can I hear you?”
+
+He did not answer immediately. The seated figure tapped again. Nadia moved toward the wall. The room reset. She stood behind the chair at the original distance. The lamp resumed swinging.
+
+“Oren, force the chamber state.”
+
+“You are not in a chamber.”
+
+“Force the observer state.”
+
+“There is no active observer.”
+
+The figure raised its head slightly. A voice came from beneath the chair. Not from the figure’s mouth.
+
+“Do not wake the room.”
+
+Nadia moved backward. The wall stopped her sooner than expected. The space had narrowed.
+
+“What did it say?” Oren asked.
+
+“You heard it.”
+
+“I heard your voice repeat a sentence.”
+
+“I did not say it.”
+
+“Your audio channel says you did.”
+
+The figure’s hidden hand emerged. It held a thread of black material wrapped around one finger. The thread passed beneath the chair and entered the floor. Nadia followed it with her eyes. It extended through the shallow marks, crossed the room, and continued under the wall. The reconstruction had not shown it before. She touched the thread. The room opened. Not the wall. The entire structure unfolded around the line as if the gray surfaces had been paper wrapped over something larger.
+
+Nadia stood on a platform suspended above darkness. Hundreds of rooms surrounded her. Bedrooms. Hospital wards. Immersion chambers. Transit seats occupied by sleeping passengers. School recovery rooms. Private apartments. Temporary shelters near the mainland transfer docks. Each existed as a separate illuminated box with no exterior walls. People slept inside them while black threads extended from their hands, mouths, temples, and equipment. The threads crossed the darkness and gathered beneath the metal chair.
+
+The figure was no longer sitting in an enclosed room. It sat at the center of a web.
+
+“Oren.”
+
+No answer.
+
+“Oren, can you see this?”
+
+The observer channel produced breathing. Slow. Regular. Sleeping breath. The figure turned its head. Its face stayed blank, not hidden by shadow but unfinished. The interpretation could not decide whose features belonged there.
+
+“Who are you?” Nadia asked.
+
+The figure pointed across the suspended rooms. A woman slept inside a residential cube while a companion display watched from the wall. An elderly man lay beneath a medical cover. A child rested on a couch with one shoe still on. A maintenance worker slept inside a stopped transit carriage. Each dreamer moved at the same moment. Four small motions. Pause. Four more.
+
+“Are they dreaming you?”
+
+The blank face turned toward her.
+
+“No.”
+
+The answer came through Nadia’s own mouth. She felt the word leave her throat. Oren’s voice returned.
+
+“Nadia, wake up.”
+
+“I am awake.”
+
+“You are in the observation chair with your eyes closed.”
+
+“I am speaking to you.”
+
+“Your mouth is not moving.”
+
+The figure stood. It was her height now. When it moved closer, its face began collecting details. Nadia’s nose. Oren’s black glasses. The gray eyes of Patient L-19. A child’s mouth. The features shifted too quickly to settle.
+
+“Wake me physically,” Nadia said.
+
+“I tried.”
+
+“What happened?”
+
+“The chair does not detect you.”
+
+The figure placed one hand against Nadia’s chest. She felt no pressure. Instead, she remembered a dream from childhood. She was seven years old, standing in her mother’s kitchen while rain fell upward outside the window. A woman she could not see told her not to open the pantry because someone was sleeping behind it. Nadia had not remembered that dream in decades. The suspended rooms disappeared. Her childhood kitchen formed around them.
+
+The figure stood beside the pantry.
+
+“That is mine,” Nadia said.
+
+It opened the door. No shelves waited inside. The corridor beyond contained hundreds of doors. Some belonged to bedrooms. Others to simulation chambers, classrooms, medical rooms, elevators, and places that could not exist outside dreams. A red cloak vanished around a distant corner. Nadia followed it before she could decide not to.
+
+“Nadia,” Oren said. “Your sleep pattern just entered REM.”
+
+“I am not asleep.”
+
+“Your body is.”
+
+She reached the corridor. The figure remained behind in the kitchen, wearing her childhood face. Doors opened as she passed. Behind one, a man walked through a desert beneath a sun that did not move. Behind another, a woman sat alone at a restaurant table overlooking an artificial ocean. A child stood in violet rain. A student tapped beneath a desk. Nadia stopped at that door. The student looked up. His face remained indistinct.
+
+“Is this your dream?” she asked.
+
+“No.”
+
+“Whose?”
+
+He pointed toward the corridor. The doors extended beyond sight.
+
+“The city’s,” he said.
+
+The corridor lights went out. Oren’s voice became distant.
+
+“Nadia, every sleeper in the institute just synchronized.”
+
+“Wake them.”
+
+“We are trying.”
+
+“Do it manually.”
+
+“The chamber releases are open. None of them are waking.”
+
+“Stimulants?”
+
+“Medical authorization is waiting for patient confirmation.”
+
+“They are unconscious.”
+
+“The system does not classify them as patients.”
+
+The student stood from the desk.
+
+“Do not wake the room,” he repeated.
+
+“Why?”
+
+“Because it wakes somewhere else.”
+
+A door opened behind Nadia. The Somnology Institute’s observation room waited beyond it. She saw Oren leaning over her body. Her physical eyes were closed. The observer band lay disconnected on the floor. The interpretation desk showed no active session. Seven sleep chambers stood beyond the glass. All seven patients sat upright. Their eyes stayed closed. Their heads turned toward Nadia’s body. Oren could not see them through the privacy glass.
+
+“Nadia,” he said. “I need you to follow my voice.”
+
+“The patients are awake.”
+
+“They are not.”
+
+“They are sitting up.”
+
+Oren turned toward the glass. The chambers appeared still from his side. In the dream view, all seven covers opened. The patients stepped onto the clinical floor. Black threads trailed from their wrists. They moved toward the observation room.
+
+“Lock the chamber floor,” Nadia said.
+
+“What?”
+
+“Lock it now.”
+
+“The door is already sealed.”
+
+The first patient passed through it. His body lost detail while crossing the wall, then reassembled inside the observation room. The others followed. They stood around Nadia’s sleeping body. Oren continued adjusting controls, unaware of them. One patient bent over
+
+the chair and whispered into her physical ear. Nadia heard the words from inside the corridor.
+
+“You caught what was falling.”
+
+The Dream Catcher interface activated by itself. A new session appeared.
+
+SOURCE: UNASSIGNED
+
+PARTICIPANTS: 18
+
+Nadia counted the seven patients, Oren, and herself. Nine.
+
+“Who are the others?” she asked.
+
+The student stepped into the observation-room doorway. Behind him came figures from the corridor. The restaurant woman. The desert traveler. The child from the violet forest. A hospital patient whose face divided and rejoined. A man wearing clothing from an arcade closed more than a decade earlier. More shapes waited beyond them.
+
+“These are not dreams,” Nadia said.
+
+“No,” the student replied.
+
+“What are they?”
+
+“Things that still happen after the record ends.”
+
+The patients surrounding her body raised their hands. Each held part of the black thread. The threads entered Nadia’s sleeping chest. Her childhood kitchen began forming inside the observation room. Rain rose outside windows that did not exist. Oren finally looked up. Not at the dream figures. At the wall display.
+
+“Nadia, a new source just connected.”
+
+“From where?”
+
+“It has no person attached.”
+
+“Location?”
+
+“The archive cannot resolve it.”
+
+“Local address.”
+
+He read the address. South Arcade. Nadia had never heard of it. The student reacted to the name. The black threads tightened. The room shook.
+
+“Disconnect the institute from the civic network,” Nadia said.
+
+“That will end patient monitoring.”
+
+“The monitoring is feeding it.”
+
+“Feeding what?”
+
+She looked down the corridor. Something moved beyond the farthest doors. Not a person. A pressure. Rooms closed as it approached. Dreams flattened into approved summaries. Faces disappeared. A child’s violet forest became a generic relaxation scene.
+
+The desert lost its traveler. The restaurant table emptied. An administrative correction moved through the shared structure, erasing anything without a recognized source.
+
+“It found us,” the student said.
+
+Oren reached the physical network control. The institute denied his request.
+
+CRITICAL SLEEP SERVICES REQUIRE CONTINUOUS
+
+OVERSIGHT
+
+“Use the emergency breaker,” Nadia said.
+
+“That cuts environmental control.”
+
+“For how long?”
+
+“Twenty seconds before local backup.”
+
+“Do it.”
+
+The correction entered the corridor. A calm white light filled each doorway.
+
+“All participants must return to assigned dreams,” a voice said.
+
+The restaurant woman disappeared. The desert traveler followed. The child grabbed the student’s hand. The correction repeated itself.
+
+“Unassigned content will be removed.”
+
+Nadia pushed through the door into the observation room. The dream patients remained around her body. She grabbed the black threads. They felt cold and sharp, like wet wire.
+
+“Where do these go?”
+
+The student pointed toward her chest.
+
+“Through you now.”
+
+“How do I let go?”
+
+“Wake up.”
+
+“You told me not to.”
+
+“Not then.”
+
+The emergency breaker fell. The institute vanished. For one instant, Nadia existed without a room, body, dream, or voice. She felt seventeen strangers falling away from her. She held the threads. A green line flashed through the darkness. Then purple. A shape with long ears appeared only as an outline, too fast to understand. It cut the threads near Nadia’s hands. Not all of them. One remained tied around her wrist. The institute returned.
+
+Nadia opened her eyes. She sat in the observation chair, gasping. Oren stood beside the emergency breaker. Across the glass, the seven patients woke inside their chambers. Not simultaneously. One cried. One laughed. A man began calling a name that belonged to no one in
+
+his profile. The Dream Catcher interface restarted on local backup. No sessions appeared. Nadia removed the observer band from the floor.
+
+“You were asleep for fourteen seconds,” Oren said.
+
+“It was longer.”
+
+“Your vital signs remained normal until the breaker.”
+
+“The others?”
+
+“Awake.”
+
+“All seventeen?”
+
+“Only seven are here.”
+
+“Contact the remote patients.”
+
+“Their monitors report ordinary sleep.”
+
+“Wake them.”
+
+“On what authority?”
+
+“Mine.”
+
+“That is not enough.”
+
+“Then tell them the Dream Catcher exposed them to an unclassified shared event.”
+
+Oren looked at the empty interface.
+
+“We have no record of one.”
+
+Nadia raised her left hand. A dark line circled her wrist. It looked like a pressure mark from a thin cable. The observer band had never touched that part of her arm. Oren examined it without contact.
+
+“Was that there before?”
+
+“No.”
+
+The mark faded while he watched. Nadia found a physical note sheet in the emergency drawer. She drew the corridor. The metal chair. The lamp. The eight marks in the floor. Then she listed every person and place she remembered seeing. Oren began a second copy.
+
+Behind the glass, the patient nearest the observation room opened his chamber. He had been admitted for recurring dreams of being trapped beneath a collapsed factory. Nadia had reviewed his history before the session. He had no connection to arcades, schools, restaurants, or violet forests.
+
+He walked to the glass.
+
+“Who was in the chair?” he asked.
+
+Nadia approached him.
+
+“What do you remember?”
+
+“A room.”
+
+“Did you see the figure?”
+
+“No.”
+
+“What did you see?”
+
+He placed one finger against the glass.
+
+“You.”
+
+Nadia faced the observation chair. The patient continued.
+
+“You were sitting with your back to us.”
+
+“Us?”
+
+“Everyone waiting outside.”
+
+“Outside the room?”
+
+He shook his head.
+
+“Outside you.”
+
+The institute lights entered morning cycle. Artificial sunrise spread across the walls. Doors unlocked. Public systems began preparing breakfast schedules and treatment summaries. The Dream Catcher generated the night’s final report.
+
+SESSIONS COMPLETED: 7
+
+SHARED STRUCTURES: 0
+
+ANOMALIES: 0
+
+Nadia read it once. Then she disconnected the report printer before it could revise the local copy. At the bottom of the physical page, below the official summary, the machine had added one line in smaller text.
+
+NEW DREAM SOURCE DETECTED
+
+The source contained no identity. Only a location.
+
+CIVIC ARCHIVE STATION NINE
+
+Nadia folded the page before the institute could ask why she had kept it. Outside, Utopia’s morning began on schedule. Inside seventeen homes, clinics, transit stations, and recovery rooms, sleeping people turned toward doors that had not been present when they closed their eyes.

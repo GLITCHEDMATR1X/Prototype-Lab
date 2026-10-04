@@ -1,0 +1,71 @@
+{
+  "district_id": "industrial_grid",
+  "display_name": "Industrial Grid",
+  "entry_requires": "commercial_spine",
+  "buildings": [
+    {
+      "building_id": "automated_factory",
+      "display_name": "Automated Factory",
+      "security": 7,
+      "playable": true,
+      "state": "captured",
+      "camera_chain": [
+        "material_intake",
+        "assembly_line",
+        "safety_controller",
+        "factory_core"
+      ],
+      "unlocks": "power_distribution_plant"
+    },
+    {
+      "building_id": "power_distribution_plant",
+      "display_name": "Power Distribution Plant",
+      "security": 8,
+      "playable": true,
+      "state": "captured",
+      "camera_chain": [
+        "load_dispatch",
+        "switchyard",
+        "critical_feeders",
+        "distribution_core"
+      ],
+      "unlocks": "drone_assembly_facility"
+    },
+    {
+      "building_id": "drone_assembly_facility",
+      "display_name": "Drone Assembly Facility",
+      "security": 8,
+      "playable": true,
+      "state": "captured",
+      "camera_chain": [
+        "parts_registry",
+        "calibration_gantry",
+        "identity_imprint",
+        "flight_control_core"
+      ],
+      "unlocks": "waste_processing_complex"
+    },
+    {
+      "building_id": "waste_processing_complex",
+      "display_name": "Waste Processing Complex",
+      "security": 8,
+      "playable": true,
+      "state": "captured",
+      "camera_chain": [
+        "receiving_scale",
+        "sorting_conveyor",
+        "leachate_control",
+        "recovery_core"
+      ],
+      "unlocks": "industrial_grid_takeover"
+    }
+  ],
+  "takeover_requires": [
+    "automated_factory",
+    "power_distribution_plant",
+    "drone_assembly_facility",
+    "waste_processing_complex"
+  ],
+  "completion_flag": "industrial_grid",
+  "next_boundary": "high_towers"
+}

@@ -1,0 +1,97 @@
+PASS 63 - THE INDIGO GIANT AS A HOLOVERSE DIMENSION
+=====================================================
+
+Goal
+----
+Make The Indigo Giant a native HoloVerse dimension (an archive Gleebs brought with him: the
+record of Nyx and Orbit on REDACTED), while it keeps running on its own from the Lab cabinet,
+RUN_INDIGO_GIANT.bat or python main.py. Follows the Mirror's Limbo pattern
+(holoverse_responder_v1 / holoverse_dimension_v1).
+
+How HoloVerse finds it
+----------------------
+- holoverse/holoverse_dimension.json: protocol holoverse_responder_v1, compatibility native,
+  native_adapter holoverse_native_adapter.py, entry main.py, return_target
+  gleebs_dimension_archive, preview icon.png, input_contract (TAB host-owned).
+- holoverse/identity.json: fixed id 6d1c4b1e-2f0a-4b7e-9a63-1d9e5c3a7f21, so moving or
+  renaming the folder keeps the link.
+- dimension.json (schema 2): title, symbol IG, accent 5B57FF, lore line.
+- HoloVerse side (3 edits, delivered with this pass):
+  1. Dimensions/_system/external_dimension_index.json: an indigo_giant project entry
+     (folder aliases, responder titles, symbol, accent, requires_responder, host contract).
+  2. Dimensions/_system/archive_visibility.json: "The Indigo Giant" added to
+     archive_only_preferred.
+  3. main.py: INDIGO_GIANT_ARCHIVE_SIGNAL / INDIGO_GIANT_ARCHIVE_LINES, a helper
+     indigo_giant_archive_sealed(), and bot_conversation_lines() adds one line for Nyx and
+     one for Orbit once the stored results hold indigo_giant_archive_complete. The signal
+     list is used, not "completed", so a later new journey does not take the memory away.
+
+How it runs inside HoloVerse
+----------------------------
+holoverse_native_adapter.py -> create_mode(host, mode, entry_path, label) returns
+HoloVerseNativeMode with enter / update / exit (+ get_holoverse_result). enter() builds the
+game with host=<HoloVerse app>. Aliases create_native_mode / create_native_adapter /
+create_adapter are provided.
+
+indigo_giant/holoverse_host.py (HoloVerseHostedMixin, first in the game's bases):
+- Borrowing: __getattr__ hands over only names ShowBase itself assigns (read from ShowBase's
+  source, including its name-mangled privates such as _ShowBase__configAspectRatio), so the
+  game uses the host's window, camera, lens, task manager, loader and 2-D layers, and can never
+  pick up an unrelated HoloVerse attribute.
+- The world: self.render is a new node under host.render (indigo_giant_world). Lights, the
+  sketch shader, fog and shadows are set there.
+- The window is HoloVerse's: no PRC data, no ShowBase.__init__, no display changes; the
+  settings panel shows "set by HoloVerse" for resolution / fullscreen / vsync / MSAA; F3 is off.
+- Keys: TAB is HoloVerse's. Any action on TAB is lent another key for the visit
+  (switch_character -> V). bindings_to_save() gives the TAB binding back, so saved keys never
+  change. Key capture refuses TAB while hosted.
+- Leaving: userExit / finalizeExit save and ask the host to return (deferred one frame, so
+  nothing runs inside a task that is about to be removed). restart_new_journey asks the adapter
+  to build a fresh game in the same window.
+- shutdown_for_holoverse(): save; remove the game's tasks (by bound method and by name); ignoreAll;
+  stop the game's sounds without releasing the host's audio device; destroy panels, the Gleebs
+  actor, sky, the sun's shadow buffer and the world node; remove every UI node added to the
+  host's 2-D layers (compared with a baseline taken on entry); restore modifier buttons,
+  button-down events and the clear colour (a copied LColor: getClearColor returns a view).
+- get_holoverse_result(): mode_id, title, completed (gleebs gone), signal
+  (indigo_giant_archive_complete / indigo_giant_gleebs_waiting), day, etchings read/total
+  (also as fragments_recovered/required), crimson_fallen, gleebs_state, places_found,
+  gleebs_response.
+
+Other changes
+-------------
+- app.py: __init__(..., host=None, host_hooks=None); standalone path unchanged.
+- audio.py: shutdown(release_device=True); hosted leaves the device to HoloVerse.
+- frontend.py / hud.py: "quit" -> quit_words() ("return to HoloVerse" when hosted).
+- gleebs.py: gleebs_snapshot() no longer fails when Gleebs was never placed.
+- icon.png: a clean title-scene shot (Nyx, Orbit, Crimson) for the Dimension Archive.
+
+Bug found and fixed on the way
+------------------------------
+First hosted launch: dimension_enter_failed err=_ShowBase__configAspectRatio. ShowBase methods
+called on the game read ShowBase's private (name-mangled) attributes, which the borrow list
+did not include. HoloVerse rolled back cleanly (dimension-load-failed). Fixed by adding the
+mangled names.
+
+Verification
+------------
+- Real HoloVerse 282.49 (staged copy), five round trips: TAB x3, Esc menu > return to
+  HoloVerse, new journey then TAB. Every entry launched (shared_showbase=1, tab_owner=holoverse),
+  every exit printed clean=1, and the host snapshot diff and leak census (tasks, render
+  children, 2-D layers, messenger events, adapter modules) were empty. The only varying item
+  was HoloVerse's own campaign-signal-poll, which appears or not depending on the frame in both
+  directions, so it is not a leak.
+- Nyx/Orbit lines: absent before; present for Nyx and Orbit (not other bots) after a
+  finished visit; still present after a new, unfinished visit.
+- .dev/checks/pass63.py (76 checks): responder files, adapter, borrow list, three hosted visits
+  in a stand-in host with a full host census before and after, the finished-archive signal,
+  standalone quit words and controls.json unchanged.
+- Standalone regression: all checks, 30-minute soak, playthroughs (seeds 11 and 5) - see
+  CHANGELOG / project doc for the numbers.
+
+Known limits
+------------
+- The HoloVerse catalog edit is needed for automatic listing; without it, LINK SIMULATION
+  works.
+- While hosted, the game plays at HoloVerse's window size; its own display settings return when
+  it runs on its own.

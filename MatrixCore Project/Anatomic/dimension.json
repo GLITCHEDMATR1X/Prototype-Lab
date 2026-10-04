@@ -1,0 +1,16 @@
+{
+  "schema": 2,
+  "id": "anatomic",
+  "title": "Anatomic",
+  "version": "47",
+  "compatibility": "adapted",
+  "host_contract": "holoverse_dimension_v1",
+  "adapter": "adapter/holoverse_adapter.py",
+  "entry": "main.py",
+  "return_target": "gleebs_dimension_archive",
+  "presentation": {
+    "symbol": "AN",
+    "accent": "65E8FF",
+    "description": "An anatomical ASCII matter laboratory adapted to run inside the exact existing HoloVerse Panda3D window without changing its size or fullscreen state."
+  }
+}

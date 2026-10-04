@@ -1,0 +1,376 @@
+{
+  "schema": "afterlife-io-shared-fragment-assets-v2",
+  "pass": 93,
+  "policy": "Drones remain active Projection/mechanical-fragment authority for gameplay and Guardian breakup. Environmental world memory debris and randomized weather use assets/source/particles only. Runtime rescaling must preserve source aspect ratio.",
+  "files": [
+    {
+      "path": "assets/source/drones/drone1.png",
+      "role": "drone_fragment",
+      "bytes": 120403,
+      "size": [
+        293,
+        255
+      ],
+      "aspect_ratio": 1.14902,
+      "rgba_sha256": "6288e1a5b5870335ad9a44c876dbf43d63d659d45e2f46cda9a78b9ba7b0ab6d"
+    },
+    {
+      "path": "assets/source/drones/drone10.png",
+      "role": "drone_fragment",
+      "bytes": 20812,
+      "size": [
+        141,
+        118
+      ],
+      "aspect_ratio": 1.194915,
+      "rgba_sha256": "7701a9967a419ea6e687f86d8b22a761e43dec5684e54d614bd9202be0de9f95"
+    },
+    {
+      "path": "assets/source/drones/drone11.png",
+      "role": "drone_fragment",
+      "bytes": 103586,
+      "size": [
+        387,
+        309
+      ],
+      "aspect_ratio": 1.252427,
+      "rgba_sha256": "76b4a8c201e921ee29e96541c3c61220c6f9c2f9e930e84a7aa7c552852e8fd8"
+    },
+    {
+      "path": "assets/source/drones/drone12.png",
+      "role": "drone_fragment",
+      "bytes": 16245,
+      "size": [
+        101,
+        112
+      ],
+      "aspect_ratio": 0.901786,
+      "rgba_sha256": "9334442300fcc7378205b7e42c43118bf7a191b4bede406326b62701ea2bd12b"
+    },
+    {
+      "path": "assets/source/drones/drone13.png",
+      "role": "drone_fragment",
+      "bytes": 46012,
+      "size": [
+        175,
+        170
+      ],
+      "aspect_ratio": 1.029412,
+      "rgba_sha256": "917dee803a30f27ae9aa4ad9b3b2f18e2be8213b61d9cdfcde714536dba04321"
+    },
+    {
+      "path": "assets/source/drones/drone14.png",
+      "role": "drone_fragment",
+      "bytes": 61437,
+      "size": [
+        249,
+        295
+      ],
+      "aspect_ratio": 0.844068,
+      "rgba_sha256": "a357f0b10bda843f81268edf64fc21d88ae76a606e579ca4dcb4d975cb1aec3f"
+    },
+    {
+      "path": "assets/source/drones/drone15.png",
+      "role": "drone_fragment",
+      "bytes": 28026,
+      "size": [
+        150,
+        144
+      ],
+      "aspect_ratio": 1.041667,
+      "rgba_sha256": "2f5bdd7803a95f8828569807be194d1a7f0f06b1e05e6b18de64a75aa7327b8c"
+    },
+    {
+      "path": "assets/source/drones/drone16.png",
+      "role": "drone_fragment",
+      "bytes": 8952,
+      "size": [
+        104,
+        106
+      ],
+      "aspect_ratio": 0.981132,
+      "rgba_sha256": "1725a4f30b8925a995a81129218c9d14bd63cdbab3e1a63c2b8cbd0ccc71f9ec"
+    },
+    {
+      "path": "assets/source/drones/drone2.png",
+      "role": "drone_fragment",
+      "bytes": 147461,
+      "size": [
+        306,
+        289
+      ],
+      "aspect_ratio": 1.058824,
+      "rgba_sha256": "b473f7f72485b1eb2e8843848d115ae7921ea639f8332ce2ffaef65438fa5355"
+    },
+    {
+      "path": "assets/source/drones/drone3.png",
+      "role": "drone_fragment",
+      "bytes": 39325,
+      "size": [
+        249,
+        204
+      ],
+      "aspect_ratio": 1.220588,
+      "rgba_sha256": "a1d74893196fc29308c43d8df50a0a91aa8d893dc56c99ae84c8d86aea669bcc"
+    },
+    {
+      "path": "assets/source/drones/drone4.png",
+      "role": "drone_fragment",
+      "bytes": 51287,
+      "size": [
+        175,
+        185
+      ],
+      "aspect_ratio": 0.945946,
+      "rgba_sha256": "28a7843d857ed53c9b392081977024c14408f861d47e37516821669f59cf708e"
+    },
+    {
+      "path": "assets/source/drones/drone5.png",
+      "role": "drone_fragment",
+      "bytes": 58937,
+      "size": [
+        195,
+        223
+      ],
+      "aspect_ratio": 0.874439,
+      "rgba_sha256": "27b89b2661066bde3202124c189f799aa603aa1fee7c3da64932fd931fd45da8"
+    },
+    {
+      "path": "assets/source/drones/drone6.png",
+      "role": "drone_fragment",
+      "bytes": 46722,
+      "size": [
+        184,
+        185
+      ],
+      "aspect_ratio": 0.994595,
+      "rgba_sha256": "0b1f0e24df6e9ccead67122a4f218faeacc6a8c0506cc460405a36c1ffca2421"
+    },
+    {
+      "path": "assets/source/drones/drone7.png",
+      "role": "drone_fragment",
+      "bytes": 36139,
+      "size": [
+        171,
+        173
+      ],
+      "aspect_ratio": 0.988439,
+      "rgba_sha256": "8cbd30e749b643955312b8d1cd5105591bd13e48be61e6df405d360ef64730cf"
+    },
+    {
+      "path": "assets/source/drones/drone8.png",
+      "role": "drone_fragment",
+      "bytes": 11710,
+      "size": [
+        102,
+        96
+      ],
+      "aspect_ratio": 1.0625,
+      "rgba_sha256": "457ddca3fcb88a762621e7eddcd59aef1558b17801b68c76c4d74d84cec615a2"
+    },
+    {
+      "path": "assets/source/drones/drone9.png",
+      "role": "drone_fragment",
+      "bytes": 27097,
+      "size": [
+        153,
+        159
+      ],
+      "aspect_ratio": 0.962264,
+      "rgba_sha256": "8bfd8f9cab4012a66c1bdf50d7a431ef0e0c11cd813b2792fb65f378569601b0"
+    },
+    {
+      "path": "assets/source/particles/sprite-1-1 (2).png",
+      "role": "particle",
+      "bytes": 214,
+      "size": [
+        39,
+        6
+      ],
+      "aspect_ratio": 6.5,
+      "rgba_sha256": "27881a5086b7f517c40e9b3252a3f3fcfc48bc646feac004747ebdac606c9b28"
+    },
+    {
+      "path": "assets/source/particles/sprite-1-3 (2).png",
+      "role": "particle",
+      "bytes": 15320,
+      "size": [
+        107,
+        99
+      ],
+      "aspect_ratio": 1.080808,
+      "rgba_sha256": "e38d88e6f153df5a49bba553aba4432f92a3922c4a63ca35e47793dc4c22fb2f"
+    },
+    {
+      "path": "assets/source/particles/sprite-2-1.png",
+      "role": "particle",
+      "bytes": 349,
+      "size": [
+        49,
+        8
+      ],
+      "aspect_ratio": 6.125,
+      "rgba_sha256": "edfed6e88a18fa31a23aa1864959c15cf35abe2f7cd7f0cb4f1b2bb900ce38c3"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-1 (2).png",
+      "role": "particle",
+      "bytes": 1188,
+      "size": [
+        25,
+        16
+      ],
+      "aspect_ratio": 1.5625,
+      "rgba_sha256": "4d7df14b7d8961dd163ea5769849f00c834d8a126ab5b41e29e6395f764d4b78"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-1.png",
+      "role": "particle",
+      "bytes": 194,
+      "size": [
+        37,
+        6
+      ],
+      "aspect_ratio": 6.166667,
+      "rgba_sha256": "076a7b210c22ac0ced95cc2876778e469f917a1115b150b6739a6a2ee687c422"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-13 (4).png",
+      "role": "particle",
+      "bytes": 3450,
+      "size": [
+        42,
+        40
+      ],
+      "aspect_ratio": 1.05,
+      "rgba_sha256": "61c9c1dfaaa18dd7c37dd57b64b3aa8ee668d0f99c80e043de6d11ba3eb84ec7"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-18 (2).png",
+      "role": "particle",
+      "bytes": 1338,
+      "size": [
+        80,
+        13
+      ],
+      "aspect_ratio": 6.153846,
+      "rgba_sha256": "9303dc8f9ea2bb7ae310f76375c543cb45901539b531ba288edc20ea9adae6e8"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-20 (2).png",
+      "role": "particle",
+      "bytes": 803,
+      "size": [
+        56,
+        14
+      ],
+      "aspect_ratio": 4.0,
+      "rgba_sha256": "e0e1b32c4a7ceec6ad65101e1d670fde2ed3fb95701067893b07d30d5db632c5"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-27 (2).png",
+      "role": "particle",
+      "bytes": 546,
+      "size": [
+        44,
+        12
+      ],
+      "aspect_ratio": 3.666667,
+      "rgba_sha256": "9ce66388df7070688a4bb96db82f627415f2026886a2535be525b2ad65ba506c"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-29 (2).png",
+      "role": "particle",
+      "bytes": 1102,
+      "size": [
+        28,
+        16
+      ],
+      "aspect_ratio": 1.75,
+      "rgba_sha256": "d3faa805c9aad0c4c8361f3202b99c36358fe90b6f417d6bb501454bb4260c80"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-3.png",
+      "role": "particle",
+      "bytes": 318,
+      "size": [
+        20,
+        11
+      ],
+      "aspect_ratio": 1.818182,
+      "rgba_sha256": "97cdcf5dfd23e77d4beb6cdb92e7a9b2823296924ad78b48155a3adab8902d54"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-30 (2).png",
+      "role": "particle",
+      "bytes": 393,
+      "size": [
+        16,
+        8
+      ],
+      "aspect_ratio": 2.0,
+      "rgba_sha256": "b01be85d96285f1efd8fe0863a844a6c9f7f7cf874b4b2431579ac1115ff8543"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-44.png",
+      "role": "particle",
+      "bytes": 1699,
+      "size": [
+        18,
+        52
+      ],
+      "aspect_ratio": 0.346154,
+      "rgba_sha256": "23e2e18fd06f79395861e2214a0b5f98851ce77a6f9f3aa56b302ae04bfa6c24"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-45.png",
+      "role": "particle",
+      "bytes": 2381,
+      "size": [
+        31,
+        31
+      ],
+      "aspect_ratio": 1.0,
+      "rgba_sha256": "7b2d17d96031ddbfb28bb94e708cead1b4bb506a2c395358c502fa77eea97b01"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-46 (2).png",
+      "role": "particle",
+      "bytes": 2593,
+      "size": [
+        50,
+        26
+      ],
+      "aspect_ratio": 1.923077,
+      "rgba_sha256": "44768e33aa4001ee9421ada0ee1cd3e02239a16508ebed6a53f0ce0a186bb7a1"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-47.png",
+      "role": "particle",
+      "bytes": 945,
+      "size": [
+        21,
+        17
+      ],
+      "aspect_ratio": 1.235294,
+      "rgba_sha256": "64532a9285bab1c41807c51dc23ccf658019deb35d4f08245ae2cdc60b5b2310"
+    },
+    {
+      "path": "assets/source/particles/sprite-5-50.png",
+      "role": "particle",
+      "bytes": 8321,
+      "size": [
+        63,
+        51
+      ],
+      "aspect_ratio": 1.235294,
+      "rgba_sha256": "d2fc5d62b10bfa2cb704322caf25549be2622fca0f984aec2db8d990cfa39905"
+    }
+  ],
+  "totals": {
+    "files": 33,
+    "drones": 16,
+    "particles": 17,
+    "legacy_debris_folder_present": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "contract": "operation_starfall_flight_drone_power_v0.1",
+  "rules": {
+    "height_limit_required": true,
+    "power_limit_required": true,
+    "auto_dock_to_existing_rover": true,
+    "bottom_left_stats_required": true,
+    "critical_power_disables_drone": true,
+    "no_new_land_drone": true
+  },
+  "default_limits": {
+    "power_max": 100,
+    "low_power": 34,
+    "critical_power": 4,
+    "drone_a_max_altitude_m": 230,
+    "drone_b_max_altitude_m": 205
+  }
+}

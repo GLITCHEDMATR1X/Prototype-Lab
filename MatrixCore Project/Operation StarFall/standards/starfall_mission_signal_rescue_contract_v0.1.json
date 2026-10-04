@@ -1,0 +1,29 @@
+{
+  "schema": "operation_starfall_mission_signal_rescue_v0.1",
+  "rule": "Mission zones restrict remote rover/drone operation through signal quality, static feedback, disabled-drone beacons, line-of-sight rescue pulls, and distance-based recovery instead of invisible walls.",
+  "controlled_bodies": ["existing support_refinery_rover", "DRONE_A", "DRONE_B"],
+  "required_controls": {
+    "left_alt_or_alt": "toggle/select Drone A",
+    "right_alt": "toggle/select Drone B",
+    "ctrl_alt": "return to rover control",
+    "lmb_on_disabled_drone": "lock rescue cable when line-of-sight allows"
+  },
+  "required_systems": [
+    "mission-zone warning/hard rings",
+    "signal quality control degradation",
+    "static overlay and signal crackle",
+    "disabled drone rescue beacon",
+    "screen-space disabled-drone picking",
+    "terrain line-of-sight rescue check",
+    "distance/signal based pull rate",
+    "rescue completion reactivation"
+  ],
+  "required_audio": ["signal_static", "drone_disabled", "rescue_pull", "rescue_complete"],
+  "reject_if": [
+    "separate rover/player body is spawned",
+    "mission zone becomes an invisible wall",
+    "disabled drones can still be controlled",
+    "rescue has no beacon or line-of-sight check",
+    "Alt switching regresses"
+  ]
+}

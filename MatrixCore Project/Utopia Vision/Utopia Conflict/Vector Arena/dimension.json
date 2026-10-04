@@ -1,0 +1,13 @@
+{
+  "compatibility": "native",
+  "description": "Strategic endless wave/horde arena with family-specific hardlight architecture, evolving enemy frames, Guardian checkpoints, mutations, hazards, and local audio.",
+  "engine": "panda3d",
+  "entry": "main.py",
+  "host_contract": "holoverse_dimension_v1",
+  "id": "vector_arena",
+  "native_adapter": "standalone_native_adapter.py",
+  "return_target": "gleebs_dimension_archive",
+  "schema": 2,
+  "title": "Vector Arena",
+  "version": "7.1"
+}

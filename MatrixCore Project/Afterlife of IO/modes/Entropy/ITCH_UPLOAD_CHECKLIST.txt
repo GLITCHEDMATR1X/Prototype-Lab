@@ -1,0 +1,19 @@
+ENTROPY PASS 25 — RELEASE CHECKLIST
+===================================
+
+[ ] Fresh save begins on HOME, not in space.
+[ ] HOME displays a 60-second collapse clock.
+[ ] Emergency cache puts Fuel Cells + Salvage into field pack.
+[ ] HOME supernova triggers guaranteed transfer into ship interior.
+[ ] Ship recovery enforces POWER -> STORAGE -> FUEL -> NAVIGATION -> COCKPIT.
+[ ] Storage transfers the HOME field pack into ship cargo.
+[ ] Cockpit begins expedition/collapse timer only after ship recovery.
+[ ] Each abandoned system exposes one Data Fragment objective.
+[ ] Data Fragment recovery does not auto-warp.
+[ ] Fragment progress reaches exactly 6/6 and rejects duplicate recovery.
+[ ] Sixth fragment redirects objective to GLEEBS cockpit link.
+[ ] Gleebs transfer opens the campaign-complete screen.
+[ ] Existing salvage/fuel/upgrades/supernova/black-hole behavior still functions.
+[ ] Backtick pause and F11 fullscreen still function.
+[ ] Old started RC1 save migrates into expedition without replaying HOME.
+[ ] Fresh/untouched save starts HOME.

@@ -1,0 +1,19 @@
+Gameplay/runtime authority:
+- main.py
+- Worlds/main.py
+- Worlds/active_game.json (build identity only)
+
+Validation/package authority:
+- build_manifest.json
+- README.md
+- tools/starfall_package_check.py
+- verification/test_pass109_planet_display_lifecycle.py
+- verification/reports/Operation_StarFall_Pass109_planet_display_lifecycle_static_contract.json
+- Operation_StarFall_Pass109_PlanetDisplayLifecycle_Report.md
+- Operation_StarFall_Pass109_PlanetDisplayLifecycle_validation.txt
+- Operation_StarFall_Pass109_PlanetDisplayLifecycle_changed_files.txt
+
+Historical root handoff moved to docs/pass_history/:
+- Operation_StarFall_Pass108_PlanetDisplayAuthority_Report.md
+- Operation_StarFall_Pass108_PlanetDisplayAuthority_validation.txt
+- Operation_StarFall_Pass108_PlanetDisplayAuthority_changed_files.txt

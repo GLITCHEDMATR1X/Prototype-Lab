@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "id": "utopia_lens_tour",
+  "title": "UTOPIA // LENS TOUR",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "native",
+  "native_adapter": "holoverse_native_adapter.py",
+  "host_contract": "holoverse_dimension_v1",
+  "launch_model": "same_window_native",
+  "return_model": "tab_returns_to_holoverse",
+  "return_target": "gleebs_dimension_archive",
+  "symbol": "UV",
+  "accent": "7FE0FF",
+  "description": "A guided lens tour through Utopia as it was, before it fell.",
+  "input_contract": {
+    "host_owned": [
+      "tab"
+    ],
+    "dimension_owned": [
+      "all other input"
+    ],
+    "return": "TAB returns to HoloVerse."
+  }
+}

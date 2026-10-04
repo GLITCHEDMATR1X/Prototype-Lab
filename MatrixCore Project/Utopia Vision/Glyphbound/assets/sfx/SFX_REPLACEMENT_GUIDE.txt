@@ -1,0 +1,57 @@
+GLYPHBOUND SFX REPLACEMENT
+==========================
+
+Supported audio: .wav, .ogg, .mp3
+
+Name each file with one of these prefixes:
+sword_swing
+sword_hit
+guard
+hurt
+death
+enemy_hit
+enemy_die
+demon_cast
+demon_fireball
+cast_arc
+cast_ember
+cast_ward
+staff_electric
+magic_impact
+ward_break
+pickup
+sigil
+shrine_unlock
+shrine_enter
+weather_rain
+weather_wind
+weather_thunder
+
+Variations are automatic. Examples:
+sword_swing.wav
+sword_swing_1.wav
+sword_swing_2.ogg
+
+Do not rename or duplicate the sfx folder. Just replace/add files here.
+If a sound event has no matching file, the event remains silent.
+
+
+READ SAFETY (PASS 08)
+Unreadable, truncated, or unsupported replacements are skipped once. WAV and OGG
+are the most portable choices across Panda3D audio backends; MP3 support can depend
+on the installed Panda3D audio backend/codec support.
+
+
+WEATHER (PASS 15)
+weather_rain is triggered when rain begins, weather_wind when a storm arrives, and
+weather_thunder on lightning strikes. Longer rain/wind ambience files are welcome;
+missing weather audio never affects the visual weather simulation.
+
+
+PASS 18 GENERATED STARTER SFX
+-----------------------------
+The build includes synthesized defaults only for prefixes that were still missing:
+guard, hurt, death, demon_cast, staff_electric, ward_break.
+
+Any audio already supplied by the player was preserved. Replace these generated WAVs
+at any time using the normal prefix rules above.

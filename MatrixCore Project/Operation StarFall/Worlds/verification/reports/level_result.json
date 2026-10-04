@@ -1,0 +1,27 @@
+{
+  "version": "operation-starfall-level-contract-v4-all-worlds",
+  "level_id": "mimas_snowfield",
+  "level_name": "Mimas Snowfield",
+  "completed": false,
+  "score": 0,
+  "lab_points_awarded": 0,
+  "time_seconds": 180,
+  "failures": 0,
+  "world_key": "mimas",
+  "objective_name": "Crater Snowpack Survey",
+  "progress_percent": 0,
+  "badges": [],
+  "stats": {
+    "resources_collected": 0,
+    "raw_cargo_collected": 0,
+    "refined_resources": 0,
+    "modules_placed": 0,
+    "upgrades_installed": 0,
+    "hotspots_completed": 0,
+    "hazards_survived": 0,
+    "failures": 0,
+    "time_seconds": 180
+  },
+  "return_to_lab": true,
+  "generated_at": 1789846843.182
+}

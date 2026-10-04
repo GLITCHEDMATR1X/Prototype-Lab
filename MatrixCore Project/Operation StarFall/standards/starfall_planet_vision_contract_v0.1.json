@@ -1,0 +1,17 @@
+{
+  "contract": "operation_starfall_planet_vision_v0.4",
+  "default_mode": "ANALYTIC",
+  "default_mode_note": "Analytic Scan is the startup default; Standard View remains selectable with T.",
+  "input_key": "T",
+  "modes": [
+    "STANDARD",
+    "ANALYTIC",
+    "THERMAL",
+    "LOWLIGHT",
+    "SPECTRAL"
+  ],
+  "scope": "planetary surface gameplay views",
+  "screenshot_flag": "--planet-vision-shot",
+  "ui_required": true,
+  "rule": "Planet surface views support lightweight toggleable vision filters on T. Filters must visibly affect the view, update UI, and provide several distinct modes without replacing core rover/drone gameplay. Analytic Scan is the mandatory entry/default world camera mode to simulate old robotic vision. Radiation exposure increases distortion, while each world applies its own lower-saturation baseline."
+}

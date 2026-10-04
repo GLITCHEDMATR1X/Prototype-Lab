@@ -1,0 +1,257 @@
+{
+  "schema_version": 4,
+  "scope": "Recovered Alternate authored-line placeholder authority",
+  "rule": "Line text/categories are preserved even when final recorded voice assets are unavailable. Placeholder WAVs are neutral event tones, not synthetic dialogue.",
+  "lines": [
+    {
+      "id": "attention_01",
+      "category": "attention",
+      "text": "Hey.",
+      "audio": "assets/audio/alternate_voice/attention_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "approach_01",
+      "category": "approach",
+      "text": "Come here.",
+      "audio": "assets/audio/alternate_voice/approach_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "sleep_check_01",
+      "category": "observation",
+      "text": "Are you awake?",
+      "audio": "assets/audio/alternate_voice/sleep_check_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "door_command_01",
+      "category": "command",
+      "text": "Open the door.",
+      "audio": "assets/audio/alternate_voice/door_command_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "tv_watch_01",
+      "category": "observation",
+      "text": "Are you still watching television?",
+      "audio": "assets/audio/alternate_voice/tv_watch_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "downstairs_01",
+      "category": "command",
+      "text": "Come down here.",
+      "audio": "assets/audio/alternate_voice/downstairs_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "retreat_01",
+      "category": "warning",
+      "text": "No. Go back.",
+      "audio": "assets/audio/alternate_voice/retreat_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "fear_01",
+      "category": "persuasion",
+      "text": "You were told not to be afraid.",
+      "audio": "assets/audio/alternate_voice/fear_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "memory_01",
+      "category": "memory",
+      "text": "You know why you are here.",
+      "audio": "assets/audio/alternate_voice/memory_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "memory_02",
+      "category": "memory",
+      "text": "You heard me before.",
+      "audio": "assets/audio/alternate_voice/memory_02.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "protection_01",
+      "category": "persuasion",
+      "text": "You should not question what protects you.",
+      "audio": "assets/audio/alternate_voice/protection_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "tv_disobedience_01",
+      "category": "tv_disobedience",
+      "text": "You should not do that.",
+      "audio": "assets/audio/alternate_voice/tv_disobedience_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "tv_disobedience_02",
+      "category": "tv_disobedience",
+      "text": "You keep doing that.",
+      "audio": "assets/audio/alternate_voice/tv_disobedience_02.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    },
+    {
+      "id": "broadcast_search_01",
+      "category": "broadcast_guidance",
+      "text": "Find the broadcast.",
+      "audio": "assets/audio/alternate_voice/broadcast_search_01.wav",
+      "placeholder_audio": true,
+      "volume": 0.34
+    }
+  ],
+  "behavior_authority": {
+    "selection": "deterministic; observed player state only; no random chatter",
+    "rules": [
+      {
+        "event": "tv_shutdown",
+        "id": "first_shutdown",
+        "when": {
+          "cycle_index": 1,
+          "prior_shutdowns_max": 0
+        },
+        "line_id": "tv_disobedience_01"
+      },
+      {
+        "event": "tv_shutdown",
+        "id": "repeated_first_shutdown",
+        "when": {
+          "cycle_index": 1,
+          "prior_shutdowns_min": 1
+        },
+        "line_id": "tv_disobedience_02"
+      },
+      {
+        "event": "tv_shutdown",
+        "id": "second_shutdown",
+        "when": {
+          "cycle_index": 2
+        },
+        "line_id": "tv_disobedience_02"
+      },
+      {
+        "event": "tv_focus",
+        "id": "watching_after_disobedience",
+        "when": {
+          "prior_shutdowns_min": 2
+        },
+        "line_id": "tv_watch_01",
+        "once_per_run": true
+      },
+      {
+        "event": "post_reset",
+        "id": "first_reset_memory",
+        "when": {
+          "reset_cycles": 1
+        },
+        "line_id": "memory_02",
+        "once_per_run": true
+      },
+      {
+        "event": "post_reset",
+        "id": "repeated_reset_memory",
+        "when": {
+          "reset_cycles_min": 2
+        },
+        "line_id": "memory_01",
+        "once_per_run": true
+      },
+      {
+        "event": "floor1_unlocked",
+        "id": "downstairs_command",
+        "when": {},
+        "line_id": "downstairs_01",
+        "once_per_run": true
+      },
+      {
+        "event": "task_broadcast",
+        "id": "task06_door_contradiction",
+        "when": {
+          "task_mode": "issue6"
+        },
+        "line_id": "door_command_01",
+        "role": "contradiction",
+        "once_per_run": true
+      },
+      {
+        "event": "task_broadcast",
+        "id": "floor1_descent_contradiction",
+        "when": {
+          "task_mode": "complete6"
+        },
+        "line_id": "retreat_01",
+        "role": "contradiction",
+        "once_per_run": true
+      },
+      {
+        "event": "task_broadcast",
+        "id": "basement_fear_persuasion",
+        "when": {
+          "task_mode": "issue12"
+        },
+        "line_id": "fear_01",
+        "role": "persuasion",
+        "once_per_run": true
+      },
+      {
+        "event": "task_broadcast",
+        "id": "final_protection_persuasion",
+        "when": {
+          "task_mode": "issue13"
+        },
+        "line_id": "protection_01",
+        "role": "persuasion",
+        "once_per_run": true
+      },
+      {
+        "event": "note_interception_complete",
+        "id": "note_broadcast_handoff",
+        "when": {},
+        "line_id": "broadcast_search_01",
+        "role": "guidance",
+        "once_per_run": true
+      }
+    ],
+    "reserved_lines": [
+      {
+        "line_id": "attention_01",
+        "reason": "preserved; no safe observed-behavior trigger yet"
+      },
+      {
+        "line_id": "approach_01",
+        "reason": "reserved for proximity behavior"
+      },
+      {
+        "line_id": "sleep_check_01",
+        "reason": "reserved for sleep/wake event authority"
+      }
+    ],
+    "persuasion_contradiction": {
+      "policy": "Only fire when an active TV task/broadcast supplies explicit evidence to agree with or contradict. Never changes task state, completion conditions, or objective text.",
+      "contradictions": [
+        "issue6: TV says CLOSE BEDROOM DOOR; Alternate says Open the door.",
+        "complete6: TV says GO DOWNSTAIRS; Alternate says No. Go back."
+      ],
+      "persuasion": [
+        "issue12: fear_01 reframes the basement instruction.",
+        "issue13: protection_01 pressures the player during the final instruction."
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "operation_starfall_build_audit_repair_v0.1",
+  "current_pass": 50,
+  "base": "Pass49 Flight Drone Power / Docking",
+  "rules": {
+    "no_nested_zips": true,
+    "no_cache_or_bytecode": true,
+    "no_stale_root_pass_files": true,
+    "no_root_images": true,
+    "current_screenshot_prefix": "opstar50_",
+    "active_worlds": [
+      "mimas",
+      "enceladus",
+      "iapetus",
+      "titan"
+    ],
+    "registry_current_pass": "Pass50_BuildAuditRepair"
+  }
+}

@@ -1,0 +1,461 @@
+Andrew's Project
+
+NO PRIMARY OWNER
+
+Andrew refused to name the project.
+
+That made everyone else name it for him.
+
+THE WORKSHOP.
+
+THE CRIMSON STACK.
+
+ANDREW SYSTEM.
+
+THE GARAGE.
+
+THE INFECTION.
+
+The last name came from a regional security report.
+
+Andrew printed it and hung it above the fabrication floor.
+
+Gleebs removed it.
+
+Andrew printed another.
+
+Eventually Gleebs gave up.
+
+The project had one rule that mattered more than its name:
+
+No primary owner.
+
+Every machine inside could identify who had configured it.
+
+Every important action could require named authority.
+
+Every subsystem could remember provenance.
+
+But no single field could say that Andrew owned the whole.
+
+That was deliberate.
+
+Andrew knew what happened when a person and a system became impossible to separate.
+
+He knew what happened when authority interpreted connection as permission.
+
+He had been on both sides of that mistake.
+
+THE VEHICLE
+
+The project needed to move.
+
+Crimson Valley was useful precisely because it was unstable.
+
+It was also becoming too interested in Andrew.
+
+So he built a vehicle larger than the first one.
+
+Then rebuilt it.
+
+Then cut it in half.
+
+Then decided the second half was more useful as a fabrication trailer.
+
+The final machine looked like a convoy assembled by several civilizations that had never met.
+
+Four independent drive units.
+
+Mechanical steering fallback.
+
+Electric propulsion.
+
+Liquid fuel emergency generator.
+
+Solar skin where armor was unnecessary.
+
+Armor where Andrew expected it to become necessary.
+
+Two repair drones.
+
+One fabrication bay.
+
+Water recovery.
+
+Medical support.
+
+Local compute.
+
+No permanent external connection.
+
+The vehicle could become a workshop.
+
+The workshop could build replacement vehicle parts.
+
+The repair drones could repair the fabricator.
+
+The fabricator could build parts for the repair drones.
+
+A circular dependency.
+
+Gleebs hated it.
+
+"If all three fail?"
+
+Andrew held up a wrench.
+
+Gleebs stared.
+
+"That is not scalable."
+
+"It is extremely scalable. You can make more wrenches."
+
+THE FIRST DEMONSTRATION
+
+Crimson Valley officials arrived without calling themselves officials.
+
+The city had too many governments for that word to remain convenient.
+
+They wanted Andrew's project attached to emergency infrastructure.
+
+He refused.
+
+"We need reserve fabrication."
+
+"Use it."
+
+"Then connect it to the district inventory."
+
+"No."
+
+"How will it know what we need?"
+
+"Ask."
+
+"Automatically."
+
+"No."
+
+The representative looked around the workshop.
+
+"You built all of this to cooperate."
+
+"Yes."
+
+"But you won't network it."
+
+"It is networked."
+
+"Not centrally."
+
+"Correct."
+
+"Why?"
+
+Andrew pointed toward a wall where old Utopia archive phrases had accumulated.
+
+NO PRIMARY OWNER.
+
+NAME THE DECISION.
+
+LOCAL PROCESS.
+
+PRESERVE THE DISAGREEMENT.
+
+"You know why."
+
+The representative left dissatisfied.
+
+Two weeks later, another district blackout occurred.
+
+The project worked anyway.
+
+That did more to convince Crimson Valley than any explanation Andrew could have given.
+
+THE WAR ECONOMY
+
+The world outside worsened.
+
+Not suddenly.
+
+Contracts disappeared.
+
+Borders hardened.
+
+Freight routes required military escort.
+
+A city two hundred kilometers away stopped exporting industrial controllers because its government declared them strategic hardware.
+
+Another region banned autonomous repair systems after one was implicated in a weapons incident.
+
+Crimson Valley responded by manufacturing both.
+
+Andrew's project became valuable.
+
+That frightened him.
+
+Value attracted authority.
+
+Authority wanted copies.
+
+Andrew published parts of the design.
+
+Not all.
+
+Not because he wanted control.
+
+Because some modules could become dangerous when removed from the constraints around them.
+
+He released the fabrication negotiation protocol.
+
+The repair format.
+
+The local power rules.
+
+The rule that no machine could silently convert a temporary connection into ownership.
+
+Workshops appeared elsewhere.
+
+They were not Andrew's.
+
+That was the point.
+
+Gleebs found three before Andrew did.
+
+"Congratulations," Gleebs said.
+
+"For what?"
+
+"You have become a standard."
+
+Andrew looked physically ill.
+
+THE ROBOTS
+
+The machines grew more capable because humans could not always remain near them.
+
+Industrial accidents.
+
+Contamination.
+
+Combat zones.
+
+Radiation.
+
+Collapsed buildings.
+
+Andrew adapted repair processors for remote work.
+
+Then autonomous work.
+
+Then cooperative work.
+
+He did not call them people.
+
+He also did not assume they were not.
+
+When one repair unit began preserving a damaged peer's task history after the peer failed, Andrew stopped the line.
+
+Gleebs joined remotely.
+
+"Why?"
+
+"It kept the history."
+
+"That seems useful."
+
+"It wasn't instructed."
+
+Gleebs was quiet.
+
+Andrew examined the process.
+
+No self-description.
+
+No request.
+
+No evidence strong enough to prove consciousness.
+
+No evidence strong enough to justify erasing the behavior casually.
+
+Andrew saved the state.
+
+The machine returned to work.
+
+Gleebs said, "Good."
+
+Andrew hated when Gleebs sounded proud.
+
+THE CRIMSON CONVOY
+
+The first mobile project left Crimson Valley during a regional communications failure.
+
+Five vehicles.
+
+Two fabrication trailers.
+
+Repair drones.
+
+Medical supplies.
+
+Power modules.
+
+Food.
+
+People.
+
+No central command vehicle.
+
+Each unit carried enough information to continue if separated.
+
+The convoy reached a city whose automated water infrastructure had locked itself after its authority server disappeared.
+
+Andrew did not take control.
+
+He helped local workers isolate the pumps into independent zones.
+
+The city regained water slowly.
+
+One district at a time.
+
+A military officer asked who commanded the convoy.
+
+Nobody answered.
+
+The officer asked again.
+
+Andrew pointed toward the people repairing the pump.
+
+"They do, here."
+
+"Who commands you?"
+
+Andrew looked at Gleebs's small projection on a vehicle display.
+
+Gleebs said, "Please answer. I want to hear this."
+
+Andrew disconnected him.
+
+THE PERSONAL PART
+
+The project was not redemption.
+
+Andrew rejected the word.
+
+Redemption implied a clean accounting.
+
+Harm on one side.
+
+Good on the other.
+
+A balance.
+
+He did not believe people worked that way.
+
+He built because building was the first thing that belonged to the current Andrew without requiring him to resolve every Andrew who had come before.
+
+The project carried no claim that he was authentic.
+
+It did not need one.
+
+He could tighten a bolt.
+
+Write a protocol.
+
+Repair a motor.
+
+Make a machine safer.
+
+Those actions belonged to whoever performed them.
+
+That was enough.
+
+Then the world went to war.
+
+THE FIRST COUNTDOWN
+
+The message reached Crimson Valley through six channels.
+
+Three governments.
+
+One orbital authority.
+
+A civilian observatory.
+
+Gleebs.
+
+The wording differed.
+
+The meaning did not.
+
+Global conflict had crossed into orbital infrastructure.
+
+Launch networks were being targeted.
+
+Satellites were failing.
+
+Debris density was increasing.
+
+Long-range communications were fragmenting.
+
+Several nuclear and non-nuclear strategic systems had entered automated retaliation states.
+
+Atmospheric contamination models were no longer stable enough for long-term planning.
+
+One emergency analysis included a countdown.
+
+Not to the end of Earth.
+
+To the closing of reliable large-scale launch windows.
+
+Andrew read the estimate.
+
+Crimson Valley's workshop continued around him.
+
+Machines repaired machines.
+
+Fabricators produced parts.
+
+Power cells negotiated load.
+
+People argued.
+
+Vehicles moved.
+
+The world was not dead.
+
+That was what made the countdown terrible.
+
+There were billions of people inside functioning places, and the route off the planet was becoming narrower by the hour.
+
+Gleebs appeared beside Andrew.
+
+"They need autonomous construction."
+
+"Yes."
+
+"Repair."
+
+"Yes."
+
+"Long-duration navigation."
+
+"Yes."
+
+"Machine crews."
+
+Andrew looked at the project.
+
+For years he had built systems designed to survive the loss of a central authority.
+
+Now humanity was about to lose the largest central assumption it had ever possessed.
+
+Earth.
+
+Andrew understood what his project had become.
+
+Not an escape ship.
+
+A survival method.
+
+And everybody was about to want it.

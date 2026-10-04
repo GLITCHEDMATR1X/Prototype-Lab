@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "id": "afterlife_of_io",
+  "title": "Afterlife of IO",
+  "version": "147",
+  "entry": "main.py",
+  "engine": "pygame",
+  "compatibility": "linked",
+  "launch_model": "external_child_process",
+  "return_model": "child_exit_then_host_restore",
+  "return_target": "gleebs_dimension_archive",
+  "preview": "icon.png",
+  "symbol": "AIO",
+  "accent": "C9A27A",
+  "description": "IO's afterlife, between the Beginning and the Present: seven Memory Guardians, seven lost civilization archives, and the Veil at the end. The archive Gleebs needed, before IO came home to HoloVerse.",
+  "input_contract": {
+    "host_owned": [],
+    "dimension_owned": [
+      "all"
+    ],
+    "return": "RETURN TO HOLOVERSE (title Quit, or Esc > pause > Return to HoloVerse)"
+  },
+  "result_contract": "HOLOVERSE_RETURN_SIGNAL_PATH json {result: {completed, signal, fragments_recovered, fragments_required, gleebs_response}}"
+}

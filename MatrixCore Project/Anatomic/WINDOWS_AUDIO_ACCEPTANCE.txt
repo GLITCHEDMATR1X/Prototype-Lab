@@ -1,0 +1,14 @@
+ANATOMIC PASS 36 — WINDOWS AUDIO ACCEPTANCE
+
+1. Run RUN_PASS36_AUDIO_DIAGNOSTIC.bat.
+2. In the console, confirm a line similar to:
+   ASCII_MATTER_AUDIO_BACKEND=showbase_openal_polyphonic cues=9 global_limit=unlimited valid=1
+3. Before the diagnostic exits, you should hear overlapping gun, arm, sword and impact cues rather than one cue replacing the previous cue.
+4. Launch the game normally and press M for melee.
+5. Move/charge the left arm: left arm swish should play.
+6. Move/charge the right arm: right arm swish + sword whoosh may overlap; sword hum continues underneath.
+7. Land a left punch: fist_impact.wav should play only on real contact.
+8. Land a sword hit: sword_impact.wav should play on real contact and may overlap the sword hum/movement tail.
+9. Fire the rifle afterward: firearm cues should still work.
+
+All six melee WAV files under assets/audio/melee/ are replaceable.

@@ -1,0 +1,20 @@
+CHANGED
+main.py
+Worlds/main.py
+README.md
+build_manifest.json
+Worlds/active_game.json
+standards/starfall_package_hygiene_v0.1.json
+standards/starfall_mastering_manifest_v0.1.json
+run_game.bat
+requirements.txt
+tools/starfall_package_check.py
+Operation_StarFall_Pass99_ModalAuthority_Report.md
+Operation_StarFall_Pass99_ModalAuthority_validation.txt
+Operation_StarFall_Pass99_ModalAuthority_changed_files.txt
+verification/screenshots/Pass99_Mimas_Options_720p.png
+verification/screenshots/Pass99_Mimas_Options_1080p.png
+
+MOVED TO HISTORY
+docs/pass_history/Operation_StarFall_Pass97_ResponsiveDisplayWindowAuthority_Report.md
+docs/pass_history/Operation_StarFall_Pass98_OperationTransitionIsolationFix_Report.md

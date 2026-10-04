@@ -1,0 +1,46 @@
+{
+  "version": "prototype-lab-profile-v1",
+  "total_lab_points": 0,
+  "levels": {
+    "mimas_snowfield": {
+      "level_name": "Mimas Snowfield",
+      "world_key": "mimas",
+      "objective_name": "Crater Snowpack Survey",
+      "completed": false,
+      "best_score": 0,
+      "last_score": 0,
+      "last_progress_percent": 0,
+      "last_lab_points_awarded": 0,
+      "runs": 1,
+      "badges": [],
+      "last_result": {
+        "version": "operation-starfall-level-contract-v4-all-worlds",
+        "level_id": "mimas_snowfield",
+        "level_name": "Mimas Snowfield",
+        "completed": false,
+        "score": 0,
+        "lab_points_awarded": 0,
+        "time_seconds": 180,
+        "failures": 0,
+        "world_key": "mimas",
+        "objective_name": "Crater Snowpack Survey",
+        "progress_percent": 0,
+        "badges": [],
+        "stats": {
+          "resources_collected": 0,
+          "raw_cargo_collected": 0,
+          "refined_resources": 0,
+          "modules_placed": 0,
+          "upgrades_installed": 0,
+          "hotspots_completed": 0,
+          "hazards_survived": 0,
+          "failures": 0,
+          "time_seconds": 180
+        },
+        "return_to_lab": true,
+        "generated_at": 1789846843.182
+      }
+    }
+  },
+  "unlocks": {}
+}

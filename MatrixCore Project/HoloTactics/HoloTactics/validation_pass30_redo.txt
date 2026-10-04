@@ -1,0 +1,56 @@
+HoloTactics Pass 30 HUD Alignment Redo
+Status: CANDIDATE
+Base authority: exact HoloTactics Pass 29 GXTool Contract Cleanup ZIP
+Rejected branch: first Pass 30 HUD attempt (visible misalignment)
+
+REFERENCE CHECK
+Project authority:
+- HoloTactics_Pass29_GXTool_Contract_Cleanup_full.zip
+- GLITCHED MATRIX Prototype Lab Failure Ledger: actual game outranks reports; one pass = one target; visible regression fails the pass.
+
+Exact runtime:
+- Panda3D 1.10.16
+- Python 3.13
+- Linux/Xvfb development validation; Windows user runtime still required for final platform acceptance.
+
+Official references consulted:
+- https://docs.panda3d.org/1.10/python/programming/gui/index
+  Used for aspect2d authority: x is aspect-ratio corrected and y is [-1,1], so shared screen-space edges/padding are deterministic.
+- https://docs.panda3d.org/1.10/python/programming/gui/rendering-text
+  Used for TextNode alignment behavior: left-aligned text extends right from its anchor, so right-column text anchors were rebuilt from the panel's left edge rather than mixed right/left anchors.
+- https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/112
+  Used for consistent UI location/structure across screens.
+- https://learn.microsoft.com/en-us/xbox/accessibility/accessibility-feature-tags
+  Used as the HUD text readability floor at 720p/1080p.
+
+Implementation decisions:
+- Rebuilt from Pass 29; did not patch rejected Pass 30.
+- Shared left outer edge for squad/help panels.
+- Shared inner + outer edges for mission/comms panels.
+- Consistent 0.06 horizontal body padding.
+- Normal HUD contains only player-facing tactical information.
+- F9 DEV VIEW owns runtime/round/cursor/threat/pulse/sync/audio diagnostics and is hidden by default.
+- Gameplay core, actor specs, and audio modules remain byte-identical to Pass 29.
+
+Technical QA:
+- python compile: PASS
+- logic smoke: PASS
+- Pass 20 AI: 7/7 PASS
+- Pass 21 Sector 2: 14/14 PASS
+- Pass 22 Sector 3: 26/26 PASS
+- Pass 25 Journey Map: 11/11 PASS
+- Pass 26 actors: 12/12 PASS
+- Pass 27 audio: 21/21 PASS
+- Pass 28 native host: 70/70 PASS
+- Pass 30 HUD alignment contract: 16/16 PASS
+
+Screenshot review:
+- 1280x720: Sector 1, 2, 3, 4, 5, Finale Stage 2, Finale Stage 3, F9 DEV VIEW
+- 1920x1080: Sector 1 and Sector 5
+- No edge clipping observed in reviewed player HUD panels.
+- Right mission/comms column visibly aligned.
+- Left squad/help outer edge visibly aligned.
+
+Known limits:
+- Actual current HoloVerse host build acceptance remains pending.
+- Windows runtime acceptance remains a separate platform check.

@@ -1,0 +1,24 @@
+{
+  "schema": "operation_starfall_contract_v1",
+  "contract": "operation_starfall_atmospheric_fx_v0.2",
+  "active_worlds": [
+    "mimas",
+    "enceladus",
+    "iapetus",
+    "titan"
+  ],
+  "rules": {
+    "titan": "dense nitrogen/methane haze, warm orange/brown, no cyan main gas volumes",
+    "enceladus": "water-vapor and ice-particle plume mist only, no thick atmosphere",
+    "mimas": "airless crater dust visibility only",
+    "iapetus": "airless dark-side horizon/lighting falloff only"
+  },
+  "required_tests": [
+    "python -B Worlds/main.py --moon=titan --atmospheric-fx-contract-test --no-audio",
+    "python -B Worlds/main.py --moon=mimas --atmospheric-fx-contract-test --no-audio",
+    "python -B Worlds/main.py --moon=enceladus --atmospheric-fx-contract-test --no-audio",
+    "python -B Worlds/main.py --moon=iapetus --atmospheric-fx-contract-test --no-audio"
+  ],
+  "screenshot_flag": "--atmosphere-fx-shot",
+  "rule": "Atmospheric FX must be factual per world: Titan gets dense nitrogen/methane haze with thick low-clarity amber visibility; Enceladus gets plume/ice vapor only; Mimas and Iapetus remain airless with visibility/lighting effects, not fake weather. World saturation should remain restrained."
+}

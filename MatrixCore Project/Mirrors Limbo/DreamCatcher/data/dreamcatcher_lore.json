@@ -1,0 +1,17 @@
+{
+  "authority": "DreamCatcher Alternate lore fragments",
+  "rule": "Fragments are discovered through in-world signals; no exposition dump.",
+  "fragments": [
+    {
+      "id": "dream_link_04",
+      "channel": "archive",
+      "unlock": "after_task_01",
+      "lines": [
+        "DREAM LINK TEST 04.",
+        "SECOND USER DETECTED.",
+        "OWNER UNAWARE."
+      ],
+      "meaning": "Early evidence that another person could enter a connected dream without the session owner's awareness. Andrew is not named yet."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+ANATOMIC PASS 47 — HOLOVERSE SAME-WINDOW ACCEPTANCE
+
+Install this build by overlaying/extracting its `Anatomic 45` folder onto:
+  MatrixCore Project\Anatomic 45\
+Do NOT delete an existing hidden `.holoverse_link.json` in that folder.
+
+1. Start HoloVerse 282.7 normally. Note its current window dimensions.
+2. Open Gleebs -> Dimension Archive. A rescan should promote the existing entry to:
+     Anatomic [ADAPTED]
+   without requiring a second link.
+3. Launch Anatomic.
+4. REQUIRED LOG RESULT:
+     dimension_enter route=gleebs_archive ... title=Anatomic
+   NOT:
+     external_pause_begin label=DIMENSION // ANATOMIC...
+     dimension_enter route=gleebs_archive_external ...
+5. Confirm there is ONE Panda3D window/one taskbar window, not a second Anatomic process window.
+6. Confirm framebuffer/window dimensions are EXACTLY the HoloVerse dimensions from step 1.
+7. Press F11 while embedded. HoloVerse owns this key; Anatomic must not force 1920x1080 on return to windowed mode.
+8. Test WASD/mouse, rifle/melee, hold-R rewind, F2 Motion Forge, F3 Combo Composer, C/X combo controls.
+9. Press ESC: HoloVerse shared pause/menu must appear without changing window dimensions.
+10. Press TAB: return to HoloVerse in the SAME window and same size.
+11. Re-enter Anatomic and repeat once to check teardown/re-entry.
+
+Separate known HoloVerse 282.7 issue seen in the supplied log:
+  dimension_preview_failed ... err=name 'Filename' is not defined
+This is an archive-preview import bug in HoloVerse, not an Anatomic launch/window bug.

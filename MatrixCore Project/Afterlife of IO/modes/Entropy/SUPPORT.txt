@@ -1,0 +1,24 @@
+ENTROPY SUPPORT NOTES
+=====================
+
+RUNTIME
+Entropy is a pygame-ce game, not a Panda3D game.
+
+SAFE STARTUP
+Run main.py normally. If an audio driver prevents startup, use:
+    python main.py --no-audio
+
+USER DATA
+Windows default:
+    %LOCALAPPDATA%\GLITCHED MATRIX\Entropy
+
+The runtime log and crash log are stored inside that user-data directory.
+Deleting settings.json resets display/audio settings. Deleting save_state.json resets progression.
+
+DISPLAY
+- F11 toggles fullscreen.
+- The game renders at 1920x1080 internally and letterboxes safely on other aspect ratios.
+- Borderless fullscreen avoids exclusive display-mode changes.
+
+REPORTING A PROBLEM
+Include the runtime.log and crash.log files, your Windows version, display resolution, and whether --no-audio changes the result.

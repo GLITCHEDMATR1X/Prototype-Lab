@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "project_name": "Glyphbound: The Shattered Shrine",
+  "engine": "Panda3D",
+  "engine_version": "1.10.16",
+  "authoritative_pass": 24,
+  "entry_point": "main.py",
+  "core_loop": "Explore the streamed glyph world, collect three sigils, unlock the Shattered Shrine, fight monsters and demons, and use the permanent Utopia return portal as the world home anchor.",
+  "world_seed": 1779937357,
+  "portal_contract": "portal_contract.json",
+  "protected_files": [
+    "assets/glyph_atlas.png",
+    "assets/music/",
+    "assets/sfx/"
+  ],
+  "display": {
+    "default": [
+      1600,
+      900
+    ],
+    "aspect": "16:9",
+    "postprocess": "semantic glyph shader"
+  },
+  "controls": {
+    "WASD": "move",
+    "Shift": "sprint",
+    "LMB": "sword",
+    "RMB": "guard",
+    "R": "staff lightning",
+    "1/2/3": "select spell",
+    "F": "cast spell",
+    "E": "interact / Central Hub portal",
+    "F6": "recover at Utopia beacon",
+    "F1": "raw/glyph render",
+    "F2": "glyph style",
+    "Escape": "mouse capture",
+    "Q": "unused"
+  },
+  "verification": {
+    "static": "python tools/verify_pass24_holoverse_native.py",
+    "portal_raw": "python main.py --software-test --portal-demo --no-audio --test-shot verification/portal_raw.png",
+    "gpu_acceptance_required": "Run normal Semantic ASCII mode on Windows/OpenGL and confirm portal glyph readability/beacon brightness.",
+    "foundation_raw": "python main.py --software-test --foundation-demo --no-audio --test-shot verification/foundation_village_raw.png",
+    "foundation_semantic": "python main.py --foundation-demo --no-audio --test-shot verification/foundation_village_semantic.png",
+    "terrain_integration": "Pass 23 preserves Pass 22 terrain-bound foundations/approaches and adds facade-center sealed thresholds derived from the same structure/destination authority.",
+    "start_semantic": "python main.py --no-audio --test-shot verification/start_semantic.png",
+    "entrance_raw": "python main.py --software-test --entrance-demo --no-audio --test-shot verification/pass23_entrance_raw.png",
+    "entrance_semantic": "python main.py --entrance-demo --no-audio --test-shot verification/pass23_entrance_semantic.png",
+    "city_entrance_raw": "python main.py --software-test --city-entrance-demo --no-audio --test-shot verification/pass23_city_entrance_raw.png",
+    "city_entrance_semantic": "python main.py --city-entrance-demo --no-audio --test-shot verification/pass23_city_entrance_semantic.png",
+    "holoverse_native": "Launch from HoloVerse Dimension Archive; verify same-window mount, TAB return, Utopia portal return, and host restoration."
+  },
+  "known_limits": [
+    "TinyDisplay verification bypasses the GLSL glyph post-process.",
+    "Container audio hardware may be unavailable; HoloVerse falls back to NullAudioManager during headless/native QA."
+  ],
+  "holoverse": {
+    "responder": "holoverse/holoverse_dimension.json",
+    "native_adapter": "holoverse_native_adapter.py",
+    "host_contract": "holoverse_dimension_v1",
+    "return_key": "TAB (owned by HoloVerse)",
+    "native_return_portal": "E at Utopia portal requests HoloVerse return without exiting the host"
+  }
+}

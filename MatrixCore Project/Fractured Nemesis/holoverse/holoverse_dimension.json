@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "id": "fractured_nemesis",
+  "title": "Fractured Nemesis",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "native",
+  "launch_model": "same_window_native",
+  "return_model": "tab_or_esc_returns_to_holoverse",
+  "return_target": "gleebs_dimension_archive",
+  "preview": "icon.png",
+  "symbol": "FN",
+  "accent": "C2364A",
+  "description": "Andrew, fractured: the embodiment of the Utopia project's tyrant that Gleebs defeated in life but not in death. His nemesis persists in the archive as a broken echo, and it still fights back.",
+  "input_contract": {
+    "host_owned": [
+      "tab"
+    ],
+    "dimension_owned": [
+      "all other input"
+    ],
+    "return": "ESC or TAB returns to HoloVerse."
+  },
+  "result_contract": "optional: HOLOVERSE_RETURN_SIGNAL_PATH json {result: {completed, signal, gleebs_response}} via holoverse_link.py",
+  "native_adapter": "holoverse_native_adapter.py",
+  "host_contract": "holoverse_dimension_v1"
+}

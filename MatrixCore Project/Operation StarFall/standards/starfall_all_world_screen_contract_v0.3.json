@@ -1,0 +1,23 @@
+{
+  "contract": "operation_starfall_all_world_screen_canvas_v0_4",
+  "active_worlds": ["mimas", "enceladus", "iapetus", "titan", "mars", "pluto", "europa", "triton"],
+  "default_hud": "MINIMAL",
+  "hud_cycle": ["MINIMAL", "COMPACT", "FULL", "HIDDEN"],
+  "window_presets": {
+    "default": "decorated desktop-fit resizable",
+    "large": "1920x1080 starting size resizable",
+    "bordered": "1600x900 starting size resizable",
+    "safe": "1440x810 starting size resizable",
+    "windowed": "1280x720 starting size resizable",
+    "borderless": "native desktop dimensions"
+  },
+  "rules": {
+    "one_screen_authority": true,
+    "same_display_config_for_all_worlds": true,
+    "same_hud_layout_for_all_worlds": true,
+    "window_event_reflows_ui": true,
+    "default_window_resizable": true,
+    "exclusive_fullscreen_default": false,
+    "desktop_resolution_change_default": false
+  }
+}

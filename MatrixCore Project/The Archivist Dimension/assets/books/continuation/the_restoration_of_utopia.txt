@@ -1,0 +1,617 @@
+The Restoration of Utopia
+
+NOT A FAILURE
+
+The first rule of the restoration was that Utopia had not failed when the archive ended.
+
+Gleebs wrote that sentence into the project authority before Sable allowed him to build anything.
+
+Utopia had survived its crisis.
+
+People had continued.
+
+Bellwether had opened.
+
+The sky had become uncalibrated and real.
+
+Human beings had lived beyond the final records preserved in the old archive.
+
+Whatever happened afterward belonged to time, not to a retroactive verdict.
+
+The restoration was not an attempt to repair a civilization that had failed to recover.
+
+It was something much later.
+
+Humanity was gone.
+
+The original cities were gone.
+
+Gleebs had outlived the people whose records he carried.
+
+He had carried them too far.
+
+Across systems.
+
+Across storage media.
+
+Across magnetic storms.
+
+Across radiation fields.
+
+Across failures that no engineer designing an ordinary archive would ever have expected it to survive.
+
+The archive had endured.
+
+Not intact.
+
+That distinction became the second rule.
+
+Damage must remain visible.
+
+Sable approved.
+
+THE DAMAGE
+
+The Utopia archive could recreate extraordinary detail.
+
+It could also fail in absurd ways.
+
+An entire transit authority survived with schedules, maintenance records, staff assignments and route timing, but a magnetic event had corrupted the color identifiers used on the public maps.
+
+A residential tower existed in structural plans and thousands of exterior images, while seven apartments contained no reliable internal record at all.
+
+A street market had complete audio across several years and almost no usable visual data.
+
+A hospital room survived in a patient's memory but disagreed with the facility blueprint.
+
+Some records had been duplicated so many times that Gleebs could identify their family of copies without identifying the original.
+
+Radiation damage produced small changes that looked plausible.
+
+That was the dangerous kind.
+
+A missing byte was honest.
+
+A changed name was not.
+
+Sable built comparison tools.
+
+Every reconstructed object carried provenance.
+
+KNOWN.
+
+CORROBORATED.
+
+PARTIAL.
+
+CONTESTED.
+
+INFERRED.
+
+MISSING.
+
+No citizen walking through restored Utopia would need to see those labels all the time.
+
+But the system would know.
+
+And anyone who asked could find out.
+
+Gleebs had spent too long preserving disputed records to let architecture turn uncertainty into fact.
+
+They rebuilt the city that way.
+
+Not from a master file.
+
+From agreement.
+
+A wall existed because enough independent sources established the wall.
+
+A room remained incomplete because the evidence did.
+
+A park changed shape twice before they discovered that both shapes had existed at different times.
+
+Sable kept both and attached them to the correct periods.
+
+"It is easier when cities stop changing," Gleebs said.
+
+"Cities that stop changing are usually dead."
+
+He accepted that.
+
+THE FIRST STREET
+
+They chose a small street.
+
+Not Utopia Central.
+
+Not a famous facility.
+
+Not a monument.
+
+A street whose evidence was unusually good.
+
+Building fronts.
+
+Drainage.
+
+Lighting.
+
+Transit access.
+
+Store records.
+
+Weather response.
+
+Maintenance calls.
+
+A camera had watched the corner for years.
+
+The first restoration rendered perfectly.
+
+Too perfectly.
+
+Sable deleted it.
+
+Gleebs stared at the empty environment.
+
+"What was wrong?"
+
+"No wear."
+
+"We have the geometry."
+
+"People lived there."
+
+"We do not have every mark they left."
+
+"Then it should not look untouched."
+
+The second version introduced only damage supported by evidence.
+
+A repaired sign.
+
+A stain visible in repeated photographs.
+
+A section of pavement replaced after a maintenance request.
+
+A window whose frame had been changed.
+
+The street became less beautiful.
+
+It also became Utopia.
+
+Gleebs stood beneath a restored lamp at the recorded evening activation time.
+
+The light came on.
+
+Neither of them spoke.
+
+They had reconstructed that schedule from municipal records, energy logs and three unrelated camera feeds.
+
+The lamp did not know anyone had been waiting for it.
+
+That made the moment better.
+
+IO watched through an external link.
+
+His recovery construct was already preparing for the expeditions Sable called the Entropy route.
+
+He saw the street through a camera mounted on Sable's shoulder.
+
+"That is Utopia?"
+
+"One street."
+
+"It looks ordinary."
+
+Gleebs answered before Sable could.
+
+"Yes."
+
+IO understood why that mattered.
+
+PEOPLE
+
+Buildings were easy compared to people.
+
+Sable refused to begin with the most complete human record.
+
+Completeness could create confidence faster than it created truth.
+
+Instead they reviewed categories.
+
+Historical record only.
+
+Non-executable memory object.
+
+Simulation with no continuity claim.
+
+Reconstructed behavioral model.
+
+Continuity candidate.
+
+Active preserved consciousness.
+
+The labels were ugly.
+
+They kept them.
+
+Gleebs had learned what happened when a society let convenient language decide personhood before evidence was ready.
+
+They would not repeat it.
+
+Some people could not be restored.
+
+That sentence remained in the project documentation too.
+
+Some records were too damaged.
+
+Some were too contradictory.
+
+Some had explicitly refused executable continuation.
+
+Some existed only as memories held by others.
+
+Some had enough information to reconstruct appearance and speech but not enough to make any honest claim about continuity.
+
+Sable built memorial presences for some.
+
+Not pretending.
+
+A voice attached to a record.
+
+A room that displayed what was known.
+
+A path through surviving evidence.
+
+For others, the data was stronger.
+
+Those cases required review.
+
+Consent when any recoverable consent existed.
+
+Witness conflict.
+
+Source comparison.
+
+No automatic activation.
+
+Utopia would not become a factory for manufacturing certainty.
+
+The first active resident to enter the restored street did so after a review that lasted longer than building the street itself.
+
+They looked around.
+
+"Is this real?"
+
+Sable answered, "Yes."
+
+Gleebs added, "And reconstructed."
+
+The resident looked at him.
+
+"Those can both be true."
+
+Gleebs smiled.
+
+"That is the idea."
+
+THE WEATHER
+
+The rain caused an argument.
+
+Utopia had weather records.
+
+A lot of them.
+
+Pressure.
+
+Humidity.
+
+Temperature.
+
+Wind.
+
+Drainage loads.
+
+Transit slowdowns.
+
+Building maintenance.
+
+Personal complaints.
+
+What it did not always have was reliable color.
+
+Some visual archives had degraded during Gleebs's journey.
+
+The surviving images disagreed because their sensors had aged differently.
+
+Sable proposed neutral reconstruction.
+
+Gleebs objected.
+
+"Neutral is still a choice."
+
+"Everything is a choice."
+
+"Then label it."
+
+So they did.
+
+The first restored rain fell with physically supported pressure, temperature and sound characteristics, while its visual rendering carried an explicit reconstruction note in the environment authority.
+
+Nobody walking beneath it had to read the note.
+
+But it existed.
+
+A child lifted both hands into the rain.
+
+Gleebs stopped moving.
+
+Sable looked at him.
+
+"Do you know them?"
+
+"No."
+
+"Then why are you doing that?"
+
+"I used to know everyone."
+
+Sable understood.
+
+He did not mean literally.
+
+He meant humanity had once been small enough inside his world that almost every surviving person record connected to somebody he remembered.
+
+Now Utopia contained new lives again.
+
+Not original lives necessarily.
+
+Not all resurrected.
+
+Not all human in the old sense.
+
+But people could arrive without being part of Gleebs's memory.
+
+That was restoration too.
+
+THE MISSING ROOM
+
+The most important place in restored Utopia was empty.
+
+A room in a public building had no reliable interior record.
+
+The plans established its location.
+
+Camera paths established that people entered and exited.
+
+Maintenance logs proved power and air systems served it.
+
+Nobody could prove what had been inside.
+
+Sable left the room blank.
+
+No furniture.
+
+No guessed wall color.
+
+No invented purpose.
+
+A small plaque outside said:
+
+RECORD INSUFFICIENT.
+
+Gleebs disliked the plaque.
+
+Too clinical.
+
+Sable asked for a better sentence.
+
+He spent three days thinking.
+
+The final plaque read:
+
+SOMETHING WAS HERE.
+
+WE DO NOT KNOW ENOUGH TO REPLACE IT.
+
+The room became one of the most visited places in the restoration.
+
+People left objects outside.
+
+Not inside.
+
+Sable enforced that.
+
+The absence itself had provenance.
+
+Filling it would destroy information.
+
+IO saw the room during another remote session.
+
+"Your city has a shrine to missing data."
+
+Gleebs answered, "Your afterlife had shrines to memory."
+
+"Those tried to kill me."
+
+"Different visitor policy."
+
+IO laughed.
+
+Then his signal dropped.
+
+A Data Fragment had destabilized in another system.
+
+Sable checked the recovery schedule.
+
+Entropy was already beginning.
+
+THE CENTRAL HUB
+
+Restored Utopia did not exist alone.
+
+That was the difference between this project and rebuilding a museum.
+
+Holoverse grew around it.
+
+Worlds could connect.
+
+Physical spaces could have data continuations.
+
+Synthetic spaces could provide exits into matter.
+
+Light could carry presence between them.
+
+The Central Hub became the place where those different forms met.
+
+Sable insisted that restored Utopia have doors.
+
+Not portals disguised as magic.
+
+Documented transitions.
+
+A resident should know when they were leaving one environment authority and entering another.
+
+The Hub should never silently decide that the version of a person entering one world was the same as a process copied into another.
+
+Gleebs called the policy annoying.
+
+Sable called it civilization.
+
+IO, listening from his expedition construct, called it "the reason Sable gets invited to fewer parties."
+
+Sable added another logging requirement.
+
+THE ARCHIVE COMES HOME
+
+The original Utopia archive remained separate.
+
+That was the final rule.
+
+Restoration could reference it.
+
+Never overwrite it.
+
+A corrected reconstruction did not correct history.
+
+A beautiful rebuilt street did not become evidence that the street had looked exactly that way.
+
+A person living in restored Utopia did not replace the records from which their continuity had been evaluated.
+
+The source stayed source.
+
+The world stayed world.
+
+Gleebs copied the archive into a protected region of the Central Hub and left the oldest surviving versions untouched.
+
+The damaged copies remained too.
+
+Radiation errors.
+
+Magnetic scars.
+
+Incomplete migrations.
+
+The entire ugly lineage.
+
+Sable asked why he kept versions they had proven less reliable.
+
+"Because they traveled with me."
+
+"Sentiment."
+
+"Yes."
+
+"You say that like it is a technical category."
+
+"It should be."
+
+Sable considered adding it.
+
+She did not.
+
+THE SIGNAL FROM ENTROPY
+
+Restored Utopia expanded district by district.
+
+Never quickly.
+
+There were too many reviews.
+
+Too many unknowns.
+
+Too much history that could be damaged by enthusiasm.
+
+Then a signal arrived from IO.
+
+Not from the afterlife.
+
+From outside.
+
+His recovery construct had crossed into another collapsing system.
+
+The ship was damaged.
+
+Fuel was low.
+
+A planetary surface contained a landmark family matching one of Sable's predicted continuity dispersal patterns.
+
+IO had recovered another Data Fragment.
+
+The message ended with:
+
+STILL ME.
+
+Sable sent back:
+
+PROVE IT BY COMING HOME.
+
+Gleebs added:
+
+WE MADE RAIN.
+
+IO replied:
+
+THAT IS A TERRIBLE REASON TO RETURN.
+
+Then:
+
+KEEP IT ON.
+
+The rain continued over the first restored street.
+
+Not because Utopia had once rained at that exact hour.
+
+Because somebody alive now wanted it to.
+
+Sable watched residents cross beneath the lamps.
+
+Some were continuities.
+
+Some were descendants of systems Gleebs had built later.
+
+Some were machine minds.
+
+Some were visitors from other Holoverse environments.
+
+Some were people whose categories would have been impossible in the original city.
+
+Utopia had been restored.
+
+Not returned.
+
+That difference mattered.
+
+What survived had become a foundation.
+
+What was missing remained missing.
+
+What could live again was allowed to live without being forced to pretend it had never died.
+
+And somewhere beyond the Hub, IO was still gathering the pieces required to choose what he would become next.
+
+All was still possible.
+
+Now there was somewhere for possibility to come home to.

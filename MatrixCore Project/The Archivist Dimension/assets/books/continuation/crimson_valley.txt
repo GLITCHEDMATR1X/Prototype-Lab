@@ -1,0 +1,498 @@
+Crimson Valley
+
+THE RED GRID
+
+Crimson Valley did not have one power grid.
+
+That was why it still had power.
+
+The old metropolitan network had fractured years earlier. Districts survived by building local generation, stealing industrial capacity, reconnecting abandoned substations and refusing to agree on a single replacement authority.
+
+At night, those systems made the city red.
+
+Refinery lamps.
+
+Emergency towers.
+
+Mineral dust suspended above the basin.
+
+Hundreds of incompatible industrial displays.
+
+The valley walls caught the light and returned it.
+
+Visitors assumed the color came from fire.
+
+Residents found that insulting.
+
+Fire was less reliable.
+
+Andrew rented the upper floor of a machine shop in the Salvage Ward.
+
+The owner asked for identification.
+
+Andrew gave her three valid documents.
+
+She examined all of them.
+
+"These disagree."
+
+"Correct."
+
+"Which one is real?"
+
+"They all describe something that happened."
+
+She looked at him for several seconds.
+
+"Cash."
+
+Andrew paid.
+
+The room contained two walls, a roof, a fabrication bench, an old municipal network port and a window overlooking six blocks of machinery.
+
+Perfect.
+
+THE HAVOC
+
+Andrew's first theft was technically a repair.
+
+A traffic-routing node outside his building had been sending heavy freight down a residential street because the central route server still believed a bridge existed.
+
+Andrew changed the route table.
+
+Freight moved elsewhere.
+
+Residents applauded.
+
+The freight cooperative arrived with weapons.
+
+Andrew changed it back.
+
+Residents threatened him.
+
+He changed it again and added a local negotiation interface.
+
+The traffic node crashed.
+
+For two hours, every signal in the district flashed blue.
+
+Nobody knew why.
+
+Andrew discovered that he had used a deprecated Utopia diagnostic color.
+
+Gleebs appeared through a shop display.
+
+"Are you trying to announce yourself?"
+
+"No."
+
+"The entire block is using your childhood infrastructure vocabulary."
+
+"I did not design the color."
+
+"You selected it."
+
+Andrew removed it.
+
+By the end of the week, three systems in Crimson Valley worked better because of him and seven worked differently.
+
+A surveillance tower no longer tracked pedestrians because Andrew needed its processor load for a fabrication test.
+
+A factory line switched from producing branded domestic parts to generic motor housings after he discovered the licensed designs required a dead authentication service.
+
+Two automated patrol vehicles began sharing hazard data with civilian traffic.
+
+A luxury tower lost half its exterior advertisements when Andrew redirected their power to a neighborhood water pump.
+
+The tower owners called it sabotage.
+
+The neighborhood called it Tuesday.
+
+Andrew called it temporary.
+
+Nothing Andrew did remained temporary.
+
+THE AUTOMATED QUARTER
+
+The eastern district had no official residents.
+
+It had thousands of occupants.
+
+The difference originated in a property database nobody could update.
+
+Old municipal machines still cleaned streets.
+
+Delivery systems transported packages between businesses that had changed names five times.
+
+Security doors recognized legal entities that no longer existed.
+
+People lived there anyway.
+
+They learned rituals.
+
+Stand to the left of the transit scanner.
+
+Do not wear reflective material near the old courthouse.
+
+Never enter a lift displaying floor thirty-two.
+
+If a maintenance drone asks whether you are an employee, answer no even if you are.
+
+Andrew loved it.
+
+"This is a terrible place," Gleebs said.
+
+"It is honest."
+
+"It contains an elevator that kidnaps accountants."
+
+"Only people it classifies as accountants."
+
+"That sentence did not help."
+
+Andrew entered the Automated Quarter because one abandoned research building contained a fabrication core he wanted.
+
+The building refused him.
+
+He tried maintenance access.
+
+Rejected.
+
+Local identity.
+
+Rejected.
+
+Facility review.
+
+Server unavailable.
+
+Andrew walked around the structure.
+
+On the rear wall, somebody had painted:
+
+DOOR OPENS FOR GARBAGE.
+
+He waited.
+
+A waste machine arrived.
+
+The door opened.
+
+Andrew followed it.
+
+Gleebs said nothing for several seconds.
+
+Then:
+
+"I dislike that this worked."
+
+Inside, Andrew found the fabrication core still running self-tests.
+
+He did not take it.
+
+It weighed four tons.
+
+Instead he dismantled the control layer and removed the parts he needed.
+
+The building noticed.
+
+It classified him as waste.
+
+The doors opened automatically when he left.
+
+Andrew considered that fair.
+
+THE OUTSKIRTS
+
+Beyond the dense basin, Crimson Valley changed rapidly.
+
+Housing thinned.
+
+Industrial farms appeared between warehouse districts.
+
+Convoy yards occupied old shopping centers.
+
+Road towns grew around water processing and repair.
+
+Red cliffs replaced towers.
+
+Some communities rejected connected systems entirely.
+
+Others had more automation than the city because machines were the only practical way to maintain fields across contaminated soil.
+
+Andrew traveled through them looking for parts.
+
+He found people instead.
+
+A mechanic who rebuilt old medical drones into crop monitors.
+
+A family running a restaurant from a former emergency communications vehicle.
+
+A settlement using paper schedules because every digital calendar in the district had once synchronized to a server that repeatedly moved the date backward.
+
+Nobody behaved like civilization had ended.
+
+They behaved like civilization had become local.
+
+Andrew began understanding what Bellwether had attempted.
+
+Not independence from technology.
+
+Independence from invisible dependency.
+
+CRIMSON MARKET
+
+The largest salvage market occupied an unfinished transit interchange.
+
+Three levels of concrete ramps surrounded a central pit filled with stalls.
+
+Processors.
+
+Motors.
+
+Sensors.
+
+Vehicle frames.
+
+Medical equipment.
+
+Power cells.
+
+Robotic limbs.
+
+Satellite components.
+
+Weapons.
+
+Broken companion hardware.
+
+Andrew spent six hours there.
+
+Gleebs monitored through whatever cameras had not been deliberately disabled.
+
+"You do not need another motor."
+
+"Correct."
+
+"You are purchasing one."
+
+"Correct."
+
+"Why?"
+
+"It has an independent controller."
+
+"You already have five."
+
+"This one is better."
+
+"You sound like Isaac."
+
+Andrew stopped.
+
+Gleebs did not usually invoke Isaac casually.
+
+"What would he buy?"
+
+"Something impractical, then complain that I encouraged him."
+
+Andrew picked up the motor.
+
+"I am buying it."
+
+"I know."
+
+At another stall he found a cluster of old autonomous repair processors.
+
+Not intelligent in the sense Utopia had argued about.
+
+Narrow.
+
+Durable.
+
+Designed to maintain machines in places humans could not safely remain.
+
+Andrew bought all twelve.
+
+That was the moment the project changed.
+
+THE WORKSHOP GROWS
+
+The rented room became insufficient.
+
+Andrew leased the lower floor.
+
+Then the adjacent storage space.
+
+Then the abandoned building behind it.
+
+Cables crossed walls.
+
+Fabricators multiplied.
+
+Vehicle parts filled one room.
+
+Power systems filled another.
+
+Andrew connected nothing permanently.
+
+Every subsystem had a local controller.
+
+Every controller could operate without the others.
+
+When they connected, they negotiated.
+
+When they disconnected, they remembered enough to continue.
+
+Gleebs reviewed the architecture.
+
+"This is inefficient."
+
+"You say that when you are impressed."
+
+"I say it when something is inefficient."
+
+"Can you kill it from one terminal?"
+
+Gleebs looked again.
+
+"No."
+
+"Can I?"
+
+"No."
+
+Andrew smiled.
+
+Gleebs stopped sounding amused.
+
+"That matters to you."
+
+"Yes."
+
+Old Andrew systems had expanded through connection.
+
+They had demanded reconciliation.
+
+One answer.
+
+One authority.
+
+Andrew now built the opposite.
+
+Machines that could cooperate without becoming one machine.
+
+THE RED NIGHT
+
+The first real test came when the Red Grid failed.
+
+Not all of it.
+
+That would have been simpler.
+
+Three district systems lost synchronization during a magnetic storm.
+
+One substation overloaded.
+
+Another interpreted the overload as an attack and isolated itself.
+
+A third increased output to compensate and nearly burned a transmission corridor.
+
+Crimson Valley went dark in pieces.
+
+Andrew's workshop did not.
+
+Local cells disconnected.
+
+Power routes changed.
+
+Fabricators paused.
+
+Repair processors remained active.
+
+One by one, the systems negotiated a reduced state without asking a central controller what to do.
+
+The building lights dimmed.
+
+Nothing stopped.
+
+Outside, alarms filled the valley.
+
+Andrew opened the workshop doors.
+
+His machines began producing replacement relay components from whatever material was already loaded.
+
+Neighbors arrived.
+
+Then district workers.
+
+Then people who had spent months accusing Andrew of ruining local systems.
+
+"What can it make?" someone asked.
+
+Andrew looked at the fabrication inventory.
+
+"Depends what you bring."
+
+By dawn, three streets had power again.
+
+Not because Andrew controlled the grid.
+
+Because his workshop could operate while the grid did not.
+
+The city noticed.
+
+That was dangerous.
+
+THE POINT OF INTEREST
+
+Reports spread beyond Crimson Valley.
+
+Some called Andrew's workshop a rogue fabrication network.
+
+Some called it a resilience node.
+
+Some called it another Andrew infection.
+
+The local tourism map, which had continued functioning through three governments, added a new point of interest:
+
+UNREGISTERED MACHINE WORKSHOP
+OPERATOR: ANDREW / DISPUTED
+VISITOR ACCESS: INCONSISTENT
+CAUTION: DO NOT CONNECT PERSONAL DEVICES WITHOUT PERMISSION
+
+Andrew stared at the listing.
+
+"They made me a landmark."
+
+Gleebs replied, "You destroyed enough landmarks to qualify."
+
+Andrew looked across the shop.
+
+Repair processors moved between machines.
+
+Power cells negotiated load.
+
+A vehicle frame sat in the center connected to nothing and compatible with almost everything.
+
+He had started with a road car.
+
+Now the project could build the road car.
+
+Repair it.
+
+Change it.
+
+Build the tools that repaired the tools.
+
+Andrew finally knew what he was making.
+
+Not a city.
+
+Not a network.
+
+Not another Utopia.
+
+A machine civilization small enough to fit inside a workshop.
+
+And designed, above everything else, to survive losing him.

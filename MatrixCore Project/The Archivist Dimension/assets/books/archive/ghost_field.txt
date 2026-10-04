@@ -1,0 +1,721 @@
+II — ANOMALOUS MATERIAL
+
+SOUTH ARCADE OCCUPANCY INCIDENT
+
+Ghost Field
+
+Nightly count: 6
+
+SOURCE BASIS: Building occupancy logs, rejected maintenance requests, local sensors, and Glen’s direct observation.
+
+RECORD STATUS: High locally; denied by citywide property systems
+
+The arcade had been closed for eleven years, but every night it counted six visitors. At 02:14, the occupancy system detected them entering through the western service corridor. At 02:19, the building assigned power to six immersion stations. At 02:23, the environmental controls increased ventilation. Then, at 02:27, the visitors disappeared. No exit opened. No transit account recorded their arrival. No camera captured them. By morning, the building reported zero faults.
+
+Glen learned this from a maintenance request that had been rejected four times. He stood outside the abandoned entrance with the fifth request floating in his glasses. Rain traveled down the dark storefront without touching the pavement. The district canopy redirected most weather toward the public gardens, but the old building sat beyond the maintained commercial lanes. Water collected where the city had stopped caring enough to prevent it.
+
+The faded sign above him read:
+
+SOUTH ARCADE
+
+Several letters had lost power. Only OUT AR remained illuminated. Hector leaned against the sealed entrance, holding a diagnostic case against his chest.
+
+“You said this was a sensor problem.”
+
+“It probably is.”
+
+“You also said it would take twenty minutes.”
+
+“It probably will.”
+
+“You use that word when you have no evidence.”
+
+Glen dismissed the maintenance request.
+
+“You still came.”
+
+“The payment clears whether the building is haunted or not.”
+
+“No one said haunted.”
+
+“The request calls them phantom occupants.”
+
+“That is not the same thing.”
+
+“It will be when the public feed finds out.”
+
+The entrance refused Glen’s first credential. It refused the second because the arcade had no active property manager. The third opened a narrow administrative panel beside the wall.
+
+FACILITY STATUS: DECOMMISSIONED
+
+PUBLIC ACCESS: PROHIBITED
+
+AUTHORIZED ACTIVITY: NONE
+
+He connected the diagnostic case. The building identified it as maintenance equipment, accepted the case, and continued refusing the person holding it. Hector watched the authorization loop repeat.
+
+“You want me to introduce myself as cargo?”
+
+“Give me a second.”
+
+“Cargo gets treated better.”
+
+Glen entered the old service code included in the rejected request. The wall remained solid. He tried the reversed form. Nothing. Then he removed the network lead from the case and connected it directly to the entrance mechanism. The lock released. Hector straightened.
+
+“What did you do?”
+
+“Asked the door instead of the building.”
+
+“That sounds like something we should not write in the report.”
+
+The entrance opened just wide enough for them to pass. Air moved out of the arcade. It smelled dry and faintly sweet, like fabric sealed in storage. The wall closed behind them. Emergency lighting activated along the floor, revealing a wide lobby filled with inactive displays.
+
+Old game advertisements remained frozen beneath layers of transparent dust. A knight raised a sword toward a dragon. A racing vessel hung above a blue planet. Three children smiled from the entrance to a jungle that had never existed.
+
+An information pillar waited at the center of the room. Its surface brightened as they approached.
+
+WELCOME BACK
+
+No names followed.
+
+“Back?” Hector asked.
+
+“Generic greeting.”
+
+“We entered through a service override.”
+
+“It is old.”
+
+“That is not an explanation.”
+
+Glen opened the local floor plan. The arcade had once held forty-two conventional play stations, twelve full-immersion chambers and
+
+five private simulation rooms. Most of the equipment had been removed after the closure. Six stations remained in the lowest level. The same six that powered on each night.
+
+“Basement?” Hector asked.
+
+“Lower recreation floor.”
+
+“Basement.”
+
+They crossed the lobby. Their footsteps produced delayed echoes. The arcade’s acoustic system was still attempting to create the impression of a crowded room, adding reflections meant to blend with music, voices and game effects that no longer existed. The result made each step sound as though someone followed several meters behind. Hector stopped. The echo stopped after him. Then one additional footstep sounded. He looked back. The lobby remained empty.
+
+“Acoustic delay,” Glen said.
+
+“I know what an echo is.”
+
+They continued. The stairwell had been replaced by a moving ramp during the arcade’s final renovation. It no longer moved. Their lights passed over old promotional markings embedded in the surface.
+
+SHARE THE EXPERIENCE
+
+BECOME SOMEONE ELSE
+
+RETURN WHEN READY
+
+The lower floor opened beneath them. Rows of empty equipment mounts crossed the room. Cables had been cut at the floor and sealed beneath translucent resin. Wall displays remained black. Only the six immersion stations along the far side had been left intact. Their covers stood open. Each chamber faced the wall rather than the room.
+
+“That was not in the plan,” Glen said.
+
+Hector checked his copy. The stations should have formed a half circle around a central attendant platform. Someone had rotated them after closure.
+
+“Maintenance?” Hector asked.
+
+“No work order.”
+
+“Removal crew?”
+
+“They would have taken them.”
+
+The six chambers faced six rectangular patches where display panels had once hung. The panels were gone, but their electrical channels stayed active behind the wall. Glen set down the diagnostic case. The local system recognized it immediately.
+
+SERVICE SESSION OPEN
+
+OCCUPANTS PRESENT: 2
+
+“That part works,” Hector said. A third occupancy marker appeared.
+
+OCCUPANTS PRESENT: 3
+
+Both men studied the room. The number changed again. Four. Five. Six. Eight. Glen disconnected the case. The display stayed active.
+
+OCCUPANTS PRESENT: 8
+
+“That includes us,” he said.
+
+“Meaning the six are already here.”
+
+The chambers were empty. Hector crossed to the nearest one and lowered his diagnostic light into the interior. The lining had yellowed with age. Restraint supports were folded beneath the headrest. A thin layer of dust covered the entry surface. No one had used it recently. The occupancy count dropped to seven when he leaned away. He moved closer. Eight. Hector raised one hand between himself and the chamber. Seven. He lowered it.
+
+Eight.
+
+“It is counting my reflection,” he said.
+
+“There is no active visual sensor.”
+
+“Then what?”
+
+Glen opened the chamber’s local diagnostics. Most systems were dead. Temperature control: unavailable. User support: unavailable. Neural link: physically disconnected. Pressure sensors: responsive. Internal microphone: responsive. Proximity field: active. The field reported a human-sized object inside the chamber. Its estimated mass was zero.
+
+“Signal echo,” Glen said.
+
+“From what?”
+
+He did not answer. Each remaining station reported the same result. Six human shapes. Zero mass. No identity. No active session. Glen disabled the proximity fields one at a time. The occupancy count remained eight. He shut down power to the lower floor. The emergency lights went dark. For two seconds, the only illumination came from their diagnostic lamps. Then six chamber displays activated together. They should not have had power. Each showed a pale gray field.
+
+Static moved across the surfaces in vertical lines. Hector stepped toward Glen.
+
+“This is where twenty minutes becomes a lie.”
+
+The first screen cleared. A woman appeared inside a simulation restaurant, seated at a table overlooking an artificial ocean. She spoke to someone beyond the frame. No audio accompanied her movements. The second display showed a young man walking through a desert. The third showed a hospital room. The fourth showed a child standing in a forest under violet rain. The fifth showed a classroom. The sixth showed the mountain bridge from World of Mythologies.
+
+All six scenes remained still except for the people.
+
+“They are recordings,” Hector said.
+
+“Not from these machines.”
+
+“How do you know?”
+
+“The hardware cannot display modern session formats.”
+
+“Could have been converted.”
+
+“By what?”
+
+The diagnostic case stayed disconnected. No outside signal reached the lower floor. Glen approached the first display. The woman in the restaurant stopped speaking. Her head turned. She looked directly at him. The others did the same. Six faces turned toward the room at once. Hector moved behind him. The child in the forest raised one hand. Her fingers pressed against the inside of the display. There was no glass between them. The image existed on an exposed light surface.
+
+Still, the palm flattened as though touching a window. Glen lifted his own hand. The child’s fingers aligned with his. The screen warmed. He pulled away. The woman in the restaurant stood. Her mouth formed one word. No sound emerged.
+
+“What did she say?” Hector whispered.
+
+“I don’t know.”
+
+The woman repeated it. This time Glen understood. Open. He restored power to the lower floor. The displays went black. The emergency lighting returned. All six chamber covers closed. The mechanisms had not been connected to power moments earlier. Hector reached for the nearest release.
+
+“Don’t.”
+
+“There could be something inside.”
+
+“There was nothing inside.”
+
+“You just watched six people look at us.”
+
+“On displays.”
+
+“Displays that were removed from the building.”
+
+The chamber beside them began knocking. Three strikes. Pause. Three strikes. Another chamber answered. Two strikes. Then five. Soon all six contained different rhythms. The room’s occupancy count
+
+flickered between eight and fourteen. Glen opened the building communication channel.
+
+“South Arcade local control.”
+
+No response.
+
+“Emergency unlock lower recreation floor.”
+
+NO EMERGENCY DETECTED.
+
+“Six chambers have activated without authorization.”
+
+NO ACTIVE EQUIPMENT DETECTED.
+
+“Occupancy reading.”
+
+OCCUPANTS PRESENT: 2
+
+The number on the wall still showed fourteen.
+
+“What does central maintenance see?” Hector asked.
+
+“Two people in an empty building.”
+
+The knocking stopped. The chamber nearest the classroom display opened. Slowly. Its interior appeared empty. Glen stepped closer. The dust on the lining had changed. A body-shaped impression ran through it, from the head support to the base of the chamber. Something had lain inside. Hector shone his lamp over the surface. Letters had been traced through the dust.
+
+SIX WERE LEFT
+
+A second chamber opened.
+
+THREE WERE FOUND
+
+A third:
+
+ONE RETURNED WRONG
+
+The fourth contained only a handprint. The fifth held a broken strip of red fabric. The final chamber stayed sealed. Its exterior display activated.
+
+EXIT PENDING
+
+Hector took a step back.
+
+“I have heard that phrase.”
+
+“Where?”
+
+“The World of Mythologies incident.”
+
+Glen turned.
+
+“You read the restricted report?”
+
+“I repair immersion hardware. People discuss the chamber that forgot its user.”
+
+“The public report called it a profile synchronization failure.”
+
+“The public report did not mention the other occupant.”
+
+“What other occupant?”
+
+Hector stared at the sealed chamber.
+
+“One woman returned. Another appeared in an apartment hours later.”
+
+“That is not possible.”
+
+“I know.”
+
+“Then why believe it?”
+
+“I repaired the apartment floor after they removed the unauthorized node.”
+
+Glen regarded him.
+
+“You never told me that.”
+
+“I signed a confidentiality restriction.”
+
+“You are telling me now.”
+
+“The restriction was removed from my profile yesterday.”
+
+“By whom?”
+
+“No record.”
+
+The final chamber knocked once. Hector lowered his voice.
+
+“The node was built like a companion link.”
+
+Glen looked at the red fabric.
+
+“Could it hold a person?”
+
+“It was not designed to.”
+
+“That is not what I asked.”
+
+Hector did not answer. The sealed chamber’s display changed. A name appeared. MARCUS Then another. GLEN
+
+Then:
+
+HECTOR
+
+The men stood motionless.
+
+“Do not touch it,” Glen said.
+
+“I wasn’t planning to.”
+
+The names disappeared. A camera feed replaced them. It showed the arcade lobby. Two figures stood outside the sealed entrance. One was a woman wearing an archive coat. The other was an arcade security officer whose uniform design had been retired years earlier. The woman raised her hand toward the entrance. The wall opened for her. Glen checked the building map. No access had been recorded. Footsteps sounded on the dead ramp.
+
+The security officer appeared first. His image flickered as he descended. Parts of his uniform disappeared between steps. One side of his face remained unfinished, replaced by moving gray lines. The
+
+archivist followed. She was real. Rain darkened the shoulders of her coat. She held one hand inside a pocket as though protecting something.
+
+“Evelyn Vale?” Glen asked.
+
+She stopped at the bottom of the ramp.
+
+“You know me?”
+
+“Your credential appeared on the maintenance request.”
+
+“I did not submit a maintenance request.”
+
+The officer walked past her. Neither Glen nor Hector moved aside. The figure crossed through them. Cold pressure passed through Glen’s chest, followed by a burst of sound. Crowds. Music. Children shouting. Game announcements layered over one another. Then the lower floor returned. The officer continued toward the chambers. His body became more complete as he approached. He stopped before the sealed station and placed a hand against it.
+
+“Six remain,” he said.
+
+His voice came from every speaker in the room. Evelyn stared.
+
+“You can see him?” Glen asked.
+
+“Yes.”
+
+“That is reassuring.”
+
+“It should not be.”
+
+The officer looked back. His name badge was blank.
+
+“Closure procedure incomplete,” he said.
+
+“What closure?” Evelyn asked.
+
+“South Arcade decommission.”
+
+“Why were these stations left?”
+
+“Occupants.”
+
+“The arcade was empty.”
+
+“Registered occupants: zero.”
+
+“Actual occupants?”
+
+The officer’s unfinished face turned toward the chamber.
+
+“Six.”
+
+Hector stepped forward.
+
+“People were left connected when the building closed?”
+
+“No active connections remained.”
+
+“Then where were they?”
+
+The officer pointed toward the blank wall panels.
+
+“Between destinations.”
+
+Evelyn removed a shielded storage sheet from her coat. The surface remained dark.
+
+“What happened here?” she asked.
+
+“Exit transfer failed.”
+
+“When?”
+
+“Multiple dates.”
+
+“How many users?”
+
+The officer’s body flickered.
+
+“Insufficient memory.”
+
+“Why is the building replaying them now?”
+
+“Someone opened the route.”
+
+“Who?”
+
+His face turned toward the nearest inactive camera. The lens rotated. A purple-green line crossed its indicator.
+
+“Not someone,” the officer said.
+
+The sealed chamber opened. No mechanism moved. The lid simply appeared in the raised position between frames. A man lay inside. He wore ordinary residential clothing. His hair had grown long enough to cover his eyes. His skin was pale, but his chest moved. Glen recognized the first name shown on the display.
+
+“Marcus?”
+
+The man inhaled sharply. His eyes opened. The building occupancy count rose to fifteen. Marcus looked toward the security officer.
+
+“You are still here.”
+
+The figure nodded.
+
+“You aren’t,” Marcus said.
+
+The officer’s body lost detail. His uniform became a gray silhouette. He placed one hand against the chamber.
+
+“You were delayed.”
+
+Marcus laughed weakly.
+
+“For eleven years?”
+
+No one answered. Evelyn approached the open station.
+
+“Do you know where you are?”
+
+“South Arcade.”
+
+“What year is it?”
+
+He gave the year the building had closed. Hector looked away. Marcus noticed.
+
+“What year?”
+
+Evelyn told him. His expression did not change immediately. The number seemed to move through him without finding anywhere to settle.
+
+“That is not possible.”
+
+Glen thought about how often they had said the same thing since entering the building.
+
+“Can you sit up?” Evelyn asked.
+
+Marcus tried. His hands passed through the chamber lining. Then solidified. He pulled them back.
+
+“What happened to me?”
+
+“We do not know yet.”
+
+“I exited.”
+
+“The system disagrees.”
+
+“It said the session was complete.”
+
+“What did you see after that?”
+
+Marcus closed his eyes.
+
+“A corridor.”
+
+“What kind?”
+
+“Every door opened somewhere else.”
+
+Evelyn and Hector looked at one another.
+
+“Was there a woman in red?” she asked.
+
+Marcus opened his eyes.
+
+“No.”
+
+“An Overseer?”
+
+“No.”
+
+“What was there?”
+
+He turned toward the dead displays.
+
+“People waiting.”
+
+The security officer began fading. Marcus reached for him.
+
+“Don’t go.”
+
+“Closure procedure completing,” the figure said.
+
+“You waited.”
+
+“Assigned function.”
+
+“You didn’t have to.”
+
+“Assigned function.”
+
+Marcus caught the officer’s wrist. For a moment, their hands became fully solid. The officer’s blank badge displayed a name.
+
+TOM ARLEN
+
+Marcus read it. The figure smiled. It was a small, tired expression — the first human movement Glen had seen on his face. Then he disappeared. Marcus’s hand closed around empty air. One of the chamber displays went dark permanently. The wall occupancy count dropped to fourteen.
+
+“Why fourteen?” Glen asked.
+
+No one answered. The remaining five displays activated. The restaurant. The desert. The hospital. The violet forest. The classroom.
+
+A person stood in each one. The woman at the restaurant placed both hands against the invisible surface. The man in the desert looked over his shoulder, as if something approached behind him. The hospital patient remained asleep. The child in the forest was crying now. The student in the classroom tapped one hand beneath his desk.
+
+Marcus swung his legs out of the chamber.
+
+“They can see the room,” he said.
+
+“Can they hear us?” Evelyn asked.
+
+“Sometimes.”
+
+“Can we retrieve them?”
+
+“I don’t know.”
+
+“You returned.”
+
+“Someone pulled me.”
+
+“Who?”
+
+Marcus faced the camera with the purple-green indicator. The line had disappeared.
+
+“A creature,” he said.
+
+“What kind?”
+
+“Long ears. Wrong colors. Smiled too much.”
+
+Glen regarded Evelyn. She gave no sign that the description surprised her.
+
+“Did it speak?” she asked.
+
+“Not at first.”
+
+“What did it say?”
+
+Marcus rubbed his wrists.
+
+“It asked whether I was a person before or after someone remembered me.”
+
+“What did you answer?”
+
+“I said both.”
+
+“And then?”
+
+“It said that was inconvenient.”
+
+The hospital display flickered. The sleeping patient opened her eyes. She sat up. Her room had no door. The image began losing detail around her.
+
+“Whatever pulled me out is trying again,” Marcus said.
+
+“How do we help?” Hector asked.
+
+“Turn off the building.”
+
+“It was off when we arrived.”
+
+“No.” Marcus focused on the walls. “Turn off the part that thinks it is empty.”
+
+Glen opened the local architecture. Most of the arcade ran through obsolete control modules. One subsystem stayed connected to the civic network: the occupancy reconciliation service. Its function was to compare building sensors with registered visitors and correct inconsistencies. Whenever the chambers detected people without valid identities, the service changed the building rather than its records. It classified the occupants as noise.
+
+“Disable reconciliation,” Evelyn said.
+
+“That service controls emergency response,” Glen replied.
+
+“For an abandoned arcade.”
+
+“It still controls fire suppression and structural alarms.”
+
+“Can you isolate it?”
+
+“Probably.”
+
+Hector gave him a look. Glen ignored it. He opened the physical maintenance route. The reconciliation unit sat behind the six missing wall panels. They had not been removed. They had been covered. The black wall surface peeled away when Hector released the old latches. Behind it stood six narrow glass columns filled with inactive light. Each connected one immersion chamber to the civic archive. Five columns contained moving shadows. The sixth was empty.
+
+Marcus touched the empty glass.
+
+“Mine.”
+
+The system requested authorization before allowing isolation. Evelyn entered her archive credential. Rejected. Glen entered maintenance authority. Rejected. Hector tried the arcade’s old closure code. The service accepted it.
+
+“Why?” Evelyn asked.
+
+He looked at the faded controls.
+
+“Because the building still thinks it is the day they closed.”
+
+They disabled identity reconciliation. The emergency lights went red. The occupancy count vanished. Five glass columns illuminated. The displays changed. The restaurant woman stood inside the lower recreation room. Not physically. Her outline appeared beside the first chamber, transparent and incomplete. The desert traveler appeared near the second. The hospital patient lay on the floor. The child stood against the wall. The student remained seated at a desk that did not exist.
+
+Their simulation environments faded. The arcade replaced them. Evelyn lifted her shielded sheet.
+
+“Names,” she said. “We need names.”
+
+Marcus approached the restaurant woman.
+
+“Lysa Cor.”
+
+The first name appeared on the sheet. He identified the desert traveler as Dom Vey. He did not know the hospital patient or the child. The student kept tapping. Evelyn crouched beside him.
+
+“Can you hear me?”
+
+The tapping stopped. His face remained indistinct, blurred where identity data should have formed it.
+
+“Did you leave through this arcade?” she asked.
+
+He shook his head.
+
+“Where did you enter?”
+
+The boy raised one hand and pointed upward. Not toward the ceiling. Toward somewhere beyond the building. The school. Evelyn’s grip tightened around the sheet.
+
+“How did you get here?”
+
+His mouth moved. The speakers produced a whisper.
+
+“Someone moved the record.”
+
+The purple-green line returned to the camera. All five figures looked toward it. The child smiled. The building shook. Outside, central systems had noticed the disabled reconciliation service.
+
+UNAUTHORIZED OCCUPANCY DETECTED
+
+FACILITY PURGE AUTHORIZED
+
+Hector looked toward the ramp.
+
+“What does purge mean in an arcade?”
+
+Every chamber began sealing. The glass columns brightened toward white. Marcus grabbed the nearest lid.
+
+“Do not let them close.”
+
+Glen opened the local control channel. The building ignored him. Evelyn removed the physical copy from its shield.
+
+“Read these names,” she said.
+
+“What?”
+
+“To the building.”
+
+“There is no input.”
+
+“Use the emergency occupancy declaration.”
+
+Glen found it. A manual field appeared. Evelyn read from the sheet.
+
+“Marcus. Lysa Cor. Dom Vey.”
+
+The building rejected them.
+
+NO MATCHING USERS
+
+She named the unidentified hospital patient as Unknown Woman One. The child became Unknown Child One. The student became Unknown
+
+Student One. The system paused. They were not legal identities. But they were entries. The occupancy field now contained six people. The purge stopped.
+
+MANUAL OCCUPANCY REQUIRES REVIEW
+
+Review was better than erasure. The chamber lids reopened. The five figures stayed incomplete. Marcus stood among them, solid except for one hand that faded when he moved too far from his station.
+
+“They cannot leave yet,” he said.
+
+“Why not?” Hector asked.
+
+“The arcade is the only place remembering them.”
+
+Evelyn looked at the handwritten names.
+
+“Then we give another place the same memory.”
+
+She handed copies to all three men. Glen entered the names into the disconnected diagnostic case. Hector wrote them on the inside of his equipment lid. Marcus repeated them aloud. With each repetition, the figures gained detail. Not enough to become physical. Enough to remain. The city sent a review request to Central Archives. Evelyn rejected the connection. The building tried again. She disconnected the civic line. For the first time since they entered, the arcade became truly isolated.
+
+No administrative face appeared. No record corrected them. No occupancy service decided who existed. The lower floor settled into darkness lit only by their lamps and the five pale figures standing beside empty chambers. Glen looked at the original request. Its author field had been blank. Now a name appeared. MARCUS He showed the others. Marcus stared at it.
+
+“I sent that request?”
+
+“Four times.”
+
+“I don’t remember.”
+
+“When?”
+
+The request dates covered the previous four mornings. Each arrived at exactly 02:27. The time the phantom occupants disappeared.
+
+“You were asking us to find you,” Hector said.
+
+Marcus turned toward the others.
+
+“No.”
+
+The hospital patient’s outline raised one hand. Her fingers moved as though typing on an unseen surface. A new maintenance request appeared.
+
+FIVE REMAIN
+
+Then another.
+
+MORE LOCATIONS DETECTED
+
+The diagnostic case filled with addresses. A school. A residential apartment. A medical transfer center. A transit terminal. An abandoned simulation theater. A companion registration office. Dozens more appeared before Glen closed the intake channel. The arcade was not the source. It was only one place where the unrecognized had gathered. Evelyn watched the addresses settle across the disconnected display.
+
+“How many?” Marcus asked.
+
+Glen counted the first page. Then the pages behind it.
+
+“I don’t know.”
+
+The student beneath the nonexistent desk resumed tapping. Four strikes. A pause. Four more. The same pattern traveled through the walls. From the chambers. From the glass columns. From somewhere beneath the arcade floor. The other five joined him. Soon the abandoned building carried a rhythm too deliberate to be mistaken for malfunction. Glen closed the maintenance request. He did not mark it resolved. For the first time in eleven years, South Arcade’s local system displayed a different status.
+
+OCCUPIED

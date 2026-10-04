@@ -1,0 +1,29 @@
+{
+  "contract": "operation_starfall_reference_1080p_window_v3",
+  "design_canvas": "1920x1080 reference render/UI authority",
+  "default_window": "1080p reference auto-fit",
+  "default_window_flag": "--reference-window",
+  "reference_alias": "--1080p",
+  "desktop_fit_flag": "--desktop-window",
+  "large_window_flag": "--large-window",
+  "safe_window_flag": "--safe-window",
+  "compact_window_flag": "--windowed",
+  "borderless_flag": "--windowed-fullscreen native desktop size",
+  "fullscreen_flag": "--fullscreen native resolution opt-in only",
+  "minimum_supported": "1280x720",
+  "default_hud": "MINIMAL",
+  "hud_cycle": [
+    "MINIMAL",
+    "COMPACT",
+    "FULL",
+    "HIDDEN"
+  ],
+  "hud_cycle_key": "H",
+  "help_key": "F1",
+  "menu_key": "ESC/P",
+  "safe_canvas_rule": "HUD reflows through the shared aspect-safe layout when the OS window changes size.",
+  "dpi_rule": "dpi-aware and dpi-window-resize remain enabled",
+  "startup_rule": "Use exact 1920x1080 when the desktop supports it; use decorated 1080p when the work area fits, exact borderless 1080p when taskbar/decorations would force a downscale, and only scale smaller when the desktop itself is below 1080p.",
+  "fallback_rule": "A 1280x720 desktop keeps an exact 1280x720 borderless client rather than shrinking below the documented minimum.",
+  "user_choice_rule": "Desktop-fit, bordered, borderless-desktop, and exclusive fullscreen remain explicit alternate presets."
+}

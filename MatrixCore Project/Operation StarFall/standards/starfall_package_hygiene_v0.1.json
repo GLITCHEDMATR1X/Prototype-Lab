@@ -1,0 +1,52 @@
+{
+  "allowed_root_pass_prefixes": [
+    "Operation_StarFall_Pass100_"
+  ],
+  "forbidden_directories": [
+    "__pycache__"
+  ],
+  "forbidden_file_suffixes": [
+    ".pyc",
+    ".pyo"
+  ],
+  "forbidden_legacy_jupiter_assets": [
+    "Worlds/assets/generated/europa_jupiter_storm_eye.png",
+    "Worlds/assets/generated/jupiter_shadow_mask.png",
+    "Worlds/assets/generated/jupiter_storm_eye.png",
+    "Worlds/assets/generated/jupiter_storm_frame_00.png",
+    "Worlds/assets/generated/jupiter_storm_frame_01.png",
+    "Worlds/assets/generated/jupiter_storm_frame_02.png",
+    "Worlds/assets/generated/jupiter_storm_frame_03.png",
+    "Worlds/assets/generated/jupiter_storm_frame_04.png",
+    "Worlds/assets/generated/jupiter_storm_frame_05.png",
+    "Worlds/assets/generated/jupiter_storm_frame_06.png",
+    "Worlds/assets/generated/jupiter_storm_frame_07.png"
+  ],
+  "forbidden_root_extensions_for_release": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".webp"
+  ],
+  "historical_pass_location": "docs/pass_history/",
+  "pass": "Pass100_ShellPanelAuthority",
+  "required_files": [
+    "Operation_StarFall_Pass100_ShellPanelAuthority_Report.md",
+    "Operation_StarFall_Pass100_ShellPanelAuthority_validation.txt",
+    "README.md",
+    "Worlds/display_config.py",
+    "Worlds/main.py",
+    "Worlds/mission_index.json",
+    "Worlds/mission_registry.json",
+    "Worlds/transport_link.py",
+    "main.py",
+    "requirements.txt",
+    "run_game.bat",
+    "standards/OPERATION_STARFALL_MASTERING_PHASE_v0.1.md",
+    "tools/starfall_package_check.py"
+  ],
+  "schema": "operation_starfall_package_hygiene_v1",
+  "verification_outputs": [
+    "verification/reports/Operation_StarFall_Pass100_package_hygiene_report.json"
+  ]
+}

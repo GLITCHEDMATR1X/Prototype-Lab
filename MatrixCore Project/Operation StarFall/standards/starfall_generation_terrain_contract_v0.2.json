@@ -1,0 +1,37 @@
+{
+  "contract": "operation_starfall_generation_terrain_v0.2",
+  "phase": "Terrain continuity / mastering",
+  "active_worlds": [
+    "mimas",
+    "enceladus",
+    "iapetus",
+    "titan",
+    "mars",
+    "pluto",
+    "europa",
+    "triton"
+  ],
+  "core_rules": {
+    "height_authority": "WorldGenerator.surface_height(x, y)",
+    "play_boundary": "WORLD_HALF remains gameplay authority, not a visible world edge",
+    "horizon_authority": "visual-only continuation ring begins exactly at WORLD_HALF and extends into fog",
+    "iapetus_exception": "existing circular _iapetus_void_factor_at horizon fade remains authoritative",
+    "titan_liquid_rule": "methane liquid and shoreline masks continue beyond WORLD_HALF and fade before the distant edge",
+    "collision_rule": "horizon continuation adds no collision or gameplay area"
+  },
+  "runtime_proof": "--test-shot <png> --terrain-horizon-shot --no-audio",
+  "validation_flags": [
+    "--generation-authority-test",
+    "--terrain-authority-test",
+    "--placement-authority-test",
+    "--jagged-mountain-test",
+    "--pass37-rocks-underwater-test"
+  ],
+  "reject_if": [
+    "visible square terrain edge",
+    "seam at WORLD_HALF",
+    "Titan liquid ends at old boundary",
+    "continuation changes movement/collision",
+    "Iapetus horizon fade regresses"
+  ]
+}

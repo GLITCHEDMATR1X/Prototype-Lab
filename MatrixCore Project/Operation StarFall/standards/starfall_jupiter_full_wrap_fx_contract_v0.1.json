@@ -1,0 +1,44 @@
+{
+  "contract": "operation_starfall_jupiter_full_wrap_fx_v0.1",
+  "version": "0.1",
+  "scope": "europa_jupiter",
+  "geometry_authority": "original_jupiter_sphere",
+  "runtime_animation": "swap_complete_opaque_equirectangular_wrap_frames",
+  "texture_space": "2_to_1_equirectangular",
+  "required_generated_assets": [
+    "Worlds/assets/generated/europa_jupiter_generated.png",
+    "Worlds/assets/generated/europa_jupiter_shadow_mask.png",
+    "Worlds/assets/generated/europa_jupiter_storm_frame_00.png",
+    "Worlds/assets/generated/europa_jupiter_storm_frame_01.png",
+    "Worlds/assets/generated/europa_jupiter_storm_frame_02.png",
+    "Worlds/assets/generated/europa_jupiter_storm_frame_03.png",
+    "Worlds/assets/generated/europa_jupiter_storm_frame_04.png",
+    "Worlds/assets/generated/europa_jupiter_storm_frame_05.png",
+    "Worlds/assets/generated/europa_jupiter_storm_frame_06.png",
+    "Worlds/assets/generated/europa_jupiter_storm_frame_07.png",
+    "Worlds/assets/generated/europa_jupiter_wrapped_frame_00.png",
+    "Worlds/assets/generated/europa_jupiter_wrapped_frame_01.png",
+    "Worlds/assets/generated/europa_jupiter_wrapped_frame_02.png",
+    "Worlds/assets/generated/europa_jupiter_wrapped_frame_03.png",
+    "Worlds/assets/generated/europa_jupiter_wrapped_frame_04.png",
+    "Worlds/assets/generated/europa_jupiter_wrapped_frame_05.png",
+    "Worlds/assets/generated/europa_jupiter_wrapped_frame_06.png",
+    "Worlds/assets/generated/europa_jupiter_wrapped_frame_07.png"
+  ],
+  "required_rules": [
+    "storm_shadow_and_lightning_are_composited_in_wrap_space",
+    "wrapped_frames_are_opaque",
+    "legacy_jupiter_fx_billboards_are_disabled",
+    "no_extra_jupiter_fx_sphere_geometry",
+    "no_jupiter_multitexture_stage_required",
+    "triton_preflight_must_not_change_europa_jupiter_asset_hashes",
+    "proof_screenshots_are_1920x1080"
+  ],
+  "visual_thresholds": {
+    "terminator_luminance_delta_min": 45,
+    "storm_red_pixel_count_min": 2500,
+    "lightning_color_gain_pixels_min": 100
+  },
+  "verification_report": "Worlds/verification/reports/jupiter_full_wrap_fx_contract.json",
+  "visual_qa_report": "verification/reports/Operation_StarFall_Pass93_visual_qa.json"
+}

@@ -1,0 +1,7 @@
+PASS: 107 Triton Terrain Cleanup
+BASE: Pass106 Pluto Terrain Cleanup Candidate
+TECHNICAL: PASS
+VISUAL RUNTIME: PENDING
+PYTHON COMPILE: PASS
+PACKAGE HYGIENE: pending final package check
+FROZEN WORLDS: mimas, enceladus, iapetus, titan, mars, pluto, europa

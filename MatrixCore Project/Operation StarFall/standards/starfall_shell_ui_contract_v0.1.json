@@ -1,0 +1,17 @@
+{
+  "contract": "operation_starfall_shell_ui_v0.1",
+  "default_hud_level": "MINIMAL",
+  "hud_levels": ["MINIMAL", "COMPACT", "FULL", "HIDDEN"],
+  "safe_canvas": {
+    "aspect": "16:9",
+    "left": -1.34,
+    "right": 1.34,
+    "top": 0.965,
+    "bottom": -0.965
+  },
+  "owned_panels": ["pause_menu", "saturn_operations_map", "shell_help"],
+  "panel_rule": "Panels suppress normal shell HUD while open.",
+  "map_detail_max_chars": 360,
+  "map_detail_max_lines": 6,
+  "forbidden_normal_labels": ["STARFALL // P", "PASS", "DEBUG"]
+}

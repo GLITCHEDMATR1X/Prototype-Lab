@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "id": "operation_starfall",
+  "title": "Operation StarFall",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "linked",
+  "launch_model": "external_child_process",
+  "return_model": "child_exit_then_host_restore",
+  "return_target": "gleebs_dimension_archive",
+  "preview": "icon.png",
+  "symbol": "OSF",
+  "accent": "FF8A3C",
+  "description": "A starship campaign across the outer worlds: fly between planets, run missions from the ship's interior and send remote drones down to their surfaces, Pluto's nitrogen plains among them.",
+  "input_contract": {
+    "host_owned": [],
+    "dimension_owned": [
+      "all"
+    ],
+    "return": "QUIT on the ship menu closes the game and returns to HoloVerse."
+  },
+  "result_contract": "optional: HOLOVERSE_RETURN_SIGNAL_PATH json {result: {completed, signal, gleebs_response}} via holoverse_link.py"
+}

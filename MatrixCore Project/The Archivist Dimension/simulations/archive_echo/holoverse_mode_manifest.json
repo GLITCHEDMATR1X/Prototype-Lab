@@ -1,0 +1,16 @@
+{
+  "schema": 2,
+  "id": "archivist_archive_echo",
+  "title": "ARCHIVE ECHO",
+  "entry": "main.py",
+  "source_kind": "panda3d",
+  "launch_type": "native_panda",
+  "native_adapter": "holoverse_native_adapter.py",
+  "native_adapter_enabled": true,
+  "preferred_display": "same_window_native",
+  "requires_mouse_capture": false,
+  "host_contract": "holoverse_dimension_v1",
+  "return_target": "the_archivist",
+  "same_window_only": true,
+  "forbid_child_process": true
+}

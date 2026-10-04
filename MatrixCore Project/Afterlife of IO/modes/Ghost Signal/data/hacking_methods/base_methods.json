@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "implementation_pass": "02",
+  "methods": [
+    {"id":"credential_spoof","key":4,"label":"Credential Spoof"},
+    {"id":"maintenance_bypass","key":5,"label":"Maintenance Bypass"},
+    {"id":"signal_replay","key":6,"label":"Signal Replay"},
+    {"id":"power_cycle","key":7,"label":"Power Cycle"},
+    {"id":"brute_force","key":8,"label":"Brute Force"}
+  ],
+  "outcomes": ["clean_success","noisy_success","rejected_attempt","gleebs_violation"],
+  "fairness_rule": "Every protected interaction exposes two clues and deterministic method results."
+}

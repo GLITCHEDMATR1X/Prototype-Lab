@@ -1,0 +1,30 @@
+{
+  "volume": 0.38,
+  "walk_step_distance": 0.64,
+  "sprint_step_distance": 0.78,
+  "surfaces": {
+    "carpet": "assets/audio/footstep_carpet.wav",
+    "wood": "assets/audio/footstep_wood.wav",
+    "attic_wood": "assets/audio/footstep_attic_wood.wav",
+    "cement": "assets/audio/footstep_cement.wav"
+  },
+  "level_defaults": {
+    "floor2": "carpet",
+    "floor1": "wood",
+    "attic": "attic_wood",
+    "basement": "cement"
+  },
+  "floor1_carpet_zones": [
+    {
+      "id": "kitchen_runner",
+      "rect": [
+        5.72,
+        5.15,
+        7.15,
+        7.25
+      ],
+      "surface": "carpet",
+      "note": "carpet immediately outside the kitchen opening"
+    }
+  ]
+}

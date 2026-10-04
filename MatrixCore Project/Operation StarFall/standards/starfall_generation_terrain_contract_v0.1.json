@@ -1,0 +1,28 @@
+{
+  "contract": "operation_starfall_generation_terrain_v0.1",
+  "phase": "Mastering / Remastering",
+  "active_worlds": ["mimas", "enceladus", "iapetus", "titan"],
+  "core_rules": {
+    "height_authority": "WorldGenerator.surface_height(x, y)",
+    "subsurface_authority": "WorldGenerator.subsurface_terrain_height(x, y)",
+    "jagged_authority": "WorldGenerator._jagged_mountain_patches(x, y)",
+    "rock_snap_rule": "sample surface height, sink base into terrain, keep visual-only unless collision is intentionally added",
+    "titan_liquid_rule": "avoid placing spires in deep methane liquid masks"
+  },
+  "validation_flags": [
+    "--generation-authority-test",
+    "--terrain-authority-test",
+    "--placement-authority-test",
+    "--jagged-mountain-test",
+    "--pass37-rocks-underwater-test"
+  ],
+  "world_profiles_required": [
+    "terrain_identity",
+    "heightfield_rule",
+    "rock_shape_language",
+    "palette_rule",
+    "rock_spire_target_count",
+    "snap_rule",
+    "collision_rule"
+  ]
+}

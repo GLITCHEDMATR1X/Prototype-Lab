@@ -1,0 +1,41 @@
+{
+  "schema": "afterlife_io.replaceable_placeholders.v1",
+  "pass": 130,
+  "assets": [
+    {
+      "path": "assets/current/story/reconstruction_left.png",
+      "role": "Recovered-memory left figure",
+      "runtime": "story"
+    },
+    {
+      "path": "assets/current/story/reconstruction_right.png",
+      "role": "Recovered-memory right figure",
+      "runtime": "story"
+    },
+    {
+      "path": "assets/current/world_fx/absence_echo.png",
+      "role": "Future absence clue core",
+      "runtime": "world"
+    },
+    {
+      "path": "assets/current/world_fx/temporal_anchor_future.png",
+      "role": "Future temporal anchor core",
+      "runtime": "world"
+    },
+    {
+      "path": "assets/current/world_fx/temporal_anchor_past.png",
+      "role": "Past temporal anchor core",
+      "runtime": "world"
+    },
+    {
+      "path": "assets/current/battle/fallback_chamber.png",
+      "role": "Battle fail-soft chamber",
+      "runtime": "battle"
+    }
+  ],
+  "rules": {
+    "png_transparency_supported": true,
+    "missing_files_nonfatal": true,
+    "gameplay_values_changed": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "id": "the_archivist",
+  "title": "The Archivist",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "native",
+  "host_contract": "holoverse_dimension_v1",
+  "return_target": "gleebs_dimension_archive",
+  "requires_mouse_capture": true,
+  "native_adapter": "holoverse_native_adapter.py",
+  "preview": "",
+  "description": "A cybernetic zero-gravity 4D Mind Archive: 55 story realities float in widely separated volumetric shells, the observer can thrust freely in any direction, the moving exterior follows the observer through all three axes, optional MP3 soundtrack files under assets/ loop automatically, and nested simulations remain same-window native realities."
+}

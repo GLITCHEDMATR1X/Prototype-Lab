@@ -1,0 +1,74 @@
+{
+  "schema": "utopia_conflict_vector_arena_sfx_map_v1",
+  "source_adapter": "Vector Arena/standalone_native_adapter.py",
+  "search_order": [
+    "assets/audio/sfx/overrides",
+    "assets/audio/sfx/customfx",
+    "assets/generated/sfx",
+    "Vector Arena/assets/sfx"
+  ],
+  "events": {
+    "pulse_rifle": [
+      "pulse_rifle.wav",
+      "mech_fire.wav"
+    ],
+    "repulsor_blast": [
+      "repulsor_blast.wav",
+      "weapon_burst.wav",
+      "imploder_pulse.wav"
+    ],
+    "heat_vent": [
+      "heat_vent.wav",
+      "recharge.wav"
+    ],
+    "enemy_hit": [
+      "enemy_hit.wav",
+      "armor_hit.wav",
+      "core_hit.wav"
+    ],
+    "enemy_destroyed": [
+      "enemy_destroyed.wav",
+      "mech_kill.wav",
+      "explosion_cannon.wav"
+    ],
+    "wave_start": [
+      "wave_start.wav",
+      "objective_complete.wav"
+    ],
+    "player_hit": [
+      "player_hit.wav"
+    ],
+    "enemy_spawn": [
+      "enemy_spawn.wav"
+    ],
+    "weapon_upgrade": [
+      "weapon_upgrade.wav",
+      "special_pickup.wav"
+    ],
+    "overheat_warning": [
+      "overheat_warning.wav"
+    ],
+    "low_health": [
+      "low_health.wav"
+    ],
+    "player_reboot": [
+      "player_reboot.wav"
+    ],
+    "ui_toggle": [
+      "ui_toggle.wav"
+    ],
+    "breach_spawn": [
+      "breach_spawn.wav"
+    ],
+    "breach_hit": [
+      "breach_hit.wav"
+    ],
+    "breach_sealed": [
+      "breach_sealed.wav"
+    ],
+    "combo_surge": [
+      "combo_surge.wav"
+    ]
+  },
+  "notes": "Every Vector Arena SFX key resolves through Utopia Conflict shared audio first. Overrides can replace any filename in assets/audio/sfx/overrides."
+}

@@ -1,0 +1,28 @@
+{
+  "schema": 2,
+  "id": "indigo_giant",
+  "title": "The Indigo Giant",
+  "version": "63",
+  "compatibility": "native",
+  "host_contract": "holoverse_dimension_v1",
+  "adapter": "holoverse_native_adapter.py",
+  "entry": "main.py",
+  "return_target": "gleebs_dimension_archive",
+  "presentation": {
+    "symbol": "IG",
+    "accent": "5B57FF",
+    "preview": "icon.png",
+    "description": "REDACTED: a dying desert world its makers erased from every chart. The first record of Nyx, the Indigo Giant, and Orbit, who never left its side - and of Crimson, who stayed behind."
+  },
+  "runtime": {
+    "engine": "panda3d",
+    "shared_showbase": true,
+    "source_owns_input_except": [
+      "tab"
+    ],
+    "host_return_key": "tab",
+    "standalone_entry_preserved": true
+  },
+  "native_adapter": "holoverse_native_adapter.py",
+  "lore": "An archive of the past that Gleebs carried into HoloVerse. After REDACTED, Nyx became the Hills of Life guide in GREEN HILLS and Orbit the HoloSpace flight guide."
+}

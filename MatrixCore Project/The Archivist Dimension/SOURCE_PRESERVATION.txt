@@ -1,0 +1,17 @@
+THE ARCHIVIST DIMENSION — SOURCE PRESERVATION
+
+Source authority:
+/mnt/data/The Archivist Dimension.rar
+
+SHA-256:
+f3e553a9246dc275e7eec86a930bff90f5ef1da7932d3c50f6e283cbb7a7c66e
+
+Rules used for Passes 01–03:
+- The RAR was never modified or repacked.
+- 55-book catalog preserved.
+- All 58 files under assets/books preserved byte-for-byte from the extracted source.
+- saves/simulation_links.json preserved byte-for-byte with all 9 records.
+- Existing reading/patron persistence data retained.
+- The old Pygame renderer was never overwritten inside the RAR; the Panda3D project is a separate reconstruction.
+- Pass 03 modifies only the Panda3D presentation/integration layer descended from Pass 02.
+- The original RAR remains the emergency source authority.

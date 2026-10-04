@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "units": "meters",
+  "scope": "Pass 09 master-bedroom starting composition only",
+  "room": "f2_master",
+  "references": {
+    "queen_bed": "IKEA IDANAS queen frame: 1.629 m W x 2.089 m L (64 1/8 x 82 1/4 in)",
+    "armchair": "IKEA EKENASET: 0.641 m W x 0.781 m D x 0.759 m H (25 1/4 x 30 3/4 x 29 7/8 in)",
+    "crt_tv": "Sylvania 6520FDG 20-inch CRT: approx 0.512 m W x 0.505 m D x 0.457 m H"
+  },
+  "objects": [
+    {
+      "id": "bed",
+      "kind": "queen_bed",
+      "center": [
+        2.0,
+        3.52,
+        2.8
+      ],
+      "size": [
+        1.63,
+        2.09,
+        0.62
+      ],
+      "support": "floor",
+      "facing": "south"
+    },
+    {
+      "id": "chair",
+      "kind": "armchair",
+      "center": [
+        3.45,
+        1.35,
+        2.8
+      ],
+      "size": [
+        0.78,
+        0.64,
+        0.76
+      ],
+      "support": "floor",
+      "facing": "east"
+    },
+    {
+      "id": "tv_cabinet",
+      "kind": "cabinet",
+      "center": [
+        5.34,
+        1.35,
+        2.8
+      ],
+      "size": [
+        0.55,
+        0.82,
+        0.66
+      ],
+      "support": "floor",
+      "facing": "west"
+    },
+    {
+      "id": "analog_tv",
+      "kind": "crt_tv",
+      "center": [
+        5.32,
+        1.35,
+        3.46
+      ],
+      "size": [
+        0.505,
+        0.512,
+        0.457
+      ],
+      "support": "tv_cabinet",
+      "facing": "west"
+    }
+  ],
+  "player_start": {
+    "floor_pos": [
+      1.8,
+      1.9,
+      2.8
+    ],
+    "eye_height": 1.62,
+    "heading_deg": 80.0,
+    "pitch_deg": -2.0
+  },
+  "interaction_anchors": {
+    "chair_sit": [
+      3.45,
+      1.35,
+      2.8
+    ],
+    "tv_front": [
+      5.06,
+      1.35,
+      3.7
+    ],
+    "bed_side": [
+      2.82,
+      3.4,
+      2.8
+    ]
+  },
+  "rules": [
+    "All furniture is world-space and support-anchored.",
+    "The east-wall doorway remains unobstructed.",
+    "Both sealed windows remain visually and physically unobstructed.",
+    "The initial sightline includes chair and TV without requiring screen-space pinning.",
+    "No horror behavior is implemented in this pass."
+  ]
+}

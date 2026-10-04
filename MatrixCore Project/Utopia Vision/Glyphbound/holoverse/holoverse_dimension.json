@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "id": "glyphbound",
+  "title": "Glyphbound",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "native",
+  "native_adapter": "holoverse_native_adapter.py",
+  "host_contract": "holoverse_dimension_v1",
+  "return_target": "gleebs_dimension_archive",
+  "requires_mouse_capture": true,
+  "symbol": "GLY",
+  "accent": "70E0B8",
+  "description": "Glyphbound: The Shattered Shrine mounted as a native same-window HoloVerse reality. HoloVerse owns the window and TAB return; Glyphbound owns its gameplay, local input, world, post-process, HUD, and audio while active."
+}

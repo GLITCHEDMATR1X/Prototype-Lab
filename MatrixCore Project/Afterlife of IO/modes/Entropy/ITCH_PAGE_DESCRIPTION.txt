@@ -1,0 +1,25 @@
+ENTROPY
+=======
+
+You have one minute before the system collapses.
+
+Entropy is a timed science-fiction survival/exploration game about preserving lost information from abandoned worlds before their stars disappear.
+
+Your expedition begins on HOME during its final sixty seconds. Recover emergency supplies before the first supernova tears the system apart. You survive through an emergency transfer, wake aboard a disabled ship, and must physically restore its power, storage, fuel, navigation, and cockpit systems before the real expedition can begin.
+
+From there, travel through unstable systems and land on strange abandoned planets. Explore seamless procedural terrain, process ruins and planetary material into Salvage and Fuel Cells, and recover six Data Fragments before the systems collapse. Every intact objective world is landable, and twelve established world families give the expedition a wide range of terrain and atmosphere.
+
+Recovering a Data Fragment does not automatically pull you away. Decide whether to keep scavenging or return to the ship, refuel, upgrade, and escape while there is still time.
+
+Complete all six fragments and deliver the reconstructed archive to Gleebs, connecting Entropy's expedition to MatrixCore.
+
+FEATURES
+- Playable HOME-world opening under the same one-minute collapse pressure
+- Physical ship-recovery onboarding instead of a modal tutorial
+- Six-Data-Fragment campaign objective and Gleebs ending
+- Seamless top-down planetary exploration
+- Twelve alien world families
+- Full 6DOF spaceflight
+- Salvage, fuel processing, repairs, and four ship upgrade tracks
+- Supernova and black-hole deterioration
+- Persistent saves and settings outside the game directory

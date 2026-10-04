@@ -1,0 +1,62 @@
+{
+  "MCF28": {
+    "source": "main/MCF28.mp3",
+    "output": "main/MCF28.ogg",
+    "source_duration_s": 149.184,
+    "trim_start_s": 0.302,
+    "trim_end_s": 146.912,
+    "output_duration_s": 146.61,
+    "output_integrated_lufs": -15.9,
+    "output_true_peak_dbtp": -1.2,
+    "output_lra_lu": 6.0,
+    "pass32_mix": "independent music slider; louder finalization master"
+  },
+  "MCF12": {
+    "source": "battle/MCF12.mp3",
+    "output": "battle/MCF12.ogg",
+    "source_duration_s": 118.992,
+    "trim_start_s": 2.041,
+    "trim_end_s": 115.728,
+    "output_duration_s": 113.687,
+    "output_integrated_lufs": -16.1,
+    "output_true_peak_dbtp": -2.5,
+    "output_lra_lu": 7.6,
+    "pass32_mix": "independent music slider; louder finalization master"
+  },
+  "MCF18": {
+    "source": "battle/MCF18.mp3",
+    "output": "battle/MCF18.ogg",
+    "source_duration_s": 118.512,
+    "trim_start_s": 1.771,
+    "trim_end_s": 118.286,
+    "output_duration_s": 116.515,
+    "output_integrated_lufs": -16.0,
+    "output_true_peak_dbtp": -3.1,
+    "output_lra_lu": 3.7,
+    "pass32_mix": "independent music slider; louder finalization master"
+  },
+  "MCF22": {
+    "source": "battle/MCF22.mp3",
+    "output": "battle/MCF22.ogg",
+    "source_duration_s": 161.472,
+    "trim_start_s": 1.306,
+    "trim_end_s": 160.898,
+    "output_duration_s": 159.592,
+    "output_integrated_lufs": -16.0,
+    "output_true_peak_dbtp": -1.6,
+    "output_lra_lu": 2.6,
+    "pass32_mix": "independent music slider; louder finalization master"
+  },
+  "MCF26": {
+    "source": "battle/MCF26.mp3",
+    "output": "battle/MCF26.ogg",
+    "source_duration_s": 214.08,
+    "trim_start_s": 0.0,
+    "trim_end_s": 214.08,
+    "output_duration_s": 214.053,
+    "output_integrated_lufs": -16.0,
+    "output_true_peak_dbtp": -1.4,
+    "output_lra_lu": 3.3,
+    "pass32_mix": "independent music slider; louder finalization master"
+  }
+}

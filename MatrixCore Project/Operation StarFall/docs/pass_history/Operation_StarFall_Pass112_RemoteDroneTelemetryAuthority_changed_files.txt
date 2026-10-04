@@ -1,0 +1,15 @@
+Gameplay / authority
+- main.py
+- Worlds/active_game.json
+- build_manifest.json
+- README.md
+
+Verification / packaging
+- verification/test_pass112_remote_drone_telemetry.py
+- verification/reports/Operation_StarFall_Pass112_remote_drone_telemetry_static_contract.json
+- tools/starfall_package_check.py
+- Operation_StarFall_Pass112_RemoteDroneTelemetryAuthority_Report.md
+- Operation_StarFall_Pass112_RemoteDroneTelemetryAuthority_validation.txt
+- Operation_StarFall_Pass112_RemoteDroneTelemetryAuthority_changed_files.txt
+
+Archived unchanged Pass111 root handoff records to docs/pass_history/.

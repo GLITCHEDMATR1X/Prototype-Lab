@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "identity_mode": "host_assigned",
+  "title": "HoloTactics",
+  "entry": "main.py",
+  "compatibility": "native",
+  "native_adapter": "holoverse_native_adapter.py",
+  "description": "Complete HoloTactics game with Pass 28 host-input authority hardening. Native mode borrows the existing HoloVerse Panda3D window/camera/task lifecycle, accepts gameplay through the host action bridge, and leaves ESC/TAB ownership with HoloVerse.",
+  "preview": "assets/reference/Gleebs.png",
+  "return_target": "gleebs_dimension_archive",
+  "engine": "panda3d",
+  "adapter_contract": "holoverse_dimension_v2_full_source_host_runtime",
+  "version": "28.0-native-input-authority"
+}

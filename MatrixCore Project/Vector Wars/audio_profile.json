@@ -1,0 +1,102 @@
+{
+  "schema": "vector_wars_audio_profile_v6_phase_music",
+  "id": "vector_wars",
+  "mode": "Vector Wars",
+  "role": "combat_shooter",
+  "music_loop": "hv_urban_conflict_theme.wav",
+  "music_bus": "music",
+  "music_volume": 0.1,
+  "events": {
+    "fire_primary": {
+      "categories": [
+        "weapons/lasers",
+        "weapons/guns"
+      ],
+      "preferred": [
+        "fire.ogg",
+        "vector_wars_gun_fire.wav",
+        "vw_laser_fire_clean.wav",
+        "hit.ogg"
+      ],
+      "volume": 0.48
+    },
+    "fire_laser": {
+      "categories": [
+        "weapons/lasers"
+      ],
+      "preferred": [
+        "fire.ogg",
+        "vector_wars_laser_fire.wav",
+        "vw_laser_fire_glitch.wav"
+      ],
+      "volume": 0.44
+    },
+    "missile": {
+      "categories": [
+        "weapons/missiles"
+      ],
+      "preferred": [
+        "rocketfire.ogg",
+        "vector_wars_rocket_fire.wav",
+        "vw_rocket_launch_short.wav"
+      ],
+      "volume": 0.5
+    },
+    "hit": {
+      "categories": [
+        "weapons/guns",
+        "damage/hit"
+      ],
+      "preferred": [
+        "hit.ogg",
+        "vector_wars_hit.wav",
+        "vw_hit_metal_snap.wav"
+      ],
+      "volume": 0.4
+    },
+    "destroy": {
+      "categories": [
+        "damage/destroy"
+      ],
+      "preferred": [
+        "vector_wars_destroy.wav",
+        "sm_core_destroy_01.wav"
+      ],
+      "volume": 0.48
+    },
+    "ui": {
+      "categories": [
+        "ui"
+      ],
+      "preferred": [
+        "sm_ui_select_01.wav"
+      ],
+      "volume": 0.32
+    }
+  },
+  "notes": "Pass 15: three replaceable original placeholder tracks per campaign phase; independent music/SFX controls; low safe defaults retained.",
+  "music_variants": [
+    "hv_urban_conflict_theme.wav",
+    "hv_urban_conflict_theme_b.wav",
+    "hv_urban_conflict_theme_c.wav"
+  ],
+  "music_rotation_seconds": 60.0,
+  "music_manifest": "assets/music/music_manifest.json",
+  "phase_music": {
+    "ground": [
+      "assets/music/ground/ground_phase_01.wav",
+      "assets/music/ground/ground_phase_02.wav",
+      "assets/music/ground/ground_phase_03.wav"
+    ],
+    "air": [
+      "assets/music/air/air_phase_01.wav",
+      "assets/music/air/air_phase_02.wav",
+      "assets/music/air/air_phase_03.wav"
+    ],
+    "ocean": [
+      "assets/music/ocean/ocean_phase_01.wav",
+      "assets/music/ocean/ocean_phase_02.wav",
+      "assets/music/ocean/ocean_phase_03.wav"
+    ]
+  }
+}

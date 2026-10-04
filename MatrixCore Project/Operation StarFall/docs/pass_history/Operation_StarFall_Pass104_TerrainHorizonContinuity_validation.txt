@@ -1,0 +1,30 @@
+Operation StarFall Pass104 Terrain Horizon Continuity
+
+STATUS: CANDIDATE / TECHNICAL PASS / PANDA3D VISUAL RUNTIME PENDING
+
+Completed in current environment:
+- Fresh Pass103 extraction used as base.
+- Source/AST/JSON checks: PASS.
+- Terrain horizon seam-coordinate model: PASS for Mimas, Enceladus, Titan, Mars, Pluto, Europa, Triton.
+- WORLD_HALF gameplay/collision authority preserved: PASS by source inspection.
+- Titan methane/shoreline continuation source contract: PASS.
+- Iapetus generic-ring exclusion + authored fade retention: PASS.
+- Dedicated --terrain-horizon-shot route added: PASS (source presence).
+- GXTool project scan: completed.
+
+Not completed:
+- Panda3D 1.10.16 rendered terrain-horizon frames.
+- Moving-camera edge traversal.
+- Native Windows/GPU terrain acceptance.
+
+Reason: Panda3D is not importable in the current reset container. The retained exact 1.10.16 wheel is present in the user's Library but cannot currently be materialized into this container, and outbound package retrieval is unavailable.
+
+Do not promote Pass104 to ACCEPTED AUTHORITY from this validation file alone.
+
+Preverification package cycle:
+- ZIP integrity test: PASS (334 members, no corrupt member).
+- Blank extraction package checker: PASS.
+- Blank extraction Python AST/compile-in-memory: PASS (8 files).
+- Blank extraction JSON parsing: PASS (66 files).
+- Blank extraction cache/bytecode residue after checks: NONE.
+- Terrain visual runtime remains PENDING by design.

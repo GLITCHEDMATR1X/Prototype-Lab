@@ -1,0 +1,91 @@
+{
+  "schema": "glitched_matrix_folder_local_mission_index_v1",
+  "index_authority": "folder_local",
+  "mission_id": "vector_arena",
+  "title": "Vector Arena",
+  "folder_name": "Vector Arena",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "python_target": "3.13.5+",
+  "panda3d_target": "1.10.16+",
+  "status": "active",
+  "category": "evolved_mutation_wave_horde_combat_mission",
+  "launch_mode": "prototype_lab_jump_in_or_direct",
+  "prototype_lab_launchable": true,
+  "runtime_wrapper_required": false,
+  "depends_on_holoverse": false,
+  "return_to_lab": true,
+  "points_export": true,
+  "points_owner": "prototype_lab_validates_and_saves_shared_points",
+  "points_field": "prototype_lab_points_awarded",
+  "primary_verb": "survive_adapt_and_mutate",
+  "summary": "Survive tactical vector hordes whose enemy frames evolve across sets, defeat three-phase Guardian checkpoints, choose mutations, and adapt as the arena destabilizes.",
+  "core_loop": "read gate/evolution telegraphs -> survive wave set -> defeat phased Guardian -> choose 1 of 3 mutations -> arena reconstructs/mutates -> continue",
+  "controls": {
+    "move": "WASD",
+    "run": "Shift",
+    "fire": "Left Mouse",
+    "repulsor": "Right Mouse",
+    "vent_heat": "R",
+    "help": "H",
+    "exit": "ESC",
+    "objective": "Destroy breach cores with LMB/RMB",
+    "between_set_mutation": "1 / 2 / 3"
+  },
+  "score_rules": {
+    "score_source": "score_delta from kills, wave progress, and breach cores",
+    "complete_when": "wave >= 4 or kills >= 25",
+    "profile_points": "session_score // 10 + completion/objective/combat bonuses",
+    "save_scope": "local standalone game profile/session output"
+  },
+  "result_contract": {
+    "schema": "glitched_matrix_standalone_game_result_v1",
+    "result_command": "--game-result-test",
+    "complete_command": "--complete-game-test",
+    "standards_command": "",
+    "result_files": [
+      "verification/reports/game_result.json",
+      "verification/reports/mission_result.json",
+      "verification/reports/profile_preview.json"
+    ],
+    "sample_score": 4200,
+    "sample_points": 796
+  },
+  "verification": {
+    "compile": [
+      "python",
+      "-B",
+      "-m",
+      "py_compile",
+      "main.py"
+    ],
+    "screenshot_command": [
+      "python",
+      "-B",
+      "main.py",
+      "--self-test",
+      "--test-shot",
+      "verification/screenshots/mission_index_smoke.png",
+      "--no-audio"
+    ]
+  },
+  "tags": [
+    "vector",
+    "arena",
+    "breach-core",
+    "waves",
+    "jump-in-quest",
+    "horde",
+    "tactical-spawns",
+    "guardian",
+    "arena-hazards",
+    "holoverse-native",
+    "mutations",
+    "between-set-upgrades",
+    "endless-progression",
+    "enemy-evolution",
+    "encounter-doctrines",
+    "guardian-phases"
+  ],
+  "notes": "Folder-local authority for Vector Arena Pass07.1 strategic arena architecture; standalone remains valid while HoloVerse may discover/mount the native adapter in the same Panda3D window through the portable vector_arena responder identity."
+}

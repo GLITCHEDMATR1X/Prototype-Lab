@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "normalization": {
+    "target_integrated_lufs": -16.0,
+    "target_true_peak_dbtp": -1.5,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "format": "ogg_vorbis",
+    "note": "Pass 32 finalization mix: louder than Pass 31/31.1 while retaining trimmed loop files."
+  },
+  "routing": {
+    "main": "main/MCF28.ogg",
+    "battle": {
+      "purge": "battle/MCF12.ogg",
+      "recovery": "battle/MCF18.ogg",
+      "rescue": "battle/MCF22.ogg",
+      "sovereign": "battle/MCF26.ogg"
+    }
+  },
+  "looping": {
+    "main": true,
+    "battle": true,
+    "sovereign": true
+  },
+  "mix": {
+    "independent_music_slider": true,
+    "fresh_profile_defaults": {
+      "master_volume": 0.85,
+      "sfx_volume": 0.85,
+      "ambience_volume": 0.45,
+      "music_volume": 0.75
+    },
+    "music_100_percent_behavior": "master_volume * 1.00; not clamped by SFX slider"
+  }
+}

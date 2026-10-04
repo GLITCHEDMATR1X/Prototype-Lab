@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "identity_mode": "host_assigned",
+  "title": "HoloUtopia // Holo-Utopia Civic Ring",
+  "entry": "main.py",
+  "compatibility": "native",
+  "native_adapter": "holoverse_native_adapter.py",
+  "description": "HoloUtopia full-source Panda3D dimension with launch-path plus structural runtime discovery and visit-long isolation. HoloVerse owns window/camera/frame loop; linked project owns gameplay.",
+  "return_target": "gleebs_dimension_archive",
+  "engine": "panda3d",
+  "adapter_contract": "holoverse_dimension_v4_persistent_links_frozen_host_camera",
+  "version": "1.2-pass03-authority-scoring"
+}

@@ -1,0 +1,18 @@
+{
+  "schema": 2,
+  "id": "glyphbound",
+  "title": "Glyphbound",
+  "version": "24-native-dimension",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "native",
+  "adapter": "holoverse_native_adapter.py",
+  "native_adapter": "holoverse_native_adapter.py",
+  "host_contract": "holoverse_dimension_v1",
+  "return_target": "gleebs_dimension_archive",
+  "presentation": {
+    "symbol": "GLY",
+    "accent": "70E0B8",
+    "description": "A streamed semantic-glyph fantasy world with the Shattered Shrine, villages, cities, combat, weather, and a Utopia return portal."
+  }
+}

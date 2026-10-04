@@ -1,0 +1,34 @@
+{
+  "version": "operation_starfall_progress_result_contract_v0.1",
+  "active_worlds": ["mimas", "enceladus", "iapetus", "titan"],
+  "required_fields": [
+    "version",
+    "world_key",
+    "level_id",
+    "level_name",
+    "objective_name",
+    "progress_percent",
+    "completed",
+    "score",
+    "lab_points_awarded",
+    "time_seconds",
+    "failures",
+    "badges",
+    "stats",
+    "return_to_lab",
+    "generated_at"
+  ],
+  "completed_rules": {
+    "progress_percent": 100,
+    "return_to_lab": true,
+    "required_badge": "level_complete"
+  },
+  "outputs": {
+    "active_result_json": "Worlds/verification/reports/level_result.json",
+    "active_result_markdown": "Worlds/verification/reports/level_result.md",
+    "active_profile_preview": "Worlds/verification/reports/lab_profile_preview.json",
+    "all_world_contract": "Worlds/verification/reports/all_world_progress_contract.json",
+    "all_world_profile_preview": "Worlds/verification/reports/all_world_lab_profile_preview.json",
+    "shell_return_report": "verification/reports/operation_result_contract_self_test.json"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "identity_mode": "host_assigned",
+  "title": "Anatomic",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "adapted",
+  "native_adapter": "adapter/holoverse_adapter.py",
+  "description": "First-person anatomical ASCII matter lab with persistent volumetric wounds, damage reversal, holographic weapons, recorded melee motions, Combo Composer, and articulated NPC anatomy. Same-window adapted: inherits HoloVerse framebuffer/window dimensions and never resizes the host."
+}

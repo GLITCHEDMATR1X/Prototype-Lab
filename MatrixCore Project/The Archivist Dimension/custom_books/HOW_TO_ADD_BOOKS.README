@@ -1,0 +1,25 @@
+CUSTOM BOOKS
+
+1. Drop any UTF-8 .txt or .md book into this folder.
+2. Launch the game, or press F5 while it is already running.
+3. The book is automatically assigned to the least-full shelf.
+4. Walk to that shelf, press E, and read it normally.
+5. NPC visitors can also choose custom books.
+
+TITLE
+By default the filename becomes the book title.
+Leading import numbers are hidden automatically.
+
+Optional metadata at the top of a file:
+
+TITLE: The Clockwork Orchard
+AUTHOR: Your Name
+
+Then leave a blank line and write the book normally.
+
+Markdown heading also works:
+# The Clockwork Orchard
+
+Subfolders are allowed. Empty .txt/.md files are ignored.
+
+Current custom import formats: .txt and .md

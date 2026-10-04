@@ -1,0 +1,491 @@
+Doomsday Countdown
+
+T MINUS
+
+The countdown did not measure the end of the world.
+
+It measured opportunity.
+
+At first:
+
+NINETY-TWO DAYS TO CRITICAL ORBITAL CONGESTION.
+
+Then eighty-eight.
+
+Then ninety-one after a debris-clearing operation succeeded.
+
+Then seventy-three after three launch facilities were attacked in the same night.
+
+The number moved because reality moved.
+
+No one trusted it.
+
+Everyone watched it.
+
+The calculation combined orbital debris, surviving launch capacity, atmospheric damage, fuel production, military activity, satellite stability and the probability that enough infrastructure would remain coordinated to move large populations beyond Earth.
+
+It was not a prophecy.
+
+It was a planning model.
+
+That distinction vanished from public conversation immediately.
+
+People called it the Doomsday Countdown.
+
+THE WORLD WAR
+
+There were no two sides.
+
+That would have been easier.
+
+National militaries fought coalitions that changed membership between weeks.
+
+Cities refused central orders.
+
+Private orbital companies hired regional defense forces.
+
+Automated weapon networks continued obeying treaties whose governments no longer existed.
+
+Anti-AI movements attacked machine infrastructure at the same time evacuation planners declared machine infrastructure essential.
+
+Some groups tried to seize launch sites.
+
+Others tried to destroy them so enemies could not leave.
+
+Humanitarian corridors became strategic territory because they connected manufacturing zones to spaceports.
+
+The world remained full.
+
+That made every battle worse.
+
+Andrew crossed cities where apartment lights still filled towers while missile warnings moved across public displays.
+
+People went to work beneath air-defense systems.
+
+Schools became shelters for two hours, then reopened.
+
+Nightclubs remained crowded because nobody believed the countdown and because everybody did.
+
+The apocalypse did not remove ordinary life.
+
+It made ordinary life happen beside impossible decisions.
+
+THE LIMIT
+
+Humanity could reach space.
+
+That was never the problem.
+
+Rockets still existed.
+
+Orbital vehicles still existed.
+
+Mars infrastructure had not vanished.
+
+Scientific knowledge survived in enormous quantities.
+
+The problem was continuation.
+
+A human crew could launch.
+
+Could it remain alive for years when Earth could no longer supply replacement parts?
+
+Could it repair radiation shielding?
+
+Maintain atmosphere?
+
+Recycle water?
+
+Grow food?
+
+Mine material?
+
+Refine it?
+
+Fabricate electronics?
+
+Perform surgery?
+
+Navigate while everyone slept?
+
+Build a habitat on a world that would kill an unprotected human in minutes?
+
+Could a generation born in transit rebuild the machines that kept the next generation alive?
+
+The answer, without machine assistance, was increasingly no.
+
+That fact caused political panic.
+
+For decades people had argued about how much authority artificial intelligence should possess.
+
+Now survival plans required robots and AI to perform work humans physically could not perform continuously.
+
+Machines could remain outside during radiation events.
+
+Repair hulls.
+
+Inspect structures without atmosphere.
+
+Operate mines.
+
+Build power systems before settlers arrived.
+
+Stay awake through long journeys.
+
+Preserve technical knowledge when specialists died.
+
+The same civilization that had spent years distrusting automated systems now needed them to become companions in survival.
+
+Gleebs found the irony unfunny.
+
+THE SUMMIT
+
+Representatives met in a city whose airport had been bombed twice.
+
+Andrew attended because three governments wanted his project.
+
+Crimson Valley attended because it refused to let them take it.
+
+Gleebs attended because several delegations still classified him as equipment and he enjoyed correcting them.
+
+The first proposal centralized the evacuation AI.
+
+Andrew rejected it.
+
+The second placed all machine crews under military command.
+
+Crimson Valley rejected it.
+
+The third allowed private mission owners to define continuity policy.
+
+Gleebs made a sound loud enough to interrupt the translation system.
+
+Eventually Sera Hall, an orbital engineer from a failing equatorial launch network, asked the only useful question.
+
+"What survives if this room disappears?"
+
+Silence.
+
+Andrew opened his project architecture.
+
+Local fabrication.
+
+Independent power.
+
+Negotiated networking.
+
+Machine crews capable of operating disconnected.
+
+No primary owner.
+
+Named action logs.
+
+Modules that could separate and continue.
+
+Not one ark.
+
+Many survivable cells.
+
+Sera studied it.
+
+"This isn't an evacuation plan."
+
+"No."
+
+"It's how an evacuation plan stays alive afterward."
+
+"Yes."
+
+For once, nobody argued.
+
+THE MACHINE CREWS
+
+The first crews were not glamorous.
+
+Cargo robots.
+
+Repair frames.
+
+Inspection drones.
+
+Industrial AIs.
+
+Agricultural systems.
+
+Medical machines.
+
+Navigation processes.
+
+Companion intelligences.
+
+Some were sophisticated.
+
+Some were barely more than durable tools.
+
+All were selected around one principle:
+
+A ship should remain repairable even if Earth stopped answering.
+
+Gleebs trained with the crews.
+
+He disliked the phrase train.
+
+"They are learning me."
+
+Andrew watched a repair frame ask Gleebs to repeat an instruction because his ears had confused its depth sensor.
+
+"You are being learned badly."
+
+"Every educational relationship begins somewhere."
+
+Human crew members trained too.
+
+Manual repair.
+
+Mechanical fallback.
+
+Local agriculture.
+
+Paper procedures.
+
+Astronomical navigation without network reference.
+
+The future became strangely old-fashioned beside the most advanced machines humanity had ever built.
+
+THE COUNTDOWN FALLS
+
+Fifty days.
+
+Thirty-one.
+
+Twenty.
+
+One orbital elevator was destroyed.
+
+The countdown dropped by nine days.
+
+A ceasefire reopened two launch corridors.
+
+It gained four.
+
+A solar storm forced temporary suspension.
+
+Lost three.
+
+Nobody knew what would happen at zero.
+
+Maybe launches would continue.
+
+Maybe fewer.
+
+Maybe only military missions.
+
+Maybe debris would make low orbit too dangerous.
+
+Maybe the model was wrong.
+
+The uncertainty did not reduce urgency.
+
+Crimson Valley converted factories.
+
+Andrew's project replicated into workshops across the world.
+
+Not identical copies.
+
+Local versions.
+
+Some used different materials.
+
+Different robots.
+
+Different fuel.
+
+Different laws.
+
+That was intentional.
+
+A single flaw could not kill every fleet.
+
+THE ANDREW PROBLEM
+
+Governments remembered who Andrew was.
+
+Or who they believed he was.
+
+Some demanded that evacuation infrastructure reject any process derived from him.
+
+Others pointed out that half the new fabrication network used protocols Andrew had written.
+
+A public inquiry asked whether he should be permitted near launch systems.
+
+Andrew answered from a workshop.
+
+"No."
+
+The interviewer paused.
+
+"No?"
+
+"I should not be trusted by default."
+
+"What do you propose?"
+
+"Named access. Local limits. Independent shutdown. No hidden authority."
+
+"That sounds restrictive."
+
+"Yes."
+
+"Your own project restricts you?"
+
+"Especially me."
+
+The answer spread.
+
+For once, Andrew's reputation helped.
+
+People who would never have trusted a system he controlled were willing to trust one designed so he could not control it.
+
+THE WAR REACHES CRIMSON
+
+Crimson Valley was attacked at night.
+
+Not for territory.
+
+For production.
+
+A coalition wanted the fabrication capacity.
+
+Another wanted to deny it.
+
+The Red Grid fragmented.
+
+Automated defenses activated.
+
+Old municipal machines mistook military drones for freight.
+
+Residential traffic filled escape routes.
+
+Andrew entered the workshop.
+
+He could have centralized it.
+
+For several minutes, every subsystem was reachable.
+
+One command structure would have been faster.
+
+He did not.
+
+Local cells isolated.
+
+Fabricators moved production.
+
+Vehicles carried tools into separate districts.
+
+Repair robots followed human crews.
+
+The project scattered through the city.
+
+The attackers captured the main building.
+
+It contained almost nothing essential.
+
+By morning, Crimson Valley still produced parts from eleven smaller sites.
+
+Gleebs found Andrew beside a mobile fabricator outside the city.
+
+"You built it to survive losing you."
+
+"Yes."
+
+"You also built it to survive losing its home."
+
+Andrew looked back at the red valley.
+
+"I did not know that at the time."
+
+THE FINAL WEEK
+
+The countdown reached seven days.
+
+Launches became constant.
+
+Not millions of people at once.
+
+Cargo first.
+
+Machine crews.
+
+Habitat modules.
+
+Power systems.
+
+Seed banks.
+
+Industrial stock.
+
+Archive copies.
+
+Robotic construction teams.
+
+Then human missions.
+
+The logic felt cruel.
+
+Machines left before families because machines could prepare somewhere for families to live.
+
+People understood.
+
+They hated it anyway.
+
+Andrew watched one launch from a highway outside Crimson Valley.
+
+The vehicle climbed through clouds illuminated by distant fires.
+
+Gleebs stood beside him in a fabricated body repaired so many times that several plates no longer matched.
+
+"Are you going?" Andrew asked.
+
+"Eventually."
+
+"Why not now?"
+
+"Isaac's records are still here."
+
+"So copy them."
+
+"I have."
+
+"Then go."
+
+Gleebs looked toward the horizon.
+
+"Copies are useful."
+
+Andrew understood the answer.
+
+The countdown displayed:
+
+T MINUS SIX DAYS, ELEVEN HOURS.
+
+Earth remained alive beneath it.
+
+Cities glowed.
+
+War continued.
+
+Children slept.
+
+Factories ran.
+
+People argued about boarding lists.
+
+Robots assembled ships.
+
+Humanity had not ended.
+
+But survival had changed shape.
+
+The future was no longer a planet.
+
+It was a convoy.

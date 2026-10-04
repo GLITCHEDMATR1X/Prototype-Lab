@@ -1,0 +1,15 @@
+{
+  "pass": 15,
+  "system": "Reading Lounge + Source-Grounded Lore Recognition",
+  "generic_read_visit_chance": 0.28,
+  "lore_read_visit_chance": 0.62,
+  "named_lore_self_reference_preference": 0.72,
+  "rules": [
+    "Reading chairs are real visitor destinations.",
+    "One active reader claims a chair at a time.",
+    "Named lore affinity uses only actual readable text containing the canonical name.",
+    "Unnamed companion visitors have no name-based affinity.",
+    "No invented recognition dialogue is added.",
+    "A small gold marker indicates self-referential reading."
+  ]
+}

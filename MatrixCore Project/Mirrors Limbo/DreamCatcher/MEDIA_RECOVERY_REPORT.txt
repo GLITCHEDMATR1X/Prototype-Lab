@@ -1,0 +1,12 @@
+Dream Alternate media recovery
+
+Task: restore missing TV channel identity/audio contracts and Alternate voice placeholders without altering house progression.
+
+Recovered:
+- 25/25 declared TV visual families now have dedicated renderer branches.
+- 25/25 channels have packaged generated placeholder audio loops and explicit data mappings.
+- Alternate authored-line/category contract is restored with 13 preserved lines and neutral placeholder event WAVs.
+- Second TV-off warning now points through the Alternate voice contract instead of missing assets/audio/tv_warning2.wav.
+- Missing glitchtv_archive_inventory.json dependency removed from runtime authority; absence is stated explicitly.
+
+Important: generated channel loops and Alternate event tones are placeholders, not recovered original recordings/music. They preserve replaceable asset paths so future original audio can be dropped in without changing code.

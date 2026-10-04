@@ -1,0 +1,798 @@
+{
+  "schema_version": 1,
+  "scope": "Pass 17 TV channel visual distinction/clue-capability only",
+  "screen_resolution": [
+    160,
+    120
+  ],
+  "rendering_model": "procedural grayscale primitives on the existing world-integrated TV Surface",
+  "channels": [
+    {
+      "index": 1,
+      "id": "security",
+      "label": "SECURITY",
+      "render_seed": 4062,
+      "visual_family": "surveillance_grid",
+      "parameters": {
+        "grid": [
+          2,
+          2
+        ],
+        "crosshair": true,
+        "timestamp_bar": true,
+        "invert": false
+      },
+      "palette": {
+        "background": 25,
+        "mid": 83,
+        "bright": 163
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "ROOM FEED / empty-space clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 6,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/security.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 2,
+      "id": "news",
+      "label": "NEWS",
+      "render_seed": 1129,
+      "visual_family": "broadcast_lower_third",
+      "parameters": {
+        "desk_band": 34,
+        "ticker": true,
+        "portrait_box": true,
+        "split": 0.62
+      },
+      "palette": {
+        "background": 32,
+        "mid": 94,
+        "bright": 176
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "headline/ticker clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 8,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/news.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 3,
+      "id": "cartoon",
+      "label": "CARTOON",
+      "render_seed": 3090,
+      "visual_family": "rubberhose_face",
+      "parameters": {
+        "eyes": 2,
+        "mouth": "wide",
+        "sunburst": 8,
+        "jitter": 2
+      },
+      "palette": {
+        "background": 39,
+        "mid": 105,
+        "bright": 189
+      },
+      "scanlines": false,
+      "clue_capability": {
+        "slot": "single-frame expression clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 10,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/cartoon.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 4,
+      "id": "archive",
+      "label": "ARCHIVE",
+      "render_seed": 2978,
+      "visual_family": "film_leader",
+      "parameters": {
+        "rings": 3,
+        "frame_marks": true,
+        "countdown": 4,
+        "scratch_count": 7
+      },
+      "palette": {
+        "background": 18,
+        "mid": 116,
+        "bright": 154
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "frame-number/date clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 12,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/archive.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 5,
+      "id": "combat",
+      "label": "COMBAT",
+      "render_seed": 2221,
+      "visual_family": "versus_silhouettes",
+      "parameters": {
+        "fighters": 2,
+        "health_bars": 2,
+        "impact_lines": 6,
+        "floor_y": 92
+      },
+      "palette": {
+        "background": 25,
+        "mid": 127,
+        "bright": 167
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "fighter-name clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 4,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/combat.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 6,
+      "id": "dance",
+      "label": "DANCE",
+      "render_seed": 1525,
+      "visual_family": "oscillating_figures",
+      "parameters": {
+        "figures": 3,
+        "floor_tiles": 6,
+        "beat_bars": 5,
+        "phase": 0.33
+      },
+      "palette": {
+        "background": 32,
+        "mid": 80,
+        "bright": 180
+      },
+      "scanlines": false,
+      "clue_capability": {
+        "slot": "formation clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 6,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/dance.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 7,
+      "id": "dream",
+      "label": "DREAM",
+      "render_seed": 1564,
+      "visual_family": "soft_horizon",
+      "parameters": {
+        "moon": true,
+        "horizon_y": 73,
+        "ripples": 5,
+        "blur_bands": 4
+      },
+      "palette": {
+        "background": 39,
+        "mid": 91,
+        "bright": 193
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "distant-object clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 8,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/dream.wav",
+      "audio_placeholder": true,
+      "dream_link": {
+        "reserved_transition_channel": true,
+        "color_exception": true,
+        "indicator": "T  ENTER ANDREW'S NIGHTMARE",
+        "launch_enabled": true,
+        "rule": "DREAM is reserved for the bundled Andrew mode. Task broadcasts use other channels. T launches; ESC then Q returns to the live house.",
+        "prepare_enabled": true
+      }
+    },
+    {
+      "index": 8,
+      "id": "emergency",
+      "label": "EMERGENCY",
+      "render_seed": 4850,
+      "visual_family": "alert_bands",
+      "parameters": {
+        "bands": 5,
+        "warning_box": true,
+        "chevrons": 6,
+        "pulse_phase": 0.5
+      },
+      "palette": {
+        "background": 18,
+        "mid": 102,
+        "bright": 158
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "warning-code clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 10,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/emergency.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 9,
+      "id": "kaiju",
+      "label": "KAIJU",
+      "render_seed": 1625,
+      "visual_family": "city_scale",
+      "parameters": {
+        "buildings": 7,
+        "monster_height": 71,
+        "searchlights": 2,
+        "smoke": 4
+      },
+      "palette": {
+        "background": 25,
+        "mid": 113,
+        "bright": 171
+      },
+      "scanlines": false,
+      "clue_capability": {
+        "slot": "silhouette landmark clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 12,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/kaiju.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 10,
+      "id": "league",
+      "label": "LEAGUE",
+      "render_seed": 2204,
+      "visual_family": "scoreboard",
+      "parameters": {
+        "columns": 3,
+        "rows": 4,
+        "badge": true,
+        "timer": "88:88"
+      },
+      "palette": {
+        "background": 32,
+        "mid": 124,
+        "bright": 184
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "score/initials clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 4,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/league.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 11,
+      "id": "mix",
+      "label": "MIX",
+      "render_seed": 679,
+      "visual_family": "split_montage",
+      "parameters": {
+        "panels": 4,
+        "diagonals": 3,
+        "noise_blocks": 8,
+        "phase": 0.2
+      },
+      "palette": {
+        "background": 39,
+        "mid": 77,
+        "bright": 197
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "panel-order clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 6,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/mix.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 12,
+      "id": "noisefight",
+      "label": "NOISEFIGHT",
+      "render_seed": 5879,
+      "visual_family": "signal_duel",
+      "parameters": {
+        "waveforms": 2,
+        "collision_x": 82,
+        "sparks": 9,
+        "bars": 4
+      },
+      "palette": {
+        "background": 18,
+        "mid": 88,
+        "bright": 162
+      },
+      "scanlines": false,
+      "clue_capability": {
+        "slot": "waveform-symbol clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 8,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/noisefight.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 13,
+      "id": "pirate",
+      "label": "PIRATE",
+      "render_seed": 2238,
+      "visual_family": "pirate_broadcast",
+      "parameters": {
+        "skull": true,
+        "flag": true,
+        "horizon_y": 84,
+        "signal_bars": 5
+      },
+      "palette": {
+        "background": 25,
+        "mid": 99,
+        "bright": 175
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "coordinates clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 10,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/pirate.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 14,
+      "id": "racing",
+      "label": "RACING",
+      "render_seed": 2193,
+      "visual_family": "road_perspective",
+      "parameters": {
+        "vanish": [
+          80,
+          38
+        ],
+        "lane_lines": 6,
+        "cars": 3,
+        "speed_marks": 8
+      },
+      "palette": {
+        "background": 32,
+        "mid": 110,
+        "bright": 188
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "road-sign clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 12,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/racing.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 15,
+      "id": "ritual",
+      "label": "RITUAL",
+      "render_seed": 2273,
+      "visual_family": "concentric_symbol",
+      "parameters": {
+        "rings": 4,
+        "spokes": 7,
+        "candles": 5,
+        "center_eye": false
+      },
+      "palette": {
+        "background": 39,
+        "mid": 121,
+        "bright": 153
+      },
+      "scanlines": false,
+      "clue_capability": {
+        "slot": "symbol-order clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 4,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/ritual.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 16,
+      "id": "shop",
+      "label": "SHOP",
+      "render_seed": 1104,
+      "visual_family": "catalog_grid",
+      "parameters": {
+        "items": 6,
+        "price_boxes": 6,
+        "cursor_item": 4,
+        "banner": true
+      },
+      "palette": {
+        "background": 18,
+        "mid": 74,
+        "bright": 166
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "item-number clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 6,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/shop.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 17,
+      "id": "sportcast",
+      "label": "SPORTCAST",
+      "render_seed": 4945,
+      "visual_family": "studio_field",
+      "parameters": {
+        "field_lines": 5,
+        "host_box": true,
+        "score_bug": true,
+        "camera_frame": true
+      },
+      "palette": {
+        "background": 25,
+        "mid": 85,
+        "bright": 179
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "score-bug clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 8,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/sportcast.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 18,
+      "id": "sports",
+      "label": "SPORTS",
+      "render_seed": 2398,
+      "visual_family": "field_overhead",
+      "parameters": {
+        "players": 10,
+        "center_circle": true,
+        "goal_boxes": 2,
+        "ball": [
+          92,
+          61
+        ]
+      },
+      "palette": {
+        "background": 32,
+        "mid": 96,
+        "bright": 192
+      },
+      "scanlines": false,
+      "clue_capability": {
+        "slot": "player-position clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 10,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/sports.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 19,
+      "id": "static",
+      "label": "STATIC",
+      "render_seed": 2221,
+      "visual_family": "snow",
+      "parameters": {
+        "density": 0.28,
+        "tear_lines": 3,
+        "blackout_blocks": 2,
+        "frame_seed_offset": 19
+      },
+      "palette": {
+        "background": 39,
+        "mid": 107,
+        "bright": 157
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "brief negative-space clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 12,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/static.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 20,
+      "id": "surveil",
+      "label": "SURVEIL",
+      "render_seed": 3054,
+      "visual_family": "single_camera",
+      "parameters": {
+        "frame_box": true,
+        "door_box": true,
+        "motion_marker": true,
+        "camera_id": 4
+      },
+      "palette": {
+        "background": 18,
+        "mid": 118,
+        "bright": 170
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "camera-ID/location clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 4,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/surveil.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 21,
+      "id": "teletext",
+      "label": "TELETEXT",
+      "render_seed": 4000,
+      "visual_family": "teletext_grid",
+      "parameters": {
+        "rows": 8,
+        "columns": 20,
+        "header": true,
+        "block_rows": [
+          2,
+          4,
+          6
+        ]
+      },
+      "palette": {
+        "background": 25,
+        "mid": 129,
+        "bright": 183
+      },
+      "scanlines": false,
+      "clue_capability": {
+        "slot": "page-number/text clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 6,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/teletext.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 22,
+      "id": "tunnel",
+      "label": "TUNNEL",
+      "render_seed": 2273,
+      "visual_family": "tunnel_vanish",
+      "parameters": {
+        "rings": 7,
+        "vanish": [
+          80,
+          55
+        ],
+        "lights": 5,
+        "track_lines": 2
+      },
+      "palette": {
+        "background": 32,
+        "mid": 82,
+        "bright": 196
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "end-of-tunnel clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 8,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/tunnel.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 23,
+      "id": "weather",
+      "label": "WEATHER",
+      "render_seed": 3000,
+      "visual_family": "weather_map",
+      "parameters": {
+        "fronts": 2,
+        "clouds": 3,
+        "isobars": 5,
+        "temperature_boxes": 3
+      },
+      "palette": {
+        "background": 39,
+        "mid": 93,
+        "bright": 161
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "temperature/location clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 10,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/weather.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 24,
+      "id": "wilderness",
+      "label": "WILDERNESS",
+      "render_seed": 6005,
+      "visual_family": "forest_horizon",
+      "parameters": {
+        "trees": 11,
+        "moon": false,
+        "path": true,
+        "ridge_points": 6
+      },
+      "palette": {
+        "background": 18,
+        "mid": 104,
+        "bright": 174
+      },
+      "scanlines": false,
+      "clue_capability": {
+        "slot": "tree-line silhouette clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 12,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/wilderness.wav",
+      "audio_placeholder": true
+    },
+    {
+      "index": 25,
+      "id": "wrestling",
+      "label": "WRESTLING",
+      "render_seed": 4880,
+      "visual_family": "ring_camera",
+      "parameters": {
+        "ring_posts": 4,
+        "fighters": 2,
+        "ropes": 3,
+        "crowd_bands": 2
+      },
+      "palette": {
+        "background": 25,
+        "mid": 115,
+        "bright": 187
+      },
+      "scanlines": true,
+      "clue_capability": {
+        "slot": "corner-symbol clue slot",
+        "enabled_now": false,
+        "rule": "Channel may later expose a clue by changing its own 160x120 signal surface; never use HUD text."
+      },
+      "motion_contract": {
+        "update_hz": 4,
+        "deterministic_seeded": true
+      },
+      "audio_asset": "assets/audio/tv_channels/wrestling.wav",
+      "audio_placeholder": true
+    }
+  ],
+  "global_rules": [
+    "Every channel must have a unique visual signature independent of its label.",
+    "All signal art is generated at 160x120 using rectangles, lines, circles/polygons and sparse deterministic noise.",
+    "TV programming remains on the CRT world surface and inherits perspective/depth/occlusion from Pass 16.",
+    "Channel label is not required for visual distinction; QA thumbnails hide labels inside the signal image.",
+    "Clue slots are structural hooks only in Pass 17; no narrative clue is activated yet.",
+    "No Alternate reaction, voice playback, datamosh reset, or strike behavior."
+  ],
+  "references": [
+    "pygame-ce pygame.draw: rect/polygon/circle/line primitives render directly to a Surface.",
+    "pygame-ce Surface/blit: compose the low-resolution channel Surface before projecting it into the world.",
+    "pygame-ce transform.scale: resize from the original 160x120 signal surface when needed."
+  ]
+}

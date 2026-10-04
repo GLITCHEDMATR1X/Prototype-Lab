@@ -1,0 +1,34 @@
+{
+  "pass": 14,
+  "purpose": "Friendly Utopia lore visitors used by the autonomous library circulation system.",
+  "named_profiles": {
+    "gleebs": {
+      "display_name": "GLEEBS",
+      "basis": "Purple/green cat-rabbit companion who builds/inhabits a mechanical body.",
+      "visual_translation": "Mechanical green/purple body, expressive face display, asymmetric cat/rabbit ears."
+    },
+    "sola": {
+      "display_name": "SOLA",
+      "basis": "Yellow companion figure associated with a humanoid frame; explicitly states her name.",
+      "visual_translation": "Compact yellow humanoid companion frame."
+    }
+  },
+  "unnamed_profiles": {
+    "bird_companion": {
+      "display_name": null,
+      "basis": "Unnamed bird-shaped companion projection present in the companion-rights scene.",
+      "visual_translation": "Small hovering cyan bird-like projection."
+    },
+    "wheeled_companion": {
+      "display_name": null,
+      "basis": "Unnamed wheeled companion present in the same scene.",
+      "visual_translation": "Low wheeled camera-bodied companion."
+    }
+  },
+  "rules": [
+    "Unnamed source companions remain unnamed.",
+    "Lore visitors use the same borrowing, returning, service, pathfinding and collision systems as generic visitors.",
+    "Named lore visitors are not duplicated while already active or while they still have an outstanding physical book loan.",
+    "No permanent lore HUD is added; names appear only as short world-space labels or while making a service request."
+  ]
+}

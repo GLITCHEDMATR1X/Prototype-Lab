@@ -1,0 +1,25 @@
+{
+  "arena_mobs": [
+    "arena_stalker",
+    "arena_sentry",
+    "arena_tank",
+    "arena_guardian"
+  ],
+  "waves": {
+    "1": [
+      "arena_stalker",
+      "arena_sentry"
+    ],
+    "2": [
+      "arena_stalker",
+      "arena_sentry",
+      "arena_tank"
+    ],
+    "3": [
+      "arena_stalker",
+      "arena_sentry",
+      "arena_tank",
+      "arena_guardian"
+    ]
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "schema": "vector_arena_audio_profile_v8",
+  "id": "vector_arena",
+  "mode": "Vector Arena",
+  "role": "standalone_and_holoverse_native_wave_horde_arena",
+  "music_loop": "vector_combat_a.wav",
+  "music_bus": "music",
+  "music_volume": 0.62,
+  "air_loop": "arena_void_loop.wav",
+  "air_bus": "ambience",
+  "air_volume": 0.22,
+  "transition_sfx": "dimension_enter.wav",
+  "transition_sfx_volume": 0.7,
+  "music_variants": [
+    "vector_combat_a.wav",
+    "vector_combat_b.wav",
+    "vector_combat_c.wav"
+  ],
+  "music_rotation_seconds": 48.0,
+  "events": {
+    "fire": {
+      "preferred": [
+        "pulse_rifle.wav"
+      ],
+      "volume": 0.62
+    },
+    "repulsor": {
+      "preferred": [
+        "repulsor_blast.wav"
+      ],
+      "volume": 0.82
+    },
+    "hit": {
+      "preferred": [
+        "enemy_hit.wav"
+      ],
+      "volume": 0.46,
+      "positional": true
+    },
+    "destroy": {
+      "preferred": [
+        "enemy_destroyed.wav"
+      ],
+      "volume": 0.78,
+      "positional": true
+    },
+    "wave": {
+      "preferred": [
+        "wave_start.wav"
+      ],
+      "volume": 0.62
+    },
+    "spawn": {
+      "preferred": [
+        "enemy_spawn.wav"
+      ],
+      "volume": 0.46,
+      "positional": true
+    },
+    "upgrade": {
+      "preferred": [
+        "weapon_upgrade.wav"
+      ],
+      "volume": 0.78
+    },
+    "overheat": {
+      "preferred": [
+        "overheat_warning.wav"
+      ],
+      "volume": 0.62
+    },
+    "low_health": {
+      "preferred": [
+        "low_health.wav"
+      ],
+      "volume": 0.58
+    },
+    "player_hit": {
+      "preferred": [
+        "player_hit.wav"
+      ],
+      "volume": 0.7
+    },
+    "reboot": {
+      "preferred": [
+        "player_reboot.wav"
+      ],
+      "volume": 0.78
+    },
+    "ui_toggle": {
+      "preferred": [
+        "ui_toggle.wav"
+      ],
+      "volume": 0.34
+    },
+    "breach_spawn": {
+      "preferred": [
+        "breach_spawn.wav"
+      ],
+      "volume": 0.58,
+      "positional": true
+    },
+    "breach_hit": {
+      "preferred": [
+        "breach_hit.wav"
+      ],
+      "volume": 0.42,
+      "positional": true
+    },
+    "breach_sealed": {
+      "preferred": [
+        "breach_sealed.wav"
+      ],
+      "volume": 0.78,
+      "positional": true
+    },
+    "combo_surge": {
+      "preferred": [
+        "combo_surge.wav"
+      ],
+      "volume": 0.62
+    },
+    "enemy_stalker": {
+      "preferred": [
+        "enemy_stalker.wav"
+      ],
+      "volume": 0.42,
+      "positional": true
+    },
+    "enemy_brute": {
+      "preferred": [
+        "enemy_brute.wav"
+      ],
+      "volume": 0.58,
+      "positional": true
+    },
+    "enemy_sentry": {
+      "preferred": [
+        "enemy_sentry.wav"
+      ],
+      "volume": 0.44,
+      "positional": true
+    },
+    "enemy_wraith": {
+      "preferred": [
+        "enemy_wraith.wav"
+      ],
+      "volume": 0.48,
+      "positional": true
+    },
+    "enemy_guardian": {
+      "preferred": [
+        "enemy_guardian.wav"
+      ],
+      "volume": 0.68,
+      "positional": true
+    },
+    "horde_alarm": {
+      "preferred": [
+        "horde_alarm.wav"
+      ],
+      "volume": 0.72
+    },
+    "guardian_alarm": {
+      "preferred": [
+        "guardian_alarm.wav"
+      ],
+      "volume": 0.84
+    },
+    "arena_reconstruct": {
+      "preferred": [
+        "arena_reconstruct.wav"
+      ],
+      "volume": 0.78
+    },
+    "gate_charge": {
+      "preferred": [
+        "gate_charge.wav"
+      ],
+      "volume": 0.48,
+      "positional": true
+    },
+    "flank_alarm": {
+      "preferred": [
+        "flank_alarm.wav"
+      ],
+      "volume": 0.62
+    },
+    "guardian_charge": {
+      "preferred": [
+        "guardian_charge.wav"
+      ],
+      "volume": 0.78,
+      "positional": true
+    },
+    "guardian_slam": {
+      "preferred": [
+        "guardian_slam.wav"
+      ],
+      "volume": 0.88,
+      "positional": true
+    },
+    "hazard_warning": {
+      "preferred": [
+        "hazard_warning.wav"
+      ],
+      "volume": 0.56,
+      "positional": true
+    },
+    "hazard_discharge": {
+      "preferred": [
+        "hazard_discharge.wav"
+      ],
+      "volume": 0.76,
+      "positional": true
+    },
+    "upgrade_offer": {
+      "preferred": [
+        "upgrade_offer.wav"
+      ],
+      "volume": 0.68
+    },
+    "upgrade_select": {
+      "preferred": [
+        "upgrade_select.wav"
+      ],
+      "volume": 0.82
+    },
+    "mutation_shift": {
+      "preferred": [
+        "mutation_shift.wav"
+      ],
+      "volume": 0.72
+    },
+    "enemy_evolution": {
+      "preferred": [
+        "enemy_evolution.wav"
+      ],
+      "volume": 0.68,
+      "positional": true
+    },
+    "guardian_phase2": {
+      "preferred": [
+        "guardian_phase2.wav"
+      ],
+      "volume": 0.84,
+      "positional": true
+    },
+    "guardian_phase3": {
+      "preferred": [
+        "guardian_phase3.wav"
+      ],
+      "volume": 0.92,
+      "positional": true
+    },
+    "doctrine_shift": {
+      "preferred": [
+        "doctrine_shift.wav"
+      ],
+      "volume": 0.7
+    }
+  },
+  "notes": "HoloVerse wave-arena Pass05. Preserves Pass04 mutation-horde audio and adds readable enemy-evolution, Guardian phase-two/three, and encounter-doctrine cues.",
+  "sfx_directory": "assets/audio/sfx",
+  "sfx_master_volume": 0.86,
+  "ambience_loops": [
+    "arena_void_loop.wav",
+    "arena_instability_loop.wav"
+  ],
+  "transition_enter_sfx": "dimension_enter.wav",
+  "transition_exit_sfx": "dimension_exit.wav",
+  "music_directory": "assets/audio/music",
+  "ambience_directory": "assets/audio/ambience",
+  "transition_directory": "assets/audio/transition",
+  "positional_events": [
+    "enemy_hit",
+    "enemy_destroyed",
+    "enemy_spawn",
+    "enemy_stalker",
+    "enemy_brute",
+    "enemy_sentry",
+    "enemy_wraith",
+    "enemy_guardian",
+    "breach_spawn",
+    "breach_hit",
+    "breach_sealed",
+    "gate_charge",
+    "guardian_charge",
+    "guardian_slam",
+    "hazard_warning",
+    "hazard_discharge",
+    "enemy_evolution",
+    "guardian_phase2",
+    "guardian_phase3"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "source_base": "Glyphbound Pass 19",
+  "files": {
+    "assets/glyph_atlas.png": "d361d09ab0d2e07355a1a756954b7f204a0fe030284725d43ae250fac41db526",
+    "assets/sfx/SFX_REPLACEMENT_GUIDE.txt": "101e324ad5d85ff16ae306d4681f69b374dc583719ba951408c2b5425ba99ace",
+    "assets/sfx/cast_arc.wav": "8bb42eca2e46c15f0867562ab619dec7c82972e026f72f017e9fc11127782768",
+    "assets/sfx/cast_ember.wav": "5151df36d6cf7898f70c557b94dc636c37890a405e0a6d24c71dc0d4e1351b96",
+    "assets/sfx/cast_ward.wav": "396eb48588b93b327e68ae4b60f2c99056aa9972ebde15b802d7d3bba7f852d6",
+    "assets/sfx/death.wav": "2403c9e223de748574d251d9369655a66d71bbc362436b094a0c82523c98403d",
+    "assets/sfx/demon_cast.wav": "f6e200ad3cfc3e2223c347f92ede9ab1b47335929afe72481ca7bcb2c350cae5",
+    "assets/sfx/demon_fireball.wav": "6ff3ff10749c8687cb9b7ff30567f12b546e6046a89b64a73ebb82d0d2ac9010",
+    "assets/sfx/enemy_die.wav": "704c9a46b87c717116c0ed7e8e36f334e1130aa1570e78a10d29b6ecb3210866",
+    "assets/sfx/enemy_hit.wav": "2a4ddcdebf530ec4943ffec8ddb12e17d6005997ea302537e6a65eefa3218d27",
+    "assets/sfx/guard.wav": "325a14b93a215cdba4a01a6326f105b7e41281a2b870ecc71ed30238b2ed6804",
+    "assets/sfx/hurt.wav": "b55501507caf946d1617cf763405db798545e1248a935a78e5103fdeb6ae2256",
+    "assets/sfx/magic_impact.wav": "79092e5be43172fc6b781f170e8877240333440ed376e0fcf9ed2cb548d6daff",
+    "assets/sfx/pickup.wav": "93f7e3f7fe993126becb2d46c72697fb2386f6615821c2bab6c0837dd8546598",
+    "assets/sfx/shrine_enter.wav": "90178721556ba7717949c34ddd4b78277dc1d98b83713692a9c022e4d77e2f0e",
+    "assets/sfx/shrine_unlock.wav": "3d76d3f93ad01fa5890ed3e26fef489f9bd7673589d210e16252007b31e4809f",
+    "assets/sfx/sigil.wav": "ec4be643fabc6468abe7433aef9ced4a475339a60cf4edf3e836333d0387c40e",
+    "assets/sfx/staff_electric.wav": "868c10b6471a6fe97e443923daf7b720d1464cf6d8d8176cc85413a51174dd55",
+    "assets/sfx/sword_hit.wav": "5bcd24c84356331ad64ba816000a77e2a6ba09749b4a1b0c5a4ff8b4903c26df",
+    "assets/sfx/sword_swing.wav": "3a37fb5d8cdeab9c7ad1cf2808cc088e94a3a7f068583251fc4e1ada222fec6b",
+    "assets/sfx/ward_break.wav": "8f33b272c8db59c1201ad8fa22cbe08db99c29ee3be15c8721ab81feb5fe61f8",
+    "assets/sfx/weather_rain.wav": "97aa80bf8408a33f9ff5929a8b2031c9d036b244ebdfc03e61c5322b4c8a36b2",
+    "assets/sfx/weather_thunder.wav": "78bf33ccb44a31c9f8299a8b553ce770ab2c9f51b0506e8713fb90e06a736b7b",
+    "assets/sfx/weather_wind.wav": "8c5c899e7ef9a6304fe374885b529312e574ad3538727c77cf66262df3f2dd38",
+    "assets/music/32 - MCF32.mp3": "5c6a4b2aaab966b0902156dba75876784403573dfd1c09a2d2899f3ac6667bfa",
+    "assets/music/MUSIC_REPLACEMENT_GUIDE.txt": "a1225da4533762decac9dd0a2bd8789681b541a1da01b99eec3428d390cb2280"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fullscreen": false,
+  "borderless": false,
+  "mouse_sensitivity": 0.22,
+  "invert_y": false,
+  "hud_visible": true,
+  "graphics_quality": "medium",
+  "controller_deadzone": 0.12
+}

@@ -1,0 +1,138 @@
+{
+  "schema": "glitched_matrix_folder_local_mission_index_v1",
+  "index_authority": "folder_local",
+  "mission_id": "utopia_conflict",
+  "title": "Utopia Conflict",
+  "folder_name": "Utopia Conflict",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "python_target": "3.13.5+",
+  "panda3d_target": "1.10.16+",
+  "status": "presentation_ready",
+  "category": "prototype_lab_activity_combat_sandbox",
+  "launch_mode": "prototype_lab_jump_in_or_direct",
+  "prototype_lab_launchable": true,
+  "runtime_wrapper_required": false,
+  "depends_on_holoverse": false,
+  "return_to_lab": true,
+  "points_export": true,
+  "points_owner": "prototype_lab_validates_and_saves_shared_points",
+  "points_field": "prototype_lab_points_awarded",
+  "primary_verb": "enter_visible_field_activities_and_experiment_with_hardlight_weapons",
+  "summary": "Presentation-ready hardlight district combat mission with capture routes, four district field activities, semantic enemy colors, six weapon signatures, and source Vector Arena integration.",
+  "core_loop": "enter the city -> choose a visible field activity or capture route -> fight with hardlight weapons -> secure nodes / open Vector Arena -> earn points -> upgrade body, armor, or ammo -> continue district activities",
+  "controls": {
+    "move": "WASD",
+    "sprint": "Shift",
+    "fire": "LMB",
+    "swap_weapon": "TAB cycles right hand; Q cycles left hand; number keys select right; Shift+number selects left",
+    "help": "F1 Field Reference",
+    "menu": "ESC true pause/settings",
+    "exit": "ESC then Quit to Desktop; 0 direct legacy/debug exit",
+    "interact": "E starts a nearby visible activity station or enters an open Vector Arena portal; signal fragments can still be walked into or shot",
+    "district_travel": "travel north from spawn to enter High Towers; travel east to enter Pyramid Sector",
+    "weapon_slots": "1 Core Lance, 2 Imploder, 3 Proximity Magnet, 4 Disassembler, 5 Burst Splitter, 6 Auto Lattice",
+    "upgrades": "U buys ammo capacity; Shift+U buys health capacity; I buys armor shell capacity using shared points",
+    "activity_stations": "Calibration: Core Sample and Imploder Study; High Towers: Shield Fracture; Pyramid Sector: Magnet Garden",
+    "hud": "H HUD toggle"
+  },
+  "score_rules": {
+    "score_source": "node captures, signal fragments, weapon kills, arena waves, arena clears, chain ruptures, extraction bonus",
+    "complete_when": "all command nodes are captured, required signal fragments are recovered, and the return lattice is reached",
+    "prototype_lab_points": "session_score // 10 + completion/objective/combat bonuses",
+    "save_scope": "local mission result packet; Prototype Lab validates and saves shared points",
+    "upgrade_spend": "shared local points earned in city and arena can be spent on ammo capacity, health capacity, and armor shell capacity"
+  },
+  "result_contract": {
+    "schema": "glitched_matrix_standalone_mission_result_v1",
+    "result_command": "--mission-result-test",
+    "complete_command": "--complete-mission-test",
+    "standards_command": "--standards-check",
+    "result_files": [
+      "verification/reports/game_result.json",
+      "verification/reports/mission_result.json",
+      "verification/reports/profile_preview.json"
+    ],
+    "sample_score": 2300,
+    "sample_points": 480
+  },
+  "verification": {
+    "compile": [
+      "python",
+      "-B",
+      "-m",
+      "py_compile",
+      "main.py"
+    ],
+    "screenshot_command": [
+      "python",
+      "-B",
+      "main.py",
+      "--runtime-smoke",
+      "--test-shot",
+      "verification/screenshots/mission_index_smoke.png",
+      "--no-audio"
+    ],
+    "north_district_screenshot_command": [
+      "python",
+      "-B",
+      "main.py",
+      "--north-district-demo",
+      "--auto-exit",
+      "2.0",
+      "--test-shot",
+      "verification/screenshots/pass19_north_high_towers.png",
+      "--no-audio"
+    ]
+  },
+  "tags": [
+    "activity-mode",
+    "ammo-districts",
+    "badges",
+    "capture",
+    "combat",
+    "districts",
+    "etch-line",
+    "fx-physics",
+    "high-towers",
+    "jump-in-quest",
+    "nodes",
+    "north-district",
+    "prototype-lab-mode",
+    "pyramid-sector",
+    "spawn-director",
+    "utopia-conflict",
+    "weapon-lab"
+  ],
+  "notes": "Pass39 removes health-bar HUD direction and makes player condition readable through weapon/armor wireframe color: green body at full health, amber mid, red near empty, with armor as a cyan shell that absorbs damage first and fades toward the current health state when hit. Pass55 repairs pause/settings selection with visible keyboard navigation and preserves mouse button control.",
+  "build": "2026-09-11-utopia-conflict-pass55-pause-menu-input-repair",
+  "version": "1.0.18-utopia-conflict-pass55-pause-menu-input-repair",
+  "activity_mode": {
+    "enabled": true,
+    "activity_count": 12,
+    "activity_test": "--activity-mode-test"
+  },
+  "id": "utopia_conflict",
+  "name": "Utopia Conflict",
+  "pass": "pass55_pause_menu_input_repair",
+  "districts": {
+    "calibration": "balanced start zone",
+    "pyramid_sector": "east prism district",
+    "high_towers": "north tower district"
+  },
+  "health_and_armor_readability": {
+    "default_body_health_hits": 100,
+    "health_readout": "weapon/armor wireframe color gradient, not a health bar",
+    "body_gradient": "green full -> amber mid -> red empty",
+    "armor_default_percent": 10,
+    "armor_upgrade_interval_percent": 10,
+    "armor_readout": "cyan wireframe shell; hit damage exposes/fades toward current body-health color",
+    "healthbars_removed": true
+  },
+  "presentation_launch": {
+    "briefing": "normal direct launch",
+    "deploy": "Enter or Deploy button",
+    "reference": "F1",
+    "settings": "ESC"
+  }
+}

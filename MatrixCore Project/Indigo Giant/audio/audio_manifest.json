@@ -1,0 +1,292 @@
+{
+  "_readme": "Per-event tuning. min = distance (m) of full volume, max = distance beyond which it is silent/culled, volume 0..1, pitch = random +/- play-rate variation, voices = simultaneous copies per file, spatial false = heard at the listener, loop = looping bed, category = sfx | ambience. Delete this file to use the built-in defaults.",
+  "footstep_human": {
+    "min": 6.0,
+    "max": 45.0,
+    "volume": 0.55,
+    "pitch": 0.08,
+    "voices": 3
+  },
+  "footstep_giant": {
+    "min": 30.0,
+    "max": 420.0,
+    "volume": 0.95,
+    "pitch": 0.06,
+    "voices": 3
+  },
+  "footstep_red": {
+    "min": 30.0,
+    "max": 480.0,
+    "volume": 1.0,
+    "pitch": 0.06,
+    "voices": 3
+  },
+  "land_human": {
+    "min": 6.0,
+    "max": 45.0,
+    "volume": 0.7,
+    "pitch": 0.06,
+    "voices": 1
+  },
+  "land_giant": {
+    "min": 35.0,
+    "max": 480.0,
+    "volume": 1.0,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "kneel_giant": {
+    "min": 30.0,
+    "max": 400.0,
+    "volume": 0.9,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "stand_giant": {
+    "min": 30.0,
+    "max": 300.0,
+    "volume": 0.6,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "stomp_red": {
+    "min": 35.0,
+    "max": 500.0,
+    "volume": 1.0,
+    "pitch": 0.05,
+    "voices": 2
+  },
+  "roar_red_hunt": {
+    "min": 60.0,
+    "max": 900.0,
+    "volume": 1.0,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "roar_red_scared": {
+    "min": 60.0,
+    "max": 900.0,
+    "volume": 1.0,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "roar_red_ko": {
+    "min": 60.0,
+    "max": 900.0,
+    "volume": 1.0,
+    "pitch": 0.03,
+    "voices": 1
+  },
+  "roar_red_return": {
+    "min": 150.0,
+    "max": 1500.0,
+    "volume": 0.9,
+    "pitch": 0.03,
+    "voices": 1
+  },
+  "roar_red_heave": {
+    "min": 40.0,
+    "max": 500.0,
+    "volume": 0.9,
+    "pitch": 0.08,
+    "voices": 2
+  },
+  "call_indigo": {
+    "min": 60.0,
+    "max": 1000.0,
+    "volume": 0.9,
+    "pitch": 0.03,
+    "voices": 1
+  },
+  "hum_indigo_sense": {
+    "min": 40.0,
+    "max": 400.0,
+    "volume": 0.6,
+    "pitch": 0.03,
+    "voices": 1
+  },
+  "gesture_come": {
+    "min": 8.0,
+    "max": 80.0,
+    "volume": 0.5,
+    "pitch": 0.02,
+    "voices": 1
+  },
+  "gesture_stay": {
+    "min": 8.0,
+    "max": 80.0,
+    "volume": 0.5,
+    "pitch": 0.02,
+    "voices": 1
+  },
+  "gesture_shade": {
+    "min": 8.0,
+    "max": 80.0,
+    "volume": 0.5,
+    "pitch": 0.02,
+    "voices": 1
+  },
+  "gesture_lift": {
+    "min": 8.0,
+    "max": 80.0,
+    "volume": 0.5,
+    "pitch": 0.02,
+    "voices": 1
+  },
+  "gesture_goto": {
+    "min": 8.0,
+    "max": 80.0,
+    "volume": 0.5,
+    "pitch": 0.02,
+    "voices": 1
+  },
+  "whistle": {
+    "min": 20.0,
+    "max": 600.0,
+    "volume": 0.8,
+    "pitch": 0.03,
+    "voices": 1
+  },
+  "punch_swing": {
+    "min": 25.0,
+    "max": 250.0,
+    "volume": 0.7,
+    "pitch": 0.1,
+    "voices": 2
+  },
+  "punch_hit": {
+    "min": 35.0,
+    "max": 450.0,
+    "volume": 1.0,
+    "pitch": 0.08,
+    "voices": 2
+  },
+  "branch_smash": {
+    "min": 10.0,
+    "max": 120.0,
+    "volume": 0.8,
+    "pitch": 0.08,
+    "voices": 2
+  },
+  "dig": {
+    "min": 5.0,
+    "max": 40.0,
+    "volume": 0.7,
+    "pitch": 0.08,
+    "voices": 1
+  },
+  "eat": {
+    "min": 5.0,
+    "max": 30.0,
+    "volume": 0.7,
+    "pitch": 0.08,
+    "voices": 1
+  },
+  "patch": {
+    "min": 5.0,
+    "max": 40.0,
+    "volume": 0.7,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "shell_enter": {
+    "min": 6.0,
+    "max": 60.0,
+    "volume": 0.7,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "shell_exit": {
+    "min": 6.0,
+    "max": 60.0,
+    "volume": 0.7,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "shell_creak": {
+    "min": 12.0,
+    "max": 200.0,
+    "volume": 0.9,
+    "pitch": 0.1,
+    "voices": 2
+  },
+  "shell_flip": {
+    "min": 20.0,
+    "max": 300.0,
+    "volume": 1.0,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "shell_lift": {
+    "min": 20.0,
+    "max": 250.0,
+    "volume": 0.8,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "shell_place": {
+    "min": 20.0,
+    "max": 300.0,
+    "volume": 0.9,
+    "pitch": 0.05,
+    "voices": 1
+  },
+  "landmark_study": {
+    "min": 10.0,
+    "max": 120.0,
+    "volume": 0.7,
+    "pitch": 0.0,
+    "voices": 1
+  },
+  "human_hurt": {
+    "min": 6.0,
+    "max": 80.0,
+    "volume": 0.8,
+    "pitch": 0.06,
+    "voices": 1
+  },
+  "human_down": {
+    "min": 6.0,
+    "max": 80.0,
+    "volume": 0.8,
+    "pitch": 0.03,
+    "voices": 1
+  },
+  "heartbeat": {
+    "spatial": false,
+    "volume": 0.6,
+    "loop": true
+  },
+  "amb_wind": {
+    "spatial": false,
+    "volume": 0.5,
+    "loop": true,
+    "category": "ambience"
+  },
+  "amb_heat": {
+    "spatial": false,
+    "volume": 0.35,
+    "loop": true,
+    "category": "ambience"
+  },
+  "lore_read": {
+    "min": 5.0,
+    "max": 50.0,
+    "volume": 0.7,
+    "pitch": 0.03,
+    "voices": 1
+  },
+  "gleebs_arrive": {
+    "spatial": false,
+    "volume": 0.9
+  },
+  "gleebs_voice": {
+    "spatial": false,
+    "volume": 0.55,
+    "pitch": 0.06
+  },
+  "gleebs_depart": {
+    "spatial": false,
+    "volume": 0.9
+  }
+}

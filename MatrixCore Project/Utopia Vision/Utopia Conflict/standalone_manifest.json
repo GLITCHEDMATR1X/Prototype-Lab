@@ -1,0 +1,151 @@
+{
+  "schema": "glitched_matrix_standalone_mission_manifest_v1",
+  "id": "utopia_conflict",
+  "title": "Utopia Conflict",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "default_resolution": [
+    1920,
+    1080
+  ],
+  "preferred_window": "bordered_1920x1080_default",
+  "mission_status": "presentation_ready_prototype_lab_activity_mode",
+  "game_status": "presentation_ready_lab_mode",
+  "launch_mode": "prototype_lab_jump_in_or_direct",
+  "prototype_lab_launchable": true,
+  "runtime_wrapper_required": false,
+  "primary_verb": "enter_visible_field_activities_and_experiment_with_hardlight_weapons",
+  "core_loop": "enter the city -> choose a visible field activity or capture route -> fight with hardlight weapons -> secure nodes / open Vector Arena -> earn points -> upgrade body, armor, or ammo -> continue district activities",
+  "controls": {
+    "move": "WASD",
+    "sprint": "Shift",
+    "fire": "LMB",
+    "swap_weapon": "TAB cycles right hand; Q cycles left hand; number keys select right; Shift+number selects left",
+    "help": "F1 opens the modal Field Reference and pauses city play while open",
+    "menu": "ESC opens true pause/settings; W/S or Up/Down selects; Enter/Space activates; mouse buttons remain clickable; ESC resumes",
+    "exit": "ESC then Quit to Desktop; 0 remains a direct debug/legacy exit binding",
+    "interact": "E starts a nearby visible activity station or enters an open Vector Arena portal; signal fragments can still be walked into or shot",
+    "weapon_slots": "1 Core Lance, 2 Imploder, 3 Proximity Magnet, 4 Disassembler, 5 Burst Splitter, 6 Auto Lattice",
+    "district_travel": "travel north from spawn to enter High Towers; travel east to enter Pyramid Sector",
+    "arena_portal": "E enters/exits Vector Arena portal when in range",
+    "upgrades": "U buys ammo capacity; Shift+U buys health capacity; I buys armor shell capacity using shared points",
+    "activity_stations": "Calibration: Core Sample and Imploder Study; High Towers: Shield Fracture; Pyramid Sector: Magnet Garden",
+    "hud": "H toggles the minimal gameplay HUD",
+    "presentation_launch": "Normal direct launch opens a deploy briefing; Enter deploys, F1 opens Field Reference, ESC opens settings"
+  },
+  "score_rules": {
+    "score_source": "node captures, signal fragments, weapon kills, arena waves, arena clears, chain ruptures, extraction bonus",
+    "complete_when": "all command nodes are captured, required signal fragments are recovered, and the return lattice is reached",
+    "prototype_lab_points": "session_score // 10 + completion/objective/combat bonuses",
+    "save_scope": "local mission/game result packet; Prototype Lab validates and saves shared points when launched from the Lab",
+    "upgrade_spend": "shared local points earned in city and arena can be spent on ammo capacity, health capacity, and armor shell capacity"
+  },
+  "mission_contract": {
+    "schema": "glitched_matrix_standalone_mission_result_v1",
+    "module": "standalone_game_contract.py",
+    "commands": [
+      "python -B main.py --mission-contract-test",
+      "python -B main.py --mission-result-test",
+      "python -B main.py --complete-mission-test",
+      "python -B main.py --profile-test",
+      "python -B main.py --weapon-variant-test --test-shot verification/screenshots/pass08_lab_activity_mode_test.png --no-audio",
+      "python -B main.py --activity-mode-test --test-shot verification/screenshots/pass08_activity_mode_test.png --no-audio"
+    ],
+    "result_files": [
+      "verification/reports/game_result.json",
+      "verification/reports/mission_result.json",
+      "verification/reports/profile_preview.json"
+    ],
+    "sample_result": {
+      "score_delta": 3000,
+      "completed": true,
+      "nodes_captured": 3,
+      "nodes_required": 3,
+      "fragments_recovered": 4,
+      "fragments_required": 4,
+      "signal": "UTOPIA_CONFLICT_ARENA_LINK_STABILIZED",
+      "arena_waves_cleared": 3,
+      "arena_waves_required": 3,
+      "arena_clears": 1,
+      "upgrades_purchased": 2,
+      "kills": 12,
+      "wave": 3
+    },
+    "save_ownership_rule": "Mission owns local result; Prototype Lab validates before adding shared points."
+  },
+  "origin_note": "Former extracted dimension branch. Current branch is a jump-in Prototype Lab mission, not a wrapped mode.",
+  "build": "2026-09-11-utopia-conflict-pass55-pause-menu-input-repair",
+  "notes": "Pass55 pause-menu input repair: pause/settings is now operable by keyboard as well as DirectGUI mouse buttons, with visible selection and an explicit control hint. Pass54 presentation readiness remains preserved.",
+  "depends_on_legacy_wrapper": false,
+  "return_to_lab": true,
+  "points_export": true,
+  "folder_local_index": "mission_index.json",
+  "depends_on_holoverse": false,
+  "category": "prototype_lab_activity_combat_sandbox",
+  "summary": "Vector/hardlight combat city with visible field activities, district capture routes, Vector Arena instances, and wireframe health/armor feedback.",
+  "weapon_variants": {
+    "1": "Core Lance: starting weak-core beam with recharge and pass-through pierce on core kills",
+    "2": "Imploder: command-node unlock; pulls enemies inward, then fires a delayed crush aftershock",
+    "3": "Proximity Magnet: signal unlock; deploys pull fields with visible tethers and center-crush damage",
+    "4": "Disassembler: late unlock; targets head/arms/legs based on aim and slows enemies as parts detach",
+    "5": "Burst Splitter: scatter lattice added in Pass16",
+    "6": "Auto Lattice: automatic line stream added in Pass16"
+  },
+  "version": "1.0.18-utopia-conflict-pass55-pause-menu-input-repair",
+  "activity_mode": {
+    "enabled": true,
+    "style": "presentation_ready_prototype_lab_field_operation",
+    "activities": [
+      "Core Sample",
+      "Imploder Study",
+      "Shield Fracture",
+      "Magnet Garden"
+    ],
+    "activity_score": "Four physical field activities award Lab points and keep their district-specific placement"
+  },
+  "pass": "pass55_pause_menu_input_repair",
+  "mission_id": "utopia_conflict",
+  "folder_name": "Utopia Conflict",
+  "tags": [
+    "ammo-districts",
+    "districts",
+    "high-towers",
+    "north-district",
+    "pyramid-sector",
+    "utopia-conflict"
+  ],
+  "name": "Utopia Conflict",
+  "districts": {
+    "calibration": "start zone; balanced ammo drops for all weapons",
+    "pyramid_sector": "east zone; favors Imploder, Proximity Magnet, and Burst Splitter ammo",
+    "high_towers": "north zone; favors Core Lance, Disassembler, and Auto Lattice ammo"
+  },
+  "arena_mode": {
+    "status": "integrated_core_loop",
+    "variant_folder": "assets/arena_variants",
+    "waves_per_capture": 3,
+    "seconds_per_wave": 60,
+    "entry": "portal opens after a capture node is secured",
+    "shared_assets": "uses Utopia Conflict weapon/audio systems plus staged Vector Arena SFX",
+    "arena_unique_weapons": [
+      "Pulse Rifle",
+      "Repulsor Burst",
+      "Breach Cutter"
+    ],
+    "arena_unique_mobs": [
+      "arena_stalker",
+      "arena_sentry",
+      "arena_tank",
+      "arena_guardian"
+    ]
+  },
+  "health_and_armor_readability": {
+    "default_body_health_hits": 100,
+    "health_readout": "weapon/armor wireframe color gradient, not a health bar",
+    "body_gradient": "green full -> amber mid -> red empty",
+    "armor_default_percent": 10,
+    "armor_upgrade_interval_percent": 10,
+    "armor_readout": "cyan wireframe shell; hit damage exposes/fades toward current body-health color",
+    "healthbars_removed": true
+  }
+}

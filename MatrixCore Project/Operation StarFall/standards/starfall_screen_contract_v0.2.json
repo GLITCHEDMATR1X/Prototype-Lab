@@ -1,0 +1,19 @@
+{
+  "contract": "operation_starfall_responsive_desktop_window_v2",
+  "design_canvas": "1920x1080 aspect-safe reference",
+  "default_window": "desktop-fit decorated resizable",
+  "default_window_flag": "--desktop-window",
+  "large_window_flag": "--large-window",
+  "safe_window_flag": "--safe-window",
+  "compact_window_flag": "--windowed",
+  "borderless_flag": "--windowed-fullscreen native desktop size",
+  "fullscreen_flag": "--fullscreen native resolution opt-in only",
+  "default_hud": "MINIMAL",
+  "hud_cycle": ["MINIMAL", "COMPACT", "FULL", "HIDDEN"],
+  "hud_cycle_key": "H",
+  "help_key": "F1",
+  "menu_key": "ESC/P",
+  "safe_canvas_rule": "HUD reflows through the shared aspect-safe layout when the OS window changes size.",
+  "dpi_rule": "dpi-aware and dpi-window-resize remain enabled",
+  "resize_rule": "default and decorated presets are movable/resizable; borderless is a separate native-desktop mode"
+}

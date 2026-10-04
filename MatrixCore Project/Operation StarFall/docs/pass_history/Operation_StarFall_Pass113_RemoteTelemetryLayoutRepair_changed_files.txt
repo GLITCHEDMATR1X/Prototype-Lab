@@ -1,0 +1,19 @@
+Pass113 primary implementation:
+- main.py
+- Worlds/main.py
+
+Pass113 package / identity support:
+- README.md
+- build_manifest.json
+- Worlds/active_game.json
+- tools/starfall_package_check.py
+
+Pass113 focused verification/evidence:
+- verification/test_pass113_remote_telemetry_layout.py
+- verification/reports/Operation_StarFall_Pass113_remote_telemetry_layout_static_contract.json
+- verification/reports/Operation_StarFall_Pass113_runtime_visual.json
+
+Historical handoff archival only (byte-identical moves recognized by GXT.6):
+- Operation_StarFall_Pass112_RemoteDroneTelemetryAuthority_Report.md -> docs/pass_history/
+- Operation_StarFall_Pass112_RemoteDroneTelemetryAuthority_validation.txt -> docs/pass_history/
+- Operation_StarFall_Pass112_RemoteDroneTelemetryAuthority_changed_files.txt -> docs/pass_history/

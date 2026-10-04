@@ -1,0 +1,133 @@
+{
+  "schema": "glitched_matrix_folder_local_mission_index_v2",
+  "index_authority": "folder_local",
+  "project": "Operation StarFall",
+  "title": "Operation StarFall",
+  "folder_name": "Operation StarFall",
+  "engine": "panda3d",
+  "python_target": "3.13.5+",
+  "panda3d_target": "1.10.16+",
+  "entry": "main.py",
+  "mission_id": "operation_starfall",
+  "default_mission": "operation_starfall_shell",
+  "status": "active_mastered_build",
+  "last_updated_pass": "Pass90_TritonValleysStart",
+  "launch_mode": "prototype_lab_jump_in_or_direct",
+  "prototype_lab_launchable": true,
+  "runtime_wrapper_required": false,
+  "return_to_lab": true,
+  "points_export": true,
+  "points_field": "lab_points_awarded",
+  "points_owner": "prototype_lab_validates_and_saves_shared_points",
+  "core_loop": "Launch a READY world from the StarFall shell, enter in the hover-drone belly camera with Analytic Scan, scan/click hotspots for drilling or collection, use the slow support rover for recharge/storage/refining, and press TAB to return to the ship.",
+  "primary_verb": "remote_rover_drone_resource_operation",
+  "active_worlds": [
+    "mimas",
+    "enceladus",
+    "iapetus",
+    "titan",
+    "mars",
+    "pluto",
+    "europa",
+    "triton"
+  ],
+  "linked_levels": [
+    {
+      "mission_id": "mimas_snowfield",
+      "game_id": "mimas",
+      "title": "Mimas Snowfield",
+      "entry": "Worlds/main.py --moon=mimas",
+      "transport_mode": "embedded_world_return_controls_v2"
+    },
+    {
+      "mission_id": "enceladus_ice",
+      "game_id": "enceladus",
+      "title": "Enceladus Ice",
+      "entry": "Worlds/main.py --moon=enceladus",
+      "transport_mode": "embedded_world_return_controls_v2"
+    },
+    {
+      "mission_id": "iapetus_ridge",
+      "game_id": "iapetus",
+      "title": "Iapetus Ridge",
+      "entry": "Worlds/main.py --moon=iapetus",
+      "transport_mode": "embedded_world_return_controls_v2"
+    },
+    {
+      "mission_id": "titan_methane_coast",
+      "game_id": "titan",
+      "title": "Titan Methane Coast",
+      "entry": "Worlds/main.py --moon=titan",
+      "transport_mode": "embedded_world_return_controls_v2"
+    },
+    {
+      "mission_id": "mars_snow_caps",
+      "game_id": "mars",
+      "title": "Mars Snow Caps",
+      "entry": "Worlds/main.py --moon=mars",
+      "transport_mode": "embedded_world_return_controls_v2"
+    },
+    {
+      "mission_id": "pluto_nitrogen_frontier",
+      "game_id": "pluto",
+      "title": "Pluto Nitrogen Frontier",
+      "entry": "Worlds/main.py --moon=pluto",
+      "transport_mode": "embedded_world_return_controls_v2"
+    },
+    {
+      "mission_id": "europa_depths",
+      "game_id": "europa",
+      "title": "Europa Depths",
+      "entry": "Worlds/main.py --moon=europa",
+      "transport_mode": "embedded_world_return_controls_v2"
+    },
+    {
+      "mission_id": "triton_valleys",
+      "game_id": "triton",
+      "title": "Triton Valleys",
+      "entry": "Worlds/main.py --moon=triton",
+      "transport_mode": "embedded_world_return_controls_v2"
+    },
+    {
+      "mission_id": "operation_starfall_shell",
+      "game_id": "starfall",
+      "title": "StarFall Shell / Operations Map",
+      "entry": "main.py",
+      "transport_mode": "root_shell"
+    }
+  ],
+  "controls": {
+    "WASD": "Move active drone on planetary surfaces",
+    "SPACE": "Drone rise / low-gravity jump where applicable",
+    "SHIFT": "Drone descend / terrain mobility where applicable",
+    "LMB": "Hotspot context action / collect",
+    "T": "Cycle planet vision modes after Analytic entry default",
+    "TAB": "Return from moon operation to StarFall ship",
+    "H": "Toggle dev/info overlay; hidden by default",
+    "ESC": "Menu"
+  },
+  "result_contract": {
+    "schema": "glitched_matrix_level_result_v1",
+    "complete_command": "--complete-level-test",
+    "result_command": "--level-result-test",
+    "profile_preview": "Worlds/verification/reports/all_world_lab_profile_preview.json"
+  },
+  "tags": [
+    "operation-starfall",
+    "remote-rover",
+    "drone-default",
+    "mimas",
+    "enceladus",
+    "iapetus",
+    "titan",
+    "mars",
+    "pluto",
+    "europa",
+    "triton",
+    "neptune",
+    "prototype-lab-points",
+    "mastering-phase"
+  ],
+  "planned_worlds": [],
+  "missions": []
+}

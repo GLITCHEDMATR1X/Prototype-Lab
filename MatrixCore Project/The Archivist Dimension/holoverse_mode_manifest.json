@@ -1,0 +1,21 @@
+{
+  "schema": 2,
+  "id": "the_archivist",
+  "title": "THE ARCHIVIST",
+  "entry": "main.py",
+  "source_kind": "panda3d",
+  "launch_type": "native_panda",
+  "native_panda_candidate": true,
+  "native_adapter": "holoverse_native_adapter.py",
+  "native_adapter_enabled": true,
+  "preferred_display": "same_window_native",
+  "requires_mouse_capture": true,
+  "panel_supported": false,
+  "host_contract": "holoverse_dimension_v1",
+  "return_target": "gleebs_dimension_archive",
+  "same_window_only": true,
+  "forbid_child_process": true,
+  "nested_dimension_capable": true,
+  "adapter_contract": "the_archivist_native_dimension_v5",
+  "description": "A cybernetic zero-gravity 4D Mind Archive: 55 story realities float in widely separated volumetric shells, the observer can thrust freely in any direction, the moving exterior follows the observer through all three axes, optional MP3 soundtrack files under assets/ loop automatically, and nested simulations remain same-window native realities."
+}

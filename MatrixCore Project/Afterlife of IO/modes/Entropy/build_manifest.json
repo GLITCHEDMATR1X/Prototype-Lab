@@ -1,0 +1,790 @@
+{
+  "active_modules": [
+    "main.py",
+    "space_core.py",
+    "audio_ambience.py",
+    "music_score.py",
+    "gamepad_input.py",
+    "terrains.py",
+    "interiors.py",
+    "runtime_paths.py",
+    "crash_reporter.py",
+    "standard_ui.py",
+    "mission_state.py",
+    "expedition_identity.py",
+    "hazard_rules.py",
+    "ship_progression.py",
+    "surface_landmarks.py",
+    "surface_chunks.py",
+    "surface_resources.py",
+    "system_safety.py",
+    "ruin_dive.py"
+  ],
+  "authoritative_baseline": "Pass 33 \u2014 Expedition Identity",
+  "collapse_failure_contract": {
+    "black_hole_hull_damage_per_second": 12.0,
+    "collapse_duration_seconds": 60,
+    "failure_condition": "hull reaches zero during collapse pressure",
+    "pause_safe": true,
+    "post_supernova_hull_damage_per_second": 0.45,
+    "retry": "restore current system-entry checkpoint",
+    "singularity_delay_seconds": 120,
+    "stages": [
+      "STABLE",
+      "UNSTABLE",
+      "CRITICAL",
+      "SUPERNOVA",
+      "BLACK HOLE"
+    ],
+    "supernova_shock_hull_damage": 24
+  },
+  "core_loop": [
+    "begin on HOME under the standard 60-second collapse clock",
+    "recover emergency Fuel Cells and Salvage into the field pack",
+    "survive the HOME supernova through guaranteed emergency transfer",
+    "restore ship POWER, STORAGE, FUEL, NAVIGATION, then COCKPIT",
+    "enter abandoned unstable systems and land on their single objective world",
+    "recover one Data Fragment plus optional salvage/fuel before collapse",
+    "return, store/refuel/upgrade, and choose when to warp",
+    "recover six Data Fragments and transmit the archive to Gleebs"
+  ],
+  "direction_lock_audit": {
+    "average_planet_count": 1.0,
+    "max_belts": 1,
+    "maximum_planets": 1,
+    "minimum_planets": 1,
+    "mission_target_count_per_system": [
+      1
+    ],
+    "optional_resource_worlds_range": [
+      0,
+      0
+    ],
+    "planet_count_distribution": {
+      "1": 1000
+    },
+    "systems_tested": 1000,
+    "world_classes_expected": 12,
+    "world_classes_observed": 12
+  },
+  "entry_point": "main.py",
+  "flight_control_authority": "normalized quaternion",
+  "game_identity": "A complete timed survival/exploration expedition: lose HOME, restore the ship, recover six increasingly legible Data Archive records from hazard- and landmark-distinct abandoned worlds, and deliver the completed archive to Gleebs before collapsing systems erase it.",
+  "itch_release_contract": {
+    "classification": "downloadable game",
+    "page_copy": "ITCH_PAGE_DESCRIPTION.txt",
+    "platform_after_launcher_packaging": "Windows",
+    "prototype_disclosure": true,
+    "runtime": "pygame-ce",
+    "upload_checklist": "ITCH_UPLOAD_CHECKLIST.txt"
+  },
+  "launcher_policy": "source package only; user supplies external Windows launcher",
+  "mission_system": {
+    "authority": "MissionState in mission_state.py; one object is shared across HOME, orbit, surface, and ship interior",
+    "autowarp_contract": "disabled in Pass 25",
+    "campaign_phases": [
+      "home",
+      "ship_recovery",
+      "expedition",
+      "delivery",
+      "complete"
+    ],
+    "cargo_contract": "Data Fragments are campaign information, not ship currency; HOME field resources begin in player_pack and are physically stored at the cargo station",
+    "collapse_clock_starts_after_begin": true,
+    "data_fragments_required": 6,
+    "ending": "six fragments redirect the cockpit to a Gleebs transmission; successful transfer enters the MatrixCore-linked completion state",
+    "fragment_object": "one Data Fragment recovered from the marked abandoned archive on the objective world",
+    "fragment_targets_per_system": 1,
+    "fuel_signals_per_viable_system": 0,
+    "hazard_families": {
+      "ANOMALOUS": [
+        "crystal",
+        "abyss",
+        "roseglass"
+      ],
+      "BIOLOGICAL": [
+        "jungle",
+        "fungal",
+        "oceanic"
+      ],
+      "COLD": [
+        "ice",
+        "salt",
+        "storm"
+      ],
+      "HEAT": [
+        "desert",
+        "volcanic",
+        "rust"
+      ]
+    },
+    "home_contract": "fresh profiles begin on the generated HOME world with the standard 60-second timer and guaranteed first-collapse emergency transfer",
+    "idempotency": "duplicate Data Fragment recovery is rejected; each system can advance the archive once",
+    "mission_brief_key": "M",
+    "objective_tracker_contexts": [
+      "space",
+      "surface",
+      "interior"
+    ],
+    "persistence": "mission snapshot retains campaign phase, six-fragment archive count, ship boot progress, target identity, claimed HOME/resource state, and Gleebs completion",
+    "recovery_contract": "E recovers the Data Fragment only at the matching target structure while remaining in top-down surface mode",
+    "resource_cache_contract": "separate resource-signal planets are retired; ordinary recoverable surface objects distribute existing salvage and fuel cells on the single objective world",
+    "resource_rewards": {
+      "home_cache": [
+        "fuel_cells",
+        "salvage"
+      ],
+      "marked_archive": [
+        "data_fragment"
+      ],
+      "surface_objects": [
+        "salvage",
+        "fuel_cells"
+      ]
+    },
+    "run_progression": "fragments_secured_total remains the legacy serialized field and now stores the authoritative Data Fragment total",
+    "run_start_screen": false,
+    "salvage_signals_per_system": [
+      0,
+      0
+    ],
+    "ship_recovery_sequence": [
+      "power",
+      "storage",
+      "fuel",
+      "navigation",
+      "cockpit"
+    ],
+    "target_ruin_identity": "Data Fragment signal, marked abandoned archive, near prompt, and off-screen guidance",
+    "target_ruin_selection": "stable deterministic medium-distance structure on the marked fragment world",
+    "travel_lock": "Data Fragment recovery never auto-warps; the player decides when to return, refuel, upgrade, and warp"
+  },
+  "native_1080p": {
+    "active_full_resolution_surface_maps": 1,
+    "default_mode": "native_1080p",
+    "direct_present": "1:1 when display is 1920x1080",
+    "fallback_filter": "smoothscale",
+    "high_dpi_awareness": "per-monitor v2 hints before SDL display initialization",
+    "render_canvas": [
+      1920,
+      1080
+    ],
+    "integer_upscale_filter": "exact scale for integer multiples (including 4K 2x)",
+    "fractional_fallback_filter": "smoothscale"
+  },
+  "orbital_planet_renderer": {
+    "atmosphere_cache_limit_per_planet": 6,
+    "atmosphere_cache_pixel_budget": 4000000,
+    "atmospheres": "biome-derived multi-band limb glow",
+    "clouds": "independent quantized rotation layer",
+    "lighting": "star-relative terminator with ambient night-side readability",
+    "lod_resolutions": [
+      24,
+      48,
+      80,
+      128,
+      192
+    ],
+    "material_cache_limit_per_planet": 8,
+    "night_emission_worlds": [
+      "volcanic",
+      "crystal",
+      "abyss",
+      "roseglass",
+      "fungal"
+    ],
+    "ring_cache_allocation": 0,
+    "rings": "disabled",
+    "scaled_cache_limit_per_planet": 8,
+    "scaled_cache_pixel_budget": 6000000,
+    "surface_materials": "seeded procedural spherical textures",
+    "world_classes": 12
+  },
+  "pass": 33,
+  "pass16_scope_boundary": "One complete fragment-recovery route is implemented. Salvage, fuel spending, repairs, ship upgrades, multi-fragment run progression, failure screens, and the ending remain scheduled for later roadmap passes.",
+  "pass17_scope_boundary": "Ship resources, four upgrade tracks, a functional hub, optional resource caches, and readable warp cost/range are complete. Collapse failure/restart, hazard variety, six-fragment ending, trading, crafting, and combat progression remain deferred.",
+  "pass18_1_scope_boundary": "The mandatory first-person ruin transition is removed from active gameplay. Marked ruins are top-down landmarks that award one Relic Core; the Fabricator spends one core for any existing upgrade level, with salvage retained as fallback. No new upgrade tracks, worlds, combat, crafting, or trading were added.",
+  "pass18_scope_boundary": "Collapse stages, shared pressure HUD, fair paused timers, hull consequences, failure state, and system-entry retry are complete. Planet hazard mechanics, objective variety, six-fragment ending, trading, crafting, and combat progression remain deferred.",
+  "pass19_scope_boundary": "Backtick pause, universal landing on every intact planet, persistent one-time surface-object recovery, conversion into existing salvage/fuel-cell resources, and focused surface-render/runtime optimizations are complete. No new resource currency, upgrade track, combat system, trade economy, or new world class was added.",
+  "pass20_scope_boundary": "One visible varied planet per system, all twelve world classes in the cross-system mix, soft exclusion for unavailable planets, and goal-driven autowarp from space/surface/interior are complete. No new currencies, upgrade tracks, combat systems, trade systems, or world classes were added.",
+  "pass21_scope_boundary": "Sun collision reset, 60-second primary collapse clock, and bounded sunward orbital pixel erosion are complete. No new currency, world class, combat progression, surface hazard rules, or ending content was added.",
+  "pass22_scope_boundary": "Seamless unbounded top-down surface exploration, bounded procedural terrain streaming, richer geological terrain grammar, and deterministic recoverable resources in explored chunks are complete. The central objective route, one-minute system clock, Relic Core autowarp, existing resources, and all twelve world classes remain unchanged. No new currency, upgrade track, combat progression, trade system, or world class was added.",
+  "pass23_scope_boundary": "Surface traversal, camera presentation, object silhouettes, interaction prompts, notifications, recovery feedback, and planetfall presentation are polished without changing the seamless world, economy, objective, timer, hazards, or progression.",
+  "pass24_scope_boundary": "Release hardening, player documentation, itch metadata, clean source packaging, asset validation, and regression verification are complete. No new mechanic, world family, currency, upgrade track, combat system, or campaign ending was added.",
+  "pass25_scope_boundary": "HOME prologue, guaranteed first-collapse transfer, physical five-step ship recovery, six-Data-Fragment campaign, player-owned departure timing, Gleebs/MatrixCore completion, save migration, and campaign verification are complete. Hazard-specific mechanics, controller-first integration, and Xbox platform work remain later passes.",
+  "patch": "25.0",
+  "performance_stability": {
+    "interior_rendering": "authored background retained/reused; Consolas font objects cached by size/weight instead of recreated during every interior frame",
+    "orbital_rendering": "one active planet per system; bounded 72-spec deterministic solar erosion; no growing erosion particle list",
+    "pass15_regression_profile": {
+      "benchmark": "deterministic Pillow-adapter space render; warm cache; two 1920x1080 frames",
+      "frames": 2,
+      "status": "within Pass 13 budget",
+      "total_calls": 137917
+    },
+    "planet_caches": "LRU item and pixel budgets for material, scaled and atmosphere surfaces",
+    "quaternion_transforms": "normalized once per frame/path; allocation-free rotation helper for hot loops",
+    "solar_rendering": "reused alpha layers, precomputed orbit geometry and deterministic stellar definitions",
+    "starfield": "one-pixel stars batched through PixelArray; allocation-free fast-motion islice LOD; inlined normalized-quaternion projection in the hot loop; reusable cluster layer",
+    "surface_rendering": "64-unit deterministic terrain chunks; 48x48 relief samples per chunk; bounded 42-surface LRU-style cache; reusable 640x360 composition layer; bounded 72-region object cache; spatially local harvest scans; inactive-planet chunk caches released",
+    "transition_fx": "reusable full-screen transition layers",
+    "frame_pacing": "raw wall time remains authoritative for lifecycle/collapse deadlines; motion/animation delta is capped at 50 ms to prevent hitch-driven camera/physics jumps",
+    "presentation_scaling": "1920x1080 direct present at 1:1; exact integer upscales such as 3840x2160 use fast exact scaling; fractional/downscale presentation retains smoothscale",
+    "crt_noise": "authored 25 Hz noise surface rebuilds only when the 25 Hz noise frame advances instead of regenerating duplicate frames at 60 Hz; static scanline/vignette layers are precomposed after resize so the frame loop uses one static FX blit instead of two",
+    "ui_rendering": "bounded cached panel fills and text surfaces; cached collapse-pressure edge mask; cached cockpit glow text; cached HUD notice panels"
+  },
+  "project": "Entropy",
+  "recovery_loop_audit": {
+    "active_first_person_ruin_transition": false,
+    "direct_surface_relic_collection": true,
+    "duplicate_collection_blocked": true,
+    "legacy_fragment_conversion_preserved": true,
+    "relic_core_added_to_ship_cargo": true,
+    "relic_core_spends_on_existing_upgrade": true,
+    "salvage_fallback_preserved": true
+  },
+  "release_hardening": {
+    "ambient_assets_prepackaged": true,
+    "ambient_generation_best_effort_only": true,
+    "development_history_excluded_from_itch_package": true,
+    "read_only_install_safe": true,
+    "verification_tools_excluded_from_itch_package": true,
+    "window_title": "Entropy \u2014 Pass 32 \u2014 Smooth Expedition Feedback",
+    "writable_user_data_fallback": "operating-system temporary directory"
+  },
+  "release_status": "Pass 32 smooth expedition candidate; native Windows 10 / 4K acceptance still required.",
+  "runtime": "pygame-ce",
+  "runtime_data_policy": "per-user saves/config/logs/screenshots outside the shipping project tree",
+  "runtime_requirement": "pygame-ce>=2.5.7,<2.6",
+  "scope_lock": {
+    "focus": "complete recovery loop before expansion",
+    "new_world_classes": "deferred",
+    "planet_destruction": "deferred",
+    "rings": "disabled",
+    "space_combat": "deferred; missile spawning and destructive collisions disabled"
+  },
+  "settings_contract": {
+    "audio_controls": [
+      "master_volume",
+      "music_volume",
+      "sfx_volume",
+      "ambience_volume",
+      "audio_muted"
+    ],
+    "bordered_sizes": [
+      "1280x720",
+      "1600x900",
+      "1920x1080"
+    ],
+    "default_fresh_profile": "fullscreen",
+    "display_modes": [
+      "bordered",
+      "native_1080p",
+      "fullscreen"
+    ],
+    "fullscreen_policy": "borderless desktop-sized window; fixed 1920x1080 internal canvas; no exclusive display-mode request",
+    "persistence": "atomic per-user settings.json outside shipping tree",
+    "schema_version": 4
+  },
+  "ship_hub_progression": {
+    "fuel_cell_value": 12,
+    "persistence": [
+      "cargo",
+      "upgrade levels",
+      "fuel/hull state",
+      "mission state",
+      "claimed caches",
+      "per-planet harvested object IDs"
+    ],
+    "repair_amount": 25,
+    "repair_cost_salvage": 2,
+    "resources": [
+      "Relic Cores",
+      "salvage",
+      "fuel cells"
+    ],
+    "save_schema_version": 4,
+    "stations": [
+      "Relic Storage",
+      "Fuel Port",
+      "Repair Bay",
+      "Fabricator"
+    ],
+    "upgrade_payment": "one Relic Core is spent first for any existing upgrade level; original salvage costs remain fallback",
+    "upgrade_tracks": {
+      "hull": {
+        "costs": [
+          5,
+          8,
+          12
+        ],
+        "hull_capacity": [
+          100,
+          125,
+          150,
+          175
+        ]
+      },
+      "scanner": {
+        "costs": [
+          4,
+          7,
+          10
+        ],
+        "levels": [
+          "fragment only",
+          "fuel signals",
+          "fuel + salvage signals",
+          "full survey data"
+        ]
+      },
+      "surface": {
+        "costs": [
+          4,
+          7,
+          10
+        ],
+        "speed_multiplier": [
+          1.0,
+          1.1,
+          1.22,
+          1.35
+        ]
+      },
+      "warp": {
+        "cost_multiplier": [
+          1.0,
+          0.86,
+          0.74,
+          0.62
+        ],
+        "costs": [
+          5,
+          8,
+          12
+        ],
+        "fuel_capacity": [
+          100,
+          120,
+          140,
+          160
+        ]
+      }
+    },
+    "warp_quote": "shared calculation drives both the HUD quote and committed fuel deduction"
+  },
+  "ship_progression_audit": {
+    "atomic_save_restore": true,
+    "example_warp_quote": {
+      "fuel_cost": 23,
+      "jumps": 2
+    },
+    "fuel_after_processing": 76,
+    "fuel_capacity_level_1": 120,
+    "fuel_cells_recovered": 3,
+    "hull_after_repair": 75,
+    "hull_capacity_level_1": 125,
+    "resource_claim_restore": true,
+    "salvage_recovered": 6,
+    "scanner_level_from_recovered_salvage": 1,
+    "surface_level_1_multiplier": 1.1,
+    "warp_level_1_multiplier": 0.86
+  },
+  "single_world_progression": {
+    "completion_transition": "none; recovery preserves the current level and player controls departure timing",
+    "goal": "recover one Data Fragment from the marked abandoned archive",
+    "planets_per_system": 1,
+    "supported_recovery_context": "top-down surface",
+    "warp_transition_seconds": 3.0,
+    "world_class_pool": 12
+  },
+  "solar_erosion_contract": {
+    "collision_geometry_changed": false,
+    "direction": "sunward",
+    "fixed_specs_per_planet": 72,
+    "intensity_inputs": [
+      "star-radius/orbit proximity",
+      "collapse pressure"
+    ],
+    "source": "sampled rendered planet pixels",
+    "unbounded_particle_list": false
+  },
+  "standard_controls": {
+    "Enter": "begin run, resume while paused, or activate selected setting",
+    "Escape": "close current modal panel; exit only from pre-run launch screen",
+    "F1": "toggle context-sensitive controls",
+    "F11": "toggle desktop fullscreen and previous windowed mode",
+    "H": "toggle HUD",
+    "M": "toggle mission brief",
+    "Q": "roll left during flight; exit game only from main pause menu",
+    "S": "open Settings while paused",
+    "`": "pause/resume in every gameplay mode"
+  },
+  "stellar_architecture": {
+    "inner_orbit_rule": "at least 5.8 times stellar radius",
+    "inter_system_warp_seconds": 3.0,
+    "maximum_belts": 1,
+    "minimum_orbit_gap": 9500.0,
+    "normal_planet_count_range": [
+      1,
+      1
+    ],
+    "rare_planet_count_max": 1,
+    "rare_six_world_probability": 0.0,
+    "star_classes": [
+      "scarlet dwarf",
+      "ember sun",
+      "crimson giant",
+      "fractured remnant"
+    ],
+    "structures": "single sparse deterministic asteroid/dust belt only when a safe gap exists",
+    "travel": "single-destination approach, atmosphere-touch planetfall, player-controlled inter-system warp; first HOME collapse uses guaranteed story evacuation"
+  },
+  "stellar_safety_contract": {
+    "collision_method": "swept ship movement segment against stellar sphere",
+    "failure_triggered": false,
+    "preserved": [
+      "current system",
+      "mission progress",
+      "cargo",
+      "upgrades",
+      "hull",
+      "fuel",
+      "collapse clock"
+    ],
+    "reset_orientation": "identity quaternion",
+    "reset_position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "timer_restart": false
+  },
+  "surface_camera_system": {
+    "first_person_surface_renderer": "removed",
+    "ruin_interiors": "disabled from active gameplay; legacy renderer retained only for old-save/load safety",
+    "safe_resolutions": [
+      "1920x1080",
+      "1280x720"
+    ],
+    "surface_extent": "unbounded positive and negative absolute world coordinates; no edge clamp or wraparound",
+    "surface_mode": "topdown_only_including_relic_recovery",
+    "toggle_key": null,
+    "topdown_map": "visible 64-unit procedural chunks composed into a reusable 640x360 internal terrain canvas, then fast-scaled beneath full-resolution HUD and actors"
+  },
+  "surface_controls": {
+    "boundary_blockers": "removed",
+    "diagonal_normalization": true,
+    "facing": "movement-driven four-direction sprites",
+    "frame_rate_independent": true,
+    "idle_animation": "frozen on first frame",
+    "mouse_surface_heading": "disabled",
+    "movement_basis": "screen-relative cardinal WASD",
+    "walk_speed_world_units_per_second": 10.5
+  },
+  "surface_hazard_gameplay": {
+    "ANOMALOUS": "long-range Data Fragment direction and displayed range drift; close range resolves",
+    "BIOLOGICAL": "deterministic periodic spore blooms temporarily slow traversal",
+    "COLD": "distance-driven cryogenic drag reduces mobility",
+    "HEAT": "thermal load rises away from ship; high load modestly slows traversal",
+    "lethal": false,
+    "save_schema_change": false,
+    "surface_rig_mitigation": {
+      "level_0": 0,
+      "level_1": 0.12,
+      "level_2": 0.24,
+      "level_3": 0.38
+    }
+  },
+  "surface_polish_contract": {
+    "camera": "bounded velocity look-ahead with eased recentering",
+    "entry_transition_seconds": 0.65,
+    "interaction_prompt": "single bottom-safe contextual action chip",
+    "movement": "frame-rate-independent acceleration and braking",
+    "navigation_grid": "removed from gameplay terrain",
+    "notification_anchor": "bottom-safe and prompt-aware",
+    "recovery_feedback": "bounded world-space burst with reward label",
+    "recovery_fx_limit": 6,
+    "terrain_cache_limit": 42
+  },
+  "surface_recovery": {
+    "categories": [
+      "ruins/structures",
+      "generated world props",
+      "trees/organic growths",
+      "plants/field samples",
+      "existing fuel/salvage caches",
+      "procedurally distributed exploration objects beyond the original charted region"
+    ],
+    "duplicate_collection": "blocked",
+    "input": "E",
+    "outputs": [
+      "salvage",
+      "fuel_cells",
+      "Data Fragment on marked mission archive"
+    ],
+    "persistence": "stable per-surface harvested IDs stored in the atomic ship save and checkpoint",
+    "surface_rig_effect": "higher levels improve processed salvage yield"
+  },
+  "surface_world_contract": {
+    "boundary_mode": "unbounded_chunk_streaming",
+    "camera_behavior": "continuous eased pan with restrained velocity look-ahead across positive and negative absolute world coordinates",
+    "chunk_sample_resolution": 48,
+    "chunk_world_size": 64,
+    "material_rule": "accent colors are localized to deposits and fault intersections rather than full-width streaks",
+    "mission_zone": "the original ship, objective ruin, and authored landmarks remain anchored in the central region",
+    "object_cache_limit": 72,
+    "persistence": "generated object IDs use the existing per-planet harvested-ID save contract",
+    "procedural_resources": true,
+    "resource_outputs": [
+      "salvage",
+      "fuel_cells"
+    ],
+    "terrain_cache_limit": 42,
+    "terrain_fields": [
+      "macro plates",
+      "folded ridges",
+      "basins",
+      "strata",
+      "fractures",
+      "localized mineral deposits"
+    ],
+    "terrain_texels_per_world_unit": 4
+  },
+  "system_checkpoint_contract": {
+    "capture_points": [
+      "new expedition cockpit launch",
+      "new-system arrival"
+    ],
+    "discards": [
+      "current-system pickups",
+      "current-system fragment progress"
+    ],
+    "preserves": [
+      "prior Data Fragments",
+      "campaign phase",
+      "ship boot completion",
+      "upgrades",
+      "resources at system entry",
+      "fuel",
+      "hull",
+      "mission system seed and signals"
+    ],
+    "save_schema_version": 5,
+    "shutdown_failure_overwrite_blocked": true
+  },
+  "title": "Expedition Flow Integrity",
+  "ui_safe_margins": {
+    "horizontal": 48,
+    "vertical": 36
+  },
+  "universal_planetfall": {
+    "eligible": "the single intact generated planet",
+    "entry": "existing atmosphere-touch transition",
+    "excluded": "destroyed or temporarily blocked entries",
+    "excluded_behavior": "non-colliding soft deflection outside the atmosphere boundary",
+    "orbital_feedback": "the sole intact planet is labeled LANDABLE"
+  },
+  "verification_commands": [
+    "python -B tools/verify_pass31_expedition_flow.py",
+    "python -B tools/verify_pass31_controller_regression.py",
+    "python -B tools/verify_pass31_code_audit.py",
+    "python -B tools/verify_pass31_full_regression.py",
+    "python -m compileall -q ."
+  ],
+  "virtual_resolution": "1920x1080 native",
+  "window_policy": "fixed 1920x1080 canvas; selectable resizable bordered window, borderless 1920x1080, or fullscreen desktop; F11 toggles fullscreen and the previous windowed mode",
+  "world_class_count": 12,
+  "surface_landmark_contract": {
+    "anchors_per_surface": 3,
+    "collision": false,
+    "harvestable": false,
+    "mission_authority": false,
+    "families": 12,
+    "purpose": "world identity, orientation memory, and readable exploration silhouettes under the collapse clock"
+  },
+  "music_score_contract": {
+    "authority": "campaign and collapse state; never camera/view mode",
+    "stream_owner": "pygame.mixer.music single stream",
+    "states": {
+      "home": "score_home_signal.wav",
+      "ship_recovery": "score_ship_recovery.wav",
+      "expedition": "MCF24.mp3 (original user-supplied track, unchanged)",
+      "collapse": "score_collapse_pressure.wav for CRITICAL/SUPERNOVA/BLACK HOLE",
+      "gleebs": "score_gleebs_link.wav for delivery/completion",
+      "failure": "silence"
+    },
+    "looping": "loops=-1 for every active state",
+    "transition": "stop previous stream before load/play; same state is idempotent",
+    "pause_behavior": "pause/settings preserve current score without restart",
+    "mix": "Music is independent from Ship + Effects and World Ambience; all multiply by Master",
+    "generated_audio": "48 kHz stereo PCM, deterministic 20-second loops"
+  },
+  "pass28_scope_boundary": "State-aware HOME/recovery/expedition/collapse/Gleebs score routing and four deterministic support loops are complete. Campaign, hazards, landmarks, resources, upgrades, collapse timing, save schema and world generation remain unchanged. Controller-first input/UI is the next major platform-facing pass.",
+  "controller_contract": {
+    "provider": "pygame._sdl2.controller mapped-controller layer with safe fallback when unavailable",
+    "event_model": "one primary mapped controller; hot-plug/rescan; edge-triggered UI actions; held analog gameplay axes",
+    "menu_navigation": "D-pad or left stick moves direct focus; A confirms; B backs/resumes; no virtual mouse cursor",
+    "flight": {
+      "left_stick": "forward/reverse + strafe",
+      "right_stick": "yaw/pitch",
+      "lt_rt": "vertical thrust",
+      "lb_rb": "roll",
+      "A": "boost",
+      "B": "brake",
+      "X": "ship interior",
+      "Y": "cockpit / third-person",
+      "dpad_right": "warp when navigation allows it",
+      "dpad_left": "inertial dampers",
+      "View": "mission brief",
+      "Menu": "pause/resume"
+    },
+    "surface": {
+      "left_stick_dpad": "move",
+      "A": "recover/process",
+      "B": "return to orbit",
+      "X": "ship interior",
+      "Y_or_View": "mission brief",
+      "Menu": "pause/resume"
+    },
+    "interior": {
+      "left_stick_dpad": "move/select",
+      "A": "use/install",
+      "B": "back/close",
+      "X": "take off",
+      "Y_or_View": "mission brief",
+      "Menu": "pause/resume"
+    },
+    "safety": {
+      "controller_disconnect": "pauses timed expedition and leaves keyboard/mouse fallback available",
+      "focus_loss": "pauses before collapse-time accounting",
+      "shutdown": "controller provider closes cleanly before pygame shutdown"
+    },
+    "xbox_boundary": "SDL mapped-controller support is the PC prototype provider; eventual native Xbox build should bind the active signed-in user/controller through GameInput/GDK rather than treating this layer as console certification."
+  },
+  "pass29_scope_boundary": {
+    "changed": [
+      "controller input provider",
+      "flight/surface/interior controller routing",
+      "pause/settings direct-focus controller UI",
+      "controller-specific prompts",
+      "focus/disconnect pause safety",
+      "stale objective auto-warp cleanup",
+      "Pass 29 verification/docs"
+    ],
+    "frozen": [
+      "Complete Expedition campaign",
+      "6 Data Fragment requirement",
+      "Gleebs ending",
+      "hazard rules/balance",
+      "surface landmark generation",
+      "state-aware score/audio assets",
+      "resource economy",
+      "ship upgrades",
+      "save schema v5",
+      "collapse timing/damage rules"
+    ],
+    "oddity_fixed": "Removed dormant legacy objective auto-warp queue/commit code so Data Fragment recovery can never secretly bypass the player-owned salvage/departure decision."
+  },
+  "save_crash_contract": {
+    "save_schema_version": 5,
+    "primary": "saves/save_state.json",
+    "previous_good": "saves/save_state.previous_good.json",
+    "write": "same-directory temp + flush + fsync + atomic replace + read-back verification",
+    "recovery": "invalid primary restores previous-good and repairs primary automatically",
+    "periodic_checkpoint_seconds": 20,
+    "lifecycle_checkpoints": [
+      "pause",
+      "focus loss",
+      "controller disconnect",
+      "long resume gap",
+      "clean exit"
+    ],
+    "session_marker": "logs/session_state.json distinguishes active/clean/crashed prior sessions",
+    "suspend_gap": "first frame >1.0s pauses before collapse/physics accounting",
+    "crash_bundle": "local-only integrity-checked crashes/Entropy_crash_*.zip",
+    "crash_privacy": [
+      "no automatic upload",
+      "no save contents",
+      "no environment dump",
+      "no username/path inventory"
+    ],
+    "fault_log": "armed with non-zero session header before faulthandler enable"
+  },
+  "pass30_scope_boundary": {
+    "changed": [
+      "atomic save verification",
+      "previous-good recovery",
+      "20-second lifecycle autosave",
+      "unclean-session detection",
+      "suspend-gap pause safety",
+      "local crash bundles",
+      "Pass 30 verification/docs"
+    ],
+    "frozen": [
+      "Complete Expedition campaign",
+      "six Data Fragment requirement",
+      "Gleebs ending",
+      "hazard rules",
+      "surface landmarks",
+      "state-aware score",
+      "controller mappings",
+      "resource economy",
+      "ship upgrades",
+      "save schema v5",
+      "collapse timing/damage rules"
+    ],
+    "oddities_fixed": [
+      "corrupt primary previously fell through to empty/fresh state",
+      "no previous-good generation existed",
+      "long process-resume gap could consume wall-clock collapse time without a focus event",
+      "crash diagnostics were a single append-only log with no verified bundle"
+    ]
+  },
+  "expedition_flow_contract": {
+    "fresh_start": "HOME surface under the normal 60-second collapse clock",
+    "legacy_zero_progress_migration": "pre-campaign zero-progress expedition saves are routed to HOME once",
+    "planet_entry": "atmosphere transition owns presentation until the surface is fully prepared; surface becomes visible on the next frame with no orbital flash",
+    "loading_pause_policy": "known planet/system loading stalls are excluded from suspend-gap auto-pause",
+    "hyperdrive_gate": "new-system warp is locked while the system Data Fragment goal is active; unlock only after SECURED or MISSED",
+    "dead_target_policy": "dead/unlandable target waypoint is retired immediately",
+    "missed_fragment_policy": "unrecovered required Data Fragment does not increment archive count and is reassigned in the next system",
+    "carried_fragment_policy": "carried data survives target loss but warp remains locked until stored"
+  },
+  "pass31_scope_boundary": {
+    "runtime_changes": [
+      "space_core.py",
+      "mission_state.py",
+      "standard_ui.py"
+    ],
+    "new_verification": [
+      "tools/verify_pass31_expedition_flow.py",
+      "tools/verify_pass31_controller_regression.py",
+      "tools/verify_pass31_code_audit.py",
+      "tools/verify_pass31_full_regression.py"
+    ],
+    "preserved": [
+      "Complete Expedition six-fragment/Gleebs campaign",
+      "hazard personality",
+      "surface landmarks",
+      "state-aware score",
+      "controller mapping",
+      "save schema v5",
+      "crash reporting",
+      "resource economy",
+      "upgrade balance",
+      "collapse damage rules"
+    ]
+  },
+  "pass32_scope_boundary": "Frame pacing, 4K presentation, starfield hot-loop math, CRT noise refresh, UI surface/text reuse, interior font reuse, and expedition outcome feedback are optimized without changing world generation, campaign balance, hazards, economy, upgrades, controller mapping, collapse rules, or save schema v5.",
+  "pass33_expedition_identity": {
+    "world_archive_profiles": 12,
+    "archive_site_slots": 6,
+    "consecutive_world_rule": "prefer a different hazard family; never intentionally repeat the same world class when a different candidate is available",
+    "geometry_changed": false,
+    "hazard_values_changed": false,
+    "collapse_balance_changed": false,
+    "save_schema_changed": false,
+    "new_save_fields": 0
+  }
+}

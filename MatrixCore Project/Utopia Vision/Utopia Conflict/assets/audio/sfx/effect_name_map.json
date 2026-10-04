@@ -1,0 +1,155 @@
+{
+  "schema": "etch_line_effect_name_map_v2",
+  "format": "wav_only",
+  "replace_in": "assets/audio/sfx/overrides",
+  "reference_printouts": "assets/audio/sfx/customfx",
+  "loops": "assets/audio/loops accepts any .wav filename for music/ambience auto-discovery",
+  "effects": {
+    "fire": "mech_fire.wav",
+    "burst_fire": "weapon_burst.wav",
+    "auto_fire": "weapon_automatic.wav",
+    "hit": "core_hit.wav",
+    "armor": "armor_hit.wav",
+    "armor_heavy": "armor_heavy_hit.wav",
+    "deflect": "deflect.wav",
+    "break": "shield_break.wav",
+    "metal_break": "metal_broken.wav",
+    "weapon_broken": "weapon_broken.wav",
+    "tell": "enemy_tell.wav",
+    "enemy1": "enemy1.wav",
+    "enemy2": "enemy2.wav",
+    "enemy3": "enemy3.wav",
+    "enemy4": "enemy4.wav",
+    "enemy5": "enemy5.wav",
+    "chain": "chain_arc.wav",
+    "recharge": "recharge.wav",
+    "kill": "mech_kill.wav",
+    "explosion_cannon": "explosion_cannon.wav",
+    "explosion_fire": "explosion_fire.wav",
+    "explosion_boss": "explosion_boss.wav",
+    "explosion_distant": "explosion_distant.wav",
+    "imploder": "imploder_pulse.wav",
+    "magnet": "magnet_field.wav",
+    "disassemble": "disassembler_cut.wav",
+    "pickup": "weapon_pickup.wav",
+    "special_pickup": "special_pickup.wav",
+    "ricochet": "ricochet.wav",
+    "objective_complete": "objective_complete.wav",
+    "dry": "dry_click.wav",
+    "weapon_empty": "weapon_empty.wav"
+  },
+  "new_weapon_slots": {
+    "5": "Burst Splitter uses weapon_burst.wav and five-shot scatter fire",
+    "6": "Auto Lattice uses weapon_automatic.wav and fast stream fire"
+  },
+  "capture_zone_waves": "Node waves trigger on zone entry and queue behind-building approach lanes toward the player.",
+  "mode_title": "Utopia Conflict",
+  "wave_start": {
+    "official_name": "wave_start",
+    "official_replacement": "wave_start.wav",
+    "customfx_printout": "assets/audio/sfx/customfx/wave_start.wav"
+  },
+  "breach_spawn": {
+    "official_name": "breach_spawn",
+    "official_replacement": "breach_spawn.wav",
+    "customfx_printout": "assets/audio/sfx/customfx/breach_spawn.wav"
+  },
+  "breach_hit": {
+    "official_name": "breach_hit",
+    "official_replacement": "breach_hit.wav",
+    "customfx_printout": "assets/audio/sfx/customfx/breach_hit.wav"
+  },
+  "breach_sealed": {
+    "official_name": "breach_sealed",
+    "official_replacement": "breach_sealed.wav",
+    "customfx_printout": "assets/audio/sfx/customfx/breach_sealed.wav"
+  },
+  "enemy_spawn": {
+    "official_name": "enemy_spawn",
+    "official_replacement": "enemy_spawn.wav",
+    "customfx_printout": "assets/audio/sfx/customfx/enemy_spawn.wav"
+  },
+  "enemy_destroyed": {
+    "official_name": "enemy_destroyed",
+    "official_replacement": "enemy_destroyed.wav",
+    "customfx_printout": "assets/audio/sfx/customfx/enemy_destroyed.wav"
+  },
+  "combo_surge": {
+    "official_name": "combo_surge",
+    "official_replacement": "combo_surge.wav",
+    "customfx_printout": "assets/audio/sfx/customfx/combo_surge.wav"
+  },
+  "weapon_upgrade": {
+    "official_name": "weapon_upgrade",
+    "official_replacement": "weapon_upgrade.wav",
+    "customfx_printout": "assets/audio/sfx/customfx/weapon_upgrade.wav"
+  },
+  "vector_arena_source_adapter": {
+    "adapter": "Vector Arena/standalone_native_adapter.py",
+    "map_file": "assets/audio/sfx/vector_arena_source_map.json",
+    "controls": "Source Vector Arena owns input and weapons while active; Utopia Conflict city controls and dual-wield weapons are suppressed.",
+    "events": {
+      "pulse_rifle": [
+        "pulse_rifle.wav",
+        "mech_fire.wav"
+      ],
+      "repulsor_blast": [
+        "repulsor_blast.wav",
+        "weapon_burst.wav",
+        "imploder_pulse.wav"
+      ],
+      "heat_vent": [
+        "heat_vent.wav",
+        "recharge.wav"
+      ],
+      "enemy_hit": [
+        "enemy_hit.wav",
+        "armor_hit.wav",
+        "core_hit.wav"
+      ],
+      "enemy_destroyed": [
+        "enemy_destroyed.wav",
+        "mech_kill.wav",
+        "explosion_cannon.wav"
+      ],
+      "wave_start": [
+        "wave_start.wav",
+        "objective_complete.wav"
+      ],
+      "player_hit": [
+        "player_hit.wav"
+      ],
+      "enemy_spawn": [
+        "enemy_spawn.wav"
+      ],
+      "weapon_upgrade": [
+        "weapon_upgrade.wav",
+        "special_pickup.wav"
+      ],
+      "overheat_warning": [
+        "overheat_warning.wav"
+      ],
+      "low_health": [
+        "low_health.wav"
+      ],
+      "player_reboot": [
+        "player_reboot.wav"
+      ],
+      "ui_toggle": [
+        "ui_toggle.wav"
+      ],
+      "breach_spawn": [
+        "breach_spawn.wav"
+      ],
+      "breach_hit": [
+        "breach_hit.wav"
+      ],
+      "breach_sealed": [
+        "breach_sealed.wav"
+      ],
+      "combo_surge": [
+        "combo_surge.wav"
+      ]
+    }
+  }
+}

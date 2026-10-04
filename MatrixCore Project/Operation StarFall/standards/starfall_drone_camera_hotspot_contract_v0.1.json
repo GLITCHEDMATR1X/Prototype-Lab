@@ -1,0 +1,24 @@
+{
+  "schema": "operation_starfall_drone_camera_hotspot_contract_v0.1",
+  "version": "operation_starfall_drone_camera_hotspot_v0.1",
+  "active_units": {
+    "hover_drone": "DRONE_A existing persistent drill drone",
+    "land_rover": "existing support_refinery_rover"
+  },
+  "camera_mounts": {
+    "hover_drone": "belly camera, direct-down capable, no drone shell in view",
+    "land_rover": "top camera, slow terrain drive"
+  },
+  "input_rules": {
+    "LALT": "toggle/select hover Drone A belly camera",
+    "RALT": "toggle/select Drone B remote camera",
+    "CTRL_ALT": "return to land rover",
+    "LMB_HOVER_HOTSPOT": "route Drone A to locked hotspot and drill/collect",
+    "LMB_DISABLED_DRONE": "rescue pull cable"
+  },
+  "ui_rules": [
+    "bottom-left telemetry reports active camera mount",
+    "hover and rover overlays use distinct color language",
+    "drone power/altitude/dock/task state remains visible"
+  ]
+}

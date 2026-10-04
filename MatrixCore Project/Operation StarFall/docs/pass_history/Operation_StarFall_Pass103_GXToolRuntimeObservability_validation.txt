@@ -1,0 +1,32 @@
+Operation StarFall Pass103 GXTool Runtime Observability
+STATUS=CANDIDATE
+
+RUNTIME
+Panda3D=1.10.16
+GXTool bridge=0.8.0-v4-perception
+
+WORKING / PREVERIFICATION PACKAGE
+syntax compile=PASS (8 Python files)
+package hygiene before runtime=PASS
+GXTool runtime inspect=PASS
+GXTool runtime window=1920x1080 PASS
+GXTool startup mode=interior PASS
+GXTool startup interior_heading=180.0 PASS
+GXTool startup operation residue=0/0 PASS
+GXTool runtime diagnosis=0 critical / 0 errors / 0 warnings
+GXTool deterministic shell replay=PASS (7/7 steps, 0 assertion failures)
+display authority=PASS
+shell authority=PASS
+operation launch authority=PASS
+Mimas return controls=PASS
+Mimas->ship->Enceladus->ship lifecycle=PASS
+post-runtime package hygiene=PASS after bytecode-clean test method
+
+VISUAL FINDINGS
+Initial GXTool runtime proof exposed a rear-facing startup view dominated by the rear economy console.
+Pass103 startup now faces the intended forward viewport at heading 180 degrees.
+Exterior presentation lights are scoped to flight_root; interior section lights are scoped to interior_root.
+No light colors were retuned. Native Windows/GPU aesthetic acceptance remains pending.
+
+FINAL EXACT ZIP
+The exact-archive verification is performed after packaging and recorded in the external handoff verification record so this file does not mutate the archive after it is tested.

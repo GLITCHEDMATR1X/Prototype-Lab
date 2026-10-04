@@ -1,0 +1,42 @@
+STATUS: CANDIDATE
+ENGINE: Panda3D 1.10.16
+PYTHON: 3.13.5
+TEST ENVIRONMENT: Linux offscreen Panda3D runtime
+
+PREVIOUS-PASS PROOF
+- Pass100 shell panel authority: PASS
+- Pass99 Mimas options open/close/reopen/TAB return: PASS
+- Mimas -> ship -> Enceladus -> ship cycle: PASS
+
+REQUESTED-CHANGE PROOF
+- duplicate launch keeps original pending target: PASS
+- duplicate launch keeps one finish task: PASS
+- duplicate launch preserves one loading root: PASS
+- one embedded app constructed: PASS
+- one embedded render root / one embedded UI root while active: PASS
+- failed launch clears loading-in-progress state: PASS
+- failed launch clears pending target: PASS
+- failed launch clears loading root: PASS
+- failed launch leaves no scheduled finish task: PASS
+- Europa loading art uses clean cinematic destination card: VISUAL PASS at 1280x720
+
+FROZEN-SYSTEM PROOF
+- Pass100 shell UI authority regression: PASS
+- Pass99 embedded modal ownership regression: PASS
+- operation return cleanup residue: 0 render roots / 0 UI roots
+- Mimas -> Enceladus cycle: PASS
+
+PACKAGING
+- source package hygiene: PASS
+- preverification ZIP integrity/extraction: PASS
+- blank extraction Python compile check: PASS
+- fresh extraction launch-authority regression: PASS
+- fresh extraction Europa 1280x720 loading capture: VISUAL PASS
+- fresh extraction Pass100 shell authority: PASS
+- fresh extraction Pass99 Mimas return-controls regression: PASS
+- fresh extraction Mimas -> Enceladus cycle: PASS
+- post-runtime package hygiene with bytecode writes disabled: PASS
+- exact final archive retest: PASS
+
+WINDOWS PLAYER VALIDATION: NOT RUN
+USER ACCEPTANCE: PENDING

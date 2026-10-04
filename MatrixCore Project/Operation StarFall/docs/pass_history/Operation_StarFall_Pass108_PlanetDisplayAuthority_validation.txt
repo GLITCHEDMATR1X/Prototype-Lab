@@ -1,0 +1,27 @@
+PASS: 108 Planet Display Authority
+BASE: Pass107 Triton Terrain Cleanup Candidate
+PRIMARY TASK: Keep planetary operations inside the StarFall interior through one large 16:9 remote-drone display, including loading art.
+
+GXTOOL:
+- v0.8.2 project scan: PASS; main.py identified as Panda3D entry authority.
+- panda3d-doctor: BLOCKED; missing local Panda3D 1.10.16 cp313 Linux wheel.
+- plan-command work order: GENERATED before edit.
+- gxtool.source.inspect: used on shell operation loading/camera lifecycle and Worlds embedded/drone camera code before and after edit.
+
+STATIC CONTRACT:
+- Planet display authority focused checks: TECHNICAL_PASS.
+- Python AST/compile: PASS.
+- Visual/runtime acceptance: PENDING because Panda3D runtime cannot be restored in this container.
+
+FROZEN SYSTEMS:
+- Planet terrain and mission rules unchanged.
+- Pass107 Triton source changes preserved.
+- Pass106 Pluto source changes preserved.
+- Pass101 single-owner operation launch/return architecture retained.
+
+STATUS: CANDIDATE / TECHNICAL PASS / VISUAL RUNTIME PENDING
+
+GXTOOL VERIFY-COMMAND:
+- Implementation changed-file scope: PASS.
+- Deliverable according to static work-order gate: YES.
+- Runtime/visual gate remains PENDING; no current Panda3D frame exists.

@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "all_worlds_registered": true,
+    "display_contract_updated": true,
+    "h_cycles_hud": true,
+    "help_is_f1": true,
+    "large_window_flag": true,
+    "minimal_default": true,
+    "normal_test_shot_label_removed": true,
+    "reference_1080p_default": true,
+    "safe_canvas_constants": true,
+    "screen_canvas_shot_flag": true,
+    "screen_layout_function": true,
+    "short_minimal_text": true,
+    "sonar_top_right_layout": true,
+    "top_strip_full_only": true,
+    "window_event_reflows_ui": true
+  },
+  "rule": "Operation StarFall uses one responsive aspect-safe HUD layout with 1920x1080 as the normal reference surface, a documented 1280x720 fallback, and H as the HUD visibility cycle.",
+  "status": "PASS"
+}

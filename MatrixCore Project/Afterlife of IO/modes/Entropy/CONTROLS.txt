@@ -1,0 +1,87 @@
+ENTROPY CONTROLS — PASS 29
+==========================
+
+CONTROLLER — GLOBAL
+D-pad / Left Stick  Direct menu focus / gameplay movement where applicable
+A                   Confirm / interact
+B                   Back / resume / context cancel
+View                Mission brief / context controls
+Menu                Pause / resume
+
+CONTROLLER — FLIGHT
+Left Stick          Forward/reverse thrust + strafe
+Right Stick         Yaw / pitch
+LT / RT             Vertical thrust
+LB / RB             Roll
+A                   Boost
+B                   Brake
+X                   Ship interior
+Y                   Cockpit / third-person view
+D-pad Right         Warp when navigation allows it
+D-pad Left          Toggle inertial dampers
+
+CONTROLLER — HOME / PLANET SURFACE
+Left Stick / D-pad  Move
+A                   Recover / process nearby object or Data Fragment
+X                   Enter ship while nearby (locked during HOME emergency)
+B                   Return to orbit (locked during HOME emergency)
+Y / View            Mission brief
+Menu                Pause / resume
+
+CONTROLLER — SHIP INTERIOR
+Left Stick / D-pad  Move / select upgrade
+A                   Use station / install selected upgrade
+B                   Return / close fabricator
+X                   Take off after ship recovery is complete
+Y / View            Mission brief
+Menu                Pause / resume
+
+KEYBOARD — HOME / PLANET SURFACE
+WASD                Move
+E                   Process nearby object / dive into the marked archive ruin
+Tab                 Enter ship while nearby (locked during HOME emergency)
+Space               Return to orbit (locked during HOME emergency)
+M                   Mission brief
+`                   Pause / resume
+
+KEYBOARD / MOUSE — ARCHIVE RUIN DIVE (DreamCrawler team)
+WASD / Arrows       Move
+Hold LMB            Walk toward the cursor
+Space / RMB         Use a carried one-use weapon on the crawler
+Esc / P             Pause (collapse clock frozen) / RESUME or RETREAT
+M                   Mute dive sounds
+Goal                Floor 1 stairs down -> take the vault fragment -> ASCENT LINE
+Controller          Left stick move, A weapon/confirm, B or Start pause, D-pad pick
+
+KEYBOARD — SHIP INTERIOR
+WASD                Move
+E                   Use station / restore ship system
+Tab                 Return to previous view (locked during initial recovery)
+Space               Take off after ship recovery is complete
+`                   Pause / resume
+
+KEYBOARD / MOUSE — FLIGHT
+W / S               Forward / reverse thrust
+A / D               Strafe
+Space / Ctrl        Vertical thrust
+Q / E               Roll
+Mouse               Yaw / pitch
+Shift               Boost
+X                   Brake
+C                   Toggle inertial dampers
+V                   Cockpit / third-person view
+F                   Warp when navigation allows it
+Tab                 Enter ship interior
+M                   Mission brief
+`                   Pause / resume
+F11                 Fullscreen toggle
+
+CAMPAIGN
+HOME                Recover emergency supplies before the first supernova
+SHIP RECOVERY       POWER -> STORAGE -> FUEL -> NAVIGATION -> COCKPIT
+EXPEDITION          Recover 6 Data Fragments from abandoned worlds
+ENDGAME             Return to cockpit and transmit the archive to GLEEBS
+
+SAFETY
+Controller disconnect or window focus loss pauses the collapse timer.
+Data Fragment recovery never auto-warps; the player decides when to depart.

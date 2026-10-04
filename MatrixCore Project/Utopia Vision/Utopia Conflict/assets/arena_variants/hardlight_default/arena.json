@@ -1,0 +1,51 @@
+{
+  "id": "hardlight_default",
+  "name": "Vector Arena // Hardlight Breach",
+  "description": "Large octagonal dark-mode Vector Arena level using infilled meshes instead of floating wire structures.",
+  "wave_seconds": 60.0,
+  "waves_per_capture": 3,
+  "wave_sizes": [
+    4,
+    6,
+    8
+  ],
+  "arena_weapons": [
+    "Pulse Rifle",
+    "Repulsor Burst",
+    "Breach Cutter"
+  ],
+  "arena_mobs": [
+    "arena_stalker",
+    "arena_sentry",
+    "arena_tank",
+    "arena_guardian"
+  ],
+  "points_per_wave": 35,
+  "points_complete": 140,
+  "uses_shared_sfx": true,
+  "layout": {
+    "radius": 98.0,
+    "rings": [
+      24.0,
+      46.0,
+      72.0,
+      90.0
+    ],
+    "bridge_count": 4,
+    "cover_pylons": 8,
+    "spawn_gates": 8,
+    "upper_lanes": true,
+    "breach_core_tower": true
+  },
+  "notes": "Mesh cleanup pass: no unsupported floating arena wires; geometry now uses infilled walls, pylons, gates, bridges, and a breach-core tower.",
+  "arena_weapon_slots": {
+    "1": "Pulse Rifle",
+    "5": "Repulsor Burst",
+    "6": "Breach Cutter"
+  },
+  "core_hits_by_wave": [
+    3,
+    4,
+    5
+  ]
+}

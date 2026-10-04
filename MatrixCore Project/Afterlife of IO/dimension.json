@@ -1,0 +1,22 @@
+{
+  "schema": 2,
+  "id": "afterlife_of_io",
+  "title": "Afterlife of IO",
+  "version": "147",
+  "compatibility": "linked",
+  "entry": "main.py",
+  "return_target": "gleebs_dimension_archive",
+  "presentation": {
+    "symbol": "AIO",
+    "accent": "C9A27A",
+    "preview": "icon.png",
+    "description": "IO's afterlife, between the Beginning and the Present: seven Memory Guardians, seven lost civilization archives, and the Veil at the end. The archive Gleebs needed, before IO came home to HoloVerse."
+  },
+  "runtime": {
+    "engine": "pygame",
+    "shared_showbase": false,
+    "launch_model": "external_child_process",
+    "standalone_entry_preserved": true
+  },
+  "lore": "An archive of the past that Gleebs carried into HoloVerse. After the Veil, IO became the HoloForge guide on the Flat-region ground."
+}

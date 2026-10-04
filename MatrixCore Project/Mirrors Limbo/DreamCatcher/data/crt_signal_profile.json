@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "Pass 25 CRT signal presentation only",
+  "line_drift_px": 1.15,
+  "tear_band_height_px": 5,
+  "tear_offset_px": 3,
+  "tear_speed_rows_per_frame": 7,
+  "ghost_offset_px": 1,
+  "ghost_mix": 0.14,
+  "base_noise_per_1000": 10,
+  "strong_noise_per_1000": 125,
+  "noise_mix": 0.52,
+  "scanline_multiplier": 0.64,
+  "edge_power": 5.0,
+  "corner_power": 1.6,
+  "edge_darkening": 0.18,
+  "corner_darkening": 0.22,
+  "retrace_speed_px_per_frame": 2,
+  "retrace_half_width_px": 0,
+  "retrace_lift": 0.10,
+  "strong_snow_families": ["static_noise", "noise_fight", "signal_mix"],
+  "strong_snow_channel_ids": ["static", "mix", "noisefight"],
+  "rules": [
+    "Effects are applied only to the existing 160x120 CRT texture.",
+    "No fullscreen glitch/postprocess is introduced.",
+    "No entity, voice, clue, strike, reset, or progression behavior is introduced.",
+    "All signal distortion is deterministic for a given channel and frame."
+  ]
+}

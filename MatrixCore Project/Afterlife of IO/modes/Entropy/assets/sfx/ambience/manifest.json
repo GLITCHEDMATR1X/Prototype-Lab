@@ -1,0 +1,26 @@
+{
+  "version": "entropy-ambient-v1",
+  "sample_rate": 22050,
+  "loop_seconds": 6.0,
+  "surface_loops": [
+    "abyss",
+    "crystal",
+    "desert",
+    "fungal",
+    "ice",
+    "jungle",
+    "oceanic",
+    "roseglass",
+    "rust",
+    "salt",
+    "storm",
+    "volcanic"
+  ],
+  "ruin_loops": [
+    "castle",
+    "catacomb",
+    "dungeon"
+  ],
+  "interior_loop": "ship_hum",
+  "generated": []
+}

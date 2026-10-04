@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "purr": {
+    "asset": "audio/characters/gleebs/gleebs_purr.wav",
+    "gain": 0.62,
+    "min_distance": 2.2,
+    "max_distance": 42.0,
+    "loop": true
+  },
+  "spark": {
+    "asset": "audio/characters/gleebs/gleebs_spark.wav",
+    "gain": 0.66,
+    "min_distance": 1.5,
+    "max_distance": 28.0
+  }
+}

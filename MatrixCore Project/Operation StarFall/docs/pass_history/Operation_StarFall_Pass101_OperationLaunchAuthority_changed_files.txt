@@ -1,0 +1,17 @@
+Operation StarFall Pass101 — changed files
+
+main.py
+  - single-owner operation-loading state
+  - duplicate launch guard
+  - stale finish-task guard
+  - failed-launch state cleanup
+  - operation launch authority regression test
+assets/generated/operation_loading_europa.png
+  - replaced leaked gameplay/HUD screenshot with cinematic Europa loading card
+README.md
+build_manifest.json
+Worlds/active_game.json
+tools/starfall_package_check.py
+Operation_StarFall_Pass101_OperationLaunchAuthority_Report.md
+Operation_StarFall_Pass101_OperationLaunchAuthority_validation.txt
+Operation_StarFall_Pass101_OperationLaunchAuthority_changed_files.txt

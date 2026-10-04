@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "scope": "Pass 16 analogue TV world-integrated core only",
+  "world_object": "analog_tv",
+  "room": "f2_master",
+  "initial_state": {
+    "power": "on",
+    "channel_index": 1
+  },
+  "screen": {
+    "internal_resolution": [
+      160,
+      120
+    ],
+    "aspect_ratio": "4:3",
+    "world_surface": "world-space front glass plane inset inside CRT bezel",
+    "screen_value_on": 205,
+    "screen_value_off": 24,
+    "scanline_step_px": 3,
+    "noise_refresh_hz": 12,
+    "full_scene_refresh_hz": 60,
+    "rule": "Generate cheap channel visuals on the small TV surface, then project that surface into the room. Never draw TV programming as HUD."
+  },
+  "channels": [
+    {
+      "index": 1,
+      "id": "security",
+      "label": "SECURITY",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 4062,
+      "visual_family": "authored_channel",
+      "audio_asset": "assets/audio/tv_channels/security.wav"
+    },
+    {
+      "index": 2,
+      "id": "news",
+      "label": "NEWS",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 1129,
+      "visual_family": "authored_channel",
+      "audio_asset": "assets/audio/tv_channels/news.wav"
+    },
+    {
+      "index": 3,
+      "id": "cartoon",
+      "label": "CARTOON",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 3090,
+      "visual_family": "authored_channel",
+      "audio_asset": "assets/audio/tv_channels/cartoon.wav"
+    },
+    {
+      "index": 4,
+      "id": "archive",
+      "label": "ARCHIVE",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2978,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/archive.wav"
+    },
+    {
+      "index": 5,
+      "id": "combat",
+      "label": "COMBAT",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2221,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/combat.wav"
+    },
+    {
+      "index": 6,
+      "id": "dance",
+      "label": "DANCE",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 1525,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/dance.wav"
+    },
+    {
+      "index": 7,
+      "id": "dream",
+      "label": "DREAM",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 1564,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/dream.wav"
+    },
+    {
+      "index": 8,
+      "id": "emergency",
+      "label": "EMERGENCY",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 4850,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/emergency.wav"
+    },
+    {
+      "index": 9,
+      "id": "kaiju",
+      "label": "KAIJU",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 1625,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/kaiju.wav"
+    },
+    {
+      "index": 10,
+      "id": "league",
+      "label": "LEAGUE",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2204,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/league.wav"
+    },
+    {
+      "index": 11,
+      "id": "mix",
+      "label": "MIX",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 679,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/mix.wav"
+    },
+    {
+      "index": 12,
+      "id": "noisefight",
+      "label": "NOISEFIGHT",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 5879,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/noisefight.wav"
+    },
+    {
+      "index": 13,
+      "id": "pirate",
+      "label": "PIRATE",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2238,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/pirate.wav"
+    },
+    {
+      "index": 14,
+      "id": "racing",
+      "label": "RACING",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2193,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/racing.wav"
+    },
+    {
+      "index": 15,
+      "id": "ritual",
+      "label": "RITUAL",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2273,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/ritual.wav"
+    },
+    {
+      "index": 16,
+      "id": "shop",
+      "label": "SHOP",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 1104,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/shop.wav"
+    },
+    {
+      "index": 17,
+      "id": "sportcast",
+      "label": "SPORTCAST",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 4945,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/sportcast.wav"
+    },
+    {
+      "index": 18,
+      "id": "sports",
+      "label": "SPORTS",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2398,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/sports.wav"
+    },
+    {
+      "index": 19,
+      "id": "static",
+      "label": "STATIC",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2221,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/static.wav"
+    },
+    {
+      "index": 20,
+      "id": "surveil",
+      "label": "SURVEIL",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 3054,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/surveil.wav"
+    },
+    {
+      "index": 21,
+      "id": "teletext",
+      "label": "TELETEXT",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 4000,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/teletext.wav"
+    },
+    {
+      "index": 22,
+      "id": "tunnel",
+      "label": "TUNNEL",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 2273,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/tunnel.wav"
+    },
+    {
+      "index": 23,
+      "id": "weather",
+      "label": "WEATHER",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 3000,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/weather.wav"
+    },
+    {
+      "index": 24,
+      "id": "wilderness",
+      "label": "WILDERNESS",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 6005,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/wilderness.wav"
+    },
+    {
+      "index": 25,
+      "id": "wrestling",
+      "label": "WRESTLING",
+      "source_basis": "Glitch TV archive member identity",
+      "render_seed": 4880,
+      "visual_family": "signal_loop_identity",
+      "audio_asset": "assets/audio/tv_channels/wrestling.wav"
+    }
+  ],
+  "controls_contract": {
+    "interact": "E when within TV interaction anchor",
+    "channel_previous": "Left / A while TV-focused",
+    "channel_next": "Right / D while TV-focused",
+    "power": "P or explicit POWER control while TV-focused",
+    "note": "Input contract only; pygame runtime behavior remains unaccepted until pygame-ce is runnable."
+  },
+  "performance_contract": [
+    "No video decode.",
+    "No full-screen per-pixel TV effects.",
+    "Procedural signal effects operate at 160x120.",
+    "Only regenerate a channel surface when its low-frequency visual state changes.",
+    "Scale/project from the original small surface each frame; do not repeatedly rescale prior transformed frames.",
+    "Audio loops will be converted to browser-suitable compressed assets only after extractable source payloads are available."
+  ],
+  "power_off_future_hook": {
+    "event": "tv_powered_off",
+    "alternate_reaction": "NOT IMPLEMENTED IN PASS 16",
+    "strike_counter": "NOT IMPLEMENTED IN PASS 16"
+  },
+  "references": [
+    "pygame-ce Surface/blit: screen programming should live on a small Surface and be composited into the world.",
+    "pygame-ce transform.scale: scale from the original source Surface rather than incrementally transforming prior frames."
+  ],
+  "rules": [
+    "TV is anchored to the accepted CRT world object and cabinet support.",
+    "TV screen is a world plane and obeys perspective/depth/occlusion.",
+    "TV glow may now use reserved value 205; abnormal white 245 remains unused.",
+    "Every channel identity recoverable from the Glitch TV archive filename inventory receives a lightweight slot.",
+    "No Alternate logic, voice reaction, datamosh reset, or third-strike behavior in this pass.",
+    "Pass 17 visual identities are defined in data/tv_channel_visuals.json; channel logic still renders only on the CRT world surface."
+  ],
+  "channel_visual_authority": "data/tv_channel_visuals.json",
+  "channel_audio_authority": "data/tv_channel_audio.json",
+  "source_inventory_status": "Original Glitch TV archive inventory is not present in this recovered package; channel ids and visual profiles are preserved directly in this file and tv_channel_visuals.json."
+}

@@ -1,0 +1,90 @@
+VECTOR ARENA — AUDIO REPLACEMENT GUIDE
+
+All bundled audio in this pass is original synthesized foundation/placeholder material.
+You can replace any file while keeping the same filename.
+
+Folders:
+  assets/audio/music/       3 stereo combat loops
+  assets/audio/ambience/    2 stereo ambience loops
+  assets/audio/sfx/         mono gameplay/3D SFX
+  assets/audio/transition/  dimension entry/exit cues
+
+Important:
+- Positional/3D SFX should remain MONO. Panda3D spatializes mono sources; stereo sources are not suitable for 3D positioning.
+- Music and ambience may remain stereo.
+- WAV files are currently 22.05 kHz / 16-bit PCM for a compact prototype footprint.
+- Music rotates automatically and crossfades according to audio_profile.json/vector_arena_config.json.
+- Missing audio does not prevent the arena from launching.
+- --no-audio remains safe for standalone smoke tests.
+
+Primary replaceable events:
+  pulse_rifle.wav
+  repulsor_blast.wav
+  heat_vent.wav
+  enemy_hit.wav
+  enemy_destroyed.wav
+  enemy_spawn.wav
+  enemy_stalker.wav
+  enemy_brute.wav
+  enemy_sentry.wav
+  enemy_wraith.wav
+  enemy_guardian.wav
+  wave_start.wav
+  weapon_upgrade.wav
+  overheat_warning.wav
+  low_health.wav
+  player_hit.wav
+  player_reboot.wav
+  ui_toggle.wav
+  breach_spawn.wav
+  breach_hit.wav
+  breach_sealed.wav
+  breach_core_loop.wav
+  combo_surge.wav
+
+Mix settings:
+  vector_arena_config.json -> audio
+  Master / Music / Ambience / SFX / transition volumes are independent.
+
+PASS 02 WAVE-ARENA CUES
+- assets/audio/sfx/horde_alarm.wav
+- assets/audio/sfx/guardian_alarm.wav
+- assets/audio/sfx/arena_reconstruct.wav
+These are replaceable by filename like the Pass 01 cues.
+
+PASS 03 TACTICAL-HORDE CUES
+- assets/audio/sfx/gate_charge.wav
+- assets/audio/sfx/flank_alarm.wav
+- assets/audio/sfx/guardian_charge.wav
+- assets/audio/sfx/guardian_slam.wav
+- assets/audio/sfx/hazard_warning.wav
+- assets/audio/sfx/hazard_discharge.wav
+
+Gate/Guardian/hazard world cues are mono so the native audio runtime can position them in 3D. flank_alarm.wav is intentionally a non-positional tactical warning.
+
+PASS 04 MUTATION-HORDE CUES
+- assets/audio/sfx/upgrade_offer.wav
+- assets/audio/sfx/upgrade_select.wav
+- assets/audio/sfx/mutation_shift.wav
+
+These are non-positional interface/simulation-state cues. Keep filenames stable when replacing them.
+
+PASS 05 EVOLVED-HORDE CUES
+- assets/audio/sfx/enemy_evolution.wav
+- assets/audio/sfx/guardian_phase2.wav
+- assets/audio/sfx/guardian_phase3.wav
+- assets/audio/sfx/doctrine_shift.wav
+
+enemy_evolution.wav and Guardian phase cues are mono/positional. doctrine_shift.wav is a non-positional wave-state cue. Keep filenames stable when replacing them.
+
+PASS 06 ARENA-FAMILY NOTE
+  Pass 06 adds no new mandatory audio files. Existing reconstruction,
+  mutation, wave, Guardian, hazard, ambience and combat cues are reused so
+  arena identity is primarily communicated through wireframe palette,
+  geometry scale and existing transition audio rather than multiplying the
+  sound library unnecessarily.
+
+
+PASS 07 STRATEGIC ARCHITECTURE NOTE
+  Pass 07 adds no mandatory audio files. Existing family, reconstruction, gate,
+  hazard and combat cues are preserved unchanged while battlefield geometry varies.

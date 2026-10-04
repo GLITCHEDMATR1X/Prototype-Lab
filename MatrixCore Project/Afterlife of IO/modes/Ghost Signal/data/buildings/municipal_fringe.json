@@ -1,0 +1,36 @@
+{
+  "district_id": "municipal_fringe",
+  "display_name": "Municipal Fringe",
+  "takeover_requires": [
+    "surveillance_annex",
+    "maintenance_depot",
+    "transit_substation"
+  ],
+  "buildings": [
+    {
+      "building_id": "surveillance_annex",
+      "display_name": "Public Surveillance Annex",
+      "security": 1,
+      "unlocks": "maintenance_depot"
+    },
+    {
+      "building_id": "maintenance_depot",
+      "display_name": "Maintenance Depot",
+      "security": 2,
+      "unlocks": "transit_substation"
+    },
+    {
+      "building_id": "transit_substation",
+      "display_name": "Transit Depot",
+      "security": 3,
+      "camera_chain": [
+        "platform_surveillance",
+        "service_control",
+        "routing_core",
+        "rooftop_uplink"
+      ],
+      "civilian_sensitive": true,
+      "unlocks": "municipal_fringe_takeover_and_corporate_mall"
+    }
+  ]
+}

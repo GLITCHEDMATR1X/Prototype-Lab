@@ -1,0 +1,16 @@
+PASS: 105 Interior Only Authority
+BASE: Pass104 Terrain Horizon Continuity Candidate
+TARGET: Remove normal player access to the purposeless flight/drydock mode.
+
+VERIFIED:
+- Normal startup remains interior-first.
+- F is no longer bound to toggle_mode in normal controls.
+- Shell help no longer advertises flight/interior toggle or flight mouse controls.
+- Dormant flight code remains for legacy QA compatibility only.
+- Python compile: PASS.
+- Cache/bytecode residue removed before packaging.
+
+RUNTIME LIMITATION:
+- Panda3D 1.10.16 is not currently importable in this reset container, so native runtime verification is pending.
+
+STATUS: CANDIDATE

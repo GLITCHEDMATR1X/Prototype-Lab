@@ -1,0 +1,99 @@
+THE INDIGO GIANT - PASS 62  A NEATER BUILD
+==========================================
+
+Nothing changes for the player. Saves, settings, your keys and how the Prototype Lab starts the
+game are all the same. Only where the files live has changed.
+
+
+THE NEW LAYOUT
+--------------
+  main.py                   start here - now a small launcher (the Lab cabinet and
+                            RUN_INDIGO_GIANT.bat both run it)
+  RUN_INDIGO_GIANT.bat      INSTALL_REQUIREMENTS.bat   requirements.txt
+  README.md                 now with a "What's where" section
+  CHANGELOG.md
+  controls.json             yours, untouched, still read from here
+  cover.png                 NEW: the title screen, so the Lab cabinet has a picture
+  indigo_giant/             the game, as a Python package
+  assets/ audio/ shaders/ ui/     unchanged
+  docs/                     pass_notes/ (PASS49-62), screenshots/, ANIMATION_MAP.md
+  .dev/                     checks/ (pass38.py ... pass61.py), tools/, RUN_CHECKS.bat,
+                            RUN_DIAGNOSTIC.bat
+
+
+WHY
+---
+  - The game package: the modules have ordinary names (audio, hud, settings, controls, sky...).
+    As indigo_giant.audio and so on they cannot collide with the main Steam game's modules
+    when the game is folded in. Inside the package they import each other relatively.
+  - paths.py is the only file that knows where assets, shaders, audio and fonts are. Before
+    this, nine places each worked it out for themselves.
+  - .dev/ starts with a dot because the Lab hub lists every .py file in a game's folder as a
+    "version" you can pick on its cabinet, but skips folders starting with a dot. The cabinet
+    offered 59 files; it now offers 30 (main.py plus the package), with main.py still the
+    default.
+  - cover.png: the hub shows a top-level picture whose name has "cover" in it.
+
+
+FOR YOU TO DO ONCE: TIDY_OLD_FILES.bat
+--------------------------------------
+I can write files to your computer but not move or delete them there, so the old top-level
+files are still sitting beside the new ones. The game already runs from indigo_giant/ and
+ignores them. Double-click TIDY_OLD_FILES.bat once. It:
+  - first checks the new files are in place (indigo_giant\app.py, the new main.py); if not, it
+    moves nothing
+  - moves PASS49-61 notes into docs\pass_notes\, ANIMATION_MAP.md into docs\, screenshots\
+    into docs\screenshots\
+  - moves the old copies into _to_delete\pass62\ (it does not delete them):
+      - the 27 old game modules, the 26 tools_*.py scripts
+      - perf_probe.py, animation_audit.py, INDIGO_DIAGNOSTIC.py, RUN_INDIGO_DIAGNOSTIC.bat
+      - stale files: animation_audit.csv, indigo_diagnostic.log, validation.txt (Pass 12)
+      - app.py (the old entry point; the Lab uses main.py)
+      - __pycache__
+  - works from an explicit list (no wildcards); never touches controls.json, saves, assets,
+    audio, shaders or ui
+  - lists everything it moved in _to_delete\pass62\moved.txt, then moves itself there too
+Then start the game from the Lab cabinet and from RUN_INDIGO_GIANT.bat. When you are happy,
+delete _to_delete\. To undo, move the files back out of it.
+
+
+NEW DEV CONVENIENCES
+--------------------
+  - .dev\RUN_CHECKS.bat: runs every check (3 at a time) and prints one summary; full logs go to
+    .dev\check_logs\, the summary to .dev\check_results.txt.
+    python .dev/run_checks.py pass61 runs just the ones you name.
+  - .dev\RUN_DIAGNOSTIC.bat: refreshed (it still said "Pass 37"). It now checks every file the
+    game needs, including the Gleebs model and fonts, and that the game package imports, before
+    it starts the game. Its log is .dev\diagnostic.log.
+
+
+HOW IT WAS DONE AND CHECKED
+---------------------------
+  - Built from a copy that was first matched file by file against your folder (every file
+    matched except controls.json, which is yours and was left alone).
+  - Imports rewritten by a script (168 lines, each logged). A search confirmed that no
+    top-level game-module import is left, and that nothing but paths.py uses its own file
+    location.
+  - main.py's game code became indigo_giant/app.py unchanged, apart from the path lines.
+  - The checks and tools find the game from .dev/ themselves; three dynamic imports in them
+    were updated too.
+  - Verified:
+      - every file compiles
+      - all 24 checks pass through the new RUN_CHECKS runner
+      - the 30-minute soak is flat
+      - 3-day playthroughs, seeds 11 and 5: 0 problems, saves reload, p95 2.0-2.1 ms
+      - the game starts the way the hub starts it (python main.py in the game folder), with
+        python -I (isolated), and from another folder
+      - the hub's own entry-point code, run against the new folder, picks main.py
+      - the new-journey relaunch points at main.py; the missing-file message still names the
+        missing file
+      - the tidy list matches your folder exactly: everything listed exists, and what stays at
+        the top level is only main.py, the two .bat files, requirements.txt, README, CHANGELOG,
+        controls.json, assets, audio, shaders and ui
+
+
+NEXT
+----
+Ghost saves: ghost_saves\ (paths.GHOST_SAVES is ready) with generated start points - first
+night, Crimson poisoned, Gleebs waiting, the end - and a way to start from one without
+touching your real journey.

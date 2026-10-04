@@ -1,0 +1,18 @@
+{
+  "schema": "operation_starfall_remote_rover_drone_v0.1",
+  "default_mode": "ROVER",
+  "rover_rule": "use_existing_support_refinery_rover_no_replacement_body",
+  "controls": {
+    "left_alt_or_alt": "toggle_drone_a_pov_control",
+    "right_alt": "toggle_drone_b_pov_control",
+    "control_alt": "return_rover_control",
+    "lmb_disabled_drone": "attach_rescue_pull_cable"
+  },
+  "mission_zone": {
+    "static_overlay_start_ratio": 0.78,
+    "radius": 1680.0,
+    "drone_disable_radius": 2650.0
+  },
+  "view_modes": ["ROVER", "DRONE_A", "DRONE_B"],
+  "required_tests": ["--remote-rover-drone-contract-test", "--smoke-test", "--test-shot --remote-rover-drone-shot", "--test-shot --remote-drone-pov-shot"]
+}

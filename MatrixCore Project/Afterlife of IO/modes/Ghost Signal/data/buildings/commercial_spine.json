@@ -1,0 +1,62 @@
+{
+  "district_id": "commercial_spine",
+  "display_name": "Commercial Spine",
+  "entry_requires": "municipal_fringe",
+  "buildings": [
+    {
+      "building_id": "corporate_mall",
+      "display_name": "Corporate Mall",
+      "security": 4,
+      "camera_chain": [
+        "public_atrium",
+        "advertising_grid",
+        "identity_gallery",
+        "retail_core"
+      ],
+      "playable": true,
+      "unlocks": "media_broadcast"
+    },
+    {
+      "building_id": "media_broadcast",
+      "display_name": "Media Broadcast Center",
+      "security": 5,
+      "playable": true,
+      "state": "vulnerable",
+      "camera_chain": [
+        "broadcast_ingest",
+        "alert_router",
+        "live_studio",
+        "broadcast_core"
+      ],
+      "unlocks": "financial_exchange"
+    },
+    {
+      "building_id": "financial_exchange",
+      "display_name": "Financial Exchange",
+      "security": 6,
+      "playable": true,
+      "state": "vulnerable",
+      "camera_chain": [
+        "settlement_floor",
+        "credential_chain",
+        "audit_vault",
+        "clearing_core"
+      ],
+      "unlocks": "private_clinic"
+    },
+    {
+      "building_id": "private_clinic",
+      "display_name": "Private Clinic",
+      "security": 6,
+      "playable": true,
+      "state": "vulnerable",
+      "camera_chain": [
+        "triage_intake",
+        "medical_identity",
+        "life_support",
+        "biological_archive"
+      ],
+      "unlocks": "industrial_grid"
+    }
+  ]
+}

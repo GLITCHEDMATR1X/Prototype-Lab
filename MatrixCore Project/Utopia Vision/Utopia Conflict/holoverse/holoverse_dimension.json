@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "identity_mode": "host_assigned",
+  "title": "Utopia Conflict // Source Vector Arena",
+  "entry": "main.py",
+  "compatibility": "native",
+  "native_adapter": "holoverse_native_adapter.py",
+  "description": "Utopia Conflict full-source Panda3D dimension with wrapper-safe runtime discovery and visit-long isolation. HoloVerse owns window/camera/frame loop; the linked project owns gameplay.",
+  "return_target": "gleebs_dimension_archive",
+  "engine": "panda3d",
+  "adapter_contract": "holoverse_dimension_v4_persistent_links_frozen_host_camera",
+  "version": "1.2-pass42-runtime-source-discovery"
+}

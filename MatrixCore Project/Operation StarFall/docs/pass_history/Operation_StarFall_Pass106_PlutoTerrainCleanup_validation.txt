@@ -1,0 +1,13 @@
+PASS: 106 Pluto Terrain Cleanup
+BASE: Pass105 Interior Only Authority Candidate
+
+COMPLETED:
+- Pluto rendered radial ring-wall/ridge lift removed.
+- Pluto gameplay barrier-wall/teeth lift removed.
+- Pluto shard clusters reduced 5–9 -> 2–4.
+- Pluto formations made opaque/depth-writing.
+- Pass104 terrain horizon continuation preserved.
+- Other planets frozen.
+
+RUNTIME VISUAL STATUS: PENDING
+Reason: Panda3D 1.10.16 is not importable in this reset container.

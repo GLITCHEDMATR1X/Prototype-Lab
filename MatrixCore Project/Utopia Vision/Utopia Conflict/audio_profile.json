@@ -1,0 +1,206 @@
+{
+  "schema": "glitched_matrix_mission_audio_profile_v1",
+  "id": "utopia_conflict",
+  "mode": "Utopia Conflict",
+  "role": "mission_convergence_combat",
+  "music_loop": "hv_urban_conflict_theme.wav",
+  "music_bus": "music",
+  "music_volume": 0.26,
+  "events": {
+    "fire": {
+      "categories": [
+        "weapons/lasers",
+        "weapons/guns"
+      ],
+      "preferred": [
+        "vw_laser_fire_campaign.wav",
+        "sm_gauss_burst_01.wav"
+      ],
+      "volume": 0.7,
+      "replacement_name": "mech_fire.wav",
+      "accepted_replacement_names": [
+        "mech_fire.wav",
+        "fire.wav",
+        "core_lance.wav"
+      ]
+    },
+    "hit": {
+      "categories": [
+        "damage/hit"
+      ],
+      "preferred": [
+        "sm_shield_hit_01.wav",
+        "vw_hit_heavy_core.wav"
+      ],
+      "volume": 0.62,
+      "replacement_name": "core_hit.wav",
+      "accepted_replacement_names": [
+        "core_hit.wav",
+        "hit.wav"
+      ]
+    },
+    "kill": {
+      "categories": [
+        "damage/destroy"
+      ],
+      "preferred": [
+        "sm_core_destroy_01.wav"
+      ],
+      "volume": 0.76,
+      "replacement_name": "mech_kill.wav",
+      "accepted_replacement_names": [
+        "mech_kill.wav",
+        "kill.wav",
+        "enemy_kill.wav"
+      ]
+    },
+    "chain": {
+      "categories": [
+        "weapons/lasers"
+      ],
+      "preferred": [
+        "sm_laser_plasma_01.wav"
+      ],
+      "volume": 0.5,
+      "replacement_name": "chain_arc.wav",
+      "accepted_replacement_names": [
+        "chain_arc.wav",
+        "chain.wav"
+      ]
+    },
+    "recharge": {
+      "categories": [
+        "ui",
+        "science"
+      ],
+      "preferred": [
+        "sm_ui_select_01.wav",
+        "scan_select.wav"
+      ],
+      "volume": 0.42,
+      "replacement_name": "recharge.wav",
+      "accepted_replacement_names": [
+        "recharge.wav"
+      ]
+    },
+    "dry": {
+      "categories": [
+        "ui"
+      ],
+      "preferred": [
+        "menu_close.wav"
+      ],
+      "volume": 0.28,
+      "replacement_name": "dry_click.wav",
+      "accepted_replacement_names": [
+        "dry_click.wav",
+        "dry.wav"
+      ]
+    },
+    "armor": {
+      "categories": [
+        "damage/hit"
+      ],
+      "preferred": [
+        "sm_shield_hit_01.wav",
+        "armor_clang.wav"
+      ],
+      "volume": 0.58,
+      "replacement_name": "armor_hit.wav",
+      "accepted_replacement_names": [
+        "armor_hit.wav",
+        "armor.wav"
+      ]
+    },
+    "break": {
+      "categories": [
+        "damage/destroy"
+      ],
+      "preferred": [
+        "sm_core_destroy_01.wav",
+        "shield_break.wav"
+      ],
+      "volume": 0.72,
+      "replacement_name": "shield_break.wav",
+      "accepted_replacement_names": [
+        "shield_break.wav",
+        "break.wav"
+      ]
+    },
+    "tell": {
+      "categories": [
+        "ui",
+        "warning"
+      ],
+      "preferred": [
+        "scan_warning.wav",
+        "enemy_tell.wav"
+      ],
+      "volume": 0.44,
+      "replacement_name": "enemy_tell.wav",
+      "accepted_replacement_names": [
+        "enemy_tell.wav",
+        "tell.wav",
+        "warning.wav"
+      ]
+    },
+    "imploder": {
+      "preferred": [
+        "imploder_pulse.wav"
+      ],
+      "replacement_name": "imploder_pulse.wav",
+      "accepted_replacement_names": [
+        "imploder_pulse.wav",
+        "imploder.wav"
+      ]
+    },
+    "magnet": {
+      "preferred": [
+        "magnet_field.wav"
+      ],
+      "replacement_name": "magnet_field.wav",
+      "accepted_replacement_names": [
+        "magnet_field.wav",
+        "magnet.wav"
+      ]
+    },
+    "disassemble": {
+      "preferred": [
+        "disassembler_cut.wav"
+      ],
+      "replacement_name": "disassembler_cut.wav",
+      "accepted_replacement_names": [
+        "disassembler_cut.wav",
+        "disassemble.wav",
+        "disassembler.wav"
+      ]
+    },
+    "pickup": {
+      "preferred": [
+        "weapon_pickup.wav"
+      ],
+      "replacement_name": "weapon_pickup.wav",
+      "accepted_replacement_names": [
+        "weapon_pickup.wav",
+        "pickup.wav",
+        "ammo_pickup.wav"
+      ]
+    }
+  },
+  "notes": "Pass11 makes local SFX replacement explicit: overrides has top priority for temporary tests, custom is the persistent replacement pack, generated SFX remain fallbacks. See SFX_REPLACEMENT_GUIDE.md and assets/audio/sfx/effect_name_map.json.",
+  "music_variants": [
+    "hv_urban_conflict_theme.wav",
+    "hv_urban_conflict_theme_b.wav",
+    "hv_urban_conflict_theme_c.wav"
+  ],
+  "music_rotation_seconds": 60.0,
+  "build": "2026-06-30-etch-line-convergence-pass11-sfx-map",
+  "generated_variant_sfx": [
+    "imploder_pulse.wav",
+    "magnet_field.wav",
+    "disassembler_cut.wav",
+    "weapon_pickup.wav"
+  ],
+  "version": "0.7.7-convergence-pass11-sfx-map",
+  "mode_title": "Utopia Conflict"
+}

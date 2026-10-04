@@ -1,0 +1,119 @@
+AFTERLIFE OF IO — REPLACEABLE ASSET INDEX — PASS 130
+
+Replace files IN PLACE. The runtime reads these folders directly. Do not create duplicate replacement trees.
+Raw machine source art is the one exception: new PNGs may be added to assets/current/variants/machines/ for Workshop fabrication.
+
+PLAYER
+  assets/custom/player_exile/
+  idle_*.png, walk_*.png, sprint_*.png, jump_*.png
+
+SABLE / GHOST NPC
+  assets/custom/sable/
+  idle1.png, idle2.png, idle3.png, idle4.png
+
+MAIN MACHINE KIT — FINISHED COMPONENTS
+  assets/current/machines/
+  six authored components remain the stable 1–6 kit
+  catalog.json defines gameplay role, Bit cost, common scale envelope, and contact radius
+
+MACHINE FABRICATION SOURCE ART / CUSTOM PARTS
+  assets/current/variants/machines/
+  raw PNGs are SOURCE ART only and do not enter shop/inventory automatically
+  a PNG becomes a finished custom component only when catalog.json defines its metadata
+  Machine Workshop fabrication writes custom_part_###.png plus its metadata
+
+WORLD SOURCE ART
+  assets/source/layers/
+  numbered A/B layer PNGs
+
+GUARDIANS / BOSSES
+  assets/source/Entities/
+  boss1.png ... boss6.png, finalboss.png
+
+DRONES / MECHANICAL FRAGMENTS
+  assets/source/drones/
+  player_drone.png        dedicated player drone
+  drone*.png              enemy hunter / mechanical fragment pool
+
+PARTICLES / WORLD MEMORY DEBRIS / WEATHER FLECKS / DAMAGE FX
+  assets/source/particles/
+  every valid PNG participates in the shared particle bank
+
+SHRINE / OBELISK
+  assets/source/shrine_source.png
+
+START / PAUSE / SETTINGS / SAVE MENUS
+  assets/current/menu/
+  background.png, frame.png, logo.png, selector.png, panel.png,
+  item.png, item_selected.png, control.png,
+  dialogue_panel.png, dialogue_selector.png
+
+HUD / MACHINE / HELP / CONSOLE / BATTLE TRAY — OPTIONAL SKINS
+  assets/current/hud/
+  machine_hotbar_panel.png
+  machine_slot.png
+  machine_slot_selected.png
+  machine_workshop_panel.png
+  machine_workshop_row.png
+  machine_workshop_row_selected.png
+  help_panel.png
+  console_panel.png
+  battle_tray.png
+  Missing files fall back to the existing menu/procedural HUD styling.
+
+MENU FONTS — NEW IN PASS 97
+  assets/current/menu/fonts/
+  title_font.ttf, menu_font.ttf, body_font.ttf, small_font.ttf
+
+BATTLE
+  assets/current/battle/
+  background.png, gleebs.png, the_gate.png, fallback_chamber.png
+
+BATTLE BACKGROUND VARIANTS
+  assets/current/variants/battle/
+  boss1.png ... boss6.png, finalboss.png
+
+WORLD STATE VARIANTS
+  assets/current/variants/world/future/
+  assets/current/variants/world/past/
+
+WEATHER OVERLAYS
+  assets/current/variants/weather/future/
+  assets/current/variants/weather/past/
+
+TRANSITIONS
+  assets/current/variants/transitions/
+  battle_entry.png, shrine_bind.png, time_shift.png
+
+RECOVERED-STORY PLACEHOLDERS
+  assets/current/story/
+  reconstruction_left.png
+  reconstruction_right.png
+
+WORLD FX PLACEHOLDERS
+  assets/current/world_fx/
+  absence_echo.png
+  temporal_anchor_future.png
+  temporal_anchor_past.png
+
+ACTIVE DERIVED/FALLBACK PRESENTATION
+  assets/derived/
+  fog_volume_far.png
+  fog_volume_mid.png
+  fog_volume_near.png
+  fog_wisp.png
+  player_glow.png
+  spire_mid_a.png
+  spire_mid_b.png
+  vignette.png
+
+AUDIO
+  assets/audio/ambient_music/
+  assets/audio/sfx/
+
+RULES
+- PNG replacements may be any reasonable dimensions unless a local README says otherwise; runtime fit/scaling preserves aspect ratio where applicable.
+- Transparent PNGs are preferred for characters, particles, story figures, anchors, FX, and overlay ornaments.
+- Missing/corrupt presentation replacements are nonfatal and use existing fallbacks where supported.
+- Missing/corrupt fonts are nonfatal and fall back to a system or pygame default font.
+- Replacement art must never control gameplay state, collision, saves, progression, or damage values.

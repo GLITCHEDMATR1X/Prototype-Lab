@@ -1,0 +1,19 @@
+{
+  "compatibility": "native",
+  "description": "HoloVerse wave/horde combat simulation shard with five color-coded arena families, expanding arena scale, staged enemy evolutions, encounter doctrines, three-phase Guardians, telegraphed gates/hazards, pooled wave director, local audio lifecycle and result telemetry.",
+  "engine": "panda3d",
+  "entry": "main.py",
+  "host_contract": "holoverse_dimension_v1",
+  "id": "vector_arena",
+  "identity_mode": "portable_uuid",
+  "native_adapter": "standalone_native_adapter.py",
+  "native_contract_method": "create_mode(...).get_native_contract()",
+  "pause_action": "escape",
+  "protocol": "holoverse_responder_v1",
+  "requires_mouse_capture": true,
+  "responder": "holoverse/responder.py",
+  "return_action": "tab",
+  "return_target": "gleebs_dimension_archive",
+  "schema": 1,
+  "title": "Vector Arena"
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "operation_starfall_mastering_manifest_v1",
+  "phase": "Mastering / Remastering",
+  "current_pass": "Pass100_ShellPanelAuthority",
+  "active_worlds": [
+    "mimas",
+    "enceladus",
+    "iapetus",
+    "titan",
+    "mars",
+    "pluto",
+    "europa",
+    "triton"
+  ],
+  "display_authority": "Worlds/display_config.py",
+  "world_runtime": "Worlds/main.py",
+  "shell_runtime": "main.py",
+  "transport_authority": "Worlds/transport_link.py",
+  "release_forbidden_patterns": [
+    "__pycache__",
+    "*.pyc",
+    "*.pyo",
+    "root stale Operation_StarFall_PassXX reports",
+    "root screenshots outside verification"
+  ],
+  "required_standards": [
+    "standards/OPERATION_STARFALL_MASTERING_PHASE_v0.1.md",
+    "standards/OPERATION_STARFALL_SCREEN_STANDARD_v0.2.md",
+    "standards/OPERATION_STARFALL_ALL_WORLDS_SCREEN_STANDARD_v0.3.md",
+    "standards/starfall_mastering_manifest_v0.1.json",
+    "standards/starfall_package_hygiene_v0.1.json"
+  ],
+  "next_recommended_pass": "PENDING_USER_ACCEPTANCE"
+}

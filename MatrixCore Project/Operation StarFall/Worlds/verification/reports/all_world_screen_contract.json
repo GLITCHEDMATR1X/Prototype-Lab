@@ -1,0 +1,81 @@
+{
+  "checks": {
+    "canonical_worlds": true,
+    "same_window_inheritance": true,
+    "shared_display_config": true,
+    "shared_hud_canvas": true,
+    "shared_hud_cycle": true,
+    "shared_screen_shot_flag": true,
+    "stale_verify_label_removed_for_normal_shots": true,
+    "world_metadata_complete": true
+  },
+  "pass_label": "Operation StarFall 97 // Responsive Display Window Authority",
+  "rule": "All canonical StarFall worlds use the same responsive display authority, aspect-safe HUD layout, default minimal HUD, and inherited window flags.",
+  "status": "PASS",
+  "worlds": {
+    "enceladus": {
+      "display_name": "ENCELADUS",
+      "mission_id": "enceladus_ice",
+      "registered": true,
+      "scan_prompt": "SWEEP SONAR FOR A RARE DRILL HOTSPOT",
+      "screen_canvas_same_source": true,
+      "texture_prefix": "enceladus"
+    },
+    "europa": {
+      "display_name": "EUROPA",
+      "mission_id": "europa_depths",
+      "registered": true,
+      "scan_prompt": "SWEEP SONAR THROUGH FRACTURE CANYONS AND RADIATION-SCARRED ICE",
+      "screen_canvas_same_source": true,
+      "texture_prefix": "europa"
+    },
+    "iapetus": {
+      "display_name": "IAPETUS",
+      "mission_id": "iapetus_ridge",
+      "registered": true,
+      "scan_prompt": "ASCEND THE RIDGE // GRAPPLE FOR THOLIN SHARDS",
+      "screen_canvas_same_source": true,
+      "texture_prefix": "iapetus"
+    },
+    "mars": {
+      "display_name": "MARS",
+      "mission_id": "mars_snow_caps",
+      "registered": true,
+      "scan_prompt": "SWEEP SONAR ACROSS SNOW CAP BASINS AND DRY CHANNELS",
+      "screen_canvas_same_source": true,
+      "texture_prefix": "mars"
+    },
+    "mimas": {
+      "display_name": "MIMAS",
+      "mission_id": "mimas_snowfield",
+      "registered": true,
+      "scan_prompt": "SWEEP SONAR OVER THICK CRATER SNOWPACK",
+      "screen_canvas_same_source": true,
+      "texture_prefix": "mimas"
+    },
+    "pluto": {
+      "display_name": "PLUTO",
+      "mission_id": "pluto_nitrogen_frontier",
+      "registered": true,
+      "scan_prompt": "SWEEP SONAR ACROSS SPUTNIK PLAIN AND ICE BLOCKS",
+      "screen_canvas_same_source": true,
+      "texture_prefix": "pluto"
+    },
+    "titan": {
+      "display_name": "TITAN",
+      "mission_id": "titan_methane_coast",
+      "registered": true,
+      "scan_prompt": "SWEEP SONAR ALONG METHANE LAKE SHORES",
+      "screen_canvas_same_source": true,
+      "texture_prefix": "titan"
+    },
+    "triton": {
+      "display_name": "TRITON",
+      "mission_id": "triton_valleys",
+      "registered": true,
+      "scan_prompt": "SWEEP SONAR THROUGH LONG FROZEN VALLEYS AND VOLATILE FROST FANS",
+      "screen_canvas_same_source": true,
+      "texture_prefix": "triton"
+    }
+  }
+}

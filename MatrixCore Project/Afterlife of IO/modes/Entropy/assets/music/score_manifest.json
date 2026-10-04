@@ -1,0 +1,40 @@
+{
+  "generator_version": "entropy-score-v1",
+  "sample_rate": 48000,
+  "loop_seconds": 20.0,
+  "expedition_source": "MCF24.mp3",
+  "generated": [
+    {
+      "state": "home",
+      "file": "score_home_signal.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "duration": 20.0,
+      "peak": 0.3436
+    },
+    {
+      "state": "ship_recovery",
+      "file": "score_ship_recovery.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "duration": 20.0,
+      "peak": 0.308862
+    },
+    {
+      "state": "collapse",
+      "file": "score_collapse_pressure.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "duration": 20.0,
+      "peak": 0.414381
+    },
+    {
+      "state": "gleebs",
+      "file": "score_gleebs_link.wav",
+      "sample_rate": 48000,
+      "channels": 2,
+      "duration": 20.0,
+      "peak": 0.333363
+    }
+  ]
+}

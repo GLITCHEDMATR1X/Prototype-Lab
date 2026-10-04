@@ -1,0 +1,21 @@
+{
+  "master_volume": 1.0,
+  "zones": [
+    {
+      "id": "ocean_perimeter",
+      "enabled": true,
+      "asset": "audio/ambience/ocean_loop.wav",
+      "shape": "radial_outer",
+      "center": [
+        0.0,
+        0.0
+      ],
+      "fade_start_radius": 350.0,
+      "full_volume_radius": 500.0,
+      "max_volume": 0.68,
+      "smoothing_seconds": 0.85,
+      "loop": true,
+      "description": "Physical-world ocean ambience surrounding the outer wall. Silent in the deep interior, smoothly louder toward the coast."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+Operation StarFall Pass102 Reference 1080p Display Authority
+STATUS=CANDIDATE
+ENGINE=Panda3D 1.10.16
+BASE=Pass101 Operation Launch Authority Candidate
+PRIMARY_TARGET=1920x1080 startup/display authority
+
+PREVIOUS_GATES
+operation_launch_authority=PASS
+shell_ui_authority=PASS
+operation_return_controls_mimas=PASS
+operation_cycle_mimas_enceladus=PASS
+
+DISPLAY_GATES
+display_authority_test=PASS
+default_headless_surface=1920x1080
+simulated_1080p_exact_surface=PASS
+simulated_1440p_decorated_1920x1080=PASS
+simulated_1280x720_minimum_preserved=PASS
+settings_pass97_default_migration=PASS
+explicit_720p_setting_preserved=PASS
+world_display_contract=PASS
+screen_layout_contract=PASS
+all_world_screen_contract=PASS
+transport_link_contract=PASS
+
+VISUAL_PROOF
+flight_1080=verification/screenshots/Pass102_StarFall_Flight_1080p.png
+map_1080=verification/screenshots/Pass102_Saturn_Map_1080p.png
+map_720=verification/screenshots/Pass102_Saturn_Map_720p.png
+
+PENDING
+native_windows_display_behavior=YES
+user_acceptance=YES
+
+FRESH_PACKAGE_PREVERIFY
+source_compile=PASS
+package_hygiene_before_runtime=PASS
+fresh_default_surface=1920x1080
+fresh_shell_ui_authority=PASS
+fresh_operation_launch_authority=PASS
+fresh_operation_return_controls_mimas=PASS
+fresh_operation_cycle_mimas_enceladus=PASS
+package_hygiene_after_runtime=PASS
+cache_residue_after_runtime=0

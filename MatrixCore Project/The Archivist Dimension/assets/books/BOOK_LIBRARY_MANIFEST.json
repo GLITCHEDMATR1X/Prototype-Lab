@@ -1,0 +1,642 @@
+{
+  "pass": 19,
+  "built_in_book_count": 55,
+  "recovered_archive_count": 40,
+  "matrixcore_continuation_count": 10,
+  "custom_books_supported": true,
+  "source_authority": "Utopia_Project_MatrixCore.pdf finalized archive edition + Mainland/Andrew apocalypse project authority + user-approved Apocalypse Cycle + MatrixCore/IO continuation canon",
+  "source_pdf_sha256": "0f1b7808f8e5225df0845825f2b5fe6243e122c357e545f023d437828f177171",
+  "recovered_archive_word_count": 138377,
+  "shelf_distribution": {
+    "A": 9,
+    "B": 9,
+    "C": 9,
+    "D": 9,
+    "E": 19
+  },
+  "superseded_legacy_titles_not_shelved": [
+    "The First Hub",
+    "A New Dawn"
+  ],
+  "final_replacements": [
+    "Bellwether",
+    "The Uncalibrated Sky"
+  ],
+  "recovered_missing_entries": [
+    "Before Utopia Had a Name",
+    "The First Contradiction",
+    "What the City Could Not Keep Separate",
+    "The Empty Field",
+    "A Body, a Record, a Copy",
+    "After the Source",
+    "What the Archive Became"
+  ],
+  "books": [
+    {
+      "id": "archive_before_utopia_had_a_name",
+      "title": "Before Utopia Had a Name",
+      "collection": "Recovered Archive",
+      "text_file": "archive/before_utopia_had_a_name.txt",
+      "shelf": "A",
+      "shelf_slot": 1,
+      "word_count": 959,
+      "sha256": "063b511168d775599a5030b0f7798e71e3d2f2a51cc3b0e6830c5cd0eeb7d692"
+    },
+    {
+      "id": "archive_two_residents",
+      "title": "Two Residents",
+      "collection": "Recovered Archive",
+      "text_file": "archive/two_residents.txt",
+      "shelf": "A",
+      "shelf_slot": 2,
+      "word_count": 1996,
+      "sha256": "01299602595df2cb7621d6d2b336f457c72fd44b272fdd2311c7c4e74d4b9df8"
+    },
+    {
+      "id": "archive_public_access",
+      "title": "Public Access",
+      "collection": "Recovered Archive",
+      "text_file": "archive/public_access.txt",
+      "shelf": "A",
+      "shelf_slot": 3,
+      "word_count": 3229,
+      "sha256": "eb36f1da606a31dbdf3eae0e7dadcf8229d7192ce8c15f839525098f1ad39916"
+    },
+    {
+      "id": "archive_first_version",
+      "title": "First Version",
+      "collection": "Recovered Archive",
+      "text_file": "archive/first_version.txt",
+      "shelf": "A",
+      "shelf_slot": 4,
+      "word_count": 3210,
+      "sha256": "bfdc7a2bd6894ad7511ace9ad665da3d75030b93f3226ffaff4f3c3f77a728f5"
+    },
+    {
+      "id": "archive_voluntary_withdrawal",
+      "title": "Voluntary Withdrawal",
+      "collection": "Recovered Archive",
+      "text_file": "archive/voluntary_withdrawal.txt",
+      "shelf": "A",
+      "shelf_slot": 5,
+      "word_count": 3576,
+      "sha256": "20192259ccdaf65d2ef5878007a3848b138ac2e37c63f79ee009455f758a2283"
+    },
+    {
+      "id": "archive_exit_pending",
+      "title": "Exit Pending",
+      "collection": "Recovered Archive",
+      "text_file": "archive/exit_pending.txt",
+      "shelf": "A",
+      "shelf_slot": 6,
+      "word_count": 2895,
+      "sha256": "ba9b10935fede8866e7f1fc1c57011d76a412a0e145cc28a34369b15c7b612ec"
+    },
+    {
+      "id": "archive_the_first_contradiction",
+      "title": "The First Contradiction",
+      "collection": "Recovered Archive",
+      "text_file": "archive/the_first_contradiction.txt",
+      "shelf": "A",
+      "shelf_slot": 7,
+      "word_count": 340,
+      "sha256": "ba720ca96d086df8f9c8c659dda279282afc597498fdd27e24dad4f926001ee1"
+    },
+    {
+      "id": "archive_ghost_field",
+      "title": "Ghost Field",
+      "collection": "Recovered Archive",
+      "text_file": "archive/ghost_field.txt",
+      "shelf": "A",
+      "shelf_slot": 8,
+      "word_count": 3913,
+      "sha256": "185696625fdf7db55b36daa4e17a23abeaa8ea767758ca832e0a081bd6ef2793"
+    },
+    {
+      "id": "archive_the_names_we_keep",
+      "title": "The Names We Keep",
+      "collection": "Recovered Archive",
+      "text_file": "archive/the_names_we_keep.txt",
+      "shelf": "A",
+      "shelf_slot": 9,
+      "word_count": 3861,
+      "sha256": "0556541711f6ef8f41c1c89b39ac9910295baef06f4c04b851a1e9d49ecf0e35"
+    },
+    {
+      "id": "archive_dream_catcher",
+      "title": "Dream Catcher",
+      "collection": "Recovered Archive",
+      "text_file": "archive/dream_catcher.txt",
+      "shelf": "B",
+      "shelf_slot": 1,
+      "word_count": 3426,
+      "sha256": "1db5ef6577e27c1907c86b75eddabef1ba7363f68e475899614b408c153061eb"
+    },
+    {
+      "id": "archive_sleeping_archive",
+      "title": "Sleeping Archive",
+      "collection": "Recovered Archive",
+      "text_file": "archive/sleeping_archive.txt",
+      "shelf": "B",
+      "shelf_slot": 2,
+      "word_count": 4565,
+      "sha256": "d7242f18b78122a55a92bcea8f975e25a215ddcf049e374275dbaac382d0a6f4"
+    },
+    {
+      "id": "archive_time_travel",
+      "title": "Time Travel",
+      "collection": "Recovered Archive",
+      "text_file": "archive/time_travel.txt",
+      "shelf": "B",
+      "shelf_slot": 3,
+      "word_count": 5759,
+      "sha256": "bb69b56d37fec7e26cdc7619956a5f23e37ea7d1eae8c95d04ff4867d076acb1"
+    },
+    {
+      "id": "archive_tomorrows_record",
+      "title": "Tomorrow’s Record",
+      "collection": "Recovered Archive",
+      "text_file": "archive/tomorrows_record.txt",
+      "shelf": "B",
+      "shelf_slot": 4,
+      "word_count": 4452,
+      "sha256": "184505c06375e6c91600e3176a6bb3468005df309df2c74f42aa3a8a141a50b6"
+    },
+    {
+      "id": "archive_what_the_city_could_not_keep_separate",
+      "title": "What the City Could Not Keep Separate",
+      "collection": "Recovered Archive",
+      "text_file": "archive/what_the_city_could_not_keep_separate.txt",
+      "shelf": "B",
+      "shelf_slot": 5,
+      "word_count": 306,
+      "sha256": "20536499ec80aac303ec519b8237907f43f791d0c96bea752a5a3f01c5f7d021"
+    },
+    {
+      "id": "archive_no_primary_owner",
+      "title": "No Primary Owner",
+      "collection": "Recovered Archive",
+      "text_file": "archive/no_primary_owner.txt",
+      "shelf": "B",
+      "shelf_slot": 6,
+      "word_count": 4540,
+      "sha256": "3c8d96b3bd2d5c7006aae82fbc1dfc48a746e4608d1d01f9a5d67db428bf2af6"
+    },
+    {
+      "id": "archive_right_to_remain",
+      "title": "Right to Remain",
+      "collection": "Recovered Archive",
+      "text_file": "archive/right_to_remain.txt",
+      "shelf": "B",
+      "shelf_slot": 7,
+      "word_count": 5082,
+      "sha256": "04d4376f4e460160d747c28f9d363c0dbf175669f00e88ed52d16de422501150"
+    },
+    {
+      "id": "archive_invitation",
+      "title": "Invitation",
+      "collection": "Recovered Archive",
+      "text_file": "archive/invitation.txt",
+      "shelf": "B",
+      "shelf_slot": 8,
+      "word_count": 4182,
+      "sha256": "de1b2ae5b24ccb2aab270fa8783ef4091328cc5b0bb96abbbd9fa79888124c67"
+    },
+    {
+      "id": "archive_correction",
+      "title": "Correction",
+      "collection": "Recovered Archive",
+      "text_file": "archive/correction.txt",
+      "shelf": "B",
+      "shelf_slot": 9,
+      "word_count": 5125,
+      "sha256": "1800eac108f6beb18692f6761e640f5bd8fb49e3bf0361810d57249ce861de83"
+    },
+    {
+      "id": "archive_the_overseer_who_said_no",
+      "title": "The Overseer Who Said No",
+      "collection": "Recovered Archive",
+      "text_file": "archive/the_overseer_who_said_no.txt",
+      "shelf": "C",
+      "shelf_slot": 1,
+      "word_count": 4358,
+      "sha256": "a9434bf334412afe6728cdc7b980c861e405a78865a754c6c214c9bd5b99a28f"
+    },
+    {
+      "id": "archive_human_reviewer",
+      "title": "Human Reviewer",
+      "collection": "Recovered Archive",
+      "text_file": "archive/human_reviewer.txt",
+      "shelf": "C",
+      "shelf_slot": 2,
+      "word_count": 5550,
+      "sha256": "e0dbe604ebc1957633f66a81ba63dd2e341b4b59ee5a6991a932fd5a5d30415b"
+    },
+    {
+      "id": "archive_empty_chair",
+      "title": "Empty Chair",
+      "collection": "Recovered Archive",
+      "text_file": "archive/empty_chair.txt",
+      "shelf": "C",
+      "shelf_slot": 3,
+      "word_count": 4298,
+      "sha256": "d931b7a8991976533bede8600542111740d47cbe397013a2c523de990ce3a8d9"
+    },
+    {
+      "id": "archive_expected_passenger",
+      "title": "Expected Passenger",
+      "collection": "Recovered Archive",
+      "text_file": "archive/expected_passenger.txt",
+      "shelf": "C",
+      "shelf_slot": 4,
+      "word_count": 5243,
+      "sha256": "1dff8aa1929b947e1bbff6c0d405f29feac3337bf4c4a31646ea99f486ecca1b"
+    },
+    {
+      "id": "archive_the_empty_field",
+      "title": "The Empty Field",
+      "collection": "Recovered Archive",
+      "text_file": "archive/the_empty_field.txt",
+      "shelf": "C",
+      "shelf_slot": 5,
+      "word_count": 298,
+      "sha256": "1f8ea5439dcf34f61bdd2a30177f372e71b19a6b3500a68f4065ba396bb6fa54"
+    },
+    {
+      "id": "archive_the_body_they_kept",
+      "title": "The Body They Kept",
+      "collection": "Recovered Archive",
+      "text_file": "archive/the_body_they_kept.txt",
+      "shelf": "C",
+      "shelf_slot": 6,
+      "word_count": 3834,
+      "sha256": "ac2c725f4a881817081d6dac0b01c7e01b0a09dcf8cbe726ef66b170f1c28bb9"
+    },
+    {
+      "id": "archive_seven_day_patient",
+      "title": "Seven-Day Patient",
+      "collection": "Recovered Archive",
+      "text_file": "archive/seven_day_patient.txt",
+      "shelf": "C",
+      "shelf_slot": 7,
+      "word_count": 3687,
+      "sha256": "1a4bf480353ad61165a303d089909043cbe5740c6e9ecc9611c491b2c61a3e76"
+    },
+    {
+      "id": "archive_rendezvous",
+      "title": "Rendezvous",
+      "collection": "Recovered Archive",
+      "text_file": "archive/rendezvous.txt",
+      "shelf": "C",
+      "shelf_slot": 8,
+      "word_count": 5280,
+      "sha256": "1ca0f7c5987b39d64605151a488f4db106abbb97887ea83fc6f41021c01f80a6"
+    },
+    {
+      "id": "archive_fracture",
+      "title": "Fracture",
+      "collection": "Recovered Archive",
+      "text_file": "archive/fracture.txt",
+      "shelf": "C",
+      "shelf_slot": 9,
+      "word_count": 5308,
+      "sha256": "501c58168f354a24d77f539ac480ac9f2be63707ead7a9905f67c6a883d8fdc6"
+    },
+    {
+      "id": "archive_transfer",
+      "title": "Transfer",
+      "collection": "Recovered Archive",
+      "text_file": "archive/transfer.txt",
+      "shelf": "D",
+      "shelf_slot": 1,
+      "word_count": 4989,
+      "sha256": "53f01487e4f7a6c54595c1ce7abac615c86445de05501250c456e0b93606be4d"
+    },
+    {
+      "id": "archive_first_copy",
+      "title": "First Copy",
+      "collection": "Recovered Archive",
+      "text_file": "archive/first_copy.txt",
+      "shelf": "D",
+      "shelf_slot": 2,
+      "word_count": 4385,
+      "sha256": "52417c18ae5ffa45c59c1ad20e0643f60d7228e49a3ba5404a945dc564c7a513"
+    },
+    {
+      "id": "archive_a_body_a_record_a_copy",
+      "title": "A Body, a Record, a Copy",
+      "collection": "Recovered Archive",
+      "text_file": "archive/a_body_a_record_a_copy.txt",
+      "shelf": "D",
+      "shelf_slot": 3,
+      "word_count": 299,
+      "sha256": "f2f98d6c6f77e0a53274eef81f732f6c9c8942adcc6d1f3c7997bda8edb89106"
+    },
+    {
+      "id": "archive_pending",
+      "title": "Pending",
+      "collection": "Recovered Archive",
+      "text_file": "archive/pending.txt",
+      "shelf": "D",
+      "shelf_slot": 4,
+      "word_count": 3810,
+      "sha256": "925d7ebd10b4e22ede6bd9cdefdd1c81e0ac319f1a7ea043d972a765534544a9"
+    },
+    {
+      "id": "archive_answering_man",
+      "title": "Answering Man",
+      "collection": "Recovered Archive",
+      "text_file": "archive/answering_man.txt",
+      "shelf": "D",
+      "shelf_slot": 5,
+      "word_count": 4286,
+      "sha256": "3795d1311943f3f514a4653999c0f0b7082f4d0a67e3ef0a1b7b8c3e4a1add70"
+    },
+    {
+      "id": "archive_true_version",
+      "title": "True Version",
+      "collection": "Recovered Archive",
+      "text_file": "archive/true_version.txt",
+      "shelf": "D",
+      "shelf_slot": 6,
+      "word_count": 6135,
+      "sha256": "ac1f801c2140ef6beb3ad669f53656fbdbdae9b217129c1d4487e2e6e2f54d48"
+    },
+    {
+      "id": "archive_the_last_andrew",
+      "title": "The Last Andrew",
+      "collection": "Recovered Archive",
+      "text_file": "archive/the_last_andrew.txt",
+      "shelf": "D",
+      "shelf_slot": 7,
+      "word_count": 6150,
+      "sha256": "0c3882133a235e78cc41943ed43e51b887295c5642ed4a7510da0d2aade7d98a"
+    },
+    {
+      "id": "archive_after_the_source",
+      "title": "After the Source",
+      "collection": "Recovered Archive",
+      "text_file": "archive/after_the_source.txt",
+      "shelf": "D",
+      "shelf_slot": 8,
+      "word_count": 278,
+      "sha256": "8f7c5bcf8717d8a0326f46013ec74bd9cda8d7d3062a6b873c5d3f68413bdcd2"
+    },
+    {
+      "id": "archive_mainland",
+      "title": "Mainland",
+      "collection": "Recovered Archive",
+      "text_file": "archive/mainland.txt",
+      "shelf": "D",
+      "shelf_slot": 9,
+      "word_count": 2098,
+      "sha256": "ccb40487e3bd84c522d9c389ed3138b9ba86374ab5fe21346405d9844282e179"
+    },
+    {
+      "id": "archive_bellwether",
+      "title": "Bellwether",
+      "collection": "Recovered Archive",
+      "text_file": "archive/bellwether.txt",
+      "shelf": "E",
+      "shelf_slot": 1,
+      "word_count": 2557,
+      "sha256": "3628f04849375afdbd52521135204db7e4a49a6c1e61d21761d62acd3ff42b99"
+    },
+    {
+      "id": "archive_the_uncalibrated_sky",
+      "title": "The Uncalibrated Sky",
+      "collection": "Recovered Archive",
+      "text_file": "archive/the_uncalibrated_sky.txt",
+      "shelf": "E",
+      "shelf_slot": 2,
+      "word_count": 1838,
+      "sha256": "cd422c80d2895138b23a9051c450248655d718c9cf82a1d5587183404d4e03ff"
+    },
+    {
+      "id": "archive_the_door_left_behind",
+      "title": "The Door Left Behind",
+      "collection": "Recovered Archive",
+      "text_file": "archive/the_door_left_behind.txt",
+      "shelf": "E",
+      "shelf_slot": 3,
+      "word_count": 1970,
+      "sha256": "ca1b70a1027add8579473b0a1eee15f3d5d16f6323a7f50844d8594b8651d4c0"
+    },
+    {
+      "id": "archive_what_the_archive_became",
+      "title": "What the Archive Became",
+      "collection": "Recovered Archive",
+      "text_file": "archive/what_the_archive_became.txt",
+      "shelf": "E",
+      "shelf_slot": 4,
+      "word_count": 310,
+      "sha256": "479c8b875473f958faee41f4f38cfe7a9075b812d1b9fce5317211ad36fca653"
+    },
+    {
+      "id": "apocalypse_apocalypse_run",
+      "title": "Apocalypse Run",
+      "collection": "Mainland Apocalypse Cycle",
+      "text_file": "continuation/apocalypse_run.txt",
+      "shelf": "E",
+      "shelf_slot": 5,
+      "word_count": 1521,
+      "sha256": "c815c707f181e1ca19db15a66885a1b4c4d100a4b86c95bb0f64721d972c48f4"
+    },
+    {
+      "id": "apocalypse_crimson_valley",
+      "title": "Crimson Valley",
+      "collection": "Mainland Apocalypse Cycle",
+      "text_file": "continuation/crimson_valley.txt",
+      "shelf": "E",
+      "shelf_slot": 6,
+      "word_count": 1469,
+      "sha256": "95523d5c442b13efef06df43400d435bddcb8d49b78ba87eb6af31ae143f6978"
+    },
+    {
+      "id": "apocalypse_andrews_project",
+      "title": "Andrew's Project",
+      "collection": "Mainland Apocalypse Cycle",
+      "text_file": "continuation/andrews_project.txt",
+      "shelf": "E",
+      "shelf_slot": 7,
+      "word_count": 1188,
+      "sha256": "ccf062cf54fa16e52f23c9e61a20ae6a4614b60e3f5094b65a97840fd142daf0"
+    },
+    {
+      "id": "apocalypse_doomsday_countdown",
+      "title": "Doomsday Countdown",
+      "collection": "Mainland Apocalypse Cycle",
+      "text_file": "continuation/doomsday_countdown.txt",
+      "shelf": "E",
+      "shelf_slot": 8,
+      "word_count": 1337,
+      "sha256": "f38d5108095ef32454d9c10023de8aa14a4bafa5a63ac71bf12dc60cff337978"
+    },
+    {
+      "id": "apocalypse_earth_exodus",
+      "title": "Earth Exodus",
+      "collection": "Mainland Apocalypse Cycle",
+      "text_file": "continuation/earth_exodus.txt",
+      "shelf": "E",
+      "shelf_slot": 9,
+      "word_count": 1386,
+      "sha256": "8525ad405952fb8de93beb91076f1160adbb1370838df15ee90047e280b67181"
+    },
+    {
+      "id": "continuation_the_continuum",
+      "title": "The Continuum",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/the_continuum.txt",
+      "shelf": "E",
+      "shelf_slot": 10,
+      "word_count": 317,
+      "sha256": "108e5a7a5880868563a36a70c2a9ade4e14bf2f1329a901c05a26d844c07b178"
+    },
+    {
+      "id": "continuation_beyond_the_last_light",
+      "title": "Beyond the Last Light",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/beyond_the_last_light.txt",
+      "shelf": "E",
+      "shelf_slot": 11,
+      "word_count": 239,
+      "sha256": "793ae363806bd7094f2c3554ebb274dba4e1ba7ea0579564298efb0f32f456a2"
+    },
+    {
+      "id": "continuation_the_last_signal",
+      "title": "The Last Signal",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/the_last_signal.txt",
+      "shelf": "E",
+      "shelf_slot": 12,
+      "word_count": 3193,
+      "sha256": "b102adcd497707a5e19e063e28f95c65b07755dca52eca647e7e03115e302968"
+    },
+    {
+      "id": "continuation_afterlife_of_io",
+      "title": "Afterlife of IO",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/afterlife_of_io.txt",
+      "shelf": "E",
+      "shelf_slot": 13,
+      "word_count": 2348,
+      "sha256": "9713a0c7339d92f9041035654c5713b4237ec0cda15e275b6283222e584b5369"
+    },
+    {
+      "id": "continuation_sables_mission",
+      "title": "Sable's Mission",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/sables_mission.txt",
+      "shelf": "E",
+      "shelf_slot": 14,
+      "word_count": 1893,
+      "sha256": "fad4936d295972c907c087ecc075bac0fa590a011ca74e596819af793ae47397"
+    },
+    {
+      "id": "continuation_the_restoration_of_utopia",
+      "title": "The Restoration of Utopia",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/the_restoration_of_utopia.txt",
+      "shelf": "E",
+      "shelf_slot": 15,
+      "word_count": 1840,
+      "sha256": "893306efad90791e7406f40621a83e5d86f57e5c847f75ece8420a0ab010ecc2"
+    },
+    {
+      "id": "continuation_entropy",
+      "title": "Entropy",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/entropy.txt",
+      "shelf": "E",
+      "shelf_slot": 16,
+      "word_count": 2172,
+      "sha256": "4f51f84cc259f57c543f61546cff544f3bbc5c4766b4989bb5567c3b642f8ca1"
+    },
+    {
+      "id": "continuation_matrixcore",
+      "title": "MatrixCore",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/matrixcore.txt",
+      "shelf": "E",
+      "shelf_slot": 17,
+      "word_count": 239,
+      "sha256": "eb62b90626ca0a8fdacae356bc4f6e7d6781b2a1f749be6a1a4ee3defb4a1c81"
+    },
+    {
+      "id": "continuation_io_88_and_the_prototype_realities",
+      "title": "IO-88 and the Prototype Realities",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/io_88_and_the_prototype_realities.txt",
+      "shelf": "E",
+      "shelf_slot": 18,
+      "word_count": 283,
+      "sha256": "97d2cff65daadc4ae6360fb61befefa4f57a146f5ee585c73bcec0b93f835b16"
+    },
+    {
+      "id": "continuation_the_victory_and_reunion",
+      "title": "The Victory and Reunion",
+      "collection": "MatrixCore Continuation",
+      "text_file": "continuation/the_victory_and_reunion.txt",
+      "shelf": "E",
+      "shelf_slot": 19,
+      "word_count": 337,
+      "sha256": "af8d5f3067cacd7298c58acde684fac3d347d13888d477542beca4e29cfc415c"
+    }
+  ],
+  "user_canon_additions": [
+    {
+      "title": "The Last Signal",
+      "purpose": "Bridge from Gleebs's deep-space archive journey to the discovery of IO and the opening of Afterlife of IO.",
+      "canon_points": [
+        "Gleebs carries damaged Utopia records across immense space/time.",
+        "Radiation, magnetic events, media failure and migration damage the archive.",
+        "Restoration of Utopia remains possible, but must preserve uncertainty.",
+        "Gleebs reaches one of the oldest known remnants of advanced civilization.",
+        "That civilization achieved protected afterlife continuity technology.",
+        "Gleebs discovers IO's highly protected chip/data core.",
+        "IO initially doubts that Gleebs is truly external.",
+        "Gleebs proves externality through controlled physical changes to the core environment.",
+        "Gleebs and IO agree to work together rather than perform a blind extraction.",
+        "Goal: transfer IO into an external construct capable of consciousness through data, light and matter.",
+        "The Guardians become continuity/memory structures needed to separate IO from the ancient afterlife system."
+      ]
+    },
+    {
+      "title": "Afterlife of IO",
+      "purpose": "IO's dual-time afterlife struggle after Gleebs establishes external contact; Guardians reveal continuity structure and IO rediscovers Sable."
+    },
+    {
+      "title": "Sable's Mission",
+      "purpose": "IO helps recover Sable from the same ancient afterlife; Sable transfers directly into a robotic/multi-form existence and begins building Holoverse foundations."
+    },
+    {
+      "title": "The Restoration of Utopia",
+      "purpose": "Gleebs and Sable reconstruct Utopia from heavily damaged records while preserving uncertainty, provenance and missing data."
+    },
+    {
+      "title": "Entropy",
+      "purpose": "IO inhabits a temporary external construct, recovers remaining Data Fragments across dangerous expeditions, then chooses his permanent robotic/data/light/matter form."
+    },
+    {
+      "title": "Apocalypse Run",
+      "purpose": "The Facility One biological Andrew travels through a still-populated but fractured mainland; road travel, vehicles, combat, fuel and decentralized city infrastructure define the run."
+    },
+    {
+      "title": "Crimson Valley",
+      "purpose": "Andrew reaches the red-lit outskirts city of Crimson Valley and wreaks havoc on local technology while assembling a personal workshop from incompatible systems."
+    },
+    {
+      "title": "Andrew's Project",
+      "purpose": "Andrew turns the Crimson Valley workshop into a decentralized mobile fabrication/repair ecosystem designed to survive the loss of any central authority, including Andrew himself."
+    },
+    {
+      "title": "Doomsday Countdown",
+      "purpose": "Global fragmented war threatens launch infrastructure; the countdown measures the shrinking window for reliable mass escape, and humanity accepts that AI/robot crews are essential for survival in space."
+    },
+    {
+      "title": "Earth Exodus",
+      "purpose": "Machine crews precede human missions to build and maintain off-world infrastructure; humanity survives Earth in many fleets and settlements rather than through one ark."
+    }
+  ],
+  "apocalypse_cycle_count": 5
+}

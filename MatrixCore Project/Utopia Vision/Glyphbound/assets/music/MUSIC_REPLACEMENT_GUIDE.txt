@@ -1,0 +1,23 @@
+GLYPHBOUND MUSIC REPLACEMENT
+============================
+
+Drop .wav, .ogg, or .mp3 tracks directly in this folder.
+
+Filenames do not matter.
+
+ONE TRACK
+The track loops continuously.
+
+MULTIPLE TRACKS
+Tracks are shuffled at startup and play one after another.
+
+You can replace all music simply by deleting the audio files in this folder
+and dropping in your own. Keep this one music folder; no duplicate folders are needed.
+
+If the folder contains no playable audio, Glyphbound simply runs without music.
+
+READ SAFETY (PASS 08)
+Unreadable, truncated, or unsupported tracks are skipped once and quarantined for
+the rest of that run. The game will not repeatedly retry a bad track. WAV and OGG
+are the most portable choices across Panda3D audio backends; MP3 support can depend
+on the installed Panda3D audio backend/codec support.

@@ -1,0 +1,27 @@
+Afterlife of IO — Pass 147 cleanup list
+=======================================
+
+Nothing below is used by the game any more. Delete by hand when convenient
+(nothing breaks if you keep them).
+
+SAFE TO DELETE
+--------------
+modes\HEX Contract\hex_contract_game_result.json
+    A mission-result file a past HEX run wrote into the install folder.
+    Hosted HEX Contract now saves under %LOCALAPPDATA%\GLITCHED MATRIX\HEX CONTRACT.
+
+modes\Entropy\tools\verify_surface_relic_upgrade.py
+    Pass 18.1 checker for a "Relic Core" cargo reward that no longer exists.
+    It already failed on the build before Pass 147. Current checks are
+    verify_pass33_full_regression.py and verify_pass34_ruin_dive.py.
+
+OPTIONAL (standalone-release paperwork, not used inside Afterlife)
+------------------------------------------------------------------
+modes\Ghost Signal\WINDOWS_BUILD_README.md
+modes\Ghost Signal\WINDOWS_MANUAL_ACCEPTANCE.md
+modes\Ghost Signal\V1_RELEASE_CHECKLIST.md
+    Describe BUILD_WINDOWS.bat / PROMOTE_WINDOWS_V1.bat, which are not in this copy.
+
+modes\Entropy\ITCH_PAGE_DESCRIPTION.txt
+modes\Entropy\ITCH_UPLOAD_CHECKLIST.txt
+    Store-page text for a standalone itch.io release of Entropy.

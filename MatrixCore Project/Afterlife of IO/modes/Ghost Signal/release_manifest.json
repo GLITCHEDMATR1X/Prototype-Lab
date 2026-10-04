@@ -1,0 +1,33 @@
+{
+  "project": "GHOST SIGNAL: UTOPIA",
+  "release": "Chapter One V1 RC3",
+  "version": "1.0.0-rc3",
+  "pass": 22,
+  "content_freeze_pass": 17,
+  "profile_schema": "ghost_signal_utopia.chapter_one.v1",
+  "profile_version": 6,
+  "windows_rc_artifact": "Ghost_Signal_Utopia_ChapterOne_V1_RC3_Windows.zip",
+  "windows_final_artifact": "Ghost_Signal_Utopia_ChapterOne_V1_Windows.zip",
+  "packaging": "PyInstaller onedir",
+  "promotion_contract": {
+    "automated_report": "dist/GhostSignalUtopia/WINDOWS_ACCEPTANCE_TEST.txt",
+    "manual_report": "release/WINDOWS_MANUAL_ACCEPTANCE.json",
+    "promotion_script": "PROMOTE_WINDOWS_V1.bat",
+    "requires_native_windows": true,
+    "blocks_contract_test_reports": true
+  },
+  "platform_gate": {
+    "source_validation": "passed",
+    "linux_packaged_runtime_acceptance": "required",
+    "native_windows_build": "required",
+    "native_windows_automated_acceptance": "required",
+    "native_windows_manual_acceptance": "required",
+    "status_in_linux_sandbox": "source_and_linux_packaged_runtime_validated_native_windows_pending"
+  },
+  "chapter_one": {
+    "districts": 3,
+    "buildings": 11,
+    "memories": 11,
+    "ending": "High Towers cliffhanger"
+  }
+}

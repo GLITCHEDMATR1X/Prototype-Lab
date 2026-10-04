@@ -1,0 +1,42 @@
+{
+  "schema_id": "ghost_signal_utopia.chapter_one.v1",
+  "profile_version": 6,
+  "release_version": "1.0.0-rc2",
+  "compatibility": {
+    "readable_versions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "future_versions": "preserve_file_and_disable_writes",
+    "corrupt_primary": "quarantine_primary_and_restore_profile.json.bak",
+    "backup_generations": 1
+  },
+  "required_keys": [
+    "profile_schema",
+    "profile_version",
+    "captured_buildings",
+    "unlocked_buildings",
+    "discovered_clues",
+    "memory_fragments",
+    "gleebs_detection_history",
+    "building_lockouts",
+    "districts_completed",
+    "method_usage",
+    "statistics",
+    "settings",
+    "onboarding_step",
+    "onboarding_complete",
+    "first_awakened_at",
+    "last_saved_at"
+  ],
+  "chapter_one_limits": {
+    "districts": 3,
+    "buildings": 11,
+    "memories": 11,
+    "next_boundary": "high_towers"
+  }
+}

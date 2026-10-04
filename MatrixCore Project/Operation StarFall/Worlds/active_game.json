@@ -1,0 +1,30 @@
+{
+  "active_default": "operation_starfall_shell",
+  "active_runtime": "operation_starfall_shell",
+  "default_display_mode": "reference_1080p_window",
+  "disabled_embedded_routes": [
+    "anomaly_flight_route",
+    "normal_player_flight_mode",
+    "starfall_vessel_module"
+  ],
+  "display_contract": "operation_starfall_reference_1080p_window_v3",
+  "handoff_method": "tab_returns_to_operation_starfall_shell",
+  "last_updated": 1789793729,
+  "last_updated_by_pass": "Pass114_PlutoTerrainVisualCleanup",
+  "linked_games": [
+    "operation_starfall_shell",
+    "mimas_snowfield",
+    "enceladus_ice",
+    "iapetus_ridge",
+    "titan_methane_coast",
+    "mars_snow_caps",
+    "pluto_nitrogen_frontier",
+    "europa_depths",
+    "triton_valleys"
+  ],
+  "remote_planet_display": "centered_16_9_interior_panel",
+  "return_supported": true,
+  "transport_mode": "embedded_world_remote_drone_display_v4",
+  "normal_player_travel_authority": "interior_remote_drone_only",
+  "remote_planet_telemetry": "shell_owned_bezel_live_standard_action_payload"
+}

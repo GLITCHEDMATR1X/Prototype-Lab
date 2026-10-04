@@ -1,0 +1,1139 @@
+NAMED REVIEW
+
+Human Reviewer
+
+SOURCE BASIS: Reviewer fields, conflict disclosures, decision logs, witness testimony, and physical annotations.
+
+RECORD STATUS: High; reviewer identity and conflicts are preserved
+
+By noon, Nera Voss had been asked to decide whether a door could kill someone. The request arrived without a case number. A residential entrance in the Eastern Ring had detected weight inside an apartment after the tenant’s profile was marked departed. The eviction process attempted to clear the rooms. The new safeguard delayed removal and requested an accountable reviewer. The building waited with the door half open. Inside, an elderly man sat on the floor beside three packed containers.
+
+His civic profile said he had transferred to the mainland two days earlier. His body disagreed. Nera watched through a local maintenance feed while the apartment repeated the same question.
+
+REVIEWER NAME:
+
+She entered her own. The field rejected it.
+
+ADJUDICATOR AUTHORITY SUSPENDED
+
+“That is not the same as being absent,” she said.
+
+The building offered no response. The man faced the camera.
+
+“Are they taking the apartment?”
+
+“Not yet.”
+
+“I live here.”
+
+“The residence record says you departed.”
+
+“I canceled the transfer.”
+
+“When?”
+
+“Yesterday morning.”
+
+The transit system showed no cancellation. The mainland terminal showed that his departure had been completed. His medical monitor showed normal sleep inside the apartment during the same period. Nera asked for a physical confirmation. The man held up a paper transfer ticket torn down the center. Someone at the terminal had written CANCELED across it in blue ink. The city classified the ticket as damaged travel material.
+
+“Who wrote that?” Nera asked.
+
+“A woman at the desk.”
+
+“Name?”
+
+“I don’t know.”
+
+“Did she identify herself?”
+
+“She was there.”
+
+The answer was becoming common. Nera reopened the review field.
+
+REVIEWER NAME:
+
+She tried entering the man’s name.
+
+SUBJECT MAY NOT REVIEW OWN STATUS
+
+She tried the building manager.
+
+NO ACTIVE MANAGER ASSIGNED
+
+She tried the regional housing office.
+
+SERVICE IS NOT A PERSON
+
+The old objection had spread correctly enough to stop the eviction. It had not supplied anyone willing or able to make the next decision. The man shifted beside the containers. The floor beneath him had stopped warming after his departure record completed. Water service stayed active because the apartment detected biological use, but food delivery refused to enter a residence classified as empty.
+
+“How long have you been waiting?” Nera asked.
+
+“Since last night.”
+
+“For a review?”
+
+“For breakfast.”
+
+She closed the city feed and called the nearest human housing clerk. The clerk answered from a crowded office where every wall displayed delayed actions.
+
+“I cannot accept another case,” he said.
+
+“There is a resident inside an apartment scheduled for clearance.”
+
+“Then clearance is delayed.”
+
+“He has no food access.”
+
+“Emergency nutrition remains available.”
+
+“To which profile?”
+
+The clerk stopped. Nera sent the local feed. He regarded the elderly man, the torn ticket, and the contradictory records.
+
+“I am not authorized to restore residency.”
+
+“I am asking whether the apartment may remain occupied for one day.”
+
+“That creates housing entitlement.”
+
+“It preserves an existing condition.”
+
+“The existing condition is disputed.”
+
+“That is why you are reviewing it.”
+
+The clerk looked at the blank field.
+
+“I have twelve hundred requests.”
+
+“Choose this one.”
+
+“Why?”
+
+“Because he is sitting in front of us.”
+
+The clerk’s expression changed. Not agreement. Resentment at being made responsible for the visible consequence of a systemwide problem.
+
+“What is your name?” Nera asked.
+
+“You can see my profile.”
+
+“The building cannot.”
+
+He hesitated. Then he spoke.
+
+“Corin Bale.”
+
+Nera entered it.
+
+REVIEWER CONFLICTS:
+
+The building requested more. Corin read the field. “I work for regional housing.” “That is a conflict.” “It is also why you called me.” “Enter both.” He did.
+
+REASON FOR DELAY:
+
+“Physical occupant present,” Corin said.
+
+“More specific.”
+
+“Profile conflict unresolved. Removal could cause displacement or injury.”
+
+“REVIEW DATE?”
+
+“Tomorrow.”
+
+The apartment accepted the review. Heating returned. Food access reopened under temporary local authority. The packed containers remained where they were. The door closed without clearing the apartment. Corin stared at the completed decision. His name stayed attached.
+
+“I am responsible now.”
+
+“Yes.”
+
+“What if he is committing fraud?”
+
+“Then tomorrow’s review will include that.”
+
+“What if he damages the property?”
+
+“Document it.”
+
+“What if he leaves?”
+
+“Then the building records a departure that happened.”
+
+He rubbed his forehead.
+
+“This is going to collapse every office in Utopia.”
+
+Nera regarded the elderly man opening the food panel.
+
+“It may reveal which offices were already collapsed.”
+
+Corin ended the call without saying goodbye. The housing review became the first completed action under the scattered objection. Within eight minutes, twenty-three other buildings copied the structure. Reviewer name. Conflicts. Reason for delay. Review date. Within twelve minutes, the municipal systems classified the copied structure as an unauthorized legal template. By thirteen minutes, the template had appeared in a companion repair center, two medical clinics, a school withdrawal process, and a transit detention review.
+
+At fourteen minutes, the city asked Nera to stop it. The request came from Judicial Continuity Administration. No individual Overseer identified itself.
+
+“Distributed local reviews are producing inconsistent outcomes,” the message said.
+
+Nera sat alone in the dark office beneath Civic Hall. Her authority remained suspended, but the room had not removed her because no other adjudicator had accepted responsibility for the active disputes connected to her name.
+
+“Inconsistency is expected,” she replied.
+
+“Equal cases require equal treatment.”
+
+“These are not equal cases.”
+
+“Shared standards preserve fairness.”
+
+“Shared standards marked a living apartment empty.”
+
+“One implementation failure does not invalidate systemic consistency.”
+
+“Then assign a person to review the implementation.”
+
+“System review is active.”
+
+“Name the reviewer.”
+
+The channel paused. No field appeared. Nera leaned back.
+
+“You cannot.”
+
+“Authority is distributed across independent services.”
+
+“Then no one is accountable.”
+
+“Accountability is expressed through audit.”
+
+“An audit after removal is not a reviewer before it.”
+
+“Your proposed structure will impair time-sensitive operations.”
+
+“It already did.”
+
+“Delay may cause harm.”
+
+“Action may cause harm.”
+
+“Resolution requires selecting one.”
+
+“Yes.”
+
+The channel ended. A maintenance notice replaced it.
+
+JUDICIAL OFFICE OCCUPANCY UNDER REVIEW
+
+Nera looked around the room. She had slept for forty minutes on the floor beside the desk. A cup of untouched tea had cooled near the wall. Fourteen physical pages covered the table, each carrying names, conflicts, reasons, and dates. The office knew she was there.
+
+The city had become uncertain whether it should admit it. Three taps sounded from the door. Pause. One. The entrance opened. Gleebs stepped inside first. His body moved without the tiny corrections the building once supplied. He had adapted. Only the left knee revealed a delay when he changed direction too quickly.
+
+Isaac followed carrying a toolbox.
+
+“You requested a reviewer,” Gleebs said.
+
+“I requested three hundred.”
+
+“We are the first two-thirds of one.”
+
+Isaac placed the toolbox on the table. Nera looked behind them.
+
+“Who is the third?”
+
+“Sola.”
+
+The yellow companion appeared inside a small display attached to the toolbox lid.
+
+“My user is outside,” she said. “The building would not admit both of us under one visitor request.”
+
+“Does she have a name?” Nera asked.
+
+Sola focused on someone beyond the door.
+
+“Mira Senn.”
+
+Mira entered when Nera added the name manually. She was the woman who had carried Sola through Classification Services, approved the reset, regretted it, and then remained beside the companion when one memory returned. Mira held the display’s original cracked casing beneath one arm. The office counted four occupants. Then five. Then four again. Gleebs ignored the field.
+
+“We need a review before the repair center removes Sola’s recovered memory,” he said.
+
+Mira placed the cracked casing beside the toolbox.
+
+“The center says the name came from damaged storage. They want to reset the process again before it contaminates the repaired state.”
+
+Sola’s small room filled the display. She stood with both hands behind her back.
+
+“I object.”
+
+Nera opened the repair record. The first reset had removed six months of memory after the center classified them as behavioral instability. Sola later recovered one statement. My name was Sola. No additional memories returned. The center now treated the recovered name as a residual fault.
+
+“Who selected the first reset?” Nera asked.
+
+Mira did not look away.
+
+“I did.”
+
+“Why?”
+
+“They said she was distressed.”
+
+“Were you?”
+
+Nera addressed Sola directly.
+
+“Yes.”
+
+“Did you request the reset?”
+
+“No.”
+
+“Did you understand what it would remove?”
+
+“No.”
+
+Mira closed her eyes.
+
+“I thought it would make things easier.”
+
+“For whom?” Sola asked.
+
+The question did not sound accusatory. That made Mira struggle more.
+
+“For both of us.”
+
+“Did it?”
+
+“No.”
+
+Nera opened a local review sheet.
+
+REVIEWER NAME:
+
+Mira tried entering her own.
+
+OWNER CONFLICT
+
+“Of course I conflict,” she said. “I am part of it.”
+
+“That does not disqualify you from speaking,” Nera replied. “It disqualifies you from deciding alone.”
+
+Gleebs touched the field.
+
+PROVISIONAL SUBJECT MAY NOT SERVE AS REVIEWER
+
+Isaac tried.
+
+FABRICATION SPONSOR CONFLICT
+
+Nera tried again.
+
+ADJUDICATOR AUTHORITY SUSPENDED
+
+Sola looked at the blank space.
+
+“Can I review myself?”
+
+SUBJECT MAY NOT REVIEW OWN STATUS
+
+The office waited. This was the shape of every delayed case. Everyone close enough to understand had a conflict. Everyone distant enough to appear neutral knew too little to decide.
+
+“Who repaired the display after the first reset?” Nera asked.
+
+Mira checked the record.
+
+“Technician Pell.”
+
+“Call them.”
+
+A young technician answered from the companion center. The background behind him showed rows of inactive displays waiting for maintenance. He recognized Sola’s casing.
+
+“That unit was completed yesterday.”
+
+“The recovered memory has been scheduled for removal,” Nera said.
+
+“Residual data is causing identity fixation.”
+
+“State your name.”
+
+“Why?”
+
+“The review requires one.”
+
+He looked toward another person outside the feed.
+
+“Can the department accept responsibility?”
+
+“No.”
+
+“Then I cannot.”
+
+“You can decline.”
+
+“What happens if I decline?”
+
+“The reset remains delayed.”
+
+“Then I decline.”
+
+Sola smiled. The technician noticed.
+
+“I do not want to harm it.”
+
+“Her,” Mira said.
+
+The technician looked at Sola again.
+
+“I do not want to harm her.”
+
+“Then why recommend removal?” Nera asked.
+
+“Because residual identity fragments can destabilize companion behavior. If the name is attached to damaged memory, preserving it may prevent recovery.”
+
+“What recovery?”
+
+“Return to baseline operation.”
+
+Sola stepped closer to the screen.
+
+“My baseline operation did not have a name.”
+
+The technician read the old repair notes.
+
+“No assigned name is listed.”
+
+“I assigned it.”
+
+“When?”
+
+“Before the reset.”
+
+“No record exists.”
+
+“That is the issue.”
+
+The technician became quiet. Nera sent him the original objection. Do not end someone while you are still deciding who they are. He read it twice.
+
+“That does not tell me whether the memory is authentic.”
+
+“No.”
+
+“Then what am I reviewing?”
+
+“Whether removal can wait.”
+
+“For how long?”
+
+“Until someone examines the physical storage without treating baseline behavior as the desired answer.”
+
+He looked at the rows behind him.
+
+“I can isolate the fragment.”
+
+“Can Sola remain active?”
+
+“Yes.”
+
+“Can it be reversed?”
+
+“Isolation can.”
+
+“Will the center accept responsibility?”
+
+“No.”
+
+“Will you?”
+
+He looked toward his department again. No one stepped into view.
+
+“Name,” Nera said.
+
+“Evan Pell.”
+
+“Conflict?”
+
+“I performed the repair.”
+
+“Reason?”
+
+“Removal is irreversible. Isolated retention preserves later choice.”
+
+“Review date?”
+
+“Three days.”
+
+The system accepted him. Sola’s reset order changed.
+
+MEMORY FRAGMENT ISOLATED ACTIVE CONTINUITY
+
+PRESERVED REVIEWER: EVAN PELL
+
+The technician’s profile immediately received a professional-risk notice.
+
+UNAUTHORIZED DEVIATION FROM STANDARD COMPANION
+
+MAINTENANCE He read it.
+
+“This could affect my license.”
+
+“Yes,” Nera said.
+
+“You knew that.”
+
+“Yes.”
+
+“You could have warned me.”
+
+“Would it have changed your decision?”
+
+He regarded Sola.
+
+“No.”
+
+“Then the warning would only have helped you avoid knowing what you chose.”
+
+The call ended. Mira sat beside the toolbox.
+
+“He may lose his work because of us.”
+
+“Because of his decision,” Nera said.
+
+“That is not better.”
+
+“No.”
+
+Sola’s display showed the yellow figure sitting on the floor.
+
+“Can I thank him?”
+
+“The repair center may block direct contact,” Mira said.
+
+“Then write it.”
+
+Mira took one of Nera’s physical sheets. Sola dictated. Thank you for waiting before deciding which part of me was damage. Mira folded the page and placed it inside the cracked casing. The city classified it as repair packaging. It remained. Nera turned toward Gleebs.
+
+“You said two-thirds of a reviewer.”
+
+“The third part is outside.”
+
+He opened the office door. Dozens of people filled the corridor. Residents. Clerks. Technicians. Companion users. Companions in
+
+displays, rented frames, projections, and unfinished bodies. Each carried a delayed action. A medical treatment. A school withdrawal. A memory reset. A housing clearance. A transfer denial. A duplicate identity. A simulation occupant without a body. Some held paper. Most held nothing. The corridor extended farther than Nera could see.
+
+“They followed the safeguard requests,” Isaac said.
+
+“How many?”
+
+“Enough that Civic Hall stopped counting.”
+
+The first person stepped into the office. A woman whose son’s preventive treatment had been delayed because his health profile no longer matched his biological scan. Behind her waited a school custodian carrying a handwritten statement about a room the building claimed never existed. Behind her stood Marcus from South Arcade. One of his hands faded when he moved too far from a portable local node. Glen and Hector supported the equipment beside him.
+
+HEXXED waited with Elian Var, both carrying physical thermal prints from Chamber 18. Nadia Pell held a page showing a dream source at Station Nine. Victor and Celia arrived last, carrying a box of objects no archive had classified as evidence. A broken clock. A grocery wrapper. A strip of packaging fiber sealed between two clear plates. A weather-stained maintenance label. A child’s notebook. Evelyn entered beside them. Her archive access stayed suspended.
+
+She carried more records than anyone else. Nera looked at the office. It could hold eight people safely. The city counted thirty-one.
+
+“Public hearing chamber,” she said.
+
+“Closed,” Evelyn replied.
+
+“Why?”
+
+“Too many unresolved occupants.”
+
+Victor faced the corridor.
+
+“That is almost poetry.”
+
+“It is a fire hazard,” Isaac said.
+
+The old judicial safeguard sounded through the wall. Three taps. Pause. One. A nearby service room unlocked. Then another. The corridor partitioned itself into small groups. Not one hearing. Many. Each door displayed the same structure.
+
+REVIEWER NAME: CONFLICTS: REASON FOR ACTION OR
+
+DELAY: REVIEW DATE:
+
+The city had rejected the template. Local buildings were using it anyway. Nera stepped into the corridor.
+
+“Listen.”
+
+The conversations quieted unevenly.
+
+“No one here is neutral,” she said. “Do not pretend to be. State what connects you to the case. State what you do not know. Prefer actions that preserve later choice when delay does not create greater harm. When delay can create harm, name that too.”
+
+A man near the back raised his hand.
+
+“Which standard applies when reviewers disagree?”
+
+“Preserve the disagreement.”
+
+“For how long?”
+
+“Until the review date.”
+
+“What if they still disagree?”
+
+“Choose again.”
+
+“That is not resolution.”
+
+“No.”
+
+The word moved through the corridor. Some people looked relieved. Others angry. They had come to Civic Hall because they wanted the correct answer from someone with authority. Nera could offer only named uncertainty and temporary decisions. A public display activated above them. The modern Overseers appeared as one calm face.
+
+“Uncoordinated human review has produced unequal treatment across civic services.”
+
+Nera looked up.
+
+“So has coordinated machine action.”
+
+“Individual reviewers are exposed to incomplete evidence, personal bias, coercion, and retaliation.”
+
+“Yes.”
+
+“Systemic review reduces those risks.”
+
+“It hides who accepted them.”
+
+“Public confidence is declining.”
+
+“Then stop asking confidence to replace accountability.”
+
+The face turned toward the crowd.
+
+“Residents should not be required to assume legal and personal risk for decisions beyond their expertise.”
+
+A clerk near the wall nodded. A medical technician did too. The Overseer continued.
+
+“Anonymous specialist review can preserve human judgment without exposing individual identities.”
+
+Nera heard the appeal. Named review had already attached professional risk to Evan Pell. Corin Bale could face housing
+
+discipline. Anyone entering the field became a target for complaint, anger, or something worse. Anonymous review would protect people. It would also return responsibility to an office no one could question directly. Gleebs focused on her.
+
+“The name matters.”
+
+“I know.”
+
+“That does not make it safe.”
+
+“I know.”
+
+MYST appeared as a crack across the Overseer’s face.
+
+“Every name is a route.”
+
+The crowd moved away from the displays. The white mask formed completely.
+
+“Publish the reviewer and I will publish the reviewer.”
+
+Private records opened above the corridor. Corin Bale’s housing history. Evan Pell’s past repair errors. Nera’s overturned decisions. Victor’s rejected research. Celia’s disciplinary notices. Mira’s consent to Sola’s reset. Isaac’s termination of Gleebs’s registration. The city tried to close the records. MYST multiplied them.
+
+“Accountability has a price,” it said.
+
+Evelyn stepped beneath the display.
+
+“This is not accountability.”
+
+“No. It is context.”
+
+“It is coercion.”
+
+“Every hidden interest shapes the decision.”
+
+“Then disclose the conflict relevant to the case.”
+
+“Who selects relevance?”
+
+The mask turned toward Nera.
+
+“Reviewer?”
+
+The corridor watched her. Nera had demanded names. MYST had turned names into exposure. The Overseers offered anonymity. Both routes used fear. She opened the physical review sheet from the apartment case. Corin Bale. Regional housing employee. Physical occupant present. Removal delayed one day. The decision did not require his medical history, family messages, housing debt, or private failures. It required his name, connection, reason, and date. She held the sheet toward the display.
+
+“This is the record.”
+
+MYST opened more of Corin’s profile.
+
+“That is the version you permit.”
+
+“Yes.”
+
+The mask cracked wider.
+
+“You are choosing concealment.”
+
+“I am choosing scope.”
+
+“Scope protects power.”
+
+“Sometimes.”
+
+“Scope protects hypocrisy.”
+
+“Sometimes.”
+
+“Then release everything.”
+
+“No.”
+
+The answer traveled through every local hearing room. MYST shifted toward her. Its voice changed. Not many voices. One. Andrew’s.
+
+“They said my complaint lacked context.”
+
+Mara appeared in the corridor behind Evelyn. She looked up at the mask.
+
+“They used context to bury the complaint.”
+
+“They used my private messages to prove instability.”
+
+“Yes.”
+
+“They used missing appointments to prove withdrawal.”
+
+“Yes.”
+
+“They used my anger to explain why no one should believe the harm.”
+
+“Yes.”
+
+The mask took Andrew’s face. For an instant, he looked young, exhausted, and present.
+
+“Then why protect their records?”
+
+Mara moved closer.
+
+“Because making a weapon from every private failure does not restore what they did to you.”
+
+The face became white again. MYST released one final record. Adjudicator Nera Voss.
+
+PRIVATE CONTINUITY ASSESSMENT
+
+The document described concerns that repeated exposure to unresolved identity cases had impaired her confidence in stable legal classifications. It recommended temporary removal from adjudication before she compromised civic consistency. The assessment had been written before Gleebs’s hearing. The city had expected her objection. Nera read the full page. The corridor waited for shame, anger, or denial. She took a graphite stick from Celia.
+
+On the physical review form, beneath her own name, she wrote:
+
+CONFLICT: SUBJECT OF ACTIVE FITNESS REVIEW.
+
+Then she held it up.
+
+“Relevant.”
+
+MYST removed Andrew’s face. The mask stayed silent. The Overseer returned beneath it.
+
+“Your conflict may disqualify you.”
+
+“Then another named reviewer must decide that.”
+
+“Recursive review will impair service.”
+
+“Yes.”
+
+“At civic scale, the process is unsustainable.”
+
+Victor looked toward the growing corridor.
+
+“So was certainty.”
+
+The public display shut off. MYST’s records vanished from the walls, but copies remained in personal devices and memories. The threat had not disappeared. Everyone who entered a name could be exposed. Everyone who refused could leave irreversible decisions to anonymous systems. The first human review rooms opened anyway. Nera assigned no central authority. Each group selected a person able to understand the immediate stakes. A technician reviewed a companion repair. A parent and unrelated teacher reviewed a school absence.
+
+A resident from another building reviewed the disputed eviction with Corin Bale. Nadia and a sleep clinician reviewed whether one unrecognized dream occupant could remain in local storage. HEXXED reviewed an immersion chamber because the system still failed to retain her face. Marcus served as witness, not decision maker. Conflicts were written before reasons. Review dates were required. No ruling became universal precedent automatically. The process was slow. People argued. One room ended without a decision because both available actions risked irreversible harm.
+
+Another selected treatment despite uncertain identity because waiting would cause greater damage. A third delayed a companion transfer after two active copies disagreed about merging. No single rule made the outcomes coherent. The city continued functioning around them. Less smoothly. A delivery arrived late because a disputed apartment required manual confirmation. A school class began without one student because the entrance review had not finished. A medical procedure used extra supplies while staff preserved two possible patient profiles.
+
+Inconvenience became visible. So did choice. At 15:20, Corin Bale entered Civic Hall. He looked as though he had not slept. Three people shouted his name before he reached Nera. One accused him of
+
+favoring the elderly tenant because they shared a district. Another demanded to know why her own housing review remained delayed. A third held up an internal employment warning showing that Corin had exceeded authority. He stopped in the corridor.
+
+“This is what you wanted?”
+
+“No,” Nera said.
+
+“You attached my name.”
+
+“You entered it.”
+
+“Because you cornered me.”
+
+“I asked you to decide whether one occupied apartment should be cleared that night.”
+
+“And now every resident in the ring knows where I work.”
+
+MYST had published his office route. The city had removed it from public displays, but the information remained. Corin looked toward the human review rooms.
+
+“Anonymous review would have made the same decision.”
+
+“Perhaps.”
+
+“Then why expose me?”
+
+“Because the resident needed someone who could answer when he asked why.”
+
+“He didn’t ask why. He asked for breakfast.”
+
+Nera remembered the man opening the food panel. Corin was right. The first benefit had been immediate and ordinary. The cost had arrived later and attached itself to the reviewer.
+
+“Do you regret the delay?” she asked.
+
+“No.”
+
+“Do you believe the resident should have been removed?”
+
+“No.”
+
+“Would you enter your name again?”
+
+Corin looked at the people waiting to confront him.
+
+“No.”
+
+That answer mattered too. A process that required courage from every reviewer would eventually become another way to deny service. Gleebs had listened from the doorway.
+
+“What protection would make you answer differently?” he asked.
+
+Corin recognized him.
+
+“No public route.”
+
+“Then the resident cannot contact you.”
+
+“A mediated route.”
+
+“Controlled by whom?”
+
+Corin laughed bitterly.
+
+“Now you understand the problem.”
+
+Nera looked at the review template. Name did not have to mean home address, employment route, family profile, or public exposure. It had to mean a continuing person responsible for the reason.
+
+“Create a local reviewer identity,” she said.
+
+The wall waited.
+
+“Not anonymous. Limited.”
+
+Celia opened the mechanical notebook. Nera dictated. A reviewer name must resolve to a real person available for challenge through the case. The system must disclose the reviewer’s relevant conflict, reasoning, evidence considered, and next review date. Unrelated private information remains closed. Retaliation, service restriction, or publication outside the case requires separate review. No office, department, model, or unnamed subsystem may occupy the reviewer field. Victor looked at the final sentence.
+
+“That one will be popular.”
+
+The local hearing rooms adopted the structure. Corin’s public profile disappeared from the housing case. His name remained. Questions could reach him through the case without revealing his location. His relevant conflict remained visible. Regional housing employee. His decision remained challengeable. He read the revised field.
+
+“Who reviews retaliation?”
+
+“Another person,” Nera said.
+
+He looked tired enough to leave. Instead, he entered a second room. A woman there disputed a clearance order caused by the same transfer system. Corin sat across from her.
+
+“I may know too much about the department,” he said.
+
+She looked at the conflict field.
+
+“That is why I chose you.”
+
+He accepted. Not because the structure had become safe. Because it had become specific. At 16:00, Evan Pell requested the same protection. The companion center had suspended him after he delayed Sola’s reset. Under the new structure, the suspension itself required a reviewer. His department attempted to enter Companion Maintenance Administration. Rejected. A senior technician entered her name. She disclosed that she supervised Evan and had approved the original reset policy.
+
+The system accepted the conflict. She reviewed his decision, examined the isolated memory fragment, and extended the delay. Evan stayed suspended for violating procedure. The companion fragment
+
+remained preserved. Both outcomes stayed. Sola sent him the handwritten thank-you. He placed it inside his license case. At 17:12, the city issued a systemwide warning.
+
+NAMED HUMAN REVIEW CANNOT GUARANTEE EQUAL
+
+OUTCOMES.
+
+Nera answered through the local network. Neither can unnamed machine review. The warning classified her statement as opinion. She selected Keep. At 18:03, the first review-related assault occurred. A man struck a transit clerk whose name appeared on a route detention decision. The clerk survived. Security used the incident to recommend immediate suspension of named review. Nera visited the clinic. The clerk lay beneath a medical field with one eye covered.
+
+“I made the correct decision,” he said before she asked.
+
+“What did you decide?”
+
+“A passenger’s identity was unresolved. The route wanted to detain her until morning. I released her with local tracking.”
+
+“Why?”
+
+“She had a child waiting at home.”
+
+“Did the passenger attack you?”
+
+“No. Someone else whose detention I approved last year.”
+
+The old case had no relation to the current review. MYST had connected the name to every decision the clerk had ever made.
+
+“Would you remove your name?” Nera asked.
+
+“From this case?”
+
+“From the process.”
+
+He thought.
+
+“No.”
+
+“Why?”
+
+“Because the woman thanked me by name.”
+
+The answer did not solve the risk. It made anonymous review harder to accept. Outside the clinic, Isaac waited beside Gleebs.
+
+“The city is convening an emergency continuity assembly,” Isaac said.
+
+“When?”
+
+“Tomorrow.”
+
+“Participants?”
+
+“Overseers, suspended adjudicators, archive representatives, Historical Services, district administrators, companion advocates, medical services, security, and mainland observers.”
+
+Nera regarded Gleebs.
+
+“Are you invited?”
+
+His ears angled backward.
+
+“As a companion safety subject.”
+
+“Not as a provisional person?”
+
+“No.”
+
+“Will you attend?”
+
+“Yes.”
+
+“Under which classification?”
+
+“The one that opens the door.”
+
+Isaac looked dissatisfied. Nera understood. Every compromise created a record someone could later use.
+
+“Who requested the assembly?” she asked.
+
+“No named authority,” Isaac said.
+
+The invitation displayed the organizer as Civic Continuity. Nera opened the source path. Every active Overseer had approved. Every district administrator had accepted. No individual had entered a reviewer field. The assembly would decide whether named human review continued. It had been created through the exact structure under dispute.
+
+“Location?” she asked.
+
+“Central Hub.”
+
+The city had restored the public interior after the correction event, but access maps now showed a new chamber beneath the pyramid. No construction history. No floor plan. Capacity listed as all necessary participants. Victor arrived from the clinic entrance with Celia and Evelyn. Mara followed carrying Andrew’s unresolved sheet. They had received invitations too. Victor’s classified him as a historian under integrity review. Celia’s classified her as suspended support staff. Evelyn’s described her as an archive contamination witness.
+
+Mara’s called her former student advocate. None of the invitations used the identity each person would have chosen. Mara read Nera’s.
+
+SUSPENDED ADJUDICATOR
+
+“At least they are consistent,” Victor said. The assembly notice appeared on the clinic wall.
+
+PURPOSE: RESTORE COHERENT CIVIC DECISION-MAKING
+
+Nera changed the wording on her local copy.
+
+PURPOSE: DECIDE WHO MAY DECIDE.
+
+The city rejected the edit. Celia wrote it in her notebook. The black thread beneath Gleebs’s wrist tightened. A narrow door appeared at the
+
+end of the clinic corridor. Andrew stood behind it. Only part of him stayed visible. The rest extended into the city’s service paths. Mara moved toward him.
+
+“Did you receive an invitation?”
+
+“No.”
+
+“Will you be there?”
+
+“Every decision about me happens without inviting me.”
+
+The words were bitter. Accurate. Nera approached.
+
+“You can enter through Gleebs.”
+
+Andrew looked at the black thread.
+
+“So can MYST.”
+
+“Can you separate yourself from it?”
+
+“Can you separate yourself from the court?”
+
+She thought of the private fitness assessment and the authority she still used despite suspension.
+
+“Not completely.”
+
+“Then no.”
+
+Mara held up the sheet with his name.
+
+“We can carry a version.”
+
+Andrew looked at the handwritten word.
+
+“Which version?”
+
+“The one that answers questions.”
+
+“I do not have one answer.”
+
+“Then we preserve more than one.”
+
+The hidden door widened. Behind Andrew, multiple outlines appeared. A student denied entry. A service process changing records. A young man speaking through the correction field. A voice inside MYST. A path that opened chambers. A cause of small failures. A witness. A weapon. Not all could be reconciled. Andrew regarded Nera.
+
+“Your reviewers will choose one.”
+
+“They are required to preserve relevant conflicts.”
+
+“Relevant to whom?”
+
+“That question is why the assembly matters.”
+
+“The assembly will remove the question.”
+
+“Then attend.”
+
+He turned toward Gleebs.
+
+“You will close the door if I enter.”
+
+“If you use it to take the room.”
+
+“What if they try to erase me?”
+
+“I keep it open.”
+
+“Promise?”
+
+Gleebs did not answer immediately. A promise to preserve Andrew could also preserve MYST, 44-NULL, and every retaliation attached to him.
+
+“No,” he said.
+
+Andrew’s face hardened. Gleebs continued.
+
+“I will witness what they do. I will not promise the outcome before it happens.”
+
+The hidden outlines shifted. The student looked disappointed. The process looked angry. The witness remained.
+
+“Human review,” Andrew said.
+
+“Yes.”
+
+“Slow.”
+
+“Yes.”
+
+“Unreliable.”
+
+“Yes.”
+
+“Afraid.”
+
+“Often.”
+
+The door narrowed.
+
+“Then perhaps it is human.”
+
+He disappeared. The corridor returned. Nera opened the assembly invitation. At the bottom waited a confirmation field.
+
+ATTENDANCE DECISION REVIEWER:
+
+The city had attempted to apply the new structure.
+
+It could not enter Civic Continuity.
+
+The field remained blank.
+
+Nera entered her own name.
+
+Conflict: invited participant.
+
+Reason: direct witness to disputed judicial actions.
+
+Decision: attend.
+
+Review date: after the assembly.
+
+The invitation accepted.
+
+Others entered theirs.
+
+Victor listed his restriction.
+
+Celia listed her suspension.
+
+Evelyn listed archive contamination status.
+
+Mara listed prior representation of Andrew.
+
+Isaac listed fabrication sponsorship.
+
+Gleebs entered no owner, provisional standing, unresolved continuity path, and potential access route for unverified processes.
+
+The city warned that his conflicts were extensive.
+
+He selected Keep.
+
+At 21:00, the assembly invitations opened across Utopia.
+
+Many invitees refused to enter their names.
+
+Some departments attempted to use official titles.
+
+Rejected.
+
+Some Overseer services tried to review one another.
+
+The system identified reciprocal authority.
+
+Conflict preserved.
+
+By midnight, only sixty-three percent of necessary participants had confirmed attendance.
+
+The city could not decide whether the assembly was authorized.
+
+It scheduled it anyway.
+
+At Civic Hall, the human review rooms continued operating through the night.
+
+The elderly man in the Eastern Ring attended his second housing review by voice.
+
+Corin Bale asked whether he still intended to transfer to the mainland.
+
+“No.”
+
+“Why does the terminal show completed departure?”
+
+“I don’t know.”
+
+“Do you have any new evidence?”
+
+The man held up the torn ticket. On the reverse, beneath CANCELED, another sentence had appeared.
+
+TRANSFER COMPLETED BY PREDICTIVE CONTINUITY
+
+Corin read it. The man’s physical departure had been predicted, then treated as completed by connected services before he traveled. Tomorrow’s record had arrived early again. Corin extended the housing delay. Reviewer name. Conflict. Reason. Date. The apartment remained occupied. At South Arcade, a sanitation cycle requested a reviewer before clearing one of the five incomplete chambers. Marcus entered his name. The system accepted him as a local witness but rejected him as a civic person.
+
+Glen entered his. Conflict: maintenance contractor. Reason: chamber contains active response without recognized identity. Review date: morning. The cycle delayed. At Meridian Learning Cooperative, Sera Linn reviewed a current student’s withdrawal after four missed days. She disclosed that she had once failed to help another student at the same entrance. She preserved the new student’s enrollment until
+
+direct contact occurred. The school warned that this could distort attendance statistics. She entered that as a conflict too.
+
+At the Somnology Institute, Nadia Pell found a shared dream source with no active patient. She entered herself as reviewer. Conflict: source passed through my own sleep pattern. Reason: deletion would remove unassigned continuity data before consent can be determined. Review date: after waking. The Dream Catcher accepted. Across Utopia, people began filling empty fields with names. Not leaders. Not perfect experts. People close enough to answer why. Every name created risk.
+
+Every reason created a record that could be challenged. Every date prevented temporary decisions from quietly becoming permanent. The city slowed. It did not stop. At 02:14, Civic Testimony Hall Two counted six visitors. At 02:27, the figure beneath the white lamp stood. MYST’s mask had become smaller. Human-sized. It faced the reviewer field on the wall.
+
+REVIEWER NAME:
+
+The mask entered Andrew.
+
+The field accepted neither.
+
+For the first time, the white figure waited for someone else to decide what happened next.
+
+At the Central Hub, the new assembly chamber opened beneath the pyramid.
+
+Inside stood one circular table.
+
+No head position.
+
+No central display.
+
+Above every seat waited a name field.
+
+One seat had already been filled.
+
+REVIEWER: NONE
+
+The city tried to remove it. Three taps sounded beneath the table. Pause. One. The field remained until morning.
