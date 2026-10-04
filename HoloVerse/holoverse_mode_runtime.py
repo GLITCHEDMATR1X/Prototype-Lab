@@ -773,14 +773,35 @@ def profile_event_volume(event: str, default: float = 1.0, *, profile: dict[str,
         return max(0.0, min(1.0, float(default)))
 
 
-def _resolve_music_name(name: str) -> Path | None:
-    # All semantic music names resolve to the one authored master soundtrack.
-    path = holoverse_music_file()
-    return path if path.exists() else None
+def _resolve_music_name(name: str, mode_dir: Path | str | None = None) -> Path | None:
+    """Find a mode's own music file by name.
 
-def profile_music_paths(*, profile: dict[str, Any] | None = None, mode_dir: Path | str | None = None) -> list[Path]:
-    path = holoverse_music_file()
-    return [path] if path.exists() else []
+    Pass 282.79: Holoverse.mp3 is the MatrixCore hub's song only.  A dimension's audio profile
+    names its own track (beside the mode, in its assets, or in the shared audio library); a name
+    that matches no file resolves to nothing, so the dimension keeps its own soundtrack instead
+    of being handed HoloVerse's."""
+    raw = str(name or "").strip()
+    if not raw:
+        return None
+    candidate = Path(raw)
+    roots: list[Path] = []
+    if candidate.is_absolute():
+        roots.append(candidate.parent)
+        candidate = Path(candidate.name)
+    try:
+        base = Path(mode_dir) if mode_dir is not None else Path.cwd()
+        roots += [base, base / "assets", base / "assets" / "audio", base / "assets" / "music", base / "audio", base / "music"]
+    except Exception:
+        pass
+    roots.append(audio_library_root())
+    for root in roots:
+        path = root / candidate
+        try:
+            if path.is_file() and path.resolve() != holoverse_music_file().resolve():
+                return path
+        except Exception:
+            continue
+    return None
 
 def profile_music_paths(*, profile: dict[str, Any] | None = None, mode_dir: Path | str | None = None) -> list[Path]:
     prof = profile if profile is not None else load_audio_profile(mode_dir)
@@ -793,7 +814,7 @@ def profile_music_paths(*, profile: dict[str, Any] | None = None, mode_dir: Path
     if loop: names.insert(0, loop)
     out=[]; seen=set()
     for name in names:
-        path=_resolve_music_name(name)
+        path=_resolve_music_name(name, mode_dir)
         if path is None: continue
         key=str(path.resolve()) if path.exists() else str(path)
         if key in seen: continue

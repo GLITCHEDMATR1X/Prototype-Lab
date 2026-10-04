@@ -319,6 +319,9 @@ class DeepSpaceFlight:
         self.dead = False
         self.dead_timer = 0.0
         self.rock_hits: dict = {}                             # (cell key, rock index) -> hits taken
+        self.nav_index = -1                                   # Pass 282.78: T cycles a nav lock (-1 = none)
+        self.hit_marker_time = 0.0
+        self.hit_marker_kill = False
         self.holo = None
         self.combat = None
         self.mode = "normal"                                  # normal | charging | supercruise
@@ -391,6 +394,7 @@ class DeepSpaceFlight:
         self._build_cockpit()
         self._build_weapon_fx()
         self._build_hud()
+        self._build_nav_ui()
         try:
             from holoverse.deep_space_holohud import HoloHUD
             font = None
@@ -1106,9 +1110,18 @@ class DeepSpaceFlight:
 
     def _fly(self, dt: float) -> None:
         dx, dy = self._read_mouse()
+        # Pass 282.78: the player's mouse sensitivity (relative to the 0.11 default) and the
+        # Invert Y setting now apply to the flight stick too.
+        cfg = getattr(self.app, "cfg", None)
+        try:
+            sens = max(0.25, min(3.0, float(getattr(cfg, "mouse_sensitivity", 0.11)) / 0.11))
+        except Exception:
+            sens = 1.0
+        if bool(getattr(cfg, "launch_invert_y", False)):
+            dy = -dy
         # Virtual stick: mouse motion deflects it, it slowly self-centres.
-        self.stick[0] = max(-1.0, min(1.0, self.stick[0] + dx * STICK_GAIN))
-        self.stick[1] = max(-1.0, min(1.0, self.stick[1] + dy * STICK_GAIN))
+        self.stick[0] = max(-1.0, min(1.0, self.stick[0] + dx * STICK_GAIN * sens))
+        self.stick[1] = max(-1.0, min(1.0, self.stick[1] + dy * STICK_GAIN * sens))
         mag = math.hypot(*self.stick)
         if mag > 1.0:
             self.stick = [self.stick[0] / mag, self.stick[1] / mag]
@@ -1124,6 +1137,13 @@ class DeepSpaceFlight:
         throttle_in = float(self._down("w")) - float(self._down("s"))
         if self._pressed("x", self._down("x")):
             self.throttle = 0.0
+        # Pass 282.78: throttle presets 1-5 (0 / 25 / 50 / 75 / 100 %) and T nav lock.
+        for key, value in (("1", 0.0), ("2", 0.25), ("3", 0.5), ("4", 0.75), ("5", 1.0)):
+            if self._pressed(key, self._down(key)):
+                self.throttle = value
+                self.flash(f"THROTTLE  {int(value * 100)}%", 0.9)
+        if self._pressed("t", self._down("t")):
+            self._cycle_nav_target()
         if self._pressed("z", self._down("z")):
             self.flight_assist = not self.flight_assist
             self.flash("FLIGHT ASSIST " + ("ON" if self.flight_assist else "OFF"), 1.6)
@@ -1277,6 +1297,141 @@ class DeepSpaceFlight:
             self.app.center_hint["text"] = "SHIP LOST  //  RESPAWNED AT MATRIXCORE"
         except Exception:
             pass
+
+    # ------------------------------------------------------------------
+    # Pass 282.78: nav lock and hit marker
+    # ------------------------------------------------------------------
+    def _nav_targets(self):
+        """[(name, sky direction, dimension record or None)] - planets, then Dyson Prime."""
+        targets = []
+        planets = getattr(self, "planets", None)
+        for p in list(getattr(planets, "planets", []) or []):
+            rec = p.get("record")
+            targets.append((str(getattr(rec, "title", "PLANET")), Vec3(p["dir"]), rec))
+        targets.append(("DYSON PRIME", Vec3(self.dyson_dir), None))
+        return targets
+
+    def _cycle_nav_target(self) -> None:
+        targets = self._nav_targets()
+        self.nav_index += 1
+        if self.nav_index >= len(targets):
+            self.nav_index = -1
+            self.flash("NAV LOCK OFF", 1.0)
+            return
+        self.flash(f"NAV LOCK  //  {targets[self.nav_index][0].upper()}", 1.4)
+
+    def nav_target(self):
+        targets = self._nav_targets()
+        if 0 <= self.nav_index < len(targets):
+            return targets[self.nav_index]
+        return None
+
+    def _nav_status(self, target) -> str:
+        name, _direction, rec = target
+        parts = []
+        combat = getattr(self, "combat", None)
+        if combat is not None:
+            key = "dyson" if rec is None else str(getattr(rec, "dimension_id", ""))
+            kind = "dyson" if rec is None else "planet"
+            frac = combat._zone_fraction(key, kind)
+            parts.append(f"PERIMETER {int(min(1.0, frac) * 100)}%")
+        if rec is not None:
+            registry = getattr(self.app, "dimension_registry", None)
+            try:
+                unlocked = bool(registry.is_unlocked(rec)) if registry is not None else False
+            except Exception:
+                unlocked = False
+            parts.append("IN ARCHIVE" if unlocked else "CLICK TO ENTER + UNLOCK")
+        else:
+            parts.append(f"{self.dyson_distance_au():,.1f} AU")
+        return "  //  ".join(parts)
+
+    def _build_nav_ui(self) -> None:
+        th = 1.4 * self.line_scale
+        mk = LineSegs("deep-space-nav-marker")
+        mk.setThickness(th)
+        mk.setColor(*HUD_CYAN, 0.95)
+        s = 1.0
+        for a in range(4):
+            ang = math.radians(45.0 + 90.0 * a)
+            cx, cz = math.cos(ang) * s, math.sin(ang) * s
+            mk.moveTo(cx * 0.55, 0, cz * 0.55)
+            mk.drawTo(cx, 0, cz)
+        for k in range(5):
+            ang = math.radians(90.0 * k)
+            (mk.moveTo if k == 0 else mk.drawTo)(math.cos(ang) * 0.8, 0, math.sin(ang) * 0.8)
+        self.nav_marker = self.hud.attachNewNode(mk.create())
+        from direct.gui.OnscreenText import OnscreenText
+        self.nav_label = OnscreenText(text="", parent=self.hud, pos=(0, 0), scale=0.028, fg=(*HUD_CYAN, 0.95),
+                                      align=TextNode.ACenter, mayChange=True, shadow=(0, 0, 0, 0.8))
+        arrow = LineSegs("deep-space-nav-arrow")
+        arrow.setThickness(th * 1.3)
+        arrow.setColor(*HUD_CYAN, 0.95)
+        arrow.moveTo(-0.025, 0, -0.022)
+        arrow.drawTo(0.032, 0, 0.0)
+        arrow.drawTo(-0.025, 0, 0.022)
+        self.nav_arrow = self.hud.attachNewNode(arrow.create())
+        hm = LineSegs("deep-space-hit-marker")
+        hm.setThickness(th * 1.2)
+        hm.setColor(1, 1, 1, 1)
+        for sx, sz in ((1, 1), (-1, 1), (1, -1), (-1, -1)):
+            hm.moveTo(sx * 0.018, 0, sz * 0.018)
+            hm.drawTo(sx * 0.034, 0, sz * 0.034)
+        self.hit_marker = self.hud.attachNewNode(hm.create())
+        self.hit_marker.setTransparency(TransparencyAttrib.MAlpha)
+        for node in (self.nav_marker, self.nav_arrow, self.hit_marker):
+            node.hide()
+        self.nav_label.hide()
+
+    def _show_hit_marker(self, kill: bool = False) -> None:
+        self.hit_marker_time = 0.35 if kill else 0.16
+        self.hit_marker_kill = bool(kill)
+
+    def _update_nav_ui(self, dt: float) -> None:
+        if getattr(self, "nav_marker", None) is None:
+            return
+        # hit marker
+        if self.hit_marker_time > 0.0:
+            self.hit_marker_time = max(0.0, self.hit_marker_time - dt)
+            self.hit_marker.show()
+            col = HUD_RED if self.hit_marker_kill else (1.0, 1.0, 1.0)
+            self.hit_marker.setColorScale(*col, min(1.0, self.hit_marker_time * 6.0))
+            self.hit_marker.setScale(1.0 + (0.6 if self.hit_marker_kill else 0.2) * (1.0 - self.hit_marker_time * 3.0))
+        else:
+            self.hit_marker.hide()
+        target = self.nav_target()
+        if target is None:
+            self.nav_marker.hide()
+            self.nav_arrow.hide()
+            self.nav_label.hide()
+            return
+        name, direction, _rec = target
+        cam_space = self.sky_cam.getRelativeVector(self.sky_scene, direction)
+        aspect = self.app.camLens.getAspectRatio() if hasattr(self.app, "camLens") else 1.777
+        projected = Point2()
+        label = f"{name.upper()}\n{self._nav_status(target)}"
+        if cam_space.y > 0.0 and self.sky_lens.project(Point3(cam_space * 1000.0), projected):
+            x, z = projected.x * aspect, projected.y
+            self.nav_marker.show()
+            self.nav_marker.setPos(x, 0, z)
+            self.nav_marker.setScale(0.045)
+            self.nav_arrow.hide()
+            self.nav_label.setPos(x, z + 0.075)
+            hover = getattr(getattr(self, "planets", None), "hover", None)
+            if hover is not None and hover.get("record") is _rec:
+                # The planet's own "LEFT-CLICK TO ENTER" label is already showing.
+                self.nav_label.hide()
+                return
+        else:
+            self.nav_marker.hide()
+            self.nav_arrow.show()
+            ang = math.atan2(cam_space.z, cam_space.x if abs(cam_space.x) > 1e-6 else 1e-6)
+            ax, az = math.cos(ang) * (aspect - 0.25), math.sin(ang) * 0.70
+            self.nav_arrow.setPos(ax, 0, az)
+            self.nav_arrow.setR(-math.degrees(ang))
+            self.nav_label.setPos(max(-aspect + 0.45, min(aspect - 0.45, ax)), max(-0.80, min(0.78, az - 0.07)))
+        self.nav_label.setText(label)
+        self.nav_label.show()
 
     def _toggle_supercruise(self) -> None:
         if self.mode == "normal":
@@ -1538,8 +1693,10 @@ class DeepSpaceFlight:
             if self.combat.damage(enemy):
                 self._spawn_burst((ex, ey, ez), 26.0)
                 self.shake = max(self.shake, 0.3)
+                self._show_hit_marker(kill=True)
             else:
                 self._spawn_burst((ex, ey, ez), 6.0)
+                self._show_hit_marker()
             return
         length = LASER_RANGE if best is None else max(5.0, best[0])
         self._show_laser(length)
@@ -1549,6 +1706,7 @@ class DeepSpaceFlight:
         cx, cy, cz, r, idx = rock
         # Pass 282.76: every hit on an asteroid recharges 5% shield; big rocks take several hits.
         self.shield = min(1.0, self.shield + 0.05)
+        self._show_hit_marker()
         rid = (cell["key"], idx)
         hits = self.rock_hits.get(rid, 0) + 1
         needed = 1 + int(r // 30.0)
@@ -1836,6 +1994,7 @@ class DeepSpaceFlight:
             self.msg_text.setFg((*HUD_AMBER, 0.0))
         if self.holo is not None:
             self._update_holo(dt, parts, msg_alpha)
+        self._update_nav_ui(dt)
         # Dyson Prime marker
         au = self.dyson_distance_au()
         cam_space = self.sky_cam.getRelativeVector(self.sky_scene, self.dyson_dir)
@@ -1875,7 +2034,11 @@ class DeepSpaceFlight:
             if frac >= 0.5:
                 threat = f"DEFENCE PERIMETER  //  {name.upper()}  {int(min(1.0, frac) * 100)}%"
                 threat_warn = frac >= 0.7
-        systems = f"DYSON PRIME  {self.dyson_distance_au():,.1f} AU   //   C  THEME"
+        nav = self.nav_target()
+        if nav is not None:
+            systems = f"NAV  {nav[0].upper()[:22]}   //   T NEXT"
+        else:
+            systems = f"DYSON PRIME  {self.dyson_distance_au():,.1f} AU   //   T NAV   C THEME"
         msg = self.message.upper() if msg_alpha > 0.0 else ""
         warn_words = ("HULL", "SHIELDS DOWN", "INTERDICTED", "HOSTILE", "SHIP LOST", "COLLISION")
         self.holo.update(dt, {

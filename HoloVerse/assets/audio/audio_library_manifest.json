@@ -2,8 +2,11 @@
   "schema": "holoverse_audio_library_v2",
   "music": {
     "source": "assets/audio/Holoverse.mp3",
-    "cue_manifest": "assets/audio/holoverse_music_cues.json",
-    "files": 1,
+    "hub_track": "assets/audio/Holoverse.mp3",
+    "region_manifest": "assets/audio/region_music.json",
+    "region_tracks_dir": "assets/audio/regions",
+    "files": 10,
+    "cue_manifest_legacy": "assets/audio/holoverse_music_cues.json",
     "runtime_generation": false,
     "reverse_cache": false
   },
