@@ -13,37 +13,37 @@
       "progress": "0",
       "source": ""
     },
-    "ember_hangar": {
+    "anatomic": {
       "complete": false,
       "completed_at": "",
-      "goal": "Forge and bind one real Ember vehicle.",
-      "label": "Ember Hangar",
-      "progress": "0/1 ship",
+      "goal": "Step through Sable's gate into Anatomic.",
+      "label": "Anatomic",
+      "progress": "0",
       "source": ""
     },
-    "forest_growth": {
+    "anomaly_sequence": {
       "complete": false,
       "completed_at": "",
-      "goal": "Plant 5 permanent forest plants with Vanta.",
-      "label": "Forest Growth",
-      "progress": "0/5 plants",
+      "goal": "Step through Solace's gate into the Anomaly Sequence.",
+      "label": "Anomaly Sequence",
+      "progress": "0",
       "source": ""
     },
-    "frost_circuit": {
+    "glyphbound": {
       "complete": false,
       "completed_at": "",
-      "goal": "Finish one Frost Circuit race with the Archivist.",
-      "label": "Frost Circuit",
-      "progress": "0/1 race",
+      "goal": "Step through Vanta's gate into Glyphbound.",
+      "label": "Glyphbound",
+      "progress": "0",
       "source": ""
     },
     "holospace": {
-      "complete": true,
-      "completed_at": "2026-10-03T17:51:56",
+      "complete": false,
+      "completed_at": "",
       "goal": "Travel through the HoloSpace warp and reach Dyson Reach.",
       "label": "Dyson Reach",
-      "progress": "Dyson Reach",
-      "source": "space_transition_complete"
+      "progress": "0",
+      "source": ""
     },
     "indigo_giant": {
       "complete": false,
@@ -61,20 +61,20 @@
       "progress": "0",
       "source": ""
     },
-    "oddities": {
+    "the_archivist": {
       "complete": false,
       "completed_at": "",
-      "goal": "Create 3 saved oddities with Solace.",
-      "label": "Oddities",
-      "progress": "0/3 oddities",
+      "goal": "Step through the Archivist's gate into The Archivist.",
+      "label": "The Archivist",
+      "progress": "0",
       "source": ""
     },
-    "urban_warzone": {
+    "vector_wars": {
       "complete": false,
       "completed_at": "",
-      "goal": "Reach wave 3 in the Urban Warzone.",
-      "label": "Urban Warzone",
-      "progress": "wave 0/3",
+      "goal": "Step through Ember's gate into Vector Wars.",
+      "label": "Vector Wars",
+      "progress": "0",
       "source": ""
     }
   },

@@ -787,27 +787,33 @@ FROST_CIRCUIT_TRACK_OVERVIEW_SMOKE_SCREENSHOT = LOG_DIR / "frost_circuit_track_o
 FROST_CIRCUIT_FINISH_SMOKE_SCREENSHOT = LOG_DIR / "frost_circuit_finish_smoke.png"
 # Pass 282.57: the three dimension gates (IO, Nyx, Mirror) replace the unhooked
 # HoloForge, Hills of Life and Robot Binding signals; still nine in all.
+# Pass 282.81: the five in-world activity signals became the guides' gate dimensions.
 CAMPAIGN_SIGNAL_ORDER = [
-    "afterlife_of_io", "forest_growth", "oddities", "indigo_giant", "ember_hangar",
-    "frost_circuit", "mirrors_limbo", "urban_warzone", "holospace",
+    "afterlife_of_io", "glyphbound", "anomaly_sequence", "indigo_giant", "vector_wars",
+    "the_archivist", "mirrors_limbo", "anatomic", "holospace",
 ]
 CAMPAIGN_SIGNAL_SPECS = {
     "afterlife_of_io": {"label": "Afterlife of IO", "short": "FLAT", "goal": "Step through IO's gate into the Afterlife of IO.", "region": "FLAT"},
-    "forest_growth": {"label": "Forest Growth", "short": "FORESTS", "goal": "Plant 5 permanent forest plants with Vanta.", "region": "FORESTS"},
-    "oddities": {"label": "Oddities", "short": "HILLS", "goal": "Create 3 saved oddities with Solace.", "region": "GREEN HILLS"},
+    "glyphbound": {"label": "Glyphbound", "short": "FORESTS", "goal": "Step through Vanta's gate into Glyphbound.", "region": "FORESTS"},
+    "anomaly_sequence": {"label": "Anomaly Sequence", "short": "HILLS", "goal": "Step through Solace's gate into the Anomaly Sequence.", "region": "GREEN HILLS"},
     "indigo_giant": {"label": "The Indigo Giant", "short": "MUSHROOM", "goal": "Walk through Nyx's beam into The Indigo Giant.", "region": "MUSHROOM"},
-    "ember_hangar": {"label": "Ember Hangar", "short": "DESERT", "goal": "Forge and bind one real Ember vehicle.", "region": "DESERT"},
-    "frost_circuit": {"label": "Frost Circuit", "short": "ICE", "goal": "Finish one Frost Circuit race with the Archivist.", "region": "ICE"},
+    "vector_wars": {"label": "Vector Wars", "short": "DESERT", "goal": "Step through Ember's gate into Vector Wars.", "region": "DESERT"},
+    "the_archivist": {"label": "The Archivist", "short": "ICE", "goal": "Step through the Archivist's gate into The Archivist.", "region": "ICE"},
     "mirrors_limbo": {"label": "Mirror's Limbo", "short": "METROPOLIS", "goal": "Step through Mirror's gate into Mirror's Limbo.", "region": "METROPOLIS"},
-    "urban_warzone": {"label": "Urban Warzone", "short": "URBAN", "goal": "Reach wave 3 in the Urban Warzone.", "region": "URBAN"},
+    "anatomic": {"label": "Anatomic", "short": "URBAN", "goal": "Step through Sable's gate into Anatomic.", "region": "URBAN"},
     "holospace": {"label": "Dyson Reach", "short": "HOLOSPACE", "goal": "Travel through the HoloSpace warp and reach Dyson Reach.", "region": "HOLOSPACE"},
 }
 # Gate signals are stabilised by entering the dimension through its guide's gate,
 # not by a regional state file (see launch_bot_hosted_archive).
 CAMPAIGN_GATE_SIGNAL_BY_TITLE = {
     "Afterlife of IO": "afterlife_of_io",
+    "Glyphbound": "glyphbound",
+    "Anomaly Sequence": "anomaly_sequence",
     "The Indigo Giant": "indigo_giant",
+    "Vector Wars": "vector_wars",
+    "The Archivist": "the_archivist",
     "Mirror's Limbo": "mirrors_limbo",
+    "Anatomic": "anatomic",
 }
 CAMPAIGN_MARKED_SIGNALS = set(CAMPAIGN_GATE_SIGNAL_BY_TITLE.values()) | {"holospace"}
 MATRIXCORE_DATA_DIR = ROOT / "matrixcore"
@@ -1229,12 +1235,14 @@ MODE_LAUNCH_PLACEHOLDER_ALIASES = {"placeholder", "placeholder_mode", "empty", "
 # Pass 20: artifacts remain geographic worldways. The regional experiments are
 # live again, but only through the named guide already standing in that region.
 # They are not MatrixCore pedestal launchers and do not auto-start on arrival.
-PRIMARY_DIMENSION_IDS = {"creativity"}
-REGIONAL_SYSTEM_DIMENSION_IDS = {
-    "forest_growth", "hills_of_life", "oddities", "ember_hangar",
-    "frost_circuit", "urban_warzone", "metropolis_robot_lab",
-}
+# Pass 282.81: HoloForge and the in-world region activities were removed.
+PRIMARY_DIMENSION_IDS: set = set()
+REGIONAL_SYSTEM_DIMENSION_IDS: set = set()
 PARKED_DIMENSION_IDS = set()
+REMOVED_REGION_ACTIVITIES = (
+    "HoloForge", "Forest Growth", "Hills of Life", "Oddities", "Ember Hangar",
+    "Frost Circuit", "Urban Warzone", "Metropolis Robot Lab",
+)
 PLAYER_TRAVEL_LAW = "E USE / ENTER  //  TAB RETURN TO MATRIXCORE  //  ESC PAUSE  //  H HELP"
 
 PLACEHOLDER_TRANSITION_GUIDANCE = {
@@ -1295,154 +1303,145 @@ DEFAULT_BOT_DIMENSION_PROFILES = {'IO': {'region': 'FLAT',
         'role': 'Keeper of the Afterlife gate',
         'personality': 'calm, direct, signal-clean, and quietly grateful',
         'greeting': 'The first gate is mine. Through it is the afterlife I walked before HoloVerse existed.',
-        'matrixcore_support': 'IO waits at the hub, behind the start: the archive of IO\'s afterlife is '
+        'matrixcore_support': "IO waits at the hub, behind the start: the archive of IO's afterlife is "
                               'entered from his dialogue instead of the Dimension Archive orbs.',
         'player_hint': 'Look at IO and press E or click to talk. Ask him to open the Afterlife of IO.',
         'world_spawn_behavior': 'start_gate_doorway',
         'system_state': 'ACTIVE',
-        'current_summary': 'Afterlife of IO // the first archive, opened from IO\'s dialogue',
+        'current_summary': "Afterlife of IO // the first archive, opened from IO's dialogue",
         'legacy_state': 'RETIRED',
-        'legacy_note': 'HoloForge is unhooked from IO (its files are kept). Afterlife of IO no longer appears as an orb in '
-                       'Gleebs\' Dimension Archive; only IO\'s dialogue opens it.',
+        'legacy_note': 'HoloForge is unhooked from IO (its files are kept). Afterlife of IO no longer '
+                       "appears as an orb in Gleebs' Dimension Archive; only IO's dialogue opens it.",
         'return_line': 'Back through the gate. You crossed as yourself. So did I.',
         'talk_lines': ['Seven archives and a Veil. I carried them out so they would not be lost with me.',
-                       'Gleebs kept his word. I crossed as myself, not as data. This gate is where that promise is kept.',
-                       'Every other guide waits further out. This one is first, because it is where I began.']},
+                       'Gleebs kept his word. I crossed as myself, not as data. This gate is where that '
+                       'promise is kept.',
+                       'Every other guide waits further out. This one is first, because it is where I '
+                       'began.']},
  'Vanta': {'region': 'FORESTS',
-           'mode': 'Forest Growth',
-           'gate_dimension': 'Glyphbound',
-           'gate_summary': 'Glyphbound // the sigil archive, through the gate in the grove',
-           'gate_greeting': 'The gate in my grove opens on Glyphbound. Sigils remember what forests forget.',
-           'gate_line': "Glyphbound grew out of Utopia's shrines. I keep its gate where roots can hear it.",
+           'mode': 'Glyphbound',
+           'archive_dimension': True,
            'color': 'green',
-           'role': 'Forest Planter guide',
+           'role': 'Keeper of the Glyphbound gate',
            'personality': 'patient, ecological, practical, and quietly curious',
-           'greeting': 'The forest is listening. I simplified what it needs.',
-           'matrixcore_support': 'Vanta owns the Forest Planter in FORESTS: aim at ground and place random full-grown plants, with '
-                                 'up to 50 saved items.',
-           'player_hint': 'Approach Vanta and press E to talk. Enter Forest Planter when you want to add permanent plants.',
-           'world_spawn_behavior': 'forest_growth_local_doorway',
+           'greeting': 'The gate in my grove opens on Glyphbound. Sigils remember what forests forget.',
+           'matrixcore_support': "Vanta keeps the Glyphbound gate in FORESTS: entered from Vanta's dialogue "
+                                 'instead of the Dimension Archive orbs.',
+           'player_hint': "Approach Vanta and press E to talk. Enter Glyphbound through Vanta's gate.",
+           'world_spawn_behavior': 'archive_gate_doorway',
            'system_state': 'ACTIVE',
-           'current_summary': 'Forest Planter // grounded full-grown plants, 50-item save cap',
+           'current_summary': 'Glyphbound // the sigil archive, through the gate in the grove',
            'legacy_state': 'RETIRED',
-           'legacy_note': 'The older seed-growth, harvesting, snap-grid, and plant-type editor paths are intentionally retired '
-                          'from the public planter.',
-           'talk_lines': ['One click, one grounded plant. No seed bureaucracy between you and a forest.',
-                          'The planter remembers up to fifty additions. I prefer a living region over an editor full of switches.',
-                          'The old growth-and-harvest controls are asleep on purpose. Simpler ecology has been more dependable.']},
+           'legacy_note': 'Pass 282.81: the Forest Growth activity was removed from HoloVerse; Vanta now '
+                          'opens Glyphbound.',
+           'talk_lines': ["Glyphbound grew out of Utopia's shrines. I keep its gate where roots can hear it.",
+                          'The forest keeps its own pace. I only keep the gate open.']},
  'Solace': {'region': 'GREEN HILLS',
-            'mode': 'Oddities',
-            'gate_dimension': 'Anomaly Sequence',
-            'gate_summary': 'Anomaly Sequence // the anomaly archive, through the gate on the hill',
-            'gate_greeting': 'My gate opens on the Anomaly Sequence. The hills got stranger the day I set it down.',
-            'gate_line': 'Anomalies are just patterns that refused to repeat. The Sequence keeps every one of them.',
-            'color': 'violet',
-            'role': 'Oddities guide',
-            'personality': 'gentle, strange, experimental, and comfortable with unstable physics',
-            'greeting': 'The hills are improvising now. I brought the strangeness with me.',
-            'matrixcore_support': 'Solace owns Oddities in GREEN HILLS: saved floating objects, procedural weird plants, spore '
-                                  'totems, glitch growths, and daily growth stages.',
-            'player_hint': 'Approach Solace and press E to talk. Enter Oddities when you want to add another persistent anomaly.',
-            'world_spawn_behavior': 'oddities_local_doorway',
-            'system_state': 'ACTIVE',
-            'current_summary': 'Oddities // floating objects, weird plants, totems and persistent growth',
-            'legacy_state': 'RETIRED',
-            'legacy_note': 'Solace moved from Mushroom to Green Hills in Pass 282.57 and took Oddities with her; the old '
-                           'Hills of Life layer is unhooked (its files are kept).',
-            'talk_lines': ['Some objects float. Some plants disagree with shape. All of them are saved, which makes the '
-                           'disagreement official.',
-                           'Oddities can grow a stage with the real day. Even unstable things deserve continuity.',
-                           'The mushroom ring has a giant to look after it now. The hills needed something stranger.']},
- 'Nyx': {'region': 'MUSHROOM',
-            'mode': 'The Indigo Giant',
+            'mode': 'Anomaly Sequence',
             'archive_dimension': True,
-            'color': 'indigo',
-            'role': 'Keeper of the REDACTED archive',
-            'personality': 'slow, gentle, enormous, and protective of the small',
-            'greeting': 'Mind my feet. The beam behind me goes back to REDACTED. Orbit and I can take you in.',
-            'matrixcore_support': 'Nyx keeps the REDACTED port in MUSHROOM: The Indigo Giant archive, entered from his dialogue '
-                                  'instead of the Dimension Archive orbs.',
-            'player_hint': 'Approach Nyx and press E to talk. Enter The Indigo Giant to walk REDACTED with Orbit.',
-            'world_spawn_behavior': 'archive_port_doorway',
+            'color': 'violet',
+            'role': 'Keeper of the Anomaly Sequence gate',
+            'personality': 'gentle, strange, experimental, and comfortable with unstable physics',
+            'greeting': 'My gate opens on the Anomaly Sequence. The hills got stranger the day I set it '
+                        'down.',
+            'matrixcore_support': 'Solace keeps the Anomaly Sequence gate in GREEN HILLS: entered from '
+                                  "Solace's dialogue instead of the Dimension Archive orbs.",
+            'player_hint': "Approach Solace and press E to talk. Enter Anomaly Sequence through Solace's "
+                           'gate.',
+            'world_spawn_behavior': 'archive_gate_doorway',
             'system_state': 'ACTIVE',
-            'current_summary': 'The Indigo Giant // the REDACTED archive, through the beam at the fungal port',
+            'current_summary': 'Anomaly Sequence // the anomaly archive, through the gate on the hill',
             'legacy_state': 'RETIRED',
-            'legacy_note': 'The Indigo Giant no longer appears as an orb in Gleebs\' Dimension Archive; its port lives here.',
-            'return_line': 'Back through the beam. The desert stays where it was. So do we.',
-            'talk_lines': ['On REDACTED I was the only giant left of my kind. Orbit was smaller than my hand, and braver than I was.',
-                           'Gleebs found us in a beam of light. These fungi are softer than the desert, but I still listen for '
-                           'the red one.',
-                           'The beam is the way back into that archive. Walk it with Orbit. Not alone. Never alone.']},
+            'legacy_note': 'Pass 282.81: the Oddities activity was removed from HoloVerse; Solace now opens '
+                           'Anomaly Sequence.',
+            'talk_lines': ['Anomalies are just patterns that refused to repeat. The Sequence keeps every one '
+                           'of them.',
+                           'The hills still wobble now and then. Anything stranger than that lives through '
+                           'the gate.']},
+ 'Nyx': {'region': 'MUSHROOM',
+         'mode': 'The Indigo Giant',
+         'archive_dimension': True,
+         'color': 'indigo',
+         'role': 'Keeper of the REDACTED archive',
+         'personality': 'slow, gentle, enormous, and protective of the small',
+         'greeting': 'Mind my feet. The beam behind me goes back to REDACTED. Orbit and I can take you in.',
+         'matrixcore_support': 'Nyx keeps the REDACTED port in MUSHROOM: The Indigo Giant archive, entered '
+                               'from his dialogue instead of the Dimension Archive orbs.',
+         'player_hint': 'Approach Nyx and press E to talk. Enter The Indigo Giant to walk REDACTED with '
+                        'Orbit.',
+         'world_spawn_behavior': 'archive_port_doorway',
+         'system_state': 'ACTIVE',
+         'current_summary': 'The Indigo Giant // the REDACTED archive, through the beam at the fungal port',
+         'legacy_state': 'RETIRED',
+         'legacy_note': "The Indigo Giant no longer appears as an orb in Gleebs' Dimension Archive; its port "
+                        'lives here.',
+         'return_line': 'Back through the beam. The desert stays where it was. So do we.',
+         'talk_lines': ['On REDACTED I was the only giant left of my kind. Orbit was smaller than my hand, '
+                        'and braver than I was.',
+                        'Gleebs found us in a beam of light. These fungi are softer than the desert, but I '
+                        'still listen for the red one.',
+                        'The beam is the way back into that archive. Walk it with Orbit. Not alone. Never '
+                        'alone.']},
  'Ember': {'region': 'DESERT',
-           'mode': 'Ember Hangar',
-           'gate_dimension': 'Vector Wars',
-           'gate_summary': 'Vector Wars // the vector archive, through the gate by the hangar',
-           'gate_greeting': 'The gate by my hangar opens on Vector Wars. Older ships, sharper lines.',
-           'gate_line': 'Vector Wars is where I learned what a hull is for. Every frame in my hangar owes it something.',
+           'mode': 'Vector Wars',
+           'archive_dimension': True,
            'color': 'orange',
-           'role': 'Ember Hangar guide',
+           'role': 'Keeper of the Vector Wars gate',
            'personality': 'energetic, mechanical, daring, and proud of improvised craft',
-           'greeting': 'Hangar is hot. TAB is yours; the ships have their own controls now.',
-           'matrixcore_support': 'Ember owns the DESERT ship showroom: generate Fighter, Speeder, Hauler, and UFO variants, bind '
-                                 'one as the saved aircraft, and pilot it through explicit craft controls.',
-           'player_hint': 'Approach Ember and press E to talk. Enter Ember Hangar to generate or bind a parked aircraft.',
-           'world_spawn_behavior': 'ember_hangar_local_doorway',
+           'greeting': 'The gate by my hangar opens on Vector Wars. Older ships, sharper lines.',
+           'matrixcore_support': "Ember keeps the Vector Wars gate in DESERT: entered from Ember's dialogue "
+                                 'instead of the Dimension Archive orbs.',
+           'player_hint': "Approach Ember and press E to talk. Enter Vector Wars through Ember's gate.",
+           'world_spawn_behavior': 'archive_gate_doorway',
            'system_state': 'ACTIVE',
-           'current_summary': 'Ship showroom // four classes, saved aircraft, explicit flight controls',
+           'current_summary': 'Vector Wars // the vector archive, through the gate by the hangar',
            'legacy_state': 'RETIRED',
-           'legacy_note': 'The old global TAB-craft override is permanently retired. TAB belongs only to MatrixCore/HoloVerse '
-                          'return behavior.',
-           'talk_lines': ['Fighter, Speeder, Hauler, UFO. Four frames, fresh variants, no need to hijack your return key.',
-                          'Your selected aircraft still persists. You activate it deliberately now instead of letting a vehicle '
-                          'own TAB.',
-                          'I liked the old shortcut. MatrixCore liked not freezing. MatrixCore won that argument.']},
+           'legacy_note': 'Pass 282.81: the Ember Hangar activity was removed from HoloVerse; Ember now '
+                          'opens Vector Wars.',
+           'talk_lines': ['Vector Wars is where I learned what a hull is for. Every frame in my hangar owes '
+                          'it something.',
+                          'The desert is quiet. The war is through the gate, where it belongs.']},
  'Archivist': {'region': 'ICE',
-            'mode': 'Frost Circuit',
-            'gate_dimension': 'The Archivist',
-            'gate_summary': 'The Archivist // my own archive, through the gate by the circuit',
-            'gate_greeting': 'The gate beside me opens on my own archive. Every record I keep began in there.',
-            'gate_line': 'Before the circuit, before Metropolis, there was the archive that named me. Its gate stays beside me.',
-            'color': 'cyan',
-            'role': 'Frost Circuit guide',
-            'personality': 'methodical, archival, exact, and quietly competitive about clean racing lines',
-            'greeting': "I keep the circuit's records now. Every lap is archived, including the bad ones.",
-            'matrixcore_support': 'Archivist owns Frost Circuit in ICE: a one-lap third-person hovercraft race against bot racers '
-                                  'with waypoints, obstacles, scoring, and saved records.',
-            'player_hint': 'Approach Archivist and press E to talk. Enter Frost Circuit to race the compact lit ice course.',
-            'world_spawn_behavior': 'frost_circuit_local_doorway',
-            'system_state': 'ACTIVE',
-            'current_summary': 'Frost Circuit // hovercraft race, bot opponents, scoring and saved records',
-            'legacy_state': 'RETIRED',
-            'legacy_note': 'The Archivist took over Frost Circuit from Mirror in Pass 282.57; the Metropolis Robot Selector is '
-                           'unhooked (its files are kept). Frost Circuit runs directly inside the Ice region.',
-            'talk_lines': ["One lap is enough to expose every bad habit. The ring keeps records so you can't rewrite history "
-                           'afterward.',
-                           'Waypoints, obstacles, crystals, overtakes, clean lines. Speed is only one column in the result.',
-                           "The race doesn't leave HoloVerse anymore. Good. Loading screens are terrible corners."]},
+               'mode': 'The Archivist',
+               'archive_dimension': True,
+               'color': 'cyan',
+               'role': 'Keeper of the The Archivist gate',
+               'personality': 'methodical, archival, exact, and quietly competitive about clean racing lines',
+               'greeting': 'The gate beside me opens on my own archive. Every record I keep began in there.',
+               'matrixcore_support': 'Archivist keeps the The Archivist gate in ICE: entered from '
+                                     "Archivist's dialogue instead of the Dimension Archive orbs.",
+               'player_hint': 'Approach Archivist and press E to talk. Enter The Archivist through '
+                              "Archivist's gate.",
+               'world_spawn_behavior': 'archive_gate_doorway',
+               'system_state': 'ACTIVE',
+               'current_summary': 'The Archivist // my own archive, through the gate by the circuit',
+               'legacy_state': 'RETIRED',
+               'legacy_note': 'Pass 282.81: the Frost Circuit activity was removed from HoloVerse; Archivist '
+                              'now opens The Archivist.',
+               'talk_lines': ['Before the circuit, before Metropolis, there was the archive that named me. '
+                              'Its gate stays beside me.',
+                              'The ice keeps nothing. I keep everything, and all of it starts in there.']},
  'Sable': {'region': 'URBAN',
-           'mode': 'Urban Warzone',
-           'gate_dimension': 'Anatomic',
-           'gate_summary': 'Anatomic // the anatomy archive, through the gate behind the line',
-           'gate_greeting': 'The gate behind my line opens on Anatomic. Learn how machines are built before you break them.',
-           'gate_line': "Anatomic takes things apart down to the last joint. I keep its gate where the fighting can't reach it.",
+           'mode': 'Anatomic',
+           'archive_dimension': True,
            'color': 'red',
-           'role': 'Urban Warzone guide',
-           'personality': 'controlled, tactical, unsentimental, and protective of the live battlefield boundary',
-           'greeting': 'The battlefield is beneath the street. It stays contained until you say otherwise.',
-           'matrixcore_support': 'Sable owns Urban Warzone inside URBAN: capture posts, bomb sites, arena weapons, 4D enemy '
-                                 'arrivals, battle-bot allies, waves, mechs, drones, and bosses.',
-           'player_hint': 'Approach Sable and press E to talk. Enter Urban Warzone only when you want to start the live combat '
-                          'layer.',
-           'world_spawn_behavior': 'urban_warzone_local_doorway',
+           'role': 'Keeper of the Anatomic gate',
+           'personality': 'controlled, tactical, unsentimental, and protective of the live battlefield '
+                          'boundary',
+           'greeting': 'The gate behind my line opens on Anatomic. Learn how machines are built before you '
+                       'break them.',
+           'matrixcore_support': "Sable keeps the Anatomic gate in URBAN: entered from Sable's dialogue "
+                                 'instead of the Dimension Archive orbs.',
+           'player_hint': "Approach Sable and press E to talk. Enter Anatomic through Sable's gate.",
+           'world_spawn_behavior': 'archive_gate_doorway',
            'system_state': 'ACTIVE',
-           'current_summary': 'Urban Warzone // live city arena, friend bots, waves, weapons and bosses',
+           'current_summary': 'Anatomic // the anatomy archive, through the gate behind the line',
            'legacy_state': 'RETIRED',
-           'legacy_note': 'The old standalone arena app/native-adapter path is retired; the battlefield is embedded beneath the '
-                          'live Urban city.',
-           'talk_lines': ['The city stays the city until combat starts. Then the buried arena wakes underneath it.',
-                          'Your allies are our own bots. No disposable friendly faction, no duplicate Sable pretending to be me.',
-                          'The standalone arena is retired. If a fight matters, it belongs in the world where the damage '
-                          'happens.']},
+           'legacy_note': 'Pass 282.81: the Urban Warzone activity was removed from HoloVerse; Sable now '
+                          'opens Anatomic.',
+           'talk_lines': ['Anatomic takes things apart down to the last joint. I keep its gate where the '
+                          "fighting can't reach it.",
+                          'The streets out here still remember the fighting. Anatomic remembers why.']},
  'Mirror': {'region': 'METROPOLIS',
             'mode': "Mirror's Limbo",
             'archive_dimension': True,
@@ -1450,42 +1449,54 @@ DEFAULT_BOT_DIMENSION_PROFILES = {'IO': {'region': 'FLAT',
             'role': "Keeper of the Mirror's Limbo gate",
             'personality': 'precise, reflective, cool-headed, and fond of cities that repeat themselves',
             'greeting': 'This city repeats itself the way Limbo did. The gate beside me goes back there.',
-            'matrixcore_support': "Mirror keeps the Mirror's Limbo gate in METROPOLIS: the Mirror's Limbo archive, entered "
-                                  'from his dialogue instead of the Dimension Archive orbs.',
-            'player_hint': "Approach Mirror and press E to talk. Enter Mirror's Limbo through the gate beside him.",
+            'matrixcore_support': "Mirror keeps the Mirror's Limbo gate in METROPOLIS: the Mirror's Limbo "
+                                  'archive, entered from his dialogue instead of the Dimension Archive orbs.',
+            'player_hint': "Approach Mirror and press E to talk. Enter Mirror's Limbo through the gate "
+                           'beside him.',
             'world_spawn_behavior': 'metropolis_gate_doorway',
             'system_state': 'ACTIVE',
             'current_summary': "Mirror's Limbo // the reflected city, through the gate in Metropolis",
             'legacy_state': 'RETIRED',
-            'legacy_note': "Mirror moved from Ice to Metropolis in Pass 282.57; Frost Circuit belongs to the Archivist. "
-                           "Mirror's Limbo no longer appears as an orb in Gleebs' Dimension Archive.",
+            'legacy_note': 'Mirror moved from Ice to Metropolis in Pass 282.57; Frost Circuit belongs to the '
+                           "Archivist. Mirror's Limbo no longer appears as an orb in Gleebs' Dimension "
+                           'Archive.',
             'return_line': 'Back on this side of the glass. Same city, fewer echoes.',
-            'talk_lines': ['Towers that copy towers, streets that fold back on themselves. Metropolis felt like home at once.',
-                           'Limbo is still there behind the glass. The gate only opens for someone who means to come back.',
-                           'I gave the ice circuit to the Archivist. He keeps better records than I keep my temper.']},
+            'talk_lines': ['Towers that copy towers, streets that fold back on themselves. Metropolis felt '
+                           'like home at once.',
+                           'Limbo is still there behind the glass. The gate only opens for someone who means '
+                           'to come back.',
+                           'I gave the ice circuit to the Archivist. He keeps better records than I keep my '
+                           'temper.']},
  'Orbit': {'region': 'MUSHROOM / HoloSpace',
            'mode': 'HoloSpace Region',
            'gate_dimension': 'HoloMap',
            'gate_summary': "HoloMap // the map archive, through the gate in Nyx's clearing",
-           'gate_greeting': 'The gate beside us opens on HoloMap. Every path I fly started as a line on that map.',
-           'gate_line': 'HoloMap charts places that no longer exist. Nyx says that makes it a memory, not a map.',
+           'gate_greeting': 'The gate beside us opens on HoloMap. Every path I fly started as a line on that '
+                            'map.',
+           'gate_line': 'HoloMap charts places that no longer exist. Nyx says that makes it a memory, not a '
+                        'map.',
            'color': 'black-cyan',
-           'role': 'HoloSpace flight guide and Nyx\'s companion',
+           'role': "HoloSpace flight guide and Nyx's companion",
            'personality': 'distant, cosmic, poetic, and careful with unstable routes',
-           'greeting': 'I stay at Nyx\'s feet now. HoloSpace is still mine to show you, whenever the sky should open.',
-           'matrixcore_support': 'Orbit guides live HoloSpace Region 8: the existing same-window warp and cockpit flight system, '
-                                 'with no separate application or child process.',
-           'player_hint': 'Approach Orbit and press E to talk. Enter HoloSpace when you want the live Region 8 warp; TAB returns '
-                          'home.',
+           'greeting': "I stay at Nyx's feet now. HoloSpace is still mine to show you, whenever the sky "
+                       'should open.',
+           'matrixcore_support': 'Orbit guides live HoloSpace Region 8: the existing same-window warp and '
+                                 'cockpit flight system, with no separate application or child process.',
+           'player_hint': 'Approach Orbit and press E to talk. Enter HoloSpace when you want the live Region '
+                          '8 warp; TAB returns home.',
            'world_spawn_behavior': 'holospace_region_gate',
            'system_state': 'ACTIVE',
            'current_summary': 'HoloSpace // live Region 8 warp and cockpit flight inside HoloVerse',
            'legacy_state': 'RETIRED',
-           'legacy_note': 'The old separate HoloSpace application and outer-ring marker are retired; Orbit now stands with '
-                          'Nyx at the REDACTED port in MUSHROOM and still opens HoloSpace flight.',
-           'talk_lines': ['There is no second sky behind a launcher anymore. Region Eight is part of this one.',
-                          'Nyx carried me across a whole dying world. Standing at his feet is the least I can do.',
-                          'The older outer-ring marker is gone. TAB still knows the way home. Some constants deserve respect.']}}
+           'legacy_note': 'The old separate HoloSpace application and outer-ring marker are retired; Orbit '
+                          'now stands with Nyx at the REDACTED port in MUSHROOM and still opens HoloSpace '
+                          'flight.',
+           'talk_lines': ['There is no second sky behind a launcher anymore. Region Eight is part of this '
+                          'one.',
+                          'Nyx carried me across a whole dying world. Standing at his feet is the least I '
+                          'can do.',
+                          'The older outer-ring marker is gone. TAB still knows the way home. Some constants '
+                          'deserve respect.']}}
 
 def bot_profile_map_copy(source: dict | None = None) -> dict:
     raw = source if isinstance(source, dict) else DEFAULT_BOT_DIMENSION_PROFILES
@@ -2363,7 +2374,8 @@ def discover_core_modes(root: Path) -> list[dict]:
     dimensions_root = resolve_dimensions_root(root)
     index_payload = read_dimension_index_payload()
     index_dimensions = index_payload.get("dimensions") if isinstance(index_payload.get("dimensions"), dict) else {}
-    inactive_keys = set()
+    # Pass 282.81: removed in-world activities stay off even if their old folders are still on disk.
+    inactive_keys = {canonical_dimension_lookup_key(name) for name in REMOVED_REGION_ACTIVITIES}
     for index_key, record in index_dimensions.items():
         if not isinstance(record, dict):
             continue
@@ -3449,7 +3461,6 @@ DEFAULT_REGION_MUSIC = {
     "urban": {"file": "regions/urban.mp3", "volume": 1.0},
     "metropolis": {"file": "regions/metropolis.mp3", "volume": 1.0},
     "space": {"file": "regions/holospace.mp3", "volume": 1.0},
-    "holoforge": {"file": "regions/holoforge.mp3", "volume": 1.0},
 }
 
 # Dimensions HoloVerse plays a track for while they are open (Pass 282.80).  Any dimension not
@@ -4012,7 +4023,6 @@ ARTIFACT_DIMENSION_ROUTES = [
     "region_urban",
     "region_metropolis",
     "region_holospace",
-    "creativity",
 ]
 
 ARTIFACT_DIMENSION_PRESENTATION = {
@@ -4592,14 +4602,8 @@ class CommandHubApp(ShowBase):
 
     def campaign_signal_state_paths(self) -> dict[str, Path]:
         base = APP_DATA_DIR / "holoverse" / "regions"
-        return {
-            "forest_growth": base / "forest" / "growth" / "forest_growth_state.json",
-            # Oddities moved to Green Hills in Pass 282.57; its save keeps the old folder.
-            "oddities": base / "mushroom" / "oddities" / "oddities_state.json",
-            "ember_hangar": base / "desert" / "ships" / "desert_ship_state.json",
-            "frost_circuit": base / "ice" / "races" / "frost_circuit_state.json",
-            "urban_warzone": base / "urban" / "warzone" / "urban_warzone_state.json",
-        }
+        # Pass 282.81: every remaining signal is a gate entry or HoloSpace; none reads a region save.
+        return {}
 
     @staticmethod
     def _campaign_file_stamp(path: Path | None):
@@ -4955,13 +4959,7 @@ class CommandHubApp(ShowBase):
         # Build deterministic minimum-completion fixtures using the exact state
         # files the regional runtimes own, then let the normal probe code find
         # them. This validates campaign progression without bypassing it.
-        fixtures = {
-            "forest_growth": {"summary": {"total_plants": 5}, "plants": []},
-            "oddities": {"summary": {"total_oddities": 3}, "items": []},
-            "ember_hangar": {"default_ship_id": "smoke_ship"},
-            "frost_circuit": {"races_completed": 1},
-            "urban_warzone": {"best_wave": 3, "last_wave": 3},
-        }
+        fixtures = {}   # Pass 282.81: no signal reads a regional state file any more.
         paths = self.campaign_signal_state_paths()
         for key, payload in fixtures.items():
             path = paths[key]
@@ -5044,8 +5042,6 @@ class CommandHubApp(ShowBase):
             return ('hills', 'hills', '', 0.50, 0.0, 'green hills region')
         if 'forest' in low or 'vanta' in low or 'growth' in low:
             return ('forest', 'forest', '', 0.50, 0.0, 'forests region')
-        if 'holoforge' in low or 'forge' in low:
-            return ('holoforge', 'holoforge', '', 0.52, 0.0, 'holoforge')
         return None
 
     def _target_soundscape(self):
@@ -6789,15 +6785,7 @@ class CommandHubApp(ShowBase):
         soundtrack, so HoloVerse adds no music to it (empty cue)."""
         key = re.sub(r"[^a-z0-9]+", "_", str(label or "dimension").lower()).strip("_")
         table = {
-            "forest_growth": {"cue": "forest", "volume": 0.54},
-            "hills_of_life": {"cue": "hills", "volume": 0.54},
-            "oddities": {"cue": "hills", "volume": 0.52},           # Solace keeps Oddities in GREEN HILLS
-            "ember_hangar": {"cue": "desert", "volume": 0.56},
-            "frost_circuit": {"cue": "ice", "volume": 0.54},
-            "urban_warzone": {"cue": "urban", "volume": 0.62},
-            "metropolis_robot_lab": {"cue": "metropolis", "volume": 0.58},
             "holospace_region": {"cue": "space", "volume": 0.58},
-            "holoforge": {"cue": "holoforge", "volume": 0.54},
         }
         if key in table:
             return dict(table[key])
@@ -9181,14 +9169,11 @@ class CommandHubApp(ShowBase):
                 "Lore index: READY"
             )
         if page_key == "system":
-            primary_ids = self.matrixcore_primary_experiment_mode_ids()
-            primary_ready = len(primary_ids)
             return (
                 f"MatrixCore: ONLINE\n"
-                f"HoloForge station: {primary_ready}/{primary_ready} CONNECTED\n"
                 f"Worldway artifacts: {len(ARTIFACT_REGION_ROUTES)}/{len(ARTIFACT_REGION_ROUTES)} CONNECTED\n"
                 f"Travel law: E ENTER  //  TAB HOME\n\n"
-                "Artifacts travel to HoloVerse regions. HoloForge is the creation station.\n"
+                "Artifacts travel to HoloVerse regions. Region guides open their dimension gates.\n"
                 "MatrixCore tracks progress and keeps home stable."
             )
         ui_lines = dict(lore.get("matrixcore_ui_lines", {}) or {})
@@ -14673,7 +14658,7 @@ class CommandHubApp(ShowBase):
         return self.dimension_display_name_for_id(mode_id, fallback="DIMENSION")
 
     def build_artifacts(self):
-        """Build the MatrixCore worldway ring plus the HoloForge workshop station.
+        """Build the MatrixCore worldway ring (Pass 282.81: the HoloForge station was removed).
 
         Eight artifacts remain geographic travel objects into the existing HoloVerse
         shell. HoloMap, HoloTactics, and HoloCore are Dimension Archive realities,
@@ -14760,46 +14745,6 @@ class CommandHubApp(ShowBase):
                 "region_number": region_number,
             })
 
-        # HoloForge remains a dedicated workshop station, not a world artifact.
-        dimension_mode_id = "creativity"
-        station_id = len(self.artifacts)
-        pos = Vec3(0.0, -(self.artifact_radius + 4.0), 0.0)
-        for x in (-0.82, 0.82):
-            self.add_polyline(
-                self.line_root,
-                [Vec3(x, -(self.hub_radius + 5.0), 0.058), Vec3(x, pos.y + 2.75, 0.058)],
-                self.station_line_color(0.26), self.cfg.line_thickness * 0.36, False,
-                "holoforge-exterior-guide",
-            )
-        col = self.artifact_color_for_mode(dimension_mode_id, 0.98, "primary")
-        ped_col = self.artifact_color_for_mode(dimension_mode_id, 0.54, "secondary")
-        highlight = self.artifact_color_for_mode(dimension_mode_id, 0.72, "highlight")
-        self.add_box(self.line_root, pos + Vec3(0, 0, 0.34), Vec3(2.45, 2.45, 0.68), ped_col, 0.58)
-        forge_anchor = self.add_polyline(
-            self.line_root, self.polygon_points(1.54, 0.72, 4, 45.0),
-            highlight, self.cfg.line_thickness * 0.50, True, "holoforge-station-anchor",
-        )
-        forge_anchor.setPos(pos)
-        shape_node = self.artifact_shape(self.line_root, pos + Vec3(0, 0, 2.55), col, station_id, dimension_mode_id)
-        shape_node.setPythonTag("artifact_id", station_id)
-        shape_node.setPythonTag("world_id", 0)
-        shape_node.setPythonTag("dimension_mode_id", dimension_mode_id)
-        shape_node.setPythonTag("primary_experiment_station", True)
-        self.artifact_shape_nodes.append(shape_node)
-        self.artifacts.append({
-            "id": station_id,
-            "world_id": 0,
-            "dimension_mode_id": dimension_mode_id,
-            "name": self.artifact_dimension_label(dimension_mode_id),
-            "pos": pos + Vec3(0, 0, 2.55),
-            "pedestal_pos": pos,
-            "shape_node": shape_node,
-            "yaw": 0.0,
-            "pitch": 58.0,
-            "radius": 4.8,
-            "primary_station": True,
-            "region_gate": False,
-        })
 
 
 
@@ -19882,15 +19827,10 @@ def _install_dimension_runtime(dimension_folder: str, module_key: str, installer
         print(f"dimension_runtime_install_error: {dimension_folder}: {exc}")
 
 
+# Pass 282.81: the in-world region activities (HoloForge, Forest Growth, Hills of Life, Oddities,
+# Ember Hangar, Frost Circuit, Urban Warzone, Metropolis Robot Lab) were removed.  The region
+# guides open their gate dimensions instead.  HoloSpace Region is the route into HoloSpace.
 for _dimension_folder, _module_key, _installer_name in (
-    ("HoloForge", "holoforge", "install_holoforge_region_runtime"),
-    ("Forest Growth", "forest_growth", "install_forest_growth_runtime"),
-    ("Hills of Life", "hills_of_life", "install_hills_life_runtime"),
-    ("Oddities", "oddities", "install_oddities_runtime"),
-    ("Ember Hangar", "ember_hangar", "install_desert_ships_runtime"),
-    ("Frost Circuit", "frost_circuit", "install_frost_circuit_runtime"),
-    ("Urban Warzone", "urban_warzone", "install_urban_warzone_runtime"),
-    ("Metropolis Robot Lab", "metropolis_robot_lab", "install_metropolis_robot_lab_runtime"),
     ("HoloSpace Region", "holospace_region", "install_holospace_region_runtime"),
 ):
     _install_dimension_runtime(_dimension_folder, _module_key, _installer_name)
