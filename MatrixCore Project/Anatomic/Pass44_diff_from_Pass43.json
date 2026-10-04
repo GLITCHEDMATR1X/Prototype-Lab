@@ -1,0 +1,27 @@
+{
+  "schema": "anatomic.pass44.diff.v1",
+  "base": "Anatomic Pass 43 Motion Forge",
+  "pass": "Anatomic Pass 44 Combo Composer",
+  "added": [
+    "Pass44_asset_preservation.json",
+    "RUN_PASS44_COMBO_COMPOSER.bat",
+    "tools/pass44_combo_composer_test.py",
+    "validate_pass44.py",
+    "validation_pass44.json",
+    "validation_pass44.txt",
+    "validation_pass44_contract.json",
+    "verification/pass44_combo_composer/pass44_combo_composer_1280x720.png",
+    "verification/pass44_combo_composer/pass44_combo_composer_1920x1080.png"
+  ],
+  "removed": [
+    "main.py.pass42.bak"
+  ],
+  "modified": [
+    "PASS_REPORT.md",
+    "README.md",
+    "gxtool.project.json",
+    "main.py",
+    "tools/pass43_motion_forge_test.py",
+    "validation.txt"
+  ]
+}

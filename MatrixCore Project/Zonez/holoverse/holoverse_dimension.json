@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "id": "zonez",
+  "title": "Zonez",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "native",
+  "launch_model": "same_window_native",
+  "return_model": "tab_returns_to_holoverse",
+  "return_target": "gleebs_dimension_archive",
+  "preview": "icon.png",
+  "symbol": "ZNZ",
+  "accent": "B07CFF",
+  "description": "A sandbox simulation of linked zones (day, night, candy, dread and hell), each with its own rules to play with.",
+  "input_contract": {
+    "host_owned": [
+      "tab"
+    ],
+    "dimension_owned": [
+      "all other input"
+    ],
+    "return": "TAB returns to HoloVerse."
+  },
+  "result_contract": "optional: HOLOVERSE_RETURN_SIGNAL_PATH json {result: {completed, signal, gleebs_response}} via holoverse_link.py",
+  "native_adapter": "holoverse_native_adapter.py",
+  "host_contract": "holoverse_dimension_v1"
+}

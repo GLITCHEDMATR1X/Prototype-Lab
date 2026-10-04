@@ -1,0 +1,59 @@
+{
+  "schema": "afterlife_io.machine_catalog.v5",
+  "parts": {
+    "frame_plate": {
+      "name": "FRAME PLATE",
+      "cost": 4,
+      "world_height": 82,
+      "role": "frame",
+      "touch_radius": 41,
+      "spin_dps": 0,
+      "description": "COSMETIC OVERLAY // TICKS WHEN TOUCHING POWERED DRIVE"
+    },
+    "pivot_ring": {
+      "name": "PIVOT RING",
+      "cost": 5,
+      "world_height": 82,
+      "role": "pivot",
+      "touch_radius": 41,
+      "spin_dps": 72,
+      "description": "ROTATING DRIVE RING // CORE + GEAR REQUIRED // DRAWN ABOVE GEAR"
+    },
+    "conduit_pipe": {
+      "name": "CONDUIT PIPE",
+      "cost": 3,
+      "world_height": 82,
+      "role": "pipe",
+      "touch_radius": 41,
+      "spin_dps": 0,
+      "description": "RIGID HINGED LINK // FIXED LENGTH // PERSISTENT PINS CARRY TENSION"
+    },
+    "gear_cluster": {
+      "name": "GEAR CLUSTER",
+      "cost": 6,
+      "world_height": 82,
+      "role": "gear",
+      "touch_radius": 41,
+      "spin_dps": 0,
+      "description": "POWERED LOAD BASE // SHAKES; PIVOT RING ROTATES ABOVE"
+    },
+    "rotor_fan": {
+      "name": "ROTOR FAN",
+      "cost": 7,
+      "world_height": 82,
+      "role": "fan",
+      "touch_radius": 41,
+      "spin_dps": 216,
+      "description": "SPINS IN PLACE // MAY ATTACH TO POWERED PIVOT OR PIPE END"
+    },
+    "core_housing": {
+      "name": "CORE HOUSING",
+      "cost": 8,
+      "world_height": 82,
+      "role": "core",
+      "touch_radius": 41,
+      "spin_dps": 0,
+      "description": "POWER SOURCE // CORE MUST TOUCH GEAR + PIVOT"
+    }
+  }
+}

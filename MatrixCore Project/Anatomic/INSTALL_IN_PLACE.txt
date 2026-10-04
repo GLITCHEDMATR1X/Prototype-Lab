@@ -1,0 +1,23 @@
+ANATOMIC PASS 47 — INSTALL IN PLACE
+
+Your existing HoloVerse link points to:
+  MatrixCore Project\Anatomic 45\main.py
+
+This ZIP deliberately contains a root folder named:
+  Anatomic 45
+
+Extract the ZIP into `MatrixCore Project` and allow Windows to merge/overwrite files in the existing `Anatomic 45` folder.
+
+IMPORTANT:
+- Do NOT delete the existing `Anatomic 45` folder first.
+- Do NOT delete its hidden `.holoverse_link.json` if present.
+- Do NOT link a second Anatomic entry.
+
+On the next Dimension Archive rescan the same link should promote from LINKED to ADAPTED automatically.
+
+Correct native launch log:
+  dimension_enter route=gleebs_archive ... title=Anatomic
+
+Incorrect old external launch log:
+  external_pause_begin label=DIMENSION // ANATOMIC 45 embedded=0
+  dimension_enter route=gleebs_archive_external ...

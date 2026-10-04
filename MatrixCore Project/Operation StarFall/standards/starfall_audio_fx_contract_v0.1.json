@@ -1,0 +1,29 @@
+{
+  "schema": "operation_starfall_audio_fx_contract_v0_1",
+  "phase": "mastering",
+  "pass": "Pass41",
+  "normal_play_audio": "enabled unless explicitly disabled",
+  "silent_modes": ["--no-audio", "--headless", "--smoke-test", "--test-shot", "--boot-shot", "--offscreen"],
+  "active_worlds": ["mimas", "enceladus", "iapetus", "titan"],
+  "world_ambience": {
+    "mimas": "ambience_mimas.wav",
+    "enceladus": "ambience_enceladus.wav",
+    "iapetus": "ambience_iapetus.wav",
+    "titan": "ambience_titan.wav"
+  },
+  "required_action_cues": [
+    "drill_start.wav",
+    "drill_loop.wav",
+    "drill_deep_crack.wav",
+    "drill_breakthrough.wav",
+    "robot_activate.wav",
+    "robot_anchor.wav",
+    "robot_braced.wav",
+    "sonar_ping.wav",
+    "sonar_lock.wav",
+    "magnet_attach.wav",
+    "cargo_hoist.wav",
+    "cargo_collect.wav"
+  ],
+  "return_cleanup_rule": "embedded operation shutdown stops all moon SFX loops before returning to the StarFall shell"
+}

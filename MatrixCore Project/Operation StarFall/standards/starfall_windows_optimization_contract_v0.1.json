@@ -1,0 +1,18 @@
+{
+  "contract": "operation_starfall_windows_optimization_v0.2",
+  "phase": "Mastering / Remastering",
+  "active_worlds": ["mimas", "enceladus", "iapetus", "titan", "mars", "pluto", "europa", "triton"],
+  "window_rules": {
+    "default": "desktop_resizable",
+    "large": "bordered_1920x1080_resizable",
+    "safe": "safe_1440x810_resizable",
+    "compact": "compact_1280x720_resizable",
+    "borderless": "borderless_desktop_native",
+    "manual_resize_policy": "window_event_reflows_aspect_safe_canvas",
+    "dpi_aware": true,
+    "exclusive_fullscreen_default": false
+  },
+  "performance_profiles": ["PERFORMANCE", "BALANCED", "PRESENTATION"],
+  "window_presets": ["desktop_resizable", "bordered_1600x900", "bordered_1920x1080", "safe_1440x810", "compact_1280x720", "borderless_desktop", "exclusive_1920x1080"],
+  "settings_file": "settings/starfall_user_settings.json"
+}

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "identity_mode": "host_assigned",
+  "title": "HoloShell",
+  "entry": "main.py",
+  "compatibility": "native",
+  "native_adapter": "holoverse_native_adapter.py",
+  "description": "Complete HoloShell observatory/world simulation. Runs standalone normally, consumes HoloVerse settings when compatibility-launched, or mounts its real HoloShell.py runtime into the existing HoloVerse Panda3D window when linked as native.",
+  "preview": "assets/generated_hub_textures/hub_core.png",
+  "return_target": "gleebs_dimension_archive",
+  "engine": "panda3d",
+  "adapter_contract": "holoverse_dimension_v2_full_source_host_runtime",
+  "version": "1.2.0-seamless-holoverse-native"
+}

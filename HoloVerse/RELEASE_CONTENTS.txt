@@ -1,0 +1,18 @@
+HoloVerse release copy - built 2026-10-03 from the working folder (Pass 282.61).
+
+Left out (development only, still in the working HoloVerse folder):
+- .backup_pass282_50, .backup_pass282_61   old file backups
+- tools/                                   72 smoke/validate test scripts
+- HoloVerse_Pass282_*_Report.md            pass reports (also in project notes)
+- *.diff / *.patch / diff_from_282_9.json  old diffs
+- HOLOVERSE_TERRAIN_PARITY_CHECK.py, VERIFY_HOLOVERSE272.py,
+  HOLOVERSE_FINAL_BUILD_CLEANER.py         one-off check scripts
+- ERROR - delete when fixed.txt            dev bug note
+- every __pycache__ folder                 Python rebuilds these
+
+Reset for players (not copied; the game creates fresh ones on first launch):
+- saves/, runtime_state/, logs/
+- holoforge/blueprints/autosave_holoforge.json
+
+Checked: all Python compiles; a headless --self-test boot from this folder exits
+cleanly and recreates saves/, runtime_state/ and logs/ with default settings.

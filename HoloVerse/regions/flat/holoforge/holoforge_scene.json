@@ -1,0 +1,14 @@
+{
+  "schema": 4,
+  "name": "holoforge_flat_region_scene",
+  "dimension": "holoforge",
+  "tool": "HoloForge",
+  "coordinate_space": "holoverse_world_region",
+  "region": "flat",
+  "region_name": "Hub Region",
+  "save_authority": "shared_data_holoverse_region_layer",
+  "scene_path": "C://Users//glitc//OneDrive//Desktop//sdk//tools//ContentBuilder//content//_internal//data//holoverse//regions//flat//holoforge//holoforge_scene.json",
+  "created_or_updated_at": "2026-05-14T12:20:22",
+  "object_count": 0,
+  "objects": []
+}

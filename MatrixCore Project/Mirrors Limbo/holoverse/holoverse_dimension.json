@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "title": "Mirror's Limbo",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "native",
+  "native_adapter": "holoverse_native_adapter.py",
+  "description": "Mirror's Limbo native linked reality. Stable same-window responder with host-owned TAB return and host-safe audio/transition lifecycle.",
+  "preview": "icon.png",
+  "host_contract": "holoverse_dimension_v1",
+  "return_target": "gleebs_dimension_archive",
+  "input_contract": {
+    "host_owned": [
+      "tab"
+    ],
+    "dimension_owned": [
+      "w",
+      "a",
+      "s",
+      "d",
+      "shift",
+      "space",
+      "e",
+      "f",
+      "q",
+      "escape",
+      "f1",
+      "f5",
+      "g",
+      "f7",
+      "1-9"
+    ]
+  },
+  "version": "31.0",
+  "id": "mirrors_limbo"
+}

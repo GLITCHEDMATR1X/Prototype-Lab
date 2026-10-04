@@ -1,0 +1,212 @@
+{
+  "dominant_ui_authority": {
+    "owns": [
+      "MatrixCore / Observatory UI",
+      "shared pause/menu overlay",
+      "Dimension Gates menu",
+      "shared native-dimension transition overlay",
+      "transition overlay",
+      "parent ESC / hold-ESC behavior",
+      "player-facing path/text sanitation"
+    ],
+    "path": "data/HoloVerse/main.py",
+    "role": "root_matrixcore_hub_ui_authority"
+  },
+  "fractured_dimension_integration": {
+    "adapter": "Fractured Dimensions/holoverse_native_adapter.py",
+    "launch_button": "MatrixCore Guide -> Enter Fractured Dimension",
+    "return_controls": [
+      "ESC",
+      "0"
+    ],
+    "route": "same_window_native",
+    "source_preservation": "lossless_root_folder_preserved_full_gameplay_ui",
+    "separate_screen": false,
+    "placeholder": false
+  },
+  "future_modules": [
+    "data/HoloVerse/ui/theme.py",
+    "data/HoloVerse/ui/red_ui_contract.json",
+    "data/HoloVerse/ui/universal_hud.py",
+    "data/HoloVerse/ui/universal_menu.py",
+    "data/HoloVerse/ui/gates_panel.py",
+    "data/HoloVerse/ui/prompt_panel.py",
+    "data/HoloVerse/ui/pause_overlay.py",
+    "data/HoloVerse/ui/mode_contract.py"
+  ],
+  "grouped_ui_sources": {
+    "hosted_standalone_mode_ui": [
+      {
+        "engine": "panda3d_native_adapter",
+        "launch_type": "native_panda",
+        "migration_action": "same-window Code Red Vector adapter owns live artifact UI; original ShowBase source remains fallback-only",
+        "native_adapter": "data/HoloVerse/Dimensions/Code Red Vector/holoverse_native_adapter.py",
+        "path": "data/HoloVerse/Dimensions/Code Red Vector/main.py",
+        "wrapper": "data/HoloVerse/Dimensions/Code Red Vector/holoverse_entry.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "honor HOLOVERSE_UI_AUTHORITY=parent before drawing local persistent HUD",
+        "path": "data/HoloVerse/Dimensions/Etch-Line/main.py",
+        "wrapper": "data/HoloVerse/Dimensions/Etch-Line/holoverse_entry.py"
+      },
+      {
+        "engine": "panda3d_native_adapter",
+        "launch_type": "native_panda",
+        "migration_action": "same-window Zonez adapter owns live artifact UI; standalone DirectGUI source remains fallback-only",
+        "native_adapter": "data/HoloVerse/Dimensions/Zonez/holoverse_native_adapter.py",
+        "path": "data/HoloVerse/Dimensions/Zonez/main.py",
+        "wrapper": "data/HoloVerse/Dimensions/Zonez/holoverse_entry.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "honor HOLOVERSE_UI_AUTHORITY=parent before drawing local persistent HUD",
+        "path": "data/HoloVerse/Dimensions/Holo Campaign/main.py",
+        "wrapper": "data/HoloVerse/Dimensions/Holo Campaign/holoverse_entry.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "honor HOLOVERSE_UI_AUTHORITY=parent before drawing local persistent HUD",
+        "path": "data/HoloVerse/Dimensions/Holo Conquest/main.py",
+        "wrapper": "data/HoloVerse/Dimensions/Holo Conquest/holoverse_entry.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "launch_type": "native_panda",
+        "migration_action": "honor HOLOVERSE_UI_AUTHORITY=parent before drawing local persistent HUD",
+        "native_adapter": "data/HoloVerse/Dimensions/Fractured Dimension/holoverse_native_adapter.py",
+        "path": "data/HoloVerse/Dimensions/Fractured Dimension/main.py",
+        "wrapper": "data/HoloVerse/Dimensions/Fractured Dimension/holoverse_entry.py"
+      },
+      {
+        "engine": "panda3d_native_adapter_from_pygame_source",
+        "launch_type": "native_panda",
+        "migration_action": "same-window Vector Wars adapter owns live artifact UI; original pygame HUD remains fallback-only",
+        "native_adapter": "data/HoloVerse/Dimensions/Vector Wars/holoverse_native_adapter.py",
+        "path": "data/HoloVerse/Dimensions/Vector Wars/main.py",
+        "wrapper": "data/HoloVerse/Dimensions/Vector Wars/holoverse_entry.py"
+      }
+    ],
+    "in_world_runtime_ui": [
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "replace persistent local panels with root HUD state reports",
+        "path": "data/HoloVerse/Dimensions/Oddities/runtime.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "replace persistent local panels with root HUD state reports",
+        "path": "data/HoloVerse/Dimensions/Frost Circuit/runtime.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "replace persistent local panels with root HUD state reports",
+        "path": "data/HoloVerse/Dimensions/Hills of Life/runtime.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "replace persistent local panels with root HUD state reports",
+        "path": "data/HoloVerse/Dimensions/HoloForge/runtime.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "replace persistent local panels with root HUD state reports",
+        "path": "data/HoloVerse/Dimensions/Forest Growth/runtime.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "replace persistent local panels with root HUD state reports",
+        "path": "data/HoloVerse/Dimensions/Metropolis Robot Lab/runtime.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "replace persistent local panels with root HUD state reports",
+        "path": "data/HoloVerse/Dimensions/Urban Warzone/runtime.py"
+      },
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "replace persistent local panels with root HUD state reports",
+        "path": "data/HoloVerse/Dimensions/Ember Hangar/runtime.py"
+      }
+    ],
+    "root_authority": [
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "keep_authority; extract into ui modules gradually",
+        "path": "data/HoloVerse/main.py",
+        "status": "dominant"
+      }
+    ],
+    "sub_hub": [],
+    "supporting_ui_or_transition_files": [
+      {
+        "engine": "panda3d_directgui",
+        "migration_action": "keep transition UI subordinate to root authority",
+        "path": "data/HoloVerse/holospace_travel_sequence.py"
+      }
+    ]
+  },
+  "kind": "holoverse_ui_authority_manifest",
+  "notes": [
+    "This manifest is an index, not a runtime dependency yet.",
+    "Do not delete local UI until each mode is tested under the parent HUD authority.",
+    "Root HoloVerse main.py remains dominant until shared UI modules are extracted safely."
+  ],
+  "pass72_dimension_cleanup": {
+    "vector_wars": "native adapter now owns live dogfight controls for RMB missile, T target, R weapon, V ship, and weather hazards.",
+    "zonez": "Zonez remains UI-visible and uses connected per-zone folders/state files instead of a disconnected portal router."
+  },
+  "pass75_dimension_presentation_contract": {
+    "native_dimension_ui_defaults": {
+      "code_red_vector": "hidden_legacy_ui_with_h_toggle",
+      "etch_line": "hidden_legacy_ui_with_h_toggle",
+      "fractured_dimension": "hidden_legacy_ui_with_h_toggle_same_window_root_adapter",
+      "holo_campaign": "hidden_legacy_ui_with_h_toggle",
+      "holo_conquest": "hidden_legacy_ui_with_h_toggle",
+      "vector_wars": "hidden_legacy_ui_with_h_toggle",
+      "zonez": "game_ui_visible_excluded_from_hiding"
+    },
+    "purpose": "Normalize presentation-facing dimension UI/help text without removing legacy/source UI.",
+    "rules": [
+      "H toggles universal/Core HUD only while no native dimension is active.",
+      "Inside native artifact dimensions, H toggles only the dimension legacy/source UI.",
+      "Legacy/source UI defaults hidden for Code Red Vector, Etch-Line, Fractured Dimension, Holo Campaign, Holo Conquest, and Vector Wars.",
+      "Zonez is excluded because its visible UI is part of its gameplay loop.",
+      "Every native artifact status line should say ESC / 0 RETURN TO HOLOVERSE.",
+      "Visible native artifact help text should not imply standalone quit, fullscreen, or pause-menu ownership."
+    ],
+    "validator": "tools/validate_dimension_presentation_contracts.py"
+  },
+  "schema": 1,
+  "updated_at": "282.18_holocore_external_dimension_separation",
+  "wrapper_environment_contract": {
+    "HOLOVERSE_HIDE_LOCAL_HUD": "1",
+    "HOLOVERSE_RETURN_ON_ESC": "1",
+    "HOLOVERSE_SINGLE_ESC_RETURN": "1",
+    "HOLOVERSE_UI_AUTHORITY": "parent"
+  },
+  "full_integration_route_policy": {
+    "no_placeholder_panels": true,
+    "no_child_window_fallbacks_for_integrated_dimensions": true,
+    "holocore": "MatrixCore Project/HoloCore/holoverse_native_adapter.py -> external native Dimension Archive reality",
+    "fractured_dimension": "Fractured Dimensions/holoverse_native_adapter.py -> same-window Fractured gameplay with local HUD preserved",
+    "holospace_region": "live HoloVerse Region 8 warp/cockpit route"
+  },
+  "native_dimension_policy": {
+    "host_status_strip": false,
+    "host_exit_button": false,
+    "tab_return": true,
+    "escape_behavior": "normal_holoverse_menu_with_return_to_holoverse",
+    "dimension_hud_authority": "linked_dimension_source",
+    "persistent_host_overlay_during_native_gameplay": false
+  },
+  "holocore_external_dimension_ui": {
+    "purpose": "External HoloCore owns its local same-window scene, prompts, and input. HoloVerse owns TAB return and the host lifecycle only.",
+    "source": "../MatrixCore Project/HoloCore/holoverse_native_adapter.py",
+    "host_contract": "holoverse_dimension_v1",
+    "strings": {
+      "return_prompt": "HOLOCORE  //  H HELP  //  TAB DIMENSION ARCHIVE",
+      "help_return": "TAB RETURN TO HOLOVERSE"
+    }
+  }
+}

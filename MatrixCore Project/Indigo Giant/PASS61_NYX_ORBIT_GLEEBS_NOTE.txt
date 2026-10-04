@@ -1,0 +1,159 @@
+THE INDIGO GIANT - PASS 61  NYX, ORBIT, CRIMSON - THE ETCHINGS - GLEEBS AND THE END OF REDACTED
+===============================================================================================
+
+THE NAMES
+---------
+  - Nyx is the Indigo Giant. Orbit is the human (you). Crimson is the red giant.
+  - The planet is REDACTED: those who left it scratched its name from every chart, so no one
+    would look for it.
+  - Every line the player reads uses them:
+      - messages
+      - HUD labels: "nyx · staying", "crimson · stalking · 72 m", "you are Nyx", "riding Nyx"
+      - prompts
+      - F1 help and the keys page: "be Nyx / be Orbit", "Nyx: punch"
+      - hints, places' stories, the journal, the ending
+      - the audio README
+  - The title stays "The Indigo Giant".
+  - Code names (variables, sound keys, save keys, clip names) are unchanged, so saves and your
+    controls.json carry over.
+  - Fixed on the way: the spoken lines at the bottom of the screen were always drawn in dark ink,
+    so at night they were nearly unreadable. They now use the night ink (pale), with a soft
+    shadow.
+
+
+THE ETCHINGS - little notes of lore
+-----------------------------------
+14 standing stones, cut with rows of small angular glyphs.
+  - Where they stand:
+      - the first ~60 m from where the journey starts, the last ~9.4 km out
+      - spread all round (the golden angle)
+      - always on open, fairly level sand: never in a shell, a place or water, and nothing is
+        placed on top of them later
+  - How they look:
+      - by day the marks are dark cuts in pale stone
+      - at night they glow cyan, and a soft glimmer over the stone shows it from ~250 m
+      - both broad faces are cut
+  - Hold E beside one (1 s) to read it. The words stay on screen ~9 s, with "etching 3 of 14 · J >
+    notes". A read etching dims a little; you can read it again.
+  - J > notes (a third journal page) lists every etching you have read, in order from the start.
+  - Read nearest first, they tell:
+      1  NYX, "the night that keeps you warm"
+      2  ORBIT, the small one who never strays from Nyx
+      3  CRIMSON, and the light it burns at night
+      4  Crimson is stronger than Nyx, but not wise: it eats everything, bitter or sweet
+      5  this world's name scratched out; over the scars: REDACTED
+      6  the lights in the sky that stopped coming
+      7  those who left did not want it found; they wrote REDACTED in its place
+      8  the rivers, then the green: REDACTED is dying
+      9  Nyx's kind were many; one is left, and one small thing beside it
+      10 Crimson's kind ate the pale flower because it was there, and did not get up
+      11 a figure of thin bright lines with long ears, in a beam from the sky: GLEEBS
+      12 Gleebs took the last small ones away, and promised to listen
+      13 when Crimson lies down for good the sky will answer; go into the light together; it will
+         not take one who is alone
+      14 REDACTED is dying. Do not stay. Do not stay alone.
+  - Saved with the journey.
+
+
+THE END - GLEEBS COMES
+----------------------
+Crimson falls the same way as before: find the pale bloom, poison a blood branch, let Crimson eat
+it. Then, instead of the old "the red one sleeps" card, the sky answers.
+
+  ARRIVING (about 40 s; you can move)
+    - A beam of light falls out of the sky ~58 m ahead of where you are looking, on clear sand.
+    - Gleebs flickers into being in it as a hologram, 26 m tall (1.3 x Nyx):
+        - the Utopia Vision model (assets/gleebs/Gleebs_Game.bam), looping its Idle
+        - cyan, with scanlines crawling up through it, glitching now and then
+        - hanging just above the sand, breathing
+      Its light falls on the sand, on Nyx, on you and on Crimson's body.
+    - It speaks (subtitled, with a soft voice sound):
+        "Nyx. Orbit. I heard you, at last."
+        "No one comes to REDACTED any more. They scratched its name from every chart, so no one
+         would look."
+        "This world is dying. I can carry you both away from it."
+        "Crimson ate what was bitter, because it was there. It was strong, but never wise. It
+         stays with REDACTED."
+        "Step into my light together, when you are ready. I will wait."
+
+  WAITING (as long as you like; saved)
+    - Walk into the light (within 9 m of the beam):
+        - with Nyx beside you (Nyx within 30 m of the beam, and not knocked out): hold E 2 s -
+          "leave REDACTED with Gleebs"
+        - alone: "Not alone. Bring Nyx into the light with you."
+
+  LEAVING (a 16 s scene; no control, the world holds still, the HUD steps aside)
+    - Nyx and Orbit are drawn into the beam and rise ~70 m up it, as the beam flares.
+    - Cut to Crimson, lying where it fell, with the beam behind it:
+      "Crimson stays behind, lying where it fell. It was strong, but it was never wise enough to
+      follow."
+    - The beam goes out.
+
+  THE CARD: "they left REDACTED"
+    - Nyx and Orbit went up into the light with Gleebs.
+    - Crimson stayed. It was strong, but never wise, and it perished with REDACTED.
+    - your journey's numbers
+    - No one will look for this world again.
+    - new journey / quit
+    The journey is over: the card comes back if closed, and loading this journey shows it again.
+
+Saves:
+  - Gleebs' place and state are saved.
+  - Saved while it was still speaking: it comes down again in the same place.
+  - A journey saved before this pass with Crimson already dead: Gleebs comes a few seconds after
+    loading.
+
+
+HOW IT IS MADE
+--------------
+  lore.py    LoreMixin:
+               - the stones: one shared flat-shaded mesh, instanced
+               - the glyph textures: drawn into a PNMImage at start-up
+               - the cut / glow cards, the glimmer
+               - reading (the E chain), the notes page lines, saves
+  gleebs.py  GleebsMixin (before EndgameMixin, so its show_ending starts the arrival):
+               - the beam: two open cylinders, their alpha fading up, with world-space scanlines
+                 that scroll
+               - a pool of light on the sand
+               - the hologram
+               - the lines, the waiting and leaving, the camera shots
+               - the ending card text, saves
+  The hologram:
+    - One Actor, drawn without the sketch shader, so an Actor from a BAM skins on the CPU (as in
+      Utopia Vision).
+    - It is drawn in two layers that share it as an instance (skinned once):
+        - a body, plain alpha-blended: it reads as cyan even against the bright noon sky
+          (Crimson is poisoned by day, so Gleebs usually comes by day)
+        - an additive glow over it, strong at night
+    - Its own textures are switched off for scanlines generated from world height.
+    - If the model cannot load, the beam, the words and the ending still work.
+  main.py:
+    - world_frozen() also holds while leaving / after leaving
+    - _place_camera() hands the camera to the scene while it plays
+  crimson.py's third soft light carries Gleebs' cyan light once Crimson is dead.
+  Sounds (placeholder, synthesised by tools_make_placeholder_audio.py): lore_read, gleebs_arrive,
+  gleebs_voice, gleebs_depart.
+  Cost: the etchings update in 0.02 ms a frame. Gleebs loads only when it comes.
+
+
+CHECKS
+------
+  python tools_pass61_check.py
+    - no old names in player text; the HUD and F1 help
+    - 14 etchings, their order, their story, open sand
+    - day cut / night glow and glimmer; reading; reading again; J > notes
+    - night ink for the spoken lines
+    - Gleebs comes ahead of you, the model and its Idle, 26 m tall
+    - every line; its light
+    - alone it will not take you
+    - saved while it waits
+    - leaving with Nyx; the scene (frozen, no HUD, rising, Crimson's shot); the card
+    - the card comes back; a finished journey loads to the card
+    - an older save with Crimson dead
+    - the sounds
+  Updated:
+    - tools_pass47_check.py: the end now begins with Gleebs, not a card
+    - tools_pass48_check.py and tools_pass49_check.py: the names in their expected text
+  All of tools_pass38 ... tools_pass61 pass (24 checks). The 30-minute soak is flat.
+  The playthroughs (seeds 11 and 5) had 0 problems, and their saves reload. Frame times are
+  unchanged (p95 2.47-2.48 ms).

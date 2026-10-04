@@ -1,0 +1,99 @@
+{
+  "schema": "gxtool.project.v1",
+  "project": {
+    "id": "holotactics",
+    "name": "HoloTactics",
+    "engine": "panda3d",
+    "entry_point": "main.py",
+    "root_policy": "contract paths are project-relative"
+  },
+  "authority": {
+    "base": "HoloTactics Pass 29 \u2014 GXTool Contract Cleanup",
+    "pass": "30-redo",
+    "status": "candidate"
+  },
+  "gameplay": {
+    "core_loop": [
+      "select and position squad units on the tactical grid",
+      "fight or bypass hostile units while completing the sector-specific objective",
+      "reach Extraction Gate",
+      "seal sector and continue through the five-sector journey"
+    ],
+    "controls": [
+      "LMB select/move",
+      "RMB or F attack",
+      "WASD/arrows cursor",
+      "M move",
+      "Q Gleebs Patch Pulse",
+      "X one-shot ability",
+      "E end turn",
+      "J Journey Map",
+      "V SFX mute",
+      "B music mute",
+      "ESC standalone pause / host-owned when native",
+      "TAB host return when native",
+      "F9 developer diagnostics"
+    ],
+    "frozen_scope": [
+      "sector 1-5 objective rules",
+      "enemy tactical AI",
+      "actor gameplay footprints/stats",
+      "Journey Map progression",
+      "sector audio identity",
+      "Pass 28 HoloVerse input/lifecycle authority"
+    ],
+    "active_scope": [
+      "HUD alignment/theme redo from Pass 29",
+      "F9 developer diagnostics toggle only"
+    ]
+  },
+  "safety": {
+    "protected_paths": [
+      "holotactics_core.py",
+      "holoverse_native_adapter.py"
+    ],
+    "write_policy": "transactional_patch_gate",
+    "human_approval_required_for_source_writes": true,
+    "allow_network_dependency_install": false
+  },
+  "runtime": {
+    "preferred_provider": "auto",
+    "offline_runtime_vault": true,
+    "panda3d_version": "1.10.16"
+  },
+  "verification": {
+    "required_resolutions": [
+      "1920x1080",
+      "1280x720"
+    ],
+    "commands": [
+      "python -m py_compile main.py holotactics_core.py holotactics_audio.py holotactics_actor_specs.py holotactics_ui_layout.py holoverse_native_adapter.py",
+      "python tools/pass20_ai_qa.py",
+      "python tools/pass21_sector2_qa.py",
+      "python tools/pass22_sector3_qa.py",
+      "python tools/pass25_journey_map_qa.py",
+      "python tools/pass26_actor_visual_qa.py",
+      "python tools/pass27_sector_audio_qa.py",
+      "python tools/pass28_native_host_qa.py",
+      "python tools/pass30_hud_alignment_qa.py",
+      "GXTool full-pass . --profile panda3d --runtime auto --smoke --require-screenshot"
+    ],
+    "screenshot_scenarios": [
+      "all five sectors and finale stages at 1280x720",
+      "representative sector 1 and sector 5 at 1920x1080",
+      "F9 developer view at 1280x720"
+    ],
+    "playtest_scenarios": [],
+    "performance_budgets": {}
+  },
+  "inventory": {
+    "file_count": 91,
+    "python_file_count": 15,
+    "asset_file_count": 43,
+    "scan_profile": "python_project"
+  },
+  "notes": [
+    "Pass 30 original HUD attempt was rejected for visible misalignment. This candidate is rebuilt from exact Pass 29.",
+    "Actual HoloVerse host acceptance remains pending."
+  ]
+}

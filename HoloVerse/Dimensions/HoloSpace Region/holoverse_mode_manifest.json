@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "id": "holospace_region",
+  "title": "HOLOSPACE REGION",
+  "description": "Live HoloVerse Region 8 route for Orbit/MatrixCore. Uses the existing HoloSpace warp and cockpit system inside the parent HoloVerse window; no placeholder panel or child process.",
+  "entry": "main.py",
+  "launch_type": "in_world_region",
+  "fallback_launch_type": "",
+  "host_contract": "holoverse_holospace_live_region_runtime_v1",
+  "preferred_display": "live_holoverse_region_8",
+  "return_target": "matrixcore_or_region_travel",
+  "requires_mouse_capture": true,
+  "panel_supported": false,
+  "native_adapter": "",
+  "native_adapter_enabled": false,
+  "source_kind": "holoverse_live_region",
+  "placeholder_mode": false,
+  "same_window_only": true,
+  "separate_screen": false,
+  "target_region_number": 8,
+  "runtime": "runtime.py",
+  "runtime_installer": "install_holospace_region_runtime"
+}

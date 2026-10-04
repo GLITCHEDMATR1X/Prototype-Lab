@@ -1,0 +1,11 @@
+{
+  "brain_dir": "C:\\Users\\glitc\\OneDrive\\Desktop\\sdk\\tools\\ContentBuilder\\content\\_internal\\data\\Prototype Lab\\HoloVerse_Release\\runtime_state\\brain",
+  "database_dir": "C:\\Users\\glitc\\OneDrive\\Desktop\\sdk\\tools\\ContentBuilder\\content\\_internal\\data\\Prototype Lab\\HoloVerse_Release\\runtime_state\\database",
+  "holoverse_game_folder": "C:\\Users\\glitc\\OneDrive\\Desktop\\sdk\\tools\\ContentBuilder\\content\\_internal\\data\\Prototype Lab\\HoloVerse_Release",
+  "matrixcore_database_dir": "C:\\Users\\glitc\\OneDrive\\Desktop\\sdk\\tools\\ContentBuilder\\content\\_internal\\data\\Prototype Lab\\HoloVerse_Release\\runtime_state\\database\\MatrixCore",
+  "name": "MatrixCore",
+  "role": "HoloVerse guide, progression observer, archive interface, and bot support brain.",
+  "shared_holoverse_data": "C:\\Users\\glitc\\OneDrive\\Desktop\\sdk\\tools\\ContentBuilder\\content\\_internal\\data\\Prototype Lab\\HoloVerse_Release\\runtime_state",
+  "storage_policy": "Shared memory lanes only.",
+  "updated_at": "2026-10-03T17:49:49"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "protocol": "holoverse_responder_v1",
+  "id": "holocore",
+  "title": "HoloCore",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "compatibility": "native",
+  "host_contract": "holoverse_dimension_v1",
+  "return_target": "gleebs_dimension_archive",
+  "requires_mouse_capture": true,
+  "description": "HoloCore is an external native HoloVerse dimension. It remains a standalone project under MatrixCore Project and mounts into HoloVerse's existing Panda3D window through its folder-local adapter.",
+  "native_adapter": "holoverse_native_adapter.py"
+}

@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "rule": "Physical MatrixCore artifacts are hidden from Gleebs' Dimension Archive. HoloMap, HoloTactics, HoloCore, Mirror's Limbo, Vector Arena, Glyphbound, Utopia Conflict, The Indigo Giant and Afterlife of IO are archive-only realities and must not be represented by hub artifacts.",
+  "artifact_backed": [
+    "HoloForge",
+    "Forest Growth",
+    "Hills of Life",
+    "Oddities",
+    "Ember Hangar",
+    "Frost Circuit",
+    "Urban Warzone",
+    "Metropolis Robot Lab",
+    "HoloSpace Region"
+  ],
+  "archive_only_preferred": [
+    "HoloMap",
+    "HoloTactics",
+    "HoloCore",
+    "Mirror's Limbo",
+    "Vector Arena",
+    "Glyphbound",
+    "The Indigo Giant",
+    "Utopia Conflict // Source Vector Arena",
+    "Afterlife of IO"
+  ],
+  "bot_hosted": {
+    "Afterlife of IO": "IO",
+    "Glyphbound": "Vanta",
+    "Anomaly Sequence": "Solace",
+    "The Indigo Giant": "Nyx",
+    "Vector Wars": "Ember",
+    "The Archivist": "Archivist",
+    "Anatomic": "Sable",
+    "Mirror's Limbo": "Mirror",
+    "HoloMap": "Orbit"
+  },
+  "bot_hosted_rule": "Pass 282.56-58: a reality a region guide hosts leaves Gleebs' Dimension Archive and its observatory orbs; the guide's dialogue (and gate) is its entrance. Gleebs keeps the rest at the hub."
+}

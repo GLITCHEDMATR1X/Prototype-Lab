@@ -1,0 +1,21 @@
+{
+  "schema": "holoverse_audio_library_v2",
+  "music": {
+    "source": "assets/audio/Holoverse.mp3",
+    "cue_manifest": "assets/audio/holoverse_music_cues.json",
+    "files": 1,
+    "runtime_generation": false,
+    "reverse_cache": false
+  },
+  "sfx": {
+    "root": "assets/audio/sfx/core",
+    "files": [
+      "artifact_link.wav",
+      "core_hum.wav",
+      "menu_close.wav",
+      "menu_open.wav",
+      "world_shift.wav"
+    ],
+    "runtime_generation": false
+  }
+}

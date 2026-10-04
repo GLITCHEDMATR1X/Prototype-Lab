@@ -1,0 +1,83 @@
+{
+  "completed": false,
+  "completed_at": "",
+  "convergence_seen": false,
+  "kind": "holoverse_campaign_state",
+  "schema": 1,
+  "signals": {
+    "afterlife_of_io": {
+      "complete": false,
+      "completed_at": "",
+      "goal": "Step through IO's gate into the Afterlife of IO.",
+      "label": "Afterlife of IO",
+      "progress": "0",
+      "source": ""
+    },
+    "ember_hangar": {
+      "complete": false,
+      "completed_at": "",
+      "goal": "Forge and bind one real Ember vehicle.",
+      "label": "Ember Hangar",
+      "progress": "0/1 ship",
+      "source": ""
+    },
+    "forest_growth": {
+      "complete": false,
+      "completed_at": "",
+      "goal": "Plant 5 permanent forest plants with Vanta.",
+      "label": "Forest Growth",
+      "progress": "0/5 plants",
+      "source": ""
+    },
+    "frost_circuit": {
+      "complete": false,
+      "completed_at": "",
+      "goal": "Finish one Frost Circuit race with the Archivist.",
+      "label": "Frost Circuit",
+      "progress": "0/1 race",
+      "source": ""
+    },
+    "holospace": {
+      "complete": true,
+      "completed_at": "2026-10-03T17:51:56",
+      "goal": "Travel through the HoloSpace warp and reach Dyson Reach.",
+      "label": "Dyson Reach",
+      "progress": "Dyson Reach",
+      "source": "space_transition_complete"
+    },
+    "indigo_giant": {
+      "complete": false,
+      "completed_at": "",
+      "goal": "Walk through Nyx's beam into The Indigo Giant.",
+      "label": "The Indigo Giant",
+      "progress": "0",
+      "source": ""
+    },
+    "mirrors_limbo": {
+      "complete": false,
+      "completed_at": "",
+      "goal": "Step through Mirror's gate into Mirror's Limbo.",
+      "label": "Mirror's Limbo",
+      "progress": "0",
+      "source": ""
+    },
+    "oddities": {
+      "complete": false,
+      "completed_at": "",
+      "goal": "Create 3 saved oddities with Solace.",
+      "label": "Oddities",
+      "progress": "0/3 oddities",
+      "source": ""
+    },
+    "urban_warzone": {
+      "complete": false,
+      "completed_at": "",
+      "goal": "Reach wave 3 in the Urban Warzone.",
+      "label": "Urban Warzone",
+      "progress": "wave 0/3",
+      "source": ""
+    }
+  },
+  "started_at": "2026-10-03T17:49:49",
+  "updated_at": "2026-10-03T17:51:56"
+}

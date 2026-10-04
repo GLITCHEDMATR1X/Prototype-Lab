@@ -1,0 +1,252 @@
+{
+  "bot_guidance": {
+    "IO": {
+      "bot": "IO",
+      "count": 2,
+      "last_seen_at": "2026-10-03T17:52:19",
+      "last_signal": "bot_contact",
+      "mode": "Afterlife of IO",
+      "region": "FLAT",
+      "role": "Keeper of the Afterlife gate",
+      "route": "",
+      "support": "IO keeps the Afterlife of IO gate a few steps from the start: the archive of IO's afterlife, entered from his dialogue instead of the Dimension Archive orbs."
+    }
+  },
+  "bot_visits": {},
+  "created_at": "2026-10-03T17:49:49",
+  "dialogue_flags": {
+    "gleebs_welcome_001": true
+  },
+  "dimension_placeholders": {},
+  "dimension_results": {
+    "DIMENSION // HOLOCORE": {
+      "completed": false,
+      "count": 1,
+      "fragments_recovered": "",
+      "fragments_required": "",
+      "last_at": "2026-10-03T17:51:44",
+      "last_score_delta": 0,
+      "route": "native_panda",
+      "score_total": 0
+    }
+  },
+  "dimension_returns": {
+    "DIMENSION // HOLOCORE": {
+      "count": 1,
+      "last_at": "2026-10-03T17:51:44",
+      "reason": "tab_return_home",
+      "route": "native_panda",
+      "source": "native"
+    }
+  },
+  "dimension_visits": {
+    "HoloSpace Region": {
+      "count": 1,
+      "last_at": "2026-10-03T17:51:53",
+      "reason": "holospace_live_region",
+      "route": "in_world_region",
+      "source": "gleebs_menu"
+    }
+  },
+  "discovered_gates": {
+    "dimension_holospace_holospace_region": {
+      "count": 1,
+      "display_name": "HoloSpace",
+      "doorway": "dimension",
+      "first_at": "2026-10-03T17:51:53",
+      "kind": "dimension",
+      "label": "HOLOSPACE",
+      "last_at": "2026-10-03T17:51:53",
+      "mode_id": "holospace_region",
+      "name": "HoloSpace",
+      "route": "in_world_region",
+      "source": "gleebs_menu",
+      "state": "discovered",
+      "unlocked": true
+    },
+    "region_holospace_8": {
+      "count": 3,
+      "display_name": "HoloSpace",
+      "doorway": "",
+      "first_at": "2026-10-03T17:51:53",
+      "kind": "region",
+      "label": "HOLOSPACE",
+      "last_at": "2026-10-03T17:51:56",
+      "name": "HoloSpace",
+      "route": "region_discovery",
+      "source": "world_shell_entry",
+      "state": "discovered",
+      "target_number": 8,
+      "unlocked": true
+    },
+    "region_holospace_transit_8": {
+      "count": 1,
+      "display_name": "HoloSpace Transit",
+      "doorway": "",
+      "first_at": "2026-10-03T17:51:53",
+      "kind": "region",
+      "label": "HOLOSPACE TRANSIT",
+      "last_at": "2026-10-03T17:51:53",
+      "name": "HoloSpace Transit",
+      "route": "region_discovery",
+      "source": "world_shell_entry",
+      "state": "discovered",
+      "target_number": 8,
+      "unlocked": true
+    },
+    "region_hub_region_0": {
+      "count": 2,
+      "display_name": "Hub Region",
+      "doorway": "",
+      "first_at": "2026-10-03T17:49:49",
+      "kind": "region",
+      "label": "HUB REGION",
+      "last_at": "2026-10-03T17:52:10",
+      "name": "Hub Region",
+      "route": "region_discovery",
+      "source": "world_shell_entry",
+      "state": "discovered",
+      "target_number": 0,
+      "unlocked": true
+    }
+  },
+  "events": [
+    {
+      "at": "2026-10-03T17:50:33",
+      "bot": "IO",
+      "kind": "bot_contact",
+      "mode": "Afterlife of IO",
+      "reason": "",
+      "region": "FLAT",
+      "role": "Keeper of the Afterlife gate",
+      "route": "",
+      "source": "mouse1"
+    },
+    {
+      "at": "2026-10-03T17:51:16",
+      "kind": "matrixcore_consult",
+      "mode": "",
+      "reason": "",
+      "route": "",
+      "source": "matrixcore_home_signal"
+    },
+    {
+      "at": "2026-10-03T17:51:17",
+      "kind": "matrixcore_consult",
+      "mode": "",
+      "reason": "",
+      "route": "",
+      "source": "matrixcore_home_signal"
+    },
+    {
+      "at": "2026-10-03T17:51:44",
+      "kind": "dimension_return",
+      "label": "DIMENSION // HOLOCORE",
+      "mode": "DIMENSION // HOLOCORE",
+      "reason": "tab_return_home",
+      "route": "native_panda",
+      "source": "native"
+    },
+    {
+      "at": "2026-10-03T17:51:44",
+      "completed": "False",
+      "kind": "dimension_result",
+      "mode": "DIMENSION // HOLOCORE",
+      "reason": "",
+      "route": "native_panda",
+      "score_delta": "0",
+      "source": "native"
+    },
+    {
+      "at": "2026-10-03T17:51:50",
+      "kind": "matrixcore_consult",
+      "mode": "",
+      "reason": "",
+      "route": "",
+      "source": "matrixcore_home_signal"
+    },
+    {
+      "at": "2026-10-03T17:51:53",
+      "kind": "dimension_in_world_dispatch",
+      "label": "HoloSpace Region",
+      "mode": "HoloSpace Region",
+      "reason": "holospace_live_region",
+      "route": "in_world_region",
+      "source": "gleebs_menu"
+    },
+    {
+      "at": "2026-10-03T17:52:19",
+      "bot": "IO",
+      "kind": "bot_contact",
+      "mode": "Afterlife of IO",
+      "reason": "",
+      "region": "FLAT",
+      "role": "Keeper of the Afterlife gate",
+      "route": "",
+      "source": "e"
+    }
+  ],
+  "guidance_state": {
+    "active_bot_names": [
+      "archivist",
+      "ember",
+      "io",
+      "mirror",
+      "nyx",
+      "orbit",
+      "sable",
+      "solace",
+      "vanta"
+    ],
+    "current_hint_id": "bot_support",
+    "last_bot": "IO",
+    "last_bot_role": "Keeper of the Afterlife gate",
+    "last_dimension": "HoloSpace Region",
+    "last_dimension_advice": "HoloSpace Region is ready. Enter, observe its rules, and bring back a clean return signal.",
+    "last_return_feedback": "DIMENSION // HOLOCORE returned a useful signal. MatrixCore will compare it with the next route.",
+    "next_action": "Use IO's doorway into Afterlife of IO, then return so MatrixCore can compare the bot signal.",
+    "primary_experiments": [
+      "HoloForge"
+    ],
+    "updated_at": "2026-10-03T17:52:19",
+    "why": "IO keeps the Afterlife of IO gate a few steps from the start: the archive of IO's afterlife, entered from his dialogue instead of the Dimension Archive orbs."
+  },
+  "kind": "holoverse_matrixcore_progression_state",
+  "last_known_gateway": "GATEWAY 099% // INWORLD 09 // EMBED 00 // PLACE 01 // PANEL 00 // HOSTED 00 // PATCH 00 // BROKEN 01 // CHECK 00",
+  "last_mode": "",
+  "latest_event": "bot_contact: Afterlife of IO",
+  "matrixcore": {
+    "gleebs_intro_state": "complete",
+    "guide": "informational/help/progression guide",
+    "last_bot_contact": "IO",
+    "last_bot_mode": "Afterlife of IO",
+    "last_bot_region": "FLAT",
+    "last_bot_role": "Keeper of the Afterlife gate",
+    "last_context_signal": "bot_contact",
+    "last_dialogue_at": "2026-10-03T17:51:44",
+    "last_dialogue_id": "gleebs_welcome_001",
+    "last_dimension_entered": "HoloSpace Region",
+    "last_dimension_result": "DIMENSION // HOLOCORE",
+    "last_dimension_returned": "DIMENSION // HOLOCORE",
+    "last_dimension_score_delta": 0,
+    "last_discovered_gate": "Hub Region",
+    "last_guidance_topic": "matrixcore_home_signal",
+    "name": "MatrixCore",
+    "native_adapters_removed": true,
+    "pending_return_hint": "HoloSpace Region",
+    "placeholder_mode_enabled": true,
+    "times_consulted": 3
+  },
+  "mode_status": {},
+  "player": {
+    "first_gleebs_intro_seen": true,
+    "first_launch_seen": true,
+    "first_matrixcore_intro_seen": true,
+    "last_bot": "",
+    "last_dimension": "",
+    "last_launch_mode": "",
+    "visits_total": 0
+  },
+  "schema_version": 3,
+  "updated_at": "2026-10-03T17:52:19"
+}

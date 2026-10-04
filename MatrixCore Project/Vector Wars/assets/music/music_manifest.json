@@ -1,0 +1,57 @@
+{
+  "schema": "vector_wars_phase_music_v1",
+  "notes": "Nine original procedural placeholder loops. Replace files in-place later or use per-phase user override folders.",
+  "phases": {
+    "GROUND": [
+      {
+        "id": "ground_01",
+        "title": "Ground Placeholder 01",
+        "file": "assets/music/ground/ground_phase_01.wav"
+      },
+      {
+        "id": "ground_02",
+        "title": "Ground Placeholder 02",
+        "file": "assets/music/ground/ground_phase_02.wav"
+      },
+      {
+        "id": "ground_03",
+        "title": "Ground Placeholder 03",
+        "file": "assets/music/ground/ground_phase_03.wav"
+      }
+    ],
+    "AIR": [
+      {
+        "id": "air_01",
+        "title": "Air Placeholder 01",
+        "file": "assets/music/air/air_phase_01.wav"
+      },
+      {
+        "id": "air_02",
+        "title": "Air Placeholder 02",
+        "file": "assets/music/air/air_phase_02.wav"
+      },
+      {
+        "id": "air_03",
+        "title": "Air Placeholder 03",
+        "file": "assets/music/air/air_phase_03.wav"
+      }
+    ],
+    "OCEAN": [
+      {
+        "id": "ocean_01",
+        "title": "Ocean Placeholder 01",
+        "file": "assets/music/ocean/ocean_phase_01.wav"
+      },
+      {
+        "id": "ocean_02",
+        "title": "Ocean Placeholder 02",
+        "file": "assets/music/ocean/ocean_phase_02.wav"
+      },
+      {
+        "id": "ocean_03",
+        "title": "Ocean Placeholder 03",
+        "file": "assets/music/ocean/ocean_phase_03.wav"
+      }
+    ]
+  }
+}

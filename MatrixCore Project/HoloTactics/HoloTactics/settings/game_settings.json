@@ -1,0 +1,152 @@
+{
+  "schema_version": "holotactics_game_settings.v16",
+  "project": {
+    "title": "Gleebs Protocol: HoloTactics",
+    "engine": "panda3d",
+    "pass": "16",
+    "declared_completion": "100% HoloVerse full-source native compatibility milestone",
+    "approval_status": "source-validated for HoloVerse 278 same-window Windows acceptance; standalone HoloTactics preserved"
+  },
+  "design": {
+    "style": "futuristic HoloVerse tactical board with dark glass corner panels, cyan borders, green/purple Gleebs identity accents, red hostile corruption accents, expanding simulation sectors, lightweight synth audio, and one-shot tactical ability drops",
+    "avoid": [
+      "traditional fantasy D&D skin",
+      "cyberpunk street aesthetic",
+      "generic sci-fi marine theme",
+      "placeholder-dependent presentation",
+      "player-visible dev/build/prototype clutter",
+      "UI panels covering tactical pieces or important board space",
+      "overwriting Gleebs with a generic cute robot look",
+      "large difficulty spikes before interactive review confirms the ramp feels fair",
+      "loud or constant sounds that fight the tactical pacing"
+    ],
+    "core_hook": "Gleebs leads a squad across a five-sector expanding corrupted holographic route. Destroyed enemies can randomly drop procedural one-shot abilities while the world grows from 8x8 to 16x16 as sectors are sealed.",
+    "pass11_sfx_rule": "Audio/SFX only. Preserve Pass 07 UI, Pass 08 actor style, Pass 09 journey loop, and Pass 10 gentle challenge ramp while adding lightweight feedback cues and a mute toggle.",
+    "pass13_ability_rule": "Ability loot pass. Procedural abilities are one-time use, player-facing, capped to a small cache, and should stay fun without overwhelming board readability.",
+    "pass14_world_rule": "Bigger-world pass. The route expands to five sectors with larger boards and more space while preserving approved UI safe areas, actor readability, ability loot, audio, and gentle challenge progression.",
+    "pass15_audio_path_rule": "Audio compatibility hotfix. Normalize Panda3D loader paths so Windows installs do not pass raw D:\\... strings to loadSfx/loadMusic.",
+    "pass16_holoverse_rule": "Full-source HoloVerse compatibility only. Mount the actual HoloTactics simulation into the existing HoloVerse ShowBase/window, inherit host display/HUD/graphics/audio mix settings, preserve standalone launch, and use TAB/ESC as HoloVerse return/menu authority. No placeholder tactical scene."
+  },
+  "audio": {
+    "status": "enabled_first_pass",
+    "sfx_dir": "assets/sfx",
+    "mute_toggle": "V",
+    "cues": [
+      "ability_cast",
+      "ability_drop",
+      "attack",
+      "blocked",
+      "core",
+      "defeat",
+      "enemy_hit",
+      "expand",
+      "extraction",
+      "move",
+      "music_toggle",
+      "node",
+      "patch",
+      "sector_clear",
+      "select",
+      "start",
+      "toggle",
+      "warning"
+    ],
+    "note": "SFX are generated lightweight WAV assets. Pass 15 normalizes audio paths before Panda3D loading to prevent raw Windows path load failures.",
+    "path_compatibility": "Windows drive paths are normalized to Panda-style /d/... paths before loadSfx/loadMusic.",
+    "pass16_host_mix": "When HoloVerse-hosted, real HoloTactics SFX/music remain active but volumes are scaled by HoloVerse master/SFX/music settings; the generic HoloVerse native music bed is suppressed to prevent overlap."
+  },
+  "actor_appearance_pass08_preserved": {
+    "reference_asset": "assets/reference/Gleebs.png",
+    "player_units": {
+      "gleebs": "dark core body, toxic green visor/highlights, purple armor breaks, paired cyan/red orb accents, horn/signal silhouette",
+      "guard": "heavy broad defensive silhouette with shield mass and cyan controlled-hologram trim",
+      "runner": "slim agile skirmisher silhouette with violet/cyan phase streaks"
+    },
+    "enemy_units": {
+      "anomaly": "dark fragmented melee disruptor with green/purple corruption and red hostile coding",
+      "sentry": "floating ranged eye-drone with red targeting core and angular fins"
+    }
+  },
+  "board": {
+    "starts_at": "8x8",
+    "expands_to": "16x16 across current route",
+    "tile_states": [
+      "stable",
+      "memory",
+      "corrupted",
+      "fracture",
+      "anchor",
+      "signal",
+      "extraction",
+      "void"
+    ]
+  },
+  "controls": {
+    "start": "Enter, Space, or Left Mouse from title screen",
+    "cursor": "WASD or Arrow Keys",
+    "mouse_target_select_move": "Left Mouse",
+    "mouse_attack": "Right Mouse",
+    "select": "Space or Enter during mission",
+    "move": "M",
+    "patch_pulse": "Q",
+    "attack": "F",
+    "end_turn": "E",
+    "continue_journey": "N, C, Enter, or Left Mouse after sector clear",
+    "hud": "H",
+    "sfx_toggle": "V",
+    "reset": "R reset to title",
+    "exit": "ESC",
+    "use_ability": "X",
+    "music_toggle": "B",
+    "holoverse_return": "TAB returns to HoloVerse when linked natively; ESC opens the shared HoloVerse menu while mounted."
+  },
+  "journey_pass10_preserved": {
+    "max_sectors": 5,
+    "route": [
+      {
+        "index": 1,
+        "name": "Archive Gate",
+        "board": "8x8",
+        "threat": "LOW"
+      },
+      {
+        "index": 2,
+        "name": "Signal Causeway",
+        "board": "10x10",
+        "threat": "RISING"
+      },
+      {
+        "index": 3,
+        "name": "Fracture Expanse",
+        "board": "12x12",
+        "threat": "FOCUSED"
+      },
+      {
+        "index": 4,
+        "name": "Outer Signal Grid",
+        "board": "14x14",
+        "threat": "WIDE"
+      },
+      {
+        "index": 5,
+        "name": "Matrix Horizon",
+        "board": "16x16",
+        "threat": "HORIZON"
+      }
+    ],
+    "challenge_note": "Threat still rises gently, but Pass 14 mainly increases route size and journey length rather than creating a difficulty spike."
+  },
+  "abilities": {
+    "status": "enabled_first_pass",
+    "use_key": "X",
+    "inventory_max": 3,
+    "drop_source": "destroyed enemies, random chance",
+    "families": [
+      "arc",
+      "patch",
+      "blink",
+      "snare"
+    ],
+    "notes": "Abilities are generated from controlled names/effects and consumed after successful use."
+  }
+}

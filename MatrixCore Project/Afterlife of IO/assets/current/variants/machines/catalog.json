@@ -1,0 +1,148 @@
+{
+  "schema": "afterlife_io.machine_variants.v6",
+  "version": 6,
+  "sizing": "world_height is a common maximum world edge; source aspect ratio is preserved",
+  "parts": {
+    "arm1": {
+      "name": "ARTICULATED ARM A",
+      "cost": 7,
+      "world_height": 112,
+      "size_basis": "max_edge",
+      "role": "actuator",
+      "touch_radius": 46,
+      "functions": ["tilt"],
+      "description": "MOTION ACTUATOR // COUNTS TOWARD INDEPENDENT MOVEMENT HARDWARE"
+    },
+    "arm2": {
+      "name": "ARTICULATED ARM B",
+      "cost": 7,
+      "world_height": 112,
+      "size_basis": "max_edge",
+      "role": "actuator",
+      "touch_radius": 46,
+      "functions": ["tilt"],
+      "description": "MOTION ACTUATOR // COUNTS TOWARD INDEPENDENT MOVEMENT HARDWARE"
+    },
+    "cog1": {
+      "name": "ALTERNATE COG",
+      "cost": 6,
+      "world_height": 82,
+      "size_basis": "max_edge",
+      "role": "gear",
+      "touch_radius": 41,
+      "description": "GEAR / LOAD // ALTERNATE DRIVE ART"
+    },
+    "core1": {
+      "name": "ALTERNATE CORE",
+      "cost": 8,
+      "world_height": 82,
+      "size_basis": "max_edge",
+      "role": "core",
+      "touch_radius": 41,
+      "description": "CORE / POWER // ALTERNATE DRIVE ART"
+    },
+    "emitter1": {
+      "name": "SIGNAL EMITTER",
+      "cost": 5,
+      "world_height": 68,
+      "size_basis": "max_edge",
+      "role": "sensor",
+      "touch_radius": 32,
+      "description": "SENSOR / SIGNAL INPUT // POWERED ACCESSORY"
+    },
+    "fan1": {
+      "name": "ALTERNATE ROTOR",
+      "cost": 7,
+      "world_height": 82,
+      "size_basis": "max_edge",
+      "role": "fan",
+      "touch_radius": 41,
+      "spin_dps": 216,
+      "description": "ROTOR / FAN // ALTERNATE POWERED OUTPUT"
+    },
+    "head1": {
+      "name": "MACHINE HEAD",
+      "cost": 9,
+      "world_height": 72,
+      "size_basis": "max_edge",
+      "role": "head",
+      "touch_radius": 34,
+      "functions": ["tilt"],
+      "description": "CONTROL HEAD // TALK TO THE ASSEMBLY // REPORTS AUTONOMY REQUIREMENTS"
+    },
+    "lantern1": {
+      "name": "MACHINE LANTERN",
+      "cost": 5,
+      "world_height": 64,
+      "size_basis": "max_edge",
+      "role": "sensor",
+      "touch_radius": 30,
+      "description": "SENSOR / LIGHT INPUT // POWERED ACCESSORY"
+    },
+    "neck1": {
+      "name": "NECK COUPLER",
+      "cost": 4,
+      "world_height": 52,
+      "size_basis": "max_edge",
+      "role": "frame",
+      "touch_radius": 25,
+      "description": "STRUCTURAL COUPLER // COMPACT HEAD / BODY LINK"
+    },
+    "panel1": {
+      "name": "BODY PANEL A",
+      "cost": 4,
+      "world_height": 86,
+      "size_basis": "max_edge",
+      "role": "frame",
+      "touch_radius": 38,
+      "description": "STRUCTURAL BODY PANEL // DOES NOT TRANSMIT DRIVE POWER"
+    },
+    "panel2": {
+      "name": "BODY PANEL B",
+      "cost": 4,
+      "world_height": 86,
+      "size_basis": "max_edge",
+      "role": "frame",
+      "touch_radius": 38,
+      "description": "STRUCTURAL BODY PANEL // DOES NOT TRANSMIT DRIVE POWER"
+    },
+    "pipe1": {
+      "name": "VERTICAL CONDUIT",
+      "cost": 3,
+      "world_height": 82,
+      "size_basis": "max_edge",
+      "role": "pipe",
+      "touch_radius": 41,
+      "description": "RIGID CONDUIT // COMMON 82-UNIT MECHANICAL ENVELOPE"
+    },
+    "pipe2": {
+      "name": "HORIZONTAL CONDUIT",
+      "cost": 3,
+      "world_height": 82,
+      "size_basis": "max_edge",
+      "role": "pipe",
+      "touch_radius": 41,
+      "description": "RIGID CONDUIT // COMMON 82-UNIT MECHANICAL ENVELOPE"
+    },
+    "saw1": {
+      "name": "ROTARY SAW",
+      "cost": 7,
+      "world_height": 82,
+      "size_basis": "max_edge",
+      "role": "tool",
+      "touch_radius": 38,
+      "functions": ["rotate"],
+      "description": "POWERED TOOL OUTPUT // ROTATES WHEN ATTACHED TO A LIVE DRIVE"
+    },
+    "trap1": {
+      "name": "IMPACT TOOL",
+      "cost": 6,
+      "world_height": 72,
+      "size_basis": "max_edge",
+      "role": "tool",
+      "touch_radius": 32,
+      "functions": ["shake"],
+      "description": "POWERED TOOL OUTPUT // REACTS WHEN ATTACHED TO A LIVE DRIVE"
+    }
+  }
+}

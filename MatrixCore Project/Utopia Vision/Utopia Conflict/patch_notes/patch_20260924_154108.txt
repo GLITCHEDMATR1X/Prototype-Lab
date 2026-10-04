@@ -1,0 +1,20 @@
+Utopia Conflict
+Version: 1.0.18-utopia-conflict-pass55-pause-menu-input-repair
+Generated: 2026-09-24T15:41:08.313647
+
+Patch Notes
+- Switched the playable world over to an open district layout derived from the uploaded level2 world logic.
+- Reduced near-field clutter with broader roads, landmarks, courtyards, and clearer route silhouettes.
+- Moved the dense metropolis into a distant skyline backdrop so it reads as scale without crushing framerate.
+- Added an aura-based material reveal: nearby structures fade their solid surfaces in around the player while linework remains readable at range.
+- Spread the cockpit shoulder pylons wider for a clearer center view and moved the LED health/ammo meters onto them.
+- Added generated mech weapon/audio feedback and hardened chain-lightning targeting against removed enemies.
+- Kept the mech combat layer, red enemy cores, fog treatment, workstation, and crash logging.
+- Increased Campaign enemy scale/pressure and added a slow saturated command-field hue cycle.
+- Pass06: reduced close-range enemy pressure with origin/player spawn safety, lower chunk spawn density, and staged objective defenders.
+- Pass06: direct weapon hits now one-shot enemy cores and create stronger kill/explosion FX.
+- Pass03: added readable enemy attack tells, armor shield-break moments, stronger impact SFX, and clearer deterministic chain arcs.
+- Pass04: added lightweight impact physics, knockback/stagger impulses, bouncing debris shards, and cleaner shockwave rings.
+- Pass05: replaced random/instant enemy pop-ins with a queued spawn director, distant warning rings, and sequenced arrivals.
+- Pass06: replaced random weapon cycling with four numbered weapon slots, separate ammo pools, objective unlocks, implosion/magnet/disassembler effects, and bounded weapon pickups.
+- Pass07: improved weapon feel with Core Lance pierce-through, Imploder crush aftershocks, Magnet center-crush/tethers, targeted disassembly, and magnetized ammo caches.

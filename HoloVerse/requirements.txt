@@ -1,0 +1,7 @@
+# HoloVerse / MatrixCore runtime requirements
+# Verified with Python 3.13.5 on the Prototype Lab runtime
+panda3d>=1.10.16,<1.11
+pygame>=2.6.1
+numpy>=1.26.4
+Pillow>=10.4.0
+opencv-python>=4.10.0.84

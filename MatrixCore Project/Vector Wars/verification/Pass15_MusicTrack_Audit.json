@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "track_count": 9,
+  "phase_counts": {
+    "GROUND": 3,
+    "AIR": 3,
+    "OCEAN": 3
+  },
+  "tracks": [
+    {
+      "phase": "GROUND",
+      "id": "ground_01",
+      "file": "assets/music/ground/ground_phase_01.wav",
+      "sha256": "d1b0e867f1522efe8dc3db4a8118580380afe12322d0ed291e9fb37b9c753c86",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 571,
+      "peak": 3218,
+      "non_silent": true
+    },
+    {
+      "phase": "GROUND",
+      "id": "ground_02",
+      "file": "assets/music/ground/ground_phase_02.wav",
+      "sha256": "8aa460b301ce1e01ac3692cf32c23f2c61dc1bfb6bdb723aa6bec9c26f3646b2",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 586,
+      "peak": 3131,
+      "non_silent": true
+    },
+    {
+      "phase": "GROUND",
+      "id": "ground_03",
+      "file": "assets/music/ground/ground_phase_03.wav",
+      "sha256": "41be5cc83e504e8f1c5ebc5b327767e72f59dc79a00646702286ff4175106f02",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 560,
+      "peak": 3218,
+      "non_silent": true
+    },
+    {
+      "phase": "AIR",
+      "id": "air_01",
+      "file": "assets/music/air/air_phase_01.wav",
+      "sha256": "f5a68cb94786a5917a8202b0002dd2b86c89ef1cf6ef7f1496e44e4415b1056a",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 568,
+      "peak": 3084,
+      "non_silent": true
+    },
+    {
+      "phase": "AIR",
+      "id": "air_02",
+      "file": "assets/music/air/air_phase_02.wav",
+      "sha256": "7264d1501c8455bb8c716776e0f7fe173bf212b0ca0224111a75da223e4e84e2",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 585,
+      "peak": 3296,
+      "non_silent": true
+    },
+    {
+      "phase": "AIR",
+      "id": "air_03",
+      "file": "assets/music/air/air_phase_03.wav",
+      "sha256": "441de4dbdb398e7854d9595b38eb2e34f680e08dfc0895397bc3dde8db1a8dc4",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 559,
+      "peak": 3205,
+      "non_silent": true
+    },
+    {
+      "phase": "OCEAN",
+      "id": "ocean_01",
+      "file": "assets/music/ocean/ocean_phase_01.wav",
+      "sha256": "f36cc3f5cff33173bb2e1d39e03ccb059674aec2f7e73467d0314fda94986b01",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 563,
+      "peak": 3204,
+      "non_silent": true
+    },
+    {
+      "phase": "OCEAN",
+      "id": "ocean_02",
+      "file": "assets/music/ocean/ocean_phase_02.wav",
+      "sha256": "d0c234d487235712bc4b64aba6f204d11c934598573416e8e0457980d2c812bc",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 579,
+      "peak": 3028,
+      "non_silent": true
+    },
+    {
+      "phase": "OCEAN",
+      "id": "ocean_03",
+      "file": "assets/music/ocean/ocean_phase_03.wav",
+      "sha256": "0656bd67ef6b318356c69ba29736fd0c7462eb6264c07deaa22fdf5d3c1193ae",
+      "duration_seconds": 12.0,
+      "sample_rate_hz": 22050,
+      "channels": 1,
+      "sample_width_bytes": 2,
+      "rms": 558,
+      "peak": 3079,
+      "non_silent": true
+    }
+  ]
+}

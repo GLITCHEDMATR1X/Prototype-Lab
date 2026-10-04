@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "project": "Glyphbound: The Shattered Shrine",
+  "pass": 24,
+  "portal_id": "UTOPIA_FANTASY_GLYPHBOUND",
+  "portal_role": "Utopia immersive-world return portal",
+  "entry_anchor": "UTOPIA_RETURN_BEACON",
+  "return_target": "CENTRAL_HUB",
+  "safe_anchor_world_position": [
+    -2.0,
+    -128.0,
+    0.0
+  ],
+  "portal_world_position": [
+    -2.0,
+    -154.0,
+    0.0
+  ],
+  "sanctuary_radius": 25.0,
+  "host_handoff": {
+    "environment_variable": "GX_PORTAL_HANDOFF_PATH",
+    "write_mode": "atomic_json_replace",
+    "standalone_behavior": "Remain in Glyphbound and report that the Prototype Lab handoff is not connected",
+    "connected_behavior": "Write PORTAL_RETURN request targeting CENTRAL_HUB, then exit cleanly to the host",
+    "native_holoverse_behavior": "When mounted through holoverse_dimension_v1, the portal requests the host native return lifecycle in-process; no handoff file or process exit is used."
+  },
+  "recovery_rule": "Death and explicit world recovery return the player to the safe anchor near the Utopia portal without changing the deterministic world seed."
+}

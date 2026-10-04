@@ -1,0 +1,15 @@
+STATUS: CANDIDATE
+VISUAL ACCEPTANCE: PENDING
+TARGET-RUNTIME TEST: NOT RUN (pygame-ce 2.5.7 unavailable in container)
+
+Required authoritative check:
+    python tools/run_regressions.py
+
+Expected:
+    run=21 pass=21 fail=0
+    VECTOR_WARS_REGRESSIONS: PASS
+
+Pass 16 target:
+- gameplay combat populations are independent from PERF_CAPS
+- Standard populations preserve prior Smooth defaults
+- phase objective capacity remains valid

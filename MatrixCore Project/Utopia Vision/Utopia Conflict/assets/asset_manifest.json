@@ -1,0 +1,194 @@
+{
+  "schema": "glitched_matrix_asset_manifest_v1",
+  "mission_id": "utopia_conflict",
+  "assets": [
+    {
+      "asset": "assets/config/game_config.json",
+      "type": "json",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/ink_blotch.png",
+      "type": "png",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/chain_arc.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/core_hit.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/dry_click.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/mech_fire.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/mech_kill.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/recharge.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/armor_hit.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/enemy_tell.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "assets/generated/sfx/shield_break.wav",
+      "type": "wav",
+      "source": "local/generated",
+      "required": true,
+      "used_by": [
+        "runtime"
+      ],
+      "last_verified": "2026-06-29"
+    },
+    {
+      "asset": "SFX_REPLACEMENT_GUIDE.md",
+      "type": "markdown",
+      "source": "local/pass11",
+      "required": false,
+      "used_by": [
+        "authoring",
+        "runtime reference"
+      ],
+      "last_verified": "2026-06-30"
+    },
+    {
+      "asset": "assets/audio/sfx/effect_name_map.json",
+      "type": "json",
+      "source": "local/pass11",
+      "required": false,
+      "used_by": [
+        "authoring",
+        "runtime reference"
+      ],
+      "last_verified": "2026-06-30"
+    },
+    {
+      "asset": "assets/audio/sfx/custom/README.md",
+      "type": "markdown",
+      "source": "local/pass11",
+      "required": false,
+      "used_by": [
+        "authoring",
+        "runtime reference"
+      ],
+      "last_verified": "2026-06-30"
+    },
+    {
+      "asset": "assets/audio/sfx/overrides/README.md",
+      "type": "markdown",
+      "source": "local/pass11",
+      "required": false,
+      "used_by": [
+        "authoring",
+        "runtime reference"
+      ],
+      "last_verified": "2026-06-30"
+    }
+  ],
+  "title": "Utopia Conflict",
+  "build": "2026-06-30-utopia-conflict-pass17-district-framework",
+  "version": "0.8.3-utopia-conflict-pass17-district-framework",
+  "generated_sfx": [
+    "mech_fire.wav",
+    "core_hit.wav",
+    "armor_hit.wav",
+    "shield_break.wav",
+    "enemy_tell.wav",
+    "chain_arc.wav",
+    "imploder_pulse.wav",
+    "magnet_field.wav",
+    "disassembler_cut.wav",
+    "weapon_pickup.wav",
+    "recharge.wav",
+    "mech_kill.wav",
+    "dry_click.wav"
+  ],
+  "weapon_fx": "line-built geometric weapon glyphs, magnet fields, detached parts, bounded pickups",
+  "audio_pass15": {
+    "customfx_printouts": "assets/audio/sfx/customfx/*.wav",
+    "overrides": "assets/audio/sfx/overrides/*.wav",
+    "loops": "assets/audio/loops/*.wav",
+    "rule": "SFX replacements are WAV-only; loops scan any WAV filename automatically."
+  },
+  "id": "utopia_conflict",
+  "folder_name": "Utopia Conflict",
+  "notes": "Pass17 renames the activity to Utopia Conflict and adds the first district framework proof: Calibration District at spawn and Pyramid Sector beyond the starting city, while preserving Pass16 audio, weapons, and capture waves.",
+  "summary": "Prototype Lab Utopia Conflict sub-game: vector/holo combat city activity with district framework, weapon experiments, capture waves, and future timeline hooks.",
+  "tags": [
+    "utopia-conflict",
+    "districts",
+    "pyramid-sector"
+  ]
+}

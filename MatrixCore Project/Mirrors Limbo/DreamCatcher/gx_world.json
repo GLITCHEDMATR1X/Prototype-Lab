@@ -1,0 +1,10 @@
+{
+  "schema": "gx.world.takeover.v1",
+  "id": "dreamcatcher_alternate",
+  "title": "DreamCatcher",
+  "entry": "main.py",
+  "engine": "panda3d",
+  "panda3d": "1.10.16",
+  "settings": "own",
+  "lifecycle": "standalone_takeover"
+}

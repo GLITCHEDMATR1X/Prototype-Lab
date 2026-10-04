@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "units": "meters",
+  "scope": "Pass 10 remaining Floor 2 furnishing only",
+  "references": {
+    "twin_bed": "IKEA VEVELSTAD Twin: 40 1/8 in W x 77 1/2 in L x 10 5/8 in H",
+    "compact_desk": "IKEA MICKE small desk: 28 3/4 in W x 19 5/8 in D x 29 1/2 in H",
+    "compact_dresser": "IKEA LOTE 3-drawer dresser: 21 5/8 in W x 14 1/8 in D x 24 3/8 in H",
+    "bathtub": "American Standard Elevate alcove bathtub: 60 in x 30 in x 18 in",
+    "toilet": "Kohler Highline Classic K-14799: approx 19 5/8 in W x 30 3/8 in D x 29 1/2 in H",
+    "bath_vanity": "IKEA ENHET vanity: 24 in W x 18 in D x 24 in H"
+  },
+  "rooms": {
+    "f2_bed2": {
+      "identity": "compact study bedroom",
+      "objects": [
+        {
+          "id": "bed2_twin",
+          "kind": "twin_bed",
+          "center": [
+            2.0,
+            6.22,
+            2.8
+          ],
+          "size": [
+            1.97,
+            1.02,
+            0.27
+          ],
+          "support": "floor",
+          "facing": "east"
+        },
+        {
+          "id": "bed2_desk",
+          "kind": "compact_desk",
+          "center": [
+            4.2,
+            5.3,
+            2.8
+          ],
+          "size": [
+            0.73,
+            0.5,
+            0.75
+          ],
+          "support": "floor",
+          "facing": "south"
+        }
+      ]
+    },
+    "f2_bed3": {
+      "identity": "plain guest bedroom",
+      "objects": [
+        {
+          "id": "bed3_twin",
+          "kind": "twin_bed",
+          "center": [
+            2.0,
+            8.82,
+            2.8
+          ],
+          "size": [
+            1.97,
+            1.02,
+            0.27
+          ],
+          "support": "floor",
+          "facing": "east"
+        },
+        {
+          "id": "bed3_dresser",
+          "kind": "compact_dresser",
+          "center": [
+            4.95,
+            7.56,
+            2.8
+          ],
+          "size": [
+            0.55,
+            0.36,
+            0.62
+          ],
+          "support": "floor",
+          "facing": "north"
+        }
+      ]
+    },
+    "f2_bed4": {
+      "identity": "narrow spare bedroom",
+      "objects": [
+        {
+          "id": "bed4_twin",
+          "kind": "twin_bed",
+          "center": [
+            10.45,
+            8.17,
+            2.8
+          ],
+          "size": [
+            1.02,
+            1.97,
+            0.27
+          ],
+          "support": "floor",
+          "facing": "south"
+        },
+        {
+          "id": "bed4_dresser",
+          "kind": "compact_dresser",
+          "center": [
+            10.78,
+            5.78,
+            2.8
+          ],
+          "size": [
+            0.55,
+            0.36,
+            0.62
+          ],
+          "support": "floor",
+          "facing": "north"
+        }
+      ]
+    },
+    "f2_bath": {
+      "identity": "single compact family bathroom",
+      "objects": [
+        {
+          "id": "bath_tub",
+          "kind": "alcove_tub",
+          "center": [
+            10.5,
+            2.1,
+            2.8
+          ],
+          "size": [
+            0.762,
+            1.524,
+            0.457
+          ],
+          "support": "floor",
+          "facing": "west"
+        },
+        {
+          "id": "bath_toilet",
+          "kind": "elongated_toilet",
+          "center": [
+            9.85,
+            1.19,
+            2.8
+          ],
+          "size": [
+            0.498,
+            0.772,
+            0.749
+          ],
+          "support": "floor",
+          "facing": "north"
+        },
+        {
+          "id": "bath_vanity",
+          "kind": "compact_vanity",
+          "center": [
+            9.25,
+            0.73,
+            2.8
+          ],
+          "size": [
+            0.61,
+            0.457,
+            0.61
+          ],
+          "support": "floor",
+          "facing": "north"
+        }
+      ]
+    }
+  },
+  "upper_hall": {
+    "rule": "remain unfurnished for circulation and later line-of-sight horror staging"
+  },
+  "rules": [
+    "All objects are world-space and support-anchored.",
+    "No furniture footprint may cross a room boundary.",
+    "No furniture footprint may overlap another object in the same room.",
+    "Doorway approach zones remain clear.",
+    "Sealed bedroom and bathroom windows remain unobstructed.",
+    "Upper Hall remains clear.",
+    "No horror behavior, entity, TV logic, voice system or datamosh is added in this pass."
+  ]
+}

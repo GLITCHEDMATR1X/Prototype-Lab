@@ -1,0 +1,10 @@
+{
+  "schema": "gx.world.takeover.v1",
+  "id": "mirrors_limbo",
+  "title": "Mirror's Limbo",
+  "entry": "launch_mirrors.pyw",
+  "engine": "panda3d",
+  "panda3d": "1.10.16",
+  "settings": "own",
+  "lifecycle": "standalone_takeover"
+}

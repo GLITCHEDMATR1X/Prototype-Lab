@@ -1,0 +1,35 @@
+{
+  "master_volume": 0.68,
+  "smoothing_seconds": 1.35,
+  "core_fade_start_radius": 112.0,
+  "core_fade_end_radius": 180.0,
+  "outer_fade_start_radius": 455.0,
+  "outer_silent_radius": 535.0,
+  "tracks": {
+    "core": {
+      "label": "Unity // Forum Nexus",
+      "asset": "audio/music/core_unity_forum.wav",
+      "gain": 0.88
+    },
+    "north": {
+      "label": "North // Corporate Terrace",
+      "asset": "audio/music/north_corporate_terrace.wav",
+      "gain": 0.86
+    },
+    "east": {
+      "label": "East // Innovation Pulse",
+      "asset": "audio/music/east_innovation_pulse.wav",
+      "gain": 0.84
+    },
+    "south": {
+      "label": "South // Mirage Promenade",
+      "asset": "audio/music/south_mirage_promenade.wav",
+      "gain": 0.86
+    },
+    "west": {
+      "label": "West // Foundry Works",
+      "asset": "audio/music/west_foundry_works.wav",
+      "gain": 0.82
+    }
+  }
+}

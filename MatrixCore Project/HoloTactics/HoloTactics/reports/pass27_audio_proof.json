@@ -1,0 +1,173 @@
+{
+  "passed": 21,
+  "total": 21,
+  "checks": [
+    {
+      "name": "five_sector_music_mappings",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sector_cues_unique",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "all_music_assets_valid",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "name": "sector_1_wav_44k_mono",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sector_1_loop_seam",
+      "pass": true,
+      "detail": "delta=12"
+    },
+    {
+      "name": "sector_2_wav_44k_mono",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sector_2_loop_seam",
+      "pass": true,
+      "detail": "delta=9"
+    },
+    {
+      "name": "sector_3_wav_44k_mono",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sector_3_loop_seam",
+      "pass": true,
+      "detail": "delta=10"
+    },
+    {
+      "name": "sector_4_wav_44k_mono",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sector_4_loop_seam",
+      "pass": true,
+      "detail": "delta=7"
+    },
+    {
+      "name": "sector_5_wav_44k_mono",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sector_5_loop_seam",
+      "pass": true,
+      "detail": "delta=5"
+    },
+    {
+      "name": "sector_waveforms_distinct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "play_sector1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "same_cue_no_restart",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "switch_sector2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "previous_track_stopped",
+      "pass": true,
+      "detail": "stops=1"
+    },
+    {
+      "name": "new_track_looped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "mute_stops_music",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "unmute_resumes_current_sector",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "sector_stats": {
+    "1": {
+      "cue": "sector_1_archive",
+      "file": "assets/music/sector01_archive_gate.wav",
+      "rate": 44100,
+      "channels": 1,
+      "frames": 529200,
+      "duration": 12.0,
+      "first": 734,
+      "last": 722,
+      "seam_delta": 12,
+      "sha256": "0f5820bbe23cf4c6130ba082b750594f6f7091a8f785decbf7b5e6dfcbeb3985"
+    },
+    "2": {
+      "cue": "sector_2_signal",
+      "file": "assets/music/sector02_signal_causeway.wav",
+      "rate": 44100,
+      "channels": 1,
+      "frames": 529200,
+      "duration": 12.0,
+      "first": 658,
+      "last": 649,
+      "seam_delta": 9,
+      "sha256": "a8c92918b27235aae38f721a499b8edc7eb0d5ed545975712fad7fc954824d2a"
+    },
+    "3": {
+      "cue": "sector_3_fracture",
+      "file": "assets/music/sector03_fracture_expanse.wav",
+      "rate": 44100,
+      "channels": 1,
+      "frames": 529200,
+      "duration": 12.0,
+      "first": 608,
+      "last": 598,
+      "seam_delta": 10,
+      "sha256": "6002320753712766abea742d9faf954ea4ee44b6db831771e5a9eac50ed65711"
+    },
+    "4": {
+      "cue": "sector_4_outer",
+      "file": "assets/music/sector04_outer_signal_grid.wav",
+      "rate": 44100,
+      "channels": 1,
+      "frames": 529200,
+      "duration": 12.0,
+      "first": 681,
+      "last": 674,
+      "seam_delta": 7,
+      "sha256": "5a8c1139abbbd1dafe73eefb98bc8255e743bbe29973fb9383f17f4dc868ccfb"
+    },
+    "5": {
+      "cue": "sector_5_horizon",
+      "file": "assets/music/sector05_matrix_horizon.wav",
+      "rate": 44100,
+      "channels": 1,
+      "frames": 529200,
+      "duration": 12.0,
+      "first": 688,
+      "last": 683,
+      "seam_delta": 5,
+      "sha256": "049a4d6c03b38eccbace7e59c05d865a1949a175e6abf95e1ca47f9b5d60921b"
+    }
+  }
+}

@@ -1,0 +1,6918 @@
+{
+  "version": 6,
+  "role": "solid internal structural skeleton; Pass 29 mass/occlusion polish with thicker bones, larger joints, thicker cranium, corrected elbow pivots, and independent articulation with fingered hands",
+  "color": [
+    0.52,
+    0.57,
+    0.5,
+    1.0
+  ],
+  "bone_radius_multiplier": 1.15,
+  "curve_radius_multiplier": 1.15,
+  "joint_radius_multiplier": 1.08,
+  "rig_parent": {
+    "pelvis": null,
+    "spine_low": "pelvis",
+    "spine_mid": "spine_low",
+    "spine_high": "spine_mid",
+    "neck": "spine_high",
+    "head_base": "neck",
+    "left_shoulder": "spine_high",
+    "left_elbow": "left_shoulder",
+    "left_wrist": "left_elbow",
+    "left_hand": "left_wrist",
+    "right_shoulder": "spine_high",
+    "right_elbow": "right_shoulder",
+    "right_wrist": "right_elbow",
+    "right_hand": "right_wrist",
+    "left_hip": "pelvis",
+    "left_knee": "left_hip",
+    "left_ankle": "left_knee",
+    "left_foot": "left_ankle",
+    "right_hip": "pelvis",
+    "right_knee": "right_hip",
+    "right_ankle": "right_knee",
+    "right_foot": "right_ankle",
+    "left_thumb_root": "left_hand",
+    "left_thumb_mid": "left_thumb_root",
+    "left_thumb_tip": "left_thumb_mid",
+    "left_index_root": "left_hand",
+    "left_index_mid": "left_index_root",
+    "left_index_tip": "left_index_mid",
+    "left_middle_root": "left_hand",
+    "left_middle_mid": "left_middle_root",
+    "left_middle_tip": "left_middle_mid",
+    "left_ring_root": "left_hand",
+    "left_ring_mid": "left_ring_root",
+    "left_ring_tip": "left_ring_mid",
+    "left_pinky_root": "left_hand",
+    "left_pinky_mid": "left_pinky_root",
+    "left_pinky_tip": "left_pinky_mid",
+    "right_thumb_root": "right_hand",
+    "right_thumb_mid": "right_thumb_root",
+    "right_thumb_tip": "right_thumb_mid",
+    "right_index_root": "right_hand",
+    "right_index_mid": "right_index_root",
+    "right_index_tip": "right_index_mid",
+    "right_middle_root": "right_hand",
+    "right_middle_mid": "right_middle_root",
+    "right_middle_tip": "right_middle_mid",
+    "right_ring_root": "right_hand",
+    "right_ring_mid": "right_ring_root",
+    "right_ring_tip": "right_ring_mid",
+    "right_pinky_root": "right_hand",
+    "right_pinky_mid": "right_pinky_root",
+    "right_pinky_tip": "right_pinky_mid"
+  },
+  "body_bindings": [
+    "head_base",
+    "left_foot",
+    "left_ankle",
+    "right_elbow",
+    "right_foot",
+    "neck",
+    "left_foot",
+    "spine_mid",
+    "right_hand",
+    "right_hip",
+    "spine_mid",
+    "right_shoulder",
+    "pelvis",
+    "left_foot",
+    "left_shoulder",
+    "neck",
+    "right_ankle",
+    "left_hip",
+    "left_knee",
+    "right_shoulder",
+    "head_base",
+    "right_foot",
+    "right_hip",
+    "left_hip",
+    "spine_mid",
+    "left_shoulder",
+    "right_hip",
+    "head_base",
+    "head_base",
+    "spine_mid",
+    "right_hand",
+    "spine_mid",
+    "left_wrist",
+    "left_knee",
+    "spine_high",
+    "right_foot",
+    "spine_mid",
+    "left_knee",
+    "right_hip",
+    "spine_high",
+    "right_hand",
+    "pelvis",
+    "right_ankle",
+    "right_elbow",
+    "spine_high",
+    "right_hip",
+    "spine_mid",
+    "right_ankle",
+    "left_ankle",
+    "spine_high",
+    "pelvis",
+    "right_hip",
+    "head_base",
+    "pelvis",
+    "left_shoulder",
+    "right_foot",
+    "left_knee",
+    "head_base",
+    "left_knee",
+    "left_ankle",
+    "spine_mid",
+    "head_base",
+    "spine_high",
+    "spine_high",
+    "pelvis",
+    "spine_high",
+    "right_shoulder",
+    "right_elbow",
+    "head_base",
+    "right_knee",
+    "spine_high",
+    "spine_mid",
+    "left_foot",
+    "left_knee",
+    "left_foot",
+    "right_hip",
+    "left_shoulder",
+    "spine_high",
+    "left_elbow",
+    "left_knee",
+    "left_elbow",
+    "right_foot",
+    "right_hip",
+    "head_base",
+    "pelvis",
+    "right_hand",
+    "right_elbow",
+    "left_foot",
+    "right_ankle",
+    "left_foot",
+    "right_elbow",
+    "spine_high",
+    "neck",
+    "right_ankle",
+    "left_hip",
+    "right_elbow",
+    "right_knee",
+    "left_knee",
+    "right_shoulder",
+    "left_wrist",
+    "right_foot",
+    "right_hip",
+    "spine_mid",
+    "spine_high",
+    "pelvis",
+    "left_ankle",
+    "left_elbow",
+    "right_hip",
+    "left_foot",
+    "right_wrist",
+    "left_hand",
+    "right_hand",
+    "right_elbow",
+    "right_hip",
+    "right_shoulder",
+    "left_hip",
+    "left_hip",
+    "neck",
+    "right_hip",
+    "right_knee",
+    "spine_mid",
+    "left_ankle",
+    "left_foot",
+    "left_knee",
+    "right_elbow",
+    "head_base",
+    "pelvis",
+    "pelvis",
+    "pelvis",
+    "left_wrist",
+    "left_wrist",
+    "pelvis",
+    "right_knee",
+    "head_base",
+    "head_base",
+    "right_elbow",
+    "left_knee",
+    "head_base",
+    "left_knee",
+    "left_knee",
+    "left_hip",
+    "left_foot",
+    "spine_high",
+    "right_hip",
+    "left_wrist",
+    "left_foot",
+    "left_hip",
+    "spine_high",
+    "left_foot",
+    "right_knee",
+    "right_shoulder",
+    "right_hand",
+    "spine_mid",
+    "left_knee",
+    "spine_mid",
+    "spine_mid",
+    "neck",
+    "left_hip",
+    "right_hip",
+    "left_knee",
+    "right_elbow",
+    "left_elbow",
+    "left_shoulder",
+    "right_ankle",
+    "right_elbow",
+    "left_hip",
+    "spine_mid",
+    "right_foot",
+    "left_knee",
+    "right_elbow",
+    "left_ankle",
+    "left_hip",
+    "spine_mid",
+    "spine_high",
+    "head_base",
+    "left_ankle",
+    "right_hip",
+    "pelvis",
+    "right_hip",
+    "right_knee",
+    "left_knee",
+    "right_wrist",
+    "left_ankle",
+    "right_foot",
+    "right_hand",
+    "spine_mid",
+    "spine_high",
+    "spine_mid",
+    "left_ankle",
+    "head_base",
+    "left_foot",
+    "left_foot",
+    "right_hip",
+    "left_shoulder",
+    "right_shoulder",
+    "left_elbow",
+    "left_hand",
+    "right_hip",
+    "left_shoulder",
+    "spine_high",
+    "left_shoulder",
+    "left_hip",
+    "left_foot",
+    "spine_high",
+    "right_knee",
+    "left_wrist",
+    "left_elbow",
+    "spine_high",
+    "spine_high",
+    "left_elbow",
+    "right_elbow",
+    "left_hip",
+    "right_elbow",
+    "spine_high",
+    "right_wrist",
+    "spine_mid",
+    "right_wrist",
+    "spine_high",
+    "left_elbow",
+    "head_base",
+    "right_hip",
+    "pelvis",
+    "head_base",
+    "right_foot",
+    "left_wrist",
+    "left_foot",
+    "right_elbow",
+    "right_hip",
+    "left_ankle",
+    "left_knee",
+    "left_hip",
+    "left_hand",
+    "right_ankle",
+    "spine_high",
+    "left_hip",
+    "pelvis",
+    "right_knee",
+    "right_knee",
+    "right_foot",
+    "right_hip",
+    "left_foot",
+    "head_base",
+    "spine_mid",
+    "right_foot",
+    "right_hip",
+    "spine_mid",
+    "left_hip",
+    "spine_mid",
+    "left_ankle",
+    "neck",
+    "neck",
+    "spine_mid",
+    "right_hand",
+    "pelvis",
+    "spine_high",
+    "left_shoulder",
+    "head_base",
+    "right_wrist",
+    "left_knee",
+    "left_hip",
+    "right_hip",
+    "right_wrist",
+    "spine_high",
+    "right_knee",
+    "left_knee",
+    "spine_high",
+    "spine_mid",
+    "right_foot",
+    "neck",
+    "right_knee",
+    "head_base",
+    "pelvis",
+    "left_ankle",
+    "pelvis",
+    "left_ankle",
+    "left_elbow",
+    "right_shoulder",
+    "pelvis",
+    "head_base",
+    "spine_mid",
+    "left_ankle",
+    "right_hand",
+    "neck",
+    "left_foot",
+    "right_elbow",
+    "spine_high",
+    "right_hand",
+    "right_hip",
+    "right_elbow",
+    "right_hip",
+    "right_hip",
+    "spine_high",
+    "spine_high",
+    "pelvis",
+    "right_hand",
+    "head_base",
+    "right_knee",
+    "right_hip",
+    "spine_high",
+    "right_foot",
+    "right_foot",
+    "right_shoulder",
+    "left_ankle",
+    "left_ankle",
+    "spine_mid",
+    "right_foot",
+    "right_hip",
+    "pelvis",
+    "right_wrist",
+    "head_base",
+    "right_knee",
+    "left_knee",
+    "right_knee",
+    "left_hand",
+    "right_ankle",
+    "right_shoulder",
+    "head_base",
+    "left_knee",
+    "right_hip",
+    "neck",
+    "left_shoulder",
+    "right_hand",
+    "spine_mid",
+    "right_hand",
+    "pelvis",
+    "right_foot",
+    "head_base",
+    "right_elbow",
+    "left_ankle",
+    "left_knee",
+    "left_knee",
+    "spine_high",
+    "pelvis",
+    "right_knee",
+    "spine_mid",
+    "head_base",
+    "neck",
+    "right_knee",
+    "spine_mid",
+    "right_ankle",
+    "left_shoulder",
+    "spine_high",
+    "pelvis",
+    "spine_high",
+    "right_knee",
+    "left_hand",
+    "left_knee",
+    "pelvis",
+    "right_ankle",
+    "neck",
+    "pelvis",
+    "left_knee",
+    "spine_high",
+    "pelvis",
+    "left_shoulder",
+    "left_elbow",
+    "left_wrist",
+    "right_hip",
+    "right_knee",
+    "right_knee",
+    "right_foot",
+    "right_hip",
+    "left_foot",
+    "right_hip",
+    "pelvis",
+    "left_shoulder",
+    "spine_mid",
+    "right_knee",
+    "pelvis",
+    "head_base",
+    "right_ankle",
+    "spine_mid",
+    "spine_high",
+    "right_foot",
+    "right_elbow",
+    "spine_high",
+    "right_hand",
+    "left_shoulder",
+    "left_hip",
+    "right_foot",
+    "left_foot",
+    "head_base",
+    "pelvis",
+    "right_foot",
+    "right_hand",
+    "spine_high",
+    "head_base",
+    "pelvis",
+    "right_shoulder",
+    "head_base",
+    "pelvis",
+    "right_elbow",
+    "spine_mid",
+    "right_hip",
+    "right_hip",
+    "right_ankle",
+    "right_knee",
+    "right_hand",
+    "spine_mid",
+    "left_elbow",
+    "left_foot",
+    "left_knee",
+    "pelvis",
+    "left_hand",
+    "pelvis",
+    "pelvis",
+    "spine_high",
+    "left_hand",
+    "right_knee",
+    "right_hip",
+    "left_knee",
+    "left_elbow",
+    "left_ankle",
+    "left_foot",
+    "left_knee",
+    "right_elbow",
+    "right_elbow",
+    "head_base",
+    "left_hip",
+    "spine_high",
+    "right_ankle",
+    "right_ankle",
+    "right_knee",
+    "right_hip",
+    "pelvis",
+    "right_hand",
+    "right_elbow",
+    "right_ankle",
+    "left_elbow",
+    "right_knee",
+    "right_elbow",
+    "pelvis",
+    "left_elbow",
+    "left_knee",
+    "right_knee",
+    "head_base",
+    "right_shoulder",
+    "left_wrist",
+    "spine_high",
+    "left_foot",
+    "head_base",
+    "right_knee",
+    "head_base",
+    "left_hip",
+    "right_foot",
+    "left_shoulder",
+    "left_elbow",
+    "spine_high",
+    "right_ankle",
+    "pelvis",
+    "spine_high",
+    "right_ankle",
+    "right_knee",
+    "spine_mid",
+    "left_knee",
+    "right_elbow",
+    "pelvis",
+    "spine_mid",
+    "spine_high",
+    "left_knee",
+    "right_hand",
+    "neck",
+    "left_ankle",
+    "left_shoulder",
+    "right_knee",
+    "left_elbow",
+    "right_knee",
+    "right_elbow",
+    "head_base",
+    "pelvis",
+    "left_elbow",
+    "left_hip",
+    "right_foot",
+    "neck",
+    "left_shoulder",
+    "right_hand",
+    "left_knee",
+    "left_knee",
+    "right_ankle",
+    "left_foot",
+    "left_knee",
+    "right_hip",
+    "right_shoulder",
+    "head_base",
+    "neck",
+    "left_knee",
+    "neck",
+    "head_base",
+    "right_knee",
+    "left_knee",
+    "left_foot",
+    "head_base",
+    "left_foot",
+    "right_hip",
+    "spine_high",
+    "head_base",
+    "spine_high",
+    "pelvis",
+    "head_base",
+    "left_knee",
+    "right_foot",
+    "left_shoulder",
+    "right_wrist",
+    "spine_high",
+    "head_base",
+    "spine_mid",
+    "left_hip",
+    "spine_mid",
+    "spine_high",
+    "right_hip",
+    "spine_mid",
+    "right_knee",
+    "left_knee",
+    "left_hand",
+    "left_elbow",
+    "right_shoulder",
+    "left_elbow",
+    "left_ankle",
+    "right_hip",
+    "right_knee",
+    "left_shoulder",
+    "right_hip",
+    "left_hand",
+    "spine_mid",
+    "spine_high",
+    "right_elbow",
+    "right_shoulder",
+    "left_knee",
+    "right_hip",
+    "pelvis",
+    "right_knee",
+    "head_base",
+    "right_shoulder",
+    "spine_high",
+    "right_wrist",
+    "spine_high",
+    "left_shoulder",
+    "pelvis",
+    "left_foot",
+    "right_foot",
+    "left_hip",
+    "pelvis",
+    "left_elbow",
+    "spine_high",
+    "right_wrist",
+    "left_hip",
+    "pelvis",
+    "spine_mid",
+    "right_hip",
+    "left_hand",
+    "left_knee",
+    "left_hip",
+    "right_foot",
+    "head_base",
+    "right_hand",
+    "right_hand",
+    "left_elbow",
+    "right_hip",
+    "left_hip",
+    "right_knee",
+    "spine_high",
+    "right_hand",
+    "right_wrist",
+    "head_base",
+    "left_foot",
+    "left_foot",
+    "left_hip",
+    "left_ankle",
+    "right_knee",
+    "left_shoulder",
+    "spine_high",
+    "left_knee",
+    "right_hip",
+    "left_hip",
+    "left_elbow",
+    "pelvis",
+    "left_hip",
+    "right_hand",
+    "spine_mid",
+    "pelvis",
+    "right_elbow",
+    "right_knee",
+    "left_knee",
+    "right_elbow",
+    "spine_mid",
+    "head_base",
+    "right_foot",
+    "neck",
+    "left_knee",
+    "left_foot",
+    "spine_mid",
+    "left_knee",
+    "spine_high",
+    "left_elbow",
+    "spine_high",
+    "spine_mid",
+    "right_knee",
+    "left_ankle",
+    "left_hand",
+    "pelvis",
+    "left_ankle",
+    "right_hand",
+    "spine_mid",
+    "left_hip",
+    "left_knee",
+    "head_base",
+    "right_knee",
+    "left_wrist",
+    "right_knee",
+    "spine_high",
+    "right_hip",
+    "left_hip",
+    "head_base",
+    "pelvis",
+    "spine_high",
+    "right_ankle",
+    "pelvis",
+    "head_base",
+    "right_hand",
+    "spine_mid",
+    "right_knee",
+    "right_knee",
+    "right_knee",
+    "spine_high",
+    "right_foot",
+    "left_wrist",
+    "right_knee",
+    "left_hip",
+    "right_hand",
+    "left_hand",
+    "right_knee",
+    "left_ankle",
+    "head_base",
+    "pelvis",
+    "pelvis",
+    "spine_high",
+    "neck",
+    "right_foot",
+    "left_knee",
+    "left_knee",
+    "left_hand",
+    "left_knee",
+    "left_elbow",
+    "right_knee",
+    "left_hand",
+    "right_foot",
+    "spine_high",
+    "spine_mid",
+    "left_knee",
+    "left_shoulder",
+    "left_hip",
+    "pelvis",
+    "right_elbow",
+    "right_wrist",
+    "right_knee",
+    "right_shoulder",
+    "left_foot",
+    "right_hand",
+    "left_ankle",
+    "spine_high",
+    "right_hip",
+    "right_ankle",
+    "right_knee",
+    "spine_mid",
+    "right_knee",
+    "left_hip",
+    "left_elbow",
+    "right_ankle",
+    "spine_high",
+    "pelvis",
+    "left_shoulder",
+    "right_wrist",
+    "right_hip",
+    "right_hip",
+    "spine_mid",
+    "left_shoulder",
+    "head_base",
+    "right_ankle",
+    "left_foot",
+    "left_knee",
+    "left_knee",
+    "left_elbow",
+    "spine_mid",
+    "right_hip",
+    "left_foot",
+    "left_knee",
+    "spine_high",
+    "left_knee",
+    "right_hip",
+    "right_elbow",
+    "left_hip",
+    "right_shoulder",
+    "right_elbow",
+    "right_hip",
+    "neck",
+    "right_hip",
+    "spine_high",
+    "left_hip",
+    "left_knee",
+    "left_hip",
+    "right_hand",
+    "left_knee",
+    "spine_high",
+    "left_hand",
+    "pelvis",
+    "left_knee",
+    "head_base",
+    "pelvis",
+    "right_elbow",
+    "head_base",
+    "pelvis",
+    "spine_high",
+    "head_base",
+    "left_knee",
+    "left_knee",
+    "left_hip",
+    "spine_high",
+    "spine_mid",
+    "right_shoulder",
+    "left_knee",
+    "right_knee",
+    "pelvis",
+    "head_base",
+    "head_base",
+    "spine_high",
+    "right_hand",
+    "spine_high",
+    "right_ankle",
+    "left_shoulder",
+    "left_knee",
+    "spine_mid",
+    "right_ankle",
+    "left_hip",
+    "left_hip",
+    "spine_mid",
+    "left_wrist",
+    "spine_high",
+    "left_knee",
+    "left_elbow",
+    "left_hip",
+    "left_ankle",
+    "head_base",
+    "right_hand",
+    "left_elbow",
+    "right_knee",
+    "right_shoulder",
+    "head_base",
+    "right_ankle",
+    "right_ankle",
+    "head_base",
+    "right_knee",
+    "left_knee",
+    "spine_mid",
+    "spine_high",
+    "pelvis",
+    "right_elbow",
+    "pelvis",
+    "right_ankle",
+    "right_knee",
+    "right_elbow",
+    "spine_high",
+    "spine_high",
+    "left_hip",
+    "spine_high",
+    "spine_high",
+    "left_foot",
+    "left_hip",
+    "right_hip",
+    "right_knee",
+    "head_base",
+    "neck",
+    "right_foot",
+    "spine_high",
+    "right_shoulder",
+    "neck",
+    "head_base",
+    "pelvis",
+    "left_wrist",
+    "right_knee",
+    "right_elbow",
+    "right_foot",
+    "head_base",
+    "left_shoulder",
+    "head_base",
+    "left_knee",
+    "left_foot",
+    "pelvis",
+    "spine_mid",
+    "right_elbow",
+    "head_base",
+    "neck",
+    "pelvis",
+    "left_ankle",
+    "left_knee",
+    "spine_high",
+    "spine_mid",
+    "spine_mid",
+    "right_hip",
+    "right_elbow",
+    "right_ankle",
+    "neck",
+    "spine_high",
+    "spine_high",
+    "spine_mid",
+    "spine_high",
+    "left_shoulder",
+    "left_knee",
+    "right_foot",
+    "right_knee",
+    "left_hip",
+    "right_foot",
+    "spine_high",
+    "pelvis",
+    "spine_mid",
+    "pelvis",
+    "left_hand",
+    "right_hip",
+    "left_knee",
+    "spine_mid",
+    "left_hip",
+    "pelvis",
+    "spine_high",
+    "head_base",
+    "spine_mid",
+    "left_knee",
+    "spine_mid",
+    "right_hip",
+    "left_shoulder",
+    "spine_high",
+    "left_shoulder",
+    "left_shoulder",
+    "right_shoulder",
+    "left_elbow",
+    "spine_mid",
+    "spine_mid",
+    "left_shoulder",
+    "right_knee",
+    "right_knee",
+    "pelvis",
+    "left_foot",
+    "spine_high",
+    "spine_high",
+    "right_knee",
+    "right_shoulder",
+    "head_base",
+    "left_ankle",
+    "right_ankle",
+    "head_base",
+    "pelvis",
+    "spine_high",
+    "left_foot",
+    "left_knee",
+    "spine_high",
+    "right_ankle",
+    "right_knee",
+    "left_knee",
+    "left_hand",
+    "left_hip",
+    "left_foot",
+    "left_knee",
+    "spine_mid",
+    "left_shoulder",
+    "left_elbow",
+    "spine_high",
+    "right_knee",
+    "right_hip",
+    "left_ankle",
+    "right_ankle",
+    "left_shoulder",
+    "pelvis",
+    "spine_high",
+    "spine_mid",
+    "right_hip",
+    "right_ankle",
+    "spine_high",
+    "right_knee",
+    "right_shoulder",
+    "left_elbow",
+    "spine_mid",
+    "right_hip",
+    "left_hip",
+    "left_elbow",
+    "right_shoulder",
+    "pelvis",
+    "neck",
+    "right_shoulder",
+    "left_elbow",
+    "spine_high",
+    "right_elbow",
+    "pelvis",
+    "spine_high",
+    "right_knee",
+    "right_hip",
+    "neck",
+    "left_knee",
+    "right_elbow",
+    "left_hip",
+    "left_wrist",
+    "left_knee",
+    "left_foot",
+    "spine_high",
+    "spine_mid",
+    "left_ankle",
+    "left_foot",
+    "spine_mid",
+    "neck",
+    "right_ankle",
+    "spine_mid",
+    "neck",
+    "spine_mid",
+    "spine_mid",
+    "left_foot",
+    "head_base",
+    "left_hip",
+    "right_knee",
+    "left_shoulder",
+    "neck",
+    "neck",
+    "spine_mid",
+    "right_knee",
+    "left_hip",
+    "left_hip",
+    "left_hip",
+    "pelvis",
+    "spine_high",
+    "spine_high",
+    "neck",
+    "left_hip",
+    "right_foot",
+    "right_knee",
+    "left_hand",
+    "spine_high",
+    "left_hip",
+    "right_knee",
+    "spine_high",
+    "right_ankle",
+    "neck",
+    "left_ankle",
+    "neck",
+    "left_hip",
+    "pelvis",
+    "left_knee",
+    "pelvis",
+    "spine_high",
+    "pelvis",
+    "pelvis",
+    "left_hand",
+    "right_shoulder",
+    "pelvis",
+    "left_wrist",
+    "left_knee",
+    "spine_high",
+    "right_elbow",
+    "left_knee",
+    "spine_high",
+    "neck",
+    "spine_mid",
+    "pelvis",
+    "right_shoulder",
+    "left_knee",
+    "right_knee",
+    "right_hip",
+    "left_hip",
+    "right_knee",
+    "pelvis",
+    "right_foot",
+    "left_foot",
+    "right_hand",
+    "left_wrist",
+    "right_elbow",
+    "right_shoulder",
+    "pelvis",
+    "left_knee",
+    "pelvis",
+    "spine_mid",
+    "right_knee",
+    "right_knee",
+    "left_elbow",
+    "spine_high",
+    "right_knee",
+    "left_shoulder",
+    "left_knee",
+    "right_elbow",
+    "spine_high",
+    "left_hip",
+    "pelvis",
+    "left_hip",
+    "right_hip",
+    "left_shoulder",
+    "left_foot",
+    "pelvis",
+    "spine_high",
+    "right_shoulder",
+    "right_knee",
+    "left_hand",
+    "left_elbow",
+    "pelvis",
+    "head_base",
+    "spine_high",
+    "spine_mid",
+    "right_ankle",
+    "spine_high",
+    "left_hip",
+    "left_elbow",
+    "left_ankle",
+    "right_hand",
+    "right_knee",
+    "left_knee",
+    "left_knee",
+    "spine_high",
+    "left_hip",
+    "left_hip",
+    "spine_high",
+    "left_ankle",
+    "right_knee",
+    "pelvis",
+    "neck",
+    "right_foot",
+    "right_shoulder",
+    "right_knee",
+    "right_knee",
+    "right_hip",
+    "right_shoulder",
+    "right_hip",
+    "right_shoulder",
+    "left_knee",
+    "left_knee",
+    "right_hip",
+    "pelvis",
+    "right_ankle",
+    "right_shoulder",
+    "left_foot",
+    "left_elbow",
+    "left_hip",
+    "left_elbow",
+    "left_hand",
+    "right_elbow",
+    "right_ankle",
+    "right_elbow",
+    "right_knee",
+    "pelvis",
+    "right_hip",
+    "left_hand",
+    "left_shoulder",
+    "right_knee",
+    "left_hip",
+    "right_hip",
+    "left_hip",
+    "spine_mid",
+    "left_hand",
+    "right_ankle",
+    "head_base",
+    "right_hip",
+    "right_foot",
+    "spine_high",
+    "left_wrist",
+    "right_hip",
+    "right_ankle",
+    "right_hip",
+    "left_shoulder",
+    "spine_mid",
+    "left_knee",
+    "right_knee",
+    "spine_high",
+    "right_shoulder",
+    "left_hand",
+    "right_hand",
+    "spine_high",
+    "spine_mid",
+    "spine_high",
+    "right_knee",
+    "spine_mid",
+    "right_shoulder",
+    "right_shoulder",
+    "left_ankle",
+    "left_knee",
+    "spine_high",
+    "spine_mid",
+    "spine_high",
+    "head_base",
+    "right_elbow",
+    "pelvis",
+    "left_knee",
+    "pelvis",
+    "right_hand",
+    "right_foot",
+    "right_hand",
+    "neck",
+    "right_hip",
+    "right_hip",
+    "spine_mid",
+    "left_knee",
+    "right_shoulder",
+    "left_knee",
+    "right_knee",
+    "spine_mid",
+    "left_wrist",
+    "spine_mid",
+    "pelvis",
+    "right_hand",
+    "right_knee",
+    "right_shoulder",
+    "head_base",
+    "left_ankle",
+    "right_shoulder",
+    "left_elbow",
+    "left_shoulder",
+    "right_knee",
+    "left_foot",
+    "right_foot",
+    "left_elbow",
+    "left_knee",
+    "left_knee",
+    "left_hip",
+    "left_elbow",
+    "right_foot",
+    "left_knee",
+    "left_knee",
+    "head_base",
+    "pelvis",
+    "right_ankle",
+    "pelvis",
+    "left_hip",
+    "right_elbow",
+    "left_hip",
+    "right_knee",
+    "left_hand",
+    "left_hip",
+    "left_hand",
+    "right_knee",
+    "left_knee",
+    "left_hip",
+    "spine_mid",
+    "left_hip",
+    "left_shoulder",
+    "pelvis",
+    "pelvis",
+    "left_shoulder",
+    "left_elbow",
+    "left_knee",
+    "right_knee",
+    "neck",
+    "left_hand",
+    "pelvis",
+    "right_foot",
+    "right_foot",
+    "right_hand",
+    "left_wrist",
+    "spine_high",
+    "right_ankle",
+    "left_knee",
+    "right_hip",
+    "left_elbow",
+    "right_foot",
+    "left_shoulder",
+    "right_elbow",
+    "right_ankle",
+    "spine_mid",
+    "spine_high",
+    "left_knee",
+    "left_foot",
+    "spine_high",
+    "left_wrist",
+    "right_knee",
+    "right_hip",
+    "head_base",
+    "pelvis",
+    "left_hand",
+    "left_foot",
+    "right_ankle",
+    "right_hand",
+    "head_base",
+    "left_ankle",
+    "pelvis",
+    "left_hip",
+    "spine_high",
+    "right_hip",
+    "pelvis",
+    "spine_high",
+    "spine_high",
+    "right_ankle",
+    "left_foot",
+    "left_knee",
+    "left_hip",
+    "left_knee",
+    "left_shoulder",
+    "neck",
+    "right_hand",
+    "spine_high",
+    "pelvis",
+    "right_elbow",
+    "left_shoulder",
+    "spine_mid",
+    "left_hip",
+    "left_shoulder",
+    "right_knee",
+    "left_ankle",
+    "left_hand",
+    "neck",
+    "right_hand",
+    "left_knee",
+    "right_shoulder",
+    "right_hip",
+    "spine_high",
+    "left_wrist",
+    "left_foot",
+    "right_knee",
+    "left_hip",
+    "spine_high",
+    "spine_high",
+    "spine_high",
+    "left_hand",
+    "right_knee",
+    "spine_mid",
+    "right_elbow",
+    "left_foot",
+    "right_hand",
+    "spine_high",
+    "right_hip",
+    "spine_high",
+    "left_wrist",
+    "left_shoulder",
+    "left_hand",
+    "left_ankle",
+    "right_foot",
+    "spine_mid",
+    "right_hand",
+    "pelvis",
+    "left_knee",
+    "spine_mid",
+    "head_base",
+    "spine_high",
+    "left_foot",
+    "left_hand",
+    "right_knee",
+    "left_ankle",
+    "head_base",
+    "left_hip",
+    "pelvis",
+    "right_hand",
+    "left_elbow",
+    "left_foot",
+    "head_base",
+    "right_hand",
+    "right_knee",
+    "pelvis",
+    "right_wrist",
+    "right_elbow",
+    "right_knee",
+    "right_knee",
+    "spine_mid",
+    "right_hand",
+    "left_knee",
+    "right_knee",
+    "spine_mid",
+    "right_hand",
+    "right_ankle",
+    "right_elbow",
+    "spine_mid",
+    "right_wrist",
+    "left_knee",
+    "right_ankle",
+    "head_base",
+    "left_wrist",
+    "left_knee",
+    "pelvis",
+    "left_knee",
+    "right_shoulder",
+    "right_hand",
+    "right_knee",
+    "pelvis",
+    "right_foot",
+    "spine_mid",
+    "right_wrist",
+    "spine_mid",
+    "spine_mid",
+    "right_elbow",
+    "left_hip",
+    "head_base",
+    "left_elbow",
+    "spine_mid",
+    "right_foot",
+    "right_wrist",
+    "right_foot",
+    "spine_mid",
+    "right_ankle",
+    "neck",
+    "right_elbow",
+    "right_wrist",
+    "spine_high",
+    "left_hip",
+    "left_foot",
+    "spine_high",
+    "right_hip",
+    "left_foot",
+    "spine_mid",
+    "left_elbow",
+    "left_elbow",
+    "spine_mid",
+    "left_shoulder",
+    "right_wrist",
+    "left_hand",
+    "left_elbow",
+    "left_elbow",
+    "left_wrist",
+    "right_elbow",
+    "spine_high",
+    "right_elbow",
+    "left_elbow",
+    "spine_high",
+    "head_base",
+    "left_hip",
+    "spine_mid",
+    "neck",
+    "left_knee",
+    "left_hand",
+    "left_wrist",
+    "right_foot",
+    "right_hip",
+    "pelvis",
+    "head_base",
+    "left_hip",
+    "right_knee",
+    "right_ankle",
+    "right_shoulder",
+    "pelvis",
+    "left_hip",
+    "spine_mid",
+    "right_foot",
+    "head_base",
+    "right_hand",
+    "right_knee",
+    "right_foot",
+    "left_shoulder",
+    "head_base",
+    "left_shoulder",
+    "left_shoulder",
+    "right_shoulder",
+    "right_ankle",
+    "left_hip",
+    "spine_mid",
+    "right_foot",
+    "left_knee",
+    "right_shoulder",
+    "left_shoulder",
+    "right_knee",
+    "right_shoulder",
+    "spine_high",
+    "spine_mid",
+    "spine_mid",
+    "right_hand",
+    "left_hand",
+    "spine_mid",
+    "left_shoulder",
+    "spine_high",
+    "neck",
+    "right_knee",
+    "spine_high",
+    "right_knee",
+    "left_foot",
+    "head_base",
+    "spine_high",
+    "right_hand",
+    "right_hip",
+    "spine_mid",
+    "left_knee",
+    "head_base",
+    "left_elbow",
+    "neck",
+    "pelvis",
+    "right_hip",
+    "left_hand",
+    "right_knee",
+    "left_elbow",
+    "right_ankle",
+    "pelvis",
+    "left_ankle",
+    "spine_high",
+    "left_foot",
+    "left_knee",
+    "right_ankle",
+    "right_elbow",
+    "head_base",
+    "left_foot",
+    "spine_mid",
+    "spine_high",
+    "left_elbow",
+    "right_ankle",
+    "right_ankle",
+    "neck",
+    "pelvis",
+    "spine_mid",
+    "right_hand",
+    "left_foot",
+    "right_shoulder",
+    "spine_high",
+    "pelvis",
+    "right_hip",
+    "right_hand",
+    "right_foot",
+    "left_elbow",
+    "spine_high",
+    "pelvis",
+    "spine_mid",
+    "right_knee",
+    "right_ankle",
+    "left_foot",
+    "left_knee",
+    "spine_high",
+    "head_base",
+    "right_wrist",
+    "left_ankle",
+    "right_elbow",
+    "right_ankle",
+    "spine_high",
+    "right_shoulder",
+    "pelvis",
+    "left_knee",
+    "spine_high",
+    "spine_mid",
+    "spine_mid",
+    "left_hand",
+    "right_ankle",
+    "pelvis",
+    "right_shoulder",
+    "right_hip",
+    "neck",
+    "spine_mid",
+    "right_knee",
+    "spine_high",
+    "right_shoulder",
+    "left_shoulder",
+    "left_knee",
+    "left_knee",
+    "neck",
+    "spine_mid",
+    "pelvis",
+    "pelvis",
+    "head_base",
+    "right_knee",
+    "right_elbow",
+    "left_hand",
+    "left_foot",
+    "right_ankle",
+    "left_hand",
+    "left_knee",
+    "right_foot",
+    "right_shoulder",
+    "right_ankle",
+    "left_elbow",
+    "head_base",
+    "head_base",
+    "left_hip",
+    "spine_high",
+    "pelvis",
+    "left_elbow",
+    "spine_high",
+    "spine_high",
+    "right_ankle",
+    "left_elbow",
+    "left_knee",
+    "right_wrist",
+    "left_hip",
+    "head_base",
+    "right_knee",
+    "right_wrist",
+    "head_base",
+    "right_knee",
+    "head_base",
+    "left_foot",
+    "head_base",
+    "neck",
+    "right_foot",
+    "spine_high",
+    "right_hand",
+    "right_hip",
+    "left_wrist",
+    "right_foot",
+    "left_shoulder",
+    "left_ankle",
+    "left_foot",
+    "head_base",
+    "spine_high",
+    "right_elbow",
+    "right_shoulder",
+    "spine_high",
+    "left_knee",
+    "pelvis",
+    "right_knee",
+    "spine_high",
+    "head_base",
+    "left_elbow",
+    "left_hip",
+    "right_elbow",
+    "left_hip",
+    "left_foot",
+    "right_knee",
+    "right_knee",
+    "right_ankle",
+    "spine_mid",
+    "right_ankle",
+    "left_elbow",
+    "left_hip",
+    "left_shoulder",
+    "right_hand",
+    "left_elbow",
+    "right_knee",
+    "right_hip",
+    "spine_high",
+    "pelvis",
+    "right_foot",
+    "spine_high",
+    "spine_high",
+    "right_foot",
+    "right_foot",
+    "right_knee",
+    "left_knee",
+    "head_base",
+    "spine_mid",
+    "left_foot",
+    "spine_high",
+    "left_ankle",
+    "right_elbow",
+    "right_hip",
+    "left_shoulder",
+    "right_ankle",
+    "right_hand",
+    "right_hip",
+    "left_hand",
+    "left_hand",
+    "spine_mid",
+    "spine_mid",
+    "left_knee",
+    "left_foot",
+    "right_shoulder",
+    "right_wrist",
+    "pelvis",
+    "spine_mid",
+    "right_foot",
+    "pelvis",
+    "right_knee",
+    "spine_mid",
+    "left_shoulder",
+    "left_ankle",
+    "right_foot",
+    "pelvis",
+    "spine_high",
+    "left_knee",
+    "neck",
+    "left_hip",
+    "right_foot",
+    "head_base",
+    "right_hand",
+    "right_shoulder",
+    "right_wrist",
+    "left_elbow",
+    "left_foot",
+    "right_foot",
+    "spine_high",
+    "left_hand",
+    "right_knee",
+    "left_foot",
+    "right_wrist",
+    "left_knee",
+    "left_knee",
+    "right_hand",
+    "neck",
+    "spine_mid",
+    "right_ankle",
+    "spine_mid",
+    "left_shoulder",
+    "left_shoulder",
+    "left_knee",
+    "head_base",
+    "spine_mid",
+    "right_elbow",
+    "spine_high",
+    "neck",
+    "left_foot",
+    "right_hand",
+    "right_hip",
+    "spine_high",
+    "left_shoulder",
+    "spine_high",
+    "left_foot",
+    "right_hip",
+    "right_hand",
+    "spine_high",
+    "pelvis",
+    "right_hip",
+    "spine_mid",
+    "right_knee",
+    "spine_high",
+    "right_ankle",
+    "right_hip",
+    "right_foot",
+    "left_hip",
+    "pelvis",
+    "head_base",
+    "right_foot",
+    "spine_high",
+    "left_ankle",
+    "right_foot",
+    "head_base",
+    "left_hand",
+    "left_hip",
+    "neck",
+    "left_knee",
+    "head_base",
+    "right_hip",
+    "left_wrist",
+    "right_foot",
+    "pelvis",
+    "left_knee",
+    "spine_high",
+    "pelvis",
+    "right_hand",
+    "left_knee",
+    "right_knee",
+    "right_knee",
+    "spine_high",
+    "left_hand",
+    "right_hip",
+    "left_elbow",
+    "right_foot",
+    "right_knee",
+    "spine_mid",
+    "left_hip",
+    "right_shoulder",
+    "neck",
+    "spine_high",
+    "spine_mid",
+    "right_knee",
+    "spine_high",
+    "spine_mid",
+    "left_shoulder",
+    "spine_mid",
+    "right_wrist",
+    "right_hand",
+    "left_elbow",
+    "spine_mid",
+    "left_knee",
+    "left_foot",
+    "left_knee",
+    "right_knee",
+    "right_knee",
+    "spine_mid",
+    "right_knee",
+    "spine_high",
+    "right_foot",
+    "spine_mid",
+    "pelvis",
+    "left_foot",
+    "spine_mid",
+    "right_elbow",
+    "right_knee",
+    "left_hip",
+    "neck",
+    "right_shoulder",
+    "right_knee",
+    "left_shoulder",
+    "head_base",
+    "spine_high",
+    "head_base",
+    "left_elbow",
+    "left_shoulder",
+    "spine_high",
+    "spine_mid",
+    "right_shoulder",
+    "spine_mid",
+    "pelvis",
+    "pelvis",
+    "right_ankle",
+    "spine_high",
+    "spine_mid",
+    "right_hip",
+    "spine_high",
+    "right_foot",
+    "spine_mid",
+    "left_shoulder",
+    "spine_mid",
+    "right_hand",
+    "left_elbow",
+    "pelvis",
+    "right_knee",
+    "left_hand",
+    "spine_high",
+    "spine_mid",
+    "left_knee",
+    "left_hip",
+    "right_knee",
+    "left_hand",
+    "left_elbow",
+    "left_hand",
+    "spine_high",
+    "spine_high",
+    "spine_high",
+    "left_shoulder",
+    "right_shoulder",
+    "pelvis",
+    "neck",
+    "left_knee",
+    "left_ankle",
+    "left_knee",
+    "pelvis",
+    "left_hip",
+    "head_base",
+    "right_knee",
+    "right_foot",
+    "left_ankle",
+    "left_foot",
+    "pelvis",
+    "neck",
+    "spine_high",
+    "left_hip",
+    "right_hip",
+    "left_shoulder",
+    "left_hand",
+    "right_knee",
+    "right_ankle",
+    "pelvis",
+    "left_foot",
+    "left_ankle",
+    "right_hip",
+    "left_hand",
+    "left_foot",
+    "pelvis",
+    "right_shoulder",
+    "spine_high",
+    "right_wrist",
+    "left_foot",
+    "left_knee",
+    "head_base",
+    "pelvis",
+    "left_hand",
+    "left_elbow",
+    "left_shoulder",
+    "right_hand",
+    "right_wrist",
+    "left_hand",
+    "spine_mid",
+    "pelvis",
+    "spine_mid",
+    "neck",
+    "spine_high",
+    "left_foot",
+    "right_elbow",
+    "left_elbow",
+    "spine_high",
+    "right_wrist",
+    "right_ankle",
+    "left_hip",
+    "spine_mid",
+    "right_shoulder",
+    "pelvis",
+    "right_foot",
+    "right_knee",
+    "right_hip",
+    "spine_mid",
+    "head_base",
+    "right_hip",
+    "left_ankle",
+    "neck",
+    "pelvis",
+    "head_base",
+    "left_ankle",
+    "pelvis",
+    "left_hand",
+    "left_hand",
+    "pelvis",
+    "right_knee",
+    "left_knee",
+    "right_foot",
+    "right_elbow",
+    "left_hip",
+    "right_hand",
+    "left_elbow",
+    "left_knee",
+    "right_ankle",
+    "left_ankle",
+    "left_hand",
+    "right_knee",
+    "spine_mid",
+    "spine_mid",
+    "neck",
+    "spine_high",
+    "right_knee",
+    "pelvis",
+    "pelvis",
+    "spine_high",
+    "right_knee",
+    "left_elbow",
+    "right_knee",
+    "left_wrist",
+    "head_base",
+    "head_base",
+    "pelvis",
+    "left_ankle",
+    "left_knee",
+    "left_knee",
+    "right_knee",
+    "neck",
+    "spine_high",
+    "right_foot",
+    "pelvis",
+    "left_shoulder",
+    "right_foot",
+    "left_knee",
+    "right_hip",
+    "spine_high",
+    "spine_mid",
+    "right_hip",
+    "right_ankle",
+    "head_base",
+    "right_foot",
+    "spine_high",
+    "left_elbow",
+    "right_knee",
+    "right_foot",
+    "right_hand",
+    "spine_mid",
+    "right_hip",
+    "pelvis",
+    "left_ankle",
+    "right_ankle",
+    "left_elbow",
+    "right_hip",
+    "left_hand",
+    "neck",
+    "right_knee",
+    "right_elbow",
+    "pelvis",
+    "right_hip",
+    "right_hip",
+    "right_shoulder",
+    "spine_high",
+    "pelvis",
+    "right_hip",
+    "right_hand",
+    "left_hip",
+    "left_hip",
+    "right_foot",
+    "right_foot",
+    "spine_high",
+    "right_shoulder",
+    "right_elbow",
+    "left_hip",
+    "left_hip",
+    "right_hand",
+    "left_elbow",
+    "left_foot",
+    "left_shoulder",
+    "head_base",
+    "pelvis",
+    "spine_high",
+    "right_ankle",
+    "right_hip",
+    "left_hip",
+    "spine_high",
+    "left_hand",
+    "pelvis",
+    "left_hip",
+    "right_hip",
+    "left_knee",
+    "right_knee",
+    "right_elbow",
+    "right_foot",
+    "left_hand",
+    "left_shoulder",
+    "head_base",
+    "right_hand",
+    "spine_high",
+    "spine_high",
+    "spine_mid",
+    "neck",
+    "left_ankle",
+    "right_elbow",
+    "right_knee",
+    "neck",
+    "right_elbow",
+    "spine_mid",
+    "spine_high",
+    "neck",
+    "right_ankle",
+    "right_ankle",
+    "left_shoulder",
+    "pelvis",
+    "spine_high",
+    "right_wrist",
+    "left_knee",
+    "right_hand",
+    "pelvis",
+    "right_foot",
+    "left_elbow",
+    "right_hand",
+    "spine_mid",
+    "right_shoulder",
+    "left_hand",
+    "left_hip",
+    "left_knee",
+    "right_hip",
+    "spine_high",
+    "head_base",
+    "head_base",
+    "right_foot",
+    "right_knee",
+    "pelvis",
+    "right_elbow",
+    "left_knee",
+    "left_hip",
+    "left_hip",
+    "left_wrist",
+    "right_knee",
+    "left_hand",
+    "left_foot",
+    "right_foot",
+    "left_hip",
+    "left_knee",
+    "right_hip",
+    "left_knee",
+    "right_elbow",
+    "left_foot",
+    "spine_mid",
+    "pelvis",
+    "pelvis",
+    "pelvis",
+    "left_foot",
+    "spine_mid",
+    "right_elbow",
+    "head_base",
+    "right_elbow",
+    "right_ankle",
+    "left_ankle",
+    "left_hand",
+    "left_hip",
+    "right_foot",
+    "right_ankle",
+    "left_wrist",
+    "spine_high",
+    "spine_mid",
+    "head_base",
+    "left_shoulder",
+    "pelvis",
+    "pelvis",
+    "right_elbow",
+    "pelvis",
+    "right_ankle",
+    "spine_mid",
+    "head_base",
+    "head_base",
+    "pelvis",
+    "left_hip",
+    "pelvis",
+    "neck",
+    "spine_mid",
+    "left_hip",
+    "left_ankle",
+    "spine_high",
+    "left_hip",
+    "right_shoulder",
+    "left_knee",
+    "left_wrist",
+    "right_foot",
+    "spine_high",
+    "spine_high",
+    "spine_high",
+    "spine_high",
+    "left_hip",
+    "left_elbow",
+    "spine_mid",
+    "right_ankle",
+    "pelvis",
+    "right_foot",
+    "left_hand",
+    "right_hip",
+    "left_ankle",
+    "right_hip",
+    "spine_high",
+    "right_elbow",
+    "pelvis",
+    "right_wrist",
+    "right_knee",
+    "right_foot",
+    "left_wrist",
+    "left_elbow",
+    "pelvis",
+    "left_elbow",
+    "left_ankle",
+    "pelvis",
+    "right_knee",
+    "left_elbow",
+    "spine_high",
+    "right_shoulder",
+    "left_shoulder",
+    "spine_high",
+    "left_hip",
+    "right_foot",
+    "spine_high",
+    "left_knee",
+    "right_shoulder",
+    "left_shoulder",
+    "right_hip",
+    "right_foot",
+    "right_knee",
+    "neck",
+    "left_knee",
+    "pelvis",
+    "spine_high",
+    "left_hip",
+    "pelvis",
+    "right_hand",
+    "spine_high",
+    "right_hand",
+    "spine_high",
+    "left_shoulder",
+    "head_base",
+    "right_hand",
+    "right_shoulder",
+    "right_foot",
+    "spine_mid",
+    "left_elbow",
+    "left_foot",
+    "pelvis",
+    "pelvis",
+    "spine_high",
+    "spine_mid",
+    "right_ankle",
+    "left_hip",
+    "pelvis",
+    "right_foot",
+    "pelvis",
+    "spine_high",
+    "left_elbow",
+    "right_elbow",
+    "left_foot",
+    "right_hip",
+    "right_ankle",
+    "head_base",
+    "head_base",
+    "spine_high",
+    "right_ankle",
+    "pelvis",
+    "head_base",
+    "pelvis",
+    "left_hip",
+    "pelvis",
+    "right_hip",
+    "left_foot",
+    "head_base",
+    "head_base",
+    "right_knee",
+    "right_elbow",
+    "left_knee",
+    "right_wrist",
+    "right_wrist",
+    "left_shoulder",
+    "right_ankle",
+    "right_hand",
+    "left_foot",
+    "spine_mid",
+    "left_knee",
+    "pelvis",
+    "right_ankle",
+    "left_ankle",
+    "pelvis",
+    "spine_mid",
+    "left_elbow",
+    "head_base",
+    "right_knee",
+    "left_wrist",
+    "spine_high",
+    "pelvis",
+    "left_knee",
+    "left_knee",
+    "right_knee",
+    "left_wrist",
+    "left_wrist",
+    "left_knee",
+    "spine_mid",
+    "left_shoulder",
+    "right_knee",
+    "right_elbow",
+    "left_foot",
+    "left_knee",
+    "right_shoulder",
+    "right_ankle",
+    "right_shoulder",
+    "pelvis",
+    "right_hip",
+    "pelvis",
+    "right_wrist",
+    "right_hand",
+    "left_foot",
+    "right_elbow",
+    "spine_mid",
+    "head_base",
+    "right_knee",
+    "spine_high",
+    "left_elbow",
+    "left_elbow",
+    "right_shoulder",
+    "left_foot",
+    "spine_mid",
+    "right_foot",
+    "right_knee",
+    "head_base",
+    "right_hip",
+    "left_elbow",
+    "right_knee",
+    "left_knee",
+    "left_knee",
+    "right_shoulder",
+    "head_base",
+    "spine_high",
+    "pelvis",
+    "left_wrist",
+    "head_base",
+    "spine_high",
+    "left_knee",
+    "left_hip",
+    "left_foot",
+    "right_hand",
+    "right_knee",
+    "left_knee",
+    "pelvis",
+    "right_elbow",
+    "spine_high",
+    "left_hip",
+    "right_knee",
+    "spine_high",
+    "left_foot",
+    "left_hip",
+    "spine_mid",
+    "neck",
+    "left_knee",
+    "pelvis",
+    "left_foot",
+    "spine_mid",
+    "right_knee",
+    "left_knee",
+    "right_hip",
+    "left_hip",
+    "left_hip",
+    "left_hip",
+    "head_base",
+    "left_ankle",
+    "right_ankle",
+    "left_knee",
+    "right_hand",
+    "spine_high",
+    "left_foot",
+    "left_hip",
+    "head_base",
+    "left_knee",
+    "spine_mid",
+    "right_hand",
+    "right_ankle",
+    "right_knee",
+    "right_shoulder",
+    "left_ankle",
+    "left_ankle",
+    "right_shoulder",
+    "spine_high",
+    "spine_mid",
+    "left_foot",
+    "left_shoulder",
+    "head_base",
+    "right_foot",
+    "right_knee",
+    "right_knee",
+    "right_foot",
+    "left_ankle",
+    "left_hip",
+    "right_foot",
+    "left_ankle",
+    "spine_mid",
+    "spine_high",
+    "neck",
+    "spine_high",
+    "right_hip",
+    "left_hip",
+    "spine_high",
+    "spine_mid",
+    "spine_mid",
+    "left_hip",
+    "left_hip",
+    "right_knee",
+    "spine_mid",
+    "right_hip",
+    "right_shoulder",
+    "right_hip",
+    "head_base",
+    "right_shoulder",
+    "left_knee",
+    "spine_mid",
+    "right_hip",
+    "left_elbow",
+    "right_hand",
+    "right_ankle",
+    "pelvis"
+  ],
+  "organ_bindings": {
+    "brain": "head_base",
+    "left_lung": "spine_high",
+    "right_lung": "spine_high",
+    "heart": "spine_high",
+    "stomach": "spine_mid",
+    "liver": "spine_mid",
+    "left_kidney": "spine_low",
+    "right_kidney": "spine_low"
+  },
+  "curve_bindings": {
+    "left_rib_1": "spine_high",
+    "right_rib_1": "spine_high",
+    "left_rib_2": "spine_high",
+    "right_rib_2": "spine_high",
+    "left_rib_3": "spine_high",
+    "right_rib_3": "spine_high",
+    "left_rib_4": "spine_high",
+    "right_rib_4": "spine_high",
+    "sternum": "spine_high",
+    "left_ulna": "left_elbow",
+    "right_ulna": "right_elbow",
+    "left_fibula": "left_knee",
+    "right_fibula": "right_knee",
+    "left_scapula": "spine_high",
+    "right_scapula": "spine_high",
+    "left_pelvis_wing": "pelvis",
+    "right_pelvis_wing": "pelvis",
+    "skull_brow": "head_base",
+    "left_orbit": "head_base",
+    "right_orbit": "head_base",
+    "left_cheek": "head_base",
+    "right_cheek": "head_base",
+    "nasal_bridge": "head_base",
+    "maxilla": "head_base",
+    "mandible": "head_base"
+  },
+  "skull_joint": "head_base",
+  "joints": {
+    "pelvis": [
+      0.0,
+      0.05,
+      0.9
+    ],
+    "spine_low": [
+      0.0,
+      0.06,
+      1.02
+    ],
+    "spine_mid": [
+      0.0,
+      0.07,
+      1.165
+    ],
+    "spine_high": [
+      0.0,
+      0.07,
+      1.38
+    ],
+    "neck": [
+      0.0,
+      0.055,
+      1.555
+    ],
+    "head_base": [
+      0.0,
+      0.05,
+      1.615
+    ],
+    "left_shoulder": [
+      -0.18,
+      0.06,
+      1.455
+    ],
+    "right_shoulder": [
+      0.18,
+      0.06,
+      1.455
+    ],
+    "left_elbow": [
+      -0.255,
+      0.06,
+      1.225
+    ],
+    "right_elbow": [
+      0.255,
+      0.06,
+      1.225
+    ],
+    "left_wrist": [
+      -0.342,
+      0.02,
+      1.02
+    ],
+    "right_wrist": [
+      0.34,
+      0.018,
+      1.02
+    ],
+    "left_hand": [
+      -0.382,
+      -0.004,
+      0.91
+    ],
+    "right_hand": [
+      0.382,
+      -0.004,
+      0.91
+    ],
+    "left_hip": [
+      -0.1,
+      0.025,
+      0.88
+    ],
+    "right_hip": [
+      0.1,
+      0.025,
+      0.88
+    ],
+    "left_knee": [
+      -0.098,
+      0.03,
+      0.515
+    ],
+    "right_knee": [
+      0.098,
+      0.03,
+      0.515
+    ],
+    "left_ankle": [
+      -0.125,
+      0.07,
+      0.15
+    ],
+    "right_ankle": [
+      0.125,
+      0.07,
+      0.15
+    ],
+    "left_foot": [
+      -0.14,
+      0.025,
+      0.07
+    ],
+    "right_foot": [
+      0.14,
+      0.025,
+      0.07
+    ],
+    "left_thumb_root": [
+      -0.376,
+      -0.026,
+      0.904
+    ],
+    "left_thumb_mid": [
+      -0.378,
+      -0.028999999999999998,
+      0.87472
+    ],
+    "left_thumb_tip": [
+      -0.38,
+      -0.032,
+      0.843
+    ],
+    "left_index_root": [
+      -0.379,
+      -0.015,
+      0.904
+    ],
+    "left_index_mid": [
+      -0.381,
+      -0.018,
+      0.87088
+    ],
+    "left_index_tip": [
+      -0.383,
+      -0.020999999999999998,
+      0.835
+    ],
+    "left_middle_root": [
+      -0.382,
+      -0.004,
+      0.904
+    ],
+    "left_middle_mid": [
+      -0.384,
+      -0.007,
+      0.8689600000000001
+    ],
+    "left_middle_tip": [
+      -0.386,
+      -0.01,
+      0.8310000000000001
+    ],
+    "left_ring_root": [
+      -0.385,
+      0.006999999999999999,
+      0.904
+    ],
+    "left_ring_mid": [
+      -0.387,
+      0.003999999999999999,
+      0.8718400000000001
+    ],
+    "left_ring_tip": [
+      -0.389,
+      0.0009999999999999992,
+      0.837
+    ],
+    "left_pinky_root": [
+      -0.388,
+      0.018,
+      0.904
+    ],
+    "left_pinky_mid": [
+      -0.39,
+      0.015,
+      0.87808
+    ],
+    "left_pinky_tip": [
+      -0.392,
+      0.011999999999999999,
+      0.85
+    ],
+    "right_thumb_root": [
+      0.376,
+      -0.026,
+      0.904
+    ],
+    "right_thumb_mid": [
+      0.378,
+      -0.028999999999999998,
+      0.87472
+    ],
+    "right_thumb_tip": [
+      0.38,
+      -0.032,
+      0.843
+    ],
+    "right_index_root": [
+      0.379,
+      -0.015,
+      0.904
+    ],
+    "right_index_mid": [
+      0.381,
+      -0.018,
+      0.87088
+    ],
+    "right_index_tip": [
+      0.383,
+      -0.020999999999999998,
+      0.835
+    ],
+    "right_middle_root": [
+      0.382,
+      -0.004,
+      0.904
+    ],
+    "right_middle_mid": [
+      0.384,
+      -0.007,
+      0.8689600000000001
+    ],
+    "right_middle_tip": [
+      0.386,
+      -0.01,
+      0.8310000000000001
+    ],
+    "right_ring_root": [
+      0.385,
+      0.006999999999999999,
+      0.904
+    ],
+    "right_ring_mid": [
+      0.387,
+      0.003999999999999999,
+      0.8718400000000001
+    ],
+    "right_ring_tip": [
+      0.389,
+      0.0009999999999999992,
+      0.837
+    ],
+    "right_pinky_root": [
+      0.388,
+      0.018,
+      0.904
+    ],
+    "right_pinky_mid": [
+      0.39,
+      0.015,
+      0.87808
+    ],
+    "right_pinky_tip": [
+      0.392,
+      0.011999999999999999,
+      0.85
+    ]
+  },
+  "joint_radius": 0.007,
+  "joint_radii": {
+    "pelvis": 0.007560000000000001,
+    "spine_low": 0.007560000000000001,
+    "spine_mid": 0.007560000000000001,
+    "spine_high": 0.007560000000000001,
+    "neck": 0.007560000000000001,
+    "head_base": 0.007560000000000001,
+    "left_shoulder": 0.007560000000000001,
+    "right_shoulder": 0.007560000000000001,
+    "left_elbow": 0.007560000000000001,
+    "right_elbow": 0.007560000000000001,
+    "left_wrist": 0.007560000000000001,
+    "right_wrist": 0.007560000000000001,
+    "left_hand": 0.007560000000000001,
+    "right_hand": 0.007560000000000001,
+    "left_hip": 0.007560000000000001,
+    "right_hip": 0.007560000000000001,
+    "left_knee": 0.007560000000000001,
+    "right_knee": 0.007560000000000001,
+    "left_ankle": 0.007560000000000001,
+    "right_ankle": 0.007560000000000001,
+    "left_foot": 0.007560000000000001,
+    "right_foot": 0.007560000000000001,
+    "left_thumb_root": 0.002052,
+    "left_thumb_mid": 0.002052,
+    "left_thumb_tip": 0.002052,
+    "left_index_root": 0.002052,
+    "left_index_mid": 0.002052,
+    "left_index_tip": 0.002052,
+    "left_middle_root": 0.002052,
+    "left_middle_mid": 0.002052,
+    "left_middle_tip": 0.002052,
+    "left_ring_root": 0.002052,
+    "left_ring_mid": 0.002052,
+    "left_ring_tip": 0.002052,
+    "left_pinky_root": 0.002052,
+    "left_pinky_mid": 0.002052,
+    "left_pinky_tip": 0.002052,
+    "right_thumb_root": 0.002052,
+    "right_thumb_mid": 0.002052,
+    "right_thumb_tip": 0.002052,
+    "right_index_root": 0.002052,
+    "right_index_mid": 0.002052,
+    "right_index_tip": 0.002052,
+    "right_middle_root": 0.002052,
+    "right_middle_mid": 0.002052,
+    "right_middle_tip": 0.002052,
+    "right_ring_root": 0.002052,
+    "right_ring_mid": 0.002052,
+    "right_ring_tip": 0.002052,
+    "right_pinky_root": 0.002052,
+    "right_pinky_mid": 0.002052,
+    "right_pinky_tip": 0.002052
+  },
+  "finger_names": [
+    "thumb",
+    "index",
+    "middle",
+    "ring",
+    "pinky"
+  ],
+  "bones": [
+    {
+      "name": "spine_pelvis",
+      "a": "pelvis",
+      "b": "spine_low",
+      "radius": 0.010579999999999999
+    },
+    {
+      "name": "spine_low_mid",
+      "a": "spine_low",
+      "b": "spine_mid",
+      "radius": 0.009545
+    },
+    {
+      "name": "spine_mid_high",
+      "a": "spine_mid",
+      "b": "spine_high",
+      "radius": 0.009545
+    },
+    {
+      "name": "spine_neck",
+      "a": "spine_high",
+      "b": "neck",
+      "radius": 0.00805
+    },
+    {
+      "name": "neck_head",
+      "a": "neck",
+      "b": "head_base",
+      "radius": 0.00805
+    },
+    {
+      "name": "left_clavicle",
+      "a": "spine_high",
+      "b": "left_shoulder",
+      "radius": 0.007819999999999999
+    },
+    {
+      "name": "right_clavicle",
+      "a": "spine_high",
+      "b": "right_shoulder",
+      "radius": 0.007819999999999999
+    },
+    {
+      "name": "left_humerus",
+      "a": "left_shoulder",
+      "b": "left_elbow",
+      "radius": 0.00828
+    },
+    {
+      "name": "right_humerus",
+      "a": "right_shoulder",
+      "b": "right_elbow",
+      "radius": 0.00828
+    },
+    {
+      "name": "left_radius",
+      "a": "left_elbow",
+      "b": "left_wrist",
+      "radius": 0.005979999999999999
+    },
+    {
+      "name": "right_radius",
+      "a": "right_elbow",
+      "b": "right_wrist",
+      "radius": 0.005979999999999999
+    },
+    {
+      "name": "left_palm",
+      "a": "left_wrist",
+      "b": "left_hand",
+      "radius": 0.0052899999999999996
+    },
+    {
+      "name": "right_palm",
+      "a": "right_wrist",
+      "b": "right_hand",
+      "radius": 0.0052899999999999996
+    },
+    {
+      "name": "left_hip_link",
+      "a": "pelvis",
+      "b": "left_hip",
+      "radius": 0.00805
+    },
+    {
+      "name": "right_hip_link",
+      "a": "pelvis",
+      "b": "right_hip",
+      "radius": 0.00805
+    },
+    {
+      "name": "left_femur",
+      "a": "left_hip",
+      "b": "left_knee",
+      "radius": 0.010579999999999999
+    },
+    {
+      "name": "right_femur",
+      "a": "right_hip",
+      "b": "right_knee",
+      "radius": 0.010579999999999999
+    },
+    {
+      "name": "left_tibia",
+      "a": "left_knee",
+      "b": "left_ankle",
+      "radius": 0.0070149999999999995
+    },
+    {
+      "name": "right_tibia",
+      "a": "right_knee",
+      "b": "right_ankle",
+      "radius": 0.0070149999999999995
+    },
+    {
+      "name": "left_foot_arch",
+      "a": "left_ankle",
+      "b": "left_foot",
+      "radius": 0.005519999999999999
+    },
+    {
+      "name": "right_foot_arch",
+      "a": "right_ankle",
+      "b": "right_foot",
+      "radius": 0.005519999999999999
+    },
+    {
+      "name": "left_thumb_metacarpal",
+      "a": "left_hand",
+      "b": "left_thumb_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "left_thumb_proximal",
+      "a": "left_thumb_root",
+      "b": "left_thumb_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "left_thumb_distal",
+      "a": "left_thumb_mid",
+      "b": "left_thumb_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "left_index_metacarpal",
+      "a": "left_hand",
+      "b": "left_index_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "left_index_proximal",
+      "a": "left_index_root",
+      "b": "left_index_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "left_index_distal",
+      "a": "left_index_mid",
+      "b": "left_index_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "left_middle_metacarpal",
+      "a": "left_hand",
+      "b": "left_middle_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "left_middle_proximal",
+      "a": "left_middle_root",
+      "b": "left_middle_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "left_middle_distal",
+      "a": "left_middle_mid",
+      "b": "left_middle_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "left_ring_metacarpal",
+      "a": "left_hand",
+      "b": "left_ring_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "left_ring_proximal",
+      "a": "left_ring_root",
+      "b": "left_ring_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "left_ring_distal",
+      "a": "left_ring_mid",
+      "b": "left_ring_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "left_pinky_metacarpal",
+      "a": "left_hand",
+      "b": "left_pinky_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "left_pinky_proximal",
+      "a": "left_pinky_root",
+      "b": "left_pinky_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "left_pinky_distal",
+      "a": "left_pinky_mid",
+      "b": "left_pinky_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "right_thumb_metacarpal",
+      "a": "right_hand",
+      "b": "right_thumb_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "right_thumb_proximal",
+      "a": "right_thumb_root",
+      "b": "right_thumb_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "right_thumb_distal",
+      "a": "right_thumb_mid",
+      "b": "right_thumb_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "right_index_metacarpal",
+      "a": "right_hand",
+      "b": "right_index_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "right_index_proximal",
+      "a": "right_index_root",
+      "b": "right_index_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "right_index_distal",
+      "a": "right_index_mid",
+      "b": "right_index_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "right_middle_metacarpal",
+      "a": "right_hand",
+      "b": "right_middle_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "right_middle_proximal",
+      "a": "right_middle_root",
+      "b": "right_middle_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "right_middle_distal",
+      "a": "right_middle_mid",
+      "b": "right_middle_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "right_ring_metacarpal",
+      "a": "right_hand",
+      "b": "right_ring_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "right_ring_proximal",
+      "a": "right_ring_root",
+      "b": "right_ring_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "right_ring_distal",
+      "a": "right_ring_mid",
+      "b": "right_ring_tip",
+      "radius": 0.0016099999999999999
+    },
+    {
+      "name": "right_pinky_metacarpal",
+      "a": "right_hand",
+      "b": "right_pinky_root",
+      "radius": 0.0023
+    },
+    {
+      "name": "right_pinky_proximal",
+      "a": "right_pinky_root",
+      "b": "right_pinky_mid",
+      "radius": 0.0018399999999999998
+    },
+    {
+      "name": "right_pinky_distal",
+      "a": "right_pinky_mid",
+      "b": "right_pinky_tip",
+      "radius": 0.0016099999999999999
+    }
+  ],
+  "curves": [
+    {
+      "name": "left_rib_1",
+      "radius": 0.0046,
+      "points": [
+        [
+          0.0,
+          0.072,
+          1.44
+        ],
+        [
+          -0.06,
+          0.072,
+          1.44
+        ],
+        [
+          -0.112,
+          0.045,
+          1.44
+        ],
+        [
+          -0.122,
+          0.0,
+          1.44
+        ],
+        [
+          -0.095,
+          -0.052,
+          1.44
+        ],
+        [
+          -0.035,
+          -0.064,
+          1.44
+        ]
+      ]
+    },
+    {
+      "name": "right_rib_1",
+      "radius": 0.0046,
+      "points": [
+        [
+          0.0,
+          0.072,
+          1.44
+        ],
+        [
+          0.06,
+          0.072,
+          1.44
+        ],
+        [
+          0.112,
+          0.045,
+          1.44
+        ],
+        [
+          0.122,
+          0.0,
+          1.44
+        ],
+        [
+          0.095,
+          -0.052,
+          1.44
+        ],
+        [
+          0.035,
+          -0.064,
+          1.44
+        ]
+      ]
+    },
+    {
+      "name": "left_rib_2",
+      "radius": 0.0046,
+      "points": [
+        [
+          0.0,
+          0.072,
+          1.38
+        ],
+        [
+          -0.06,
+          0.072,
+          1.38
+        ],
+        [
+          -0.112,
+          0.045,
+          1.38
+        ],
+        [
+          -0.122,
+          0.0,
+          1.38
+        ],
+        [
+          -0.095,
+          -0.052,
+          1.38
+        ],
+        [
+          -0.035,
+          -0.064,
+          1.38
+        ]
+      ]
+    },
+    {
+      "name": "right_rib_2",
+      "radius": 0.0046,
+      "points": [
+        [
+          0.0,
+          0.072,
+          1.38
+        ],
+        [
+          0.06,
+          0.072,
+          1.38
+        ],
+        [
+          0.112,
+          0.045,
+          1.38
+        ],
+        [
+          0.122,
+          0.0,
+          1.38
+        ],
+        [
+          0.095,
+          -0.052,
+          1.38
+        ],
+        [
+          0.035,
+          -0.064,
+          1.38
+        ]
+      ]
+    },
+    {
+      "name": "left_rib_3",
+      "radius": 0.0046,
+      "points": [
+        [
+          0.0,
+          0.072,
+          1.32
+        ],
+        [
+          -0.06,
+          0.072,
+          1.32
+        ],
+        [
+          -0.112,
+          0.045,
+          1.32
+        ],
+        [
+          -0.122,
+          0.0,
+          1.32
+        ],
+        [
+          -0.095,
+          -0.052,
+          1.32
+        ],
+        [
+          -0.035,
+          -0.064,
+          1.32
+        ]
+      ]
+    },
+    {
+      "name": "right_rib_3",
+      "radius": 0.0046,
+      "points": [
+        [
+          0.0,
+          0.072,
+          1.32
+        ],
+        [
+          0.06,
+          0.072,
+          1.32
+        ],
+        [
+          0.112,
+          0.045,
+          1.32
+        ],
+        [
+          0.122,
+          0.0,
+          1.32
+        ],
+        [
+          0.095,
+          -0.052,
+          1.32
+        ],
+        [
+          0.035,
+          -0.064,
+          1.32
+        ]
+      ]
+    },
+    {
+      "name": "left_rib_4",
+      "radius": 0.0046,
+      "points": [
+        [
+          0.0,
+          0.072,
+          1.26
+        ],
+        [
+          -0.06,
+          0.072,
+          1.26
+        ],
+        [
+          -0.112,
+          0.045,
+          1.26
+        ],
+        [
+          -0.122,
+          0.0,
+          1.26
+        ],
+        [
+          -0.095,
+          -0.052,
+          1.26
+        ],
+        [
+          -0.035,
+          -0.064,
+          1.26
+        ]
+      ]
+    },
+    {
+      "name": "right_rib_4",
+      "radius": 0.0046,
+      "points": [
+        [
+          0.0,
+          0.072,
+          1.26
+        ],
+        [
+          0.06,
+          0.072,
+          1.26
+        ],
+        [
+          0.112,
+          0.045,
+          1.26
+        ],
+        [
+          0.122,
+          0.0,
+          1.26
+        ],
+        [
+          0.095,
+          -0.052,
+          1.26
+        ],
+        [
+          0.035,
+          -0.064,
+          1.26
+        ]
+      ]
+    },
+    {
+      "name": "sternum",
+      "radius": 0.00437,
+      "points": [
+        [
+          0.0,
+          -0.055,
+          1.255
+        ],
+        [
+          0.0,
+          -0.055,
+          1.455
+        ]
+      ]
+    },
+    {
+      "name": "left_ulna",
+      "radius": 0.0037949999999999998,
+      "points": [
+        [
+          -0.255,
+          0.074,
+          1.225
+        ],
+        [
+          -0.298,
+          0.052,
+          1.12
+        ],
+        [
+          -0.342,
+          0.034,
+          1.02
+        ]
+      ]
+    },
+    {
+      "name": "right_ulna",
+      "radius": 0.0037949999999999998,
+      "points": [
+        [
+          0.255,
+          0.074,
+          1.225
+        ],
+        [
+          0.298,
+          0.05,
+          1.12
+        ],
+        [
+          0.34,
+          0.032,
+          1.02
+        ]
+      ]
+    },
+    {
+      "name": "left_fibula",
+      "radius": 0.004025,
+      "points": [
+        [
+          -0.112,
+          0.044,
+          0.515
+        ],
+        [
+          -0.116,
+          0.055,
+          0.33
+        ],
+        [
+          -0.139,
+          0.078,
+          0.15
+        ]
+      ]
+    },
+    {
+      "name": "right_fibula",
+      "radius": 0.004025,
+      "points": [
+        [
+          0.112,
+          0.044,
+          0.515
+        ],
+        [
+          0.116,
+          0.055,
+          0.33
+        ],
+        [
+          0.139,
+          0.078,
+          0.15
+        ]
+      ]
+    },
+    {
+      "name": "left_scapula",
+      "radius": 0.00414,
+      "points": [
+        [
+          -0.03,
+          0.088,
+          1.425
+        ],
+        [
+          -0.105,
+          0.096,
+          1.455
+        ],
+        [
+          -0.166,
+          0.08,
+          1.43
+        ],
+        [
+          -0.112,
+          0.09,
+          1.35
+        ],
+        [
+          -0.03,
+          0.088,
+          1.425
+        ]
+      ]
+    },
+    {
+      "name": "right_scapula",
+      "radius": 0.00414,
+      "points": [
+        [
+          0.03,
+          0.088,
+          1.425
+        ],
+        [
+          0.105,
+          0.096,
+          1.455
+        ],
+        [
+          0.166,
+          0.08,
+          1.43
+        ],
+        [
+          0.112,
+          0.09,
+          1.35
+        ],
+        [
+          0.03,
+          0.088,
+          1.425
+        ]
+      ]
+    },
+    {
+      "name": "left_pelvis_wing",
+      "radius": 0.0047150000000000004,
+      "points": [
+        [
+          0.0,
+          0.052,
+          0.925
+        ],
+        [
+          -0.065,
+          0.073,
+          0.952
+        ],
+        [
+          -0.118,
+          0.052,
+          0.935
+        ],
+        [
+          -0.132,
+          0.03,
+          0.9
+        ],
+        [
+          -0.1,
+          0.025,
+          0.88
+        ]
+      ]
+    },
+    {
+      "name": "right_pelvis_wing",
+      "radius": 0.0047150000000000004,
+      "points": [
+        [
+          0.0,
+          0.052,
+          0.925
+        ],
+        [
+          0.065,
+          0.073,
+          0.952
+        ],
+        [
+          0.118,
+          0.052,
+          0.935
+        ],
+        [
+          0.132,
+          0.03,
+          0.9
+        ],
+        [
+          0.1,
+          0.025,
+          0.88
+        ]
+      ]
+    },
+    {
+      "name": "skull_brow",
+      "radius": 0.0046,
+      "points": [
+        [
+          -0.05,
+          -0.04,
+          1.71
+        ],
+        [
+          -0.025,
+          -0.05,
+          1.72
+        ],
+        [
+          0.0,
+          -0.052,
+          1.722
+        ],
+        [
+          0.025,
+          -0.05,
+          1.72
+        ],
+        [
+          0.05,
+          -0.04,
+          1.71
+        ]
+      ]
+    },
+    {
+      "name": "left_orbit",
+      "radius": 0.003909999999999999,
+      "points": [
+        [
+          -0.009999999999999998,
+          -0.043,
+          1.692
+        ],
+        [
+          -0.014686291501015237,
+          -0.043,
+          1.7033137084989847
+        ],
+        [
+          -0.026,
+          -0.043,
+          1.708
+        ],
+        [
+          -0.03731370849898476,
+          -0.043,
+          1.7033137084989847
+        ],
+        [
+          -0.041999999999999996,
+          -0.043,
+          1.692
+        ],
+        [
+          -0.037313708498984764,
+          -0.043,
+          1.6806862915010152
+        ],
+        [
+          -0.026000000000000002,
+          -0.043,
+          1.676
+        ],
+        [
+          -0.01468629150101524,
+          -0.043,
+          1.6806862915010152
+        ],
+        [
+          -0.009999999999999998,
+          -0.043,
+          1.692
+        ]
+      ]
+    },
+    {
+      "name": "right_orbit",
+      "radius": 0.003909999999999999,
+      "points": [
+        [
+          0.041999999999999996,
+          -0.043,
+          1.692
+        ],
+        [
+          0.03731370849898476,
+          -0.043,
+          1.7033137084989847
+        ],
+        [
+          0.026,
+          -0.043,
+          1.708
+        ],
+        [
+          0.014686291501015239,
+          -0.043,
+          1.7033137084989847
+        ],
+        [
+          0.009999999999999998,
+          -0.043,
+          1.692
+        ],
+        [
+          0.014686291501015235,
+          -0.043,
+          1.6806862915010152
+        ],
+        [
+          0.025999999999999995,
+          -0.043,
+          1.676
+        ],
+        [
+          0.03731370849898476,
+          -0.043,
+          1.6806862915010152
+        ],
+        [
+          0.041999999999999996,
+          -0.043,
+          1.692
+        ]
+      ]
+    },
+    {
+      "name": "left_cheek",
+      "radius": 0.00414,
+      "points": [
+        [
+          -0.042,
+          -0.03,
+          1.695
+        ],
+        [
+          -0.049,
+          -0.024,
+          1.675
+        ],
+        [
+          -0.046,
+          -0.018,
+          1.65
+        ]
+      ]
+    },
+    {
+      "name": "right_cheek",
+      "radius": 0.00414,
+      "points": [
+        [
+          0.042,
+          -0.03,
+          1.695
+        ],
+        [
+          0.049,
+          -0.024,
+          1.675
+        ],
+        [
+          0.046,
+          -0.018,
+          1.65
+        ]
+      ]
+    },
+    {
+      "name": "nasal_bridge",
+      "radius": 0.003909999999999999,
+      "points": [
+        [
+          0.0,
+          -0.053,
+          1.705
+        ],
+        [
+          0.0,
+          -0.057,
+          1.675
+        ],
+        [
+          0.0,
+          -0.053,
+          1.66
+        ]
+      ]
+    },
+    {
+      "name": "maxilla",
+      "radius": 0.003909999999999999,
+      "points": [
+        [
+          -0.043,
+          -0.046,
+          1.665
+        ],
+        [
+          -0.022,
+          -0.052,
+          1.66
+        ],
+        [
+          0.0,
+          -0.054,
+          1.658
+        ],
+        [
+          0.022,
+          -0.052,
+          1.66
+        ],
+        [
+          0.043,
+          -0.046,
+          1.665
+        ]
+      ]
+    },
+    {
+      "name": "mandible",
+      "radius": 0.00437,
+      "points": [
+        [
+          -0.046,
+          -0.016,
+          1.65
+        ],
+        [
+          -0.044,
+          -0.027,
+          1.635
+        ],
+        [
+          -0.027,
+          -0.036,
+          1.62
+        ],
+        [
+          0.0,
+          -0.04,
+          1.615
+        ],
+        [
+          0.027,
+          -0.036,
+          1.62
+        ],
+        [
+          0.044,
+          -0.027,
+          1.635
+        ],
+        [
+          0.046,
+          -0.016,
+          1.65
+        ]
+      ]
+    }
+  ],
+  "skull": {
+    "center": [
+      0.0,
+      0.018,
+      1.692
+    ],
+    "outer_radii": [
+      0.058,
+      0.06,
+      0.064
+    ],
+    "thickness": 0.0042,
+    "theta_min_deg": -10.0,
+    "theta_max_deg": 190.0,
+    "phi_min_deg": 12.0,
+    "phi_max_deg": 150.0,
+    "slices": 18,
+    "stacks": 12
+  },
+  "metrics": {
+    "body_glyph_count": 2200,
+    "organ_glyph_count": 118,
+    "joint_count": 52,
+    "primary_bone_count": 51,
+    "curve_count": 25,
+    "render_segment_count": 152,
+    "formed_skull_mesh_count": 1,
+    "formed_skull_outer_shell_clearance_m": 0.011484979608957854,
+    "formed_skull_organ_clearance_m": 0.0053752061486994065,
+    "minimum_segment_shell_clearance_m": 0.0034711663035546193,
+    "minimum_segment_organ_clearance_m": 0.008690832372108402,
+    "minimum_joint_shell_clearance_m": 0.003529328203277275,
+    "minimum_joint_organ_clearance_m": 0.03766947749148933,
+    "required_shell_clearance_m": 0.003,
+    "required_organ_clearance_m": 0.004,
+    "violations": []
+  },
+  "segment_audit": [
+    {
+      "name": "spine_pelvis",
+      "a": [
+        0.0,
+        0.05,
+        0.9
+      ],
+      "b": [
+        0.0,
+        0.06,
+        1.02
+      ],
+      "radius": 0.010579999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.013872328825696792,
+      "organ_clearance_m": 0.06865523313218799
+    },
+    {
+      "name": "spine_low_mid",
+      "a": [
+        0.0,
+        0.06,
+        1.02
+      ],
+      "b": [
+        0.0,
+        0.07,
+        1.165
+      ],
+      "radius": 0.009545,
+      "kind": "bone",
+      "shell_clearance_m": 0.017751575598781877,
+      "organ_clearance_m": 0.042077922765785716
+    },
+    {
+      "name": "spine_mid_high",
+      "a": [
+        0.0,
+        0.07,
+        1.165
+      ],
+      "b": [
+        0.0,
+        0.07,
+        1.38
+      ],
+      "radius": 0.009545,
+      "kind": "bone",
+      "shell_clearance_m": 0.018503253006954143,
+      "organ_clearance_m": 0.06262038187818166
+    },
+    {
+      "name": "spine_neck",
+      "a": [
+        0.0,
+        0.07,
+        1.38
+      ],
+      "b": [
+        0.0,
+        0.055,
+        1.555
+      ],
+      "radius": 0.00805,
+      "kind": "bone",
+      "shell_clearance_m": 0.04201273867858211,
+      "organ_clearance_m": 0.06611187763400965
+    },
+    {
+      "name": "neck_head",
+      "a": [
+        0.0,
+        0.055,
+        1.555
+      ],
+      "b": [
+        0.0,
+        0.05,
+        1.615
+      ],
+      "radius": 0.00805,
+      "kind": "bone",
+      "shell_clearance_m": 0.04201273867858211,
+      "organ_clearance_m": 0.03717947749148933
+    },
+    {
+      "name": "left_clavicle",
+      "a": [
+        0.0,
+        0.07,
+        1.38
+      ],
+      "b": [
+        -0.18,
+        0.06,
+        1.455
+      ],
+      "radius": 0.007819999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.010972800908858616,
+      "organ_clearance_m": 0.044935352068707746
+    },
+    {
+      "name": "right_clavicle",
+      "a": [
+        0.0,
+        0.07,
+        1.38
+      ],
+      "b": [
+        0.18,
+        0.06,
+        1.455
+      ],
+      "radius": 0.007819999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.0179087961824878,
+      "organ_clearance_m": 0.04439385083973187
+    },
+    {
+      "name": "left_humerus",
+      "a": [
+        -0.18,
+        0.06,
+        1.455
+      ],
+      "b": [
+        -0.255,
+        0.06,
+        1.225
+      ],
+      "radius": 0.00828,
+      "kind": "bone",
+      "shell_clearance_m": 0.010512800908858616,
+      "organ_clearance_m": 0.09787613949097261
+    },
+    {
+      "name": "right_humerus",
+      "a": [
+        0.18,
+        0.06,
+        1.455
+      ],
+      "b": [
+        0.255,
+        0.06,
+        1.225
+      ],
+      "radius": 0.00828,
+      "kind": "bone",
+      "shell_clearance_m": 0.017448796182487798,
+      "organ_clearance_m": 0.09836733662297673
+    },
+    {
+      "name": "left_radius",
+      "a": [
+        -0.255,
+        0.06,
+        1.225
+      ],
+      "b": [
+        -0.342,
+        0.02,
+        1.02
+      ],
+      "radius": 0.005979999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.022319776677564167,
+      "organ_clearance_m": 0.17245303561853476
+    },
+    {
+      "name": "right_radius",
+      "a": [
+        0.255,
+        0.06,
+        1.225
+      ],
+      "b": [
+        0.34,
+        0.018,
+        1.02
+      ],
+      "radius": 0.005979999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.020689021572076492,
+      "organ_clearance_m": 0.17463485140510288
+    },
+    {
+      "name": "left_palm",
+      "a": [
+        -0.342,
+        0.02,
+        1.02
+      ],
+      "b": [
+        -0.382,
+        -0.004,
+        0.91
+      ],
+      "radius": 0.0052899999999999996,
+      "kind": "bone",
+      "shell_clearance_m": 0.003571932971987586,
+      "organ_clearance_m": 0.25954568208869194
+    },
+    {
+      "name": "right_palm",
+      "a": [
+        0.34,
+        0.018,
+        1.02
+      ],
+      "b": [
+        0.382,
+        -0.004,
+        0.91
+      ],
+      "radius": 0.0052899999999999996,
+      "kind": "bone",
+      "shell_clearance_m": 0.006647849354981078,
+      "organ_clearance_m": 0.2589278862681431
+    },
+    {
+      "name": "left_hip_link",
+      "a": [
+        0.0,
+        0.05,
+        0.9
+      ],
+      "b": [
+        -0.1,
+        0.025,
+        0.88
+      ],
+      "radius": 0.00805,
+      "kind": "bone",
+      "shell_clearance_m": 0.01640232882569679,
+      "organ_clearance_m": 0.09593135297365456
+    },
+    {
+      "name": "right_hip_link",
+      "a": [
+        0.0,
+        0.05,
+        0.9
+      ],
+      "b": [
+        0.1,
+        0.025,
+        0.88
+      ],
+      "radius": 0.00805,
+      "kind": "bone",
+      "shell_clearance_m": 0.01578381951977563,
+      "organ_clearance_m": 0.09722820474593642
+    },
+    {
+      "name": "left_femur",
+      "a": [
+        -0.1,
+        0.025,
+        0.88
+      ],
+      "b": [
+        -0.098,
+        0.03,
+        0.515
+      ],
+      "radius": 0.010579999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.04212280870059912,
+      "organ_clearance_m": 0.10620959954292455
+    },
+    {
+      "name": "right_femur",
+      "a": [
+        0.1,
+        0.025,
+        0.88
+      ],
+      "b": [
+        0.098,
+        0.03,
+        0.515
+      ],
+      "radius": 0.010579999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.04222127142705752,
+      "organ_clearance_m": 0.10106440996186933
+    },
+    {
+      "name": "left_tibia",
+      "a": [
+        -0.098,
+        0.03,
+        0.515
+      ],
+      "b": [
+        -0.125,
+        0.07,
+        0.15
+      ],
+      "radius": 0.0070149999999999995,
+      "kind": "bone",
+      "shell_clearance_m": 0.01879834337290103,
+      "organ_clearance_m": 0.46466500444667247
+    },
+    {
+      "name": "right_tibia",
+      "a": [
+        0.098,
+        0.03,
+        0.515
+      ],
+      "b": [
+        0.125,
+        0.07,
+        0.15
+      ],
+      "radius": 0.0070149999999999995,
+      "kind": "bone",
+      "shell_clearance_m": 0.019357411512841594,
+      "organ_clearance_m": 0.4634888282337527
+    },
+    {
+      "name": "left_foot_arch",
+      "a": [
+        -0.125,
+        0.07,
+        0.15
+      ],
+      "b": [
+        -0.14,
+        0.025,
+        0.07
+      ],
+      "radius": 0.005519999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.012448352311154662,
+      "organ_clearance_m": 0.8342314000098925
+    },
+    {
+      "name": "right_foot_arch",
+      "a": [
+        0.125,
+        0.07,
+        0.15
+      ],
+      "b": [
+        0.14,
+        0.025,
+        0.07
+      ],
+      "radius": 0.005519999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.015432871044322284,
+      "organ_clearance_m": 0.8330308640592896
+    },
+    {
+      "name": "left_thumb_metacarpal",
+      "a": [
+        -0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        -0.376,
+        -0.026,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.007935834656299982,
+      "organ_clearance_m": 0.30658900431968983
+    },
+    {
+      "name": "left_thumb_proximal",
+      "a": [
+        -0.376,
+        -0.026,
+        0.904
+      ],
+      "b": [
+        -0.378,
+        -0.028999999999999998,
+        0.87472
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.014257381060284293,
+      "organ_clearance_m": 0.30704900431968984
+    },
+    {
+      "name": "left_thumb_distal",
+      "a": [
+        -0.378,
+        -0.028999999999999998,
+        0.87472
+      ],
+      "b": [
+        -0.38,
+        -0.032,
+        0.843
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.025975287908593582,
+      "organ_clearance_m": 0.31888225543958
+    },
+    {
+      "name": "left_index_metacarpal",
+      "a": [
+        -0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        -0.379,
+        -0.015,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.007982908148962535,
+      "organ_clearance_m": 0.3090869866243004
+    },
+    {
+      "name": "left_index_proximal",
+      "a": [
+        -0.379,
+        -0.015,
+        0.904
+      ],
+      "b": [
+        -0.381,
+        -0.018,
+        0.87088
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.011521631636892264,
+      "organ_clearance_m": 0.3095469866243004
+    },
+    {
+      "name": "left_index_distal",
+      "a": [
+        -0.381,
+        -0.018,
+        0.87088
+      ],
+      "b": [
+        -0.383,
+        -0.020999999999999998,
+        0.835
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.015082870484131806,
+      "organ_clearance_m": 0.32262167680857756
+    },
+    {
+      "name": "left_middle_metacarpal",
+      "a": [
+        -0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        -0.382,
+        -0.004,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.008766580320948321,
+      "organ_clearance_m": 0.3103520332387351
+    },
+    {
+      "name": "left_middle_proximal",
+      "a": [
+        -0.382,
+        -0.004,
+        0.904
+      ],
+      "b": [
+        -0.384,
+        -0.007,
+        0.8689600000000001
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.009990688906399344,
+      "organ_clearance_m": 0.31243900643904793
+    },
+    {
+      "name": "left_middle_distal",
+      "a": [
+        -0.384,
+        -0.007,
+        0.8689600000000001
+      ],
+      "b": [
+        -0.386,
+        -0.01,
+        0.8310000000000001
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.006916123445036433,
+      "organ_clearance_m": 0.32603371792459984
+    },
+    {
+      "name": "left_ring_metacarpal",
+      "a": [
+        -0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        -0.385,
+        0.006999999999999999,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.008789328203277276,
+      "organ_clearance_m": 0.3103520332387351
+    },
+    {
+      "name": "left_ring_proximal",
+      "a": [
+        -0.385,
+        0.006999999999999999,
+        0.904
+      ],
+      "b": [
+        -0.387,
+        0.003999999999999999,
+        0.8718400000000001
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.007160643365893334,
+      "organ_clearance_m": 0.31571429825097314
+    },
+    {
+      "name": "left_ring_distal",
+      "a": [
+        -0.387,
+        0.003999999999999999,
+        0.8718400000000001
+      ],
+      "b": [
+        -0.389,
+        0.0009999999999999992,
+        0.837
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.0073906433658933336,
+      "organ_clearance_m": 0.32803439680481095
+    },
+    {
+      "name": "left_pinky_metacarpal",
+      "a": [
+        -0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        -0.388,
+        0.018,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.008789328203277276,
+      "organ_clearance_m": 0.3103520332387351
+    },
+    {
+      "name": "left_pinky_proximal",
+      "a": [
+        -0.388,
+        0.018,
+        0.904
+      ],
+      "b": [
+        -0.39,
+        0.015,
+        0.87808
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.015654581475416898,
+      "organ_clearance_m": 0.3193611375867478
+    },
+    {
+      "name": "left_pinky_distal",
+      "a": [
+        -0.39,
+        0.015,
+        0.87808
+      ],
+      "b": [
+        -0.392,
+        0.011999999999999999,
+        0.85
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.014344751047885386,
+      "organ_clearance_m": 0.32926793458337555
+    },
+    {
+      "name": "right_thumb_metacarpal",
+      "a": [
+        0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        0.376,
+        -0.026,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.010697939259744193,
+      "organ_clearance_m": 0.3110575610880071
+    },
+    {
+      "name": "right_thumb_proximal",
+      "a": [
+        0.376,
+        -0.026,
+        0.904
+      ],
+      "b": [
+        0.378,
+        -0.028999999999999998,
+        0.87472
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.005143187452732446,
+      "organ_clearance_m": 0.3115175610880071
+    },
+    {
+      "name": "right_thumb_distal",
+      "a": [
+        0.378,
+        -0.028999999999999998,
+        0.87472
+      ],
+      "b": [
+        0.38,
+        -0.032,
+        0.843
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.012141014580750014,
+      "organ_clearance_m": 0.3224708235798613
+    },
+    {
+      "name": "right_index_metacarpal",
+      "a": [
+        0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        0.379,
+        -0.015,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.010697939259744193,
+      "organ_clearance_m": 0.3135151512466112
+    },
+    {
+      "name": "right_index_proximal",
+      "a": [
+        0.379,
+        -0.015,
+        0.904
+      ],
+      "b": [
+        0.381,
+        -0.018,
+        0.87088
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.006688216233390021,
+      "organ_clearance_m": 0.31397515124661124
+    },
+    {
+      "name": "right_index_distal",
+      "a": [
+        0.381,
+        -0.018,
+        0.87088
+      ],
+      "b": [
+        0.383,
+        -0.020999999999999998,
+        0.835
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.015455466943509088,
+      "organ_clearance_m": 0.3260628931085039
+    },
+    {
+      "name": "right_middle_metacarpal",
+      "a": [
+        0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        0.382,
+        -0.004,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.010697939259744193,
+      "organ_clearance_m": 0.31492146589223086
+    },
+    {
+      "name": "right_middle_proximal",
+      "a": [
+        0.382,
+        -0.004,
+        0.904
+      ],
+      "b": [
+        0.384,
+        -0.007,
+        0.8689600000000001
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.01380264616361314,
+      "organ_clearance_m": 0.31682198145184465
+    },
+    {
+      "name": "right_middle_distal",
+      "a": [
+        0.384,
+        -0.007,
+        0.8689600000000001
+      ],
+      "b": [
+        0.386,
+        -0.01,
+        0.8310000000000001
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.012474426399395878,
+      "organ_clearance_m": 0.3293843817408278
+    },
+    {
+      "name": "right_ring_metacarpal",
+      "a": [
+        0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        0.385,
+        0.006999999999999999,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.007979247297346248,
+      "organ_clearance_m": 0.31492146589223086
+    },
+    {
+      "name": "right_ring_proximal",
+      "a": [
+        0.385,
+        0.006999999999999999,
+        0.904
+      ],
+      "b": [
+        0.387,
+        0.003999999999999999,
+        0.8718400000000001
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.009388019638386765,
+      "organ_clearance_m": 0.3200477243523145
+    },
+    {
+      "name": "right_ring_distal",
+      "a": [
+        0.387,
+        0.003999999999999999,
+        0.8718400000000001
+      ],
+      "b": [
+        0.389,
+        0.0009999999999999992,
+        0.837
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.010167297421546064,
+      "organ_clearance_m": 0.3314350921570361
+    },
+    {
+      "name": "right_pinky_metacarpal",
+      "a": [
+        0.382,
+        -0.004,
+        0.91
+      ],
+      "b": [
+        0.388,
+        0.018,
+        0.904
+      ],
+      "radius": 0.0023,
+      "kind": "bone",
+      "shell_clearance_m": 0.005952782863979829,
+      "organ_clearance_m": 0.31492146589223086
+    },
+    {
+      "name": "right_pinky_proximal",
+      "a": [
+        0.388,
+        0.018,
+        0.904
+      ],
+      "b": [
+        0.39,
+        0.015,
+        0.87808
+      ],
+      "radius": 0.0018399999999999998,
+      "kind": "bone",
+      "shell_clearance_m": 0.01382111186985135,
+      "organ_clearance_m": 0.3236411142825455
+    },
+    {
+      "name": "right_pinky_distal",
+      "a": [
+        0.39,
+        0.015,
+        0.87808
+      ],
+      "b": [
+        0.392,
+        0.011999999999999999,
+        0.85
+      ],
+      "radius": 0.0016099999999999999,
+      "kind": "bone",
+      "shell_clearance_m": 0.015723395916553688,
+      "organ_clearance_m": 0.3328130597249306
+    },
+    {
+      "name": "left_rib_1_1",
+      "a": [
+        0.0,
+        0.072,
+        1.44
+      ],
+      "b": [
+        -0.06,
+        0.072,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.06561052280107318,
+      "organ_clearance_m": 0.05620794343454616
+    },
+    {
+      "name": "left_rib_1_2",
+      "a": [
+        -0.06,
+        0.072,
+        1.44
+      ],
+      "b": [
+        -0.112,
+        0.045,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.0435453128248223,
+      "organ_clearance_m": 0.04423994251961112
+    },
+    {
+      "name": "left_rib_1_3",
+      "a": [
+        -0.112,
+        0.045,
+        1.44
+      ],
+      "b": [
+        -0.122,
+        0.0,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.006836732793940814,
+      "organ_clearance_m": 0.03272648597423447
+    },
+    {
+      "name": "left_rib_1_4",
+      "a": [
+        -0.122,
+        0.0,
+        1.44
+      ],
+      "b": [
+        -0.095,
+        -0.052,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.006836732793940816,
+      "organ_clearance_m": 0.02450980737257579
+    },
+    {
+      "name": "left_rib_1_5",
+      "a": [
+        -0.095,
+        -0.052,
+        1.44
+      ],
+      "b": [
+        -0.035,
+        -0.064,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.009141513344606556,
+      "organ_clearance_m": 0.04109849429022893
+    },
+    {
+      "name": "right_rib_1_1",
+      "a": [
+        0.0,
+        0.072,
+        1.44
+      ],
+      "b": [
+        0.06,
+        0.072,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.06450517278033543,
+      "organ_clearance_m": 0.0570562068500488
+    },
+    {
+      "name": "right_rib_1_2",
+      "a": [
+        0.06,
+        0.072,
+        1.44
+      ],
+      "b": [
+        0.112,
+        0.045,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.040739609471189826,
+      "organ_clearance_m": 0.042505986871798684
+    },
+    {
+      "name": "right_rib_1_3",
+      "a": [
+        0.112,
+        0.045,
+        1.44
+      ],
+      "b": [
+        0.122,
+        0.0,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.009442616351663227,
+      "organ_clearance_m": 0.03276967990033362
+    },
+    {
+      "name": "right_rib_1_4",
+      "a": [
+        0.122,
+        0.0,
+        1.44
+      ],
+      "b": [
+        0.095,
+        -0.052,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.007595603119339593,
+      "organ_clearance_m": 0.029423837238569173
+    },
+    {
+      "name": "right_rib_1_5",
+      "a": [
+        0.095,
+        -0.052,
+        1.44
+      ],
+      "b": [
+        0.035,
+        -0.064,
+        1.44
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.005870907983551273,
+      "organ_clearance_m": 0.041937950688566365
+    },
+    {
+      "name": "left_rib_2_1",
+      "a": [
+        0.0,
+        0.072,
+        1.38
+      ],
+      "b": [
+        -0.06,
+        0.072,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.07435841599221707,
+      "organ_clearance_m": 0.05269767476692445
+    },
+    {
+      "name": "left_rib_2_2",
+      "a": [
+        -0.06,
+        0.072,
+        1.38
+      ],
+      "b": [
+        -0.112,
+        0.045,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.0609736605886844,
+      "organ_clearance_m": 0.02890311921806582
+    },
+    {
+      "name": "left_rib_2_3",
+      "a": [
+        -0.112,
+        0.045,
+        1.38
+      ],
+      "b": [
+        -0.122,
+        0.0,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.026391876580807366,
+      "organ_clearance_m": 0.020364615746064182
+    },
+    {
+      "name": "left_rib_2_4",
+      "a": [
+        -0.122,
+        0.0,
+        1.38
+      ],
+      "b": [
+        -0.095,
+        -0.052,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.012025610184291043,
+      "organ_clearance_m": 0.015283472422307445
+    },
+    {
+      "name": "left_rib_2_5",
+      "a": [
+        -0.095,
+        -0.052,
+        1.38
+      ],
+      "b": [
+        -0.035,
+        -0.064,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.011335052996460416,
+      "organ_clearance_m": 0.03030857201309403
+    },
+    {
+      "name": "right_rib_2_1",
+      "a": [
+        0.0,
+        0.072,
+        1.38
+      ],
+      "b": [
+        0.06,
+        0.072,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.07489438353745503,
+      "organ_clearance_m": 0.04806526563444972
+    },
+    {
+      "name": "right_rib_2_2",
+      "a": [
+        0.06,
+        0.072,
+        1.38
+      ],
+      "b": [
+        0.112,
+        0.045,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.06344345393937603,
+      "organ_clearance_m": 0.03595258899869356
+    },
+    {
+      "name": "right_rib_2_3",
+      "a": [
+        0.112,
+        0.045,
+        1.38
+      ],
+      "b": [
+        0.122,
+        0.0,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.029469350492781647,
+      "organ_clearance_m": 0.015096996742183833
+    },
+    {
+      "name": "right_rib_2_4",
+      "a": [
+        0.122,
+        0.0,
+        1.38
+      ],
+      "b": [
+        0.095,
+        -0.052,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.011261689979318094,
+      "organ_clearance_m": 0.009097105183863644
+    },
+    {
+      "name": "right_rib_2_5",
+      "a": [
+        0.095,
+        -0.052,
+        1.38
+      ],
+      "b": [
+        0.035,
+        -0.064,
+        1.38
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.01126098070738377,
+      "organ_clearance_m": 0.03355473694243529
+    },
+    {
+      "name": "left_rib_3_1",
+      "a": [
+        0.0,
+        0.072,
+        1.32
+      ],
+      "b": [
+        -0.06,
+        0.072,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.06314102702203447,
+      "organ_clearance_m": 0.05012861234415369
+    },
+    {
+      "name": "left_rib_3_2",
+      "a": [
+        -0.06,
+        0.072,
+        1.32
+      ],
+      "b": [
+        -0.112,
+        0.045,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.037224693220632224,
+      "organ_clearance_m": 0.033924873733932104
+    },
+    {
+      "name": "left_rib_3_3",
+      "a": [
+        -0.112,
+        0.045,
+        1.32
+      ],
+      "b": [
+        -0.122,
+        0.0,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.024372141601890645,
+      "organ_clearance_m": 0.01826191760251058
+    },
+    {
+      "name": "left_rib_3_4",
+      "a": [
+        -0.122,
+        0.0,
+        1.32
+      ],
+      "b": [
+        -0.095,
+        -0.052,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.01909201378336403,
+      "organ_clearance_m": 0.013347679405239017
+    },
+    {
+      "name": "left_rib_3_5",
+      "a": [
+        -0.095,
+        -0.052,
+        1.32
+      ],
+      "b": [
+        -0.035,
+        -0.064,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.028312911341903432,
+      "organ_clearance_m": 0.029645366727876515
+    },
+    {
+      "name": "right_rib_3_1",
+      "a": [
+        0.0,
+        0.072,
+        1.32
+      ],
+      "b": [
+        0.06,
+        0.072,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.06314102702203447,
+      "organ_clearance_m": 0.048084917963394515
+    },
+    {
+      "name": "right_rib_3_2",
+      "a": [
+        0.06,
+        0.072,
+        1.32
+      ],
+      "b": [
+        0.112,
+        0.045,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.03717486907220659,
+      "organ_clearance_m": 0.036735938268250994
+    },
+    {
+      "name": "right_rib_3_3",
+      "a": [
+        0.112,
+        0.045,
+        1.32
+      ],
+      "b": [
+        0.122,
+        0.0,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.01812147382983775,
+      "organ_clearance_m": 0.011191838721220405
+    },
+    {
+      "name": "right_rib_3_4",
+      "a": [
+        0.122,
+        0.0,
+        1.32
+      ],
+      "b": [
+        0.095,
+        -0.052,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.01812147382983775,
+      "organ_clearance_m": 0.012925993432693943
+    },
+    {
+      "name": "right_rib_3_5",
+      "a": [
+        0.095,
+        -0.052,
+        1.32
+      ],
+      "b": [
+        0.035,
+        -0.064,
+        1.32
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.01832201304423327,
+      "organ_clearance_m": 0.02816876856524196
+    },
+    {
+      "name": "left_rib_4_1",
+      "a": [
+        0.0,
+        0.072,
+        1.26
+      ],
+      "b": [
+        -0.06,
+        0.072,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.04576961038165773,
+      "organ_clearance_m": 0.06063073792455772
+    },
+    {
+      "name": "left_rib_4_2",
+      "a": [
+        -0.06,
+        0.072,
+        1.26
+      ],
+      "b": [
+        -0.112,
+        0.045,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.041254237154269596,
+      "organ_clearance_m": 0.04075353651490171
+    },
+    {
+      "name": "left_rib_4_3",
+      "a": [
+        -0.112,
+        0.045,
+        1.26
+      ],
+      "b": [
+        -0.122,
+        0.0,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.015471419157598202,
+      "organ_clearance_m": 0.030883944906514672
+    },
+    {
+      "name": "left_rib_4_4",
+      "a": [
+        -0.122,
+        0.0,
+        1.26
+      ],
+      "b": [
+        -0.095,
+        -0.052,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.015471419157598202,
+      "organ_clearance_m": 0.033507592780693596
+    },
+    {
+      "name": "left_rib_4_5",
+      "a": [
+        -0.095,
+        -0.052,
+        1.26
+      ],
+      "b": [
+        -0.035,
+        -0.064,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.017121959165784274,
+      "organ_clearance_m": 0.03947585617456387
+    },
+    {
+      "name": "right_rib_4_1",
+      "a": [
+        0.0,
+        0.072,
+        1.26
+      ],
+      "b": [
+        0.06,
+        0.072,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.04831904808289735,
+      "organ_clearance_m": 0.059012045691062186
+    },
+    {
+      "name": "right_rib_4_2",
+      "a": [
+        0.06,
+        0.072,
+        1.26
+      ],
+      "b": [
+        0.112,
+        0.045,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.032507689769103135,
+      "organ_clearance_m": 0.0416724155905284
+    },
+    {
+      "name": "right_rib_4_3",
+      "a": [
+        0.112,
+        0.045,
+        1.26
+      ],
+      "b": [
+        0.122,
+        0.0,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.025044383515263002,
+      "organ_clearance_m": 0.03239271476996327
+    },
+    {
+      "name": "right_rib_4_4",
+      "a": [
+        0.122,
+        0.0,
+        1.26
+      ],
+      "b": [
+        0.095,
+        -0.052,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.017992037213240476,
+      "organ_clearance_m": 0.029050931493287052
+    },
+    {
+      "name": "right_rib_4_5",
+      "a": [
+        0.095,
+        -0.052,
+        1.26
+      ],
+      "b": [
+        0.035,
+        -0.064,
+        1.26
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.019163819305827064,
+      "organ_clearance_m": 0.0398257953547129
+    },
+    {
+      "name": "sternum_1",
+      "a": [
+        0.0,
+        -0.055,
+        1.255
+      ],
+      "b": [
+        0.0,
+        -0.055,
+        1.455
+      ],
+      "radius": 0.00437,
+      "kind": "curve",
+      "shell_clearance_m": 0.00354721898569899,
+      "organ_clearance_m": 0.008690832372108402
+    },
+    {
+      "name": "left_ulna_1",
+      "a": [
+        -0.255,
+        0.074,
+        1.225
+      ],
+      "b": [
+        -0.298,
+        0.052,
+        1.12
+      ],
+      "radius": 0.0037949999999999998,
+      "kind": "curve",
+      "shell_clearance_m": 0.02953746599038236,
+      "organ_clearance_m": 0.17987811843990514
+    },
+    {
+      "name": "left_ulna_2",
+      "a": [
+        -0.298,
+        0.052,
+        1.12
+      ],
+      "b": [
+        -0.342,
+        0.034,
+        1.02
+      ],
+      "radius": 0.0037949999999999998,
+      "kind": "curve",
+      "shell_clearance_m": 0.018258669331882162,
+      "organ_clearance_m": 0.2118753212878567
+    },
+    {
+      "name": "right_ulna_1",
+      "a": [
+        0.255,
+        0.074,
+        1.225
+      ],
+      "b": [
+        0.298,
+        0.05,
+        1.12
+      ],
+      "radius": 0.0037949999999999998,
+      "kind": "curve",
+      "shell_clearance_m": 0.030975544631915104,
+      "organ_clearance_m": 0.1810439030617834
+    },
+    {
+      "name": "right_ulna_2",
+      "a": [
+        0.298,
+        0.05,
+        1.12
+      ],
+      "b": [
+        0.34,
+        0.032,
+        1.02
+      ],
+      "radius": 0.0037949999999999998,
+      "kind": "curve",
+      "shell_clearance_m": 0.01994260215913363,
+      "organ_clearance_m": 0.2087150037362937
+    },
+    {
+      "name": "left_fibula_1",
+      "a": [
+        -0.112,
+        0.044,
+        0.515
+      ],
+      "b": [
+        -0.116,
+        0.055,
+        0.33
+      ],
+      "radius": 0.004025,
+      "kind": "curve",
+      "shell_clearance_m": 0.0340301844168439,
+      "organ_clearance_m": 0.470414450630985
+    },
+    {
+      "name": "left_fibula_2",
+      "a": [
+        -0.116,
+        0.055,
+        0.33
+      ],
+      "b": [
+        -0.139,
+        0.078,
+        0.15
+      ],
+      "radius": 0.004025,
+      "kind": "curve",
+      "shell_clearance_m": 0.01925104786093581,
+      "organ_clearance_m": 0.6550060371620038
+    },
+    {
+      "name": "right_fibula_1",
+      "a": [
+        0.112,
+        0.044,
+        0.515
+      ],
+      "b": [
+        0.116,
+        0.055,
+        0.33
+      ],
+      "radius": 0.004025,
+      "kind": "curve",
+      "shell_clearance_m": 0.03358432715431108,
+      "organ_clearance_m": 0.46874818408362534
+    },
+    {
+      "name": "right_fibula_2",
+      "a": [
+        0.116,
+        0.055,
+        0.33
+      ],
+      "b": [
+        0.139,
+        0.078,
+        0.15
+      ],
+      "radius": 0.004025,
+      "kind": "curve",
+      "shell_clearance_m": 0.0169908422506174,
+      "organ_clearance_m": 0.6537053969480445
+    },
+    {
+      "name": "left_scapula_1",
+      "a": [
+        -0.03,
+        0.088,
+        1.425
+      ],
+      "b": [
+        -0.105,
+        0.096,
+        1.455
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.03370957831997602,
+      "organ_clearance_m": 0.07445374871198504
+    },
+    {
+      "name": "left_scapula_2",
+      "a": [
+        -0.105,
+        0.096,
+        1.455
+      ],
+      "b": [
+        -0.166,
+        0.08,
+        1.43
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.03370957831997602,
+      "organ_clearance_m": 0.08960999185846162
+    },
+    {
+      "name": "left_scapula_3",
+      "a": [
+        -0.166,
+        0.08,
+        1.43
+      ],
+      "b": [
+        -0.112,
+        0.09,
+        1.35
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.03969009287008186,
+      "organ_clearance_m": 0.07380810650262346
+    },
+    {
+      "name": "left_scapula_4",
+      "a": [
+        -0.112,
+        0.09,
+        1.35
+      ],
+      "b": [
+        -0.03,
+        0.088,
+        1.425
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.04311964317470032,
+      "organ_clearance_m": 0.06613778321887655
+    },
+    {
+      "name": "right_scapula_1",
+      "a": [
+        0.03,
+        0.088,
+        1.425
+      ],
+      "b": [
+        0.105,
+        0.096,
+        1.455
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.0358957812462802,
+      "organ_clearance_m": 0.07514034312027316
+    },
+    {
+      "name": "right_scapula_2",
+      "a": [
+        0.105,
+        0.096,
+        1.455
+      ],
+      "b": [
+        0.166,
+        0.08,
+        1.43
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.034885168856835146,
+      "organ_clearance_m": 0.08815485884142422
+    },
+    {
+      "name": "right_scapula_3",
+      "a": [
+        0.166,
+        0.08,
+        1.43
+      ],
+      "b": [
+        0.112,
+        0.09,
+        1.35
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.03657675012817209,
+      "organ_clearance_m": 0.06914208153418025
+    },
+    {
+      "name": "right_scapula_4",
+      "a": [
+        0.112,
+        0.09,
+        1.35
+      ],
+      "b": [
+        0.03,
+        0.088,
+        1.425
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.04231508939825648,
+      "organ_clearance_m": 0.06588382601264063
+    },
+    {
+      "name": "left_pelvis_wing_1",
+      "a": [
+        0.0,
+        0.052,
+        0.925
+      ],
+      "b": [
+        -0.065,
+        0.073,
+        0.952
+      ],
+      "radius": 0.0047150000000000004,
+      "kind": "curve",
+      "shell_clearance_m": 0.03994308308693968,
+      "organ_clearance_m": 0.08029382889635178
+    },
+    {
+      "name": "left_pelvis_wing_2",
+      "a": [
+        -0.065,
+        0.073,
+        0.952
+      ],
+      "b": [
+        -0.118,
+        0.052,
+        0.935
+      ],
+      "radius": 0.0047150000000000004,
+      "kind": "curve",
+      "shell_clearance_m": 0.027172723985885192,
+      "organ_clearance_m": 0.08155139504713318
+    },
+    {
+      "name": "left_pelvis_wing_3",
+      "a": [
+        -0.118,
+        0.052,
+        0.935
+      ],
+      "b": [
+        -0.132,
+        0.03,
+        0.9
+      ],
+      "radius": 0.0047150000000000004,
+      "kind": "curve",
+      "shell_clearance_m": 0.024801509634440173,
+      "organ_clearance_m": 0.08746229659681422
+    },
+    {
+      "name": "left_pelvis_wing_4",
+      "a": [
+        -0.132,
+        0.03,
+        0.9
+      ],
+      "b": [
+        -0.1,
+        0.025,
+        0.88
+      ],
+      "radius": 0.0047150000000000004,
+      "kind": "curve",
+      "shell_clearance_m": 0.024801509634440173,
+      "organ_clearance_m": 0.1080802594114844
+    },
+    {
+      "name": "right_pelvis_wing_1",
+      "a": [
+        0.0,
+        0.052,
+        0.925
+      ],
+      "b": [
+        0.065,
+        0.073,
+        0.952
+      ],
+      "radius": 0.0047150000000000004,
+      "kind": "curve",
+      "shell_clearance_m": 0.03994308308693968,
+      "organ_clearance_m": 0.08229718151731469
+    },
+    {
+      "name": "right_pelvis_wing_2",
+      "a": [
+        0.065,
+        0.073,
+        0.952
+      ],
+      "b": [
+        0.118,
+        0.052,
+        0.935
+      ],
+      "radius": 0.0047150000000000004,
+      "kind": "curve",
+      "shell_clearance_m": 0.0260701305827992,
+      "organ_clearance_m": 0.07808832717561189
+    },
+    {
+      "name": "right_pelvis_wing_3",
+      "a": [
+        0.118,
+        0.052,
+        0.935
+      ],
+      "b": [
+        0.132,
+        0.03,
+        0.9
+      ],
+      "radius": 0.0047150000000000004,
+      "kind": "curve",
+      "shell_clearance_m": 0.025956716906622598,
+      "organ_clearance_m": 0.08420790175919707
+    },
+    {
+      "name": "right_pelvis_wing_4",
+      "a": [
+        0.132,
+        0.03,
+        0.9
+      ],
+      "b": [
+        0.1,
+        0.025,
+        0.88
+      ],
+      "radius": 0.0047150000000000004,
+      "kind": "curve",
+      "shell_clearance_m": 0.025956716906622598,
+      "organ_clearance_m": 0.10346525673273234
+    },
+    {
+      "name": "skull_brow_1",
+      "a": [
+        -0.05,
+        -0.04,
+        1.71
+      ],
+      "b": [
+        -0.025,
+        -0.05,
+        1.72
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.01630110509040132,
+      "organ_clearance_m": 0.02687747946327501
+    },
+    {
+      "name": "skull_brow_2",
+      "a": [
+        -0.025,
+        -0.05,
+        1.72
+      ],
+      "b": [
+        0.0,
+        -0.052,
+        1.722
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.008148206775856833,
+      "organ_clearance_m": 0.025116699695192004
+    },
+    {
+      "name": "skull_brow_3",
+      "a": [
+        0.0,
+        -0.052,
+        1.722
+      ],
+      "b": [
+        0.025,
+        -0.05,
+        1.72
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.008148206775856833,
+      "organ_clearance_m": 0.028583287405554138
+    },
+    {
+      "name": "skull_brow_4",
+      "a": [
+        0.025,
+        -0.05,
+        1.72
+      ],
+      "b": [
+        0.05,
+        -0.04,
+        1.71
+      ],
+      "radius": 0.0046,
+      "kind": "curve",
+      "shell_clearance_m": 0.007594724228124225,
+      "organ_clearance_m": 0.03161740096981304
+    },
+    {
+      "name": "left_orbit_1",
+      "a": [
+        -0.009999999999999998,
+        -0.043,
+        1.692
+      ],
+      "b": [
+        -0.014686291501015237,
+        -0.043,
+        1.7033137084989847
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.02305493154079939,
+      "organ_clearance_m": 0.015945963839831833
+    },
+    {
+      "name": "left_orbit_2",
+      "a": [
+        -0.014686291501015237,
+        -0.043,
+        1.7033137084989847
+      ],
+      "b": [
+        -0.026,
+        -0.043,
+        1.708
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.03132046400719037,
+      "organ_clearance_m": 0.015945963839831833
+    },
+    {
+      "name": "left_orbit_3",
+      "a": [
+        -0.026,
+        -0.043,
+        1.708
+      ],
+      "b": [
+        -0.03731370849898476,
+        -0.043,
+        1.7033137084989847
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.025841440504853028,
+      "organ_clearance_m": 0.01993206477395239
+    },
+    {
+      "name": "left_orbit_4",
+      "a": [
+        -0.03731370849898476,
+        -0.043,
+        1.7033137084989847
+      ],
+      "b": [
+        -0.041999999999999996,
+        -0.043,
+        1.692
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.0250677536223911,
+      "organ_clearance_m": 0.02360431740996401
+    },
+    {
+      "name": "left_orbit_5",
+      "a": [
+        -0.041999999999999996,
+        -0.043,
+        1.692
+      ],
+      "b": [
+        -0.037313708498984764,
+        -0.043,
+        1.6806862915010152
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.021896099469363852,
+      "organ_clearance_m": 0.019395415364942208
+    },
+    {
+      "name": "left_orbit_6",
+      "a": [
+        -0.037313708498984764,
+        -0.043,
+        1.6806862915010152
+      ],
+      "b": [
+        -0.026000000000000002,
+        -0.043,
+        1.676
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.021896099469363852,
+      "organ_clearance_m": 0.017963681455810267
+    },
+    {
+      "name": "left_orbit_7",
+      "a": [
+        -0.026000000000000002,
+        -0.043,
+        1.676
+      ],
+      "b": [
+        -0.01468629150101524,
+        -0.043,
+        1.6806862915010152
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.021660382317262892,
+      "organ_clearance_m": 0.018324810338842694
+    },
+    {
+      "name": "left_orbit_8",
+      "a": [
+        -0.01468629150101524,
+        -0.043,
+        1.6806862915010152
+      ],
+      "b": [
+        -0.009999999999999998,
+        -0.043,
+        1.692
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.021467991905037526,
+      "organ_clearance_m": 0.021155527280000308
+    },
+    {
+      "name": "right_orbit_1",
+      "a": [
+        0.041999999999999996,
+        -0.043,
+        1.692
+      ],
+      "b": [
+        0.03731370849898476,
+        -0.043,
+        1.7033137084989847
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.007821750210433104,
+      "organ_clearance_m": 0.025337562970962055
+    },
+    {
+      "name": "right_orbit_2",
+      "a": [
+        0.03731370849898476,
+        -0.043,
+        1.7033137084989847
+      ],
+      "b": [
+        0.026,
+        -0.043,
+        1.708
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.01665664634251537,
+      "organ_clearance_m": 0.020841822018620275
+    },
+    {
+      "name": "right_orbit_3",
+      "a": [
+        0.026,
+        -0.043,
+        1.708
+      ],
+      "b": [
+        0.014686291501015239,
+        -0.043,
+        1.7033137084989847
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.024154092698678156,
+      "organ_clearance_m": 0.015051082375273278
+    },
+    {
+      "name": "right_orbit_4",
+      "a": [
+        0.014686291501015239,
+        -0.043,
+        1.7033137084989847
+      ],
+      "b": [
+        0.009999999999999998,
+        -0.043,
+        1.692
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.01546799551037202,
+      "organ_clearance_m": 0.011840593005228495
+    },
+    {
+      "name": "right_orbit_5",
+      "a": [
+        0.009999999999999998,
+        -0.043,
+        1.692
+      ],
+      "b": [
+        0.014686291501015235,
+        -0.043,
+        1.6806862915010152
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.00982722662787872,
+      "organ_clearance_m": 0.01172041726410479
+    },
+    {
+      "name": "right_orbit_6",
+      "a": [
+        0.014686291501015235,
+        -0.043,
+        1.6806862915010152
+      ],
+      "b": [
+        0.025999999999999995,
+        -0.043,
+        1.676
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.00982722662787872,
+      "organ_clearance_m": 0.01464903284593752
+    },
+    {
+      "name": "right_orbit_7",
+      "a": [
+        0.025999999999999995,
+        -0.043,
+        1.676
+      ],
+      "b": [
+        0.03731370849898476,
+        -0.043,
+        1.6806862915010152
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.007062596023747081,
+      "organ_clearance_m": 0.02040705903081465
+    },
+    {
+      "name": "right_orbit_8",
+      "a": [
+        0.03731370849898476,
+        -0.043,
+        1.6806862915010152
+      ],
+      "b": [
+        0.041999999999999996,
+        -0.043,
+        1.692
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.005656900294350936,
+      "organ_clearance_m": 0.025143506350205083
+    },
+    {
+      "name": "left_cheek_1",
+      "a": [
+        -0.042,
+        -0.03,
+        1.695
+      ],
+      "b": [
+        -0.049,
+        -0.024,
+        1.675
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.004269530605212199,
+      "organ_clearance_m": 0.01435577297155016
+    },
+    {
+      "name": "left_cheek_2",
+      "a": [
+        -0.049,
+        -0.024,
+        1.675
+      ],
+      "b": [
+        -0.046,
+        -0.018,
+        1.65
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.004269530605212199,
+      "organ_clearance_m": 0.01790374793360683
+    },
+    {
+      "name": "right_cheek_1",
+      "a": [
+        0.042,
+        -0.03,
+        1.695
+      ],
+      "b": [
+        0.049,
+        -0.024,
+        1.675
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.007753971087161058,
+      "organ_clearance_m": 0.01326119404050565
+    },
+    {
+      "name": "right_cheek_2",
+      "a": [
+        0.049,
+        -0.024,
+        1.675
+      ],
+      "b": [
+        0.046,
+        -0.018,
+        1.65
+      ],
+      "radius": 0.00414,
+      "kind": "curve",
+      "shell_clearance_m": 0.008475043638450077,
+      "organ_clearance_m": 0.012776089490992489
+    },
+    {
+      "name": "nasal_bridge_1",
+      "a": [
+        0.0,
+        -0.053,
+        1.705
+      ],
+      "b": [
+        0.0,
+        -0.057,
+        1.675
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.004799565603404113,
+      "organ_clearance_m": 0.02655318095736462
+    },
+    {
+      "name": "nasal_bridge_2",
+      "a": [
+        0.0,
+        -0.057,
+        1.675
+      ],
+      "b": [
+        0.0,
+        -0.053,
+        1.66
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.0051257917749359455,
+      "organ_clearance_m": 0.028773830386220802
+    },
+    {
+      "name": "maxilla_1",
+      "a": [
+        -0.043,
+        -0.046,
+        1.665
+      ],
+      "b": [
+        -0.022,
+        -0.052,
+        1.66
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.019718377113123933,
+      "organ_clearance_m": 0.028961714032662584
+    },
+    {
+      "name": "maxilla_2",
+      "a": [
+        -0.022,
+        -0.052,
+        1.66
+      ],
+      "b": [
+        0.0,
+        -0.054,
+        1.658
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.01862385697123339,
+      "organ_clearance_m": 0.029725444237013388
+    },
+    {
+      "name": "maxilla_3",
+      "a": [
+        0.0,
+        -0.054,
+        1.658
+      ],
+      "b": [
+        0.022,
+        -0.052,
+        1.66
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.014861752981541382,
+      "organ_clearance_m": 0.03011543580082088
+    },
+    {
+      "name": "maxilla_4",
+      "a": [
+        0.022,
+        -0.052,
+        1.66
+      ],
+      "b": [
+        0.043,
+        -0.046,
+        1.665
+      ],
+      "radius": 0.003909999999999999,
+      "kind": "curve",
+      "shell_clearance_m": 0.011591333039451715,
+      "organ_clearance_m": 0.03130479250912592
+    },
+    {
+      "name": "mandible_1",
+      "a": [
+        -0.046,
+        -0.016,
+        1.65
+      ],
+      "b": [
+        -0.044,
+        -0.027,
+        1.635
+      ],
+      "radius": 0.00437,
+      "kind": "curve",
+      "shell_clearance_m": 0.0034711663035546193,
+      "organ_clearance_m": 0.026876167403153198
+    },
+    {
+      "name": "mandible_2",
+      "a": [
+        -0.044,
+        -0.027,
+        1.635
+      ],
+      "b": [
+        -0.027,
+        -0.036,
+        1.62
+      ],
+      "radius": 0.00437,
+      "kind": "curve",
+      "shell_clearance_m": 0.0034711663035546193,
+      "organ_clearance_m": 0.03725112534889842
+    },
+    {
+      "name": "mandible_3",
+      "a": [
+        -0.027,
+        -0.036,
+        1.62
+      ],
+      "b": [
+        0.0,
+        -0.04,
+        1.615
+      ],
+      "radius": 0.00437,
+      "kind": "curve",
+      "shell_clearance_m": 0.024354308329357467,
+      "organ_clearance_m": 0.04661881583896166
+    },
+    {
+      "name": "mandible_4",
+      "a": [
+        0.0,
+        -0.04,
+        1.615
+      ],
+      "b": [
+        0.027,
+        -0.036,
+        1.62
+      ],
+      "radius": 0.00437,
+      "kind": "curve",
+      "shell_clearance_m": 0.012167339114863538,
+      "organ_clearance_m": 0.048323801311818196
+    },
+    {
+      "name": "mandible_5",
+      "a": [
+        0.027,
+        -0.036,
+        1.62
+      ],
+      "b": [
+        0.044,
+        -0.027,
+        1.635
+      ],
+      "radius": 0.00437,
+      "kind": "curve",
+      "shell_clearance_m": 0.007059504319960702,
+      "organ_clearance_m": 0.038835050942518184
+    },
+    {
+      "name": "mandible_6",
+      "a": [
+        0.044,
+        -0.027,
+        1.635
+      ],
+      "b": [
+        0.046,
+        -0.016,
+        1.65
+      ],
+      "radius": 0.00437,
+      "kind": "curve",
+      "shell_clearance_m": 0.007059504319960702,
+      "organ_clearance_m": 0.022923245634655063
+    }
+  ],
+  "joint_audit": [
+    {
+      "name": "pelvis",
+      "pos": [
+        0.0,
+        0.05,
+        0.9
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.01689232882569679,
+      "organ_clearance_m": 0.10860688028643678
+    },
+    {
+      "name": "spine_low",
+      "pos": [
+        0.0,
+        0.06,
+        1.02
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.05134508132580752,
+      "organ_clearance_m": 0.07167523313218799
+    },
+    {
+      "name": "spine_mid",
+      "pos": [
+        0.0,
+        0.07,
+        1.165
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.021325344467393842,
+      "organ_clearance_m": 0.06622711035500266
+    },
+    {
+      "name": "spine_high",
+      "pos": [
+        0.0,
+        0.07,
+        1.38
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.07639180313132052,
+      "organ_clearance_m": 0.06889414054888439
+    },
+    {
+      "name": "neck",
+      "pos": [
+        0.0,
+        0.055,
+        1.555
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.042502738678582105,
+      "organ_clearance_m": 0.09409459675108779
+    },
+    {
+      "name": "head_base",
+      "pos": [
+        0.0,
+        0.05,
+        1.615
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.04693545058075947,
+      "organ_clearance_m": 0.03766947749148933
+    },
+    {
+      "name": "left_shoulder",
+      "pos": [
+        -0.18,
+        0.06,
+        1.455
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.011232800908858614,
+      "organ_clearance_m": 0.10086990691503485
+    },
+    {
+      "name": "right_shoulder",
+      "pos": [
+        0.18,
+        0.06,
+        1.455
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.018168796182487797,
+      "organ_clearance_m": 0.10311616361473437
+    },
+    {
+      "name": "left_elbow",
+      "pos": [
+        -0.255,
+        0.06,
+        1.225
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.030427737745224993,
+      "organ_clearance_m": 0.17087303561853473
+    },
+    {
+      "name": "right_elbow",
+      "pos": [
+        0.255,
+        0.06,
+        1.225
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.03427589912981427,
+      "organ_clearance_m": 0.17305485140510285
+    },
+    {
+      "name": "left_wrist",
+      "pos": [
+        -0.342,
+        0.02,
+        1.02
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.020739776677564166,
+      "organ_clearance_m": 0.25727568208869195
+    },
+    {
+      "name": "right_wrist",
+      "pos": [
+        0.34,
+        0.018,
+        1.02
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.022698651143102922,
+      "organ_clearance_m": 0.2566578862681431
+    },
+    {
+      "name": "left_hand",
+      "pos": [
+        -0.382,
+        -0.004,
+        0.91
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.003529328203277275,
+      "organ_clearance_m": 0.3050920332387351
+    },
+    {
+      "name": "right_hand",
+      "pos": [
+        0.382,
+        -0.004,
+        0.91
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.0054379392597441924,
+      "organ_clearance_m": 0.30966146589223087
+    },
+    {
+      "name": "left_hip",
+      "pos": [
+        -0.1,
+        0.025,
+        0.88
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.056406245231371846,
+      "organ_clearance_m": 0.10922959954292456
+    },
+    {
+      "name": "right_hip",
+      "pos": [
+        0.1,
+        0.025,
+        0.88
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.055659207405661146,
+      "organ_clearance_m": 0.10408440996186932
+    },
+    {
+      "name": "left_knee",
+      "pos": [
+        -0.098,
+        0.03,
+        0.515
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.04634087893531978,
+      "organ_clearance_m": 0.46412000444667245
+    },
+    {
+      "name": "right_knee",
+      "pos": [
+        0.098,
+        0.03,
+        0.515
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.045609627739904304,
+      "organ_clearance_m": 0.4629438282337527
+    },
+    {
+      "name": "left_ankle",
+      "pos": [
+        -0.125,
+        0.07,
+        0.15
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.02804793467754062,
+      "organ_clearance_m": 0.8321914000098924
+    },
+    {
+      "name": "right_ankle",
+      "pos": [
+        0.125,
+        0.07,
+        0.15
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.023999252034862927,
+      "organ_clearance_m": 0.8309908640592896
+    },
+    {
+      "name": "left_foot",
+      "pos": [
+        -0.14,
+        0.025,
+        0.07
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.016406135295453872,
+      "organ_clearance_m": 0.9101607806822624
+    },
+    {
+      "name": "right_foot",
+      "pos": [
+        0.14,
+        0.025,
+        0.07
+      ],
+      "radius": 0.007560000000000001,
+      "shell_clearance_m": 0.018057360734470673,
+      "organ_clearance_m": 0.9087875615404177
+    },
+    {
+      "name": "left_thumb_root",
+      "pos": [
+        -0.376,
+        -0.026,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.014045381060284292,
+      "organ_clearance_m": 0.30683700431968985
+    },
+    {
+      "name": "left_thumb_mid",
+      "pos": [
+        -0.378,
+        -0.028999999999999998,
+        0.87472
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.028398155566105095,
+      "organ_clearance_m": 0.31844025543958
+    },
+    {
+      "name": "left_thumb_tip",
+      "pos": [
+        -0.38,
+        -0.032,
+        0.843
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.029421621796672827,
+      "organ_clearance_m": 0.3333283181522265
+    },
+    {
+      "name": "left_index_root",
+      "pos": [
+        -0.379,
+        -0.015,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.011309631636892263,
+      "organ_clearance_m": 0.3093349866243004
+    },
+    {
+      "name": "left_index_mid",
+      "pos": [
+        -0.381,
+        -0.018,
+        0.87088
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.019531891701915105,
+      "organ_clearance_m": 0.32217967680857756
+    },
+    {
+      "name": "left_index_tip",
+      "pos": [
+        -0.383,
+        -0.020999999999999998,
+        0.835
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.019435996672561157,
+      "organ_clearance_m": 0.3390775886510602
+    },
+    {
+      "name": "left_middle_root",
+      "pos": [
+        -0.382,
+        -0.004,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.009778688906399343,
+      "organ_clearance_m": 0.31222700643904794
+    },
+    {
+      "name": "left_middle_mid",
+      "pos": [
+        -0.384,
+        -0.007,
+        0.8689600000000001
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.010447583233052175,
+      "organ_clearance_m": 0.32559171792459984
+    },
+    {
+      "name": "left_middle_tip",
+      "pos": [
+        -0.386,
+        -0.01,
+        0.8310000000000001
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.014479908571002955,
+      "organ_clearance_m": 0.34340832290640033
+    },
+    {
+      "name": "left_ring_root",
+      "pos": [
+        -0.385,
+        0.006999999999999999,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.01695844975796209,
+      "organ_clearance_m": 0.31550229825097315
+    },
+    {
+      "name": "left_ring_mid",
+      "pos": [
+        -0.387,
+        0.003999999999999999,
+        0.8718400000000001
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.006948643365893334,
+      "organ_clearance_m": 0.32759239680481095
+    },
+    {
+      "name": "left_ring_tip",
+      "pos": [
+        -0.389,
+        0.0009999999999999992,
+        0.837
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.01953885151169353,
+      "organ_clearance_m": 0.3435030218879004
+    },
+    {
+      "name": "left_pinky_root",
+      "pos": [
+        -0.388,
+        0.018,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.02685486537831453,
+      "organ_clearance_m": 0.3191491375867478
+    },
+    {
+      "name": "left_pinky_mid",
+      "pos": [
+        -0.39,
+        0.015,
+        0.87808
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.015442581475416899,
+      "organ_clearance_m": 0.32882593458337556
+    },
+    {
+      "name": "left_pinky_tip",
+      "pos": [
+        -0.392,
+        0.011999999999999999,
+        0.85
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.017972157135819712,
+      "organ_clearance_m": 0.34112246233847326
+    },
+    {
+      "name": "right_thumb_root",
+      "pos": [
+        0.376,
+        -0.026,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.01689102198700091,
+      "organ_clearance_m": 0.3113055610880071
+    },
+    {
+      "name": "right_thumb_mid",
+      "pos": [
+        0.378,
+        -0.028999999999999998,
+        0.87472
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.011699014580750015,
+      "organ_clearance_m": 0.3220288235798613
+    },
+    {
+      "name": "right_thumb_tip",
+      "pos": [
+        0.38,
+        -0.032,
+        0.843
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.03647008229055117,
+      "organ_clearance_m": 0.33600614470301543
+    },
+    {
+      "name": "right_index_root",
+      "pos": [
+        0.379,
+        -0.015,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.018349864669681547,
+      "organ_clearance_m": 0.31376315124661125
+    },
+    {
+      "name": "right_index_mid",
+      "pos": [
+        0.381,
+        -0.018,
+        0.87088
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.015013466943509088,
+      "organ_clearance_m": 0.3256208931085039
+    },
+    {
+      "name": "right_index_tip",
+      "pos": [
+        0.383,
+        -0.020999999999999998,
+        0.835
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.031606265314778136,
+      "organ_clearance_m": 0.34150424168289256
+    },
+    {
+      "name": "right_middle_root",
+      "pos": [
+        0.382,
+        -0.004,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.014284046798414813,
+      "organ_clearance_m": 0.31660998145184466
+    },
+    {
+      "name": "right_middle_mid",
+      "pos": [
+        0.384,
+        -0.007,
+        0.8689600000000001
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.01359064616361314,
+      "organ_clearance_m": 0.3289423817408278
+    },
+    {
+      "name": "right_middle_tip",
+      "pos": [
+        0.386,
+        -0.01,
+        0.8310000000000001
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.027882481538854156,
+      "organ_clearance_m": 0.3457005075852603
+    },
+    {
+      "name": "right_ring_root",
+      "pos": [
+        0.385,
+        0.006999999999999999,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.009176019638386764,
+      "organ_clearance_m": 0.3198357243523145
+    },
+    {
+      "name": "right_ring_mid",
+      "pos": [
+        0.387,
+        0.003999999999999999,
+        0.8718400000000001
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.013693457090856438,
+      "organ_clearance_m": 0.3309930921570361
+    },
+    {
+      "name": "right_ring_tip",
+      "pos": [
+        0.389,
+        0.0009999999999999992,
+        0.837
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.024214570427065672,
+      "organ_clearance_m": 0.3459394585126083
+    },
+    {
+      "name": "right_pinky_root",
+      "pos": [
+        0.388,
+        0.018,
+        0.904
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.013609111869851349,
+      "organ_clearance_m": 0.3234291142825455
+    },
+    {
+      "name": "right_pinky_mid",
+      "pos": [
+        0.39,
+        0.015,
+        0.87808
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.022874655190779192,
+      "organ_clearance_m": 0.3323710597249306
+    },
+    {
+      "name": "right_pinky_tip",
+      "pos": [
+        0.392,
+        0.011999999999999999,
+        0.85
+      ],
+      "radius": 0.002052,
+      "shell_clearance_m": 0.01815861847148672,
+      "organ_clearance_m": 0.343896893909146
+    }
+  ]
+}

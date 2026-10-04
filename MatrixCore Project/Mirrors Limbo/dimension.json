@@ -1,0 +1,28 @@
+{
+  "schema": 2,
+  "id": "mirrors_limbo",
+  "title": "Mirror's Limbo",
+  "version": "146.0",
+  "compatibility": "native",
+  "host_contract": "holoverse_dimension_v1",
+  "adapter": "adapter/holoverse_adapter.py",
+  "entry": "main.py",
+  "return_target": "gleebs_dimension_archive",
+  "presentation": {
+    "symbol": "ML",
+    "accent": "8C9A8A",
+    "preview": "icon.png",
+    "description": "A vintage-dream neighborhood whose roadside TV exposes Limbo as a dark structural/ASCII simulation. Pass 146 is a native-runtime presentation hardening pass: the TV world keeps the filled Limbo architecture, replaces dense structural lattices with semantic house/annex frames, makes story and Gleebs signals readable in world space, and preserves Pass 145 house/collision parity."
+  },
+  "runtime": {
+    "engine": "panda3d",
+    "shared_showbase": true,
+    "source_owns_input_except": [
+      "tab"
+    ],
+    "host_return_key": "tab",
+    "standalone_entry_preserved": true
+  },
+  "native_adapter": "holoverse_native_adapter.py",
+  "description": "A vintage-dream neighborhood that mutates across returns. Pass 149 keeps the first Limbo visit TV-free; the roadside TV and its ASCII Framework investigation appear only after the first genuine return from Alt Limbo. Residence stairs use continuous semantic ramps with a capsule-safe flat landing under each patio edge."
+}

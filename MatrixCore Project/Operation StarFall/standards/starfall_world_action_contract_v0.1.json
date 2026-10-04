@@ -1,0 +1,32 @@
+{
+  "schema": "operation_starfall_world_action_contract_v1",
+  "version": "operation_starfall_world_action_v0.1",
+  "sequence": [
+    "SURVEY",
+    "DRILL_DEPLOY",
+    "ANCHOR",
+    "LOWER_LINE",
+    "MATCH_TOOL",
+    "REEL_ATTACH",
+    "COLLECT",
+    "RETURN_RESULT"
+  ],
+  "bindings": {
+    "SURVEY": "Mouse look + sonar HUD",
+    "DRILL_DEPLOY": "1 on hotspot lock",
+    "ANCHOR": "wait for tripod brace",
+    "LOWER_LINE": "UP/DOWN arrows",
+    "MATCH_TOOL": "LMB on drone/line",
+    "REEL_ATTACH": "RMB or R when signal is hot",
+    "COLLECT": "LMB on held cargo",
+    "RETURN_RESULT": "TAB to StarFall shell"
+  },
+  "worlds": ["mimas", "enceladus", "iapetus", "titan"],
+  "hud_rule": "Minimal HUD shows loop phase plus standard action hint; compact/full HUD may add deeper rig/resource details.",
+  "reject_if": [
+    "a world uses a different player-facing name for the same stage",
+    "help text contradicts the shared action loop",
+    "TAB return does not produce a result packet",
+    "drill/deploy or collect is UI-only without runtime path"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "_note": "Pass 282.67. Player-facing Dimension Archive text, keyed by reality title (case-insensitive). A title not listed falls back to the project's own description.",
+  "blurbs": {
+    "HoloCore": "The layered core under HoloVerse. Climb its strata and see what holds the hub together.",
+    "HoloShell": "An observatory world. Explore the shell and the sky it was built to watch.",
+    "HoloTactics": "A complete holographic tactics game, waiting on its own board.",
+    "HoloMap": "Orbit's dimension: a full holographic map you can explore from the inside.",
+    "Vector Arena": "A living combat arena from the Utopia war. Waves grow, arenas reshape themselves, and three-phase Guardians wait at the end of every set.",
+    "Utopia Conflict // Source Vector Arena": "Utopia Conflict, the full war for Utopia that Vector Arena grew out of.",
+    "UTOPIA // LENS TOUR": "A guided lens tour through Utopia as it was, before it fell.",
+    "Anatomic": "A first-person anatomy lab built from glowing ASCII matter. Wounds persist, damage can be reversed, and every strike is recorded.",
+    "Anomaly Sequence": "Wave-gated spacetime combat. Steer through plasma ricochets, clear the wave, and only then does the next warp open.",
+    "The Archivist": "A zero-gravity 4D Mind Archive. Fifty-five story realities drift in their own shells, and you can thrust freely in any direction between them.",
+    "Mirror's Limbo": "Mirror's limbo, a liminal in-between where staying unseen and reading people is how you get through.",
+    "Glyphbound": "Glyphbound: The Shattered Shrine.",
+    "Vector Wars": "Vector Wars. A separate reality that opens in its own window; close it to come back.",
+    "HoloUtopia // Holo-Utopia Civic Ring": "HoloUtopia, a living civic ring. Its citizens work, build and keep the city running around you.",
+    "HoloUtopia": "HoloUtopia, a living civic ring. Its citizens work, build and keep the city running around you."
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "schema": 1,
+  "kind": "holoverse_external_dimension_index",
+  "rule": "Archive-only projects stay external. HoloVerse recognizes them read-only by responder metadata or conservative aliases, anywhere up to three folders deep inside Prototype Lab or MatrixCore Project (282.50), so a project can be moved without breaking its link; explicit LINK SIMULATION creates persistent identity/recovery state.",
+  "projects": [
+    {
+      "key": "HoloMap",
+      "title": "HoloMap",
+      "catalog_dimension_id": "system_holomap",
+      "folder_aliases": [
+        "HoloMap",
+        "Holo Map"
+      ],
+      "responder_titles": [
+        "HoloMap"
+      ],
+      "manifest_ids": [
+        "holomap"
+      ],
+      "symbol": "MAP",
+      "accent": "70E0B8",
+      "legacy_native_adapter": true
+    },
+    {
+      "key": "HoloTactics",
+      "title": "HoloTactics",
+      "catalog_dimension_id": "system_holotactics",
+      "folder_aliases": [
+        "HoloTactics",
+        "Holo Tactics"
+      ],
+      "responder_titles": [
+        "HoloTactics"
+      ],
+      "manifest_ids": [
+        "holotactics"
+      ],
+      "symbol": "TAC",
+      "accent": "70E0B8",
+      "legacy_native_adapter": true
+    },
+    {
+      "key": "HoloCore",
+      "title": "HoloCore",
+      "catalog_dimension_id": "system_holocore",
+      "folder_aliases": [
+        "HoloCore",
+        "Holo Core"
+      ],
+      "responder_titles": [
+        "HoloCore"
+      ],
+      "manifest_ids": [
+        "holocore"
+      ],
+      "symbol": "COR",
+      "accent": "70E0B8",
+      "legacy_native_adapter": false,
+      "requires_responder": true,
+      "host_contract": "holoverse_dimension_v1",
+      "description": "External HoloCore reality. Found anywhere in Prototype Lab or MatrixCore Project and mounted through its own folder-local native adapter; no HoloCore scene code lives inside HoloVerse."
+    },
+    {
+      "key": "mirrors_limbo",
+      "title": "Mirror's Limbo",
+      "catalog_dimension_id": "catalog_mirrors_limbo",
+      "folder_aliases": [
+        "Mirror's Limbo",
+        "Mirrors Limbo"
+      ],
+      "folder_prefixes": [
+        "Mirror's Limbo",
+        "Mirrors Limbo",
+        "Mirrors_Limbo"
+      ],
+      "responder_titles": [
+        "Mirror's Limbo",
+        "Mirrors Limbo"
+      ],
+      "manifest_ids": [
+        "mirrors_limbo"
+      ],
+      "symbol": "ML",
+      "accent": "8C9A8A",
+      "requires_responder": true,
+      "legacy_native_adapter": false,
+      "description": "Mirror's liminal social-stealth reality. Native responder projects remain external and launch in the shared HoloVerse Panda3D window.",
+      "host_contract": "holoverse_dimension_v1"
+    },
+    {
+      "key": "vector_arena",
+      "title": "Vector Arena",
+      "catalog_dimension_id": "catalog_vector_arena",
+      "folder_aliases": [
+        "Vector Arena",
+        "Vector_Arena"
+      ],
+      "folder_prefixes": [
+        "Vector Arena",
+        "Vector_Arena"
+      ],
+      "responder_titles": [
+        "Vector Arena"
+      ],
+      "manifest_ids": [
+        "vector_arena"
+      ],
+      "symbol": "VA",
+      "accent": "39E6FF",
+      "requires_responder": true,
+      "legacy_native_adapter": false,
+      "description": "External HoloVerse wave/horde combat reality, kept inside Utopia Conflict. Found anywhere in Prototype Lab through its portable responder and mounted in the shared Panda3D window; TAB always returns to HoloVerse.",
+      "host_contract": "holoverse_dimension_v1"
+    },
+    {
+      "key": "glyphbound",
+      "title": "Glyphbound",
+      "catalog_dimension_id": "catalog_glyphbound",
+      "folder_aliases": [
+        "Glyphbound",
+        "Glyph Bound"
+      ],
+      "folder_prefixes": [
+        "Glyphbound",
+        "Glyphbound_",
+        "Glyphbound Pass",
+        "Glyphbound_Pass"
+      ],
+      "responder_titles": [
+        "Glyphbound"
+      ],
+      "manifest_ids": [
+        "glyphbound"
+      ],
+      "symbol": "GLY",
+      "accent": "70E0B8",
+      "requires_responder": false,
+      "legacy_native_adapter": true,
+      "show_when_missing": true,
+      "click_to_link": true,
+      "engine": "panda3d",
+      "description": "External Glyphbound reality. HoloVerse discovers a sibling or pass-numbered Glyphbound main.py without copying the project; raw builds use the compatibility lifecycle, while responder/native-adapter builds can promote to the shared HoloVerse Panda3D lifecycle.",
+      "missing_issue": "Glyphbound source not linked \u2014 select its main.py to restore access"
+    },
+    {
+      "key": "indigo_giant",
+      "title": "The Indigo Giant",
+      "catalog_dimension_id": "catalog_indigo_giant",
+      "folder_aliases": [
+        "Indigo Giant",
+        "The Indigo Giant"
+      ],
+      "folder_prefixes": [
+        "Indigo Giant",
+        "Indigo_Giant",
+        "The Indigo Giant"
+      ],
+      "responder_titles": [
+        "The Indigo Giant"
+      ],
+      "manifest_ids": [
+        "indigo_giant"
+      ],
+      "symbol": "IG",
+      "accent": "5B57FF",
+      "requires_responder": true,
+      "legacy_native_adapter": false,
+      "engine": "panda3d",
+      "description": "An archive of the past Gleebs carried into HoloVerse: REDACTED, the dying desert world where Nyx and Orbit walked before they came home with him. Crimson stayed behind. Native same-window reality; TAB returns to HoloVerse.",
+      "host_contract": "holoverse_dimension_v1"
+    },
+    {
+      "key": "utopia_conflict",
+      "title": "Utopia Conflict // Source Vector Arena",
+      "catalog_dimension_id": "catalog_utopia_conflict",
+      "folder_aliases": [
+        "Utopia Conflict",
+        "UtopiaConflict"
+      ],
+      "folder_prefixes": [
+        "Utopia Conflict",
+        "UtopiaConflict",
+        "Utopia_Conflict"
+      ],
+      "responder_titles": [
+        "Utopia Conflict // Source Vector Arena",
+        "Utopia Conflict"
+      ],
+      "symbol": "UC",
+      "accent": "FF6A3D",
+      "requires_responder": true,
+      "legacy_native_adapter": false,
+      "engine": "panda3d",
+      "description": "Utopia Conflict, the full-source war for the Utopia that Vector Arena grew out of. Native same-window reality kept inside Utopia Vision; TAB returns to HoloVerse.",
+      "host_contract": "holoverse_dimension_v1"
+    },
+    {
+      "key": "afterlife_of_io",
+      "title": "Afterlife of IO",
+      "catalog_dimension_id": "catalog_afterlife_of_io",
+      "folder_aliases": [
+        "Afterlife of IO",
+        "Afterlife Of IO",
+        "AfterlifeOfIO"
+      ],
+      "folder_prefixes": [
+        "Afterlife of IO",
+        "Afterlife_of_IO",
+        "AfterlifeOfIO"
+      ],
+      "responder_titles": [
+        "Afterlife of IO"
+      ],
+      "manifest_ids": [
+        "afterlife_of_io"
+      ],
+      "symbol": "AIO",
+      "accent": "C9A27A",
+      "requires_responder": true,
+      "legacy_native_adapter": false,
+      "engine": "pygame",
+      "description": "IO's afterlife, between the Beginning and the Present: seven Memory Guardians, seven lost civilization archives, and the Veil at the end. Opens in its own window (pygame); Return to HoloVerse from its menus brings you back."
+    }
+  ]
+}

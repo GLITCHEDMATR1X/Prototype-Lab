@@ -1,0 +1,16 @@
+{
+  "schema": "operation_starfall_liquid_contact_sampling_v0.1",
+  "rule": "Liquids cut neighboring terrain, rover/drone bodies cannot touch liquids, and sample tethers test liquid from safe banks.",
+  "worlds": {
+    "titan": {
+      "liquid_material": "methane/ethane hydrocarbon liquid",
+      "terrain_cut": true,
+      "contact_forbidden": true,
+      "sampling_method": "safe bank tether"
+    }
+  },
+  "required_tests": [
+    "--moon=titan --liquid-contact-sampling-test",
+    "--moon=titan --test-shot <path> --liquid-contact-shot --no-audio"
+  ]
+}

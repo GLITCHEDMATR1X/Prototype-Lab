@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "kind": "holocore_strata",
+  "about": "HoloCore is an ocean without water: a seabed grid below and no surface above. Altitude bands (strata) stack upward forever. Each band sets the look of the open column (background and fog colour; optional fog_color defaults to background, so there is no horizon line; the seabed band keeps HoloCore's original look), the drifting 'marine snow', which creatures live there and which drop-in floating assets from assets/strata/<asset_folder>/ fill it. Add a band by appending an entry with a higher floor; the last band is open-ended.",
+  "life_cell_size": 600.0,
+  "life_deck_height": 260.0,
+  "bands": [
+    {
+      "id": "seabed",
+      "name": "Seabed Grid",
+      "floor": -100000.0,
+      "background": [0.0, 0.0, 0.0025],
+      "fog_density": 0.0022,
+      "snow_color": [0.55, 0.92, 1.0],
+      "snow_alpha": 0.0,
+      "accent": [0.1, 0.92, 1.0],
+      "creatures": {},
+      "asset_folder": "",
+      "fog_color": [0.0, 0.0, 0.004]
+    },
+    {
+      "id": "drift_column",
+      "name": "Drift Column",
+      "floor": 180.0,
+      "background": [0.0, 0.014, 0.04],
+      "fog_density": 0.0017,
+      "snow_color": [0.62, 0.95, 1.0],
+      "snow_alpha": 0.78,
+      "accent": [0.2, 0.95, 1.0],
+      "creatures": {"jellyfish": 1.0,
+        "mermaid": 0.15
+      },
+      "asset_folder": "drift_column"
+    },
+    {
+      "id": "lantern_shoals",
+      "name": "Lantern Shoals",
+      "floor": 760.0,
+      "background": [0.003, 0.03, 0.046],
+      "fog_density": 0.0014,
+      "snow_color": [0.7, 1.0, 0.86],
+      "snow_alpha": 0.7,
+      "accent": [0.3, 1.0, 0.78],
+      "creatures": {"mermaid": 0.55,
+        "jellyfish": 0.55
+      },
+      "asset_folder": "lantern_shoals"
+    },
+    {
+      "id": "leviathan_reach",
+      "name": "Leviathan Reach",
+      "floor": 1560.0,
+      "background": [0.018, 0.006, 0.044],
+      "fog_density": 0.0012,
+      "snow_color": [0.82, 0.66, 1.0],
+      "snow_alpha": 0.56,
+      "accent": [0.74, 0.44, 1.0],
+      "creatures": {"octopus": 0.22,
+        "jellyfish": 0.35
+      },
+      "asset_folder": "leviathan_reach"
+    },
+    {
+      "id": "open_void",
+      "name": "Open Void",
+      "floor": 2640.0,
+      "background": [0.0, 0.0, 0.01],
+      "fog_density": 0.001,
+      "snow_color": [0.9, 0.92, 1.0],
+      "snow_alpha": 0.36,
+      "accent": [0.8, 0.86, 1.0],
+      "creatures": {"jellyfish": 0.18
+      },
+      "asset_folder": "open_void"
+    }
+  ]
+}

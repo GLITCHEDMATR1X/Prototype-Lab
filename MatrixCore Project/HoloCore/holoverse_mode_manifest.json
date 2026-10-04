@@ -1,0 +1,22 @@
+{
+  "schema": 2,
+  "id": "holocore",
+  "title": "HOLOCORE",
+  "entry": "main.py",
+  "source_kind": "panda3d",
+  "launch_type": "native_panda",
+  "native_panda_candidate": true,
+  "native_adapter": "holoverse_native_adapter.py",
+  "native_adapter_enabled": true,
+  "preferred_display": "same_window_native",
+  "requires_mouse_capture": true,
+  "panel_supported": false,
+  "host_contract": "holoverse_dimension_v1",
+  "return_target": "gleebs_dimension_archive",
+  "same_window_only": true,
+  "forbid_child_process": true,
+  "child_window_fallback": false,
+  "embedded_external_allowed": false,
+  "adapter_contract": "holocore_external_native_dimension_v7",
+  "description": "External HoloCore reality. HoloVerse discovers it under MatrixCore Project and enters it through Gleebs' Dimension Archive without copying HoloCore into the HoloVerse project."
+}

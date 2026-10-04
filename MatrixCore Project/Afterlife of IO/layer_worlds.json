@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "canvas": [
+    3930,
+    1130
+  ],
+  "worlds": {
+    "a": {
+      "backdrop": [
+        18,
+        21,
+        25
+      ],
+      "brightness": 1.0,
+      "layers": {
+        "0a.png": {
+          "parallax": 1.03,
+          "brightness": 1.0,
+          "focus": 1.0
+        },
+        "1a.png": {
+          "parallax": 1.015,
+          "brightness": 1.0,
+          "focus": 1.0
+        },
+        "2awalk.png": {
+          "parallax": 1.0,
+          "brightness": 1.0,
+          "focus": 1.0
+        },
+        "3a.png": {
+          "parallax": 0.985,
+          "brightness": 0.96,
+          "focus": 0.94
+        },
+        "4awalk.png": {
+          "parallax": 0.97,
+          "brightness": 0.92,
+          "focus": 0.9
+        },
+        "5aclamp.png": {
+          "parallax": 0.0,
+          "brightness": 0.88,
+          "focus": 0.86
+        }
+      }
+    },
+    "b": {
+      "backdrop": [
+        10,
+        12,
+        15
+      ],
+      "brightness": 0.72,
+      "layers": {
+        "0b.png": {
+          "parallax": 1.015,
+          "brightness": 0.78,
+          "focus": 1.0
+        },
+        "1bwalk.png": {
+          "parallax": 1.0,
+          "brightness": 0.74,
+          "focus": 1.0
+        },
+        "2bclamp.png": {
+          "parallax": 0.0,
+          "brightness": 0.66,
+          "focus": 0.88
+        }
+      },
+      "future_radial_light": true,
+      "radial_light_enabled": false
+    }
+  },
+  "camera": {
+    "default_zoom": 1.5,
+    "min_zoom": 1.28,
+    "max_zoom": 1.9,
+    "edge_safety_pixels": [
+      24,
+      18
+    ],
+    "logical_resolution": [
+      1280,
+      720
+    ]
+  },
+  "paintnet_screenshot_authority": {
+    "world_a_order": [
+      "0",
+      "1",
+      "PATH",
+      "2 walk",
+      "3",
+      "PATH",
+      "Player",
+      "4 walk",
+      "5 clamp"
+    ],
+    "path_layers_runtime": "guides only; collision remains exact walk alpha",
+    "world_a_spawns": {
+      "2awalk": [
+        180,
+        300
+      ],
+      "4awalk": [
+        36,
+        768
+      ]
+    },
+    "vertical_parallax": false,
+    "parallax_policy": "subtle band-relative drift, active walk plane = 1.0"
+  },
+  "transition": {
+    "world_a_to_b": {
+      "trigger_world_position": [
+        36,
+        768
+      ],
+      "radius": 46,
+      "fade_out_seconds": 0.42,
+      "fade_in_seconds": 0.58,
+      "world_b_entry_hint": [
+        180,
+        760
+      ],
+      "prewarm_world_b": true,
+      "radial_light_enabled": false
+    }
+  }
+}

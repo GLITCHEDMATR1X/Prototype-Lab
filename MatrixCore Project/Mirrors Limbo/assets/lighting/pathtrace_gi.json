@@ -1,0 +1,49 @@
+{
+  "schema": "liminal_residence.pass06.pathtrace_gi.v1",
+  "method": "offline Monte Carlo diffuse path tracing over simplified scene authority",
+  "world_bounds": [
+    -84.0,
+    -108.0,
+    84.0,
+    116.0
+  ],
+  "probe_heights": [
+    1.8,
+    27.0,
+    56.0
+  ],
+  "slice_width": 36,
+  "slice_height": 48,
+  "atlas_width": 108,
+  "atlas_height": 48,
+  "samples_per_probe": 16,
+  "max_diffuse_bounces": 3,
+  "seed": 8162026,
+  "surface_count": 34,
+  "warm_point_emitters": 2,
+  "stats": [
+    {
+      "z": 1.8,
+      "luminance_min": 0.02333074379085011,
+      "luminance_mean": 0.05806082402173837,
+      "luminance_max": 0.15236527988288429
+    },
+    {
+      "z": 27.0,
+      "luminance_min": 0.02667226711573318,
+      "luminance_mean": 0.08501405277261564,
+      "luminance_max": 0.19806535924793464
+    },
+    {
+      "z": 56.0,
+      "luminance_min": 0.025218188605070687,
+      "luminance_mean": 0.11473090768186028,
+      "luminance_max": 0.2803789734002748
+    }
+  ],
+  "notes": [
+    "Static GI only; direct lights, fog and camera remain real-time in Panda3D.",
+    "The bake uses major collision/architecture occluders plus procedural fluorescent/window emission.",
+    "The renderer interpolates three vertical irradiance slices and preserves a no-GI fallback."
+  ]
+}

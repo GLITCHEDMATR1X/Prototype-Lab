@@ -1,0 +1,615 @@
+{
+  "schema_version": "holotactics_scene_proof.v1",
+  "template_version": "gleebs_protocol_holotactics.pass30_hud_alignment_redo",
+  "reason": "refresh",
+  "generated_at": "2026-09-20T00:38:26",
+  "state": {
+    "turn": "player",
+    "round_index": 1,
+    "phase": "player_action",
+    "cursor": [
+      3,
+      1
+    ],
+    "selected_unit_id": "gleebs",
+    "sector_index": 1,
+    "sector_name": "Archive Gate",
+    "sector_tagline": "Recover the first memory path.",
+    "threat_label": "LOW",
+    "challenge_note": "Training pressure: base hostile response and short corruption pulses.",
+    "corruption_pulse_duration": 3,
+    "fracture_warning_duration": 2,
+    "cleared_sectors": [],
+    "can_expand_journey": false,
+    "journey_complete": false,
+    "journey_route_text": "1:active  2:locked  3:locked  4:locked  5:locked",
+    "journey_progress_percent": 0,
+    "memory_collected": false,
+    "core_destroyed": false,
+    "extraction_reached": false,
+    "extraction_open": false,
+    "action_die_claimed": false,
+    "overclock_charges": 0,
+    "ability_drop_chance": 0.55,
+    "ability_summary": "EMPTY",
+    "last_ability_used": null,
+    "grid_link_charge": 0,
+    "sector4_uplinks_occupied": {},
+    "sector5_horizon_stage": 0,
+    "sector5_relays_aligned": false,
+    "sector5_fracture_stabilized": false,
+    "sector5_relays_occupied": {},
+    "ability_inventory": [],
+    "ability_pickups": {},
+    "patch_node_captured": false,
+    "victory": false,
+    "defeat": false,
+    "objective_text": "Optional: Patch Node, Action Die | Main: Gleebs to Memory Node",
+    "mission_progress_percent": 10,
+    "prototype_completion_percent": 100,
+    "nodes": {
+      "patch": {
+        "name": "Patch Rule Node",
+        "pos": [
+          1,
+          6
+        ],
+        "effect": "Captured node weakens future corruption pulses",
+        "captured_by": null
+      },
+      "die": {
+        "name": "Action Die",
+        "pos": [
+          3,
+          3
+        ],
+        "effect": "Claimed die gives the next attack an overclock bonus",
+        "captured_by": null
+      },
+      "memory": {
+        "name": "Memory Node",
+        "pos": [
+          5,
+          5
+        ],
+        "effect": "Unlocks the Game Master Core",
+        "captured_by": null
+      },
+      "core": {
+        "name": "Game Master Core",
+        "pos": [
+          6,
+          6
+        ],
+        "effect": "Break this rule object to open extraction",
+        "captured_by": null
+      },
+      "extract": {
+        "name": "Extraction Gate",
+        "pos": [
+          0,
+          7
+        ],
+        "effect": "Opens after the Core breaks; reach it to continue the journey",
+        "captured_by": null
+      }
+    },
+    "units": {
+      "gleebs": {
+        "name": "Gleebs",
+        "team": "player",
+        "role": "Glitch Guide",
+        "pos": [
+          1,
+          2
+        ],
+        "hp": 10,
+        "max_hp": 10,
+        "move": 3,
+        "attack_range": 1,
+        "attack_power": 2,
+        "moved": true,
+        "acted": false,
+        "alive": true
+      },
+      "guard": {
+        "name": "Fracture Guard",
+        "team": "player",
+        "role": "Anchor Tank",
+        "pos": [
+          0,
+          1
+        ],
+        "hp": 12,
+        "max_hp": 12,
+        "move": 2,
+        "attack_range": 1,
+        "attack_power": 3,
+        "moved": false,
+        "acted": false,
+        "alive": true
+      },
+      "runner": {
+        "name": "Phase Runner",
+        "team": "player",
+        "role": "Flanker",
+        "pos": [
+          1,
+          0
+        ],
+        "hp": 8,
+        "max_hp": 8,
+        "move": 4,
+        "attack_range": 1,
+        "attack_power": 2,
+        "moved": false,
+        "acted": false,
+        "alive": true
+      },
+      "anomaly": {
+        "name": "Corrupted Anomaly",
+        "team": "enemy",
+        "role": "Debug Hunter",
+        "pos": [
+          6,
+          5
+        ],
+        "hp": 7,
+        "max_hp": 7,
+        "move": 2,
+        "attack_range": 1,
+        "attack_power": 2,
+        "moved": false,
+        "acted": false,
+        "alive": true
+      },
+      "sentry": {
+        "name": "Rule Sentry",
+        "team": "enemy",
+        "role": "Ranged Firewall",
+        "pos": [
+          5,
+          7
+        ],
+        "hp": 5,
+        "max_hp": 5,
+        "move": 1,
+        "attack_range": 2,
+        "attack_power": 1,
+        "moved": false,
+        "acted": false,
+        "alive": true
+      }
+    },
+    "tiles": {
+      "0,0": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "1,0": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "2,0": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "3,0": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "4,0": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "5,0": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "6,0": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "7,0": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "0,1": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "1,1": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "2,1": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "3,1": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "4,1": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "5,1": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "6,1": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "7,1": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "0,2": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "1,2": {
+        "state": "stable",
+        "owner": "player",
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "2,2": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "3,2": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "4,2": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "5,2": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "6,2": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "7,2": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "0,3": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "1,3": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "2,3": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "3,3": {
+        "state": "signal",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "4,3": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "5,3": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "6,3": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "7,3": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "0,4": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "1,4": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "2,4": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "3,4": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "4,4": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "5,4": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "6,4": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "7,4": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "0,5": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "1,5": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "2,5": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "3,5": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "4,5": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "5,5": {
+        "state": "memory",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "6,5": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "7,5": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "0,6": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "1,6": {
+        "state": "anchor",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "2,6": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "3,6": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "4,6": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "5,6": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "6,6": {
+        "state": "corrupted",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "7,6": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "0,7": {
+        "state": "anchor",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "1,7": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "2,7": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "3,7": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "4,7": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "5,7": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "6,7": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      },
+      "7,7": {
+        "state": "stable",
+        "owner": null,
+        "turns_corrupted": 0,
+        "turns_fractured": 0
+      }
+    },
+    "log": [
+      "Archive Gate online. Extraction Gate is locked until the Core breaks.",
+      "Gleebs enters Archive Gate.",
+      "Gleebs moved to (1, 2).",
+      "Mouse targeted tile (5, 6).",
+      "Mouse targeted tile (3, 1)."
+    ]
+  },
+  "completion_notes": {
+    "declared_completion": "100% audio path compatibility fix milestone",
+    "approval_status": "ready for audio path compatibility review; bigger world, ability loot, UI, actors, and progression preserved",
+    "visual_proof": "Fresh Panda3D screenshots captured after audio path compatibility fix",
+    "sfx_cues": [
+      "ability_cast",
+      "ability_drop",
+      "attack",
+      "blocked",
+      "core",
+      "defeat",
+      "enemy_hit",
+      "expand",
+      "extraction",
+      "move",
+      "music_toggle",
+      "node",
+      "patch",
+      "sector_clear",
+      "select",
+      "start",
+      "toggle",
+      "warning"
+    ],
+    "music_cues": [
+      "holo_ambient",
+      "sector_1_archive",
+      "sector_2_signal",
+      "sector_3_fracture",
+      "sector_4_outer",
+      "sector_5_horizon"
+    ],
+    "audio_asset_issues": [],
+    "actor_visual_issues": [],
+    "screen_mode": "mission",
+    "ui_layout_issues": []
+  }
+}

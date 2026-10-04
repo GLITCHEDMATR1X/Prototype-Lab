@@ -1,0 +1,30 @@
+UTOPIA LENS TOUR — PASS 59 VALIDATION
+STATUS: CANDIDATE
+VISUAL ACCEPTANCE: PASS in Panda3D 1.10.16 container runtime; Windows player acceptance pending
+TARGET-RUNTIME TEST: Panda3D 1.10.16 PASS; Windows not run here
+
+PRIMARY TARGET
+AR coverage continuity + remove rejected trees
+
+PASS
+- Pass 58 recheck before edit: surface / traversal / residents / main smoke
+- AR coverage: 8/8 parks, 24/24 promenade node pads
+- Tree geometry: 0 runtime tree nodes
+- Tree shadow sources: 0
+- Traversal: 8/8 avenues, 4/4 gates, south entrance clear
+- Surface winding regression
+- Residents / AR bone-following designs
+- 5/5 public interiors traversable
+- Pass 58 public-annex AR exterior coverage
+- Gleebs behavior
+- AR optimization: 5716 -> 1247 nodes
+- 1920x1080 viewport
+- 5 Utopia systems
+- Static validation: 317/317
+- Asset audit
+- GXT.6 full-pass: deliverable, 0 blockers
+
+NON-BLOCKING GXTOOL LIMITATIONS
+- generic asset-reference scan does not resolve several composed base_dir paths; project asset audit passes
+- generic text-fit scan flags long diagnostic print strings that are not player UI
+- screenshot heuristic does not yet recognize semantic pavement-material continuity; direct runtime inspection caught the flat node-pad problem

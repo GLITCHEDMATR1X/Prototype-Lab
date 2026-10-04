@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "dimension": "Vector Wars",
+  "engine": "pygame-ce",
+  "compatibility": "LEGACY",
+  "entry_file": "main.py",
+  "launch_model": "external_child_process",
+  "normal_launch_helper": "get_holoverse_launch_command",
+  "qa_launch_helper": "get_panda3d_launch_command",
+  "campaign_phase_owner": "phase_progression.active_mode",
+  "qa_auto_mode_explicit_only": true,
+  "campaign_resume_supported": true,
+  "host_music_environment": "HOLOVERSE_ROOT_OWNS_MUSIC",
+  "shared_sfx_environment": "HOLOVERSE_SHARED_SFX_DIR",
+  "user_data_override_environment": "VECTOR_WARS_USER_DATA",
+  "external_return_marker": "--holoverse-launch",
+  "return_model": "child_exit_then_host_restore",
+  "native_same_window": false,
+  "native_conversion_deferred": true,
+  "host_acceptance_required": true
+}

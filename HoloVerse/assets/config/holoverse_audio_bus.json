@@ -1,0 +1,14 @@
+{
+  "master_volume": 0.82,
+  "sfx_volume": 0.82,
+  "music_volume": 0.42,
+  "ambience_volume": 0.58,
+  "soundtrack_enabled": true,
+  "soundtrack_intensity": 0.55,
+  "ambience_intensity": 0.45,
+  "music_file": "assets/audio/Holoverse.mp3",
+  "music_cues": "assets/audio/holoverse_music_cues.json",
+  "core_sfx_root": "assets/audio/sfx/core",
+  "runtime_generation": false,
+  "reverse_cache": false
+}

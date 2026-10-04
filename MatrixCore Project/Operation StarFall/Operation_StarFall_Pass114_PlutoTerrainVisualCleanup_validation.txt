@@ -1,0 +1,13 @@
+Operation StarFall Pass114 Pluto Terrain Visual Cleanup
+STATUS: ACCEPTED AUTHORITY
+GXTOOL: GXT.6
+Panda3D: 1.10.16
+Runtime surface: 1920x1080 PASS
+Pluto embedded launch: PASS
+Moon-local HUD hidden: PASS
+ESC/TAB return cleanup: PASS
+Pass114 static contract: TECHNICAL_PASS / VISUAL_PASS
+Package checker: PASS
+GXTOOL identity: CONSISTENT
+GXTOOL gameplay verification: DELIVERABLE / 0 blockers
+GXTOOL regression: 0 removed files / 0 out-of-scope changes

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "version": "0.14.329-main-loop-cadence",
+  "updated_at": "2026-10-03 17:51:44",
+  "event_count": 3,
+  "events": [
+    {
+      "time": "2026-10-03 17:51:26",
+      "event": "native_begin",
+      "mode": "DIMENSION // HOLOCORE",
+      "mode_id": "dimension_holocore",
+      "label": "DIMENSION // HOLOCORE",
+      "route": "SAME-WINDOW",
+      "launch_type": "native_panda",
+      "version": "0.14.329-main-loop-cadence"
+    },
+    {
+      "time": "2026-10-03 17:51:27",
+      "event": "dimension_entered",
+      "mode": "HoloCore",
+      "mode_id": "holocore",
+      "label": "DIMENSION // HOLOCORE",
+      "route": "HOSTED",
+      "launch_type": "hosted_external",
+      "version": "0.14.329-main-loop-cadence"
+    },
+    {
+      "time": "2026-10-03 17:51:44",
+      "event": "native_return",
+      "mode": "DIMENSION // HOLOCORE",
+      "mode_id": "dimension_holocore",
+      "label": "DIMENSION // HOLOCORE",
+      "route": "SAME-WINDOW",
+      "launch_type": "native_panda",
+      "version": "0.14.329-main-loop-cadence",
+      "extra": {
+        "reason": "tab_return_home",
+        "elapsed": "18.09"
+      }
+    }
+  ]
+}

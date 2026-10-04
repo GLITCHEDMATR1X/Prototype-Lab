@@ -1,0 +1,12 @@
+{
+  "audio_enabled": true,
+  "bloom_enabled": true,
+  "display_preset": "reference_1080p_auto",
+  "hud_style": "MINIMAL",
+  "last_updated_by_pass": "Pass102_Reference1080pAuthority",
+  "performance_profile": "BALANCED",
+  "planet_vision_default": "ANALYTIC",
+  "schema": "operation_starfall_windows_optimization_v0.3",
+  "ui_canvas": "responsive_aspect_safe",
+  "window_fixed_16x9": true
+}

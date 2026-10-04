@@ -1,0 +1,15 @@
+Pass 151 replaced these with the shared gx_common package. Nothing imports them any more.
+Delete them from the Mirrors Limbo folder, then delete this note:
+
+gx_travel.py
+gx_travel_qa.py
+DreamCatcher/gx_travel.py
+DreamCatcher/gx_travel_qa.py
+DreamCatcher/dreamcatcher_bridge.py
+DreamCatcher/DREAMCATCHER_BRIDGE_CONTRACT.md
+DreamCatcher/tools/verify_dreamcatcher_bridge.py
+DreamCatcher/modes/andrews_nightmare/gx_travel.py
+DreamCatcher/modes/andrews_nightmare/gx_travel_qa.py
+DreamCatcher/modes/andrews_nightmare/dreamcatcher_bridge.py
+DreamCatcher/modes/andrews_nightmare/DREAMCATCHER_BRIDGE_CONTRACT.md
+DreamCatcher/modes/andrews_nightmare/tools/verify_dreamcatcher_bridge.py

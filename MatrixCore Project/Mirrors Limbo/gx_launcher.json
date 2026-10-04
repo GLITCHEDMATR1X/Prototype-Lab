@@ -1,0 +1,15 @@
+{
+  "schema": "gx_launcher.game.v5",
+  "entry": "launch_mirrors.pyw",
+  "working_directory": ".",
+  "args": [],
+  "auto_install": false,
+  "portable_runtime_required": true,
+  "runtime_family": "python312-panda3d-1.10.16-offline",
+  "priority": "above_normal",
+  "offline_runtime_preferred": true,
+  "network_repair_fallback": true,
+  "handoff_mode": "standalone_takeover",
+  "launcher_exit_after_handoff": true,
+  "game_owns_lifecycle_after_handoff": true
+}

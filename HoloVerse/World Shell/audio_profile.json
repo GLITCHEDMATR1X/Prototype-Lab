@@ -1,0 +1,10 @@
+{
+  "schema": "holoverse_audio_profile_v2",
+  "mode": "World Shell",
+  "inherits_hub_audio_bus": true,
+  "music_source": "assets/audio/Holoverse.mp3",
+  "cue_manifest": "assets/audio/holoverse_music_cues.json",
+  "runtime_generation": false,
+  "reverse_cache": false,
+  "notes": "Single master soundtrack. Core selects cue points by region; no generated variants or ambient music files."
+}

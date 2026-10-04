@@ -1,0 +1,436 @@
+{
+  "pass": 28,
+  "adapter_version": "28.0-native-input-authority",
+  "checks": [
+    {
+      "name": "cycle1:entered",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:same_window",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:borrowed_camera",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:borrowed_taskmgr",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:no_direct_host_keys",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "cycle1:escape_reserved",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:return_reserved",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:forwarded_gameplay_action",
+      "ok": true,
+      "detail": {
+        "before": [
+          1,
+          1
+        ],
+        "after": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "name": "hosted_screenshot",
+      "ok": true,
+      "detail": "/mnt/data/HoloTactics_pass30_redo/HoloTactics/reports/pass28_native_hosted.png"
+    },
+    {
+      "name": "cycle1:host_escape_received",
+      "ok": true,
+      "detail": [
+        "escape",
+        "tab"
+      ]
+    },
+    {
+      "name": "cycle1:delegate_not_paused",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:exited",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:host_task_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:host_world_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:host_hud_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:window_count_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:camera_parent_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:camera_transform_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:fov_restored",
+      "ok": true,
+      "detail": {
+        "initial": [
+          47.0,
+          27.48740577697754
+        ],
+        "after": [
+          47.0,
+          27.48740577697754
+        ]
+      }
+    },
+    {
+      "name": "cycle1:near_far_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:background_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle1:scene_cleanup",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "cycle1:hud_cleanup",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "cycle2:entered",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:same_window",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:borrowed_camera",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:borrowed_taskmgr",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:no_direct_host_keys",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "cycle2:escape_reserved",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:return_reserved",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:forwarded_gameplay_action",
+      "ok": true,
+      "detail": {
+        "before": [
+          1,
+          1
+        ],
+        "after": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "name": "cycle2:host_escape_received",
+      "ok": true,
+      "detail": [
+        "escape",
+        "tab"
+      ]
+    },
+    {
+      "name": "cycle2:delegate_not_paused",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:exited",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:host_task_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:host_world_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:host_hud_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:window_count_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:camera_parent_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:camera_transform_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:fov_restored",
+      "ok": true,
+      "detail": {
+        "initial": [
+          47.0,
+          27.48740577697754
+        ],
+        "after": [
+          47.0,
+          27.48740577697754
+        ]
+      }
+    },
+    {
+      "name": "cycle2:near_far_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:background_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle2:scene_cleanup",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "cycle2:hud_cleanup",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "cycle3:entered",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:same_window",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:borrowed_camera",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:borrowed_taskmgr",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:no_direct_host_keys",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "cycle3:escape_reserved",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:return_reserved",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:forwarded_gameplay_action",
+      "ok": true,
+      "detail": {
+        "before": [
+          1,
+          1
+        ],
+        "after": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "name": "cycle3:host_escape_received",
+      "ok": true,
+      "detail": [
+        "escape",
+        "tab"
+      ]
+    },
+    {
+      "name": "cycle3:delegate_not_paused",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:exited",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:host_task_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:host_world_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:host_hud_survives",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:window_count_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:camera_parent_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:camera_transform_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:fov_restored",
+      "ok": true,
+      "detail": {
+        "initial": [
+          47.0,
+          27.48740577697754
+        ],
+        "after": [
+          47.0,
+          27.48740577697754
+        ]
+      }
+    },
+    {
+      "name": "cycle3:near_far_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:background_restored",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "cycle3:scene_cleanup",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "cycle3:hud_cleanup",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "host_generic_native_music_stopped",
+      "ok": true,
+      "detail": [
+        "native_dimension_music",
+        "native_dimension_air",
+        "native_dimension_music",
+        "native_dimension_air",
+        "native_dimension_music",
+        "native_dimension_air"
+      ]
+    },
+    {
+      "name": "host_generic_air_stopped",
+      "ok": true,
+      "detail": [
+        "native_dimension_music",
+        "native_dimension_air",
+        "native_dimension_music",
+        "native_dimension_air",
+        "native_dimension_music",
+        "native_dimension_air"
+      ]
+    },
+    {
+      "name": "adapter_version_updated",
+      "ok": true,
+      "detail": "28.0-native-input-authority"
+    }
+  ],
+  "passed": 70,
+  "total": 70,
+  "ok": true
+}

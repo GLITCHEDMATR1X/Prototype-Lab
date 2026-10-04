@@ -1,0 +1,20 @@
+STATUS: CANDIDATE
+VISUAL ACCEPTANCE: PASS IN CONTAINER SMOKE VIEWS
+TARGET-RUNTIME WINDOWS TEST: PENDING USER TEST
+
+PASS: 12 — Sand Footprint Trails
+BASE: Pass 11
+
+TECHNICAL CHECKS:
+- Python compile: PASS
+- Pass 11 movement accuracy smoke: PASS
+- Human footprint generation: PASS
+- Giant footprint generation: PASS
+- Alternating actual foot_l/foot_r joint stamping: PASS
+- Root grounding sink assertion: PASS
+- Human wind removal after 50 simulated seconds: PASS
+- Giant persistence after 50 simulated seconds: PASS
+- Fresh extraction smoke: PASS
+
+KNOWN LIMITATION:
+Footprints are lightweight procedural visual formations, not destructive terrain-mesh edits.
