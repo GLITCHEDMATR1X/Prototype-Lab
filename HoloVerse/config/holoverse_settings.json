@@ -27,7 +27,7 @@
   "ambience_volume": 0.58,
   "audio_root": "assets/audio",
   "core_sfx_root": "assets/audio/sfx/core",
-  "music_file": "assets/audio/Holoverse.mp3",
+  "music_file": "assets/audio/regions/holoverse.mp3",
   "music_cues": "assets/audio/holoverse_music_cues.json",
   "audio_library_manifest": "assets/audio/audio_library_manifest.json",
   "default_holoverse_world": {
@@ -128,7 +128,7 @@
     "ambience_intensity": 0.45,
     "audio_root": "assets/audio",
     "core_sfx_root": "assets/audio/sfx/core",
-    "music_file": "assets/audio/Holoverse.mp3",
+    "music_file": "assets/audio/regions/holoverse.mp3",
     "music_cues": "assets/audio/holoverse_music_cues.json",
     "runtime_generation": false,
     "reverse_cache": false

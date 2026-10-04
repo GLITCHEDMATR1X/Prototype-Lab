@@ -1,14 +1,17 @@
 {
   "schema": "holoverse_audio_library_v2",
   "music": {
-    "source": "assets/audio/Holoverse.mp3",
-    "hub_track": "assets/audio/Holoverse.mp3",
+    "source": "assets/audio/regions/holoverse.mp3",
+    "hub_track": "assets/audio/regions/holoverse.mp3",
     "region_manifest": "assets/audio/region_music.json",
     "region_tracks_dir": "assets/audio/regions",
-    "files": 10,
+    "files": 11,
     "cue_manifest_legacy": "assets/audio/holoverse_music_cues.json",
     "runtime_generation": false,
-    "reverse_cache": false
+    "reverse_cache": false,
+    "dimension_tracks": {
+      "holocore": "assets/audio/regions/holocore.mp3"
+    }
   },
   "sfx": {
     "root": "assets/audio/sfx/core",

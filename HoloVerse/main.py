@@ -710,7 +710,11 @@ HUB_TEXTURE_DIR = ASSETS / "textures" / "hub"
 TEXTURE_DIR = HUB_TEXTURE_DIR  # compatibility alias for older diagnostics
 AUDIO_LIBRARY_DIR = ASSETS / "audio"
 CORE_SFX_DIR = AUDIO_LIBRARY_DIR / "sfx" / "core"
-HOLOVERSE_MUSIC_FILE = AUDIO_LIBRARY_DIR / "Holoverse.mp3"
+# Pass 282.80: the FLAT-region song lives with the other region tracks; the old location still works.
+HOLOVERSE_MUSIC_FILE = next(
+    (p for p in (AUDIO_LIBRARY_DIR / "regions" / "holoverse.mp3", AUDIO_LIBRARY_DIR / "Holoverse.mp3") if p.is_file()),
+    AUDIO_LIBRARY_DIR / "regions" / "holoverse.mp3",
+)
 HOLOVERSE_MUSIC_CUES_PATH = AUDIO_LIBRARY_DIR / "holoverse_music_cues.json"
 REGION_MUSIC_PATH = AUDIO_LIBRARY_DIR / "region_music.json"
 CANONICAL_SHARED_SFX_DIR = AUDIO_LIBRARY_DIR / "sfx" / "shared"
@@ -722,6 +726,8 @@ CURRENT_BUILD_NOTES = ROOT / "CURRENT_BUILD_NOTES.md"
 SHARED_SFX_DIR = ASSETS / "shared_sfx"
 LATEST_LOG = LOG_DIR / "latest.log"
 CRASH_LOG = LOG_DIR / "crash.log"
+NATIVE_CRASH_LOG = LOG_DIR / "native_crash.log"
+_NATIVE_CRASH_FILE = None
 LATEST_PATCH = PATCH_DIR / "latest_patch_notes.txt"
 SELF_TEST_REPORT = LOG_DIR / "self_test_report.json"
 WORLD_AUTHORITY_SMOKE_REPORT = LOG_DIR / "world_authority_smoke_report.json"
@@ -2865,18 +2871,44 @@ def ensure_dirs():
 
 
 class TeeLogger:
+    """Copies prints to latest.log and the console.
+
+    Pass 282.80: a print must never crash the game.  On Windows the console can be cp1252 (or
+    missing entirely under pythonw / a launcher), and a status line with a character it cannot
+    encode used to raise inside whatever game code was printing."""
+
     def __init__(self, path: Path):
-        self.file = path.open("w", encoding="utf-8")
+        self.file = path.open("w", encoding="utf-8", errors="replace")
 
     def write(self, text: str):
-        self.file.write(text)
-        self.file.flush()
-        sys.__stdout__.write(text)
-        sys.__stdout__.flush()
+        try:
+            self.file.write(text)
+            self.file.flush()
+        except Exception:
+            pass
+        console = sys.__stdout__
+        if console is None:
+            return
+        try:
+            console.write(text)
+            console.flush()
+        except UnicodeEncodeError:
+            try:
+                enc = getattr(console, "encoding", None) or "ascii"
+                console.write(str(text).encode(enc, errors="replace").decode(enc, errors="replace"))
+                console.flush()
+            except Exception:
+                pass
+        except Exception:
+            pass
 
     def flush(self):
-        self.file.flush()
-        sys.__stdout__.flush()
+        for stream in (self.file, sys.__stdout__):
+            try:
+                if stream is not None:
+                    stream.flush()
+            except Exception:
+                pass
 
 
 def install_logging():
@@ -2896,6 +2928,18 @@ def install_crash_reporter():
         traceback.print_exception(exc_type, exc, tb)
 
     sys.excepthook = _hook
+    # Pass 282.80: crashes inside Panda3D / the graphics driver / OpenAL never reach excepthook.
+    # faulthandler writes the Python stack of every thread to native_crash.log when that happens.
+    try:
+        import faulthandler
+        global _NATIVE_CRASH_FILE
+        _NATIVE_CRASH_FILE = NATIVE_CRASH_LOG.open("w", encoding="utf-8")
+        _NATIVE_CRASH_FILE.write(f"{GAME_NAME} {VERSION}\nStarted: {datetime.now().isoformat()}\n"
+                                 "If the game closed without an error, the stack below shows where.\n\n")
+        _NATIVE_CRASH_FILE.flush()
+        faulthandler.enable(file=_NATIVE_CRASH_FILE, all_threads=True)
+    except Exception as exc:
+        print(f"native_crash_log_unavailable err={exc}")
 
 
 def write_patch_notes():
@@ -3169,7 +3213,7 @@ def build_holoverse_settings_payload(cfg: ObservatoryConfig) -> dict:
         "ambience_volume": audio["ambience_volume"],
         "audio_root": "assets/audio",
         "core_sfx_root": "assets/audio/sfx/core",
-        "music_file": "assets/audio/Holoverse.mp3",
+        "music_file": "assets/audio/regions/holoverse.mp3",
         "music_cues": "assets/audio/holoverse_music_cues.json",
         "audio_library_manifest": "assets/audio/audio_library_manifest.json",
         "default_holoverse_world": {
@@ -3248,7 +3292,7 @@ def build_holoverse_settings_payload(cfg: ObservatoryConfig) -> dict:
             "play_radius": float(getattr(cfg, "world_shell_play_radius", SURFACE_OUTER_RADIUS)),
             "policy": "pass37_backward_compatible_alias_do_not_launch_separately"
         },
-        "music_file": "assets/audio/Holoverse.mp3",
+        "music_file": "assets/audio/regions/holoverse.mp3",
         "music_cues": "assets/audio/holoverse_music_cues.json",
         "core_sfx_root": "assets/audio/sfx/core",
         "sound_and_music": {
@@ -3262,7 +3306,7 @@ def build_holoverse_settings_payload(cfg: ObservatoryConfig) -> dict:
             "ambience_intensity": audio.get("ambience_intensity", 0.45),
             "audio_root": "assets/audio",
             "core_sfx_root": "assets/audio/sfx/core",
-            "music_file": "assets/audio/Holoverse.mp3",
+            "music_file": "assets/audio/regions/holoverse.mp3",
             "music_cues": "assets/audio/holoverse_music_cues.json",
             "runtime_generation": False,
             "reverse_cache": False,
@@ -3396,7 +3440,7 @@ def resolve_holoverse_music_cue(name: str) -> tuple[str, dict[str, float]] | Non
 # that can be swapped for real tracks.  Dimensions (HoloCore, the Indigo Giant, ...) keep their own
 # music and never receive these tracks.
 DEFAULT_REGION_MUSIC = {
-    "hub": {"file": "Holoverse.mp3", "volume": 1.0},
+    "hub": {"file": "regions/holoverse.mp3", "volume": 1.0},
     "forest": {"file": "regions/forests.mp3", "volume": 1.0},
     "hills": {"file": "regions/green_hills.mp3", "volume": 1.0},
     "mushroom": {"file": "regions/mushroom.mp3", "volume": 1.0},
@@ -3406,6 +3450,18 @@ DEFAULT_REGION_MUSIC = {
     "metropolis": {"file": "regions/metropolis.mp3", "volume": 1.0},
     "space": {"file": "regions/holospace.mp3", "volume": 1.0},
     "holoforge": {"file": "regions/holoforge.mp3", "volume": 1.0},
+}
+
+# Dimensions HoloVerse plays a track for while they are open (Pass 282.80).  Any dimension not
+# listed here keeps its own soundtrack and HoloVerse stays silent.
+DEFAULT_DIMENSION_MUSIC = {
+    "holocore": {"file": "regions/holocore.mp3", "volume": 1.0},
+}
+
+# Older names for a track file, tried when the configured file is missing.
+LEGACY_TRACK_FILES = {
+    "regions/holoverse.mp3": ("Holoverse.mp3",),
+    "Holoverse.mp3": ("regions/holoverse.mp3",),
 }
 
 _REGION_MUSIC_CACHE: dict = {"stamp": None, "tracks": None}
@@ -3421,19 +3477,23 @@ def load_region_music() -> dict[str, dict]:
         stamp = 0
     if _REGION_MUSIC_CACHE["tracks"] is not None and _REGION_MUSIC_CACHE["stamp"] == stamp:
         return _REGION_MUSIC_CACHE["tracks"]
-    raw = {}
+    data = {}
     if stamp:
         try:
             data = json.loads(REGION_MUSIC_PATH.read_text(encoding="utf-8"))
-            raw = data.get("tracks", data) if isinstance(data, dict) else {}
+            if not isinstance(data, dict):
+                data = {}
         except Exception as exc:
             print(f"region_music_manifest_invalid path={REGION_MUSIC_PATH} err={exc}")
-            raw = {}
+            data = {}
     tracks: dict[str, dict] = {}
-    keys = list(DEFAULT_REGION_MUSIC) + [k for k in (raw if isinstance(raw, dict) else {}) if not str(k).startswith("_") and k not in DEFAULT_REGION_MUSIC]
-    for key in keys:
-        default = DEFAULT_REGION_MUSIC.get(key, {"file": "", "volume": 1.0})
-        item = raw.get(key, {}) if isinstance(raw, dict) else {}
+    raw_tracks = data.get("tracks", {}) if isinstance(data.get("tracks"), dict) else {}
+    raw_dims = data.get("dimensions", {}) if isinstance(data.get("dimensions"), dict) else {}
+    entries = []
+    for defaults, raw, prefix in ((DEFAULT_REGION_MUSIC, raw_tracks, ""), (DEFAULT_DIMENSION_MUSIC, raw_dims, "dimension:")):
+        keys = list(defaults) + [k for k in raw if not str(k).startswith("_") and k not in defaults]
+        entries += [(prefix + str(k).lower(), defaults.get(k, {"file": "", "volume": 1.0}), raw.get(k, {})) for k in keys]
+    for key, default, item in entries:
         if isinstance(item, str):
             item = {"file": item}
         if not isinstance(item, dict):
@@ -3445,9 +3505,12 @@ def load_region_music() -> dict[str, dict]:
             volume = float(default["volume"])
         path = None
         if name:
-            candidate = Path(name)
-            path = candidate if candidate.is_absolute() else AUDIO_LIBRARY_DIR / candidate
-        tracks[str(key).lower()] = {"path": path, "volume": volume, "file": name}
+            for option in (name,) + LEGACY_TRACK_FILES.get(name.replace("\\", "/"), ()):
+                candidate = Path(option)
+                path = candidate if candidate.is_absolute() else AUDIO_LIBRARY_DIR / candidate
+                if path.is_file():
+                    break
+        tracks[key] = {"path": path, "volume": volume, "file": name}
     _REGION_MUSIC_CACHE["stamp"] = stamp
     _REGION_MUSIC_CACHE["tracks"] = tracks
     return tracks
@@ -3469,8 +3532,29 @@ def resolve_region_music_track(name: str) -> tuple[str, Path | None, float] | No
         return None
     path = item["path"]
     if path is None or not path.is_file():
+        if item.get("file") and key not in _REGION_MUSIC_MISSING_REPORTED:
+            _REGION_MUSIC_MISSING_REPORTED.add(key)
+            print(f"region_music_missing key={key} file=assets/audio/{item.get('file')} (that area stays silent)")
         path = None
     return key, path, float(item["volume"])
+
+
+_REGION_MUSIC_MISSING_REPORTED: set = set()
+
+
+def dimension_music_key(label: str) -> str:
+    """The region_music.json "dimensions" key for a dimension label, or "" when it has none.
+
+    Registry launches label dimensions as "DIMENSION // <TITLE>", so the key is matched inside."""
+    label_key = re.sub(r"[^a-z0-9]+", "", str(label or "").lower())
+    if not label_key:
+        return ""
+    for key in load_region_music():
+        if key.startswith("dimension:"):
+            name = re.sub(r"[^a-z0-9]+", "", key.split(":", 1)[1])
+            if name and name in label_key:
+                return key
+    return ""
 
 class SharedAudio:
     def __init__(self, app):
@@ -4973,6 +5057,30 @@ class CommandHubApp(ShowBase):
 
         if bool(getattr(self, 'holospace_active', False)):
             return ('space', 'space', '', 0.44 + 0.22 * intensity, 0.0, 'holospace orbit')
+
+        # Pass 282.80: the title screen and the hub platform always play the FLAT-region song,
+        # whatever region the save last remembered.
+        if bool(getattr(self, 'campaign_title_open', False)):
+            return ('hub', 'hub', '', 0.38 + 0.22 * intensity, 0.0, 'title')
+        try:
+            r_hub = math.sqrt(self.player_pos.x ** 2 + self.player_pos.y ** 2)
+        except Exception:
+            r_hub = 0.0
+        in_world = bool(getattr(self, 'world_unlocked', False)) or float(getattr(self, 'transition_target', 0.0)) > 0.0
+        if r_hub < self.hub_radius + 1.0 and not in_world:
+            return ('hub', 'hub', '', 0.38 + 0.22 * intensity, 0.0, 'matrixcore hub')
+        # The ring the player is standing in decides the region track.  (Matching words in the
+        # saved shell text sent the Desert to the Urban track and the Ice to HoloSpace.)
+        ring_music = {
+            'FLAT': 'hub', 'HUB REGION': 'hub', 'FORESTS': 'forest', 'GREEN HILLS': 'hills',
+            'MUSHROOM': 'mushroom', 'DESERT': 'desert', 'ICE': 'ice', 'URBAN': 'urban',
+            'METROPOLIS': 'metropolis', 'HOLOSPACE': 'space',
+        }
+        ring = str(getattr(self, 'world_shell_mount_biome', '') or '').strip().upper()
+        if ring in ring_music and not in_world:
+            region_key = ring_music[ring]
+            gain = 0.38 + 0.22 * intensity if region_key == 'hub' else min(0.70, 0.50 + 0.16 * intensity)
+            return (f'shell_{region_key}', region_key, '', gain, 0.0, f'{ring.lower()} region')
 
         if bool(getattr(self, 'world_unlocked', False)) or float(getattr(self, 'transition_target', 0.0)) > 0.0 or float(getattr(self, 'transition_progress', 0.0)) > 0.02:
             spec = {}
@@ -6696,6 +6804,9 @@ class CommandHubApp(ShowBase):
         for token, profile in table.items():
             if token and token in key:
                 return dict(profile)
+        dim_key = dimension_music_key(label)
+        if dim_key:
+            return {"cue": dim_key, "volume": 0.6}
         return {"cue": "", "volume": 0.0}
 
     def _start_native_mode_audio(self, label: str):
@@ -7459,6 +7570,26 @@ class CommandHubApp(ShowBase):
         self._apply_native_mode_cursor(mode_obj, label)
         self._install_native_input_bridge(mode_obj, label)
         self._install_native_pause_listener(label)
+        self._start_dimension_track(label)
+
+    def _start_dimension_track(self, label: str = "") -> None:
+        """Play a dimension's track from assets/audio when region_music.json lists one (HoloCore).
+
+        Dimensions without an entry keep their own soundtrack and HoloVerse stays silent."""
+        audio = getattr(self, "audio", None)
+        key = dimension_music_key(label)
+        if audio is None or not key:
+            return
+        try:
+            if not bool(getattr(self.cfg, "soundtrack_enabled", True)):
+                return
+            audio.play_loop("native_dimension_music", key, bus="music", volume=0.6)
+            region = resolve_region_music_track(key)
+            track = region[1].name if region is not None and region[1] is not None else "missing"
+            self.native_mode_audio_profile = {"label": str(label or "MODE"), "cue": key, "source": track}
+            print(f"dimension_track label={label} key={key} file={track}")
+        except Exception as exc:
+            print(f"dimension_track_failed label={label} err={exc.__class__.__name__}:{exc}")
 
     def _apply_native_mode_cursor(self, mode_obj, label: str = "") -> None:
         """Let a dimension that is driven by mouse clicks (menus, click-to-move) keep a cursor.

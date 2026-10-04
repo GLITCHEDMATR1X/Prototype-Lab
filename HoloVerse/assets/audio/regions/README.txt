@@ -1,8 +1,10 @@
-HoloVerse region music placeholders (Pass 282.79)
+HoloVerse music (Pass 282.80)
 
-Every .mp3 here is a 4-second silent placeholder. Replace any of them with your own track,
-keeping the file name, and that region plays it on loop:
+holoverse.mp3 is the HoloVerse song (FLAT region: the hub, the title screen and the land around
+the hub). Every other .mp3 here is a 4-second silent placeholder. Replace any of them with your
+own track, keeping the file name, and that area plays it on loop:
 
+  holoverse.mp3     FLAT region / MatrixCore hub   (the real song)
   forests.mp3       Forests
   green_hills.mp3   Green Hills
   mushroom.mp3      Mushroom
@@ -12,6 +14,6 @@ keeping the file name, and that region plays it on loop:
   metropolis.mp3    Metropolis
   holospace.mp3     HoloSpace (ship flight)
   holoforge.mp3     HoloForge
+  holocore.mp3      HoloCore dimension
 
-The FLAT region (MatrixCore hub ring) keeps assets/audio/Holoverse.mp3. File names, extra files and per-track
-volume are set in assets/audio/region_music.json.
+File names, extra files and per-track volume are set in assets/audio/region_music.json.
