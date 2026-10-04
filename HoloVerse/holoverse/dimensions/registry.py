@@ -1610,7 +1610,8 @@ class DimensionRegistry:
             self._mark_seen(selected)
 
         self._label("title", "GLEEBS // DIMENSION ARCHIVE", 0, 0.68, 0.055, (0.72, 0.95, 0.44, 1))
-        self._label("page", f"REALITY INDEX  {self.menu_page + 1}/{pages}", -0.73, 0.57, 0.026, (0.48, 0.72, 0.78, 1))
+        unlocked = sum(1 for r in self.records if self.is_unlocked(r))
+        self._label("page", f"REALITY INDEX  {self.menu_page + 1}/{pages}   //   UNLOCKED {unlocked}/{len(self.records)}", -0.73, 0.57, 0.026, (0.48, 0.72, 0.78, 1))
         self._label("inspect", "INSPECT SIGNAL", 0.63, 0.57, 0.026, (0.48, 0.72, 0.78, 1))
 
         if not subset:
@@ -1975,6 +1976,9 @@ class DimensionRegistry:
                 self.host._set_bridge_transition_alpha(max(0.24, float(getattr(self.host, "bridge_transition_alpha", 0.0) or 0.0)))
             except Exception:
                 pass
+            loading = getattr(self.host, "present_dimension_loading", None)
+            if callable(loading):
+                loading(record.title)
             self.host.suspend_for_native_mode(label)
             native = self.host._load_native_mode_object(mode, record.entry, label)
             self.host.active_native_mode = native

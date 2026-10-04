@@ -6297,6 +6297,19 @@ class CommandHubApp(ShowBase):
         except Exception:
             pass
 
+    def present_dimension_loading(self, title: str) -> None:
+        """Pass 282.78: show the entry card *before* a same-window dimension loads.
+
+        Loading a dimension blocks the frame for a few seconds, so the transition card was set but
+        never drawn and the screen simply froze.  Draw it now (two frames, so both buffers hold it)."""
+        try:
+            self.show_bridge_transition(f"ENTERING {str(title or 'DIMENSION').upper()}", "LOADING  //  ONE MOMENT", target=1.0, hold=0.2)
+            self._set_bridge_transition_alpha(0.95)
+            for _ in range(2):
+                self.graphicsEngine.renderFrame()
+        except Exception as exc:
+            print(f"dimension_loading_card_failed err={exc.__class__.__name__}:{exc}")
+
     def show_bridge_transition(self, title: str, subtitle: str = "", *, target: float = 1.0, hold: float = 0.0) -> None:
         if getattr(self, "bridge_transition_root", None) is None:
             return
@@ -7221,6 +7234,9 @@ class CommandHubApp(ShowBase):
                 pass
         self._show_native_pause_overlay(False)
 
+    def _pause_return_home(self) -> None:
+        self.handle_tab_action()
+
     def _show_native_pause_overlay(self, visible: bool) -> None:
         root = getattr(self, "_native_pause_overlay", None)
         if visible and (root is None or root.isEmpty()):
@@ -7233,6 +7249,16 @@ class CommandHubApp(ShowBase):
                             frameColor=(0, 0, 0, 0), pos=(0, 0, 0.06), **kw)
                 DirectLabel(parent=root, text="ESC  RESUME     //     TAB  RETURN TO MATRIXCORE", text_scale=0.032,
                             text_fg=(0.55, 0.92, 1.0, 0.95), frameColor=(0, 0, 0, 0), pos=(0, 0, -0.06), **kw)
+                # Pass 282.78: clickable too (the cursor is free while paused).
+                for text, z, command in (("RESUME", -0.20, self._resume_native_dimension),
+                                         ("RETURN TO MATRIXCORE", -0.33, self._pause_return_home)):
+                    button = DirectButton(parent=root, text=text, command=command, pos=(0, 0, z), scale=0.062,
+                                          frameSize=(-5.2, 5.2, -0.42, 0.62), text_scale=0.5, relief=1,
+                                          rolloverSound=None, clickSound=None, **kw)
+                    try:
+                        self.apply_core_button_style(button, role="mode", available=True)
+                    except Exception:
+                        pass
                 self._native_pause_overlay = root
             except Exception as exc:
                 print(f"native_pause_overlay_failed err={exc.__class__.__name__}:{exc}")
@@ -7723,6 +7749,7 @@ class CommandHubApp(ShowBase):
         except Exception:
             pass
         self._pending_native_manifest = dict(manifest)
+        self.present_dimension_loading(label)
         self.suspend_for_native_mode(label)
         try:
             mode_obj = self._load_native_mode_object(mode, Path(entry), label)
@@ -17224,6 +17251,8 @@ class CommandHubApp(ShowBase):
                     "Thrust:  Space / Ctrl, Left / Right\n"
                     "Boost:  hold Shift\n"
                     "Fire:  Left click (asteroid hits +5% shield)\n"
+                    "Throttle presets:  1 - 5\n"
+                    "Nav lock (planets, Dyson Prime):  T\n"
                     "Cockpit colours:  C\n"
                     "Flight assist:  Z\n"
                     "Supercruise:  J (again to drop)\n"
