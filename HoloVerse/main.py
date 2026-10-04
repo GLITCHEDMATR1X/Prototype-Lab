@@ -712,6 +712,7 @@ AUDIO_LIBRARY_DIR = ASSETS / "audio"
 CORE_SFX_DIR = AUDIO_LIBRARY_DIR / "sfx" / "core"
 HOLOVERSE_MUSIC_FILE = AUDIO_LIBRARY_DIR / "Holoverse.mp3"
 HOLOVERSE_MUSIC_CUES_PATH = AUDIO_LIBRARY_DIR / "holoverse_music_cues.json"
+REGION_MUSIC_PATH = AUDIO_LIBRARY_DIR / "region_music.json"
 CANONICAL_SHARED_SFX_DIR = AUDIO_LIBRARY_DIR / "sfx" / "shared"
 MUSIC_DIR = AUDIO_LIBRARY_DIR
 WORLD_SHELL_MOUNT_CONFIG = CORE_CONFIG_DIR / "default_world_shell_integration.json"
@@ -3389,6 +3390,88 @@ def resolve_holoverse_music_cue(name: str) -> tuple[str, dict[str, float]] | Non
         return key, cues[key]
     return None
 
+
+# Pass 282.79: every HoloVerse area plays its own soundtrack file on loop.  Holoverse.mp3 belongs to
+# the MatrixCore hub only; the other areas start as silent placeholders in assets/audio/regions/
+# that can be swapped for real tracks.  Dimensions (HoloCore, the Indigo Giant, ...) keep their own
+# music and never receive these tracks.
+DEFAULT_REGION_MUSIC = {
+    "hub": {"file": "Holoverse.mp3", "volume": 1.0},
+    "forest": {"file": "regions/forests.mp3", "volume": 1.0},
+    "hills": {"file": "regions/green_hills.mp3", "volume": 1.0},
+    "mushroom": {"file": "regions/mushroom.mp3", "volume": 1.0},
+    "desert": {"file": "regions/desert.mp3", "volume": 1.0},
+    "ice": {"file": "regions/ice.mp3", "volume": 1.0},
+    "urban": {"file": "regions/urban.mp3", "volume": 1.0},
+    "metropolis": {"file": "regions/metropolis.mp3", "volume": 1.0},
+    "space": {"file": "regions/holospace.mp3", "volume": 1.0},
+    "holoforge": {"file": "regions/holoforge.mp3", "volume": 1.0},
+}
+
+_REGION_MUSIC_CACHE: dict = {"stamp": None, "tracks": None}
+
+
+def load_region_music() -> dict[str, dict]:
+    """Region key -> {"path": Path, "volume": float} from assets/audio/region_music.json.
+
+    Re-read only when the file changes (this is called every frame by the soundscape)."""
+    try:
+        stamp = REGION_MUSIC_PATH.stat().st_mtime_ns if REGION_MUSIC_PATH.is_file() else 0
+    except OSError:
+        stamp = 0
+    if _REGION_MUSIC_CACHE["tracks"] is not None and _REGION_MUSIC_CACHE["stamp"] == stamp:
+        return _REGION_MUSIC_CACHE["tracks"]
+    raw = {}
+    if stamp:
+        try:
+            data = json.loads(REGION_MUSIC_PATH.read_text(encoding="utf-8"))
+            raw = data.get("tracks", data) if isinstance(data, dict) else {}
+        except Exception as exc:
+            print(f"region_music_manifest_invalid path={REGION_MUSIC_PATH} err={exc}")
+            raw = {}
+    tracks: dict[str, dict] = {}
+    keys = list(DEFAULT_REGION_MUSIC) + [k for k in (raw if isinstance(raw, dict) else {}) if not str(k).startswith("_") and k not in DEFAULT_REGION_MUSIC]
+    for key in keys:
+        default = DEFAULT_REGION_MUSIC.get(key, {"file": "", "volume": 1.0})
+        item = raw.get(key, {}) if isinstance(raw, dict) else {}
+        if isinstance(item, str):
+            item = {"file": item}
+        if not isinstance(item, dict):
+            item = {}
+        name = str(item.get("file", default["file"]) or "").strip()
+        try:
+            volume = max(0.0, min(1.0, float(item.get("volume", default["volume"]))))
+        except Exception:
+            volume = float(default["volume"])
+        path = None
+        if name:
+            candidate = Path(name)
+            path = candidate if candidate.is_absolute() else AUDIO_LIBRARY_DIR / candidate
+        tracks[str(key).lower()] = {"path": path, "volume": volume, "file": name}
+    _REGION_MUSIC_CACHE["stamp"] = stamp
+    _REGION_MUSIC_CACHE["tracks"] = tracks
+    return tracks
+
+
+def resolve_region_music_track(name: str) -> tuple[str, Path | None, float] | None:
+    """(region key, track file or None when missing, volume) for a soundscape music name.
+
+    None means the name is not a region (the caller may treat it as a plain file).  A region whose
+    file is missing resolves with path None, so that area is silent instead of borrowing a song."""
+    raw = str(name or "").strip()
+    if not raw:
+        return None
+    key = raw.lower().replace("cue:", "", 1).strip()
+    key = MUSIC_CUE_ALIASES.get(key, key)
+    tracks = load_region_music()
+    item = tracks.get(key)
+    if item is None:
+        return None
+    path = item["path"]
+    if path is None or not path.is_file():
+        path = None
+    return key, path, float(item["volume"])
+
 class SharedAudio:
     def __init__(self, app):
         self.app = app
@@ -3582,9 +3665,58 @@ class SharedAudio:
             return
         self.looping[slot] = info
 
+    def _start_music_track(self, slot: str, region: tuple, *, bus: str = "music", volume: float = 1.0) -> None:
+        """Loop one region's own soundtrack file (Pass 282.79)."""
+        key, path, track_volume = region
+        if path is None:
+            # No track for this area (file removed or not added yet): silence, never another song.
+            self.stop_loop(slot)
+            return
+        volume = max(0.0, min(1.0, float(volume) * float(track_volume)))
+        filename = os.fspath(path)
+        current = self.looping.get(slot)
+        if current and current.get("kind") == "music_track" and current.get("filename") == filename:
+            current["bus"] = bus
+            current["volume"] = volume
+            self._apply_loop_gain(slot)
+            return
+        # One music stream at a time, whichever slot started the previous one.
+        for other in tuple(self.looping.keys()):
+            info = self.looping.get(other) or {}
+            if info.get("kind") in ("music_cue", "music_track"):
+                self.stop_loop(other)
+        gain = self._bus_gain(bus, volume)
+        info = {"kind": "music_track", "cue": key, "filename": filename, "bus": bus, "volume": volume}
+        try:
+            if self.backend == "panda":
+                snd = self.app.loader.loadMusic(Filename.fromOsSpecific(filename))
+                if not snd:
+                    return
+                snd.setLoop(True)
+                snd.setVolume(gain)
+                snd.play()
+                info["sound"] = snd
+            elif self.backend == "pygame" and self.pygame is not None:
+                self.pygame.mixer.music.stop()
+                self.pygame.mixer.music.load(filename)
+                self.pygame.mixer.music.set_volume(gain)
+                self.pygame.mixer.music.play(loops=-1)
+            else:
+                return
+        except Exception as exc:
+            try: print(f"music_track_start_failed region={key} file={filename} err={exc.__class__.__name__}:{exc}")
+            except Exception: pass
+            return
+        self.looping[slot] = info
+
     def play_loop(self, slot: str, filename: str, bus='ambience', volume=1.0):
         if not self.enabled:
             return
+        if str(bus or '').lower() == 'music':
+            region = resolve_region_music_track(filename)
+            if region is not None:
+                self._start_music_track(slot, region, bus=bus, volume=volume)
+                return
         if str(bus or '').lower() == 'music' and self._music_cue(filename) is not None:
             self._start_music_cue(slot, filename, bus=bus, volume=volume)
             return
@@ -3616,7 +3748,7 @@ class SharedAudio:
         if not info:
             return
         try:
-            if info.get('kind') == 'music_cue' and self.backend == 'pygame' and self.pygame is not None:
+            if info.get('kind') in ('music_cue', 'music_track') and self.backend == 'pygame' and self.pygame is not None:
                 self.pygame.mixer.music.stop()
             elif self.backend == 'panda':
                 snd = info.get('sound')
@@ -3699,7 +3831,7 @@ class SharedAudio:
             return
         gain = self._bus_gain(info['bus'], info['volume'])
         try:
-            if info.get('kind') == 'music_cue' and self.backend == 'pygame' and self.pygame is not None:
+            if info.get('kind') in ('music_cue', 'music_track') and self.backend == 'pygame' and self.pygame is not None:
                 self.pygame.mixer.music.set_volume(gain)
             elif self.backend == 'panda':
                 snd = info.get('sound')
@@ -4813,23 +4945,23 @@ class CommandHubApp(ShowBase):
     def _world_soundscape_from_text(self, text: str):
         low = str(text or '').lower()
         if any(token in low for token in ('holospace', 'space', 'orbit')):
-            return ('space', 'space', '', 0.56, 0.0, 'Dyson reach reverse cue')
+            return ('space', 'space', '', 0.56, 0.0, 'HoloSpace reach')
         if 'urban' in low or 'sable' in low or 'war' in low or 'combat' in low:
-            return ('urban', 'urban', '', 0.64, 0.0, 'war-zone cue')
+            return ('urban', 'urban', '', 0.64, 0.0, 'urban region')
         if 'metropolis' in low or 'archivist' in low or 'city' in low or 'neon' in low:
-            return ('metropolis', 'metropolis', '', 0.58, 0.0, 'neon city cue')
+            return ('metropolis', 'metropolis', '', 0.58, 0.0, 'metropolis region')
         if 'ice' in low or 'mirror' in low or 'frost' in low:
-            return ('ice', 'ice', '', 0.48, 0.0, 'reversed crystal cue')
+            return ('ice', 'ice', '', 0.48, 0.0, 'ice region')
         if 'mushroom' in low or 'solace' in low or 'oddities' in low or 'spore' in low or 'water' in low or 'deep' in low:
-            return ('mushroom', 'mushroom', '', 0.46, 0.0, 'strange-world cue')
+            return ('mushroom', 'mushroom', '', 0.46, 0.0, 'mushroom region')
         if 'desert' in low or 'ember' in low or 'hangar' in low:
-            return ('desert', 'desert', '', 0.52, 0.0, 'frontier cue')
+            return ('desert', 'desert', '', 0.52, 0.0, 'desert region')
         if 'hill' in low or 'nyx' in low:
-            return ('hills', 'hills', '', 0.50, 0.0, 'open-hills cue')
+            return ('hills', 'hills', '', 0.50, 0.0, 'green hills region')
         if 'forest' in low or 'vanta' in low or 'growth' in low:
-            return ('forest', 'forest', '', 0.50, 0.0, 'forest cue')
+            return ('forest', 'forest', '', 0.50, 0.0, 'forests region')
         if 'holoforge' in low or 'forge' in low:
-            return ('holoforge', 'holoforge', '', 0.52, 0.0, 'reversed forge cue')
+            return ('holoforge', 'holoforge', '', 0.52, 0.0, 'holoforge')
         return None
 
     def _target_soundscape(self):
@@ -4851,7 +4983,7 @@ class CommandHubApp(ShowBase):
             name = ' '.join(str(spec.get(k, '')) for k in ('name', 'kind', 'profile'))
             mapped = self._world_soundscape_from_text(name)
             if mapped is None:
-                mapped = ('artifact', 'forest', '', 0.50, 0.0, 'artifact world exploration')
+                mapped = ('artifact', '', '', 0.0, 0.0, 'artifact world (no region track)')
             key, music, air, music_gain, air_gain, label = mapped
             return (f'artifact_{key}', music, air, min(0.72, music_gain + 0.16 * intensity), min(0.30, air_gain + 0.08 * ambience), label)
 
@@ -4876,8 +5008,9 @@ class CommandHubApp(ShowBase):
 
         r = math.sqrt(self.player_pos.x ** 2 + self.player_pos.y ** 2)
         if r < self.hub_radius + 1.0:
-            return ('hub', 'hub', '', 0.38 + 0.22 * intensity, 0.0, 'central hub cue')
-        return ('frontier', 'forest', '', 0.42 + 0.18 * intensity, 0.0, 'frontier cue')
+            return ('hub', 'hub', '', 0.38 + 0.22 * intensity, 0.0, 'matrixcore hub')
+        # Pass 282.79: the FLAT region (the hub ring and the open land around it) keeps Holoverse.mp3.
+        return ('hub', 'hub', '', 0.38 + 0.22 * intensity, 0.0, 'flat region')
 
     def update_soundscape(self, dt: float = 0.0, *, force: bool = False):
         if not self.audio:
@@ -4906,10 +5039,12 @@ class CommandHubApp(ShowBase):
         else:
             self.audio.stop_loop('hub_music')
         self.audio.stop_loop('hub_air')
-        cue = resolve_holoverse_music_cue(cue_name) if cue_name else None
-        direction = 'REVERSE' if cue and float(cue[1].get('rate', 1.0)) < 0.0 else 'FORWARD'
-        cue_note = str(cue[0] if cue else label or key).replace('_', ' ').upper()
-        self.world_shell_audio_status = f"{str(label or key).upper()} // HOLOVERSE.MP3 {cue_note} // {direction}"
+        region = resolve_region_music_track(cue_name) if cue_name else None
+        if region is not None:
+            track = region[1].name.upper() if region[1] is not None else "NO TRACK (SILENT)"
+            self.world_shell_audio_status = f"{str(label or key).upper()} // {region[0].upper()} // {track} // LOOP"
+        else:
+            self.world_shell_audio_status = f"{str(label or key).upper()} // NO MUSIC"
 
     def setup_vr(self):
         # Desktop first-person mode is authoritative unless VR is explicitly requested.
@@ -6540,12 +6675,15 @@ class CommandHubApp(ShowBase):
         return removed
 
     def _native_dimension_audio_profile(self, label: str) -> dict:
-        """Map each in-world activity to a cue inside the single Holoverse.mp3 master."""
+        """Map HoloVerse's own region activities to their region soundtrack (assets/audio/region_music.json).
+
+        Pass 282.79: any other dimension (HoloCore, the Indigo Giant, Vector Wars, ...) plays its own
+        soundtrack, so HoloVerse adds no music to it (empty cue)."""
         key = re.sub(r"[^a-z0-9]+", "_", str(label or "dimension").lower()).strip("_")
         table = {
             "forest_growth": {"cue": "forest", "volume": 0.54},
             "hills_of_life": {"cue": "hills", "volume": 0.54},
-            "oddities": {"cue": "mushroom", "volume": 0.52},
+            "oddities": {"cue": "hills", "volume": 0.52},           # Solace keeps Oddities in GREEN HILLS
             "ember_hangar": {"cue": "desert", "volume": 0.56},
             "frost_circuit": {"cue": "ice", "volume": 0.54},
             "urban_warzone": {"cue": "urban", "volume": 0.62},
@@ -6558,7 +6696,7 @@ class CommandHubApp(ShowBase):
         for token, profile in table.items():
             if token and token in key:
                 return dict(profile)
-        return {"cue": "forest", "volume": 0.52}
+        return {"cue": "", "volume": 0.0}
 
     def _start_native_mode_audio(self, label: str):
         audio = getattr(self, "audio", None)
@@ -6575,12 +6713,20 @@ class CommandHubApp(ShowBase):
                 audio.stop_loop("native_dimension_music")
                 audio.stop_loop("native_dimension_air")
             profile = self._native_dimension_audio_profile(label)
-            cue = str(profile.get("cue") or "forest")
+            cue = str(profile.get("cue") or "")
             volume = max(0.0, min(1.0, float(profile.get("volume", 0.55))))
             audio.play("artifact_link.wav", bus="sfx", volume=0.68)
-            audio.play_loop("native_dimension_music", cue, bus="music", volume=volume)
+            region = resolve_region_music_track(cue) if cue else None
+            if region is not None:
+                audio.play_loop("native_dimension_music", cue, bus="music", volume=volume)
+            else:
+                audio.stop_loop("native_dimension_music")
             audio.stop_loop("native_dimension_air")
-            self.native_mode_audio_profile = {"label": str(label or "MODE"), "cue": cue, "source": "assets/audio/Holoverse.mp3"}
+            if region is None:
+                source = "dimension_own_soundtrack"
+            else:
+                source = region[1].name if region[1] is not None else "no_track_silent"
+            self.native_mode_audio_profile = {"label": str(label or "MODE"), "cue": cue, "source": source}
         except Exception as exc:
             try:
                 print(f"native_mode_audio_start_error label={label} err={exc.__class__.__name__}:{exc}")

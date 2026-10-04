@@ -1,0 +1,23 @@
+{
+  "_readme": [
+    "HoloVerse region soundtracks. Each area plays its own track, looping the whole file.",
+    "To use your own music: overwrite the placeholder file with your MP3 (keep the same name),",
+    "or point \"file\" at a new file in assets/audio. MP3, OGG and WAV all work.",
+    "A missing file means that area is silent; it never falls back to another area's song.",
+    "volume: 0.0 - 1.0 (on top of the Master / Music sliders in Settings).",
+    "Same-window and own-window dimensions (HoloCore, the Indigo Giant, ...) play their own",
+    "soundtracks; HoloVerse's music is silent while one is open."
+  ],
+  "tracks": {
+    "hub":        {"file": "Holoverse.mp3",           "volume": 1.0, "area": "FLAT region: the MatrixCore hub and the flat land around it"},
+    "forest":     {"file": "regions/forests.mp3",     "volume": 1.0, "area": "Forests region / Forest Growth"},
+    "hills":      {"file": "regions/green_hills.mp3", "volume": 1.0, "area": "Green Hills region / Oddities"},
+    "mushroom":   {"file": "regions/mushroom.mp3",    "volume": 1.0, "area": "Mushroom region"},
+    "desert":     {"file": "regions/desert.mp3",      "volume": 1.0, "area": "Desert region / Ember Hangar"},
+    "ice":        {"file": "regions/ice.mp3",         "volume": 1.0, "area": "Ice region / Frost Circuit"},
+    "urban":      {"file": "regions/urban.mp3",       "volume": 1.0, "area": "Urban region / Urban Warzone"},
+    "metropolis": {"file": "regions/metropolis.mp3",  "volume": 1.0, "area": "Metropolis region / Robot Lab"},
+    "space":      {"file": "regions/holospace.mp3",   "volume": 1.0, "area": "HoloSpace (ship flight)"},
+    "holoforge":  {"file": "regions/holoforge.mp3",   "volume": 1.0, "area": "HoloForge workshop"}
+  }
+}
