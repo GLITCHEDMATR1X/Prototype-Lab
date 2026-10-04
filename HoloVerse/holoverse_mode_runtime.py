@@ -664,7 +664,11 @@ def holoverse_music_file() -> Path:
         p = _setting_path(raw)
         if p is not None and p.exists() and p.is_file():
             return p
-    return audio_library_root() / "Holoverse.mp3"
+    # Pass 282.80: the FLAT-region song moved in with the other region tracks.
+    for candidate in (audio_library_root() / "regions" / "holoverse.mp3", audio_library_root() / "Holoverse.mp3"):
+        if candidate.is_file():
+            return candidate
+    return audio_library_root() / "regions" / "holoverse.mp3"
 
 
 def shared_music_roots() -> list[Path]:

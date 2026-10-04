@@ -214,8 +214,46 @@ class HoloCoreDimensionAudio:
             return ("dim3", "hv_urban_conflict_theme.wav", "hv_hub_room_air.wav", 0.38, 0.10)
         return (f"dim{int(dimension_id or 1)}", "hv_world_exploration_theme.wav", "hv_hub_room_air.wav", 0.40, 0.10)
 
+    def _holocore_track(self) -> Path | None:
+        """HoloCore's own track from HoloVerse's music folder (assets/audio/regions/holocore.mp3)."""
+        roots = []
+        env_root = str(os.environ.get("HOLOVERSE_AUDIO_ROOT") or "").strip()
+        if env_root:
+            roots.append(Path(env_root))
+        roots += [self.root.parent.parent / "HoloVerse" / "assets" / "audio", self.root.parent / "HoloVerse" / "assets" / "audio"]
+        for root in roots:
+            candidate = root / "regions" / "holocore.mp3"
+            try:
+                if candidate.is_file():
+                    return candidate
+            except Exception:
+                pass
+        return None
+
+    def _play_holocore_track(self) -> bool:
+        # Pass 282.80: when HoloVerse hosts HoloCore, HoloVerse plays this track itself.
+        if str(os.environ.get("HOLOVERSE_HOSTED") or "") == "1" or self.pygame is None:
+            return False
+        if self.current_key == "holocore_track":
+            return True
+        track = self._holocore_track()
+        if track is None:
+            return False
+        try:
+            self.pygame.mixer.music.load(str(track))
+            self.pygame.mixer.music.set_volume(0.45)
+            self.pygame.mixer.music.play(loops=-1)
+            self.current_key = "holocore_track"
+            print(f"holocore_dimension_audio track={track.name}")
+            return True
+        except Exception as exc:
+            print(f"holocore_track_failed file={track.name} err={exc.__class__.__name__}:{exc}")
+            return False
+
     def play_dimension(self, dimension_id: int, dimension_name: str = "", force: bool = False) -> None:
         if not self.enabled:
+            return
+        if self._play_holocore_track():
             return
         key, music, air, music_volume, air_volume = self._profile(dimension_id, dimension_name)
         if not force and key == self.current_key:
@@ -245,6 +283,11 @@ class HoloCoreDimensionAudio:
             print(f"holocore_dimension_audio_play_failed err={exc.__class__.__name__}:{exc}")
 
     def stop(self) -> None:
+        if self.current_key == "holocore_track" and self.pygame is not None:
+            try:
+                self.pygame.mixer.music.stop()
+            except Exception:
+                pass
         for channel in (self.channel, self.air_channel):
             try:
                 if channel:

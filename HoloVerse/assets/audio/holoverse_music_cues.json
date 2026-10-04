@@ -1,6 +1,6 @@
 {
   "schema": "holoverse_single_master_music_v1",
-  "source": "Holoverse.mp3",
+  "source": "regions/holoverse.mp3",
   "duration_seconds": 286.488,
   "runtime_generation": false,
   "reverse_cache": false,
