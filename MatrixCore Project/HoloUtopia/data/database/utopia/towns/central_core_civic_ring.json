@@ -75,12 +75,6 @@
         "status": "linked"
       },
       {
-        "id": "portal_zonez",
-        "display_name": "Zonez",
-        "angle_degrees": 270,
-        "status": "linked"
-      },
-      {
         "id": "portal_holocore",
         "display_name": "HoloCore",
         "angle_degrees": 315,

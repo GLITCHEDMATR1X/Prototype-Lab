@@ -94,6 +94,20 @@ def _merge_archive_payloads(package_raw: dict, persistent_raw: dict) -> dict:
     }
 
 
+# Realities removed from the build.  A player's dimension_archive.json may still hold a link to
+# one; it is ignored instead of showing as a lost signal in Gleebs' archive or as a planet.
+RETIRED_DIMENSIONS = frozenset({"zonez"})
+
+
+def _record_is_retired(record) -> bool:
+    keys = {_slug(getattr(record, "title", "")), _slug(getattr(record, "dimension_id", ""))}
+    try:
+        keys.add(_slug(Path(getattr(record, "folder", "")).name))
+    except Exception:
+        pass
+    return any(key == retired or key.startswith(retired + "_") for key in keys for retired in RETIRED_DIMENSIONS)
+
+
 def _slug(value: str) -> str:
     out = []
     for ch in str(value or "dimension").lower():
@@ -1116,7 +1130,28 @@ class DimensionRegistry:
         self.state["last_dimension_id"] = record.dimension_id
         self._save_state()
 
+    # Pass 282.75: Gleebs' archive list only opens a reality once the player has entered its
+    # planet in HoloSpace.  The unlock lives in the player's dimension_archive.json in the
+    # per-user save folder (holoverse_userdata), so it survives updates and reinstalls.
+    def is_unlocked(self, record: DimensionRecord) -> bool:
+        info = self._state_for(record.dimension_id, create=False)
+        return bool(info.get("planet_unlocked", False)) if info else False
+
+    def unlock_from_planet(self, record: DimensionRecord) -> bool:
+        info = self._state_for(record.dimension_id, create=True)
+        info["seen"] = True
+        if bool(info.get("planet_unlocked", False)):
+            return False
+        info["planet_unlocked"] = True
+        info["planet_unlocked_at"] = int(time.time())
+        info["last_title"] = record.title
+        self._save_state()
+        print(f"dimension_archive_unlocked id={record.dimension_id} title={record.title!r} source=holospace_planet")
+        return True
+
     def _archive_status(self, record: DimensionRecord) -> str:
+        if not self.is_unlocked(record):
+            return "LOCKED // FIND ITS PLANET IN HOLOSPACE"
         info = self._state_for(record.dimension_id, create=False)
         visits = max(0, int(info.get("visits", 0))) if info else 0
         if visits:
@@ -1239,6 +1274,8 @@ class DimensionRegistry:
             all_records.append(record)
             occupied_ids.add(record.dimension_id)
             occupied_folders.add(folder_key)
+        # Pass 282.77: retired realities never come back, even from an old saved link.
+        all_records = [r for r in all_records if not _record_is_retired(r)]
         artifact_hidden = [r for r in all_records if self._record_has_physical_artifact(r)]
         self.hosted_records = [r for r in all_records if self._record_is_bot_hosted(r) and not self._record_has_physical_artifact(r)]
         records = [r for r in all_records if not self._record_has_physical_artifact(r) and not self._record_is_bot_hosted(r)]
@@ -1696,7 +1733,10 @@ class DimensionRegistry:
         )
 
         # Pass 282.67: status in player words; the technical reason still goes to the log.
-        if record.issue:
+        unlocked = self.is_unlocked(record)
+        if not unlocked:
+            self._label("detail_issue", "LOCKED // ENTER THIS REALITY'S PLANET IN HOLOSPACE TO UNLOCK IT", 0, -0.34, 0.021, (0.86, 0.62, 0.95, 1), parent=panel)
+        elif record.issue:
             print(f"dimension_archive_issue title={record.title} issue={record.issue}")
             self._label("detail_issue", "SIGNAL LOST // THIS REALITY'S FILES WERE MOVED OR ARE MISSING", 0, -0.34, 0.021, (1.0, 0.58, 0.30, 1), parent=panel)
         elif record.launchable and record.native_launchable:
@@ -1706,19 +1746,20 @@ class DimensionRegistry:
         else:
             self._label("detail_issue", "SIGNAL UNSTABLE // NOT ENTERABLE YET", 0, -0.34, 0.023, (0.80, 0.66, 0.32, 1), parent=panel)
 
+        enterable = bool(record.launchable and unlocked)
         enter = self._button(
             "detail_enter",
-            "RUN SIMULATION" if record.launchable else "SIMULATION UNAVAILABLE",
+            "RUN SIMULATION" if enterable else ("LOCKED" if not unlocked else "SIMULATION UNAVAILABLE"),
             0.63,
             -0.49,
             lambda r=record: self._choose_dimension(r),
-            record.launchable,
+            enterable,
             width=0.43,
             height=0.054,
             scale=0.031,
         )
         try:
-            enter["text_fg"] = (0.94, 1.0, 0.92, 1) if record.launchable else (0.44, 0.49, 0.55, 1)
+            enter["text_fg"] = (0.94, 1.0, 0.92, 1) if enterable else (0.44, 0.49, 0.55, 1)
         except Exception:
             pass
 
@@ -1858,6 +1899,12 @@ class DimensionRegistry:
         self._rebuild_archive_page()
 
     def _choose_dimension(self, record: DimensionRecord):
+        if not self.is_unlocked(record):
+            try:
+                self.host.center_hint["text"] = "LOCKED // ENTER ITS PLANET IN HOLOSPACE FIRST"
+            except Exception:
+                pass
+            return False
         if not record.launchable:
             if str(record.link_id or "").startswith("catalog:"):
                 return self.link_catalog_record(record)
@@ -1935,6 +1982,11 @@ class DimensionRegistry:
             enter = getattr(native, "enter", None)
             if callable(enter):
                 enter()
+            # Pass 282.75: the same post-entry fix-ups as launch_native_mode (cursor for
+            # mouse-driven realities, key forwarding for host-input realities).
+            after_enter = getattr(self.host, "_after_native_mode_enter", None)
+            if callable(after_enter):
+                after_enter(native, label)
             refresh = getattr(self.host, "refresh_ui", None)
             if callable(refresh):
                 refresh()

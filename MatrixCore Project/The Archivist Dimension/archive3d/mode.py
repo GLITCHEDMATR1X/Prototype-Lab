@@ -1404,6 +1404,12 @@ class ArchivistMode(DirectObject):
             self._close_reader(); return True
         if self.interface_root:
             self._close_interface(); return True
+        # Inside HoloVerse, ESC with nothing left to close pauses (HoloVerse freezes the archive,
+        # frees the cursor and shows its pause screen; ESC again resumes, TAB returns home).
+        pause = getattr(self.host, "toggle_dimension_pause", None) if self.embedded else None
+        if callable(pause):
+            pause()
+            return True
         self._set_notice("TAB RETURNS ONE DIMENSION" if self.embedded else "ESC CLOSES ACTIVE INTERFACES")
         return False
 

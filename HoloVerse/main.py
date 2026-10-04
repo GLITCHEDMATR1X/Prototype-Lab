@@ -3860,16 +3860,6 @@ ARTIFACT_DIMENSION_PRESENTATION = {
         },
         "style": "starfighter_reticle",
     },
-    "zonez": {
-        "display_name": "Zonez Dimension",
-        "short_name": "Zonez",
-        "palette": {
-            "primary": (0.94, 0.24, 1.00),
-            "secondary": (0.08, 0.38, 0.95),
-            "highlight": (0.98, 1.00, 0.34),
-        },
-        "style": "stacked_zones",
-    },
     "holocore": {
         "display_name": "HoloCore",
         "short_name": "HoloCore",
@@ -3962,6 +3952,8 @@ BOT_E_BESIDE_DISTANCE = 4.0        # Pass 282.62: E reaches a guide you stand be
 ARTIFACT_REACH = 14.0              # Pass 282.62: aim at an artifact from this far (the gateway arch is ~12.5 m away)
 ARTIFACT_AIM_RADIUS = 1.9          # ... when the crosshair passes this close to its column
 ARTIFACT_STAND_RADIUS = 3.0        # ... or stand on its pedestal and press E/click
+ARTIFACT_AIM_ABOVE_GLYPH = 3.5     # Pass 282.75: the aim column reaches this far above the glyph, so a
+                                   # level or slightly raised view counts (it stopped 1.6 m above, at eye height)
 
 # Pass 282.63: one UI palette for every screen (title, HUD, pause menu, guide
 # dialogue, Gleebs captions).  Dark glass panels, white text, cyan accents,
@@ -6404,6 +6396,22 @@ class CommandHubApp(ShowBase):
         adapter = folder / adapter_name
         return adapter if adapter.exists() and adapter.is_file() else None
 
+    def _add_native_import_root(self, folder: Path) -> None:
+        root = os.fspath(Path(folder).resolve())
+        if root in sys.path:
+            return
+        sys.path.append(root)
+        self._native_import_root = root
+
+    def _remove_native_import_root(self) -> None:
+        root = getattr(self, "_native_import_root", None)
+        self._native_import_root = None
+        if root:
+            try:
+                sys.path.remove(root)
+            except ValueError:
+                pass
+
     def _load_native_mode_object(self, mode: dict, entry: Path | None, label: str):
         adapter_path = self._mode_adapter_path(mode)
         if adapter_path is None:
@@ -6414,6 +6422,10 @@ class CommandHubApp(ShowBase):
             raise ImportError(f"could not load adapter spec: {adapter_path}")
         module = importlib.util.module_from_spec(spec)
         sys.modules[module_name] = module
+        # Adapters import their own packages (The Archivist: ``from archive3d.mode import ...``),
+        # so the project folder must be importable while the dimension is mounted.  Appended,
+        # never prepended, so a dimension module can never shadow one of HoloVerse's own.
+        self._add_native_import_root(Path(adapter_path).parent)
         try:
             spec.loader.exec_module(module)
         except Exception:
@@ -6472,7 +6484,7 @@ class CommandHubApp(ShowBase):
         native_name_tokens = (
             "native", "code_red_vector", "code red vector", "etch", "fractured",
             "holo_campaign", "holo campaign", "holo_conquest", "holo conquest",
-            "vector_wars", "vector wars", "zonez", "holocore", "holo_vessel",
+            "vector_wars", "vector wars", "holocore", "holo_vessel",
         )
         roots = (
             ("render", getattr(self, "render", None)),
@@ -6862,7 +6874,64 @@ class CommandHubApp(ShowBase):
         except Exception:
             return False
 
+    def _snapshot_native_listener_owners(self) -> set:
+        owners = set()
+        try:
+            msg = self._real_panda_messenger()
+            for event in msg.getEvents():
+                for entry in (msg.whoAccepts(event) or {}).values():
+                    fn = entry[0] if isinstance(entry, (list, tuple)) else entry
+                    owner = getattr(fn, "__self__", None)
+                    if owner is not None:
+                        owners.add(id(owner))
+        except Exception:
+            pass
+        return owners
+
+    def _destroy_orphaned_native_gui(self, label: str = "") -> int:
+        """Destroy DirectGui widgets a dimension left behind once their nodes were purged.
+
+        _purge_native_scene_residue removes a dimension's leftover 2-D nodes, but a DirectButton
+        removed that way keeps its click listeners on the messenger (one retired dimension left 17 per visit).
+        Only widgets created during the visit and no longer attached to the 2-D scene are touched.
+        """
+        baseline = getattr(self, "native_listener_baseline", None)
+        if not isinstance(baseline, set):
+            return 0
+        try:
+            from direct.gui.DirectGuiBase import DirectGuiBase
+            msg = self._real_panda_messenger()
+        except Exception:
+            return 0
+        roots = [r for r in (getattr(self, "render2d", None), getattr(self, "render", None)) if r is not None]
+        orphans = {}
+        for event in list(msg.getEvents()):
+            for entry in list((msg.whoAccepts(event) or {}).values()):
+                fn = entry[0] if isinstance(entry, (list, tuple)) else entry
+                owner = getattr(fn, "__self__", None)
+                if owner is None or id(owner) in baseline or not isinstance(owner, DirectGuiBase):
+                    continue
+                try:
+                    attached = (not owner.isEmpty()) and any(owner.getTop() == root for root in roots)
+                except Exception:
+                    attached = False
+                if not attached:
+                    orphans[id(owner)] = owner
+        for owner in orphans.values():
+            try:
+                owner.destroy()
+            except Exception:
+                pass
+            try:
+                msg.ignoreAll(owner)
+            except Exception:
+                pass
+        if orphans:
+            print(f"native_mode_gui_residue_destroyed label={label} count={len(orphans)}")
+        return len(orphans)
+
     def suspend_for_native_mode(self, label: str):
+        self.native_listener_baseline = self._snapshot_native_listener_owners()
         self.native_scene_baseline = self._snapshot_native_scene_state()
         self.native_task_baseline = self._snapshot_native_task_state()
         # Capture the host presentation BEFORE any handoff helper closes UI,
@@ -6978,6 +7047,247 @@ class CommandHubApp(ShowBase):
         print(f"native_host_dormancy_begin label={label} host_audio=stopped host_clock=frozen")
         print(f"native_mode_begin label={label}")
 
+    _NATIVE_BRIDGE_HELD = ("w", "a", "s", "d", "shift", "space", "control", "alt",
+                           "arrow_left", "arrow_right", "arrow_up", "arrow_down")
+    _NATIVE_BRIDGE_PRESS = ("mouse1", "mouse3", "e", "q", "r", "t", "v", "f", "g", "b", "n", "c",
+                            "i", "j", "k", "l", "u", "o", "p", "y", "z", "x", "h", "m", "enter",
+                            "wheel_up", "wheel_down", "[", "]",
+                            "f1", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12")
+    _NATIVE_BRIDGE_ACTION_NAMES = {"[": "bracket_left", "]": "bracket_right"}
+
+    @staticmethod
+    def _real_panda_messenger():
+        from direct.showbase import MessengerGlobal
+        current = MessengerGlobal.messenger
+        return getattr(current, "_real", current)
+
+    def _dimension_owns_key_input(self) -> bool:
+        """True when anything but HoloVerse itself listens for the movement / use keys."""
+        try:
+            panda_messenger = self._real_panda_messenger()
+        except Exception:
+            return True
+        for event in ("w", "a", "s", "d", "space", "e", "mouse1"):
+            try:
+                acceptors = panda_messenger.whoAccepts(event) or {}
+            except Exception:
+                return True
+            for entry in acceptors.values():
+                fn = entry[0] if isinstance(entry, (list, tuple)) else entry
+                if getattr(fn, "__self__", None) is not self:
+                    return True
+        return False
+
+    def _install_native_input_bridge(self, mode_obj, label: str = "") -> bool:
+        """Forward keys to dimensions built on the host-forwarded input contract.
+
+        Since Pass 282.16 HoloVerse unregisters its own controls when a dimension enters.
+        Dimensions that take their input from HoloVerse instead of registering keys
+        themselves (``on_host_action`` and/or ``host.keys``: HoloUtopia, HoloTactics, Vector Arena)
+        were left with no input at all.  The bridge is a separate
+        listener object, so HoloVerse's own handlers stay unregistered, and it is only
+        installed when the dimension has the hook and registered no keys of its own
+        (HoloCore, HoloShell and the Indigo Giant bind their keys directly).
+        """
+        self._remove_native_input_bridge()
+        handler = getattr(mode_obj, "on_host_action", None)
+        if not callable(handler) or self._dimension_owns_key_input():
+            return False
+        try:
+            from direct.showbase.DirectObject import DirectObject
+            bridge = DirectObject()
+            # Register on Panda's real messenger: HoloUtopia replaces the global messenger
+            # with a capturing proxy, which would swallow a plain DirectObject.accept().
+            real = self._real_panda_messenger()
+
+            def listen(event, method, extra):
+                real.accept(event, bridge, method, extra, 1)
+
+            for key in self._NATIVE_BRIDGE_HELD:
+                listen(key, self._native_bridge_held, [key, True])
+                listen(f"{key}-up", self._native_bridge_held, [key, False])
+            for key in self._NATIVE_BRIDGE_PRESS:
+                action = self._NATIVE_BRIDGE_ACTION_NAMES.get(key, key)
+                listen(key, self._native_bridge_action, [action])
+                if key in ("mouse1", "mouse3", "e", "q"):
+                    listen(f"{key}-up", self._native_bridge_action, [f"{action}_up"])
+            for number in range(10):
+                listen(str(number), self._native_bridge_action, [f"number_{number}"])
+            self._native_input_bridge = bridge
+            print(f"native_input_bridge label={label} installed=1")
+            return True
+        except Exception as exc:
+            self._native_input_bridge = None
+            print(f"native_input_bridge_failed label={label} err={exc.__class__.__name__}:{exc}")
+            return False
+
+    # ------------------------------------------------------------------
+    # Pass 282.77: HoloVerse pause for same-window dimensions
+    # ------------------------------------------------------------------
+    def _install_native_pause_listener(self, label: str = "") -> None:
+        """ESC pauses a dimension that has no ESC handling of its own.
+
+        HoloVerse unbinds its own ESC while a dimension runs, so in dimensions without a pause
+        menu (HoloCore, Vector Arena, HoloTactics, ...) ESC did nothing and the camera kept
+        following the mouse.  Dimensions with their own pause menu keep it; a dimension can also
+        call ``host.toggle_dimension_pause()`` itself (The Archivist does when ESC has nothing
+        left to close)."""
+        self._remove_native_pause_listener()
+        try:
+            msg = self._real_panda_messenger()
+            for entry in (msg.whoAccepts("escape") or {}).values():
+                fn = entry[0] if isinstance(entry, (list, tuple)) else entry
+                if getattr(fn, "__self__", None) is not self:
+                    return                      # the dimension owns ESC (its own pause menu)
+            from direct.showbase.DirectObject import DirectObject
+            listener = DirectObject()
+            msg.accept("escape", listener, self.toggle_dimension_pause, [], 1)
+            self._native_pause_listener = listener
+            print(f"native_pause_listener label={label} installed=1")
+        except Exception as exc:
+            print(f"native_pause_listener_failed label={label} err={exc.__class__.__name__}:{exc}")
+
+    def _remove_native_pause_listener(self) -> None:
+        listener = getattr(self, "_native_pause_listener", None)
+        self._native_pause_listener = None
+        if listener is not None:
+            try:
+                self._real_panda_messenger().ignoreAll(listener)
+            except Exception:
+                pass
+
+    def toggle_dimension_pause(self, *args) -> bool:
+        if getattr(self, "active_native_mode", None) is None:
+            return False
+        if bool(getattr(self, "native_paused", False)):
+            self._resume_native_dimension()
+        else:
+            self._pause_native_dimension()
+        return True
+
+    def _pause_native_dimension(self) -> None:
+        if bool(getattr(self, "native_paused", False)):
+            return
+        self.native_paused = True
+        # Freeze the dimension's own tasks (its camera / mouse look runs in them) - every task
+        # it started, never HoloVerse's frame task.
+        baseline = getattr(self, "native_task_baseline", None) or set()
+        held = []
+        try:
+            for task in list(self.taskMgr.getAllTasks()):
+                if self._native_task_identity(task) in baseline:
+                    continue
+                name = str(task.getName() or "")
+                if name == "update-task" or name.startswith(("native-", "screen-fade", "holoverse-native-pause")):
+                    continue
+                self.taskMgr.remove(task)
+                held.append(task)
+        except Exception as exc:
+            print(f"native_pause_task_hold_failed err={exc.__class__.__name__}:{exc}")
+        self._native_paused_tasks = held
+        try:
+            props = self.win.getProperties()
+            self._native_pause_pointer = (bool(props.getCursorHidden()), props.getMouseMode())
+            wp = WindowProperties()
+            wp.setCursorHidden(False)
+            wp.setMouseMode(WindowProperties.M_absolute)
+            self.win.requestProperties(wp)
+        except Exception:
+            self._native_pause_pointer = None
+        self._show_native_pause_overlay(True)
+        print(f"native_dimension_paused label={getattr(self, 'native_mode_label', '')} held_tasks={len(held)}")
+
+    def _resume_native_dimension(self, *, quiet: bool = False) -> None:
+        if not bool(getattr(self, "native_paused", False)):
+            return
+        self.native_paused = False
+        for task in list(getattr(self, "_native_paused_tasks", []) or []):
+            try:
+                self.taskMgr.add(task)
+            except Exception as exc:
+                print(f"native_resume_task_failed err={exc.__class__.__name__}:{exc}")
+        self._native_paused_tasks = []
+        pointer = getattr(self, "_native_pause_pointer", None)
+        self._native_pause_pointer = None
+        if pointer is not None and not quiet:
+            try:
+                wp = WindowProperties()
+                wp.setCursorHidden(pointer[0])
+                wp.setMouseMode(pointer[1])
+                self.win.requestProperties(wp)
+                # Re-centre so the dimension's mouse look does not read the whole pause as one swipe.
+                self.win.movePointer(0, self.win.getXSize() // 2, self.win.getYSize() // 2)
+            except Exception:
+                pass
+        self._show_native_pause_overlay(False)
+
+    def _show_native_pause_overlay(self, visible: bool) -> None:
+        root = getattr(self, "_native_pause_overlay", None)
+        if visible and (root is None or root.isEmpty()):
+            try:
+                root = self.aspect2d.attachNewNode("holoverse-native-pause-overlay")
+                root.setBin("fixed", 140)
+                DirectFrame(parent=root, frameColor=(0.0, 0.01, 0.02, 0.55), frameSize=(-3.0, 3.0, -1.5, 1.5))
+                kw = self._core_text_kw()
+                DirectLabel(parent=root, text="PAUSED", text_scale=0.085, text_fg=(0.80, 1.0, 1.0, 1.0),
+                            frameColor=(0, 0, 0, 0), pos=(0, 0, 0.06), **kw)
+                DirectLabel(parent=root, text="ESC  RESUME     //     TAB  RETURN TO MATRIXCORE", text_scale=0.032,
+                            text_fg=(0.55, 0.92, 1.0, 0.95), frameColor=(0, 0, 0, 0), pos=(0, 0, -0.06), **kw)
+                self._native_pause_overlay = root
+            except Exception as exc:
+                print(f"native_pause_overlay_failed err={exc.__class__.__name__}:{exc}")
+                return
+        if root is not None and not root.isEmpty():
+            if visible:
+                root.show()
+            else:
+                root.hide()
+
+    def _native_bridge_held(self, key: str, down: bool) -> None:
+        if bool(getattr(self, "native_paused", False)) and down:
+            return
+        try:
+            self.keys[key] = bool(down)
+        except Exception:
+            pass
+        self._native_bridge_action(key if down else f"{key}_up")
+
+    def _native_bridge_action(self, action: str) -> None:
+        if bool(getattr(self, "native_paused", False)):
+            return
+        mode_obj = getattr(self, "active_native_mode", None)
+        handler = getattr(mode_obj, "on_host_action", None)
+        if not callable(handler):
+            return
+        try:
+            handler(action)
+        except Exception as exc:
+            print(f"native_input_bridge_action_error action={action} err={exc.__class__.__name__}:{exc}")
+
+    def _remove_native_input_bridge(self) -> None:
+        bridge = getattr(self, "_native_input_bridge", None)
+        self._native_input_bridge = None
+        if bridge is None:
+            return
+        try:
+            self._real_panda_messenger().ignoreAll(bridge)
+        except Exception:
+            pass
+        try:
+            self.keys.clear()
+        except Exception:
+            pass
+
+    def _after_native_mode_enter(self, mode_obj, label: str = "") -> None:
+        """Host fix-ups once a same-window dimension has entered.
+
+        Every route that mounts a dimension calls this: launch_native_mode and the Dimension
+        Registry's own launch (Gleebs' archive, HoloSpace planets, guide bots).
+        """
+        self._apply_native_mode_cursor(mode_obj, label)
+        self._install_native_input_bridge(mode_obj, label)
+        self._install_native_pause_listener(label)
+
     def _apply_native_mode_cursor(self, mode_obj, label: str = "") -> None:
         """Let a dimension that is driven by mouse clicks (menus, click-to-move) keep a cursor.
 
@@ -6986,7 +7296,9 @@ class CommandHubApp(ShowBase):
         cursor over their title menu.  A mode object may set ``requires_mouse_capture = False``.
         The cursor state is restored from native_saved_camera when the dimension returns.
         """
-        mouse_driven = canonical_dimension_lookup_key(label) in MOUSE_DRIVEN_NATIVE_DIMENSIONS
+        label_key = canonical_dimension_lookup_key(label)
+        # Registry launches label as "DIMENSION // <TITLE>", so match the name inside the label.
+        mouse_driven = any(key in label_key for key in MOUSE_DRIVEN_NATIVE_DIMENSIONS)
         if getattr(mode_obj, "requires_mouse_capture", True) is not False and not mouse_driven:
             return
         try:
@@ -7152,6 +7464,21 @@ class CommandHubApp(ShowBase):
             self._unload_native_adapter_module()
         except Exception:
             pass
+        try:
+            self._remove_native_input_bridge()
+            self._remove_native_import_root()
+            self._remove_native_pause_listener()
+            if bool(getattr(self, "native_paused", False)):
+                # Held tasks belong to the dimension being torn down: drop them, do not resume.
+                self._native_paused_tasks = []
+                self._resume_native_dimension(quiet=True)
+        except Exception:
+            pass
+        try:
+            self._destroy_orphaned_native_gui(str(getattr(self, "native_mode_label", "") or ""))
+        except Exception:
+            pass
+        self.native_listener_baseline = None
         host_update_alive = self._ensure_host_update_task_alive()
         host_input_ready = False
         try:
@@ -7407,7 +7734,7 @@ class CommandHubApp(ShowBase):
             # silent and dormant until TAB returns to MatrixCore.
             self.native_mode_audio_profile = {"label": str(label or "MODE"), "source": "dimension_only_host_silent"}
             self.active_native_mode = mode_obj
-            self._apply_native_mode_cursor(mode_obj, label)
+            self._after_native_mode_enter(mode_obj, label)
             self._pending_native_manifest = {}
             self.native_mode_entry = Path(entry)
             self.native_mode_label = label
@@ -7480,6 +7807,18 @@ class CommandHubApp(ShowBase):
             return value if value else 0
         except Exception:
             return 0
+
+    def _host_window_geometry(self) -> tuple[int, int, int, int]:
+        """HoloVerse's window origin and client size right now (falls back to the launch rect)."""
+        x, y = int(LAUNCH_X), int(LAUNCH_Y)
+        w, h = self._embedded_window_size()
+        try:
+            props = self.win.getProperties() if self.win is not None and hasattr(self.win, "getProperties") else None
+            if props is not None and props.hasOrigin() and not bool(getattr(props, "getMinimized", lambda: False)()):
+                x, y = int(props.getXOrigin()), int(props.getYOrigin())
+        except Exception:
+            pass
+        return x, y, w, h
 
     def _embedded_window_size(self) -> tuple[int, int]:
         try:
@@ -7692,17 +8031,22 @@ class CommandHubApp(ShowBase):
             env["MATRIX_SFX_VOLUME"] = str(payload["sfx_volume"])
             env["MATRIX_MUSIC_VOLUME"] = str(payload["music_volume"])
             env["MATRIX_AMBIENCE_VOLUME"] = str(payload["ambience_volume"])
-            env["MATRIX_GAME_WIDTH"] = str(launch_payload["width"])
-            env["MATRIX_GAME_HEIGHT"] = str(launch_payload["height"])
-            env["MATRIX_GAME_X"] = str(LAUNCH_X)
-            env["MATRIX_GAME_Y"] = str(LAUNCH_Y)
+            # Pass 282.75: a game in its own window takes HoloVerse's actual window geometry.
+            # launch_payload["width"/"height"] is the saved launch setting (1920x1080 by default),
+            # so on a larger display (HoloVerse sized to the monitor) Operation StarFall opened as a
+            # quarter-size window in the top-left corner.
+            host_x, host_y, host_w, host_h = self._host_window_geometry()
+            env["MATRIX_GAME_WIDTH"] = str(host_w)
+            env["MATRIX_GAME_HEIGHT"] = str(host_h)
+            env["MATRIX_GAME_X"] = str(host_x)
+            env["MATRIX_GAME_Y"] = str(host_y)
             env["HOLOVERSE_VIRTUAL_WIDTH"] = "1920"
             env["HOLOVERSE_VIRTUAL_HEIGHT"] = "1080"
             env["HOLOVERSE_FPS_CAP"] = str(launch_payload.get("fps_cap", 60) if isinstance(launch_payload, dict) else 60)
             env["HOLOVERSE_VSYNC"] = "1" if launch_payload.get("vsync", True) else "0"
             env["HOLOVERSE_UI_SCALE"] = str(launch_payload.get("ui_scale", 1.0))
-            env["MATRIX_GAME_FULLSCREEN"] = "1" if launch_payload["fullscreen"] else "0"
-            env["MATRIX_GAME_BORDERLESS"] = "1" if launch_payload["borderless"] else "0"
+            env["MATRIX_GAME_FULLSCREEN"] = "1" if (LAUNCH_FULLSCREEN and not LAUNCH_BORDERLESS) else "0"
+            env["MATRIX_GAME_BORDERLESS"] = "1" if LAUNCH_BORDERLESS else "0"
             env["MATRIX_GAME_BORDERED_FULLSCREEN"] = "1" if launch_payload.get("bordered_fullscreen", True) else "0"
             env["MATRIX_GAME_MOUSE_SENSITIVITY"] = str(launch_payload["mouse_sensitivity"])
             env["MATRIX_GAME_INVERT_Y"] = "1" if launch_payload["invert_y"] else "0"
@@ -12025,6 +12369,55 @@ class CommandHubApp(ShowBase):
         if getattr(self, "active_native_mode", None) is not None:
             return
 
+    def request_dimension_return(self, reason: str = "dimension_exit", *args, **kwargs) -> bool:
+        """Return home when a dimension's own exit asks for it (called from a dimension's update()).
+
+        Deferred one frame so it never tears the dimension down inside its own update or key handler.
+        """
+        if getattr(self, "active_native_mode", None) is None:
+            return False
+        try:
+            self.taskMgr.doMethodLater(0.0, lambda task: (self.return_from_native_mode(reason=str(reason or "dimension_exit")), task.done)[1], "native-dimension-return-request")
+        except Exception:
+            self.return_from_native_mode(reason=str(reason or "dimension_exit"))
+        return True
+
+    return_to_hub = request_dimension_return
+
+    def push_nested_native_entry(self, target: Path, label: str = "", source: str = "") -> bool:
+        """Open another same-window dimension from inside the current one (The Archivist's books).
+
+        Without this hook The Archivist fell back to ``subprocess.run(...)``, which blocks HoloVerse's
+        main loop, freezing the window until the simulation closed.  The target opens in place of the
+        current dimension when its folder has a native adapter; TAB still returns home.  Anything else
+        is refused, so the caller shows its own "no native adapter" message instead of blocking.
+        """
+        try:
+            target = Path(target)
+            folder = target.parent if target.suffix.lower() == ".py" else target
+            entry = target if target.suffix.lower() == ".py" else folder / "main.py"
+        except Exception:
+            return False
+        mode = {"name": str(label or folder.name), "folder": folder,
+                "manifest": {"native_adapter": MODE_NATIVE_ADAPTER_NAME, "title": str(label or folder.name)}}
+        if self._mode_adapter_path(mode) is None or not entry.is_file():
+            print(f"native_nested_entry_refused label={label} source={source} reason=no_native_adapter")
+            return False
+        nested_label = str(label or folder.name)
+
+        def swap(task):
+            self.return_from_native_mode(reason="nested_entry")
+            if not self.launch_native_mode(mode, entry, nested_label, source=str(source or "nested")):
+                print(f"native_nested_entry_failed label={nested_label} source={source}")
+            return task.done
+
+        try:
+            self.taskMgr.doMethodLater(0.0, swap, "native-nested-entry")
+        except Exception:
+            return False
+        print(f"native_nested_entry label={nested_label} source={source}")
+        return True
+
     def handle_tab_action(self):
         """Universal player-facing return law: TAB always returns to MatrixCore home."""
         if getattr(self, "active_native_mode", None) is not None:
@@ -12155,6 +12548,7 @@ class CommandHubApp(ShowBase):
             enter = getattr(native_mode, "enter", None)
             if callable(enter):
                 enter()
+            self._after_native_mode_enter(native_mode, label)
             if getattr(self, "center_hint", None) is not None:
                 self.center_hint["text"] = "HOLOMAP // M OR ESC RETURNS"
             try:
@@ -13876,22 +14270,6 @@ class CommandHubApp(ShowBase):
             line([(-2.02, 0, 0.02), (-1.48, 0, 0.02)], highlight, 0.56, False, "artifact-vectorwars-reticle-left")
             line([(1.48, 0, 0.02), (2.02, 0, 0.02)], highlight, 0.56, False, "artifact-vectorwars-reticle-right")
 
-        elif style == "stacked_zones":
-            # Zonez: a playful layered portal stack with intentionally mixed colors.
-            zone_colors = [
-                (0.94, 0.24, 1.00, 0.86),
-                (0.10, 0.62, 1.00, 0.82),
-                (0.98, 1.00, 0.34, 0.82),
-                (0.20, 1.00, 0.58, 0.78),
-            ]
-            for j, z in enumerate((-1.10, -0.36, 0.40, 1.18)):
-                band = zone_colors[j % len(zone_colors)]
-                card(f"artifact-zonez-band-glow-{j}", (0, 0, z), (0, 90, j * 8.0), 2.42 - j * 0.12, 0.48, (band[0], band[1], band[2], 0.22))
-                box((0, 0, z), (2.34 - j * 0.14, 1.20 - j * 0.08, 0.24), band, 0.74)
-                ring(1.42 - j * 0.08, z + 0.03, 8, 22.5 + j * 11.0, (band[0], band[1], band[2], 0.90), 0.40, "artifact-zonez-octave-ring")
-            for x in (-1.22, 1.22):
-                line([(x, 0, -1.34), (x * 0.72, 0, 1.44)], highlight, 0.38, False, "artifact-zonez-stack-rail")
-
         elif style == "region_gate":
             # Pass 19 worldway artifacts share a portal frame but carry a
             # region-specific rune. This makes the ring readable at a glance
@@ -15355,8 +15733,7 @@ class CommandHubApp(ShowBase):
         The universal HoloVerse HUD remains a Core-level toggle outside native
         dimensions.  Inside native dimensions, H only targets the dimension's
         legacy/source HUD so presentation runs can keep old per-mode UI hidden
-        without turning off universal Core state.  Zonez intentionally ignores
-        this action because its UI is part of its gameplay loop.
+        without turning off universal Core state.
         """
         if self.is_holospace_active():
             self.toggle_help_overlay()
@@ -16845,7 +17222,9 @@ class CommandHubApp(ShowBase):
                     "Pitch / yaw:  Mouse\n"
                     "Roll:  A / D\n"
                     "Thrust:  Space / Ctrl, Left / Right\n"
-                    "Boost:  Shift\n"
+                    "Boost:  hold Shift\n"
+                    "Fire:  Left click (asteroid hits +5% shield)\n"
+                    "Cockpit colours:  C\n"
                     "Flight assist:  Z\n"
                     "Supercruise:  J (again to drop)\n"
                     "MatrixCore:  TAB\n"
@@ -17440,9 +17819,13 @@ class CommandHubApp(ShowBase):
                     max_distance=ARTIFACT_LOOK_ACTIVATION_RADIUS, cone_cos=_HV263_MIN_FACING_DOT
                 )
                 if looked is not None:
-                    distance = float(self.artifact_activation_distance(looked))
-                    local_range = max(4.2, min(_HV263_MAX_ARTIFACT_DISTANCE, float(looked.get("radius", 3.6)) + 0.8))
-                    if distance <= local_range:
+                    # Pass 282.75: the prompt shows wherever E/click activates (the same reach
+                    # activate_focused_artifact uses).  It used to need ~4.5 m, so players walked
+                    # right up to the pedestal and had to look down at the floor to aim.
+                    base = looked.get("pedestal_pos", looked.get("pos"))
+                    origin = self.head_world_pos()
+                    distance = math.hypot(float(base.x - origin.x), float(base.y - origin.y))
+                    if distance <= ARTIFACT_REACH:
                         focused_artifact = looked
                         self.nearest_artifact = looked
                         self.nearest_artifact_dist = distance
@@ -19057,7 +19440,7 @@ class CommandHubApp(ShowBase):
             dt = min(0.033, globalClock.getDt())
             try:
                 update = getattr(self.active_native_mode, "update", None)
-                if callable(update):
+                if callable(update) and not bool(getattr(self, "native_paused", False)):
                     update(dt)
             except Exception as exc:
                 print(f"native_mode_update_error label={self.native_mode_label} err={exc}")
@@ -19299,7 +19682,7 @@ def _hv263_find_looked_at_artifact(self, max_distance=7.0, cone_cos=0.92):
             horiz = math.hypot(hx, hy)
             if horiz > ARTIFACT_REACH:
                 continue
-            z0, z1 = float(base.z) - 0.2, float(glyph.z) + 1.6
+            z0, z1 = float(base.z) - 0.2, float(glyph.z) + ARTIFACT_AIM_ABOVE_GLYPH
             # Closest approach between the view ray and the column (a vertical segment).
             best_miss, best_t = 999.0, 0.0
             for k in range(13):

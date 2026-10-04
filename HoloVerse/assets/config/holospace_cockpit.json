@@ -1,0 +1,139 @@
+{
+  "_readme": [
+    "HoloSpace ship interior. Edit this file, then restart HoloVerse to see the changes.",
+    "Colours are [red, green, blue] from 0.0 to 1.0.",
+    "themes: the colour sets C cycles through in flight. hull = frame and struts, glass = tint of the",
+    "  outer canopy glass, trim = glowing window edge, hud = holographic display colour, hud_warn = warnings.",
+    "default_theme: the theme name used until the player picks one with C.",
+    "window: the clear main window. sides 6-16 (8 = octagon), half_width/half_height in canopy units,",
+    "  centre_z moves it up/down, frame_width/strut_width are the hull bar thicknesses.",
+    "glass_alpha: how strongly the outer glass is tinted (0 = fully clear, 0.4 = heavy tint).",
+    "struts: draw the hull struts from the window corners to the canopy edge (true/false).",
+    "Delete this file to restore the defaults."
+  ],
+  "default_theme": "CYAN",
+  "glass_alpha": 0.1,
+  "struts": true,
+  "window": {
+    "sides": 8,
+    "half_width": 0.86,
+    "half_height": 0.47,
+    "centre_z": 0.06,
+    "frame_width": 0.02,
+    "strut_width": 0.022
+  },
+  "themes": [
+    {
+      "name": "CYAN",
+      "hull": [
+        0.1,
+        0.13,
+        0.17
+      ],
+      "glass": [
+        0.3,
+        0.75,
+        0.95
+      ],
+      "trim": [
+        0.4,
+        0.95,
+        1.0
+      ],
+      "hud": [
+        0.4,
+        0.95,
+        1.0
+      ],
+      "hud_warn": [
+        1.0,
+        0.45,
+        0.32
+      ]
+    },
+    {
+      "name": "VIOLET",
+      "hull": [
+        0.13,
+        0.09,
+        0.19
+      ],
+      "glass": [
+        0.62,
+        0.38,
+        0.95
+      ],
+      "trim": [
+        0.86,
+        0.48,
+        1.0
+      ],
+      "hud": [
+        0.8,
+        0.62,
+        1.0
+      ],
+      "hud_warn": [
+        1.0,
+        0.45,
+        0.4
+      ]
+    },
+    {
+      "name": "AMBER",
+      "hull": [
+        0.17,
+        0.12,
+        0.08
+      ],
+      "glass": [
+        0.95,
+        0.62,
+        0.28
+      ],
+      "trim": [
+        1.0,
+        0.72,
+        0.28
+      ],
+      "hud": [
+        1.0,
+        0.78,
+        0.4
+      ],
+      "hud_warn": [
+        1.0,
+        0.36,
+        0.3
+      ]
+    },
+    {
+      "name": "EMERALD",
+      "hull": [
+        0.07,
+        0.15,
+        0.12
+      ],
+      "glass": [
+        0.3,
+        0.9,
+        0.62
+      ],
+      "trim": [
+        0.4,
+        1.0,
+        0.7
+      ],
+      "hud": [
+        0.5,
+        1.0,
+        0.78
+      ],
+      "hud_warn": [
+        1.0,
+        0.48,
+        0.32
+      ]
+    }
+  ]
+}

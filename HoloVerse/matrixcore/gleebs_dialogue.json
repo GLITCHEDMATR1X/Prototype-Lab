@@ -31,10 +31,6 @@
     "Vector Wars": {
       "advice": "Vector Wars is now an active dogfight artifact. LMB fires guns, RMB launches missiles, T cycles targets, R cycles weapons, V cycles ships, and TAB cycles mode.",
       "return": "Vector Wars returned ship-combat data from the archive lane."
-    },
-    "Zonez": {
-      "advice": "Zonez is layered space logic. Its game UI stays visible because it is part of the mode. Compare the zones instead of rushing one lane.",
-      "return": "Zonez returned environmental data. The zones are arguing again. Good sign."
     }
   },
   "bottom_quotes": {

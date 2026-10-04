@@ -51,14 +51,6 @@
         "wrapper": "data/HoloVerse/Dimensions/Etch-Line/holoverse_entry.py"
       },
       {
-        "engine": "panda3d_native_adapter",
-        "launch_type": "native_panda",
-        "migration_action": "same-window Zonez adapter owns live artifact UI; standalone DirectGUI source remains fallback-only",
-        "native_adapter": "data/HoloVerse/Dimensions/Zonez/holoverse_native_adapter.py",
-        "path": "data/HoloVerse/Dimensions/Zonez/main.py",
-        "wrapper": "data/HoloVerse/Dimensions/Zonez/holoverse_entry.py"
-      },
-      {
         "engine": "panda3d_directgui",
         "migration_action": "honor HOLOVERSE_UI_AUTHORITY=parent before drawing local persistent HUD",
         "path": "data/HoloVerse/Dimensions/Holo Campaign/main.py",
@@ -153,8 +145,7 @@
     "Root HoloVerse main.py remains dominant until shared UI modules are extracted safely."
   ],
   "pass72_dimension_cleanup": {
-    "vector_wars": "native adapter now owns live dogfight controls for RMB missile, T target, R weapon, V ship, and weather hazards.",
-    "zonez": "Zonez remains UI-visible and uses connected per-zone folders/state files instead of a disconnected portal router."
+    "vector_wars": "native adapter now owns live dogfight controls for RMB missile, T target, R weapon, V ship, and weather hazards."
   },
   "pass75_dimension_presentation_contract": {
     "native_dimension_ui_defaults": {
@@ -163,15 +154,13 @@
       "fractured_dimension": "hidden_legacy_ui_with_h_toggle_same_window_root_adapter",
       "holo_campaign": "hidden_legacy_ui_with_h_toggle",
       "holo_conquest": "hidden_legacy_ui_with_h_toggle",
-      "vector_wars": "hidden_legacy_ui_with_h_toggle",
-      "zonez": "game_ui_visible_excluded_from_hiding"
+      "vector_wars": "hidden_legacy_ui_with_h_toggle"
     },
     "purpose": "Normalize presentation-facing dimension UI/help text without removing legacy/source UI.",
     "rules": [
       "H toggles universal/Core HUD only while no native dimension is active.",
       "Inside native artifact dimensions, H toggles only the dimension legacy/source UI.",
       "Legacy/source UI defaults hidden for Code Red Vector, Etch-Line, Fractured Dimension, Holo Campaign, Holo Conquest, and Vector Wars.",
-      "Zonez is excluded because its visible UI is part of its gameplay loop.",
       "Every native artifact status line should say ESC / 0 RETURN TO HOLOVERSE.",
       "Visible native artifact help text should not imply standalone quit, fullscreen, or pause-menu ownership."
     ],
