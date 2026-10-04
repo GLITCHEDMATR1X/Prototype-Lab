@@ -3860,16 +3860,6 @@ ARTIFACT_DIMENSION_PRESENTATION = {
         },
         "style": "starfighter_reticle",
     },
-    "zonez": {
-        "display_name": "Zonez Dimension",
-        "short_name": "Zonez",
-        "palette": {
-            "primary": (0.94, 0.24, 1.00),
-            "secondary": (0.08, 0.38, 0.95),
-            "highlight": (0.98, 1.00, 0.34),
-        },
-        "style": "stacked_zones",
-    },
     "holocore": {
         "display_name": "HoloCore",
         "short_name": "HoloCore",
@@ -6494,7 +6484,7 @@ class CommandHubApp(ShowBase):
         native_name_tokens = (
             "native", "code_red_vector", "code red vector", "etch", "fractured",
             "holo_campaign", "holo campaign", "holo_conquest", "holo conquest",
-            "vector_wars", "vector wars", "zonez", "holocore", "holo_vessel",
+            "vector_wars", "vector wars", "holocore", "holo_vessel",
         )
         roots = (
             ("render", getattr(self, "render", None)),
@@ -6902,7 +6892,7 @@ class CommandHubApp(ShowBase):
         """Destroy DirectGui widgets a dimension left behind once their nodes were purged.
 
         _purge_native_scene_residue removes a dimension's leftover 2-D nodes, but a DirectButton
-        removed that way keeps its click listeners on the messenger (Zonez left 17 per visit).
+        removed that way keeps its click listeners on the messenger (one retired dimension left 17 per visit).
         Only widgets created during the visit and no longer attached to the 2-D scene are touched.
         """
         baseline = getattr(self, "native_listener_baseline", None)
@@ -7093,8 +7083,8 @@ class CommandHubApp(ShowBase):
 
         Since Pass 282.16 HoloVerse unregisters its own controls when a dimension enters.
         Dimensions that take their input from HoloVerse instead of registering keys
-        themselves (HoloUtopia: ``on_host_action``; Zonez: ``host.keys`` plus
-        ``on_host_action``) were left with no input at all.  The bridge is a separate
+        themselves (``on_host_action`` and/or ``host.keys``: HoloUtopia, HoloTactics, Vector Arena)
+        were left with no input at all.  The bridge is a separate
         listener object, so HoloVerse's own handlers stay unregistered, and it is only
         installed when the dimension has the hook and registered no keys of its own
         (HoloCore, HoloShell and the Indigo Giant bind their keys directly).
@@ -7131,7 +7121,131 @@ class CommandHubApp(ShowBase):
             print(f"native_input_bridge_failed label={label} err={exc.__class__.__name__}:{exc}")
             return False
 
+    # ------------------------------------------------------------------
+    # Pass 282.77: HoloVerse pause for same-window dimensions
+    # ------------------------------------------------------------------
+    def _install_native_pause_listener(self, label: str = "") -> None:
+        """ESC pauses a dimension that has no ESC handling of its own.
+
+        HoloVerse unbinds its own ESC while a dimension runs, so in dimensions without a pause
+        menu (HoloCore, Vector Arena, HoloTactics, ...) ESC did nothing and the camera kept
+        following the mouse.  Dimensions with their own pause menu keep it; a dimension can also
+        call ``host.toggle_dimension_pause()`` itself (The Archivist does when ESC has nothing
+        left to close)."""
+        self._remove_native_pause_listener()
+        try:
+            msg = self._real_panda_messenger()
+            for entry in (msg.whoAccepts("escape") or {}).values():
+                fn = entry[0] if isinstance(entry, (list, tuple)) else entry
+                if getattr(fn, "__self__", None) is not self:
+                    return                      # the dimension owns ESC (its own pause menu)
+            from direct.showbase.DirectObject import DirectObject
+            listener = DirectObject()
+            msg.accept("escape", listener, self.toggle_dimension_pause, [], 1)
+            self._native_pause_listener = listener
+            print(f"native_pause_listener label={label} installed=1")
+        except Exception as exc:
+            print(f"native_pause_listener_failed label={label} err={exc.__class__.__name__}:{exc}")
+
+    def _remove_native_pause_listener(self) -> None:
+        listener = getattr(self, "_native_pause_listener", None)
+        self._native_pause_listener = None
+        if listener is not None:
+            try:
+                self._real_panda_messenger().ignoreAll(listener)
+            except Exception:
+                pass
+
+    def toggle_dimension_pause(self, *args) -> bool:
+        if getattr(self, "active_native_mode", None) is None:
+            return False
+        if bool(getattr(self, "native_paused", False)):
+            self._resume_native_dimension()
+        else:
+            self._pause_native_dimension()
+        return True
+
+    def _pause_native_dimension(self) -> None:
+        if bool(getattr(self, "native_paused", False)):
+            return
+        self.native_paused = True
+        # Freeze the dimension's own tasks (its camera / mouse look runs in them) - every task
+        # it started, never HoloVerse's frame task.
+        baseline = getattr(self, "native_task_baseline", None) or set()
+        held = []
+        try:
+            for task in list(self.taskMgr.getAllTasks()):
+                if self._native_task_identity(task) in baseline:
+                    continue
+                name = str(task.getName() or "")
+                if name == "update-task" or name.startswith(("native-", "screen-fade", "holoverse-native-pause")):
+                    continue
+                self.taskMgr.remove(task)
+                held.append(task)
+        except Exception as exc:
+            print(f"native_pause_task_hold_failed err={exc.__class__.__name__}:{exc}")
+        self._native_paused_tasks = held
+        try:
+            props = self.win.getProperties()
+            self._native_pause_pointer = (bool(props.getCursorHidden()), props.getMouseMode())
+            wp = WindowProperties()
+            wp.setCursorHidden(False)
+            wp.setMouseMode(WindowProperties.M_absolute)
+            self.win.requestProperties(wp)
+        except Exception:
+            self._native_pause_pointer = None
+        self._show_native_pause_overlay(True)
+        print(f"native_dimension_paused label={getattr(self, 'native_mode_label', '')} held_tasks={len(held)}")
+
+    def _resume_native_dimension(self, *, quiet: bool = False) -> None:
+        if not bool(getattr(self, "native_paused", False)):
+            return
+        self.native_paused = False
+        for task in list(getattr(self, "_native_paused_tasks", []) or []):
+            try:
+                self.taskMgr.add(task)
+            except Exception as exc:
+                print(f"native_resume_task_failed err={exc.__class__.__name__}:{exc}")
+        self._native_paused_tasks = []
+        pointer = getattr(self, "_native_pause_pointer", None)
+        self._native_pause_pointer = None
+        if pointer is not None and not quiet:
+            try:
+                wp = WindowProperties()
+                wp.setCursorHidden(pointer[0])
+                wp.setMouseMode(pointer[1])
+                self.win.requestProperties(wp)
+                # Re-centre so the dimension's mouse look does not read the whole pause as one swipe.
+                self.win.movePointer(0, self.win.getXSize() // 2, self.win.getYSize() // 2)
+            except Exception:
+                pass
+        self._show_native_pause_overlay(False)
+
+    def _show_native_pause_overlay(self, visible: bool) -> None:
+        root = getattr(self, "_native_pause_overlay", None)
+        if visible and (root is None or root.isEmpty()):
+            try:
+                root = self.aspect2d.attachNewNode("holoverse-native-pause-overlay")
+                root.setBin("fixed", 140)
+                DirectFrame(parent=root, frameColor=(0.0, 0.01, 0.02, 0.55), frameSize=(-3.0, 3.0, -1.5, 1.5))
+                kw = self._core_text_kw()
+                DirectLabel(parent=root, text="PAUSED", text_scale=0.085, text_fg=(0.80, 1.0, 1.0, 1.0),
+                            frameColor=(0, 0, 0, 0), pos=(0, 0, 0.06), **kw)
+                DirectLabel(parent=root, text="ESC  RESUME     //     TAB  RETURN TO MATRIXCORE", text_scale=0.032,
+                            text_fg=(0.55, 0.92, 1.0, 0.95), frameColor=(0, 0, 0, 0), pos=(0, 0, -0.06), **kw)
+                self._native_pause_overlay = root
+            except Exception as exc:
+                print(f"native_pause_overlay_failed err={exc.__class__.__name__}:{exc}")
+                return
+        if root is not None and not root.isEmpty():
+            if visible:
+                root.show()
+            else:
+                root.hide()
+
     def _native_bridge_held(self, key: str, down: bool) -> None:
+        if bool(getattr(self, "native_paused", False)) and down:
+            return
         try:
             self.keys[key] = bool(down)
         except Exception:
@@ -7139,6 +7253,8 @@ class CommandHubApp(ShowBase):
         self._native_bridge_action(key if down else f"{key}_up")
 
     def _native_bridge_action(self, action: str) -> None:
+        if bool(getattr(self, "native_paused", False)):
+            return
         mode_obj = getattr(self, "active_native_mode", None)
         handler = getattr(mode_obj, "on_host_action", None)
         if not callable(handler):
@@ -7170,6 +7286,7 @@ class CommandHubApp(ShowBase):
         """
         self._apply_native_mode_cursor(mode_obj, label)
         self._install_native_input_bridge(mode_obj, label)
+        self._install_native_pause_listener(label)
 
     def _apply_native_mode_cursor(self, mode_obj, label: str = "") -> None:
         """Let a dimension that is driven by mouse clicks (menus, click-to-move) keep a cursor.
@@ -7350,6 +7467,11 @@ class CommandHubApp(ShowBase):
         try:
             self._remove_native_input_bridge()
             self._remove_native_import_root()
+            self._remove_native_pause_listener()
+            if bool(getattr(self, "native_paused", False)):
+                # Held tasks belong to the dimension being torn down: drop them, do not resume.
+                self._native_paused_tasks = []
+                self._resume_native_dimension(quiet=True)
         except Exception:
             pass
         try:
@@ -12248,7 +12370,7 @@ class CommandHubApp(ShowBase):
             return
 
     def request_dimension_return(self, reason: str = "dimension_exit", *args, **kwargs) -> bool:
-        """Return home when a dimension's own exit asks for it (Zonez calls this from its update()).
+        """Return home when a dimension's own exit asks for it (called from a dimension's update()).
 
         Deferred one frame so it never tears the dimension down inside its own update or key handler.
         """
@@ -14148,22 +14270,6 @@ class CommandHubApp(ShowBase):
             line([(-2.02, 0, 0.02), (-1.48, 0, 0.02)], highlight, 0.56, False, "artifact-vectorwars-reticle-left")
             line([(1.48, 0, 0.02), (2.02, 0, 0.02)], highlight, 0.56, False, "artifact-vectorwars-reticle-right")
 
-        elif style == "stacked_zones":
-            # Zonez: a playful layered portal stack with intentionally mixed colors.
-            zone_colors = [
-                (0.94, 0.24, 1.00, 0.86),
-                (0.10, 0.62, 1.00, 0.82),
-                (0.98, 1.00, 0.34, 0.82),
-                (0.20, 1.00, 0.58, 0.78),
-            ]
-            for j, z in enumerate((-1.10, -0.36, 0.40, 1.18)):
-                band = zone_colors[j % len(zone_colors)]
-                card(f"artifact-zonez-band-glow-{j}", (0, 0, z), (0, 90, j * 8.0), 2.42 - j * 0.12, 0.48, (band[0], band[1], band[2], 0.22))
-                box((0, 0, z), (2.34 - j * 0.14, 1.20 - j * 0.08, 0.24), band, 0.74)
-                ring(1.42 - j * 0.08, z + 0.03, 8, 22.5 + j * 11.0, (band[0], band[1], band[2], 0.90), 0.40, "artifact-zonez-octave-ring")
-            for x in (-1.22, 1.22):
-                line([(x, 0, -1.34), (x * 0.72, 0, 1.44)], highlight, 0.38, False, "artifact-zonez-stack-rail")
-
         elif style == "region_gate":
             # Pass 19 worldway artifacts share a portal frame but carry a
             # region-specific rune. This makes the ring readable at a glance
@@ -15627,8 +15733,7 @@ class CommandHubApp(ShowBase):
         The universal HoloVerse HUD remains a Core-level toggle outside native
         dimensions.  Inside native dimensions, H only targets the dimension's
         legacy/source HUD so presentation runs can keep old per-mode UI hidden
-        without turning off universal Core state.  Zonez intentionally ignores
-        this action because its UI is part of its gameplay loop.
+        without turning off universal Core state.
         """
         if self.is_holospace_active():
             self.toggle_help_overlay()
@@ -19335,7 +19440,7 @@ class CommandHubApp(ShowBase):
             dt = min(0.033, globalClock.getDt())
             try:
                 update = getattr(self.active_native_mode, "update", None)
-                if callable(update):
+                if callable(update) and not bool(getattr(self, "native_paused", False)):
                     update(dt)
             except Exception as exc:
                 print(f"native_mode_update_error label={self.native_mode_label} err={exc}")

@@ -94,6 +94,20 @@ def _merge_archive_payloads(package_raw: dict, persistent_raw: dict) -> dict:
     }
 
 
+# Realities removed from the build.  A player's dimension_archive.json may still hold a link to
+# one; it is ignored instead of showing as a lost signal in Gleebs' archive or as a planet.
+RETIRED_DIMENSIONS = frozenset({"zonez"})
+
+
+def _record_is_retired(record) -> bool:
+    keys = {_slug(getattr(record, "title", "")), _slug(getattr(record, "dimension_id", ""))}
+    try:
+        keys.add(_slug(Path(getattr(record, "folder", "")).name))
+    except Exception:
+        pass
+    return any(key == retired or key.startswith(retired + "_") for key in keys for retired in RETIRED_DIMENSIONS)
+
+
 def _slug(value: str) -> str:
     out = []
     for ch in str(value or "dimension").lower():
@@ -1260,6 +1274,8 @@ class DimensionRegistry:
             all_records.append(record)
             occupied_ids.add(record.dimension_id)
             occupied_folders.add(folder_key)
+        # Pass 282.77: retired realities never come back, even from an old saved link.
+        all_records = [r for r in all_records if not _record_is_retired(r)]
         artifact_hidden = [r for r in all_records if self._record_has_physical_artifact(r)]
         self.hosted_records = [r for r in all_records if self._record_is_bot_hosted(r) and not self._record_has_physical_artifact(r)]
         records = [r for r in all_records if not self._record_has_physical_artifact(r) and not self._record_is_bot_hosted(r)]

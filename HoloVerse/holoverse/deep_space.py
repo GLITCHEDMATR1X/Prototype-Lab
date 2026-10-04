@@ -398,7 +398,7 @@ class DeepSpaceFlight:
                 font = app.load_core_ui_font()
             except Exception:
                 font = None
-            self.holo = HoloHUD(app.camera, _Mesh, font, ls)
+            self.holo = HoloHUD(app.camera, _Mesh, font, ls, lens=app.camLens)
             theme = self.COCKPIT_THEMES[self.theme_index]
             self.holo.set_theme(theme["hud"], theme["hud_warn"])
         except Exception as exc:
@@ -1875,8 +1875,7 @@ class DeepSpaceFlight:
             if frac >= 0.5:
                 threat = f"DEFENCE PERIMETER  //  {name.upper()}  {int(min(1.0, frac) * 100)}%"
                 threat_warn = frac >= 0.7
-        if not threat:
-            threat = f"DYSON PRIME  {self.dyson_distance_au():,.1f} AU   //   C  COCKPIT COLOURS"
+        systems = f"DYSON PRIME  {self.dyson_distance_au():,.1f} AU   //   C  THEME"
         msg = self.message.upper() if msg_alpha > 0.0 else ""
         warn_words = ("HULL", "SHIELDS DOWN", "INTERDICTED", "HOSTILE", "SHIP LOST", "COLLISION")
         self.holo.update(dt, {
@@ -1884,7 +1883,7 @@ class DeepSpaceFlight:
             "speed_text": speed_text, "throttle": self.throttle,
             "mode_text": "   ".join(mode_parts), "mode_warn": not self.flight_assist,
             "message": msg, "message_alpha": msg_alpha, "message_warn": any(w in msg for w in warn_words),
-            "threat": threat, "threat_warn": threat_warn,
+            "threat": threat, "threat_warn": threat_warn, "systems_text": systems,
         })
 
     # ------------------------------------------------------------------

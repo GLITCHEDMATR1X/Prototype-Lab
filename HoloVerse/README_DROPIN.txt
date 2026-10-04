@@ -1,32 +1,32 @@
-HoloVerse drop-in (Pass 282.76)
+HoloVerse drop-in (Pass 282.77)
 
 Copy everything in this zip into your HoloVerse folder (same paths; overwrite when asked):
   main.py
   holoverse_child_bootstrap.py
   holoverse/deep_space.py
-  holoverse/deep_space_combat.py          (new)
-  holoverse/deep_space_holohud.py         (new)
-  holoverse/holospace_cockpit_config.py   (new)
+  holoverse/deep_space_combat.py
+  holoverse/deep_space_holohud.py
+  holoverse/holospace_cockpit_config.py
   holoverse/dimension_planets.py
   holoverse/fungal_visuals.py
   holoverse/dimensions/registry.py
-  assets/config/holospace_cockpit.json    (new - the editable ship interior)
-No dimension project needs an edit.
+  assets/config/holospace_cockpit.json   (keep your own copy if you already edited it)
+  ui/ui_manifest.json
+  matrixcore/gleebs_dialogue.json
 
-HoloSpace - this pass:
-- Defence wings: every dimension planet and Dyson Prime has a defence perimeter. Fly far enough toward one
-  (planets: 400 km of travel toward it, Dyson Prime: closer than 30 AU) and you get a warning, then you are
-  pulled out of supercruise and a wing launches (3 interceptors, 5 at Dyson Prime). Red brackets mark them.
-  Turn back far enough and they break off; each takes 3 laser hits.
-- Shield and hull: hits drain the shield first, then the hull. Every hit on an asteroid recharges 5% shield
-  (bigger rocks take several hits). Hard collisions damage you too.
-- Lose the hull and the ship is destroyed: you respawn at the MatrixCore hub; re-entering HoloSpace gives a fresh ship.
-- Holographic HUD: shield/hull/boost, speed/throttle/mode and the message/threat strip are holo panels inside
-  the cockpit, in the cockpit theme's colours. The flat screen keeps only the reticle.
-- Editable interior: assets/config/holospace_cockpit.json sets the colour themes (hull, glass, trim, HUD) and the
-  window design (number of sides, size, frame/strut thickness, glass tint, struts on/off). Restart to apply.
-  The theme you pick with C in flight is remembered in your save folder.
+This pass:
+- Zonez removed: no artifact style, no Gleebs lines, no UI manifest entries; and if an old save still links
+  to it, Gleebs' archive and HoloSpace simply ignore it (no "signal lost" entry, no planet).
+  Delete the "MatrixCore Project/Zonez" folder too (the Prototype-Lab branch already does).
+- Pause inside dimensions: ESC now really pauses dimensions that had no pause of their own (HoloCore, Vector
+  Arena, HoloTactics, HoloUtopia, Utopia Conflict, and The Archivist once nothing is open): the dimension
+  freezes, the camera stops, the cursor is free; ESC resumes, TAB returns to MatrixCore. Dimensions with their
+  own pause menu (Mirror's Limbo, HoloShell, Glyphbound, Anatomic, Utopia Lens Tour, Indigo Giant) keep it.
+  The Archivist part needs its own small change: "MatrixCore Project/The Archivist Dimension/archive3d/mode.py"
+  (on the Prototype-Lab branch).
+- HoloSpace cockpit HUD: four compact holo panels in the canopy corners, outside the window - SHIP (shield,
+  hull) bottom-left, FLIGHT (speed, throttle, mode) bottom-right, SYSTEMS (boost, Dyson Prime) top-left,
+  COMMS (messages, threats) top-right. They follow the screen's field of view and aspect ratio.
 
-Earlier passes (still included): octagonal canopy, left-click lasers, held Shift boost, farther fading asteroid
-fields, no survey rings, all 17 planets, Mushroom sky ring fix; dimension controls/display fixes; planet unlocks
-for Gleebs' archive; hub artifact activation.
+Still included from earlier passes: defence wings, shields/hull and hub respawn, editable cockpit, lasers,
+boost, asteroid fields, planets and archive unlocks, dimension controls/display fixes, hub artifacts.

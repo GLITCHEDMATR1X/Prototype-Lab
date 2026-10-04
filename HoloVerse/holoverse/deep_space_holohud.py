@@ -4,9 +4,13 @@ The flight readouts are projected inside the ship instead of drawn flat on the s
 glowing holo panels hang in the cockpit (camera space), tilted toward the pilot, drawn additive
 over the canopy with a faint scan flicker.
 
-  left panel     SHIELD / HULL / BOOST bars
-  right panel    speed, throttle bar, flight mode
-  canopy strip   system title, flight messages, defence-perimeter / hostile warnings
+  bottom-left    SHIP: shield and hull
+  bottom-right   FLIGHT: speed, throttle, flight mode
+  top-left       SYSTEMS: boost, system / Dyson Prime distance
+  top-right      COMMS: flight messages, defence-perimeter / hostile warnings
+
+Pass 282.77: the panels are compact and sit in the canopy corners (outside the clear window),
+each turned to face the pilot, so they read as part of the cockpit instead of covering the view.
 
 Colours come from the cockpit theme (``hud`` and ``hud_warn`` in assets/config/holospace_cockpit.json).
 """
@@ -18,9 +22,19 @@ from panda3d.core import (
     ColorBlendAttrib,
     LineSegs,
     NodePath,
+    Point3,
     TextNode,
     TransparencyAttrib,
 )
+
+# Corner panel placement (camera space, the canopy glass is at y = 1.25).  At the 82 degree view
+# the screen spans about x +-1.04 and z +-0.59 at this depth; the panels sit outside the clear
+# octagon window, in the glass corners.
+CORNER_Y = 1.20
+CORNER_SCALE = 0.80                 # panels are 0.32 x 0.105 canopy units after scaling
+CORNER_EDGE_X = 0.205               # panel centre inset from the screen edge
+CORNER_EDGE_TOP = 0.175             # below the region label in the top-left corner
+CORNER_EDGE_BOTTOM = 0.165          # leaves room for the dash below
 
 
 def _additive(np_: NodePath) -> None:
@@ -32,7 +46,7 @@ def _additive(np_: NodePath) -> None:
 
 
 class HoloHUD:
-    def __init__(self, camera: NodePath, mesh_cls, font=None, line_scale: float = 1.0):
+    def __init__(self, camera: NodePath, mesh_cls, font=None, line_scale: float = 1.0, lens=None):
         self.font = font
         self.line_scale = float(line_scale)
         self._mesh_cls = mesh_cls
@@ -49,6 +63,19 @@ class HoloHUD:
         self.warn_rgb = (1.00, 0.45, 0.32)
         self.t = 0.0
         self._cache: dict = {}
+        # Corner positions from the real lens, so the panels stay in the corners at any FOV / aspect.
+        fov, aspect = 82.0, 16.0 / 9.0
+        try:
+            if lens is not None:
+                fov = float(lens.getFov()[0])
+                aspect = float(lens.getAspectRatio())
+        except Exception:
+            pass
+        half_w = math.tan(math.radians(fov * 0.5)) * CORNER_Y
+        half_h = half_w / max(1.0, aspect)
+        self.corner_x = half_w - CORNER_EDGE_X
+        self.corner_high_z = half_h - CORNER_EDGE_TOP
+        self.corner_low_z = -(half_h - CORNER_EDGE_BOTTOM)
         self._build()
         self.root.hide()
 
@@ -101,27 +128,41 @@ class HoloHUD:
         self.bars[key] = (fill_np, width - 0.006, height - 0.006)
         self.themed += [frame_np, fill_np]
 
+    def _corner(self, name, x, z, w=0.20, h=0.066) -> NodePath:
+        """A small panel in one corner of the canopy, outside the clear window."""
+        # Parallel to the screen: at an 82 degree view a panel turned toward the eye is stretched
+        # by perspective near the edges, while a flat one stays a clean, level rectangle.
+        panel = self._panel(name, (x, CORNER_Y, z), (0.0, 0.0, 0.0), w, h)
+        panel.setScale(CORNER_SCALE)
+        return panel
+
     def _build(self) -> None:
-        # left: ship status
-        left = self._panel("holo-left", (-0.56, 1.14, -0.335), (14.0, -10.0, 0.0), 0.25, 0.115)
-        left.setScale(0.82)
-        for i, key in enumerate(("shield", "hull", "boost")):
-            z = 0.055 - i * 0.058
-            self._text(left, f"{key}_label", (-0.225, -0.002, z - 0.008), 0.026, text=key.upper())
-            self._bar(left, key, -0.115, z - 0.012, 0.25, 0.026)
-            self._text(left, f"{key}_pct", (0.225, -0.002, z - 0.008), 0.024, TextNode.ARight)
-        # right: flight
-        right = self._panel("holo-right", (0.56, 1.14, -0.335), (-14.0, -10.0, 0.0), 0.25, 0.115)
-        right.setScale(0.82)
-        self._text(right, "speed", (0.0, -0.002, 0.040), 0.050, TextNode.ACenter)
-        self._bar(right, "throttle", -0.20, -0.010, 0.40, 0.022)
-        self._text(right, "throttle_pct", (0.225, -0.002, -0.006), 0.020, TextNode.ARight)
-        self._text(right, "mode", (0.0, -0.002, -0.080), 0.022, TextNode.ACenter)
-        # canopy strip: title, message, threat
-        top = self._panel("holo-top", (0.0, 1.20, 0.43), (0.0, 8.0, 0.0), 0.42, 0.060)
-        self._text(top, "title", (0.0, -0.002, 0.024), 0.020, TextNode.ACenter, "HOLOSPACE  //  DYSON PRIME SYSTEM")
-        self._text(top, "message", (0.0, -0.002, -0.012), 0.026, TextNode.ACenter)
-        self._text(top, "threat", (0.0, -0.002, -0.046), 0.019, TextNode.ACenter)
+        # Pass 282.77: four compact corner panels in the canopy corners, outside the clear
+        # window, instead of two large panels over the view.
+        bl = self._corner("holo-ship", -self.corner_x, self.corner_low_z)
+        self._text(bl, "ship_head", (-0.182, -0.002, 0.040), 0.013, text="SHIP")
+        for i, key in enumerate(("shield", "hull")):
+            z = 0.006 - i * 0.040
+            self._text(bl, f"{key}_label", (-0.182, -0.002, z - 0.006), 0.016, text=key.upper())
+            self._bar(bl, key, -0.090, z - 0.010, 0.190, 0.018)
+            self._text(bl, f"{key}_pct", (0.186, -0.002, z - 0.006), 0.015, TextNode.ARight)
+        br = self._corner("holo-flight", self.corner_x, self.corner_low_z)
+        self._text(br, "flight_head", (-0.182, -0.002, 0.040), 0.013, text="FLIGHT")
+        self._text(br, "speed", (0.186, -0.002, 0.030), 0.030, TextNode.ARight)
+        self._bar(br, "throttle", -0.182, -0.012, 0.300, 0.014)
+        self._text(br, "throttle_pct", (0.186, -0.002, -0.010), 0.014, TextNode.ARight)
+        self._text(br, "mode", (-0.182, -0.002, -0.050), 0.014)
+        tl = self._corner("holo-systems", -self.corner_x, self.corner_high_z)
+        self._text(tl, "title", (-0.182, -0.002, 0.036), 0.013, text="HOLOSPACE  //  DYSON PRIME")
+        self._text(tl, "boost_label", (-0.182, -0.002, -0.006), 0.016, text="BOOST")
+        self._bar(tl, "boost", -0.090, -0.010, 0.190, 0.018)
+        self._text(tl, "boost_pct", (0.186, -0.002, -0.006), 0.015, TextNode.ARight)
+        self._text(tl, "systems", (-0.182, -0.002, -0.046), 0.0135)
+        tr = self._corner("holo-comms", self.corner_x, self.corner_high_z)
+        self._text(tr, "comms_head", (-0.182, -0.002, 0.036), 0.013, text="COMMS")
+        msg = self._text(tr, "message", (-0.182, -0.002, 0.000), 0.0145)
+        self.texts["message"][0].setWordwrap(25.0)
+        self._text(tr, "threat", (-0.182, -0.002, -0.046), 0.0135)
 
     # ------------------------------------------------------------------ theme / visibility
     def set_theme(self, hud_rgb, warn_rgb) -> None:
@@ -180,6 +221,7 @@ class HoloHUD:
         self._set_bar("throttle", abs(throttle), warn=throttle < 0.0)
         self._set_text("throttle_pct", f"{int(round(throttle * 100))}%", warn=throttle < 0.0)
         self._set_text("mode", state["mode_text"], warn=state.get("mode_warn", False))
+        self._set_text("systems", state.get("systems_text", ""))
         msg, msg_alpha = state.get("message", ""), float(state.get("message_alpha", 0.0))
         self._set_text("message", msg if msg_alpha > 0.01 else "", warn=state.get("message_warn", False), alpha=max(0.0, min(1.0, msg_alpha)))
         threat, threat_warn = state.get("threat", ""), bool(state.get("threat_warn", False))
