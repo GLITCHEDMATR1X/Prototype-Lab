@@ -108,19 +108,51 @@ def _gas_giant():
                 mb.rec.append((q[0], q[1], q[2], 0.0, 0.0, 1.0, c[0] * shade, c[1] * shade, c[2] * shade, 1.0, 0.0, 0.0))
             mb.idx.extend((base, base + 1, base + 2, base, base + 2, base + 3))
             mb.count += 4
-    ring = MC.MeshBuilder()
+    return mb, _gas_giant_ring_halves()
+
+
+# Where the gas giant hangs in the fungal sky (the sky follows the player, so the view
+# direction to the planet never changes).
+GIANT_POS = (-170.0, 260.0, 170.0)
+GIANT_HPR = (30.0, 0.0, 14.0)
+GIANT_SCALE = 46.0
+GIANT_RING_HPR = (0.0, 18.0, 12.0)
+
+
+def _gas_giant_ring_halves():
+    """Pass 282.75: the ring as a far half and a near half.
+
+    The sky bin draws without depth testing, so a single ring drawn after the planet showed its
+    far side through the planet.  Splitting it lets the far half draw before the planet (which
+    covers it) and the near half after."""
+    from panda3d.core import NodePath as _NP, Vec3 as _V3
+
+    sky = _NP("ring-split-sky")
+    planet = sky.attachNewNode("planet")
+    planet.setPos(*GIANT_POS)
+    planet.setHpr(*GIANT_HPR)
+    planet.setScale(GIANT_SCALE)
+    ring_np = planet.attachNewNode("ring")
+    ring_np.setHpr(*GIANT_RING_HPR)
+    mat = ring_np.getMat(sky)
+    centre = _V3(*GIANT_POS)
+    view = _V3(centre)
+    view.normalize()
+    far, near = MC.MeshBuilder(), MC.MeshBuilder()
     sides = 48
     for k in range(sides):
         a0, a1 = math.tau * k / sides, math.tau * (k + 1) / sides
+        mid = mat.xformPoint(_V3(math.cos((a0 + a1) * 0.5) * 1.75, math.sin((a0 + a1) * 0.5) * 1.75, 0.0))
+        target = far if (_V3(mid) - centre).dot(view) > 0.0 else near
         for r_in, r_out, al in ((1.35, 1.75, 0.45), (1.80, 2.15, 0.30)):
             quad = [(math.cos(a0) * r_in, math.sin(a0) * r_in, 0.0), (math.cos(a1) * r_in, math.sin(a1) * r_in, 0.0),
                     (math.cos(a1) * r_out, math.sin(a1) * r_out, 0.0), (math.cos(a0) * r_out, math.sin(a0) * r_out, 0.0)]
-            base = ring.count
+            base = target.count
             for q in quad:
-                ring.rec.append((q[0], q[1], q[2], 0.0, 0.0, 1.0, 0.86, 0.78, 0.70, al, 0.0, 0.0))
-            ring.idx.extend((base, base + 1, base + 2, base, base + 2, base + 3))
-            ring.count += 4
-    return mb, ring
+                target.rec.append((q[0], q[1], q[2], 0.0, 0.0, 1.0, 0.86, 0.78, 0.70, al, 0.0, 0.0))
+            target.idx.extend((base, base + 1, base + 2, base, base + 2, base + 3))
+            target.count += 4
+    return far, near
 
 
 def _moon(rgb):
@@ -142,7 +174,7 @@ def _models(gsg):
             "folk_leg": RMK.bake_model("sporekin-leg", _sporekin_leg(), gsg, L),
             "arrays": {
                 "dome": RMK.sky_dome(SKY_HORIZON, SKY_MID, SKY_ZENITH).arrays(),
-                "planet": planet.arrays(), "planet_ring": ring.arrays(),
+                "planet": planet.arrays(), "planet_ring_far": ring[0].arrays(), "planet_ring_near": ring[1].arrays(),
                 "moon_a": _moon((0.80, 0.86, 0.90)).arrays(), "moon_b": _moon((0.92, 0.70, 0.46)).arrays(),
                 "jelly": _jelly().arrays(), "beam": _beam().arrays(), "mote": RMK.mote().arrays(),
             },
@@ -191,18 +223,21 @@ class FungalLifeDirector:
         self.dome.setColorScale(1.0, 1.0, 1.0, 1.0)     # the sky group's colour scale does the blending
         self.planet = self.sky.attachNewNode("fungal-gas-giant")
         body = self.planet.attachNewNode(MC.make_node("gas-giant", *arrays["planet"]))
-        ring = self.planet.attachNewNode(MC.make_node("gas-giant-ring", *arrays["planet_ring"]))
-        ring.setHpr(0.0, 18.0, 12.0)
-        self.planet.setPos(-170.0, 260.0, 170.0)
-        self.planet.setScale(46.0)
-        self.planet.setHpr(30.0, 0.0, 14.0)
+        ring_far = self.planet.attachNewNode(MC.make_node("gas-giant-ring-far", *arrays["planet_ring_far"]))
+        ring_near = self.planet.attachNewNode(MC.make_node("gas-giant-ring-near", *arrays["planet_ring_near"]))
+        for ring in (ring_far, ring_near):
+            ring.setHpr(*GIANT_RING_HPR)
+        self.planet.setPos(*GIANT_POS)
+        self.planet.setScale(GIANT_SCALE)
+        self.planet.setHpr(*GIANT_HPR)
         self.moons = []
         for name, pos, scale in (("moon_a", (210.0, 220.0, 120.0), 9.0), ("moon_b", (260.0, -120.0, 210.0), 5.0)):
             moon = self.sky.attachNewNode(MC.make_node(f"fungal-{name}", *arrays[name]))
             moon.setPos(*pos)
             moon.setScale(scale)
             self.moons.append(moon)
-        for i, node in enumerate([body, ring] + self.moons):
+        # far ring half, then the planet over it, then the near half in front (no depth test here)
+        for i, node in enumerate([ring_far, body, ring_near] + self.moons):
             RMK.setup_sky_node(node, 12 + i)
             node.setColorScale(1.0, 1.0, 1.0, 1.0)
         for sphere in [body] + self.moons:

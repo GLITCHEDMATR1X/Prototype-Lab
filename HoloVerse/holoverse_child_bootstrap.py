@@ -144,9 +144,15 @@ def _install_panda_hooks(geo: dict | None) -> None:
     ShowBase.userExit = user_exit
 
 
-def _install_pygame_hooks() -> None:
-    """pygame games keep their own resolution (their layouts depend on it); they only get the
-    guaranteed full close."""
+def _install_pygame_hooks(geo: dict | None = None) -> None:
+    """pygame games always get the guaranteed full close.
+
+    Pass 282.75: a game whose first window is RESIZABLE (it lays itself out for any size, as
+    Afterlife of IO and Vector Wars do) opens that first window at HoloVerse's size and position,
+    the same display standard Panda3D games get.  They used their own 1920x1080 default centred on
+    the screen.  Later set_mode calls (the player resizing, the game's own fullscreen setting) are
+    left alone, and fixed-size games keep their own resolution because their layouts depend on it.
+    """
     try:
         import pygame
     except Exception:
@@ -158,6 +164,29 @@ def _install_pygame_hooks() -> None:
         return original_quit(*args, **kwargs)
 
     pygame.quit = quit_and_end
+    if geo is None or geo.get("fullscreen"):
+        return
+    os.environ["SDL_VIDEO_WINDOW_POS"] = f"{geo['x']},{geo['y']}"
+    os.environ.pop("SDL_VIDEO_CENTERED", None)
+    display = pygame.display
+    original_set_mode = display.set_mode
+    state = {"first": True}
+
+    def set_mode(size=(0, 0), flags=0, *args, **kwargs):
+        try:
+            flags_int = int(flags or 0)
+        except Exception:
+            flags_int = 0
+        if state["first"]:
+            state["first"] = False
+            resizable = bool(flags_int & getattr(pygame, "RESIZABLE", 0))
+            fullscreen = bool(flags_int & getattr(pygame, "FULLSCREEN", 0))
+            if resizable and not fullscreen:
+                size = (geo["w"], geo["h"])
+                print(f"holoverse_child_pygame_window size={geo['w']}x{geo['h']} pos={geo['x']},{geo['y']}")
+        return original_set_mode(size, flags, *args, **kwargs)
+
+    display.set_mode = set_mode
 
 
 def main() -> int:
@@ -172,7 +201,7 @@ def main() -> int:
     geo = host_geometry()
     _install_panda_hooks(geo)
     if "pygame" in entry.read_text(encoding="utf-8", errors="ignore")[:20000]:
-        _install_pygame_hooks()
+        _install_pygame_hooks(geo)
     code = 0
     try:
         runpy.run_path(str(entry), run_name="__main__")

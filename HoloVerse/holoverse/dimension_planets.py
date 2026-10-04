@@ -409,7 +409,17 @@ class DimensionPlanets:
     # ---- records -------------------------------------------------------
     def _records(self):
         registry = getattr(self.app, "dimension_registry", None)
-        records = [r for r in list(getattr(registry, "records", []) or []) if str(getattr(r, "origin", "")) == "linked"]
+        # Pass 282.75: every linked dimension is a planet, including the ones a guide bot
+        # hosts in the world (The Indigo Giant, Mirror's Limbo, Afterlife of IO, ...), which
+        # the archive list keeps out of ``records``.
+        pool = list(getattr(registry, "records", []) or []) + list(getattr(registry, "hosted_records", []) or [])
+        records, seen = [], set()
+        for r in pool:
+            key = str(getattr(r, "dimension_id", ""))
+            if str(getattr(r, "origin", "")) != "linked" or not key or key in seen:
+                continue
+            seen.add(key)
+            records.append(r)
         records.sort(key=lambda r: str(getattr(r, "dimension_id", "")))
         return records
 
@@ -685,7 +695,12 @@ class DimensionPlanets:
             return
         print(f"dimension_planet_enter id={getattr(rec, 'dimension_id', '?')} title={getattr(rec, 'title', '?')!r}")
         try:
-            registry._mark_seen(rec)
+            # Pass 282.75: entering a planet unlocks that reality in Gleebs' archive list (saved).
+            unlock = getattr(registry, "unlock_from_planet", None)
+            if callable(unlock):
+                unlock(rec)
+            else:
+                registry._mark_seen(rec)
         except Exception:
             pass
         # Leave HoloSpace through the normal home exit, then open the dimension
