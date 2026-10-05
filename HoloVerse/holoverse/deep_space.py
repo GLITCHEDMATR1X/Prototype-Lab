@@ -2021,6 +2021,13 @@ class DeepSpaceFlight:
             self.dyson_arrow.setR(-math.degrees(ang))
 
     def _update_holo(self, dt: float, mode_parts, msg_alpha: float) -> None:
+        lens = getattr(self.app, "camLens", None)
+        try:
+            key = (round(float(lens.getFov()[0]), 2), round(float(lens.getAspectRatio()), 3))
+            if key != self.holo.layout_key:
+                self.holo.relayout(lens)        # the window changed shape: keep the panels in the corners
+        except Exception:
+            pass
         speed = self.vel.length()
         speed_text = f"{speed / 1000.0:,.1f} km/s" if self.mode == "supercruise" else f"{int(round(speed))} m/s"
         threat, threat_warn = "", False

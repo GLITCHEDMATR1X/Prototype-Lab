@@ -878,7 +878,8 @@ class LiminalResidence(ShowBase):
         # Pass 64: resume checkpoint is stored in the same atomic progress file.
         self.resume_checkpoint = None
         self.checkpoint_next_save = 0.0
-        self.checkpoint_save_interval = 0.85
+        self.checkpoint_save_interval = 5.0   # was 0.85 s: 2-3 disk writes a second while walking
+        self._last_saved_checkpoint = None
         self.resume_checkpoint_restored = False
         # Pass 68: visual-only mercury / gravitational lens response.
         # World meshes flex in the shader while collision and gameplay authority stay exact.
@@ -5118,14 +5119,17 @@ class LiminalResidence(ShowBase):
 
     def ensure_ghost_human_assets(self):
         """Load one shared Anatomic-derived human mesh and monochrome ghost shader."""
-        if self.ghost_human_model is None:
+        if self.ghost_human_model is None and not getattr(self, "_ghost_human_load_failed", False):
             model_path=ROOT/"assets"/"models"/"ghost_human.egg"
             try:
                 model=self.loader.loadModel(Filename.fromOsSpecific(str(model_path)))
                 self.ghost_human_model=None if model is None or model.isEmpty() else model
             except Exception as exc:
                 print("GHOST_HUMAN MODEL_FALLBACK",repr(exc)); self.ghost_human_model=None
-        if self.ghost_human_shader is None:
+            # A missing model is reported once; every later ghost uses the fallback without
+            # searching the disk again.
+            self._ghost_human_load_failed = self.ghost_human_model is None
+        if self.ghost_human_shader is None and not getattr(self, "_ghost_human_shader_failed", False):
             shader_dir=ROOT/"assets"/"shaders"
             try:
                 self.ghost_human_shader=Shader.load(
@@ -5135,6 +5139,7 @@ class LiminalResidence(ShowBase):
                 )
             except Exception as exc:
                 print("GHOST_HUMAN SHADER_FALLBACK",repr(exc)); self.ghost_human_shader=None
+                self._ghost_human_shader_failed = True
         return self.ghost_human_model
 
     def make_ghost_human_body(self,parent,phase=0.0):
@@ -7865,6 +7870,9 @@ class LiminalResidence(ShowBase):
         cp = self.build_runtime_checkpoint()
         if isinstance(cp, dict):
             self.resume_checkpoint = cp
+            if not force and cp == getattr(self, "_last_saved_checkpoint", None):
+                return          # nothing moved since the last save
+            self._last_saved_checkpoint = dict(cp)
             self.save_mirror_progress()
 
     @staticmethod

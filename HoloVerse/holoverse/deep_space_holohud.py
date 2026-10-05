@@ -63,7 +63,14 @@ class HoloHUD:
         self.warn_rgb = (1.00, 0.45, 0.32)
         self.t = 0.0
         self._cache: dict = {}
-        # Corner positions from the real lens, so the panels stay in the corners at any FOV / aspect.
+        self._corners: list = []        # (panel, x sign, top?) so a window resize can move them
+        self.layout_key = None
+        self._compute_corners(lens)
+        self._build()
+        self.root.hide()
+
+    def _compute_corners(self, lens) -> None:
+        """Corner positions from the real lens, so the panels stay in the corners at any FOV / aspect."""
         fov, aspect = 82.0, 16.0 / 9.0
         try:
             if lens is not None:
@@ -76,8 +83,14 @@ class HoloHUD:
         self.corner_x = half_w - CORNER_EDGE_X
         self.corner_high_z = half_h - CORNER_EDGE_TOP
         self.corner_low_z = -(half_h - CORNER_EDGE_BOTTOM)
-        self._build()
-        self.root.hide()
+        self.layout_key = (round(fov, 2), round(aspect, 3))
+
+    def relayout(self, lens) -> None:
+        """Pass 282.83: move the corner panels after the window changes shape."""
+        self._compute_corners(lens)
+        for panel, sign_x, top in self._corners:
+            if not panel.isEmpty():
+                panel.setPos(sign_x * self.corner_x, CORNER_Y, self.corner_high_z if top else self.corner_low_z)
 
     # ------------------------------------------------------------------ building blocks
     def _panel(self, name, pos, hpr, w, h) -> NodePath:
@@ -134,6 +147,7 @@ class HoloHUD:
         # by perspective near the edges, while a flat one stays a clean, level rectangle.
         panel = self._panel(name, (x, CORNER_Y, z), (0.0, 0.0, 0.0), w, h)
         panel.setScale(CORNER_SCALE)
+        self._corners.append((panel, 1.0 if x >= 0 else -1.0, z >= 0))
         return panel
 
     def _build(self) -> None:

@@ -89,13 +89,7 @@
       }
     ],
     "sub_hub": [],
-    "supporting_ui_or_transition_files": [
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "keep transition UI subordinate to root authority",
-        "path": "data/HoloVerse/holospace_travel_sequence.py"
-      }
-    ]
+    "supporting_ui_or_transition_files": []
   },
   "kind": "holoverse_ui_authority_manifest",
   "notes": [
