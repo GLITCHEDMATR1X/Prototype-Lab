@@ -1204,7 +1204,8 @@ class DeepSpaceFlight:
             self.vel = fwd * speed
         else:
             vmax = MAX_SPEED * (BOOST_MULT if self.boosting else 1.0)
-            desired = fwd * (self.throttle * vmax) + right * (lateral * THRUSTER_SPEED) + up * (vertical * THRUSTER_SPEED)
+            thrusters = THRUSTER_SPEED * (2.5 if self.boosting else 1.0)   # Pass 282.84: strafing still bites while boosting
+            desired = fwd * (self.throttle * vmax) + right * (lateral * thrusters) + up * (vertical * thrusters)
             if self.flight_assist:
                 delta = desired - self.vel
                 step = (ACCEL * (1.6 if self.boosting else 1.0)) * dt
