@@ -41,9 +41,9 @@ Send these from the `logs` folder above:
 
 | Where | Keys |
 |---|---|
-| Everywhere | E use / enter, TAB return to MatrixCore, ESC pause, H help |
+| Everywhere | E use / enter, TAB return to MatrixCore, ESC pause, H help, F3 hide/show HUD |
 | HoloSpace | mouse steer, W/S throttle, 1-5 throttle presets, SHIFT boost, LMB lasers / enter a planet, T cycle nav target, C cockpit colour theme, J supercruise |
-| Dimensions | their own controls; ESC pauses (RESUME / RETURN TO MATRIXCORE), TAB returns home |
+| Dimensions | their own controls; ESC always opens the HoloVerse pause card (RESUME / DIMENSION MENU when the dimension has its own menu / RETURN TO MATRIXCORE); TAB returns home. Own-window dimensions (Vector Wars, Operation StarFall, Afterlife of IO) return when you quit them from their own menu |
 
 ## Music
 

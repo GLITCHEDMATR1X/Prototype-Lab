@@ -1240,6 +1240,7 @@ MODE_LAUNCH_PLACEHOLDER_ALIASES = {"placeholder", "placeholder_mode", "empty", "
 PRIMARY_DIMENSION_IDS: set = set()
 REGIONAL_SYSTEM_DIMENSION_IDS: set = set()
 PARKED_DIMENSION_IDS = set()
+HELD_KEY_MODIFIER_PREFIXES = ("shift-", "control-", "alt-", "shift-control-", "shift-alt-", "control-alt-")
 REMOVED_REGION_ACTIVITIES = (
     "HoloForge", "Forest Growth", "Hills of Life", "Oddities", "Ember Hangar",
     "Frost Circuit", "Urban Warzone", "Metropolis Robot Lab",
@@ -7368,6 +7369,10 @@ class CommandHubApp(ShowBase):
             for key in self._NATIVE_BRIDGE_HELD:
                 listen(key, self._native_bridge_held, [key, True])
                 listen(f"{key}-up", self._native_bridge_held, [key, False])
+                if key not in ("shift", "control", "alt"):
+                    for mod in HELD_KEY_MODIFIER_PREFIXES:      # strafe/turn while Shift is held
+                        listen(f"{mod}{key}", self._native_bridge_held, [key, True])
+                        listen(f"{mod}{key}-up", self._native_bridge_held, [key, False])
             for key in self._NATIVE_BRIDGE_PRESS:
                 action = self._NATIVE_BRIDGE_ACTION_NAMES.get(key, key)
                 listen(key, self._native_bridge_action, [action])
@@ -7386,32 +7391,107 @@ class CommandHubApp(ShowBase):
     # ------------------------------------------------------------------
     # Pass 282.77: HoloVerse pause for same-window dimensions
     # ------------------------------------------------------------------
-    def _install_native_pause_listener(self, label: str = "") -> None:
-        """ESC pauses a dimension that has no ESC handling of its own.
+    # Dimensions whose own ESC already ends in HoloVerse's pause (they call host.toggle_dimension_pause).
+    NATIVE_OWN_ESC_DIMENSIONS = ("archivist",)
 
-        HoloVerse unbinds its own ESC while a dimension runs, so in dimensions without a pause
-        menu (HoloCore, Vector Arena, HoloTactics, ...) ESC did nothing and the camera kept
-        following the mouse.  Dimensions with their own pause menu keep it; a dimension can also
-        call ``host.toggle_dimension_pause()`` itself (The Archivist does when ESC has nothing
-        left to close)."""
+    def _install_native_pause_listener(self, label: str = "") -> None:
+        """ESC in every hosted dimension opens HoloVerse's pause card (RESUME / RETURN TO MATRIXCORE).
+
+        Pass 282.84: dimensions used to keep their own ESC, and several of those only toggle the
+        mouse (Glyphbound, Anatomic) or jump straight home (Fractured Nemesis), so there was no
+        reliable way out.  The dimension's own ESC handlers are set aside while it is hosted;
+        the pause card's DIMENSION MENU button runs them (and the next ESC goes to the dimension
+        too, to close that menu)."""
         self._remove_native_pause_listener()
+        self._native_esc_stash = []
+        self._native_esc_forward_next = False
+        key = canonical_dimension_lookup_key(label)
+        if any(token in key for token in self.NATIVE_OWN_ESC_DIMENSIONS):
+            return
         try:
             msg = self._real_panda_messenger()
-            for entry in (msg.whoAccepts("escape") or {}).values():
-                fn = entry[0] if isinstance(entry, (list, tuple)) else entry
-                if getattr(fn, "__self__", None) is not self:
-                    return                      # the dimension owns ESC (its own pause menu)
             from direct.showbase.DirectObject import DirectObject
             listener = DirectObject()
-            msg.accept("escape", listener, self.toggle_dimension_pause, [], 1)
             self._native_pause_listener = listener
-            print(f"native_pause_listener label={label} installed=1")
+            self._stash_dimension_escape()
+            msg.accept("escape", listener, self._native_escape_pressed, [], 1)
+            self.taskMgr.add(self._native_escape_guard_task, "holoverse-native-esc-guard", sort=-40)
+            print(f"native_pause_listener label={label} installed=1 dimension_esc_handlers={len(self._native_esc_stash)}")
         except Exception as exc:
             print(f"native_pause_listener_failed label={label} err={exc.__class__.__name__}:{exc}")
+
+    def _stash_dimension_escape(self) -> int:
+        """Move every non-HoloVerse ESC handler aside (they stay callable from DIMENSION MENU)."""
+        listener = getattr(self, "_native_pause_listener", None)
+        if listener is None:
+            return 0
+        msg = self._real_panda_messenger()
+        acceptors = msg.whoAccepts("escape") or {}
+        ours = set()
+        try:
+            ours.add(msg._getMessengerId(listener))
+        except Exception:
+            pass
+        moved = 0
+        for ident in list(acceptors.keys()):
+            if ident in ours:
+                continue
+            entry = acceptors.get(ident)
+            fn = entry[0] if isinstance(entry, (list, tuple)) else entry
+            if getattr(fn, "__self__", None) is self:
+                continue                      # HoloVerse's own (already inert while hosted)
+            try:
+                del acceptors[ident]
+            except KeyError:
+                continue
+            self._native_esc_stash.append((fn, list(entry[1]) if isinstance(entry, (list, tuple)) and len(entry) > 1 else []))
+            moved += 1
+        return moved
+
+    def _native_escape_guard_task(self, task):
+        if getattr(self, "active_native_mode", None) is None or getattr(self, "_native_pause_listener", None) is None:
+            return Task.done
+        self._stash_dimension_escape()        # a dimension may bind ESC again later (menus, mouse toggles)
+        return Task.cont
+
+    def _native_dimension_menu_available(self) -> bool:
+        for fn, _args in getattr(self, "_native_esc_stash", []) or []:
+            name = str(getattr(fn, "__name__", "")).lower()
+            if "mouse" in name or "return" in name or "exit" in name or "quit" in name:
+                continue                      # not a menu: mouse toggles / instant exits
+            return True
+        return False
+
+    def _forward_dimension_escape(self) -> None:
+        for fn, args in list(getattr(self, "_native_esc_stash", []) or []):
+            try:
+                fn(*args)
+            except Exception as exc:
+                print(f"native_dimension_escape_failed err={exc.__class__.__name__}:{exc}")
+
+    def _native_escape_pressed(self, *args) -> None:
+        if getattr(self, "active_native_mode", None) is None:
+            return
+        if bool(getattr(self, "_native_esc_forward_next", False)) and not bool(getattr(self, "native_paused", False)):
+            self._native_esc_forward_next = False
+            self._forward_dimension_escape()   # close the dimension's own menu
+            return
+        self.toggle_dimension_pause()
+
+    def _pause_open_dimension_menu(self) -> None:
+        self._resume_native_dimension(quiet=True)
+        self._native_esc_forward_next = True
+        self._forward_dimension_escape()
 
     def _remove_native_pause_listener(self) -> None:
         listener = getattr(self, "_native_pause_listener", None)
         self._native_pause_listener = None
+        self._native_esc_stash = []
+        self._native_esc_forward_next = False
+        try:
+            self.taskMgr.remove("holoverse-native-esc-guard")
+        except Exception:
+            pass
         if listener is not None:
             try:
                 self._real_panda_messenger().ignoreAll(listener)
@@ -7488,6 +7568,14 @@ class CommandHubApp(ShowBase):
 
     def _show_native_pause_overlay(self, visible: bool) -> None:
         root = getattr(self, "_native_pause_overlay", None)
+        buttons = getattr(self, "_native_pause_buttons", {}) or {}
+        if visible and root is not None and not root.isEmpty() and (not buttons or any(b.isEmpty() for b in buttons.values())):
+            # A dimension's GUI cleanup can destroy the buttons; rebuild the whole card.
+            try:
+                root.removeNode()
+            except Exception:
+                pass
+            root = None
         if visible and (root is None or root.isEmpty()):
             try:
                 root = self.aspect2d.attachNewNode("holoverse-native-pause-overlay")
@@ -7499,21 +7587,33 @@ class CommandHubApp(ShowBase):
                 DirectLabel(parent=root, text="ESC  RESUME     //     TAB  RETURN TO MATRIXCORE", text_scale=0.032,
                             text_fg=(0.55, 0.92, 1.0, 0.95), frameColor=(0, 0, 0, 0), pos=(0, 0, -0.06), **kw)
                 # Pass 282.78: clickable too (the cursor is free while paused).
-                for text, z, command in (("RESUME", -0.20, self._resume_native_dimension),
-                                         ("RETURN TO MATRIXCORE", -0.33, self._pause_return_home)):
-                    button = DirectButton(parent=root, text=text, command=command, pos=(0, 0, z), scale=0.062,
+                self._native_pause_buttons = {}
+                for name, text, command in (("resume", "RESUME", self._resume_native_dimension),
+                                            ("menu", "DIMENSION MENU", self._pause_open_dimension_menu),
+                                            ("home", "RETURN TO MATRIXCORE", self._pause_return_home)):
+                    button = DirectButton(parent=root, text=text, command=command, pos=(0, 0, 0), scale=0.062,
                                           frameSize=(-5.2, 5.2, -0.42, 0.62), text_scale=0.5, relief=1,
                                           rolloverSound=None, clickSound=None, **kw)
                     try:
                         self.apply_core_button_style(button, role="mode", available=True)
                     except Exception:
                         pass
+                    self._native_pause_buttons[name] = button
                 self._native_pause_overlay = root
             except Exception as exc:
                 print(f"native_pause_overlay_failed err={exc.__class__.__name__}:{exc}")
                 return
         if root is not None and not root.isEmpty():
             if visible:
+                # DIMENSION MENU only for dimensions that have a menu of their own.
+                buttons = getattr(self, "_native_pause_buttons", {}) or {}
+                order = ["resume"] + (["menu"] if self._native_dimension_menu_available() else []) + ["home"]
+                for name, button in buttons.items():
+                    if name in order:
+                        button.setPos(0, 0, -0.20 - 0.13 * order.index(name))
+                        button.show()
+                    else:
+                        button.hide()
                 root.show()
             else:
                 root.hide()
@@ -7562,6 +7662,8 @@ class CommandHubApp(ShowBase):
         self._apply_native_mode_cursor(mode_obj, label)
         self._install_native_input_bridge(mode_obj, label)
         self._install_native_pause_listener(label)
+        # Pass 282.84: fade the dimension in from black instead of popping in half-drawn.
+        self.begin_screen_fade_in(0.8)
         self._start_dimension_track(label)
 
     def _start_dimension_track(self, label: str = "") -> None:
@@ -8457,15 +8559,7 @@ class CommandHubApp(ShowBase):
                 "HoloVerse resides somewhere outside the known universe and is constantly traveling in hyperspace.",
                 "HoloVerse is Gleebs's reinterpretation of his universe, built from data salvaged from Utopia and its subjects.",
             ],
-            "dimension_guidance": {
-                "HoloForge": {"advice": "HoloForge is unhooked for now; IO keeps the Afterlife of IO gate at the start.", "return": "HoloForge returned builder data. The world has more geometry than it used to."},
-                "Forest Growth": {"advice": "Forest Growth is Vanta's saved plant layer. Plants grow one stage per real day.", "return": "Forest Growth returned living root data. MatrixCore has dirt in its archive now."},
-                "Hills of Life": {"advice": "Hills of Life is unhooked for now; Nyx is the giant at the Mushroom port.", "return": "Hills of Life returned living rule data. It has paws now, which makes the rules harder to argue with."},
-                "Oddities": {"advice": "Oddities is Solace's Green Hills experiment layer with floating objects and weird procedural growth.", "return": "Oddities returned anomaly data. Do not ask why it is humming."},
-                "Ember Hangar": {"advice": "Ember Hangar generates saved Fighter, Speeder, Hauler, and UFO ships. The newest selected ship is preserved in the parked experiment.", "return": "Ember Hangar returned ship data. It smells like hot sand and questionable engineering."},
-                "Frost Circuit": {"advice": "Frost Circuit is the Archivist's compact hovercraft course against the bot racers.", "return": "Frost Circuit returned lap data. The Archivist has already filed it."},
-                "Urban Warzone": {"advice": "Urban Warzone is Sable's in-world combat simulator with cover, allies, robots, drones, and mechs.", "return": "Urban Warzone returned combat data. The street survived, mostly."}
-            },
+            "dimension_guidance": {},     # Pass 282.84: the removed region activities had the only entries
             "bottom_quotes": {
                 "gleebs_welcome_001": [
                     "Glitched Matrix! Long time no see!",
@@ -12585,6 +12679,12 @@ class CommandHubApp(ShowBase):
         for key in ["w", "a", "s", "d", "shift", "space", "control", "arrow_left", "arrow_right", "arrow_up", "arrow_down"]:
             self.accept(key, self.set_key, [key, True])
             self.accept(f"{key}-up", self.set_key, [key, False])
+            # Pass 282.84: while Shift/Ctrl/Alt is held Panda throws "shift-a" instead of "a", so a
+            # key pressed during a sprint (strafing with Shift held) was never seen.
+            if key not in ("shift", "control"):
+                for mod in HELD_KEY_MODIFIER_PREFIXES:
+                    self.accept(f"{mod}{key}", self.set_key, [key, True])
+                    self.accept(f"{mod}{key}-up", self.set_key, [key, False])
         self.accept("h", self.handle_h_action)
         self.accept("escape", self.start_escape_hold)
         self.accept("escape-up", self.finish_escape_hold)
@@ -19745,6 +19845,10 @@ class CommandHubApp(ShowBase):
                 card.setDepthTest(False)
                 card.setDepthWrite(False)
                 self._screen_fade_card = card
+            # Pass 282.84: a dimension's scene cleanup can detach this card from render2d, which
+            # made every fade after a dimension invisible (the hub just popped back).
+            if card.getParent().isEmpty() or card.getTop() != self.render2d.getTop():
+                card.reparentTo(self.render2d)
             card.setColor(0.0, 0.0, 0.0, 1.0)
             card.show()
             self._screen_fade_t = 0.0

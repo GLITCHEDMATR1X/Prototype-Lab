@@ -577,10 +577,10 @@ def plan_planets(records, dyson: Vec3) -> list:
 def _prepare_planet_data(records, dyson: Vec3) -> int:
     """Background warm-up: icon colours and surface textures into the caches (no scene graph)."""
     done = 0
-    for rec, _direction, rng, _ang_r, kind in plan_planets(records, dyson):
+    for rec, _direction, rng, _ang_r, kind, look in build_plan(records, dyson):
         rng.uniform(PLANET_MIN_DISTANCE, PLANET_MAX_DISTANCE)          # the distance draw in _build_one
-        palette = icon_palette(getattr(rec, "preview", None))
-        accent = tuple(palette[0]) if palette else tuple(getattr(rec, "accent", (0.3, 0.9, 1.0)))[:3]
+        palette = _palette_for(look)
+        accent = tuple(palette[0]) if palette else tuple(getattr(look, "accent", (0.3, 0.9, 1.0)))[:3]
         surface_bytes(kind, rng, accent, palette)
         done += 1
     return done
@@ -609,6 +609,62 @@ def warm_planet_cache(records, dyson) -> bool:
     _WARM_THREAD = threading.Thread(target=run, name="holospace-planet-warmup", daemon=True)
     _WARM_THREAD.start()
     return True
+
+
+# Pass 282.84: HoloUtopia was removed from HoloVerse, but its planet look is kept: The Archivist
+# (one of several crystal worlds, with no icon of its own) now wears HoloUtopia's exact design.
+class _DesignDonor:
+    """Stand-in for a removed dimension, used only to reproduce its planet design."""
+
+    def __init__(self, dimension_id, title, palette):
+        self.dimension_id = dimension_id
+        self.title = title
+        self.description = ""
+        self.preview = None
+        self.accent = palette[0]
+        self.palette_override = palette
+        self.launchable = False
+        self.origin = "linked"
+
+
+HOLOUTOPIA_DESIGN = _DesignDonor(
+    "72c6d96a-d462-4fcf-b8d6-bbc32cfcd476", "HoloUtopia // Holo-Utopia Civic Ring",
+    ((0.30907564132607407, 0.7188235510672841, 0.6626330769487789),
+     (0.3378624819533926, 0.3501242928101983, 0.5759735088533079)),
+)
+DESIGN_HANDOVERS = {
+    # receiving dimension id -> donor design
+    "8be6e4f3-644d-4fad-ae76-3ac0cf7e8b91": HOLOUTOPIA_DESIGN,       # The Archivist
+}
+
+
+def build_plan(records, dyson: Vec3) -> list:
+    """plan_planets plus design hand-overs: (record, direction, look rng, ang radius, kind, look record).
+
+    The donor design is planned exactly as when it was a planet (so it looks the same), then
+    given to the receiving planet; the donor itself is not built."""
+    have = {str(getattr(r, "dimension_id", "")) for r in records}
+    donors = [d for target, d in DESIGN_HANDOVERS.items() if target in have and d.dimension_id not in have]
+    pool = sorted(list(records) + donors, key=lambda r: str(getattr(r, "dimension_id", "")))
+    plan = plan_planets(pool, dyson)
+    looks = {str(getattr(rec, "dimension_id", "")): (rng, kind, rec) for rec, _d, rng, _a, kind in plan}
+    out = []
+    for rec, direction, rng, ang_r, kind in plan:
+        rid = str(getattr(rec, "dimension_id", ""))
+        if any(rec is d for d in donors):
+            continue
+        donor = DESIGN_HANDOVERS.get(rid)
+        if donor is not None and donor.dimension_id in looks:
+            d_rng, d_kind, d_rec = looks[donor.dimension_id]
+            out.append((rec, direction, d_rng, ang_r, d_kind, d_rec))
+        else:
+            out.append((rec, direction, rng, ang_r, kind, rec))
+    return out
+
+
+def _palette_for(look_rec):
+    override = getattr(look_rec, "palette_override", None)
+    return override if override else icon_palette(getattr(look_rec, "preview", None))
 
 
 def records_for_app(app):
@@ -690,14 +746,15 @@ class DimensionPlanets:
         self.root.setShaderOff(10)
         self.root.setBin("background", 4)
         star_pos = Vec3(self.flight.dyson_dir) * 60000.0
-        for rec, direction, rng, ang_r, kind in plan_planets(records, Vec3(self.flight.dyson_dir)):
+        for rec, direction, rng, ang_r, kind, look in build_plan(records, Vec3(self.flight.dyson_dir)):
             try:
-                self.planets.append(self._build_one(rec, direction, rng, star_pos, kind, ang_r))
+                self.planets.append(self._build_one(rec, direction, rng, star_pos, kind, ang_r, look=look))
             except Exception as exc:
                 print(f"dimension_planet_build_failed id={getattr(rec, 'dimension_id', '?')} err={exc.__class__.__name__}:{exc}")
         print(f"dimension_planets_built count={len(self.planets)}")
 
-    def _build_one(self, rec, direction: Vec3, rng: _Rng, star_pos: Vec3, kind: str, ang_r_deg: float | None = None) -> dict:
+    def _build_one(self, rec, direction: Vec3, rng: _Rng, star_pos: Vec3, kind: str, ang_r_deg: float | None = None, look=None) -> dict:
+        look = look if look is not None else rec
         dist = rng.uniform(PLANET_MIN_DISTANCE, PLANET_MAX_DISTANCE)
         if ang_r_deg is None:
             ang_r_deg = rng.uniform(PLANET_MIN_ANG_RADIUS_DEG, PLANET_MAX_ANG_RADIUS_DEG)
@@ -706,8 +763,8 @@ class DimensionPlanets:
         centre = Vec3(direction) * dist
         sun_dir = star_pos - centre
         sun_dir.normalize()
-        palette = icon_palette(getattr(rec, "preview", None))
-        accent = tuple(palette[0]) if palette else tuple(getattr(rec, "accent", (0.3, 0.9, 1.0)))[:3]
+        palette = _palette_for(look)
+        accent = tuple(palette[0]) if palette else tuple(getattr(look, "accent", (0.3, 0.9, 1.0)))[:3]
         holder = self.root.attachNewNode(f"dimension-planet-{getattr(rec, 'dimension_id', 'x')}")
         holder.setPos(centre)
         # surface

@@ -96,7 +96,7 @@ def _merge_archive_payloads(package_raw: dict, persistent_raw: dict) -> dict:
 
 # Realities removed from the build.  A player's dimension_archive.json may still hold a link to
 # one; it is ignored instead of showing as a lost signal in Gleebs' archive or as a planet.
-RETIRED_DIMENSIONS = frozenset({"zonez"})
+RETIRED_DIMENSIONS = frozenset({"zonez", "holoutopia"})   # Pass 282.84: HoloUtopia removed (its planet look went to The Archivist)
 
 
 def _record_is_retired(record) -> bool:
