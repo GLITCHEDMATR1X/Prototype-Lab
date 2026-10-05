@@ -13,6 +13,7 @@ import json
 import math
 import os
 import random
+import copy
 import re
 import shutil
 import subprocess
@@ -1202,7 +1203,7 @@ def campaign_default_payload() -> dict:
     }
 
 MODE_STATE_PATH = APP_DATA_DIR / "core" / "holoverse_core_mode_state.json"
-MODE_FOLDER_EXCLUDES = {"assets", "logs", "patch_notes", "__pycache__", "p3dopenxr", "versions", ".git", "world shell", DIMENSIONS_DIR_NAME.lower()}
+MODE_FOLDER_EXCLUDES = {"assets", "logs", "patch_notes", "__pycache__", "p3dopenxr", "versions", ".git", "world shell", "_system", DIMENSIONS_DIR_NAME.lower()}   # _system: registry internals, not a mode
 CORE_MODE_SLOTS_PER_PAGE = 8
 MATRIXCORE_VISIBLE_ACTION_CARD_LIMIT = 4
 MATRIXCORE_COMPACT_TEXT_MAX_CHARS = 920
@@ -4543,10 +4544,8 @@ class CommandHubApp(ShowBase):
             self.taskMgr.doMethodLater(1.30, self.campaign_progression_smoke_exit, "campaign-progression-smoke-exit")
         elif MAINTENANCE_SMOKE_TEST:
             self.taskMgr.doMethodLater(0.55, self.maintenance_smoke_run, "maintenance-smoke-run")
-        elif EMBER_HANGAR_SMOKE_TEST:
-            self.taskMgr.doMethodLater(0.55, self.ember_hangar_smoke_begin, "ember-hangar-smoke-begin")
-        elif FROST_CIRCUIT_SMOKE_TEST:
-            self.taskMgr.doMethodLater(0.55, self.frost_circuit_smoke_begin, "frost-circuit-smoke-begin")
+        # Pass 282.83: the Ember Hangar / Frost Circuit smoke tests went with those activities;
+        # their flags now fall through to the normal self-test instead of crashing at startup.
         elif SELF_TEST:
             self.taskMgr.doMethodLater(0.8, self.self_test_setup, "self-test-setup")
             self.taskMgr.doMethodLater(2.1, self.self_test_exit, "self-test-exit")
@@ -4788,6 +4787,7 @@ class CommandHubApp(ShowBase):
             pass
         try:
             _safe_write_json(MATRIXCORE_PROGRESSION_PATH, matrixcore_default_progression_payload())
+            self._matrixcore_progression_cache = None
         except Exception:
             pass
         state = campaign_default_payload()
@@ -8602,18 +8602,35 @@ class CommandHubApp(ShowBase):
         return _safe_read_json(MATRIXCORE_GLEEBS_DIALOGUE_PATH) or seed
 
     def load_matrixcore_progression(self) -> dict:
+        # Pass 282.83: Gleebs' dialogue queue asks for this every frame.  Re-read and re-merge the
+        # file only when it changed on disk; hand out a copy so callers can still edit freely.
+        try:
+            st = MATRIXCORE_PROGRESSION_PATH.stat()
+            stamp = (st.st_mtime_ns, st.st_size)
+        except OSError:
+            stamp = None
+        cache = getattr(self, "_matrixcore_progression_cache", None)
+        if stamp is not None and cache is not None and cache[0] == stamp:
+            return copy.deepcopy(cache[1])
         ensure_dirs()
         defaults = matrixcore_default_progression_payload()
         existing = _safe_read_json(MATRIXCORE_PROGRESSION_PATH)
         merged = merge_dict_defaults(existing, defaults)
         if merged != existing:
             _safe_write_json(MATRIXCORE_PROGRESSION_PATH, merged)
+            self._matrixcore_progression_cache = None
+        try:
+            st = MATRIXCORE_PROGRESSION_PATH.stat()
+            self._matrixcore_progression_cache = ((st.st_mtime_ns, st.st_size), copy.deepcopy(merged))
+        except OSError:
+            self._matrixcore_progression_cache = None
         return merged
 
     def save_matrixcore_progression(self, data: dict) -> dict:
         merged = merge_dict_defaults(dict(data or {}), matrixcore_default_progression_payload())
         merged["updated_at"] = datetime.now().isoformat(timespec="seconds")
         _safe_write_json(MATRIXCORE_PROGRESSION_PATH, merged)
+        self._matrixcore_progression_cache = None
         self.matrixcore_data = getattr(self, "matrixcore_data", {}) or {}
         try:
             self.matrixcore_data["progression"] = merged
@@ -8801,6 +8818,7 @@ class CommandHubApp(ShowBase):
         merged_progression["last_mode"] = progression_payload.get("last_mode", merged_progression.get("last_mode", ""))
         merged_progression["schema_version"] = max(int(merged_progression.get("schema_version", 0) or 0), int(progression_payload.get("schema_version", 4)))
         _safe_write_json(MATRIXCORE_PROGRESSION_PATH, merged_progression)
+        self._matrixcore_progression_cache = None
         if not MATRIXCORE_BOT_SUPPORT_PATH.exists():
             _safe_write_json(MATRIXCORE_BOT_SUPPORT_PATH, bot_payload)
         self.ensure_gleebs_dialogue_seed(force=False)
@@ -9192,7 +9210,7 @@ class CommandHubApp(ShowBase):
             "MatrixCore is home. Stabilize one signal in each major HoloVerse system, then bring all nine home for Convergence.\n\n"
             f"Signals stable: {campaign_count}/{len(CAMPAIGN_SIGNAL_ORDER)}\n"
             f"Next signal: {campaign_goal}\n\n"
-            "Artifacts travel to the regions. Local guides own each activity. TAB always returns to MatrixCore."
+            "Artifacts travel to the regions. Region guides open their dimension gates. TAB always returns to MatrixCore."
         )
 
     def matrixcore_clean_gate_label(self, value: object, fallback: str = "DIMENSION") -> str:
@@ -9483,6 +9501,21 @@ class CommandHubApp(ShowBase):
             gate["_matrixcore_discovered_count"] = int(record.get("count", 1) or 1)
             gate["_matrixcore_discovered_at"] = str(record.get("last_at", ""))
             gates.append(gate)
+        # Pass 282.83: one entry per destination.  Old saves recorded HoloSpace (region 8) under more
+        # than one key, and the HoloSpace Region route is the same place as region 8.
+        unique: list[dict] = []
+        region_numbers: set[int] = set()
+        for gate in gates:
+            if str(gate.get("_matrixcore_gate_kind")) == "region":
+                number = int(gate.get("_matrixcore_region_number", 0) or 0)
+                if number in region_numbers:
+                    continue
+                region_numbers.add(number)
+            unique.append(gate)
+        if 8 in region_numbers:
+            unique = [g for g in unique if not (str(g.get("_matrixcore_gate_kind")) == "dimension"
+                      and canonical_dimension_lookup_key(dict(g.get("manifest") or {}).get("id") or g.get("name")) == "holospace_region")]
+        gates = unique
         gates.sort(key=lambda item: (0 if str(item.get("_matrixcore_gate_kind")) == "region" else 1, str(item.get("_matrixcore_gate_label") or item.get("name") or "").lower()))
         return gates
 
@@ -12584,6 +12617,7 @@ class CommandHubApp(ShowBase):
         # World-shell prototype controls are intentionally not player-bound.
         # Shift+F9 enables the diagnostic route binder when development access is needed.
         self.accept("f1", self.handle_f1_action)
+        self.accept("f3", self.handle_f3_action)
         self.accept("f12", self.handle_f12_action)
         # Full-source first-person dimensions may own F10 for mouse-capture toggles.
         # Outside native mode this binding is deliberately inert.
@@ -16035,9 +16069,16 @@ class CommandHubApp(ShowBase):
         legacy/source HUD so presentation runs can keep old per-mode UI hidden
         without turning off universal Core state.
         """
-        if self.is_holospace_active():
-            self.toggle_help_overlay()
+        # Pass 282.83: H is help everywhere (the hub used to hide the HUD instead, while its own
+        # help page said "Help: H").  The HUD toggle moved to F3.
+        if getattr(self, "active_native_mode", None) is not None:
             return
+        if self.menu_open and getattr(self, "menu_tab", "") == "help":
+            self.toggle_menu()
+            return
+        self.toggle_help_overlay()
+
+    def handle_f3_action(self):
         if getattr(self, "active_native_mode", None) is not None:
             return
         self.toggle_hud()
@@ -17463,8 +17504,8 @@ class CommandHubApp(ShowBase):
                 f"Play {getattr(self, 'world_shell_playable_status', 'READY')}  Radius {float(getattr(self, 'world_shell_play_radius', getattr(self.cfg, 'world_shell_play_radius', SURFACE_OUTER_RADIUS))):.0f}\n"
                 f"Boundary {getattr(self, 'world_shell_boundary_status', 'READY')}  Checkpoints {getattr(self, 'world_shell_checkpoint_status', '0/0')}\n"
                 f"Ground lanes {'ON' if getattr(self.cfg, 'world_shell_ground_continuity', True) else 'OFF'}  Height hints {'ON' if getattr(self.cfg, 'world_shell_collision_height_hints', True) else 'OFF'}\n"
-                f"B/N cycle, P play, C reset pickups // Shift+F9 dev numbers"
-            )
+                + ("DEV ON // B/N cycle biome, P play, C reset pickups, 0-9 routes" if getattr(self, "dev_region_number_travel", False) else "")
+            ).rstrip()
         elif self.menu_tab == "gates":
             gates = self.matrixcore_dimension_gate_modes() if hasattr(self, "matrixcore_dimension_gate_modes") else []
             page_size = max(1, min(8, int(getattr(self, "menu_action_capacity", 10) or 10) - 2))
@@ -17530,7 +17571,8 @@ class CommandHubApp(ShowBase):
                     "Flight assist:  Z\n"
                     "Supercruise:  J (again to drop)\n"
                     "MatrixCore:  TAB\n"
-                    "Pause:  ESC"
+                    "Pause:  ESC\n"
+                    "Hide / show HUD:  F3"
                 )
             else:
                 self.menu_detail["text"] = (
@@ -17539,10 +17581,10 @@ class CommandHubApp(ShowBase):
                     "Sprint:  Shift\n"
                     "Use / talk:  E or left click\n"
                     "Rise / dive:  Space / Ctrl\n"
-                    "Aircraft:  V (after Ember)\n"
                     "MatrixCore:  TAB\n"
                     "Pause:  ESC\n"
-                    "Help:  H / F1"
+                    "Help:  H / F1\n"
+                    "Hide / show HUD:  F3"
                 )
         subtitles = {
             "display": "Visual tuning and readability",
@@ -17600,6 +17642,15 @@ class CommandHubApp(ShowBase):
                 return
         except Exception:
             pass
+        # Pass 282.83: replacing ShowBase.windowEvent also dropped its aspect-ratio update, so a
+        # resized window (windowed mode) stretched the 3D view and all 2D UI.
+        try:
+            if window is not None and window == self.win and self.win.getYSize() > 0:
+                aspect = self.getAspectRatio(self.win)
+                if abs(float(self.camLens.getAspectRatio()) - aspect) > 1e-4 or abs(float(self.aspect2d.getSx()) - 1.0 / aspect) > 1e-4:
+                    self.adjustWindowAspectRatio(aspect)
+        except Exception as exc:
+            print(f"window_aspect_update_failed err={exc.__class__.__name__}:{exc}")
         if hasattr(self, "relayout_ui"):
             self.relayout_ui()
         if (
@@ -18334,7 +18385,7 @@ class CommandHubApp(ShowBase):
             pass
         self.route_perfection_records = []
         self.route_perfection_index = 0
-        self.route_perfection_modes = ["creativity"] + list(ARTIFACT_REGION_ROUTES.keys())
+        self.route_perfection_modes = list(ARTIFACT_REGION_ROUTES.keys())   # Pass 282.83: HoloForge removed
         self.teleport_to_hub()
         self.taskMgr.doMethodLater(0.20, self.route_perfection_smoke_enter, "route-perfection-enter")
         return Task.done
@@ -18509,13 +18560,13 @@ class CommandHubApp(ShowBase):
         records = []
         self.teleport_to_hub()
         # Warm one-time reusable nodes before choosing the leak baseline.
-        for mode_id in ("creativity", "region_holospace", "region_urban", "region_metropolis"):
+        for mode_id in ("region_holospace", "region_urban", "region_metropolis"):
             records.append({"phase": "warmup", **self._maintenance_cycle_route(mode_id)})
         baseline = self._maintenance_runtime_snapshot("baseline_after_warmup")
         baseline_tasks = int(baseline.get("task_count", -1))
         baseline_nodes = int(baseline.get("render_nodes", -1))
         for cycle in range(1, 7):
-            for mode_id in ("creativity", "region_holospace", "region_urban", "region_metropolis"):
+            for mode_id in ("region_holospace", "region_urban", "region_metropolis"):
                 row = self._maintenance_cycle_route(mode_id)
                 row["phase"] = "soak"
                 row["cycle"] = cycle
@@ -18809,7 +18860,7 @@ class CommandHubApp(ShowBase):
             and public_text.get("detail", "").startswith("ACTIVE //")
             and public_text.get("talk_button") == "TALK"
             and public_text.get("enter_button") == "ENTER"
-            and public_text.get("back_button") == "BACK"
+            and public_text.get("back_button", "").startswith("BACK")
         )
         return {"kind": "holoverse_bot_language_smoke", "public_text": public_text, "forbidden_hits": hits, "screenshot": str(BOT_LANGUAGE_SMOKE_SCREENSHOT), "pass": ok}
 
@@ -18865,7 +18916,7 @@ class CommandHubApp(ShowBase):
         flight_help_open = bool(getattr(self, "menu_open", False) and getattr(self, "menu_tab", "") == "help")
         flight_help_text = str(self.menu_detail["text"] if getattr(self, "menu_detail", None) is not None else "")
         if not flight_help_open: errors.append("h_flight_help_did_not_open")
-        if "W/S throttle" not in flight_help_text or "J supercruise" not in flight_help_text or "TAB return to MatrixCore" not in flight_help_text:
+        if "Throttle:  W / S" not in flight_help_text or "Supercruise:  J" not in flight_help_text or "MatrixCore:  TAB" not in flight_help_text:
             errors.append("flight_help_missing_primary_controls")
         # Pass 282.59: deep-space flight owns HoloSpace, with Dyson Prime far away.
         deep = self.deep_space.report() if self.deep_space_active() else {}
@@ -19192,10 +19243,11 @@ class CommandHubApp(ShowBase):
         for key, value in expected.items():
             if counts.get(key) != value:
                 errors.append(f"{key}: expected {value}, got {counts.get(key)}")
-        if artifact_count != 10:
-            errors.append(f"artifact/station count expected 10, got {artifact_count}")
-        if primary_station_count != 2:
-            errors.append(f"primary station count expected 2, got {primary_station_count}")
+        # Pass 282.81/83: the HoloForge station is gone; the eight worldway artifacts remain.
+        if artifact_count != 8:
+            errors.append(f"artifact count expected 8, got {artifact_count}")
+        if primary_station_count != 0:
+            errors.append(f"primary station count expected 0, got {primary_station_count}")
         if worldway_count != 8:
             errors.append(f"worldway artifact count expected 8, got {worldway_count}")
         return {

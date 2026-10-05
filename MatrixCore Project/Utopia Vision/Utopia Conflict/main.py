@@ -287,6 +287,7 @@ AUDIO_LOOPS_DIR = ASSETS / "audio" / "loops"
 ARENA_VARIANTS_DIR = ASSETS / "arena_variants"
 SHARED_SFX_ROOT = Path(os.environ.get("MATRIX_SHARED_SFX_DIR") or os.environ.get("PROTOTYPE_LAB_SHARED_SFX_DIR") or (ROOT.parent / "assets" / "shared_sfx"))
 AUDIO_PROFILE = {}
+legacy_runtime = None   # the shared HoloVerse audio runtime is not wired into Utopia Conflict
 CONFIG_PATH = CONFIG_DIR / "game_config.json"
 ROOT_CONFIG_PATH = ROOT / "game_config.json"
 SFX_STEMS = {

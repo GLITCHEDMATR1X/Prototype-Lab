@@ -179,3 +179,7 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+# Panda3D 3D models use the .egg extension too (this repo has no Python egg packages).
+# Without this, models such as Mirrors Limbo/assets/models/ghost_human.egg never reach GitHub.
+!*.egg
+!*.egg.pz

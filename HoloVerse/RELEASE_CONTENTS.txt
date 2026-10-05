@@ -12,7 +12,6 @@ Left out (development only, still in the working HoloVerse folder):
 
 Reset for players (not copied; the game creates fresh ones on first launch):
 - saves/, runtime_state/, logs/
-- holoforge/blueprints/autosave_holoforge.json
 
 Checked: all Python compiles; a headless --self-test boot from this folder exits
 cleanly and recreates saves/, runtime_state/ and logs/ with default settings.

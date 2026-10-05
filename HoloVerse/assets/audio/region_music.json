@@ -10,13 +10,13 @@
   ],
   "tracks": {
     "hub":        {"file": "regions/holoverse.mp3",   "volume": 1.0, "area": "FLAT region: the MatrixCore hub, the title screen and the flat land around the hub"},
-    "forest":     {"file": "regions/forests.mp3",     "volume": 1.0, "area": "Forests region / Forest Growth"},
-    "hills":      {"file": "regions/green_hills.mp3", "volume": 1.0, "area": "Green Hills region / Oddities"},
+    "forest":     {"file": "regions/forests.mp3",     "volume": 1.0, "area": "Forests region"},
+    "hills":      {"file": "regions/green_hills.mp3", "volume": 1.0, "area": "Green Hills region"},
     "mushroom":   {"file": "regions/mushroom.mp3",    "volume": 1.0, "area": "Mushroom region"},
-    "desert":     {"file": "regions/desert.mp3",      "volume": 1.0, "area": "Desert region / Ember Hangar"},
-    "ice":        {"file": "regions/ice.mp3",         "volume": 1.0, "area": "Ice region / Frost Circuit"},
-    "urban":      {"file": "regions/urban.mp3",       "volume": 1.0, "area": "Urban region / Urban Warzone"},
-    "metropolis": {"file": "regions/metropolis.mp3",  "volume": 1.0, "area": "Metropolis region / Robot Lab"},
+    "desert":     {"file": "regions/desert.mp3",      "volume": 1.0, "area": "Desert region"},
+    "ice":        {"file": "regions/ice.mp3",         "volume": 1.0, "area": "Ice region"},
+    "urban":      {"file": "regions/urban.mp3",       "volume": 1.0, "area": "Urban region"},
+    "metropolis": {"file": "regions/metropolis.mp3",  "volume": 1.0, "area": "Metropolis region"},
     "space":      {"file": "regions/holospace.mp3",   "volume": 1.0, "area": "HoloSpace (ship flight)"}
   },
   "dimensions": {

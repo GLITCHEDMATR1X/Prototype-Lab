@@ -508,7 +508,7 @@ class AudioSystem:
             "sfx_volume": self.user_sfx_volume,
             "music_volume": self.user_music_volume,
             "music_phase": self.active_music_phase,
-            "phase_music_counts": phase_counts,
+            "phase_music_counts": {phase: len(self.phase_music_paths.get(phase, [])) for phase in MUSIC_PHASES},
             "manifest_track_counts": manifest_track_count(Path(ROOT_DIR)),
             "muted": self.muted,
         })
@@ -5756,6 +5756,27 @@ def main(embedded: bool = False, doomsday_ctx=None):
 
                     draw_glow_point(glow, (int(pr[0]), int(pr[1])), b.color, size=int(b.size), alpha=200)
 
+        def draw_ocean_wake(origin: Vector3, fwd_vec: Vector3, width: float, length: float, color_rgb, alpha_scale: float = 1.0):
+            pts_l = []
+            pts_r = []
+            right_vec = safe_norm(Vector3(fwd_vec.y, -fwd_vec.x, 0.0), Vector3(1, 0, 0))
+            for i in range(8):
+                tt = i / 7.0
+                back = origin - fwd_vec * (length * tt)
+                foam = ocean_wave_height(back.x, back.y, t_now) + 0.25
+                edge_w = width * (0.25 + 0.75 * (1.0 - tt))
+                lp = Vector3(back.x + right_vec.x * edge_w, back.y + right_vec.y * edge_w, foam)
+                rp = Vector3(back.x - right_vec.x * edge_w, back.y - right_vec.y * edge_w, foam)
+                lpr = cam.project(lp, cam_fwd, cam_right, cam_up)
+                rpr = cam.project(rp, cam_fwd, cam_right, cam_up)
+                if lpr and rpr:
+                    pts_l.append((lpr[0], lpr[1]))
+                    pts_r.append((rpr[0], rpr[1]))
+            if len(pts_l) > 1:
+                pygame.draw.lines(glow, rgbf_to_rgbi(color_rgb, int(135 * alpha_scale)), False, pts_l, 2)
+            if len(pts_r) > 1:
+                pygame.draw.lines(glow, rgbf_to_rgbi(color_rgb, int(135 * alpha_scale)), False, pts_r, 2)
+
         # MISSILES
         for m in missiles:
             pr = cam.project(m.pos, cam_fwd, cam_right, cam_up)
@@ -5800,28 +5821,6 @@ def main(embedded: bool = False, doomsday_ctx=None):
                 b2 = (proj[e1][0], proj[e1][1])
                 draw_additive_line(glow, a, b2, col2, width=3)
                 draw_additive_line(glow, a, b2, col, width=thickness_main)
-
-
-        def draw_ocean_wake(origin: Vector3, fwd_vec: Vector3, width: float, length: float, color_rgb, alpha_scale: float = 1.0):
-            pts_l = []
-            pts_r = []
-            right_vec = safe_norm(Vector3(fwd_vec.y, -fwd_vec.x, 0.0), Vector3(1, 0, 0))
-            for i in range(8):
-                tt = i / 7.0
-                back = origin - fwd_vec * (length * tt)
-                foam = ocean_wave_height(back.x, back.y, t_now) + 0.25
-                edge_w = width * (0.25 + 0.75 * (1.0 - tt))
-                lp = Vector3(back.x + right_vec.x * edge_w, back.y + right_vec.y * edge_w, foam)
-                rp = Vector3(back.x - right_vec.x * edge_w, back.y - right_vec.y * edge_w, foam)
-                lpr = cam.project(lp, cam_fwd, cam_right, cam_up)
-                rpr = cam.project(rp, cam_fwd, cam_right, cam_up)
-                if lpr and rpr:
-                    pts_l.append((lpr[0], lpr[1]))
-                    pts_r.append((rpr[0], rpr[1]))
-            if len(pts_l) > 1:
-                pygame.draw.lines(glow, rgbf_to_rgbi(color_rgb, int(135 * alpha_scale)), False, pts_l, 2)
-            if len(pts_r) > 1:
-                pygame.draw.lines(glow, rgbf_to_rgbi(color_rgb, int(135 * alpha_scale)), False, pts_r, 2)
 
 
         if ocean_mode:
