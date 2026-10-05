@@ -1,25 +1,21 @@
-HoloVerse drop-in (Pass 282.81)
+HoloVerse drop-in (Pass 282.82)
 
-1) DELETE these folders from your HoloVerse folder (a zip cannot delete them for you):
-     Dimensions/Ember Hangar          Dimensions/Forest Growth
-     Dimensions/Frost Circuit         Dimensions/Hills of Life
-     Dimensions/HoloForge             Dimensions/Metropolis Robot Lab
-     Dimensions/Oddities              Dimensions/Urban Warzone
-   Optional: assets/audio/regions/holoforge.mp3, regions/flat/holoforge, regions/mushroom/oddities,
-   regions/metropolis/robot_lab, libraries/oddities_blueprint_library.json
-   (The game ignores all of these even if you leave them, but they are dead weight.)
-   Keep Dimensions/HoloSpace Region - that is the route into HoloSpace.
+Copy everything in this zip into your HoloVerse folder (same paths; overwrite when asked).
 
-2) Copy everything in this zip into your HoloVerse folder (same paths; overwrite when asked).
-   assets/audio/regions/*.mp3 are the music placeholders: if you already put your own tracks in,
-   skip those files.
+This zip contains NO music and no music settings: nothing in assets/audio is touched, so your own
+tracks and region_music.json stay as they are. (Sorry about the last drop-in overwriting them -
+drop-ins will not include music files again.)  It also leaves assets/config/holospace_cockpit.json alone.
 
-This pass - removed the in-world region activities:
-- Gone: Frost Circuit, Ember Hangar, Forest Growth (planter), Hills of Life, Oddities, Urban Warzone,
-  Metropolis Robot Lab, and HoloForge (including its station at the hub; the 8 region artifacts stay).
-- The region guides now open their dimension gate directly when you press ENTER:
-    Vanta -> Glyphbound, Solace -> Anomaly Sequence, Ember -> Vector Wars,
-    Archivist -> The Archivist, Sable -> Anatomic   (IO, Nyx, Mirror and Orbit unchanged)
-  The second "activity" button in their dialogue is gone.
-- Campaign: the five activity goals became "enter <guide>'s gate" goals (still 9 signals).
-- The regions themselves (scenery, music, bots, HoloSpace) are unchanged.
+If you still have the 8 removed activity folders from Pass 282.81 in Dimensions/, they can be deleted;
+the game ignores them either way.
+
+This pass - the warp into HoloSpace:
+- No more freeze. Building the 16 dimension planets took several seconds on the frame the warp ended.
+  Their textures are now prepared in the background a few seconds after the game starts and kept in
+  your cache folder (%LOCALAPPDATA%\GLITCHED MATRIX\HoloVerse\cache\planets), so the switch takes a
+  fraction of a second. The planets look exactly the same as before.
+- New warp: the view darkens into deep space with soft star streaks (0.45 s), the switch happens behind
+  full cover, then the streaks slow and fade out over the live cockpit view (1.5 s). HoloSpace is already
+  running while it fades - you can fly straight away.
+- No blinding flash: no bright core, the streaks are capped well below white.
+- The frozen world is never shown behind the warp any more.

@@ -4320,6 +4320,10 @@ class CommandHubApp(ShowBase):
         self.core_console_open = False
         self.bot_dimension_config = ensure_bot_dimension_config()
         self.bot_dimension_links = self._load_bot_dimension_links()
+        # Pass 282.82: prepare HoloSpace's planet textures in the background so the warp never
+        # waits on them.
+        if not SELF_TEST:
+            self.taskMgr.doMethodLater(4.0, self._warm_holospace_planets_task, "holospace-planet-warmup")
         self.bot_dialogue_open = False
         self.bot_dialogue_context = None
         self.bot_dialogue_node = None
@@ -13099,7 +13103,9 @@ class CommandHubApp(ShowBase):
             pass
         self.holospace_transition_active = True
         self.holospace_transition_started_at = time.monotonic()
-        self.holospace_transition_duration = 2.8
+        # Pass 282.82: the warp overlay decides when the switch happens (once the screen is
+        # covered); this is only a safety limit for when the overlay could not be created.
+        self.holospace_transition_duration = 6.0
         self.holospace_transition_source = str(source or "space")
         self.holospace_transition_target_entry = entry
         self.holospace_active = False
@@ -13117,7 +13123,8 @@ class CommandHubApp(ShowBase):
         runtime = self.ensure_holospace_travel_runtime()
         if runtime is not None:
             try:
-                runtime.start(duration=float(getattr(self, "holospace_transition_duration", 2.8) or 2.8), source=self.holospace_transition_source)
+                self._stop_holospace_warp_reveal()
+                runtime.start(source=self.holospace_transition_source)
             except Exception as exc:
                 try:
                     print(f"holospace_transition_start_warning:{exc.__class__.__name__}:{exc}")
@@ -13139,10 +13146,42 @@ class CommandHubApp(ShowBase):
         self.capture_gameplay_mouse()      # Pass 282.62: no OS cursor during the warp
         try:
             if self.audio:
-                self.audio.play('world_shift.wav', 'sfx', 0.56)
+                self.audio.play('world_shift.wav', 'sfx', 0.36)
         except Exception:
             pass
         return True
+
+    def _warm_holospace_planets_task(self, task):
+        if getattr(self, "dimension_registry", None) is None:
+            return Task.again if task.getElapsedTime() < 60.0 else Task.done
+        try:
+            from holoverse.dimension_planets import warm_for_app
+            warm_for_app(self)
+        except Exception as exc:
+            print(f"holospace_planet_warmup_failed err={exc.__class__.__name__}:{exc}")
+        return Task.done
+
+    def _stop_holospace_warp_reveal(self) -> None:
+        try:
+            self.taskMgr.remove("holospace-warp-reveal")
+        except Exception:
+            pass
+
+    def _holospace_warp_reveal_task(self, task):
+        """Pass 282.82: fade the warp away while HoloSpace is already running underneath."""
+        runtime = getattr(self, "holospace_travel_runtime", None)
+        if runtime is None:
+            return Task.done
+        if not self.is_holospace_active():
+            runtime.stop()          # TAB home / death during the reveal
+            return Task.done
+        try:
+            done = runtime.update_reveal(globalClock.getDt())
+        except Exception as exc:
+            print(f"holospace_warp_reveal_warning:{exc.__class__.__name__}:{exc}")
+            runtime.stop()
+            return Task.done
+        return Task.done if done else Task.cont
 
     def update_holospace_travel_sequence(self, dt: float) -> bool:
         if not self.is_holospace_traveling():
@@ -13151,6 +13190,7 @@ class CommandHubApp(ShowBase):
         done = False
         if runtime is not None:
             try:
+                # True once the overlay fully hides the world: switch to HoloSpace behind it.
                 done = bool(runtime.update(float(dt)))
             except Exception as exc:
                 try:
@@ -13178,6 +13218,7 @@ class CommandHubApp(ShowBase):
 
     def cancel_holospace_travel_sequence(self, *, reason: str = "cancel") -> None:
         self.holospace_transition_active = False
+        self._stop_holospace_warp_reveal()
         runtime = getattr(self, "holospace_travel_runtime", None)
         if runtime is not None:
             try:
@@ -13191,12 +13232,20 @@ class CommandHubApp(ShowBase):
         self.holospace_transition_active = False
         self.holospace_transition_completed_count = int(getattr(self, "holospace_transition_completed_count", 0) or 0) + 1
         runtime = getattr(self, "holospace_travel_runtime", None)
-        if runtime is not None:
+        started = time.monotonic()
+        ok = self.enter_holospace_direct(entry, source="space_transition_complete")
+        print(f"holospace_warp_switch seconds={time.monotonic() - started:.2f}")
+        if runtime is not None and bool(getattr(runtime, "active", False)) and hasattr(runtime, "begin_reveal"):
+            # The game runs normally again; only the overlay keeps fading out on top.
+            runtime.begin_reveal()
+            self._stop_holospace_warp_reveal()
+            self.taskMgr.add(self._holospace_warp_reveal_task, "holospace-warp-reveal", sort=60)
+        elif runtime is not None:
             try:
                 runtime.stop()
             except Exception:
                 pass
-        return self.enter_holospace_direct(entry, source="space_transition_complete")
+        return ok
 
     def enter_holospace_direct(self, entry=None, *, source: str = "direct") -> bool:
         entry = dict(entry or self.holoverse_region_entry_for_number(8) or {})
@@ -13255,7 +13304,9 @@ class CommandHubApp(ShowBase):
             print(f"deep_space_activate_error:{exc.__class__.__name__}:{exc}")
         # Pass 282.62: HoloSpace used to pop in with the OS cursor sitting on the
         # crosshair.  Fade it in from black and put the mouse back in flight mode.
-        self.begin_screen_fade_in(1.1)
+        # Pass 282.82: after the warp, the warp overlay does the reveal itself.
+        if source != "space_transition_complete":
+            self.begin_screen_fade_in(1.1)
         self.capture_gameplay_mouse()
         self.mark_campaign_signal("holospace", source=str(source or "dyson_reach"), progress_text="Dyson Reach") if self.campaign_state_file_exists() else False
         self.center_hint["text"] = "H  FLIGHT HELP   //   TAB  HOME"
