@@ -30,7 +30,10 @@ lighting stays put).
 from __future__ import annotations
 
 import hashlib
+import json
 import math
+import os
+import threading
 
 import numpy as np
 from panda3d.core import (
@@ -38,6 +41,8 @@ from panda3d.core import (
     Geom,
     GeomNode,
     GeomTriangles,
+    GeomEnums,
+    GeomVertexArrayFormat,
     GeomVertexData,
     GeomVertexFormat,
     GeomVertexWriter,
@@ -90,6 +95,39 @@ class _Rng:
 
     def choice(self, seq):
         return seq[int(self.random() * len(seq)) % len(seq)]
+
+
+# ----------------------------------------------------------------------
+# Pass 282.82: caches.  Building the 16 planets cost ~6 s on the frame HoloSpace opened (the
+# warp froze).  Icon colours and finished surface textures are now kept on disk in the player's
+# cache folder and in memory, and are prepared in the background while the player is at the hub.
+# ----------------------------------------------------------------------
+_CACHE_VERSION = 1
+_MEM_PALETTES: dict = {}
+_MEM_SURFACES: dict = {}
+_CACHE_LOCK = threading.Lock()
+
+
+def _cache_dir():
+    try:
+        from holoverse_userdata import user_data_root
+        path = user_data_root() / "cache" / "planets"
+        path.mkdir(parents=True, exist_ok=True)
+        return path
+    except Exception:
+        return None
+
+
+def _atomic_write(path, writer) -> None:
+    tmp = path.with_name(f"{path.name}.{os.getpid()}.{threading.get_ident()}.tmp")
+    try:
+        writer(tmp)
+        os.replace(tmp, path)
+    except Exception:
+        try:
+            tmp.unlink()
+        except Exception:
+            pass
 
 
 def _dir(lon_deg: float, lat_deg: float) -> Vec3:
@@ -167,6 +205,36 @@ def kind_for_record(rec) -> str | None:
 
 
 def icon_palette(path) -> tuple | None:
+    """icon_palette_uncached, remembered in memory and on disk (keyed by the icon file's size/time)."""
+    try:
+        from pathlib import Path as _P
+        if not path or not _P(str(path)).is_file():
+            return None
+        st = _P(str(path)).stat()
+        key = hashlib.sha1(f"{_CACHE_VERSION}|{os.path.abspath(str(path))}|{st.st_size}|{st.st_mtime_ns}".encode("utf-8", "replace")).hexdigest()[:20]
+    except Exception:
+        return icon_palette_uncached(path)
+    if key in _MEM_PALETTES:
+        return _MEM_PALETTES[key]
+    folder = _cache_dir()
+    disk = folder / f"palette-{key}.json" if folder is not None else None
+    if disk is not None and disk.is_file():
+        try:
+            data = json.loads(disk.read_text(encoding="utf-8"))
+            value = None if data.get("none") else (tuple(data["a"]), tuple(data["b"]))
+            _MEM_PALETTES[key] = value
+            return value
+        except Exception:
+            pass
+    value = icon_palette_uncached(path)
+    _MEM_PALETTES[key] = value
+    if disk is not None:
+        payload = {"none": True} if value is None else {"a": list(value[0]), "b": list(value[1])}
+        _atomic_write(disk, lambda t: t.write_text(json.dumps(payload), encoding="utf-8"))
+    return value
+
+
+def icon_palette_uncached(path) -> tuple | None:
     """Two representative colours from a dimension's icon (its most saturated hues)."""
     try:
         from pathlib import Path as _P
@@ -276,10 +344,45 @@ def _surface_rgb(kind: str, rng: _Rng, accent) -> np.ndarray:
     return np.clip(rgb, 0, 1)
 
 
+def surface_bytes(kind: str, rng: _Rng, accent, palette) -> np.ndarray:
+    """The finished (tinted) surface as uint8 RGB, from cache when possible.
+
+    The planet's RNG is advanced exactly as if the surface had been generated, so rings and every
+    later draw stay identical to the uncached build."""
+    acc = tuple(round(float(c), 4) for c in tuple(accent)[:3])
+    pal = None if not palette else tuple(tuple(round(float(c), 4) for c in col) for col in palette)
+    key = hashlib.sha1(f"{_CACHE_VERSION}|{TEX_W}x{TEX_H}|{kind}|{rng.state}|{acc}|{pal}".encode()).hexdigest()[:24]
+    hit = _MEM_SURFACES.get(key)
+    folder = _cache_dir()
+    disk = folder / f"surface-{key}.npz" if folder is not None else None
+    if hit is None and disk is not None and disk.is_file():
+        try:
+            with np.load(disk) as data:
+                hit = (data["surface"].copy(), int(data["state"][0]))
+            if hit[0].shape != (TEX_H, TEX_W, 3):
+                hit = None
+        except Exception:
+            hit = None
+    if hit is not None:
+        _MEM_SURFACES[key] = hit
+        rng.state = hit[1]
+        return hit[0]
+    rgb = _apply_identity_tint(_surface_rgb(kind, rng, accent), palette)
+    surface = (np.clip(rgb, 0, 1) * 255.0 + 0.5).astype(np.uint8)
+    hit = (surface, int(rng.state))
+    _MEM_SURFACES[key] = hit
+    if disk is not None:
+        _atomic_write(disk, lambda t: np.savez(open(t, "wb"), surface=surface, state=np.array([hit[1]], dtype=np.uint64)))
+    return surface
+
+
 def _texture_from_rgb(name: str, rgb: np.ndarray) -> Texture:
     tex = Texture(name)
     tex.setup2dTexture(TEX_W, TEX_H, Texture.T_unsigned_byte, Texture.F_rgb)
-    data = (np.flipud(rgb)[..., ::-1] * 255.0 + 0.5).astype(np.uint8)   # Panda wants BGR, bottom row first
+    if rgb.dtype == np.uint8:
+        data = np.ascontiguousarray(np.flipud(rgb)[..., ::-1])           # Panda wants BGR, bottom row first
+    else:
+        data = (np.flipud(rgb)[..., ::-1] * 255.0 + 0.5).astype(np.uint8)
     tex.setRamImage(data.tobytes())
     tex.setWrapU(Texture.WM_repeat)
     tex.setWrapV(Texture.WM_clamp)
@@ -292,31 +395,43 @@ def _texture_from_rgb(name: str, rgb: np.ndarray) -> Texture:
 # ----------------------------------------------------------------------
 # meshes
 # ----------------------------------------------------------------------
-def _lit_sphere(name: str, radius: float, centre: Vec3, sun_dir: Vec3, stacks=40, slices=72, night=NIGHT):
-    """UV sphere whose vertex colours carry the star lighting (the planet never
-    moves relative to the star, so this is exact and costs nothing per frame)."""
-    vdata = GeomVertexData(name, GeomVertexFormat.getV3c4t2(), Geom.UHStatic)
-    vw, cw, tw = GeomVertexWriter(vdata, "vertex"), GeomVertexWriter(vdata, "color"), GeomVertexWriter(vdata, "texcoord")
-    view = Vec3(-centre)
-    view.normalize()
-    for i in range(stacks + 1):
-        lat = math.pi / 2 - math.pi * i / stacks
-        for j in range(slices + 1):
-            lon = -math.pi + math.tau * j / slices
-            n = Vec3(math.cos(lat) * math.cos(lon), math.cos(lat) * math.sin(lon), math.sin(lat))
-            d = n.dot(sun_dir)
-            light = night + (1.0 - night) * max(0.0, min(1.0, d * 1.15 + 0.08)) ** 0.9
-            rim = max(0.0, 1.0 - max(0.0, n.dot(view))) ** 3 * 0.25 * max(0.0, d + 0.3)
-            vw.addData3(n * radius)
-            cw.addData4(min(1.0, light * STAR_COLOR[0] + rim), min(1.0, light * STAR_COLOR[1] + rim), min(1.0, light * STAR_COLOR[2] + rim), 1.0)
-            tw.addData2(j / slices, 1.0 - i / stacks)
-    tris = GeomTriangles(Geom.UHStatic)
+_FORMATS: dict = {}
+
+
+def _float_format(with_uv: bool):
+    """Vertex format with float32 position / colour (and uv), so numpy can fill it in one copy."""
+    if with_uv in _FORMATS:
+        return _FORMATS[with_uv]
+    from panda3d.core import InternalName
+    arr = GeomVertexArrayFormat()
+    arr.addColumn(InternalName.getVertex(), 3, GeomEnums.NT_float32, GeomEnums.C_point)
+    arr.addColumn(InternalName.getColor(), 4, GeomEnums.NT_float32, GeomEnums.C_color)
+    if with_uv:
+        arr.addColumn(InternalName.getTexcoord(), 2, GeomEnums.NT_float32, GeomEnums.C_texcoord)
+    fmt = GeomVertexFormat.registerFormat(arr)
+    _FORMATS[with_uv] = fmt
+    return fmt
+
+
+def _grid_indices(stacks: int, slices: int) -> np.ndarray:
     row = slices + 1
-    for i in range(stacks):
-        for j in range(slices):
-            a, b, c, e = i * row + j, i * row + j + 1, (i + 1) * row + j + 1, (i + 1) * row + j
-            tris.addVertices(a, e, c)
-            tris.addVertices(a, c, b)
+    i, j = np.meshgrid(np.arange(stacks), np.arange(slices), indexing="ij")
+    a = i * row + j
+    b, c, e = a + 1, (i + 1) * row + j + 1, (i + 1) * row + j
+    return np.stack([a, e, c, a, c, b], axis=-1).reshape(-1).astype(np.uint32)
+
+
+def _node_from_arrays(name: str, vertex_rows: np.ndarray, indices: np.ndarray, with_uv: bool) -> NodePath:
+    """Pass 282.82: one bulk copy per array instead of a Python call per vertex (~10x faster)."""
+    rows = np.ascontiguousarray(vertex_rows, dtype=np.float32)
+    vdata = GeomVertexData(name, _float_format(with_uv), Geom.UHStatic)
+    vdata.uncleanSetNumRows(rows.shape[0])
+    memoryview(vdata.modifyArray(0)).cast("B")[:] = rows.tobytes()
+    tris = GeomTriangles(Geom.UHStatic)
+    tris.setIndexType(GeomEnums.NT_uint32)
+    varr = tris.modifyVertices()
+    varr.uncleanSetNumRows(int(indices.shape[0]))
+    memoryview(varr).cast("B")[:] = np.ascontiguousarray(indices, dtype=np.uint32).tobytes()
     geom = Geom(vdata)
     geom.addPrimitive(tris)
     gn = GeomNode(name)
@@ -324,34 +439,43 @@ def _lit_sphere(name: str, radius: float, centre: Vec3, sun_dir: Vec3, stacks=40
     return NodePath(gn)
 
 
-def _atmosphere(name: str, radius: float, centre: Vec3, sun_dir: Vec3, rgb, strength: float, stacks=24, slices=48):
-    """A slightly larger shell, brightest at the limb as seen from the ship."""
-    vdata = GeomVertexData(name, GeomVertexFormat.getV3c4(), Geom.UHStatic)
-    vw, cw = GeomVertexWriter(vdata, "vertex"), GeomVertexWriter(vdata, "color")
+def _sphere_normals(stacks: int, slices: int, lon_start: float):
+    i = np.arange(stacks + 1, dtype=np.float64)[:, None]
+    j = np.arange(slices + 1, dtype=np.float64)[None, :]
+    lat = math.pi / 2 - math.pi * i / stacks
+    lon = lon_start + math.tau * j / slices
+    n = np.stack(np.broadcast_arrays(np.cos(lat) * np.cos(lon), np.cos(lat) * np.sin(lon), np.sin(lat) + 0 * lon), axis=-1)
+    return n.reshape(-1, 3), np.broadcast_to(i, (stacks + 1, slices + 1)).reshape(-1), np.broadcast_to(j, (stacks + 1, slices + 1)).reshape(-1)
+
+
+def _lit_sphere(name: str, radius: float, centre: Vec3, sun_dir: Vec3, stacks=40, slices=72, night=NIGHT):
+    """UV sphere whose vertex colours carry the star lighting (the planet never
+    moves relative to the star, so this is exact and costs nothing per frame)."""
     view = Vec3(-centre)
     view.normalize()
-    for i in range(stacks + 1):
-        lat = math.pi / 2 - math.pi * i / stacks
-        for j in range(slices + 1):
-            lon = math.tau * j / slices
-            n = Vec3(math.cos(lat) * math.cos(lon), math.cos(lat) * math.sin(lon), math.sin(lat))
-            facing = max(0.0, n.dot(view))
-            limb = (1.0 - facing) ** 2.2 if facing > 0.0 else 0.0
-            lit = 0.25 + 0.75 * max(0.0, n.dot(sun_dir) + 0.25)
-            vw.addData3(n * radius)
-            cw.addData4(rgb[0], rgb[1], rgb[2], min(1.0, limb * lit * strength))
-    tris = GeomTriangles(Geom.UHStatic)
-    row = slices + 1
-    for i in range(stacks):
-        for j in range(slices):
-            a, b, c, e = i * row + j, i * row + j + 1, (i + 1) * row + j + 1, (i + 1) * row + j
-            tris.addVertices(a, e, c)
-            tris.addVertices(a, c, b)
-    geom = Geom(vdata)
-    geom.addPrimitive(tris)
-    gn = GeomNode(name)
-    gn.addGeom(geom)
-    np_ = NodePath(gn)
+    n, i, j = _sphere_normals(stacks, slices, -math.pi)
+    sun = np.array([sun_dir.x, sun_dir.y, sun_dir.z])
+    vw = np.array([view.x, view.y, view.z])
+    d = n @ sun
+    light = night + (1.0 - night) * np.clip(d * 1.15 + 0.08, 0.0, 1.0) ** 0.9
+    rim = np.maximum(0.0, 1.0 - np.maximum(0.0, n @ vw)) ** 3 * 0.25 * np.maximum(0.0, d + 0.3)
+    col = np.minimum(1.0, light[:, None] * np.array(STAR_COLOR)[None, :] + rim[:, None])
+    rows = np.concatenate([n * radius, col, np.ones((n.shape[0], 1)), (j / slices)[:, None], (1.0 - i / stacks)[:, None]], axis=1)
+    return _node_from_arrays(name, rows, _grid_indices(stacks, slices), True)
+
+
+def _atmosphere(name: str, radius: float, centre: Vec3, sun_dir: Vec3, rgb, strength: float, stacks=24, slices=48):
+    """A slightly larger shell, brightest at the limb as seen from the ship."""
+    view = Vec3(-centre)
+    view.normalize()
+    n, _i, _j = _sphere_normals(stacks, slices, 0.0)
+    facing = np.maximum(0.0, n @ np.array([view.x, view.y, view.z]))
+    limb = np.where(facing > 0.0, (1.0 - facing) ** 2.2, 0.0)
+    lit = 0.25 + 0.75 * np.maximum(0.0, n @ np.array([sun_dir.x, sun_dir.y, sun_dir.z]) + 0.25)
+    alpha = np.minimum(1.0, limb * lit * strength)
+    col = np.broadcast_to(np.array(tuple(rgb)[:3], dtype=np.float64), (n.shape[0], 3))
+    rows = np.concatenate([n * radius, col, alpha[:, None]], axis=1)
+    np_ = _node_from_arrays(name, rows, _grid_indices(stacks, slices), False)
     np_.setTransparency(TransparencyAttrib.MAlpha)
     np_.setAttrib(ColorBlendAttrib.make(ColorBlendAttrib.MAdd, ColorBlendAttrib.OIncomingAlpha, ColorBlendAttrib.OOne))
     np_.setDepthWrite(False)
@@ -389,6 +513,136 @@ def _ring(name: str, r0: float, r1: float, rgb, rng: _Rng, segs=128, bands=10):
     return np_
 
 
+def _placements(records, dyson: Vec3):
+    giant = Vec3(-0.78, 0.42, -0.10)
+    placed = []
+    out = []
+    # Pass 282.70: sizes are chosen first so the spacing can respect each planet's edge;
+    # if the sky gets crowded the edge gap relaxes step by step instead of overlapping.
+    sizes = []
+    for rec in records:
+        rng = _Rng(_seed(getattr(rec, "dimension_id", "")))
+        sizes.append((rng, rng.uniform(PLANET_MIN_ANG_RADIUS_DEG, PLANET_MAX_ANG_RADIUS_DEG)))
+    for rng, ang_r in sizes:
+        best, best_score = None, -1e9
+        for gap in (EDGE_GAP_DEG, EDGE_GAP_DEG * 0.7, EDGE_GAP_DEG * 0.45, 4.0):
+            found = None
+            for attempt in range(260):
+                lon = rng.uniform(-180.0, 180.0)
+                lat = rng.uniform(*ELEVATION_RANGE_DEG)
+                d = _dir(lon, lat)
+                clear = min([_angle_deg(d, p) - max(MIN_SEPARATION_DEG * 0.6, pr + ang_r + gap) for p, pr in placed] + [999.0])
+                clear = min(clear, _angle_deg(d, dyson) - DYSON_CLEARANCE_DEG - ang_r,
+                            _angle_deg(d, giant) - GIANT_CLEARANCE_DEG - ang_r)
+                if clear >= 0.0:
+                    found = d
+                    break
+                if clear > best_score:
+                    best, best_score = d, clear
+            if found is not None:
+                best = found
+                break
+        placed.append((best, ang_r))
+        out.append((best, rng, ang_r))
+    return out
+
+
+
+def plan_planets(records, dyson: Vec3) -> list:
+    """(record, direction, rng, angular radius, world kind) for every planet, in build order.
+
+    Shared by the scene build and the background cache warm-up so both draw identical planets."""
+    # Every planet gets a different world type (stable order from the record ids).
+    order = list(ARCHETYPES)
+    shuffle = _Rng(_seed("|".join(str(getattr(r, "dimension_id", "")) for r in records)))
+    for i in range(len(order) - 1, 0, -1):
+        j = int(shuffle.random() * (i + 1)) % (i + 1)
+        order[i], order[j] = order[j], order[i]
+    used: dict[str, int] = {}
+    kinds = []
+    for rec in records:                       # the dimension's own world type first
+        k = kind_for_record(rec)
+        if k and used.get(k, 0) >= 2:         # keep the sky varied: at most two of a type by keyword
+            k = None
+        kinds.append(k)
+        if k:
+            used[k] = used.get(k, 0) + 1
+    spare = sorted(order, key=lambda k: (used.get(k, 0), order.index(k)))
+    for i, k in enumerate(kinds):
+        if not k:
+            kinds[i] = spare[i % len(spare)]
+    return [(rec, direction, rng, ang_r, kinds[idx]) for idx, ((direction, rng, ang_r), rec) in enumerate(zip(_placements(records, dyson), records))]
+
+
+def _prepare_planet_data(records, dyson: Vec3) -> int:
+    """Background warm-up: icon colours and surface textures into the caches (no scene graph)."""
+    done = 0
+    for rec, _direction, rng, _ang_r, kind in plan_planets(records, dyson):
+        rng.uniform(PLANET_MIN_DISTANCE, PLANET_MAX_DISTANCE)          # the distance draw in _build_one
+        palette = icon_palette(getattr(rec, "preview", None))
+        accent = tuple(palette[0]) if palette else tuple(getattr(rec, "accent", (0.3, 0.9, 1.0)))[:3]
+        surface_bytes(kind, rng, accent, palette)
+        done += 1
+    return done
+
+
+_WARM_THREAD = None
+
+
+def warm_planet_cache(records, dyson) -> bool:
+    """Start preparing the planet textures in a background thread (once at a time)."""
+    global _WARM_THREAD
+    if _WARM_THREAD is not None and _WARM_THREAD.is_alive():
+        return False
+    recs = list(records)
+    dyson_vec = Vec3(dyson)
+
+    def run():
+        import time as _t
+        started = _t.monotonic()
+        try:
+            n = _prepare_planet_data(recs, dyson_vec)
+            print(f"dimension_planets_cache_ready count={n} seconds={_t.monotonic() - started:.2f}")
+        except Exception as exc:
+            print(f"dimension_planets_cache_warm_failed err={exc.__class__.__name__}:{exc}")
+
+    _WARM_THREAD = threading.Thread(target=run, name="holospace-planet-warmup", daemon=True)
+    _WARM_THREAD.start()
+    return True
+
+
+def records_for_app(app):
+    registry = getattr(app, "dimension_registry", None)
+    # Pass 282.75: every linked dimension is a planet, including the ones a guide bot
+    # hosts in the world (The Indigo Giant, Mirror's Limbo, Afterlife of IO, ...), which
+    # the archive list keeps out of ``records``.
+    pool = list(getattr(registry, "records", []) or []) + list(getattr(registry, "hosted_records", []) or [])
+    records, seen = [], set()
+    for r in pool:
+        key = str(getattr(r, "dimension_id", ""))
+        if str(getattr(r, "origin", "")) != "linked" or not key or key in seen:
+            continue
+        seen.add(key)
+        records.append(r)
+    records.sort(key=lambda r: str(getattr(r, "dimension_id", "")))
+    return records
+
+
+def warm_for_app(app) -> bool:
+    """Called from the hub: prepare HoloSpace's planet textures before the player warps."""
+    try:
+        from holoverse.deep_space import DYSON_DIRECTION
+        dyson = Vec3(DYSON_DIRECTION)
+        dyson.normalize()
+        records = records_for_app(app)
+        if not records:
+            return False
+        return warm_planet_cache(records, dyson)
+    except Exception as exc:
+        print(f"dimension_planets_cache_warm_skipped err={exc.__class__.__name__}:{exc}")
+        return False
+
+
 # ----------------------------------------------------------------------
 # the planet field
 # ----------------------------------------------------------------------
@@ -408,20 +662,7 @@ class DimensionPlanets:
 
     # ---- records -------------------------------------------------------
     def _records(self):
-        registry = getattr(self.app, "dimension_registry", None)
-        # Pass 282.75: every linked dimension is a planet, including the ones a guide bot
-        # hosts in the world (The Indigo Giant, Mirror's Limbo, Afterlife of IO, ...), which
-        # the archive list keeps out of ``records``.
-        pool = list(getattr(registry, "records", []) or []) + list(getattr(registry, "hosted_records", []) or [])
-        records, seen = [], set()
-        for r in pool:
-            key = str(getattr(r, "dimension_id", ""))
-            if str(getattr(r, "origin", "")) != "linked" or not key or key in seen:
-                continue
-            seen.add(key)
-            records.append(r)
-        records.sort(key=lambda r: str(getattr(r, "dimension_id", "")))
-        return records
+        return records_for_app(self.app)
 
     def sync(self, force: bool = False) -> None:
         records = self._records()
@@ -433,38 +674,7 @@ class DimensionPlanets:
 
     # ---- layout ----------------------------------------------------------
     def _placements(self, records):
-        dyson = Vec3(self.flight.dyson_dir)
-        giant = Vec3(-0.78, 0.42, -0.10)
-        placed = []
-        out = []
-        # Pass 282.70: sizes are chosen first so the spacing can respect each planet's edge;
-        # if the sky gets crowded the edge gap relaxes step by step instead of overlapping.
-        sizes = []
-        for rec in records:
-            rng = _Rng(_seed(getattr(rec, "dimension_id", "")))
-            sizes.append((rng, rng.uniform(PLANET_MIN_ANG_RADIUS_DEG, PLANET_MAX_ANG_RADIUS_DEG)))
-        for rng, ang_r in sizes:
-            best, best_score = None, -1e9
-            for gap in (EDGE_GAP_DEG, EDGE_GAP_DEG * 0.7, EDGE_GAP_DEG * 0.45, 4.0):
-                found = None
-                for attempt in range(260):
-                    lon = rng.uniform(-180.0, 180.0)
-                    lat = rng.uniform(*ELEVATION_RANGE_DEG)
-                    d = _dir(lon, lat)
-                    clear = min([_angle_deg(d, p) - max(MIN_SEPARATION_DEG * 0.6, pr + ang_r + gap) for p, pr in placed] + [999.0])
-                    clear = min(clear, _angle_deg(d, dyson) - DYSON_CLEARANCE_DEG - ang_r,
-                                _angle_deg(d, giant) - GIANT_CLEARANCE_DEG - ang_r)
-                    if clear >= 0.0:
-                        found = d
-                        break
-                    if clear > best_score:
-                        best, best_score = d, clear
-                if found is not None:
-                    best = found
-                    break
-            placed.append((best, ang_r))
-            out.append((best, rng, ang_r))
-        return out
+        return _placements(records, Vec3(self.flight.dyson_dir))
 
     # ---- build -------------------------------------------------------------
     def _build(self, records) -> None:
@@ -480,28 +690,9 @@ class DimensionPlanets:
         self.root.setShaderOff(10)
         self.root.setBin("background", 4)
         star_pos = Vec3(self.flight.dyson_dir) * 60000.0
-        # Every planet gets a different world type (stable order from the record ids).
-        order = list(ARCHETYPES)
-        shuffle = _Rng(_seed("|".join(str(getattr(r, "dimension_id", "")) for r in records)))
-        for i in range(len(order) - 1, 0, -1):
-            j = int(shuffle.random() * (i + 1)) % (i + 1)
-            order[i], order[j] = order[j], order[i]
-        used: dict[str, int] = {}
-        kinds = []
-        for rec in records:                       # the dimension's own world type first
-            k = kind_for_record(rec)
-            if k and used.get(k, 0) >= 2:         # keep the sky varied: at most two of a type by keyword
-                k = None
-            kinds.append(k)
-            if k:
-                used[k] = used.get(k, 0) + 1
-        spare = sorted(order, key=lambda k: (used.get(k, 0), order.index(k)))
-        for i, k in enumerate(kinds):
-            if not k:
-                kinds[i] = spare[i % len(spare)]
-        for idx, ((direction, rng, ang_r), rec) in enumerate(zip(self._placements(records), records)):
+        for rec, direction, rng, ang_r, kind in plan_planets(records, Vec3(self.flight.dyson_dir)):
             try:
-                self.planets.append(self._build_one(rec, direction, rng, star_pos, kinds[idx], ang_r))
+                self.planets.append(self._build_one(rec, direction, rng, star_pos, kind, ang_r))
             except Exception as exc:
                 print(f"dimension_planet_build_failed id={getattr(rec, 'dimension_id', '?')} err={exc.__class__.__name__}:{exc}")
         print(f"dimension_planets_built count={len(self.planets)}")
@@ -522,7 +713,7 @@ class DimensionPlanets:
         # surface
         body = _lit_sphere("dimension-planet-body", radius, centre, sun_dir)
         body.reparentTo(holder)
-        surface = _apply_identity_tint(_surface_rgb(kind, rng, accent), palette)
+        surface = surface_bytes(kind, rng, accent, palette)
         tex = _texture_from_rgb(f"dimension-planet-tex-{kind}", surface)
         stage = TextureStage("dimension-planet-surface")
         stage.setMode(TextureStage.M_modulate)
