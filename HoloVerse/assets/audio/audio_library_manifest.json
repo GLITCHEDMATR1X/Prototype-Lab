@@ -5,7 +5,7 @@
     "hub_track": "assets/audio/regions/holoverse.mp3",
     "region_manifest": "assets/audio/region_music.json",
     "region_tracks_dir": "assets/audio/regions",
-    "files": 11,
+    "files": 10,
     "cue_manifest_legacy": "assets/audio/holoverse_music_cues.json",
     "runtime_generation": false,
     "reverse_cache": false,

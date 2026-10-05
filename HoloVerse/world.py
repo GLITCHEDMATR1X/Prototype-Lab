@@ -380,9 +380,9 @@ NAMED_REGION_BOT_ANCHOR_ANGLE_DEG = BIOME_ANCHOR_ANGLE_DEG
 # in-world activity offers it as a second option in the dialogue.
 # Pass 282.57 roster:
 #   IO      FLAT        in the hub behind the spawn; Afterlife of IO opens only from his dialogue (282.62)
-#   Solace  GREEN HILLS Oddities (moved from Mushroom to the old Nyx post)
+#   Solace  GREEN HILLS Anomaly Sequence gate (Pass 282.81: the Oddities activity was removed)
 #   Nyx     MUSHROOM    the giant of The Indigo Giant, at the REDACTED port with Orbit
-#   Archivist ICE       Frost Circuit (moved from Metropolis to the old Mirror post)
+#   Archivist ICE       The Archivist gate (Pass 282.81: Frost Circuit was removed)
 #   Mirror  METROPOLIS  Mirror's Limbo gate (moved from Ice; Robot Lab unhooked)
 NAMED_REGION_BOT_MAP = [
     {"name": "IO", "region": "FLAT", "activity": "AFTERLIFE OF IO", "ring_key": 1, "kind": "flat", "color": (0.78, 0.82, 0.86), "accent": (1.00, 0.92, 0.70), "anchor_t": 0.22, "scale": 1.00, "wander_radius": 1.5, "wander_speed": 0.060, "activity_flag": "", "anchor_xy": START_GATE_GUIDE_XY},  # Pass 282.62: no gate; Afterlife of IO opens only from IO's dialogue
@@ -391,7 +391,7 @@ NAMED_REGION_BOT_MAP = [
     # Pass 282.56/57: Nyx, the giant of the REDACTED archive (The Indigo Giant), stands at the port with Orbit.
     {"name": "Nyx", "region": "MUSHROOM", "activity": "THE INDIGO GIANT", "ring_key": 4, "kind": "mushroom", "color": (0.27, 0.54, 0.92), "accent": (0.55, 0.62, 1.00), "anchor_t": 0.62, "scale": 1.0, "wander_radius": 0.0, "wander_speed": 0.0, "activity_flag": "", "character": "giant", "port_offset": (16.0, 0.0)},
     {"name": "Ember", "region": "DESERT", "activity": "VECTOR WARS", "ring_key": 5, "kind": "desert", "color": (1.00, 0.42, 0.12), "accent": (1.00, 0.82, 0.30), "anchor_t": 0.54, "scale": 1.04, "wander_radius": GATE_GUIDE_WANDER_RADIUS, "wander_speed": 0.078, "activity_flag": "desert_ships_active", "gate": {"title": "Vector Wars", "along": -26.0, "outward": 0.0}},
-    {"name": "Archivist", "region": "ICE", "activity": "FROST CIRCUIT", "ring_key": 6, "kind": "ice", "color": (0.30, 0.62, 1.00), "accent": (0.76, 0.88, 1.00), "anchor_t": 0.62, "scale": 1.08, "wander_radius": GATE_GUIDE_WANDER_RADIUS, "wander_speed": ICE_GUIDE_WANDER_SPEED, "activity_flag": "frost_circuit_active", "gate": {"title": "The Archivist", "along": -24.0, "outward": 0.0}},
+    {"name": "Archivist", "region": "ICE", "activity": "THE ARCHIVIST", "ring_key": 6, "kind": "ice", "color": (0.30, 0.62, 1.00), "accent": (0.76, 0.88, 1.00), "anchor_t": 0.62, "scale": 1.08, "wander_radius": GATE_GUIDE_WANDER_RADIUS, "wander_speed": ICE_GUIDE_WANDER_SPEED, "activity_flag": "frost_circuit_active", "gate": {"title": "The Archivist", "along": -24.0, "outward": 0.0}},
     {"name": "Sable", "region": "URBAN", "activity": "ANATOMIC", "ring_key": 7, "kind": "urban", "color": (0.90, 0.08, 0.18), "accent": (0.34, 0.36, 0.40), "anchor_t": 0.70, "scale": 1.06, "wander_radius": GATE_GUIDE_WANDER_RADIUS, "wander_speed": 0.054, "activity_flag": "urban_warzone_active", "gate": {"title": "Anatomic", "along": 26.0, "outward": 0.0}},
     {"name": "Mirror", "region": "METROPOLIS", "activity": "MIRROR'S LIMBO", "ring_key": 8, "kind": "metropolis", "color": (0.68, 0.92, 1.00), "accent": (1.00, 1.00, 1.00), "anchor_t": METROPOLIS_SPAWN_ANCHOR_T, "scale": 1.02, "wander_radius": METROPOLIS_GUIDE_WANDER_RADIUS, "wander_speed": METROPOLIS_GUIDE_WANDER_SPEED, "activity_flag": "", "anchor_xy": METROPOLIS_GATE_GUIDE_XY, "gate": {"title": "Mirror's Limbo", "along": 14.0, "outward": 14.0, "snap": "metropolis_lot"}},
     # Orbit, Nyx's companion, stands at his feet; Orbit still opens HoloSpace flight.

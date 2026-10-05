@@ -79,48 +79,7 @@
         "wrapper": "data/HoloVerse/Dimensions/Vector Wars/holoverse_entry.py"
       }
     ],
-    "in_world_runtime_ui": [
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "replace persistent local panels with root HUD state reports",
-        "path": "data/HoloVerse/Dimensions/Oddities/runtime.py"
-      },
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "replace persistent local panels with root HUD state reports",
-        "path": "data/HoloVerse/Dimensions/Frost Circuit/runtime.py"
-      },
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "replace persistent local panels with root HUD state reports",
-        "path": "data/HoloVerse/Dimensions/Hills of Life/runtime.py"
-      },
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "replace persistent local panels with root HUD state reports",
-        "path": "data/HoloVerse/Dimensions/HoloForge/runtime.py"
-      },
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "replace persistent local panels with root HUD state reports",
-        "path": "data/HoloVerse/Dimensions/Forest Growth/runtime.py"
-      },
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "replace persistent local panels with root HUD state reports",
-        "path": "data/HoloVerse/Dimensions/Metropolis Robot Lab/runtime.py"
-      },
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "replace persistent local panels with root HUD state reports",
-        "path": "data/HoloVerse/Dimensions/Urban Warzone/runtime.py"
-      },
-      {
-        "engine": "panda3d_directgui",
-        "migration_action": "replace persistent local panels with root HUD state reports",
-        "path": "data/HoloVerse/Dimensions/Ember Hangar/runtime.py"
-      }
-    ],
+    "in_world_runtime_ui": [],
     "root_authority": [
       {
         "engine": "panda3d_directgui",

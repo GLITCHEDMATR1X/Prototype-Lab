@@ -105,36 +105,7 @@
       "If you are a recreation, you are still late. I saved you a universe."
     ]
   },
-  "dimension_guidance": {
-    "Ember Hangar": {
-      "advice": "Ember Hangar generates Fighter, Speeder, Hauler, and UFO ships. This experiment is parked for later review.",
-      "return": "Ember Hangar returned saved ship data."
-    },
-    "Forest Growth": {
-      "advice": "Forest Growth is Vanta's living planting layer. Plants grow one stage per real day and keep saved progress.",
-      "return": "Forest Growth returned plant progress and harvest data."
-    },
-    "Frost Circuit": {
-      "advice": "Frost Circuit is the Archivist's compact hovercraft course against the bot racers.",
-      "return": "Frost Circuit returned race timing data."
-    },
-    "Hills of Life": {
-      "advice": "Hills of Life is unhooked for now; Nyx is the giant at the Mushroom port.",
-      "return": "Hills of Life returned animal personality and growth data."
-    },
-    "HoloForge": {
-      "advice": "HoloForge is unhooked for now; IO keeps the Afterlife of IO gate at the start.",
-      "return": "HoloForge returned builder data that can become structures, props, or tools later."
-    },
-    "Oddities": {
-      "advice": "Oddities is Solace's Green Hills experiment layer with floating objects and weird procedural growth.",
-      "return": "Oddities returned spore-weird experiment data."
-    },
-    "Urban Warzone": {
-      "advice": "Urban Warzone turns the urban region into a machine-war combat simulator with cover, bot allies, drones, robots, and mechs.",
-      "return": "Urban Warzone returned combat records and wave progress."
-    }
-  },
+  "dimension_guidance": {},
   "display_rules": {
     "dismissal": [
       "distance fade",

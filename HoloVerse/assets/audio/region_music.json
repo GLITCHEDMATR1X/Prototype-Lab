@@ -17,8 +17,7 @@
     "ice":        {"file": "regions/ice.mp3",         "volume": 1.0, "area": "Ice region / Frost Circuit"},
     "urban":      {"file": "regions/urban.mp3",       "volume": 1.0, "area": "Urban region / Urban Warzone"},
     "metropolis": {"file": "regions/metropolis.mp3",  "volume": 1.0, "area": "Metropolis region / Robot Lab"},
-    "space":      {"file": "regions/holospace.mp3",   "volume": 1.0, "area": "HoloSpace (ship flight)"},
-    "holoforge":  {"file": "regions/holoforge.mp3",   "volume": 1.0, "area": "HoloForge workshop"}
+    "space":      {"file": "regions/holospace.mp3",   "volume": 1.0, "area": "HoloSpace (ship flight)"}
   },
   "dimensions": {
     "holocore":   {"file": "regions/holocore.mp3",    "volume": 1.0, "area": "HoloCore dimension"}
